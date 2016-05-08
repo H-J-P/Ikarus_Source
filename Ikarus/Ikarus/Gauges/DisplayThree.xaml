@@ -1,0 +1,19 @@
+﻿<UserControl x:Class="Ikarus.DisplayTwo"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" MouseWheel="Light_MouseWheel" Height="79" Width="114" >
+    <Grid>
+        <Image x:Name="Frame" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Height="79" Width="114" MouseWheel="Light_MouseWheel" Stretch="Fill" />
+        <Canvas x:Name="VHF1V2" HorizontalAlignment="Left" Height="79" UseLayoutRounding="False" VerticalAlignment="Top" Width="114">
+            <Canvas x:Name="Layer_1" Height="74" Canvas.Left="0" Canvas.Top="2" Width="111">
+                <Path Data="M4.082,46.781L143.67,46.781C145.914,46.781,147.751,44.945,147.751,42.701L147.751,4.082C147.751,1.836,145.914,0,143.67,0L4.082,0C1.837,0,0,1.836,0,4.082L0,42.701C0,44.945,1.837,46.781,4.082,46.781" Fill="Black" Height="46.78" Canvas.Left="15" Canvas.Top="13.11" Width="86" Stretch="Fill"/>
+                <Path Data="M4.436,0.354L144.025,0.354C146.269,0.354,148.106,2.191,148.106,4.435L148.106,43.054C148.106,45.3,146.269,47.136,144.025,47.136L4.436,47.136C2.191,47.136,0.355,45.3,0.355,43.054L0.355,4.435C0.355,2.191,2.191,0.354,4.436,0.354z" Height="47.491" Canvas.Left="15" Stroke="#FF1A1A1A" StrokeThickness="0.709" StrokeMiterLimit="22.926" Canvas.Top="13" Width="86" Stretch="Fill"/>
+                <Path Data="M4.436,0.354L144.025,0.354C146.269,0.354,148.106,2.19,148.106,4.436L148.106,43.055C148.106,45.299,146.269,47.135,144.025,47.135L4.436,47.135C2.192,47.135,0.355,45.299,0.355,43.055L0.355,4.436C0.355,2.19,2.192,0.354,4.436,0.354z" Height="47.49" Canvas.Left="14" Stroke="Gray" StrokeThickness="0.709" StrokeMiterLimit="22.926" Canvas.Top="13" Width="87" Stretch="Fill"/>
+            </Canvas>
+            <TextBlock x:Name="Display" TextWrapping="Wrap" Text="000" Foreground="#FFABF9AB" FontSize="35" FontFamily="LED Board-7" Width="81" HorizontalAlignment="Right" Height="53" Canvas.Left="20" Canvas.Top="16" TextAlignment="Center"/>
+        </Canvas>
+        <Image x:Name="Light" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Height="79" Width="114" MouseWheel="Light_MouseWheel" Stretch="Fill" />
+    </Grid>
+</UserControl>

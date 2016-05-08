@@ -1,0 +1,387 @@
+﻿<UserControl x:Class="Ikarus.US_ACC"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="255.118" d:DesignWidth="255.118" MouseWheel="Light_MouseWheel">
+    <Grid>
+        <Canvas x:Name="US_Acc" HorizontalAlignment="Left" Height="255.118" UseLayoutRounding="False" VerticalAlignment="Top" Width="255.118">
+            <Canvas x:Name="dial" Height="259.904" Canvas.Left="-1" Canvas.Top="-0.716" Width="268.941">
+                <Path Data="M43.551,57.969C33.588,67.932 17.436,67.932 7.472,57.969 -2.491,48.006 -2.491,31.852 7.472,21.89L29.362,0 65.441,36.078z" Fill="#FF1A1A1A" Height="65.441" Canvas.Left="0" Canvas.Top="190.846" Width="65.441"/>
+                <Path Data="M33.948,5.914C41.689,13.656 41.689,26.207 33.948,33.948 26.206,41.69 13.656,41.69 5.914,33.948 -1.827,26.207 -1.827,13.656 5.914,5.914 13.656,-1.827 26.206,-1.827 33.948,5.914" Fill="#FF666666" Height="39.862" Canvas.Left="7.506" Stroke="Black" StrokeThickness="0.216" StrokeMiterLimit="22.926" Canvas.Top="208.918" Width="39.861"/>
+                <Canvas Clip="M37.278,12.427C44.141,19.289 44.141,30.415 37.278,37.279 30.415,44.142 19.289,44.142 12.426,37.279 5.563,30.415 5.563,19.289 12.426,12.427 19.289,5.564 30.415,5.564 37.278,12.427" Height="49.705" Canvas.Left="2.585" Canvas.Top="203.997" Width="49.704">
+                    <Path Data="M29.999,5.147C36.862,12.009 36.862,23.135 29.999,29.999 23.136,36.862 12.01,36.862 5.147,29.999 -1.716,23.135 -1.716,12.009 5.147,5.147 12.01,-1.716 23.136,-1.716 29.999,5.147" Fill="#FF4D4D4D" Height="35.146" Canvas.Left="7.279" Canvas.Top="7.28" Width="35.147"/>
+                    <Path Data="M24.083,6.729L0.159,0C0.104,0.198,0.05,0.395,0,0.594" Fill="#FF4D4D4D" Height="6.729" Canvas.Left="0.769" Canvas.Top="18.124" Width="24.083"/>
+                    <Path Data="M24.083,6.729L0.159,0C0.104,0.198,0.05,0.395,0,0.594" Fill="#FF4D4D4D" Height="6.729" Canvas.Left="0.769" Canvas.Top="18.124" Width="24.083"/>
+                    <Path Data="M24.228,6.135L0.145,0C0.094,0.198,0.046,0.397,0,0.598" Fill="#FF4D4D4D" Height="6.135" Canvas.Left="0.624" Canvas.Top="18.718" Width="24.228"/>
+                    <Path Data="M23.924,7.319L0.174,0C0.113,0.196,0.055,0.393,0,0.59" Fill="#FF4D4D4D" Height="7.319" Canvas.Left="0.928" Canvas.Top="17.534" Width="23.924"/>
+                    <Path Data="M24.357,5.537L0.129,0C0.084,0.199,0.041,0.399,0,0.6" Fill="#FF4E4E4E" Height="5.537" Canvas.Left="0.495" Canvas.Top="19.316" Width="24.357"/>
+                    <Path Data="M23.75,7.904L0.188,0C0.123,0.195,0.06,0.389,0,0.585" Fill="#FF4E4E4E" Height="7.904" Canvas.Left="1.102" Canvas.Top="16.949" Width="23.75"/>
+                    <Path Data="M24.472,4.937L0.115,0C0.074,0.201,0.036,0.403,0,0.605" Fill="#FF4F4F4F" Height="4.937" Canvas.Left="0.38" Canvas.Top="19.916" Width="24.472"/>
+                    <Path Data="M23.562,8.485L0.203,0C0.133,0.194,0.065,0.387,0,0.581" Fill="#FF4F4F4F" Height="8.485" Canvas.Left="1.29" Canvas.Top="16.368" Width="23.562"/>
+                    <Path Data="M24.571,4.332L0.099,0C0.064,0.201,0.03,0.403,0,0.606" Fill="#FF505050" Height="4.332" Canvas.Left="0.281" Canvas.Top="20.521" Width="24.571"/>
+                    <Path Data="M23.359,9.06L0.217,0C0.142,0.192,0.069,0.383,0,0.575" Fill="#FF505050" Height="9.06" Canvas.Left="1.493" Canvas.Top="15.793" Width="23.359"/>
+                    <Path Data="M24.656,3.726L0.085,0C0.054,0.202,0.026,0.405,0,0.609" Fill="#FF515151" Height="3.726" Canvas.Left="0.196" Canvas.Top="21.127" Width="24.656"/>
+                    <Path Data="M23.142,9.629L0.231,0C0.151,0.188,0.074,0.379,0,0.569" Fill="#FF515151" Height="9.629" Canvas.Left="1.71" Canvas.Top="15.224" Width="23.142"/>
+                    <Path Data="M24.726,3.117L0.07,0C0.044,0.203,0.021,0.407,0,0.611" Fill="#FF525252" Height="3.117" Canvas.Left="0.126" Canvas.Top="21.736" Width="24.726"/>
+                    <Path Data="M22.911,10.193L0.245,0C0.161,0.187,0.079,0.374,0,0.564" Fill="#FF525252" Height="10.193" Canvas.Left="1.941" Canvas.Top="14.66" Width="22.911"/>
+                    <Path Data="M24.78,2.506L0.054,0C0.034,0.203,0.016,0.407,0,0.612" Fill="#FF535353" Height="2.506" Canvas.Left="0.072" Canvas.Top="22.347" Width="24.78"/>
+                    <Path Data="M22.666,10.75L0.259,0C0.17,0.184,0.084,0.37,0,0.557" Fill="#FF535353" Height="10.75" Canvas.Left="2.186" Canvas.Top="14.103" Width="22.666"/>
+                    <Path Data="M24.819,1.894L0.039,0C0.024,0.204,0.01,0.408,0,0.614" Fill="#FF545454" Height="1.894" Canvas.Left="0.033" Canvas.Top="22.959" Width="24.819"/>
+                    <Path Data="M22.407,11.301L0.273,0C0.179,0.182,0.089,0.366,0,0.551" Fill="#FF545454" Height="11.301" Canvas.Left="2.445" Canvas.Top="13.552" Width="22.407"/>
+                    <Path Data="M24.843,1.28L0.024,0C0.013,0.204,0.005,0.409,0,0.614" Fill="#FF555555" Height="1.28" Canvas.Left="0.009" Canvas.Top="23.573" Width="24.843"/>
+                    <Path Data="M22.134,11.846L0.286,0C0.188,0.181,0.093,0.362,0,0.545" Fill="#FF555555" Height="11.846" Canvas.Left="2.718" Canvas.Top="13.007" Width="22.134"/>
+                    <Path Data="M24.852,0.666L0.009,0C0.003,0.205,0,0.41,0,0.614" Fill="#FF565656" Height="0.666" Canvas.Left="0" Canvas.Top="24.187" Width="24.852"/>
+                    <Path Data="M21.848,12.382L0.3,0C0.198,0.178,0.098,0.356,0,0.536" Fill="#FF565656" Height="12.382" Canvas.Left="3.004" Canvas.Top="12.471" Width="21.848"/>
+                    <Path Data="M24.852,0.052L0,0 0,0.052C0,0.239,0.002,0.427,0.006,0.615" Fill="#FF575757" Height="0.615" Canvas.Left="0" Canvas.Top="24.801" Width="24.852"/>
+                    <Path Data="M21.548,12.911L0.313,0C0.206,0.174,0.102,0.351,0,0.529" Fill="#FF575757" Height="12.911" Canvas.Left="3.304" Canvas.Top="11.942" Width="21.548"/>
+                    <Path Data="M24.846,0L0,0.563C0.005,0.768,0.012,0.972,0.022,1.178" Fill="#FF575757" Height="1.178" Canvas.Left="0.006" Canvas.Top="24.853" Width="24.846"/>
+                    <Path Data="M21.235,13.433L0.325,0C0.215,0.173,0.106,0.347,0,0.522" Fill="#FF575757" Height="13.433" Canvas.Left="3.617" Canvas.Top="11.42" Width="21.235"/>
+                    <Path Data="M24.824,0L0,1.178C0.009,1.383,0.022,1.587,0.036,1.791" Fill="#FF585858" Height="1.791" Canvas.Left="0.028" Canvas.Top="24.853" Width="24.824"/>
+                    <Path Data="M20.91,13.946L0.339,0C0.224,0.169,0.111,0.341,0,0.513" Fill="#FF585858" Height="13.946" Canvas.Left="3.942" Canvas.Top="10.907" Width="20.91"/>
+                    <Path Data="M24.788,0L0,1.791C0.015,1.996,0.033,2.2,0.052,2.404" Fill="#FF595959" Height="2.404" Canvas.Left="0.064" Canvas.Top="24.853" Width="24.788"/>
+                    <Path Data="M20.571,14.45L0.351,0C0.232,0.167,0.115,0.335,0,0.504" Fill="#FF595959" Height="14.45" Canvas.Left="4.281" Canvas.Top="10.403" Width="20.571"/>
+                    <Path Data="M24.736,0L0,2.404C0.02,2.607,0.042,2.811,0.068,3.014" Fill="#FF5C5C5C" Height="3.014" Canvas.Left="0.116" Canvas.Top="24.853" Width="24.736"/>
+                    <Path Data="M20.22,14.946L0.364,0C0.241,0.164,0.119,0.329,0,0.496" Fill="#FF5C5C5C" Height="14.946" Canvas.Left="4.632" Canvas.Top="9.907" Width="20.22"/>
+                    <Path Data="M24.668,0L0,3.014C0.024,3.219,0.051,3.422,0.082,3.624" Fill="#FF5E5E5E" Height="3.624" Canvas.Left="0.184" Canvas.Top="24.853" Width="24.668"/>
+                    <Path Data="M19.856,15.433L0.376,0C0.248,0.161,0.123,0.323,0,0.487" Fill="#FF5E5E5E" Height="15.433" Canvas.Left="4.996" Canvas.Top="9.42" Width="19.856"/>
+                    <Path Data="M24.586,0L0,3.624C0.029,3.827,0.062,4.029,0.096,4.231" Fill="#FF606060" Height="4.231" Canvas.Left="0.266" Canvas.Top="24.853" Width="24.586"/>
+                    <Path Data="M19.48,15.909L0.387,0C0.256,0.157,0.127,0.316,0,0.476" Fill="#FF606060" Height="15.909" Canvas.Left="5.372" Canvas.Top="8.944" Width="19.48"/>
+                    <Path Data="M24.49,0L0,4.231C0.035,4.433,0.073,4.635,0.113,4.836" Fill="#FF626262" Height="4.836" Canvas.Left="0.362" Canvas.Top="24.853" Width="24.49"/>
+                    <Path Data="M19.093,16.377L0.4,0C0.264,0.154,0.132,0.31,0,0.468" Fill="#FF626262" Height="16.377" Canvas.Left="5.759" Canvas.Top="8.476" Width="19.093"/>
+                    <Path Data="M24.377,0L0,4.836C0.04,5.037,0.082,5.237,0.127,5.437" Fill="#FF656565" Height="5.437" Canvas.Left="0.475" Canvas.Top="24.853" Width="24.377"/>
+                    <Path Data="M18.693,16.834L0.41,0C0.272,0.15,0.135,0.303,0,0.457" Fill="#FF656565" Height="16.834" Canvas.Left="6.159" Canvas.Top="8.019" Width="18.693"/>
+                    <Path Data="M24.25,0L0,5.437C0.044,5.637,0.092,5.837,0.142,6.035" Fill="#FF676767" Height="6.035" Canvas.Left="0.602" Canvas.Top="24.853" Width="24.25"/>
+                    <Path Data="M18.283,17.281L0.422,0C0.28,0.147,0.139,0.295,0,0.447" Fill="#FF676767" Height="17.281" Canvas.Left="6.569" Canvas.Top="7.572" Width="18.283"/>
+                    <Path Data="M24.108,0L0,6.035C0.049,6.234,0.102,6.432,0.156,6.63" Fill="DimGray" Height="6.63" Canvas.Left="0.744" Canvas.Top="24.853" Width="24.108"/>
+                    <Path Data="M17.861,17.718L0.433,0C0.287,0.144,0.143,0.289,0,0.437" Fill="DimGray" Height="17.718" Canvas.Left="6.991" Canvas.Top="7.135" Width="17.861"/>
+                    <Path Data="M23.952,0L0,6.63C0.055,6.827,0.112,7.024,0.172,7.22" Fill="#FF6C6C6C" Height="7.22" Canvas.Left="0.9" Canvas.Top="24.853" Width="23.952"/>
+                    <Path Data="M17.428,18.144L0.444,0C0.294,0.141,0.146,0.282,0,0.426" Fill="#FF6C6C6C" Height="18.144" Canvas.Left="7.424" Canvas.Top="6.709" Width="17.428"/>
+                    <Path Data="M23.78,0L0,7.22C0.059,7.416,0.121,7.611,0.186,7.806" Fill="#FF6E6E6E" Height="7.806" Canvas.Left="1.072" Canvas.Top="24.853" Width="23.78"/>
+                    <Path Data="M16.984,18.558L0.454,0C0.301,0.136,0.15,0.275,0,0.414" Fill="#FF6E6E6E" Height="18.558" Canvas.Left="7.868" Canvas.Top="6.295" Width="16.984"/>
+                    <Path Data="M23.594,0L0,7.806C0.064,8.001,0.131,8.194,0.2,8.387" Fill="#FF707070" Height="8.387" Canvas.Left="1.258" Canvas.Top="24.853" Width="23.594"/>
+                    <Path Data="M16.53,18.961L0.464,0C0.308,0.133,0.153,0.266,0,0.403" Fill="#FF707070" Height="18.961" Canvas.Left="8.322" Canvas.Top="5.892" Width="16.53"/>
+                    <Path Data="M23.394,0L0,8.387C0.069,8.58,0.141,8.772,0.214,8.964" Fill="#FF727272" Height="8.964" Canvas.Left="1.458" Canvas.Top="24.853" Width="23.394"/>
+                    <Path Data="M16.066,19.353L0.474,0C0.315,0.128,0.156,0.259,0,0.392" Fill="#FF727272" Height="19.353" Canvas.Left="8.786" Canvas.Top="5.5" Width="16.066"/>
+                    <Path Data="M23.18,0L0,8.964C0.075,9.154,0.151,9.345,0.229,9.534" Fill="#FF757575" Height="9.534" Canvas.Left="1.672" Canvas.Top="24.853" Width="23.18"/>
+                    <Path Data="M15.592,19.733L0.483,0C0.321,0.125,0.159,0.251,0,0.38" Fill="#FF757575" Height="19.733" Canvas.Left="9.26" Canvas.Top="5.12" Width="15.592"/>
+                    <Path Data="M22.951,0L0,9.534C0.079,9.723,0.16,9.911,0.243,10.098" Fill="#FF777777" Height="10.098" Canvas.Left="1.901" Canvas.Top="24.853" Width="22.951"/>
+                    <Path Data="M15.109,20.1L0.493,0C0.327,0.12,0.163,0.242,0,0.367" Fill="#FF777777" Height="20.1" Canvas.Left="9.743" Canvas.Top="4.753" Width="15.109"/>
+                    <Path Data="M22.708,0L0,10.098C0.084,10.286,0.169,10.472,0.257,10.657" Fill="#FF797979" Height="10.657" Canvas.Left="2.144" Canvas.Top="24.853" Width="22.708"/>
+                    <Path Data="M14.616,20.455L0.502,0C0.333,0.116,0.166,0.234,0,0.355" Fill="#FF797979" Height="20.455" Canvas.Left="10.236" Canvas.Top="4.398" Width="14.616"/>
+                    <Path Data="M22.451,0L0,10.657C0.088,10.843,0.178,11.026,0.27,11.209" Fill="#FF7C7C7C" Height="11.209" Canvas.Left="2.401" Canvas.Top="24.853" Width="22.451"/>
+                    <Path Data="M14.114,20.799L0.51,0C0.338,0.112,0.168,0.227,0,0.344" Fill="#FF7C7C7C" Height="20.799" Canvas.Left="10.738" Canvas.Top="4.054" Width="14.114"/>
+                    <Path Data="M22.181,0L0,11.209C0.093,11.392,0.187,11.574,0.285,11.755" Fill="#FF7E7E7E" Height="11.755" Canvas.Left="2.671" Canvas.Top="24.853" Width="22.181"/>
+                    <Path Data="M13.604,21.129L0.519,0C0.344,0.108,0.171,0.219,0,0.33" Fill="#FF7E7E7E" Height="21.129" Canvas.Left="11.248" Canvas.Top="3.724" Width="13.604"/>
+                    <Path Data="M21.896,0L0,11.755C0.096,11.935,0.195,12.114,0.297,12.293" Fill="Gray" Height="12.293" Canvas.Left="2.956" Canvas.Top="24.853" Width="21.896"/>
+                    <Path Data="M13.085,21.446L0.526,0C0.349,0.104,0.173,0.209,0,0.317" Fill="Gray" Height="21.446" Canvas.Left="11.767" Canvas.Top="3.407" Width="13.085"/>
+                    <Path Data="M21.599,0L0,12.293C0.101,12.47,0.205,12.647,0.31,12.823" Fill="#FF838383" Height="12.823" Canvas.Left="3.253" Canvas.Top="24.853" Width="21.599"/>
+                    <Path Data="M12.559,21.75L0.534,0C0.355,0.099,0.177,0.201,0,0.304" Fill="#FF838383" Height="21.75" Canvas.Left="12.293" Canvas.Top="3.103" Width="12.559"/>
+                    <Path Data="M21.289,0L0,12.823C0.106,12.999,0.214,13.173,0.324,13.345" Fill="#FF858585" Height="13.345" Canvas.Left="3.563" Canvas.Top="24.853" Width="21.289"/>
+                    <Path Data="M12.025,22.041L0.542,0C0.36,0.094,0.18,0.192,0,0.291" Fill="#FF858585" Height="22.041" Canvas.Left="12.827" Canvas.Top="2.812" Width="12.025"/>
+                    <Path Data="M20.965,0L0,13.345C0.11,13.518,0.222,13.69,0.337,13.86" Fill="#FF878787" Height="13.86" Canvas.Left="3.887" Canvas.Top="24.853" Width="20.965"/>
+                    <Path Data="M11.483,22.318L0.549,0C0.364,0.09,0.182,0.183,0,0.277" Fill="#FF878787" Height="22.318" Canvas.Left="13.369" Canvas.Top="2.535" Width="11.483"/>
+                    <Path Data="M20.628,0L0,13.86C0.114,14.03,0.231,14.199,0.349,14.366" Fill="#FF898989" Height="14.366" Canvas.Left="4.224" Canvas.Top="24.853" Width="20.628"/>
+                    <Path Data="M10.934,22.581L0.555,0C0.369,0.085,0.184,0.173,0,0.263" Fill="#FF898989" Height="22.581" Canvas.Left="13.918" Canvas.Top="2.272" Width="10.934"/>
+                    <Path Data="M20.279,0L0,14.366C0.118,14.533,0.239,14.699,0.362,14.863" Fill="#FF8C8C8C" Height="14.863" Canvas.Left="4.573" Canvas.Top="24.853" Width="20.279"/>
+                    <Path Data="M10.379,22.831L0.562,0C0.374,0.081,0.186,0.164,0,0.25" Fill="#FF8C8C8C" Height="22.831" Canvas.Left="14.473" Canvas.Top="2.022" Width="10.379"/>
+                    <Path Data="M19.917,0L0,14.863C0.122,15.027,0.247,15.19,0.373,15.351" Fill="#FF8E8E8E" Height="15.351" Canvas.Left="4.935" Canvas.Top="24.853" Width="19.917"/>
+                    <Path Data="M9.817,23.068L0.568,0C0.377,0.077,0.188,0.156,0,0.237" Fill="#FF8E8E8E" Height="23.068" Canvas.Left="15.035" Canvas.Top="1.785" Width="9.817"/>
+                    <Path Data="M19.544,0L0,15.351C0.127,15.512,0.255,15.672,0.386,15.83" Fill="#FF909090" Height="15.83" Canvas.Left="5.308" Canvas.Top="24.853" Width="19.544"/>
+                    <Path Data="M9.249,23.289L0.573,0C0.381,0.072,0.19,0.145,0,0.221" Fill="#FF909090" Height="23.289" Canvas.Left="15.603" Canvas.Top="1.564" Width="9.249"/>
+                    <Path Data="M19.158,0L0,15.83C0.13,15.988,0.263,16.144,0.397,16.299" Fill="#FF939393" Height="16.299" Canvas.Left="5.694" Canvas.Top="24.853" Width="19.158"/>
+                    <Path Data="M8.676,23.496L0.578,0C0.385,0.066,0.192,0.135,0,0.207" Fill="#FF939393" Height="23.496" Canvas.Left="16.176" Canvas.Top="1.357" Width="8.676"/>
+                    <Path Data="M18.761,0L0,16.299C0.135,16.454,0.271,16.607,0.409,16.758" Fill="#FF959595" Height="16.758" Canvas.Left="6.091" Canvas.Top="24.853" Width="18.761"/>
+                    <Path Data="M8.098,23.69L0.584,0C0.389,0.063,0.194,0.126,0,0.194" Fill="#FF959595" Height="23.69" Canvas.Left="16.754" Canvas.Top="1.163" Width="8.098"/>
+                    <Path Data="M18.352,0L0,16.758C0.139,16.91,0.278,17.059,0.42,17.207" Fill="#FF979797" Height="17.207" Canvas.Left="6.5" Canvas.Top="24.853" Width="18.352"/>
+                    <Path Data="M7.514,23.868L0.588,0C0.391,0.057,0.195,0.117,0,0.178" Fill="#FF979797" Height="23.868" Canvas.Left="17.338" Canvas.Top="0.985" Width="7.514"/>
+                    <Path Data="M17.932,0L0,17.207C0.142,17.355,0.286,17.501,0.432,17.645" Fill="#FF9A9A9A" Height="17.645" Canvas.Left="6.92" Canvas.Top="24.853" Width="17.932"/>
+                    <Path Data="M6.926,24.032L0.593,0C0.395,0.052,0.197,0.107,0,0.164" Fill="#FF9A9A9A" Height="24.032" Canvas.Left="17.926" Canvas.Top="0.821" Width="6.926"/>
+                    <Path Data="M17.5,0L0,17.645C0.145,17.79,0.292,17.932,0.441,18.073" Fill="#FF9C9C9C" Height="18.073" Canvas.Left="7.352" Canvas.Top="24.853" Width="17.5"/>
+                    <Path Data="M6.333,24.182L0.596,0C0.397,0.048,0.198,0.098,0,0.15" Fill="#FF9C9C9C" Height="24.182" Canvas.Left="18.519" Canvas.Top="0.671" Width="6.333"/>
+                    <Path Data="M17.059,0L0,18.073C0.149,18.214,0.3,18.352,0.453,18.489" Fill="#FF9E9E9E" Height="18.489" Canvas.Left="7.793" Canvas.Top="24.853" Width="17.059"/>
+                    <Path Data="M5.737,24.316L0.6,0C0.4,0.042,0.199,0.087,0,0.134" Fill="#FF9E9E9E" Height="24.316" Canvas.Left="19.115" Canvas.Top="0.537" Width="5.737"/>
+                    <Path Data="M16.606,0L0,18.489C0.152,18.626,0.306,18.762,0.462,18.894" Fill="#FFA0A0A0" Height="18.894" Canvas.Left="8.246" Canvas.Top="24.853" Width="16.606"/>
+                    <Path Data="M5.137,24.436L0.603,0C0.402,0.037,0.2,0.077,0,0.12" Fill="#FFA0A0A0" Height="24.436" Canvas.Left="19.715" Canvas.Top="0.417" Width="5.137"/>
+                    <Path Data="M16.144,0L0,18.894C0.156,19.027,0.313,19.158,0.472,19.288" Fill="#FFA3A3A3" Height="19.288" Canvas.Left="8.708" Canvas.Top="24.853" Width="16.144"/>
+                    <Path Data="M4.534,24.54L0.606,0C0.404,0.032,0.201,0.067,0,0.104" Fill="#FFA3A3A3" Height="24.54" Canvas.Left="20.318" Canvas.Top="0.313" Width="4.534"/>
+                    <Path Data="M15.672,0L0,19.288C0.159,19.417,0.32,19.545,0.482,19.67" Fill="#FFA5A5A5" Height="19.67" Canvas.Left="9.18" Canvas.Top="24.853" Width="15.672"/>
+                    <Path Data="M3.928,24.63L0.608,0C0.405,0.027,0.202,0.058,0,0.09" Fill="#FFA5A5A5" Height="24.63" Canvas.Left="20.924" Canvas.Top="0.223" Width="3.928"/>
+                    <Path Data="M15.19,0L0,19.67C0.162,19.795,0.326,19.918,0.491,20.039" Fill="#FFA7A7A7" Height="20.039" Canvas.Left="9.662" Canvas.Top="24.853" Width="15.19"/>
+                    <Path Data="M3.32,24.704L0.611,0C0.406,0.022,0.203,0.047,0,0.074" Fill="#FFA7A7A7" Height="24.704" Canvas.Left="21.532" Canvas.Top="0.149" Width="3.32"/>
+                    <Path Data="M14.699,0L0,20.039C0.165,20.16,0.332,20.279,0.5,20.396" Fill="#FFAAAAAA" Height="20.396" Canvas.Left="10.153" Canvas.Top="24.853" Width="14.699"/>
+                    <Path Data="M2.709,24.764L0.611,0C0.407,0.018,0.203,0.037,0,0.06" Fill="#FFAAAAAA" Height="24.764" Canvas.Left="22.143" Canvas.Top="0.089" Width="2.709"/>
+                    <Path Data="M14.199,0L0,20.396C0.169,20.513,0.338,20.629,0.509,20.742" Fill="#FFACACAC" Height="20.742" Canvas.Left="10.653" Canvas.Top="24.853" Width="14.199"/>
+                    <Path Data="M2.098,24.809L0.613,0C0.409,0.013,0.204,0.028,0,0.045" Fill="#FFACACAC" Height="24.809" Canvas.Left="22.754" Canvas.Top="0.044" Width="2.098"/>
+                    <Path Data="M13.69,0L0,20.742C0.171,20.854,0.344,20.966,0.518,21.074" Fill="#FFAEAEAE" Height="21.074" Canvas.Left="11.162" Canvas.Top="24.853" Width="13.69"/>
+                    <Path Data="M1.485,24.837L0.614,0C0.409,0.007,0.205,0.016,0,0.028" Fill="#FFAEAEAE" Height="24.837" Canvas.Left="23.367" Canvas.Top="0.016" Width="1.485"/>
+                    <Path Data="M13.172,0L0,21.074C0.173,21.182,0.348,21.289,0.525,21.393" Fill="#FFB0B0B0" Height="21.393" Canvas.Left="11.68" Canvas.Top="24.853" Width="13.172"/>
+                    <Path Data="M0.871,24.852L0.615,0C0.41,0.003,0.205,0.007,0,0.015" Fill="#FFB0B0B0" Height="24.852" Canvas.Left="23.981" Canvas.Top="0.001" Width="0.871"/>
+                    <Path Data="M12.647,0L0,21.393C0.176,21.498,0.354,21.599,0.533,21.699" Fill="#FFB3B3B3" Height="21.699" Canvas.Left="12.205" Canvas.Top="24.853" Width="12.647"/>
+                    <Path Data="M0.256,24.853L0.615,0.003C0.495,0.001 0.376,0 0.256,0 0.171,0 0.086,0.001 0,0.001" Fill="#FFB3B3B3" Height="24.853" Canvas.Left="24.596" Canvas.Top="0" Width="0.615"/>
+                    <Path Data="M12.114,0L0,21.699C0.179,21.8,0.359,21.897,0.54,21.992" Fill="#FFB5B5B5" Height="21.992" Canvas.Left="12.738" Canvas.Top="24.853" Width="12.114"/>
+                    <Path Data="M0,24.85L0.973,0.016C0.769,0.008,0.563,0.003,0.359,0" Fill="#FFB5B5B5" Height="24.85" Canvas.Left="24.852" Canvas.Top="0.003" Width="0.973"/>
+                    <Path Data="M11.574,0L0,21.992C0.182,22.088,0.364,22.181,0.548,22.272" Fill="#FFB7B7B7" Height="22.272" Canvas.Left="13.278" Canvas.Top="24.853" Width="11.574"/>
+                    <Path Data="M0,24.834L1.587,0.032C1.383,0.019,1.178,0.009,0.973,0" Fill="#FFB7B7B7" Height="24.834" Canvas.Left="24.852" Canvas.Top="0.019" Width="1.587"/>
+                    <Path Data="M11.026,0L0,22.272C0.183,22.363,0.368,22.452,0.554,22.538" Fill="#FFBABABA" Height="22.538" Canvas.Left="13.826" Canvas.Top="24.853" Width="11.026"/>
+                    <Path Data="M0,24.802L2.2,0.047C1.996,0.028,1.792,0.013,1.587,0" Fill="#FFBABABA" Height="24.802" Canvas.Left="24.852" Canvas.Top="0.051" Width="2.2"/>
+                    <Path Data="M10.472,0L0,22.538C0.186,22.624,0.373,22.709,0.56,22.79" Fill="#FFBCBCBC" Height="22.79" Canvas.Left="14.38" Canvas.Top="24.853" Width="10.472"/>
+                    <Path Data="M0,24.755L2.812,0.061C2.608,0.039,2.404,0.018,2.2,0" Fill="#FFBCBCBC" Height="24.755" Canvas.Left="24.852" Canvas.Top="0.098" Width="2.812"/>
+                    <Path Data="M9.912,0L0,22.79C0.189,22.872,0.377,22.951,0.568,23.028" Fill="#FFBEBEBE" Height="23.028" Canvas.Left="14.94" Canvas.Top="24.853" Width="9.912"/>
+                    <Path Data="M0,24.694L3.421,0.078C3.219,0.049,3.015,0.024,2.812,0" Fill="#FFBEBEBE" Height="24.694" Canvas.Left="24.852" Canvas.Top="0.159" Width="3.421"/>
+                    <Path Data="M9.344,0L0,23.028C0.189,23.105,0.38,23.179,0.572,23.253" Fill="#FFC1C1C1" Height="23.253" Canvas.Left="15.508" Canvas.Top="24.853" Width="9.344"/>
+                    <Path Data="M0,24.616L4.03,0.092C3.827,0.059,3.625,0.028,3.421,0" Fill="#FFC1C1C1" Height="24.616" Canvas.Left="24.852" Canvas.Top="0.237" Width="4.03"/>
+                    <Path Data="M8.772,0L0,23.253C0.191,23.325,0.384,23.394,0.578,23.462" Fill="#FFC3C3C3" Height="23.462" Canvas.Left="16.08" Canvas.Top="24.853" Width="8.772"/>
+                    <Path Data="M0,24.524L4.635,0.108C4.434,0.069,4.232,0.034,4.03,0" Fill="#FFC3C3C3" Height="24.524" Canvas.Left="24.852" Canvas.Top="0.329" Width="4.635"/>
+                    <Path Data="M8.194,0L0,23.462C0.193,23.53,0.387,23.595,0.583,23.658" Fill="#FFC5C5C5" Height="23.658" Canvas.Left="16.658" Canvas.Top="24.853" Width="8.194"/>
+                    <Path Data="M0,24.416L5.237,0.121C5.037,0.078,4.836,0.038,4.635,0" Fill="#FFC5C5C5" Height="24.416" Canvas.Left="24.852" Canvas.Top="0.437" Width="5.237"/>
+                    <Path Data="M7.611,0L0,23.658C0.195,23.72,0.391,23.781,0.587,23.839" Fill="#FFC7C7C7" Height="23.839" Canvas.Left="17.241" Canvas.Top="24.853" Width="7.611"/>
+                    <Path Data="M0,24.295L5.836,0.138C5.637,0.09,5.438,0.044,5.237,0" Fill="#FFC7C7C7" Height="24.295" Canvas.Left="24.852" Canvas.Top="0.558" Width="5.836"/>
+                    <Path Data="M7.024,0L0,23.839C0.197,23.896,0.394,23.952,0.592,24.006" Fill="#FFCACACA" Height="24.006" Canvas.Left="17.828" Canvas.Top="24.853" Width="7.024"/>
+                    <Path Data="M0,24.157L6.432,0.151C6.234,0.098,6.036,0.047,5.836,0" Fill="#FFCACACA" Height="24.157" Canvas.Left="24.852" Canvas.Top="0.696" Width="6.432"/>
+                    <Path Data="M6.432,0L0,24.005C0.198,24.058,0.396,24.109,0.596,24.157" Fill="#FFCCCCCC" Height="24.157" Canvas.Left="18.42" Canvas.Top="24.853" Width="6.432"/>
+                    <Path Data="M0,24.006L7.024,0.167C6.828,0.108,6.63,0.053,6.432,0" Fill="#FFCCCCCC" Height="24.006" Canvas.Left="24.852" Canvas.Top="0.847" Width="7.024"/>
+                    <Path Data="M5.836,0L0,24.157C0.199,24.205,0.399,24.251,0.599,24.294" Fill="#FFCACACA" Height="24.294" Canvas.Left="19.016" Canvas.Top="24.853" Width="5.836"/>
+                    <Path Data="M0,23.839L7.612,0.181C7.417,0.118,7.221,0.058,7.024,0" Fill="#FFCACACA" Height="23.839" Canvas.Left="24.852" Canvas.Top="1.014" Width="7.612"/>
+                    <Path Data="M5.237,0L0,24.294C0.2,24.337,0.401,24.378,0.602,24.416" Fill="#FFC7C7C7" Height="24.416" Canvas.Left="19.615" Canvas.Top="24.853" Width="5.237"/>
+                    <Path Data="M0,23.658L8.194,0.195C8.001,0.128,7.807,0.062,7.612,0" Fill="#FFC7C7C7" Height="23.658" Canvas.Left="24.852" Canvas.Top="1.195" Width="8.194"/>
+                    <Path Data="M4.635,0L0,24.416C0.202,24.454,0.404,24.49,0.606,24.523" Fill="#FFC5C5C5" Height="24.523" Canvas.Left="20.217" Canvas.Top="24.853" Width="4.635"/>
+                    <Path Data="M0,23.463L8.772,0.21C8.581,0.138,8.388,0.067,8.194,0" Fill="#FFC5C5C5" Height="23.463" Canvas.Left="24.852" Canvas.Top="1.39" Width="8.772"/>
+                    <Path Data="M4.029,0L0,24.523C0.202,24.556,0.405,24.587,0.608,24.615" Fill="#FFC3C3C3" Height="24.615" Canvas.Left="20.823" Canvas.Top="24.853" Width="4.029"/>
+                    <Path Data="M0,23.253L9.345,0.223C9.155,0.147,8.964,0.072,8.772,0" Fill="#FFC3C3C3" Height="23.253" Canvas.Left="24.852" Canvas.Top="1.6" Width="9.345"/>
+                    <Path Data="M3.421,0L0,24.615C0.203,24.643,0.406,24.669,0.609,24.692" Fill="#FFC1C1C1" Height="24.692" Canvas.Left="21.431" Canvas.Top="24.853" Width="3.421"/>
+                    <Path Data="M0,23.03L9.912,0.239C9.724,0.158,9.535,0.078,9.345,0" Fill="#FFC1C1C1" Height="23.03" Canvas.Left="24.852" Canvas.Top="1.823" Width="9.912"/>
+                    <Path Data="M2.812,0L0,24.692C0.204,24.716,0.408,24.736,0.612,24.755" Fill="#FFBEBEBE" Height="24.755" Canvas.Left="22.04" Canvas.Top="24.853" Width="2.812"/>
+                    <Path Data="M0,22.791L10.472,0.253C10.286,0.166,10.099,0.082,9.912,0" Fill="#FFBEBEBE" Height="22.791" Canvas.Left="24.852" Canvas.Top="2.062" Width="10.472"/>
+                    <Path Data="M2.2,0L0,24.755C0.204,24.772,0.409,24.788,0.613,24.802" Fill="#FFBCBCBC" Height="24.802" Canvas.Left="22.652" Canvas.Top="24.853" Width="2.2"/>
+                    <Path Data="M0,22.538L11.026,0.265C10.843,0.175,10.658,0.086,10.472,0" Fill="#FFBCBCBC" Height="22.538" Canvas.Left="24.852" Canvas.Top="2.315" Width="11.026"/>
+                    <Path Data="M1.587,0L0,24.802C0.205,24.814,0.409,24.825,0.614,24.833" Fill="#FFBABABA" Height="24.833" Canvas.Left="23.265" Canvas.Top="24.853" Width="1.587"/>
+                    <Path Data="M0,22.273L11.574,0.28C11.393,0.185,11.21,0.091,11.026,0" Fill="#FFBABABA" Height="22.273" Canvas.Left="24.852" Canvas.Top="2.58" Width="11.574"/>
+                    <Path Data="M0.973,0L0,24.833C0.205,24.841,0.41,24.846,0.615,24.849" Fill="#FFB8B8B8" Height="24.849" Canvas.Left="23.879" Canvas.Top="24.853" Width="0.973"/>
+                    <Path Data="M0,21.993L12.114,0.293C11.936,0.193,11.755,0.095,11.574,0" Fill="#FFB8B8B8" Height="21.993" Canvas.Left="24.852" Canvas.Top="2.86" Width="12.114"/>
+                    <Path Data="M0.358,0L0,24.849C0.119,24.851 0.238,24.852 0.358,24.852 0.443,24.852 0.529,24.851 0.614,24.85" Fill="#FFB5B5B5" Height="24.852" Canvas.Left="24.494" Canvas.Top="24.853" Width="0.614"/>
+                    <Path Data="M0,21.7L12.647,0.306C12.471,0.202,12.293,0.1,12.114,0" Fill="#FFB5B5B5" Height="21.7" Canvas.Left="24.852" Canvas.Top="3.153" Width="12.647"/>
+                    <Path Data="M0,0L0.256,24.85C0.461,24.848,0.666,24.844,0.871,24.837" Fill="#FFB3B3B3" Height="24.85" Canvas.Left="24.852" Canvas.Top="24.853" Width="0.871"/>
+                    <Path Data="M0,21.394L13.173,0.32C12.999,0.211,12.824,0.105,12.647,0" Fill="#FFB3B3B3" Height="21.394" Canvas.Left="24.852" Canvas.Top="3.459" Width="13.173"/>
+                    <Path Data="M0,0L0.871,24.837C1.076,24.83,1.28,24.82,1.485,24.807" Fill="#FFB1B1B1" Height="24.837" Canvas.Left="24.852" Canvas.Top="24.853" Width="1.485"/>
+                    <Path Data="M0,21.074L13.69,0.332C13.519,0.219,13.346,0.108,13.172,0" Fill="#FFB1B1B1" Height="21.074" Canvas.Left="24.852" Canvas.Top="3.779" Width="13.69"/>
+                    <Path Data="M0,0L1.485,24.807C1.689,24.796,1.894,24.78,2.098,24.763" Fill="#FFAEAEAE" Height="24.807" Canvas.Left="24.852" Canvas.Top="24.853" Width="2.098"/>
+                    <Path Data="M0,20.742L14.199,0.344C14.031,0.228,13.861,0.113,13.69,0" Fill="#FFAEAEAE" Height="20.742" Canvas.Left="24.852" Canvas.Top="4.111" Width="14.199"/>
+                    <Path Data="M0,0L2.098,24.763C2.302,24.746,2.506,24.726,2.71,24.704" Fill="#FFACACAC" Height="24.763" Canvas.Left="24.852" Canvas.Top="24.853" Width="2.71"/>
+                    <Path Data="M0,20.398L14.699,0.358C14.534,0.237,14.367,0.118,14.199,0" Fill="#FFACACAC" Height="20.398" Canvas.Left="24.852" Canvas.Top="4.455" Width="14.699"/>
+                    <Path Data="M0,0L2.71,24.704C2.914,24.681,3.117,24.656,3.32,24.629" Fill="#FFAAAAAA" Height="24.704" Canvas.Left="24.852" Canvas.Top="24.853" Width="3.32"/>
+                    <Path Data="M0,20.04L15.19,0.37C15.028,0.245,14.864,0.122,14.699,0" Fill="#FFAAAAAA" Height="20.04" Canvas.Left="24.852" Canvas.Top="4.813" Width="15.19"/>
+                    <Path Data="M0,0L3.32,24.629C3.523,24.601,3.726,24.572,3.928,24.54" Fill="#FFA8A8A8" Height="24.629" Canvas.Left="24.852" Canvas.Top="24.853" Width="3.928"/>
+                    <Path Data="M0,19.67L15.672,0.382C15.513,0.252,15.352,0.125,15.19,0" Fill="#FFA8A8A8" Height="19.67" Canvas.Left="24.852" Canvas.Top="5.183" Width="15.672"/>
+                    <Path Data="M0,0L3.928,24.54C4.13,24.508,4.333,24.472,4.534,24.435" Fill="#FFA5A5A5" Height="24.54" Canvas.Left="24.852" Canvas.Top="24.853" Width="4.534"/>
+                    <Path Data="M0,19.288L16.144,0.393C15.988,0.26,15.831,0.129,15.672,0" Fill="#FFA5A5A5" Height="19.288" Canvas.Left="24.852" Canvas.Top="5.565" Width="16.144"/>
+                    <Path Data="M0,0L4.534,24.435C4.736,24.397,4.937,24.357,5.137,24.315" Fill="#FFA3A3A3" Height="24.435" Canvas.Left="24.852" Canvas.Top="24.853" Width="5.137"/>
+                    <Path Data="M0,18.895L16.607,0.406C16.454,0.268,16.3,0.133,16.144,0" Fill="#FFA3A3A3" Height="18.895" Canvas.Left="24.852" Canvas.Top="5.958" Width="16.607"/>
+                    <Path Data="M0,0L5.137,24.315C5.337,24.273,5.538,24.228,5.737,24.18" Fill="#FFA1A1A1" Height="24.315" Canvas.Left="24.852" Canvas.Top="24.853" Width="5.737"/>
+                    <Path Data="M0,18.489L17.059,0.416C16.91,0.275,16.759,0.136,16.607,0" Fill="#FFA1A1A1" Height="18.489" Canvas.Left="24.852" Canvas.Top="6.364" Width="17.059"/>
+                    <Path Data="M0,0L5.737,24.18C5.936,24.134,6.135,24.084,6.334,24.031" Fill="#FF9F9F9F" Height="24.18" Canvas.Left="24.852" Canvas.Top="24.853" Width="6.334"/>
+                    <Path Data="M0,18.073L17.501,0.427C17.355,0.283,17.208,0.14,17.059,0" Fill="#FF9F9F9F" Height="18.073" Canvas.Left="24.852" Canvas.Top="6.78" Width="17.501"/>
+                    <Path Data="M0,0L6.334,24.031C6.532,23.979,6.729,23.925,6.926,23.867" Fill="#FF9C9C9C" Height="24.031" Canvas.Left="24.852" Canvas.Top="24.853" Width="6.926"/>
+                    <Path Data="M0,17.646L17.932,0.439C17.79,0.29,17.646,0.145,17.501,0" Fill="#FF9C9C9C" Height="17.646" Canvas.Left="24.852" Canvas.Top="7.207" Width="17.932"/>
+                    <Path Data="M0,0L6.926,23.867C7.123,23.81,7.319,23.751,7.514,23.689" Fill="#FF9A9A9A" Height="23.867" Canvas.Left="24.852" Canvas.Top="24.853" Width="7.514"/>
+                    <Path Data="M0,17.207L18.352,0.448C18.214,0.297,18.074,0.147,17.932,0" Fill="#FF9A9A9A" Height="17.207" Canvas.Left="24.852" Canvas.Top="7.646" Width="18.352"/>
+                    <Path Data="M0,0L7.514,23.689C7.709,23.627,7.904,23.562,8.098,23.496" Fill="#FF989898" Height="23.689" Canvas.Left="24.852" Canvas.Top="24.853" Width="8.098"/>
+                    <Path Data="M0,16.759L18.761,0.459C18.626,0.305,18.49,0.151,18.352,0" Fill="#FF989898" Height="16.759" Canvas.Left="24.852" Canvas.Top="8.094" Width="18.761"/>
+                    <Path Data="M0,0L8.098,23.496C8.292,23.428,8.484,23.36,8.676,23.288" Fill="#FF959595" Height="23.496" Canvas.Left="24.852" Canvas.Top="24.853" Width="8.676"/>
+                    <Path Data="M0,16.3L19.158,0.47C19.028,0.312,18.895,0.155,18.761,0" Fill="#FF959595" Height="16.3" Canvas.Left="24.852" Canvas.Top="8.553" Width="19.158"/>
+                    <Path Data="M0,0L8.676,23.288C8.869,23.217,9.06,23.142,9.25,23.066" Fill="#FF939393" Height="23.288" Canvas.Left="24.852" Canvas.Top="24.853" Width="9.25"/>
+                    <Path Data="M0,15.83L19.544,0.478C19.417,0.317,19.289,0.157,19.158,0" Fill="#FF939393" Height="15.83" Canvas.Left="24.852" Canvas.Top="9.023" Width="19.544"/>
+                    <Path Data="M0,0L9.25,23.066C9.44,22.99,9.629,22.912,9.817,22.831" Fill="#FF919191" Height="23.066" Canvas.Left="24.852" Canvas.Top="24.853" Width="9.817"/>
+                    <Path Data="M0,15.352L19.917,0.489C19.795,0.323,19.67,0.161,19.544,0" Fill="#FF919191" Height="15.352" Canvas.Left="24.852" Canvas.Top="9.501" Width="19.917"/>
+                    <Path Data="M0,0L9.817,22.831C10.006,22.75,10.193,22.667,10.379,22.581" Fill="#FF8F8F8F" Height="22.831" Canvas.Left="24.852" Canvas.Top="24.853" Width="10.379"/>
+                    <Path Data="M0,14.863L20.279,0.497C20.161,0.329,20.041,0.164,19.917,0" Fill="#FF8F8F8F" Height="14.863" Canvas.Left="24.852" Canvas.Top="9.99" Width="20.279"/>
+                    <Path Data="M0,0L10.379,22.581C10.565,22.495,10.751,22.407,10.935,22.317" Fill="#FF8C8C8C" Height="22.581" Canvas.Left="24.852" Canvas.Top="24.853" Width="10.935"/>
+                    <Path Data="M0,14.366L20.628,0.505C20.514,0.336,20.398,0.167,20.279,0" Fill="#FF8C8C8C" Height="14.366" Canvas.Left="24.852" Canvas.Top="10.487" Width="20.628"/>
+                    <Path Data="M0,0L10.935,22.317C11.119,22.227,11.301,22.135,11.483,22.04" Fill="#FF8A8A8A" Height="22.317" Canvas.Left="24.852" Canvas.Top="24.853" Width="11.483"/>
+                    <Path Data="M0,13.861L20.965,0.515C20.855,0.342,20.743,0.17,20.628,0" Fill="#FF8A8A8A" Height="13.861" Canvas.Left="24.852" Canvas.Top="10.992" Width="20.965"/>
+                    <Path Data="M0,0L11.483,22.04C11.665,21.945,11.845,21.848,12.025,21.749" Fill="#FF888888" Height="22.04" Canvas.Left="24.852" Canvas.Top="24.853" Width="12.025"/>
+                    <Path Data="M0,13.346L21.289,0.523C21.183,0.347,21.075,0.173,20.965,0" Fill="#FF888888" Height="13.346" Canvas.Left="24.852" Canvas.Top="11.507" Width="21.289"/>
+                    <Path Data="M0,0L12.025,21.749C12.204,21.65,12.382,21.549,12.559,21.445" Fill="#FF868686" Height="21.749" Canvas.Left="24.852" Canvas.Top="24.853" Width="12.559"/>
+                    <Path Data="M0,12.823L21.599,0.53C21.498,0.352,21.395,0.175,21.289,0" Fill="#FF868686" Height="12.823" Canvas.Left="24.852" Canvas.Top="12.03" Width="21.599"/>
+                    <Path Data="M0,0L12.559,21.445C12.736,21.342,12.912,21.236,13.085,21.128" Fill="#FF838383" Height="21.445" Canvas.Left="24.852" Canvas.Top="24.853" Width="13.085"/>
+                    <Path Data="M0,12.293L21.896,0.538C21.8,0.357,21.701,0.178,21.599,0" Fill="#FF838383" Height="12.293" Canvas.Left="24.852" Canvas.Top="12.56" Width="21.896"/>
+                    <Path Data="M0,0L13.086,21.128C13.26,21.02,13.433,20.91,13.605,20.798" Fill="#FF818181" Height="21.128" Canvas.Left="24.852" Canvas.Top="24.853" Width="13.605"/>
+                    <Path Data="M0,11.755L22.181,0.545C22.088,0.362,21.994,0.181,21.896,0" Fill="#FF818181" Height="11.755" Canvas.Left="24.852" Canvas.Top="13.098" Width="22.181"/>
+                    <Path Data="M0,0L13.605,20.798C13.776,20.685,13.946,20.571,14.115,20.455" Fill="#FF7F7F7F" Height="20.798" Canvas.Left="24.852" Canvas.Top="24.853" Width="14.115"/>
+                    <Path Data="M0,11.21L22.451,0.552C22.363,0.367,22.273,0.182,22.181,0" Fill="#FF7F7F7F" Height="11.21" Canvas.Left="24.852" Canvas.Top="13.643" Width="22.451"/>
+                    <Path Data="M0,0L14.115,20.455C14.283,20.339,14.451,20.22,14.616,20.099" Fill="#FF7C7C7C" Height="20.455" Canvas.Left="24.852" Canvas.Top="24.853" Width="14.616"/>
+                    <Path Data="M0,10.658L22.708,0.558C22.625,0.372,22.539,0.185,22.451,0" Fill="#FF7C7C7C" Height="10.658" Canvas.Left="24.852" Canvas.Top="14.195" Width="22.708"/>
+                    <Path Data="M0,0L14.616,20.099C14.782,19.979,14.946,19.856,15.109,19.732" Fill="#FF7A7A7A" Height="20.099" Canvas.Left="24.852" Canvas.Top="24.853" Width="15.109"/>
+                    <Path Data="M0,10.1L22.951,0.566C22.872,0.376,22.792,0.188,22.708,0" Fill="#FF7A7A7A" Height="10.1" Canvas.Left="24.852" Canvas.Top="14.753" Width="22.951"/>
+                    <Path Data="M0,0L15.109,19.732C15.271,19.607,15.433,19.48,15.592,19.352" Fill="#FF787878" Height="19.732" Canvas.Left="24.852" Canvas.Top="24.853" Width="15.592"/>
+                    <Path Data="M0,9.534L23.18,0.57C23.106,0.379,23.029,0.189,22.951,0" Fill="#FF787878" Height="9.534" Canvas.Left="24.852" Canvas.Top="15.319" Width="23.18"/>
+                    <Path Data="M0,0L15.592,19.352C15.752,19.223,15.91,19.093,16.066,18.961" Fill="#FF767676" Height="19.352" Canvas.Left="24.852" Canvas.Top="24.853" Width="16.066"/>
+                    <Path Data="M0,8.964L23.394,0.576C23.325,0.384,23.253,0.191,23.18,0" Fill="#FF767676" Height="8.964" Canvas.Left="24.852" Canvas.Top="15.889" Width="23.394"/>
+                    <Path Data="M0,0L16.066,18.961C16.223,18.828,16.377,18.693,16.53,18.557" Fill="#FF737373" Height="18.961" Canvas.Left="24.852" Canvas.Top="24.853" Width="16.53"/>
+                    <Path Data="M0,8.388L23.595,0.581C23.53,0.387,23.463,0.193,23.394,0" Fill="#FF737373" Height="8.388" Canvas.Left="24.852" Canvas.Top="16.465" Width="23.595"/>
+                    <Path Data="M0,0L16.53,18.557C16.683,18.421,16.834,18.283,16.984,18.142" Fill="#FF717171" Height="18.557" Canvas.Left="24.852" Canvas.Top="24.853" Width="16.984"/>
+                    <Path Data="M0,7.807L23.78,0.586C23.721,0.39,23.659,0.194,23.595,0" Fill="#FF717171" Height="7.807" Canvas.Left="24.852" Canvas.Top="17.046" Width="23.78"/>
+                    <Path Data="M0,0L16.984,18.142C17.134,18.003,17.282,17.861,17.428,17.717" Fill="#FF6F6F6F" Height="18.142" Canvas.Left="24.852" Canvas.Top="24.853" Width="17.428"/>
+                    <Path Data="M0,7.221L23.952,0.591C23.897,0.394,23.84,0.196,23.78,0" Fill="#FF6F6F6F" Height="7.221" Canvas.Left="24.852" Canvas.Top="17.632" Width="23.952"/>
+                    <Path Data="M0,0L17.428,17.717C17.574,17.573,17.718,17.428,17.861,17.281" Fill="#FF6D6D6D" Height="17.717" Canvas.Left="24.852" Canvas.Top="24.853" Width="17.861"/>
+                    <Path Data="M0,6.63L24.108,0.595C24.059,0.395,24.006,0.197,23.952,0" Fill="#FF6D6D6D" Height="6.63" Canvas.Left="24.852" Canvas.Top="18.223" Width="24.108"/>
+                    <Path Data="M0,0L17.861,17.281C18.003,17.134,18.144,16.984,18.283,16.834" Fill="#FF6A6A6A" Height="17.281" Canvas.Left="24.852" Canvas.Top="24.853" Width="18.283"/>
+                    <Path Data="M0,6.035L24.251,0.597C24.206,0.397,24.158,0.198,24.108,0" Fill="#FF6A6A6A" Height="6.035" Canvas.Left="24.852" Canvas.Top="18.818" Width="24.251"/>
+                    <Path Data="M0,0L18.283,16.834C18.421,16.682,18.559,16.53,18.694,16.376" Fill="#FF686868" Height="16.834" Canvas.Left="24.852" Canvas.Top="24.853" Width="18.694"/>
+                    <Path Data="M0,5.438L24.377,0.602C24.337,0.401,24.295,0.2,24.251,0" Fill="#FF686868" Height="5.438" Canvas.Left="24.852" Canvas.Top="19.415" Width="24.377"/>
+                    <Path Data="M0,0L18.694,16.376C18.829,16.222,18.961,16.066,19.093,15.909" Fill="#FF666666" Height="16.376" Canvas.Left="24.852" Canvas.Top="24.853" Width="19.093"/>
+                    <Path Data="M0,4.836L24.49,0.604C24.455,0.402,24.417,0.201,24.377,0" Fill="#FF666666" Height="4.836" Canvas.Left="24.852" Canvas.Top="20.017" Width="24.49"/>
+                    <Path Data="M0,0L19.093,15.909C19.224,15.752,19.353,15.593,19.48,15.431" Fill="#FF636363" Height="15.909" Canvas.Left="24.852" Canvas.Top="24.853" Width="19.48"/>
+                    <Path Data="M0,4.232L24.586,0.607C24.557,0.405,24.524,0.202,24.49,0" Fill="#FF636363" Height="4.232" Canvas.Left="24.852" Canvas.Top="20.621" Width="24.586"/>
+                    <Path Data="M0,0L19.48,15.431C19.608,15.271,19.733,15.109,19.856,14.945" Fill="#FF626262" Height="15.431" Canvas.Left="24.852" Canvas.Top="24.853" Width="19.856"/>
+                    <Path Data="M0,3.625L24.669,0.609C24.644,0.406,24.617,0.203,24.586,0" Fill="#FF626262" Height="3.625" Canvas.Left="24.852" Canvas.Top="21.228" Width="24.669"/>
+                    <Path Data="M0,0L19.856,14.945C19.98,14.781,20.101,14.616,20.22,14.449" Fill="#FF616161" Height="14.945" Canvas.Left="24.852" Canvas.Top="24.853" Width="20.22"/>
+                    <Path Data="M0,3.016L24.736,0.611C24.716,0.407,24.694,0.204,24.669,0" Fill="#FF616161" Height="3.016" Canvas.Left="24.852" Canvas.Top="21.837" Width="24.736"/>
+                    <Path Data="M0,0L20.22,14.449C20.339,14.283,20.456,14.115,20.571,13.945" Fill="#FF606060" Height="14.449" Canvas.Left="24.852" Canvas.Top="24.853" Width="20.571"/>
+                    <Path Data="M0,2.405L24.788,0.613C24.773,0.409,24.755,0.205,24.736,0" Fill="#FF606060" Height="2.405" Canvas.Left="24.852" Canvas.Top="22.448" Width="24.788"/>
+                    <Path Data="M0,0L20.571,13.945C20.686,13.775,20.799,13.604,20.91,13.431" Fill="#FF5E5E5E" Height="13.945" Canvas.Left="24.852" Canvas.Top="24.853" Width="20.91"/>
+                    <Path Data="M0,1.792L24.825,0.614C24.815,0.409,24.802,0.205,24.788,0" Fill="#FF5E5E5E" Height="1.792" Canvas.Left="24.852" Canvas.Top="23.061" Width="24.825"/>
+                    <Path Data="M0,0L20.91,13.431C21.021,13.26,21.129,13.086,21.235,12.911" Fill="#FF5D5D5D" Height="13.431" Canvas.Left="24.852" Canvas.Top="24.853" Width="21.235"/>
+                    <Path Data="M0,1.178L24.846,0.614C24.841,0.409,24.834,0.204,24.825,0" Fill="#FF5D5D5D" Height="1.178" Canvas.Left="24.852" Canvas.Top="23.675" Width="24.846"/>
+                    <Path Data="M0,0L21.235,12.911C21.342,12.735,21.446,12.559,21.548,12.382" Fill="#FF5C5C5C" Height="12.911" Canvas.Left="24.852" Canvas.Top="24.853" Width="21.548"/>
+                    <Path Data="M0,0.564L24.852,0.615 24.852,0.564C24.852,0.376,24.85,0.188,24.846,0" Fill="#FF5C5C5C" Height="0.615" Canvas.Left="24.852" Canvas.Top="24.289" Width="24.852"/>
+                    <Path Data="M0,0L21.548,12.382C21.65,12.204,21.751,12.025,21.848,11.845" Fill="#FF5B5B5B" Height="12.382" Canvas.Left="24.852" Canvas.Top="24.853" Width="21.848"/>
+                    <Path Data="M0,0L24.843,0.666C24.849,0.461,24.852,0.256,24.852,0.051" Fill="#FF5B5B5B" Height="0.666" Canvas.Left="24.852" Canvas.Top="24.853" Width="24.852"/>
+                    <Path Data="M0,0L21.848,11.845C21.946,11.665,22.041,11.483,22.134,11.301" Fill="#FF595959" Height="11.845" Canvas.Left="24.852" Canvas.Top="24.853" Width="22.134"/>
+                    <Path Data="M0,0L24.819,1.28C24.83,1.075,24.838,0.871,24.843,0.666" Fill="#FF595959" Height="1.28" Canvas.Left="24.852" Canvas.Top="24.853" Width="24.843"/>
+                    <Path Data="M0,0L22.134,11.301C22.228,11.118,22.318,10.934,22.407,10.75" Fill="#FF585858" Height="11.301" Canvas.Left="24.852" Canvas.Top="24.853" Width="22.407"/>
+                    <Path Data="M0,0L24.78,1.893C24.796,1.689,24.809,1.484,24.819,1.28" Fill="#FF585858" Height="1.893" Canvas.Left="24.852" Canvas.Top="24.853" Width="24.819"/>
+                    <Path Data="M0,0L22.407,10.75C22.496,10.565,22.582,10.379,22.666,10.192" Fill="#FF575757" Height="10.75" Canvas.Left="24.852" Canvas.Top="24.853" Width="22.666"/>
+                    <Path Data="M0,0L24.726,2.506C24.747,2.302,24.764,2.097,24.78,1.893" Fill="#FF575757" Height="2.506" Canvas.Left="24.852" Canvas.Top="24.853" Width="24.78"/>
+                    <Path Data="M0,0L22.666,10.192C22.75,10.006,22.832,9.817,22.911,9.629" Fill="#FF555555" Height="10.192" Canvas.Left="24.852" Canvas.Top="24.853" Width="22.911"/>
+                    <Path Data="M0,0L24.656,3.117C24.682,2.913,24.705,2.71,24.726,2.506" Fill="#FF555555" Height="3.117" Canvas.Left="24.852" Canvas.Top="24.853" Width="24.726"/>
+                    <Path Data="M0,0L22.911,9.629C22.991,9.439,23.068,9.25,23.143,9.058" Fill="#FF545454" Height="9.629" Canvas.Left="24.852" Canvas.Top="24.853" Width="23.143"/>
+                    <Path Data="M0,0L24.571,3.725C24.602,3.523,24.63,3.32,24.656,3.117" Fill="#FF545454" Height="3.725" Canvas.Left="24.852" Canvas.Top="24.853" Width="24.656"/>
+                    <Path Data="M0,0L23.143,9.058C23.217,8.868,23.29,8.677,23.359,8.483" Fill="#FF535353" Height="9.058" Canvas.Left="24.852" Canvas.Top="24.853" Width="23.359"/>
+                    <Path Data="M0,0L24.472,4.332C24.507,4.131,24.541,3.928,24.571,3.725" Fill="#FF535353" Height="4.332" Canvas.Left="24.852" Canvas.Top="24.853" Width="24.571"/>
+                    <Path Data="M0,0L23.359,8.483C23.429,8.291,23.497,8.097,23.562,7.903" Fill="#FF525252" Height="8.483" Canvas.Left="24.852" Canvas.Top="24.853" Width="23.562"/>
+                    <Path Data="M0,0L24.357,4.936C24.398,4.735,24.436,4.534,24.472,4.332" Fill="#FF525252" Height="4.936" Canvas.Left="24.852" Canvas.Top="24.853" Width="24.472"/>
+                    <Path Data="M0,0L23.562,7.903C23.627,7.709,23.69,7.513,23.751,7.318" Fill="#FF505050" Height="7.903" Canvas.Left="24.852" Canvas.Top="24.853" Width="23.751"/>
+                    <Path Data="M0,0L24.228,5.537C24.273,5.338,24.316,5.137,24.357,4.936" Fill="#FF505050" Height="5.537" Canvas.Left="24.852" Canvas.Top="24.853" Width="24.357"/>
+                    <Path Data="M0,0L23.751,7.318C23.811,7.122,23.869,6.926,23.924,6.728" Fill="#FF4F4F4F" Height="7.318" Canvas.Left="24.852" Canvas.Top="24.853" Width="23.924"/>
+                    <Path Data="M0,0L24.084,6.135C24.134,5.936,24.182,5.737,24.228,5.537" Fill="#FF4F4F4F" Height="6.135" Canvas.Left="24.852" Canvas.Top="24.853" Width="24.228"/>
+                    <Path Data="M0,0L23.924,6.728C23.98,6.531,24.033,6.333,24.084,6.135" Fill="#FF4E4E4E" Height="6.728" Canvas.Left="24.852" Canvas.Top="24.853" Width="24.084"/>
+                    <Path Data="M0,0L23.924,6.728C23.98,6.531,24.033,6.333,24.084,6.135" Fill="#FF4E4E4E" Height="6.728" Canvas.Left="24.852" Canvas.Top="24.853" Width="24.084"/>
+                </Canvas>
+                <Path Data="M30.283,5.431C37.146,12.293 37.146,23.419 30.283,30.283 23.42,37.146 12.294,37.146 5.431,30.283 -1.432,23.419 -1.432,12.293 5.431,5.431 12.294,-1.432 23.42,-1.432 30.283,5.431z" Height="35.714" Canvas.Left="9.58" Stroke="#FF4D4D4D" StrokeThickness="0.567" StrokeMiterLimit="22.926" Canvas.Top="210.993" Width="35.714"/>
+                <Path Data="M114.804,113.811C114.256,113.811 113.811,114.255 113.811,114.803 113.811,115.351 114.256,115.795 114.804,115.795 115.351,115.795 115.796,115.351 115.796,114.803 115.796,114.255 115.351,113.811 114.804,113.811 M114.804,229.607C51.4,229.607 0,178.207 0,114.803 0,51.399 51.4,0 114.804,0 178.208,0 229.606,51.399 229.606,114.803 229.606,178.207 178.208,229.607 114.804,229.607" Fill="#FF0D0D0D" Height="229.607" Canvas.Left="16.759" Canvas.Top="9.921" Width="229.606"/>
+                <Path Data="F1M2.538,10.279C2.538,13.581 2.927,15.777 3.7,16.873 4.472,17.965 5.423,18.512 6.556,18.512 7.694,18.512 8.645,17.96 9.418,16.864 10.191,15.767 10.579,13.572 10.579,10.279 10.579,6.969 10.191,4.767 9.418,3.68 8.645,2.59 7.685,2.047 6.533,2.047 5.395,2.047 4.491,2.529 3.812,3.489 2.964,4.711 2.538,6.977 2.538,10.279 M0,10.279C0,7.9 0.244,5.985 0.735,4.538 1.222,3.086 1.953,1.967 2.918,1.179 3.882,0.393 5.095,0 6.556,0 7.638,0 8.584,0.219 9.399,0.656 10.214,1.087 10.883,1.714 11.418,2.534 11.947,3.353 12.363,4.35 12.663,5.526 12.967,6.701 13.117,8.285 13.117,10.279 13.117,12.639 12.874,14.541 12.391,15.993 11.904,17.445 11.178,18.563 10.214,19.355 9.249,20.146 8.031,20.54 6.556,20.54 4.617,20.54 3.095,19.847 1.99,18.456 0.665,16.784 0,14.053 0,10.279" Fill="White" Height="20.54" Canvas.Left="59.309" Canvas.Top="142.434" Width="13.117"/>
+                <Path Data="F1M0,0L7.591,0 7.591,2.482 0,2.482z" Fill="White" Height="2.482" Canvas.Left="90.383" Canvas.Top="188.764" Width="7.591"/>
+                <Path Data="F1M13.297,17.824L13.297,20.198 0.002,20.198C-0.017,19.604 0.076,19.032 0.287,18.485 0.625,17.576 1.168,16.686 1.912,15.806 2.662,14.93 3.739,13.914 5.144,12.762 7.331,10.968 8.811,9.549 9.579,8.5 10.347,7.455 10.731,6.463 10.731,5.531 10.731,4.552 10.379,3.728 9.682,3.054 8.979,2.384 8.066,2.047 6.942,2.047 5.753,2.047 4.802,2.403 4.09,3.119 3.374,3.831 3.013,4.819 3.004,6.079L0.465,5.821C0.639,3.925 1.294,2.483 2.428,1.489 3.561,0.496 5.088,0 6.998,0 8.928,0 10.454,0.539 11.578,1.607 12.707,2.679 13.269,4.004 13.269,5.587 13.269,6.393 13.105,7.184 12.773,7.962 12.445,8.738 11.897,9.559 11.133,10.415 10.37,11.278 9.101,12.457 7.326,13.956 5.846,15.201 4.896,16.045 4.474,16.489 4.052,16.93 3.706,17.375 3.43,17.824z" Fill="White" Height="20.198" Canvas.Left="99.701" Canvas.Top="177.084" Width="13.297"/>
+                <Path Data="F1M0,0L7.591,0 7.591,2.482 0,2.482z" Fill="White" Height="2.482" Canvas.Left="144.983" Canvas.Top="188.764" Width="7.591"/>
+                <Path Data="F1M8.724,13.033L8.724,3.967 2.43,13.033z M8.724,20.114L8.724,15.3 0,15.3 0,13.033 9.179,0 11.197,0 11.197,13.033 13.914,13.033 13.914,15.3 11.197,15.3 11.197,20.114z" Fill="White" Height="20.114" Canvas.Left="153.806" Canvas.Top="177.168" Width="13.914"/>
+                <Path Data="F1M13.298,17.824L13.298,20.198 0.002,20.198C-0.016,19.604 0.077,19.032 0.288,18.484 0.625,17.575 1.168,16.686 1.913,15.805 2.662,14.93 3.739,13.913 5.144,12.761 7.331,10.968 8.811,9.549 9.579,8.5 10.347,7.455 10.731,6.463 10.731,5.53 10.731,4.552 10.38,3.728 9.682,3.053 8.98,2.383 8.067,2.047 6.943,2.047 5.753,2.047 4.802,2.402 4.09,3.119 3.374,3.831 3.014,4.819 3.004,6.078L0.466,5.821C0.639,3.924 1.295,2.482 2.428,1.489 3.562,0.496 5.088,0 6.999,0 8.928,0 10.455,0.538 11.579,1.606 12.707,2.679 13.27,4.004 13.27,5.587 13.27,6.392 13.106,7.184 12.773,7.961 12.445,8.738 11.897,9.558 11.134,10.415 10.37,11.277 9.102,12.457 7.326,13.956 5.847,15.201 4.896,16.044 4.475,16.489 4.053,16.929 3.707,17.374 3.43,17.824z" Fill="White" Height="20.198" Canvas.Left="58.993" Canvas.Top="88.959" Width="13.298"/>
+                <Path Data="F1M8.724,13.033L8.724,3.967 2.43,13.033z M8.724,20.114L8.724,15.3 0,15.3 0,13.033 9.179,0 11.197,0 11.197,13.033 13.913,13.033 13.913,15.3 11.197,15.3 11.197,20.114z" Fill="White" Height="20.114" Canvas.Left="98.699" Canvas.Top="48.243" Width="13.913"/>
+                <Path Data="F1M2.837,13.68C2.837,14.533 3.02,15.347 3.38,16.125 3.741,16.902 4.247,17.492 4.893,17.899 5.544,18.307 6.228,18.513 6.94,18.513 7.984,18.513 8.878,18.092 9.627,17.248 10.377,16.406 10.752,15.263 10.752,13.821 10.752,12.43 10.381,11.334 9.642,10.533 8.902,9.732 7.969,9.334 6.846,9.334 5.727,9.334 4.781,9.732 4.003,10.533 3.226,11.334 2.837,12.383 2.837,13.68 M12.92,5.012L10.466,5.204C10.246,4.234 9.937,3.527 9.534,3.092 8.865,2.384 8.04,2.033 7.061,2.033 6.275,2.033 5.586,2.253 4.992,2.694 4.214,3.26 3.6,4.089 3.151,5.176 2.707,6.262 2.472,7.812 2.454,9.826 3.048,8.922 3.774,8.247 4.635,7.807 5.493,7.372 6.396,7.152 7.337,7.152 8.986,7.152 10.386,7.756 11.544,8.969 12.7,10.182 13.281,11.746 13.281,13.666 13.281,14.931 13.004,16.101 12.461,17.188 11.919,18.269 11.169,19.103 10.218,19.679 9.267,20.255 8.19,20.541 6.982,20.541 4.921,20.541 3.245,19.787 1.948,18.269 0.646,16.757 0,14.261 0,10.786 0,6.899 0.715,4.075 2.154,2.309 3.404,0.773 5.089,0 7.216,0 8.794,0 10.091,0.446 11.103,1.335 12.115,2.221 12.718,3.447 12.92,5.012" Fill="White" Height="20.541" Canvas.Left="147.102" Canvas.Top="48.158" Width="13.281"/>
+                <Path Data="F1M2.538,14.396C2.538,15.098 2.706,15.782 3.039,16.438 3.371,17.098 3.867,17.609 4.527,17.969 5.188,18.329 5.895,18.512 6.654,18.512 7.834,18.512 8.808,18.133 9.576,17.369 10.345,16.611 10.728,15.646 10.728,14.475 10.728,13.286 10.335,12.302 9.543,11.525 8.752,10.748 7.76,10.359 6.57,10.359 5.408,10.359 4.448,10.743 3.685,11.511 2.922,12.284 2.538,13.243 2.538,14.396 M3.334,5.105C3.334,6.055 3.642,6.833 4.252,7.437 4.865,8.041 5.661,8.345 6.639,8.345 7.591,8.345 8.373,8.046 8.981,7.446 9.591,6.847 9.89,6.111 9.89,5.245 9.89,4.336 9.581,3.578 8.953,2.96 8.326,2.341 7.549,2.032 6.612,2.032 5.671,2.032 4.889,2.337 4.265,2.936 3.642,3.54 3.334,4.266 3.334,5.105 M3.83,9.291C2.805,8.917 2.046,8.383 1.55,7.685 1.057,6.992 0.809,6.158 0.809,5.189 0.809,3.723 1.334,2.496 2.388,1.498 3.441,0.501 4.837,0 6.584,0 8.34,0 9.754,0.51 10.826,1.531 11.894,2.552 12.429,3.793 12.429,5.259 12.429,6.191 12.184,7.001 11.698,7.694 11.206,8.383 10.466,8.917 9.469,9.291 10.7,9.694 11.641,10.34 12.288,11.239 12.93,12.134 13.253,13.206 13.253,14.447 13.253,16.171 12.643,17.613 11.431,18.784 10.213,19.955 8.611,20.54 6.626,20.54 4.64,20.54 3.043,19.955 1.826,18.779 0.608,17.604 0,16.138 0,14.382 0,13.075 0.332,11.979 0.997,11.094 1.657,10.214 2.603,9.61 3.83,9.291" Fill="White" Height="20.54" Canvas.Left="190.382" Canvas.Top="88.959" Width="13.253"/>
+                <Path Data="F1M0,0L2.659,0 2.659,20.114 0,20.114z" Fill="White" Height="20.114" Canvas.Left="181.854" Canvas.Top="142.443" Width="2.659"/>
+                <Path Data="F1M2.538,10.279C2.538,13.581 2.927,15.777 3.7,16.873 4.473,17.964 5.423,18.512 6.557,18.512 7.694,18.512 8.646,17.96 9.418,16.864 10.191,15.768 10.579,13.572 10.579,10.279 10.579,6.968 10.191,4.767 9.418,3.68 8.646,2.589 7.686,2.046 6.533,2.046 5.396,2.046 4.491,2.529 3.813,3.489 2.965,4.711 2.538,6.977 2.538,10.279 M0,10.279C0,7.9 0.244,5.985 0.735,4.538 1.223,3.086 1.953,1.966 2.918,1.18 3.883,0.393 5.096,0 6.557,0 7.639,0 8.585,0.219 9.4,0.655 10.214,1.086 10.884,1.713 11.418,2.534 11.947,3.353 12.363,4.35 12.664,5.526 12.968,6.701 13.118,8.284 13.118,10.279 13.118,12.639 12.874,14.541 12.392,15.993 11.905,17.445 11.179,18.564 10.214,19.355 9.249,20.146 8.032,20.54 6.557,20.54 4.618,20.54 3.096,19.847 1.99,18.456 0.665,16.784 0,14.053 0,10.279" Fill="White" Height="20.54" Canvas.Left="188.203" Canvas.Top="142.359" Width="13.118"/>
+                <Path Data="F1M2.882,5.887L6.27,5.887 5.226,3.122C4.91,2.282 4.673,1.591 4.519,1.049 4.391,1.691 4.212,2.326 3.98,2.959z M0,9.99L3.838,0 5.261,0 9.35,9.99 7.843,9.99 6.678,6.964 2.5,6.964 1.405,9.99z" Fill="White" Height="9.99" Canvas.Left="78.362" Canvas.Top="74.903" Width="9.35"/>
+                <Path Data="F1M7.508,6.656L8.831,6.991C8.554,8.075 8.054,8.902 7.336,9.475 6.615,10.044 5.736,10.328 4.694,10.328 3.617,10.328 2.742,10.11 2.068,9.672 1.393,9.233 0.88,8.598 0.528,7.768 0.177,6.935 0,6.042 0,5.088 0,4.049 0.198,3.142 0.596,2.367 0.993,1.593 1.558,1.004 2.294,0.602 3.026,0.2 3.833,0 4.715,0 5.715,0 6.554,0.253 7.236,0.762 7.917,1.272 8.392,1.986 8.659,2.909L7.359,3.216C7.127,2.488 6.792,1.96 6.349,1.628 5.91,1.295 5.357,1.13 4.687,1.13 3.919,1.13 3.28,1.314 2.763,1.681 2.247,2.051 1.884,2.544 1.677,3.165 1.468,3.784 1.363,4.423 1.363,5.082 1.363,5.933 1.487,6.672 1.733,7.307 1.982,7.94 2.366,8.414 2.889,8.728 3.412,9.043 3.978,9.198 4.587,9.198 5.326,9.198 5.952,8.984 6.466,8.558 6.98,8.13 7.326,7.496 7.508,6.656" Fill="White" Height="10.328" Canvas.Left="88.386" Canvas.Top="74.734" Width="8.831"/>
+                <Path Data="F1M7.508,6.656L8.831,6.991C8.555,8.075 8.055,8.902 7.336,9.475 6.615,10.044 5.735,10.328 4.694,10.328 3.617,10.328 2.742,10.11 2.068,9.672 1.393,9.233 0.879,8.598 0.528,7.768 0.177,6.935 0,6.042 0,5.088 0,4.049 0.198,3.142 0.596,2.367 0.993,1.593 1.558,1.004 2.293,0.602 3.026,0.2 3.833,0 4.714,0 5.715,0 6.554,0.253 7.235,0.762 7.917,1.272 8.391,1.986 8.659,2.909L7.359,3.216C7.126,2.488 6.791,1.96 6.349,1.628 5.91,1.295 5.356,1.13 4.686,1.13 3.919,1.13 3.279,1.314 2.763,1.681 2.247,2.051 1.884,2.544 1.677,3.165 1.468,3.784 1.363,4.423 1.363,5.082 1.363,5.933 1.486,6.672 1.733,7.307 1.982,7.94 2.366,8.414 2.889,8.728 3.412,9.043 3.977,9.198 4.586,9.198 5.326,9.198 5.952,8.984 6.466,8.558 6.98,8.13 7.326,7.496 7.508,6.656" Fill="White" Height="10.328" Canvas.Left="98.464" Canvas.Top="74.734" Width="8.831"/>
+                <Path Data="F1M0,9.99L0,0 7.222,0 7.222,1.18 1.321,1.18 1.321,4.238 6.847,4.238 6.847,5.41 1.321,5.41 1.321,8.81 7.454,8.81 7.454,9.99z" Fill="White" Height="9.99" Canvas.Left="108.951" Canvas.Top="74.903" Width="7.454"/>
+                <Path Data="F1M0,9.99L0,0 1.324,0 1.324,8.81 6.243,8.81 6.243,9.99z" Fill="White" Height="9.99" Canvas.Left="118.175" Canvas.Top="74.903" Width="6.243"/>
+                <Path Data="F1M0,9.99L0,0 7.22,0 7.22,1.18 1.321,1.18 1.321,4.238 6.846,4.238 6.846,5.41 1.321,5.41 1.321,8.81 7.454,8.81 7.454,9.99z" Fill="White" Height="9.99" Canvas.Left="126.021" Canvas.Top="74.903" Width="7.454"/>
+                <Path Data="F1M1.322,4.41L4.163,4.41C4.766,4.41 5.24,4.347 5.579,4.222 5.921,4.096 6.18,3.896 6.356,3.622 6.533,3.347 6.621,3.049 6.621,2.726 6.621,2.254 6.451,1.866 6.108,1.561 5.766,1.256 5.224,1.105 4.482,1.105L1.322,1.105z M0,9.99L0,0 4.428,0C5.319,0 5.996,0.091 6.459,0.27 6.921,0.449 7.291,0.766 7.571,1.219 7.847,1.675 7.985,2.177 7.985,2.726 7.985,3.436 7.756,4.031 7.296,4.517 6.838,5.003 6.128,5.313 5.17,5.445 5.522,5.613 5.786,5.777 5.968,5.943 6.354,6.296 6.719,6.741 7.066,7.271L8.803,9.99 7.141,9.99 5.82,7.91C5.433,7.313 5.115,6.852 4.864,6.536 4.615,6.217 4.391,5.994 4.194,5.868 3.996,5.74 3.795,5.652 3.591,5.601 3.44,5.571 3.196,5.554 2.854,5.554L1.322,5.554 1.322,9.99z" Fill="White" Height="9.99" Canvas.Left="135.321" Canvas.Top="74.903" Width="8.803"/>
+                <Path Data="F1M2.882,5.887L6.271,5.887 5.226,3.122C4.91,2.282 4.673,1.591 4.519,1.049 4.391,1.691 4.212,2.326 3.98,2.959z M0,9.99L3.838,0 5.261,0 9.35,9.99 7.843,9.99 6.677,6.964 2.5,6.964 1.405,9.99z" Fill="White" Height="9.99" Canvas.Left="144.28" Canvas.Top="74.903" Width="9.35"/>
+                <Path Data="F1M3.291,9.99L3.291,1.18 0,1.18 0,0 7.917,0 7.917,1.18 4.612,1.18 4.612,9.99z" Fill="White" Height="9.99" Canvas.Left="152.902" Canvas.Top="74.903" Width="7.917"/>
+                <Path Data="F1M0,0L1.321,0 1.321,9.989 0,9.989z" Fill="White" Height="9.989" Canvas.Left="162.4" Canvas.Top="74.903" Width="1.321"/>
+                <Path Data="F1M1.364,5.321C1.364,6.526 1.687,7.472 2.333,8.165 2.982,8.859 3.793,9.205 4.771,9.205 5.766,9.205 6.584,8.856 7.227,8.156 7.869,7.456 8.192,6.463 8.192,5.177 8.192,4.365 8.052,3.656 7.778,3.049 7.503,2.442 7.101,1.972 6.573,1.637 6.043,1.304 5.45,1.137 4.791,1.137 3.854,1.137 3.049,1.458 2.375,2.102 1.701,2.744 1.364,3.819 1.364,5.321 M0,5.3C0,3.642 0.445,2.344 1.335,1.407 2.226,0.469 3.375,0 4.785,0 5.705,0 6.539,0.22 7.278,0.66 8.017,1.102 8.582,1.716 8.971,2.505 9.36,3.291 9.552,4.186 9.552,5.184 9.552,6.198 9.35,7.105 8.941,7.903 8.532,8.703 7.953,9.307 7.204,9.719 6.453,10.131 5.645,10.335 4.778,10.335 3.835,10.335 2.996,10.11 2.256,9.654 1.515,9.2 0.954,8.579 0.573,7.793 0.191,7.01 0,6.177 0,5.3" Fill="White" Height="10.335" Canvas.Left="165.649" Canvas.Top="74.727" Width="9.552"/>
+                <Path Data="F1M0,9.99L0,0 1.355,0 6.602,7.843 6.602,0 7.87,0 7.87,9.99 6.514,9.99 1.267,2.14 1.267,9.99z" Fill="White" Height="9.99" Canvas.Left="176.893" Canvas.Top="74.903" Width="7.87"/>
+                <Path Data="F1M0,9.99L0,0 1.323,0 1.323,8.81 6.243,8.81 6.243,9.99z" Fill="White" Height="9.99" Canvas.Left="110.463" Canvas.Top="90.803" Width="6.243"/>
+                <Path Data="F1M0,0L1.321,0 1.321,9.989 0,9.989z" Fill="White" Height="9.989" Canvas.Left="118.506" Canvas.Top="90.803" Width="1.321"/>
+                <Path Data="F1M0,9.99L0,0 1.991,0 4.354,7.073C4.573,7.731 4.733,8.225 4.831,8.552 4.945,8.189 5.121,7.654 5.364,6.95L7.754,0 9.533,0 9.533,9.99 8.259,9.99 8.259,1.629 5.357,9.99 4.163,9.99 1.275,1.487 1.275,9.99z" Fill="White" Height="9.99" Canvas.Left="122.115" Canvas.Top="90.803" Width="9.533"/>
+                <Path Data="F1M0,0L1.321,0 1.321,9.989 0,9.989z" Fill="White" Height="9.989" Canvas.Left="134.007" Canvas.Top="90.803" Width="1.321"/>
+                <Path Data="F1M3.291,9.99L3.291,1.18 0,1.18 0,0 7.917,0 7.917,1.18 4.612,1.18 4.612,9.99z" Fill="White" Height="9.99" Canvas.Left="136.909" Canvas.Top="90.803" Width="7.917"/>
+                <Path Data="F1M0,6.95L1.246,6.841C1.305,7.341 1.443,7.75 1.659,8.071 1.875,8.392 2.21,8.65 2.663,8.848 3.118,9.046 3.628,9.143 4.197,9.143 4.701,9.143 5.145,9.069 5.532,8.92 5.917,8.769 6.205,8.564 6.394,8.304 6.582,8.041 6.678,7.757 6.678,7.448 6.678,7.134 6.587,6.862 6.403,6.627 6.222,6.392 5.922,6.196 5.505,6.038 5.236,5.934 4.645,5.771 3.726,5.55 2.81,5.329 2.165,5.122 1.798,4.927 1.322,4.678 0.965,4.366 0.731,3.996 0.498,3.626 0.382,3.212 0.382,2.752 0.382,2.25 0.524,1.777 0.81,1.34 1.096,0.901 1.515,0.568 2.064,0.34 2.615,0.114 3.224,0 3.896,0 4.638,0 5.289,0.119 5.857,0.359 6.422,0.596 6.857,0.947 7.162,1.41 7.464,1.873 7.629,2.398 7.653,2.984L6.385,3.08C6.315,2.45 6.084,1.971 5.692,1.65 5.298,1.326 4.719,1.166 3.952,1.166 3.152,1.166 2.571,1.312 2.204,1.605 1.838,1.898 1.654,2.252 1.654,2.664 1.654,3.024 1.785,3.319 2.042,3.55 2.298,3.782 2.961,4.02 4.036,4.262 5.11,4.506 5.847,4.717 6.247,4.899 6.83,5.168 7.259,5.508 7.536,5.917 7.813,6.329 7.95,6.804 7.95,7.339 7.95,7.871 7.799,8.371 7.495,8.841 7.19,9.311 6.752,9.676 6.182,9.939 5.613,10.199 4.971,10.33 4.259,10.33 3.354,10.33 2.596,10.199 1.987,9.934 1.375,9.671 0.896,9.276 0.547,8.746 0.201,8.218 0.017,7.618 0,6.95" Fill="White" Height="10.33" Canvas.Left="145.733" Canvas.Top="90.633" Width="7.95"/>
+                <Path Data="M0,2.459L12.362,0 12.805,2.225 0.442,4.684z" Fill="White" Height="4.684" Canvas.Left="28.582" Canvas.Top="141.593" Width="12.805"/>
+                <Path Data="M0,7.589L18.323,0 19.842,3.666 1.518,11.256z" Fill="White" Height="11.256" Canvas.Left="34.006" Canvas.Top="155.397" Width="19.842"/>
+                <Path Data="M0,7.003L10.481,0 11.741,1.885 1.26,8.888z" Fill="White" Height="8.888" Canvas.Left="43.817" Canvas.Top="174.987" Width="11.741"/>
+                <Path Data="M0,14.023L14.024,0 16.83,2.807 2.806,16.83z" Fill="White" Height="16.83" Canvas.Left="56.074" Canvas.Top="183.383" Width="16.83"/>
+                <Path Data="M0,10.481L7.003,0 8.889,1.259 1.886,11.741z" Fill="White" Height="11.741" Canvas.Left="72.411" Canvas.Top="200.729" Width="8.889"/>
+                <Path Data="M0,18.322L7.589,0 11.256,1.518 3.666,19.841z" Fill="White" Height="19.841" Canvas.Left="89.635" Canvas.Top="202.44" Width="11.256"/>
+                <Path Data="M0,12.363L2.46,0 4.683,0.442 2.224,12.805z" Fill="White" Height="12.805" Canvas.Left="110.01" Canvas.Top="214.9" Width="4.683"/>
+                <Path Data="M0,0L3.969,0 3.969,19.833 0,19.833z" Fill="White" Height="19.833" Canvas.Left="129.578" Canvas.Top="209.664" Width="3.969"/>
+                <Path Data="M2.459,12.805L0,0.442 2.223,0 4.682,12.363z" Fill="White" Height="12.805" Canvas.Left="148.432" Canvas.Top="214.9" Width="4.682"/>
+                <Path Data="M7.59,19.84L0,1.518 3.667,0 11.256,18.322z" Fill="White" Height="19.84" Canvas.Left="162.234" Canvas.Top="202.44" Width="11.256"/>
+                <Path Data="M7.003,11.741L0,1.259 1.886,0 8.889,10.48z" Fill="White" Height="11.741" Canvas.Left="181.825" Canvas.Top="200.729" Width="8.889"/>
+                <Path Data="M14.023,16.83L0,2.806 2.805,0 16.829,14.023z" Fill="White" Height="16.83" Canvas.Left="190.222" Canvas.Top="183.383" Width="16.829"/>
+                <Path Data="M18.324,11.256L0,3.667 1.519,0 19.842,7.59z" Fill="White" Height="11.256" Canvas.Left="209.277" Canvas.Top="155.396" Width="19.842"/>
+                <Path Data="M12.363,4.684L0,2.225 0.443,0 12.805,2.459z" Fill="White" Height="4.684" Canvas.Left="221.738" Canvas.Top="141.593" Width="12.805"/>
+                <Path Data="M19.832,3.968L0,3.968 0,0 19.832,0z" Fill="White" Height="3.968" Canvas.Left="216.503" Canvas.Top="122.74" Width="19.832"/>
+                <Path Data="M0.442,0L12.805,2.459 12.362,4.683 0,2.224z" Fill="White" Height="4.683" Canvas.Left="28.582" Canvas.Top="103.172" Width="12.805"/>
+                <Path Data="M0,0L19.833,0 19.833,3.968 0,3.968z" Fill="White" Height="3.968" Canvas.Left="26.79" Canvas.Top="122.74" Width="19.833"/>
+                <Path Data="M1.26,0L11.741,7.004 10.481,8.889 0,1.886z" Fill="White" Height="8.889" Canvas.Left="43.817" Canvas.Top="65.572" Width="11.741"/>
+                <Path Data="M1.518,0L19.842,7.59 18.323,11.256 0,3.667z" Fill="White" Height="11.256" Canvas.Left="34.006" Canvas.Top="82.796" Width="19.842"/>
+                <Path Data="M1.886,0L8.889,10.481 7.003,11.741 0,1.26z" Fill="White" Height="11.741" Canvas.Left="72.411" Canvas.Top="36.979" Width="8.889"/>
+                <Path Data="M2.806,0L16.83,14.023 14.024,16.83 0,2.806z" Fill="White" Height="16.83" Canvas.Left="56.074" Canvas.Top="49.236" Width="16.83"/>
+                <Path Data="M2.224,0L4.683,12.363 2.46,12.806 0,0.443z" Fill="White" Height="12.806" Canvas.Left="110.01" Canvas.Top="21.743" Width="4.683"/>
+                <Path Data="M3.667,0L11.257,18.322 7.59,19.841 0,1.518z" Fill="White" Height="19.841" Canvas.Left="89.634" Canvas.Top="27.168" Width="11.257"/>
+                <Path Data="M4.682,0.443L2.223,12.806 0,12.363 2.459,0z" Fill="White" Height="12.806" Canvas.Left="148.432" Canvas.Top="21.743" Width="4.682"/>
+                <Path Data="M3.969,19.833L0,19.833 0,0 3.969,0z" Fill="White" Height="19.833" Canvas.Left="129.578" Canvas.Top="19.951" Width="3.969"/>
+                <Path Data="M8.889,1.259L1.886,11.74 0,10.481 7.003,0z" Fill="White" Height="11.74" Canvas.Left="181.825" Canvas.Top="36.979" Width="8.889"/>
+                <Path Data="M11.256,1.519L3.667,19.842 0,18.323 7.59,0z" Fill="White" Height="19.842" Canvas.Left="162.234" Canvas.Top="27.167" Width="11.256"/>
+                <Path Data="M11.741,1.886L1.26,8.889 0,7.004 10.481,0z" Fill="White" Height="8.889" Canvas.Left="207.567" Canvas.Top="65.572" Width="11.741"/>
+                <Path Data="M16.83,2.806L2.806,16.83 0,14.023 14.024,0z" Fill="White" Height="16.83" Canvas.Left="190.221" Canvas.Top="49.236" Width="16.83"/>
+                <Path Data="M12.805,2.224L0.443,4.683 0,2.459 12.363,0z" Fill="White" Height="4.683" Canvas.Left="221.738" Canvas.Top="103.172" Width="12.805"/>
+                <Path Data="M19.842,3.667L1.519,11.256 0,7.589 18.324,0z" Fill="White" Height="11.256" Canvas.Left="209.277" Canvas.Top="82.796" Width="19.842"/>
+                <Path Data="M21.166,0L22.925,1.174 1.759,32.852 0,31.676z" Fill="White" Height="32.852" Canvas.Left="198.761" Canvas.Top="160.858" Width="22.925"/>
+                <Path Data="M19.153,0L20.913,1.175 1.76,29.84 0,28.664z" Fill="White" Height="29.84" Canvas.Left="193.419" Canvas.Top="158.122" Width="20.913"/>
+                <Path Data="M125.009,241.547C60.646,241.547 8.47,189.37 8.47,125.008 8.47,60.646 60.646,8.47 125.009,8.47 189.371,8.47 241.547,60.646 241.547,125.008 241.547,189.37 189.371,241.547 125.009,241.547 M125.009,249.732C56.125,249.732 0.284,193.892 0.284,125.008 0.284,56.125 56.125,0.284 125.009,0.284 193.892,0.284 249.733,56.125 249.733,125.008 249.733,193.892 193.892,249.732 125.009,249.732" Fill="#FF4D4D4D" Height="250.015" Canvas.Left="6.554" Stroke="#FF1A1A1A" StrokeThickness="0.567" StrokeMiterLimit="22.926" Canvas.Top="-0.284" Width="250.016"/>
+                <Path Data="M119.056,238.11C53.303,238.11 0,184.808 0,119.055 0,53.303 53.303,0 119.056,0 184.807,0 238.11,53.303 238.11,119.055 238.11,184.808 184.807,238.11 119.056,238.11 M119.056,232.441C56.434,232.441 5.67,181.677 5.67,119.055 5.67,56.434 56.434,5.669 119.056,5.669 181.677,5.669 232.441,56.434 232.441,119.055 232.441,181.677 181.677,232.441 119.056,232.441" Fill="#FF1A1A1A" Height="238.11" Canvas.Left="12.507" Canvas.Top="5.669" Width="238.11"/>
+                <Canvas Clip="M10.623,0.901C16.102,0.901 20.544,5.344 20.544,10.823 20.544,16.302 16.102,20.744 10.623,20.744 5.144,20.744 0.702,16.302 0.702,10.823 0.702,5.344 5.144,0.901 10.623,0.901" Height="46" Canvas.Left="20.888" Canvas.Top="13.85" Width="48">
+                    <Canvas Clip="M0.702,0.901L20.544,0.901 20.544,20.744 0.702,20.744z" Height="46" Canvas.Left="0" Canvas.Top="0" Width="48">
+                        <Image Source="US-Acc_Images\Image2.png" Stretch="Fill">
+                            <Image.RenderTransform>
+                                <MatrixTransform Matrix="0.360000133514404,0,0,0.360000029854153,0,0"/>
+                            </Image.RenderTransform>
+                        </Image>
+                    </Canvas>
+                </Canvas>
+                <Path Data="M10.029,0.108C15.508,0.108 19.95,4.551 19.95,10.03 19.95,15.509 15.508,19.951 10.029,19.951 4.55,19.951 0.108,15.509 0.108,10.03 0.108,4.551 4.55,0.108 10.029,0.108z" Height="20.059" Canvas.Left="21.482" Stroke="Black" StrokeThickness="0.216" StrokeMiterLimit="22.926" Canvas.Top="14.643" Width="20.058"/>
+                <Path Data="M0.486,9.682L0,7.564 4.372,6.559C4.499,5.879,4.881,5.269,5.437,4.86L4.432,0.487 6.551,0 7.555,4.372C8.235,4.5,8.845,4.882,9.255,5.437L13.628,4.433 14.114,6.552 9.742,7.556C9.615,8.236,9.233,8.846,8.677,9.256L9.682,13.628 7.563,14.115 6.559,9.743C5.878,9.616,5.269,9.234,4.859,8.678z" Fill="#FF333333" Height="14.115" Canvas.Left="24.454" Canvas.Top="17.615" Width="14.114"/>
+                <Canvas Clip="M10.673,0.901C16.152,0.901 20.594,5.344 20.594,10.823 20.594,16.302 16.152,20.744 10.673,20.744 5.194,20.744 0.751,16.302 0.751,10.823 0.751,5.344 5.194,0.901 10.673,0.901" Height="46" Canvas.Left="220.941" Canvas.Top="13.85" Width="48">
+                    <Canvas Clip="M0.751,0.901L20.594,0.901 20.594,20.744 0.751,20.744z" Height="46" Canvas.Left="0" Canvas.Top="0" Width="48">
+                        <Image Source="US-Acc_Images\Image1.png" Stretch="Fill">
+                            <Image.RenderTransform>
+                                <MatrixTransform Matrix="0.360000133514404,0,0,0.360000029854153,0,0"/>
+                            </Image.RenderTransform>
+                        </Image>
+                    </Canvas>
+                </Canvas>
+                <Path Data="M10.03,0.108C15.509,0.108 19.951,4.551 19.951,10.03 19.951,15.509 15.509,19.951 10.03,19.951 4.551,19.951 0.108,15.509 0.108,10.03 0.108,4.551 4.551,0.108 10.03,0.108z" Height="20.059" Canvas.Left="221.584" Stroke="Black" StrokeThickness="0.216" StrokeMiterLimit="22.926" Canvas.Top="14.643" Width="20.059"/>
+                <Path Data="M1.006,1.34L2.717,0 5.484,3.531C6.154,3.357,6.868,3.444,7.475,3.773L11.006,1.006 12.347,2.716 8.816,5.484C8.99,6.153,8.904,6.867,8.575,7.474L11.341,11.006 9.63,12.346 6.863,8.815C6.194,8.989,5.479,8.903,4.873,8.573L1.34,11.341 0,9.629 3.532,6.862C3.358,6.193,3.444,5.479,3.773,4.871z" Fill="#FF333333" Height="12.346" Canvas.Left="225.44" Canvas.Top="18.5" Width="12.347"/>
+                <Canvas Clip="M10.673,0.951C16.152,0.951 20.594,5.392 20.594,10.872 20.594,16.351 16.152,20.792 10.673,20.792 5.194,20.792 0.751,16.351 0.751,10.872 0.751,5.392 5.194,0.951 10.673,0.951" Height="46" Canvas.Left="220.941" Canvas.Top="213.904" Width="48">
+                    <Canvas Clip="M0.751,0.951L20.594,0.951 20.594,20.793 0.751,20.793z" Height="46" Canvas.Left="0" Canvas.Top="0" Width="48">
+                        <Image Source="US-Acc_Images\Image.png" Stretch="Fill">
+                            <Image.RenderTransform>
+                                <MatrixTransform Matrix="0.360000133514404,0,0,0.360000029854153,0,0"/>
+                            </Image.RenderTransform>
+                        </Image>
+                    </Canvas>
+                </Canvas>
+                <Path Data="M10.03,0.108C15.509,0.108 19.951,4.549 19.951,10.029 19.951,15.508 15.509,19.949 10.03,19.949 4.551,19.949 0.108,15.508 0.108,10.029 0.108,4.549 4.551,0.108 10.03,0.108z" Height="20.057" Canvas.Left="221.584" Stroke="Black" StrokeThickness="0.216" StrokeMiterLimit="22.926" Canvas.Top="214.747" Width="20.059"/>
+                <Path Data="M2.469,12.165L0.793,10.781 3.65,7.322C3.336,6.705,3.268,5.989,3.459,5.326L0,2.468 1.384,0.793 4.843,3.649C5.46,3.335,6.177,3.267,6.84,3.46L9.698,0 11.373,1.384 8.516,4.843C8.829,5.46,8.898,6.176,8.706,6.839L12.165,9.697 10.782,11.373 7.323,8.516C6.705,8.83,5.99,8.898,5.325,8.706z" Fill="#FF333333" Height="12.165" Canvas.Left="225.531" Canvas.Top="218.693" Width="12.165"/>
+                <Path Data="F1M13.298,17.824L13.298,20.198 0.002,20.198C-0.016,19.603 0.077,19.032 0.288,18.484 0.625,17.576 1.168,16.686 1.913,15.806 2.662,14.93 3.739,13.914 5.144,12.762 7.331,10.968 8.811,9.549 9.579,8.5 10.347,7.456 10.731,6.463 10.731,5.531 10.731,4.552 10.38,3.728 9.682,3.054 8.98,2.384 8.067,2.047 6.943,2.047 5.753,2.047 4.802,2.402 4.09,3.119 3.374,3.831 3.014,4.819 3.004,6.079L0.466,5.821C0.639,3.925 1.295,2.482 2.428,1.489 3.562,0.497 5.088,0 6.999,0 8.928,0 10.455,0.539 11.579,1.606 12.707,2.679 13.27,4.004 13.27,5.587 13.27,6.393 13.106,7.184 12.773,7.961 12.445,8.739 11.897,9.558 11.134,10.415 10.37,11.277 9.102,12.457 7.326,13.956 5.847,15.201 4.896,16.044 4.475,16.489 4.053,16.93 3.707,17.374 3.43,17.824z" Fill="White" Height="20.198" Canvas.Left="58.993" Canvas.Top="88.884" Width="13.298"/>
+            </Canvas>
+            <Canvas x:Name="GLmin" Height="17.723" Canvas.Left="20.828" Canvas.Top="159.08" Width="20.558" RenderTransformOrigin="5.359,-1.993">
+                <Path Data="M20.558,1.866L3.67,8.861 7.34,17.723z M20.558,1.866L3.67,8.861 0,0z" Fill="#FF999999" Height="17.723" Canvas.Left="0" Canvas.Top="0" Width="20.558"/>
+            </Canvas>
+            <Canvas x:Name="GLmax" Height="17.723" Canvas.Left="20.828" Canvas.Top="159.08" Width="20.558" RenderTransformOrigin="5.347,-1.979">
+                <Path Data="M20.558,1.866L3.67,8.861 7.34,17.723z M20.558,1.866L3.67,8.861 0,0z" Fill="#FF999999" Height="17.723" Canvas.Left="0" Canvas.Top="0" Width="20.558"/>
+            </Canvas>
+            <Canvas x:Name="GLoad" Height="45.665" Canvas.Left="45.682" Canvas.Top="113.502" Width="95.387" RenderTransformOrigin="0.892,0.224">
+                <Path Data="M77.765,5.238L8.197,34.054 0,34.059 6.027,28.817 75.595,0z" Fill="#FFCCCCCC" Height="34.059" Canvas.Left="0" Canvas.Top="11.606" Width="77.765"/>
+                <Path Data="M6.594,0.91C1.235,3.13 -1.31,9.274 0.909,14.634 3.13,19.993 9.274,22.538 14.633,20.318 19.992,18.098 22.537,11.954 20.318,6.595 18.097,1.235 11.953,-1.31 6.594,0.91" Fill="#FF333333" Height="21.228" Canvas.Left="74.267" Stroke="Gray" StrokeThickness="0.216" StrokeMiterLimit="22.926" Canvas.Top="-0.108" Width="21.228"/>
+            </Canvas>
+        </Canvas>
+        <Image x:Name="Light" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Height="255" Width="255" MouseWheel="Light_MouseWheel" />
+        <Image x:Name="Frame" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Height="255" Width="255" MouseWheel="Light_MouseWheel" />
+    </Grid>
+</UserControl>

@@ -1,0 +1,81 @@
+﻿<Window x:Class="Ikarus.MessageBoxSwitch"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Dialog Switches" Height="549" Width="514" ResizeMode="NoResize" Topmost="True" WindowStartupLocation="CenterScreen" WindowStyle="ToolWindow">
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="Black" Offset="0"/>
+                <GradientStop Color="#FF343434" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <DataGrid Name="DataGridSwitches" ItemsSource="{Binding}" AlternatingRowBackground="#FF424242"  SelectionMode="Single" ColumnHeaderHeight="25" AutoGenerateColumns="False" Margin="10,72,10,123" MouseWheel="DataGridSwitches_MouseWheel" >
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding ID}" Width="50" Header="ID" IsReadOnly="True">
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Setter Property="TextAlignment" Value="Right" />
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding Discription}" Width="350" Header="Function" IsReadOnly="True"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Label Content="Image On" HorizontalAlignment="Left" Margin="12,0,0,95" VerticalAlignment="Bottom" Width="66" Foreground="#FFFDFDFD"/>
+        <TextBox Name="ImageOn" HorizontalAlignment="Left" Margin="78,0,0,95" TextWrapping="Wrap" Width="139" Height="23" VerticalAlignment="Bottom"/>
+        <Button Name="ImageOnSelect" Content="Select" HorizontalAlignment="Left" Margin="217,0,0,91" Width="39" Click="ImageOnSelect_Click" Height="27" VerticalAlignment="Bottom" RenderTransformOrigin="0.564,0.481">
+            <Button.ContentTemplate>
+                <DataTemplate>
+                    <Image Source="Assets/Select.png"></Image>
+                </DataTemplate>
+            </Button.ContentTemplate>
+        </Button>
+        <Label Content="Image Off" HorizontalAlignment="Left" Margin="12,0,0,67" Width="66" Foreground="#FFFDFDFD" Height="16" VerticalAlignment="Bottom"/>
+        <TextBox Name="ImageOff" HorizontalAlignment="Left" Margin="78,0,0,67" TextWrapping="Wrap" Width="139" Height="23" VerticalAlignment="Bottom"/>
+        <Button Name="ImageOffSelect" Content="Select" HorizontalAlignment="Left" Margin="217,0,0,64" Width="39" Click="ImageOffSelect_Click" Height="27" VerticalAlignment="Bottom">
+            <Button.ContentTemplate>
+                <DataTemplate>
+                    <Image Source="Assets/Select.png"></Image>
+                </DataTemplate>
+            </Button.ContentTemplate>
+        </Button>
+        <Label Content="Panel" HorizontalAlignment="Left" Margin="38,20,0,0" Foreground="#FFFFFEFE" Height="16" VerticalAlignment="Top"/>
+        <ComboBox Name="WindowID" DisplayMemberPath="Name"  SelectedValuePath="WindowID" HorizontalAlignment="Left" Margin="78,10,0,0" Width="230" Height="26" VerticalAlignment="Top"/>
+        <Button Content="Transmit" Click="Button_Click" HorizontalAlignment="Right" Width="75" Height="24" VerticalAlignment="Bottom" Margin="0,0,10,10"/>
+        <TextBox Name="PosX" HorizontalAlignment="Left" Margin="308,0,0,95" TextWrapping="Wrap" Width="40" Height="23" VerticalAlignment="Bottom" Opacity="0.9"/>
+        <TextBox Name="PosY" HorizontalAlignment="Left" Margin="379,0,0,95" TextWrapping="Wrap" Width="40" Height="23" VerticalAlignment="Bottom"/>
+        <Label Content="Pos X" HorizontalAlignment="Left" Margin="274,0,0,95" Foreground="#FFFFFEFE" Height="16" VerticalAlignment="Bottom"/>
+        <Label Content="Pos Y" HorizontalAlignment="Left" Margin="350,0,0,95" Foreground="#FFFFFEFE" Height="16" VerticalAlignment="Bottom"/>
+        <TextBox x:Name="Size" HorizontalAlignment="Left" Margin="458,0,0,95" TextWrapping="Wrap" Width="40" Height="23" VerticalAlignment="Bottom"/>
+        <Label Content="Size" HorizontalAlignment="Left" Margin="424,0,0,95" Foreground="#FFFFFEFE" Height="16" VerticalAlignment="Bottom" RenderTransformOrigin="-0.81,0.625"/>
+        <Label Content="Class" HorizontalAlignment="Left" Margin="38,51,0,0" Foreground="#FFFFFEFE" Width="29" Height="16" VerticalAlignment="Top"/>
+        <ComboBox Name="Classname" HorizontalAlignment="Left" Margin="78,41,0,0" VerticalAlignment="Top" Width="230" DropDownClosed="Classname_DropDownClosed">
+            <ComboBoxItem Content="Button"/>
+            <ComboBoxItem Content="ButtonOffOn"/>
+            <ComboBoxItem Content="ButtonPanelOffOn"/>
+            <ComboBoxItem Content="ButtonWithRelease"/>
+            <ComboBoxItem Content="ButtonWithRepeat"/>
+            <ComboBoxItem Content="MultiSwitch"/>
+            <ComboBoxItem Content="Potentiometer"/>
+            <ComboBoxItem Content="Rotary"/>
+            <ComboBoxItem Content="SwitchOffOn"/>
+            <ComboBoxItem Content="Switch_OFFOn"/>
+            <ComboBoxItem Content="SwitchOnOffOn"/>
+            <ComboBoxItem Content="Switch_OnOFFOn"/>
+            <ComboBoxItem Content="SwitchPanelOffOn"/>
+        </ComboBox>
+        <TextBox x:Name="Image2on" HorizontalAlignment="Left" Margin="78,0,0,39" TextWrapping="Wrap" Width="139" Height="23" VerticalAlignment="Bottom"/>
+        <Label Content="Image On" HorizontalAlignment="Left" Margin="12,0,0,39" VerticalAlignment="Bottom" Width="66" Foreground="#FFFDFDFD"/>
+        <Button x:Name="Image2OnSelect" Content="Select" HorizontalAlignment="Left" Margin="217,0,0,35" Width="39" Height="27" VerticalAlignment="Bottom" Click="Image2OnSelect_Click">
+            <Button.ContentTemplate>
+                <DataTemplate>
+                    <Image Source="Assets/Select.png"/>
+                </DataTemplate>
+            </Button.ContentTemplate>
+        </Button>
+        <TextBox x:Name="Input" HorizontalAlignment="Left" Margin="308,0,0,67" TextWrapping="Wrap" Width="190" Height="23" VerticalAlignment="Bottom"/>
+        <Label Content="Input" HorizontalAlignment="Left" Margin="266,0,0,67" Width="42" Foreground="#FFFDFDFD" Height="16" VerticalAlignment="Bottom"/>
+        <TextBox x:Name="Output" HorizontalAlignment="Left" Margin="308,0,0,39" TextWrapping="Wrap" Width="190" Height="23" VerticalAlignment="Bottom"/>
+        <Label Content="Output" HorizontalAlignment="Left" Margin="266,0,0,39" Width="42" Foreground="#FFFDFDFD" Height="16" VerticalAlignment="Bottom"/>
+    </Grid>
+</Window>

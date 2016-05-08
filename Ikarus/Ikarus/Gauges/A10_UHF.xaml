@@ -1,0 +1,68 @@
+﻿<UserControl x:Class="Ikarus.A10_UHF"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="255.118" d:DesignWidth="255.118" MouseWheel="Light_MouseWheel">
+    <Grid>
+        <Canvas x:Name="A10_UHF1" HorizontalAlignment="Left" Height="255.118" UseLayoutRounding="False" VerticalAlignment="Top" Width="255.118">
+            <Canvas x:Name="dial" Height="259.264" Canvas.Left="0" Canvas.Top="-0.118" Width="261.54">
+                <Path Data="M24.25,0.284L231.435,0.284C244.617,0.284,255.401,11.069,255.401,24.25L255.401,231.436C255.401,244.618,244.617,255.402,231.435,255.402L24.25,255.402C11.069,255.402,0.284,244.618,0.284,231.436L0.284,24.25C0.284,11.069,11.069,0.284,24.25,0.284" Fill="#FF1A1A1A" Height="255.685" Canvas.Left="-0.284" Stroke="Black" StrokeThickness="0.567" StrokeMiterLimit="22.926" Canvas.Top="-0.284" Width="255.684"/>
+                <Canvas Clip="M8.007,0.717C11.92,0.717 15.094,3.89 15.094,7.804 15.094,11.717 11.92,14.891 8.007,14.891 4.093,14.891 0.92,11.717 0.92,7.804 0.92,3.89 4.093,0.717 8.007,0.717" Height="34" Canvas.Left="13.831" Canvas.Top="14.035" Width="36">
+                    <Canvas Clip="M0.92,0.717L15.093,0.717 15.093,14.89 0.92,14.89z" Height="34" Canvas.Left="0" Canvas.Top="0" Width="36">
+                        <Image Source="A10-UHF_Images\Image3.png" Stretch="Fill">
+                            <Image.RenderTransform>
+                                <MatrixTransform Matrix="0.359999974568685,0,0,0.360000161563649,0,0"/>
+                            </Image.RenderTransform>
+                        </Image>
+                    </Canvas>
+                </Canvas>
+                <Path Data="M7.195,0.108C11.108,0.108 14.282,3.281 14.282,7.195 14.282,11.108 11.108,14.282 7.195,14.282 3.281,14.282 0.108,11.108 0.108,7.195 0.108,3.281 3.281,0.108 7.195,0.108z" Height="14.39" Canvas.Left="14.643" Stroke="Black" StrokeThickness="0.216" StrokeMiterLimit="22.926" Canvas.Top="14.644" Width="14.39"/>
+                <Path Data="M0.561,7.466L0,6.018 2.988,4.86C3.008,4.366,3.216,3.896,3.567,3.549L2.409,0.561 3.856,0 5.015,2.988C5.509,3.008,5.978,3.216,6.325,3.567L9.313,2.408 9.874,3.856 6.886,5.014C6.866,5.508,6.659,5.978,6.307,6.324L7.466,9.313 6.018,9.874 4.86,6.886C4.366,6.866,3.896,6.658,3.55,6.307z" Fill="#FF333333" Height="9.874" Canvas.Left="16.901" Canvas.Top="16.902" Width="9.874"/>
+                <Canvas Clip="M7.739,0.717C11.652,0.717 14.826,3.89 14.826,7.804 14.826,11.717 11.652,14.89 7.739,14.89 3.825,14.89 0.652,11.717 0.652,7.804 0.652,3.89 3.825,0.717 7.739,0.717" Height="34" Canvas.Left="225.54" Canvas.Top="14.035" Width="36">
+                    <Canvas Clip="M0.652,0.717L14.826,0.717 14.826,14.89 0.652,14.89z" Height="34" Canvas.Left="0" Canvas.Top="0" Width="36">
+                        <Image Source="A10-UHF_Images\Image2.png" Stretch="Fill">
+                            <Image.RenderTransform>
+                                <MatrixTransform Matrix="0.359999974568685,0,0,0.360000161563649,0,0"/>
+                            </Image.RenderTransform>
+                        </Image>
+                    </Canvas>
+                </Canvas>
+                <Path Data="M7.195,0.108C11.108,0.108 14.282,3.281 14.282,7.195 14.282,11.108 11.108,14.281 7.195,14.281 3.281,14.281 0.108,11.108 0.108,7.195 0.108,3.281 3.281,0.108 7.195,0.108z" Height="14.389" Canvas.Left="226.084" Stroke="Black" StrokeThickness="0.216" StrokeMiterLimit="22.926" Canvas.Top="14.644" Width="14.39"/>
+                <Path Data="M0,4.635L0.36,3.125 3.477,3.868C3.774,3.473,4.212,3.203,4.697,3.117L5.44,0 6.95,0.36 6.208,3.477C6.603,3.775,6.872,4.212,6.958,4.697L10.075,5.441 9.715,6.95 6.598,6.208C6.302,6.603,5.864,6.872,5.378,6.959L4.635,10.076 3.125,9.716 3.867,6.599C3.473,6.302,3.203,5.864,3.117,5.378z" Fill="#FF333333" Height="10.076" Canvas.Left="228.241" Canvas.Top="16.801" Width="10.075"/>
+                <Canvas Clip="M8.007,0.929C11.92,0.929 15.093,4.102 15.093,8.016 15.093,11.929 11.92,15.103 8.007,15.103 4.093,15.103 0.92,11.929 0.92,8.016 0.92,4.102 4.093,0.929 8.007,0.929" Height="34" Canvas.Left="13.831" Canvas.Top="225.264" Width="36">
+                    <Canvas Clip="M0.92,0.929L15.093,0.929 15.093,15.103 0.92,15.103z" Height="34" Canvas.Left="0" Canvas.Top="0" Width="36">
+                        <Image Source="A10-UHF_Images\Image1.png" Stretch="Fill">
+                            <Image.RenderTransform>
+                                <MatrixTransform Matrix="0.359999974568685,0,0,0.360000161563649,0,0"/>
+                            </Image.RenderTransform>
+                        </Image>
+                    </Canvas>
+                </Canvas>
+                <Path Data="M7.195,0.108C11.108,0.108 14.281,3.281 14.281,7.195 14.281,11.108 11.108,14.282 7.195,14.282 3.281,14.282 0.108,11.108 0.108,7.195 0.108,3.281 3.281,0.108 7.195,0.108z" Height="14.39" Canvas.Left="14.643" Stroke="Black" StrokeThickness="0.216" StrokeMiterLimit="22.926" Canvas.Top="226.085" Width="14.389"/>
+                <Path Data="M4.652,0L6.2,0.12 5.951,3.314C6.388,3.546,6.722,3.937,6.883,4.403L10.077,4.651 9.957,6.199 6.763,5.951C6.531,6.388,6.141,6.722,5.674,6.883L5.426,10.077 3.878,9.957 4.126,6.763C3.69,6.53,3.356,6.141,3.195,5.674L0,5.426 0.12,3.878 3.315,4.126C3.547,3.689,3.937,3.356,4.404,3.194z" Fill="#FF333333" Height="10.077" Canvas.Left="16.799" Canvas.Top="228.241" Width="10.077"/>
+                <Canvas Clip="M7.739,0.929C11.652,0.929 14.826,4.102 14.826,8.016 14.826,11.929 11.652,15.103 7.739,15.103 3.825,15.103 0.652,11.929 0.652,8.016 0.652,4.102 3.825,0.929 7.739,0.929" Height="34" Canvas.Left="225.54" Canvas.Top="225.264" Width="36">
+                    <Canvas Clip="M0.652,0.929L14.826,0.929 14.826,15.103 0.652,15.103z" Height="34" Canvas.Left="0" Canvas.Top="0" Width="36">
+                        <Image Source="A10-UHF_Images\Image.png" Stretch="Fill">
+                            <Image.RenderTransform>
+                                <MatrixTransform Matrix="0.359999974568685,0,0,0.360000161563649,0,0"/>
+                            </Image.RenderTransform>
+                        </Image>
+                    </Canvas>
+                </Canvas>
+                <Path Data="M7.195,0.108C11.108,0.108 14.282,3.281 14.282,7.195 14.282,11.108 11.108,14.282 7.195,14.282 3.281,14.282 0.108,11.108 0.108,7.195 0.108,3.281 3.281,0.108 7.195,0.108z" Height="14.39" Canvas.Left="226.084" Stroke="Black" StrokeThickness="0.216" StrokeMiterLimit="22.926" Canvas.Top="226.085" Width="14.39"/>
+                <Path Data="M0.568,7.48L0,6.036 2.982,4.864C3,4.37,3.206,3.899,3.555,3.55L2.383,0.568 3.828,0 5,2.982C5.494,3,5.965,3.206,6.313,3.555L9.297,2.383 9.864,3.828 6.881,4.999C6.863,5.494,6.658,5.965,6.309,6.313L7.481,9.295 6.035,9.864 4.863,6.881C4.37,6.864,3.899,6.658,3.55,6.308z" Fill="#FF333333" Height="9.864" Canvas.Left="228.347" Canvas.Top="228.348" Width="9.864"/>
+                <Path Data="M4.081,46.781L143.669,46.781C145.914,46.781,147.75,44.944,147.75,42.7L147.75,4.081C147.75,1.836,145.914,0,143.669,0L4.081,0C1.837,0,0,1.836,0,4.081L0,42.7C0,44.944,1.837,46.781,4.081,46.781" Fill="Black" Height="46.781" Canvas.Left="53.18" Canvas.Top="104.169" Width="147.75"/>
+                <Path Data="F1M9.687,0L11.649,0 11.649,8.559C11.649,10.045 11.48,11.228 11.141,12.104 10.804,12.98 10.197,13.69 9.318,14.239 8.438,14.791 7.287,15.063 5.859,15.063 4.473,15.063 3.334,14.825 2.455,14.345 1.572,13.87 0.941,13.176 0.565,12.269 0.186,11.363 0,10.128 0,8.559L0,0 1.958,0 1.958,8.548C1.958,9.835 2.079,10.783 2.317,11.39 2.555,12.001 2.969,12.469 3.549,12.8 4.131,13.131 4.845,13.297 5.686,13.297 7.128,13.297 8.156,12.97 8.769,12.314 9.38,11.663 9.687,10.407 9.687,8.548z" Fill="White" Height="15.063" Canvas.Left="108.109" Canvas.Top="163.219" Width="11.649"/>
+                <Path Data="F1M0,14.811L0,0 1.963,0 1.963,6.083 9.659,6.083 9.659,0 11.621,0 11.621,14.811 9.659,14.811 9.659,7.832 1.963,7.832 1.963,14.811z" Fill="White" Height="14.811" Canvas.Left="123.079" Canvas.Top="163.219" Width="11.621"/>
+                <Path Data="F1M0,14.811L0,0 9.993,0 9.993,1.748 1.961,1.748 1.961,6.335 8.911,6.335 8.911,8.084 1.961,8.084 1.961,14.811z" Fill="White" Height="14.811" Canvas.Left="138.063" Canvas.Top="163.219" Width="9.993"/>
+                <Path Data="M4.435,0.354L144.023,0.354C146.268,0.354,148.104,2.19,148.104,4.435L148.104,43.054C148.104,45.299,146.268,47.135,144.023,47.135L4.435,47.135C2.191,47.135,0.355,45.299,0.355,43.054L0.355,4.435C0.355,2.19,2.191,0.354,4.435,0.354z" Height="47.49" Canvas.Left="53.341" Stroke="#FF1A1A1A" StrokeThickness="0.709" StrokeMiterLimit="22.926" Canvas.Top="104.287" Width="148.458"/>
+                <Path Data="M4.435,0.354L144.024,0.354C146.268,0.354,148.104,2.19,148.104,4.435L148.104,43.054C148.104,45.298,146.268,47.135,144.024,47.135L4.435,47.135C2.191,47.135,0.354,45.298,0.354,43.054L0.354,4.435C0.354,2.19,2.191,0.354,4.435,0.354z" Height="47.49" Canvas.Left="52.826" Stroke="Gray" StrokeThickness="0.709" StrokeMiterLimit="22.926" Canvas.Top="103.815" Width="148.459"/>
+                <TextBlock x:Name="Frequenz" Height="36" Canvas.Left="60" TextWrapping="Wrap" Text="123.400" Canvas.Top="110" Width="132" FontFamily="LED Board-7" Foreground="#FFABF9AB" FontSize="28" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center"/>
+            </Canvas>
+        </Canvas>
+        <Image x:Name="Light" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Height="255" Width="255" MouseWheel="Light_MouseWheel" />
+        <Image x:Name="Frame" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Height="255" Width="255" MouseWheel="Light_MouseWheel" />
+    </Grid>
+</UserControl>

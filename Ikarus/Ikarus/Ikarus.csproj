@@ -1,0 +1,3189 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D417E6ED-4DC8-4500-BFF6-D34A6BC4B21E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Ikarus</RootNamespace>
+    <AssemblyName>Ikarus</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <ExpressionBlendVersion>12.0.50429.0</ExpressionBlendVersion>
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Assets\Ikarus_64.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Accessibility" />
+    <Reference Include="PresentationFramework.Aero" />
+    <Reference Include="PresentationUI, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="ReachFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Printing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="UIAutomationTypes" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Gauges\A10_Clock.xaml.cs">
+      <DependentUpon>A10_Clock.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\A10_CMSC.xaml.cs">
+      <DependentUpon>A10_CMSC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\A10_EGT.xaml.cs">
+      <DependentUpon>A10_EGT.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\A10_EGTAPU.xaml.cs">
+      <DependentUpon>A10_EGTAPU.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\A10_Flaps.xaml.cs">
+      <DependentUpon>A10_Flaps.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\A10_Fuel.xaml.cs">
+      <DependentUpon>A10_Fuel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\A10_FuelFlow.xaml.cs">
+      <DependentUpon>A10_FuelFlow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\A10_HydP.xaml.cs">
+      <DependentUpon>A10_HydP.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\A10_OilP.xaml.cs">
+      <DependentUpon>A10_OilP.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\Button.xaml.cs">
+      <DependentUpon>Button.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\ButtonWithRelease.xaml.cs">
+      <DependentUpon>ButtonWithRelease.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\ButtonWithRepeat.xaml.cs">
+      <DependentUpon>ButtonWithRepeat.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\ButtonOffOn.xaml.cs">
+      <DependentUpon>ButtonOffOn.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\DisplaySix.xaml.cs">
+      <DependentUpon>DisplaySix.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\DisplayThree.xaml.cs">
+      <DependentUpon>DisplayThree.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\DisplayTwo.xaml.cs">
+      <DependentUpon>DisplayTwo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\DisplayOne.xaml.cs">
+      <DependentUpon>DisplayOne.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\Display_Eight.xaml.cs">
+      <DependentUpon>Display_Eight.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\A10_RPMAPU.xaml.cs">
+      <DependentUpon>A10_RPMAPU.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\A10_RPMEng.xaml.cs">
+      <DependentUpon>A10_RPMEng.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\A10_RPMFAN.xaml.cs">
+      <DependentUpon>A10_RPMFAN.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\A10_UHF.xaml.cs">
+      <DependentUpon>A10_UHF.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\F15AltStby.xaml.cs">
+      <DependentUpon>F15AltStby.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\LampOnOff30x30.xaml.cs">
+      <DependentUpon>LampOnOff30x30.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\LampOnOff80x200.xaml.cs">
+      <DependentUpon>LampOnOff80x200.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\LampOnOff200x80.xaml.cs">
+      <DependentUpon>LampOnOff200x80.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\MIG29FuelQ.xaml.cs">
+      <DependentUpon>MIG29FuelQ.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\MIG29MDI.xaml.cs">
+      <DependentUpon>MIG29MDI.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\Monitor10x24.xaml.cs">
+      <DependentUpon>Monitor10x24.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\Monitor10x24D.xaml.cs">
+      <DependentUpon>Monitor10x24D.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\ButtonPanelOffOn.xaml.cs">
+      <DependentUpon>ButtonPanelOffOn.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\Switch_OnOFFOn.xaml.cs">
+      <DependentUpon>Switch_OnOFFOn.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\Switch_OFFOn.xaml.cs">
+      <DependentUpon>Switch_OFFOn.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\SwitchPanelOffOn.xaml.cs">
+      <DependentUpon>SwitchPanelOffOn.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\WPSPO15.xaml.cs">
+      <DependentUpon>WPSPO15.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\Label400x400.xaml.cs">
+      <DependentUpon>Label400x400.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\Label300x200.xaml.cs">
+      <DependentUpon>Label300x200.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\Label300x100.xaml.cs">
+      <DependentUpon>Label300x100.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\Label200x200.xaml.cs">
+      <DependentUpon>Label200x200.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\Label200x100.xaml.cs">
+      <DependentUpon>Label200x100.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\LabelUFC.xaml.cs">
+      <DependentUpon>LabelUFC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\LabelCDU.xaml.cs">
+      <DependentUpon>LabelCDU.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\LabelMFCD.xaml.cs">
+      <DependentUpon>LabelMFCD.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\LampOnOff70x70.xaml.cs">
+      <DependentUpon>LampOnOff70x70.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\LampOnOff.xaml.cs">
+      <DependentUpon>LampOnOff.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\Experimental.xaml.cs">
+      <DependentUpon>Experimental.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\F15Alt.xaml.cs">
+      <DependentUpon>F15Alt.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\F15ASI.xaml.cs">
+      <DependentUpon>F15ASI.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\F15ASIStby.xaml.cs">
+      <DependentUpon>F15ASIStby.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\F15CabP.xaml.cs">
+      <DependentUpon>F15CabP.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\F15EGT.xaml.cs">
+      <DependentUpon>F15EGT.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\F15EngRPM.xaml.cs">
+      <DependentUpon>F15EngRPM.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\F15Fuel.xaml.cs">
+      <DependentUpon>F15Fuel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\F15FuelFlow.xaml.cs">
+      <DependentUpon>F15FuelFlow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\F15Gear.xaml.cs">
+      <DependentUpon>F15Gear.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\F15Nozzle.xaml.cs">
+      <DependentUpon>F15Nozzle.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\F15OilP.xaml.cs">
+      <DependentUpon>F15OilP.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\F86_ACC.xaml.cs">
+      <DependentUpon>F86_ACC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\F86_ADI.xaml.cs">
+      <DependentUpon>F86_ADI.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\F86_ALT.xaml.cs">
+      <DependentUpon>F86_ALT.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\F86_ASI.xaml.cs">
+      <DependentUpon>F86_ASI.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\F86_CabinP.xaml.cs">
+      <DependentUpon>F86_CabinP.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\F86_Clock.xaml.cs">
+      <DependentUpon>F86_Clock.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\F86_Compass.xaml.cs">
+      <DependentUpon>F86_Compass.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\F86_EGT.xaml.cs">
+      <DependentUpon>F86_EGT.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\F86_FuelFlow.xaml.cs">
+      <DependentUpon>F86_FuelFlow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\F86_FuelQ.xaml.cs">
+      <DependentUpon>F86_FuelQ.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\F86_Gear.xaml.cs">
+      <DependentUpon>F86_Gear.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\F86_HydrP.xaml.cs">
+      <DependentUpon>F86_HydrP.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\F86_Labs.xaml.cs">
+      <DependentUpon>F86_Labs.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\F86_Load.xaml.cs">
+      <DependentUpon>F86_Load.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\F86_Mach.xaml.cs">
+      <DependentUpon>F86_Mach.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\F86_OilP.xaml.cs">
+      <DependentUpon>F86_OilP.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\F86_RMI.xaml.cs">
+      <DependentUpon>F86_RMI.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\F86_RPM.xaml.cs">
+      <DependentUpon>F86_RPM.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\F86_TurnIndicator.xaml.cs">
+      <DependentUpon>F86_TurnIndicator.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\F86_Volt.xaml.cs">
+      <DependentUpon>F86_Volt.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\F86_VVI.xaml.cs">
+      <DependentUpon>F86_VVI.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\FWD9Att.xaml.cs">
+      <DependentUpon>FWD9Att.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\FWD9Fuel.xaml.cs">
+      <DependentUpon>FWD9Fuel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\FWD9Gear.xaml.cs">
+      <DependentUpon>FWD9Gear.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\LwH20Temp.xaml.cs">
+      <DependentUpon>LwH20Temp.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\FWD9IAS.xaml.cs">
+      <DependentUpon>FWD9IAS.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\LwMW50P.xaml.cs">
+      <DependentUpon>LwMW50P.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\LwOilTemp.xaml.cs">
+      <DependentUpon>LwOilTemp.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\LwTrim.xaml.cs">
+      <DependentUpon>LwTrim.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\FWD9VVI.xaml.cs">
+      <DependentUpon>FWD9VVI.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\LwAFN2.xaml.cs">
+      <DependentUpon>LwAFN2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\LwAlt.xaml.cs">
+      <DependentUpon>LwAlt.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\LwAtt.xaml.cs">
+      <DependentUpon>LwAtt.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\LwBlink.xaml.cs">
+      <DependentUpon>LwBlink.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\LwClock.xaml.cs">
+      <DependentUpon>LwClock.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\LwDblP.xaml.cs">
+      <DependentUpon>LwDblP.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\LwHeadCourse.xaml.cs">
+      <DependentUpon>LwHeadCourse.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\LwIAS.xaml.cs">
+      <DependentUpon>LwIAS.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\LwMAP.xaml.cs">
+      <DependentUpon>LwMAP.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\LwO2P.xaml.cs">
+      <DependentUpon>LwO2P.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\LwProp.xaml.cs">
+      <DependentUpon>LwProp.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\LwRPM.xaml.cs">
+      <DependentUpon>LwRPM.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\LwSZ100.xaml.cs">
+      <DependentUpon>LwSZ100.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\LwSZ1000.xaml.cs">
+      <DependentUpon>LwSZ1000.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\LwSZ500.xaml.cs">
+      <DependentUpon>LwSZ500.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\LwVVI.xaml.cs">
+      <DependentUpon>LwVVI.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\BfK4Att.xaml.cs">
+      <DependentUpon>BfK4Att.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\BfK4DblP.xaml.cs">
+      <DependentUpon>BfK4DblP.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\LwFuel.xaml.cs">
+      <DependentUpon>LwFuel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\BfK4Fuel.xaml.cs">
+      <DependentUpon>BfK4Fuel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\BfK4Gear.xaml.cs">
+      <DependentUpon>BfK4Gear.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\BfK4H2OT.xaml.cs">
+      <DependentUpon>BfK4H2OT.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\BfK4MAP.xaml.cs">
+      <DependentUpon>BfK4MAP.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\BfK4MW50P.xaml.cs">
+      <DependentUpon>BfK4MW50P.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\BfK4OilTemp.xaml.cs">
+      <DependentUpon>BfK4OilTemp.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\BfK4RPM.xaml.cs">
+      <DependentUpon>BfK4RPM.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\BfK4MG151Left.xaml.cs">
+      <DependentUpon>BfK4MG151Left.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\BfK4MG151Right.xaml.cs">
+      <DependentUpon>BfK4MG151Right.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\MIG15_ADI.xaml.cs">
+      <DependentUpon>MIG15_ADI.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\MIG15_ALT.xaml.cs">
+      <DependentUpon>MIG15_ALT.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\MIG15_AltR.xaml.cs">
+      <DependentUpon>MIG15_AltR.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\MIG15_ASI.xaml.cs">
+      <DependentUpon>MIG15_ASI.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\MIG15_Brake.xaml.cs">
+      <DependentUpon>MIG15_Brake.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\MIG15_CabinP.xaml.cs">
+      <DependentUpon>MIG15_CabinP.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\MIG15_Clock.xaml.cs">
+      <DependentUpon>MIG15_Clock.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\MIG15_EGT.xaml.cs">
+      <DependentUpon>MIG15_EGT.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\MIG15_FuelFlow.xaml.cs">
+      <DependentUpon>MIG15_FuelFlow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\MIG15_FuelP.xaml.cs">
+      <DependentUpon>MIG15_FuelP.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\MIG15_FuelQ.xaml.cs">
+      <DependentUpon>MIG15_FuelQ.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\MIG15_Gear.xaml.cs">
+      <DependentUpon>MIG15_Gear.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\MIG15_GyroCompass.xaml.cs">
+      <DependentUpon>MIG15_GyroCompass.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\MIG15_HydrP_Aileron.xaml.cs">
+      <DependentUpon>MIG15_HydrP_Aileron.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\MIG15_Mach.xaml.cs">
+      <DependentUpon>MIG15_Mach.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\MIG15_Pressure250.xaml.cs">
+      <DependentUpon>MIG15_Pressure250.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\MIG15_Pressure80.xaml.cs">
+      <DependentUpon>MIG15_Pressure80.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\MIG15_PressureAirFlaps.xaml.cs">
+      <DependentUpon>MIG15_PressureAirFlaps.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\MIG15_PressureAirGears.xaml.cs">
+      <DependentUpon>MIG15_PressureAirGears.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\MIG15_PressureMain.xaml.cs">
+      <DependentUpon>MIG15_PressureMain.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\MIG15_PressureMainAir.xaml.cs">
+      <DependentUpon>MIG15_PressureMainAir.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\MIG15_PressureOxygen.xaml.cs">
+      <DependentUpon>MIG15_PressureOxygen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\MIG15_RadioCompass.xaml.cs">
+      <DependentUpon>MIG15_RadioCompass.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\MIG15_RPM.xaml.cs">
+      <DependentUpon>MIG15_RPM.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\MIG15_VoltAmpMeter.xaml.cs">
+      <DependentUpon>MIG15_VoltAmpMeter.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\MIG15_VVI.xaml.cs">
+      <DependentUpon>MIG15_VVI.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\MIG21_ACC.xaml.cs">
+      <DependentUpon>MIG21_ACC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\WPADI.xaml.cs">
+      <DependentUpon>WPADI.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\MIG21_ALT30.xaml.cs">
+      <DependentUpon>MIG21_ALT30.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\MIG21_AltR.xaml.cs">
+      <DependentUpon>MIG21_AltR.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\MIG21_AOA.xaml.cs">
+      <DependentUpon>MIG21_AOA.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\MIG21_ARU_3VM.xaml.cs">
+      <DependentUpon>MIG21_ARU_3VM.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\MIG21_ASI10.xaml.cs">
+      <DependentUpon>MIG21_ASI10.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\MIG21_Clock.xaml.cs">
+      <DependentUpon>MIG21_Clock.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\MIG21_Distance.xaml.cs">
+      <DependentUpon>MIG21_Distance.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\MIG21_EGT.xaml.cs">
+      <DependentUpon>MIG21_EGT.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\MIG21_FuelQ.xaml.cs">
+      <DependentUpon>MIG21_FuelQ.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\MIG21_Gear.xaml.cs">
+      <DependentUpon>MIG21_Gear.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\MIG21_HSI.xaml.cs">
+      <DependentUpon>MIG21_HSI.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\MIG21_HydraulicPressure.xaml.cs">
+      <DependentUpon>MIG21_HydraulicPressure.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\MIG21_Mach.xaml.cs">
+      <DependentUpon>MIG21_Mach.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\MIG21_Nosecone.xaml.cs">
+      <DependentUpon>MIG21_Nosecone.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\MIG21_OilPressure.xaml.cs">
+      <DependentUpon>MIG21_OilPressure.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\MIG21_RPM.xaml.cs">
+      <DependentUpon>MIG21_RPM.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\MIG21_SPO10.xaml.cs">
+      <DependentUpon>MIG21_SPO10.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\MIG21_Volt.xaml.cs">
+      <DependentUpon>MIG21_Volt.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\WPVVI200.xaml.cs">
+      <DependentUpon>WPVVI200.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\MIG21_Wheelbrakes.xaml.cs">
+      <DependentUpon>MIG21_Wheelbrakes.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\P51ACC.xaml.cs">
+      <DependentUpon>P51ACC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\P51ADI.xaml.cs">
+      <DependentUpon>P51ADI.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\P51ALT.xaml.cs">
+      <DependentUpon>P51ALT.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\P51Amp.xaml.cs">
+      <DependentUpon>P51Amp.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\P51ASI.xaml.cs">
+      <DependentUpon>P51ASI.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\P51Blinker.xaml.cs">
+      <DependentUpon>P51Blinker.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\P51CarbT.xaml.cs">
+      <DependentUpon>P51CarbT.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\P51Clock.xaml.cs">
+      <DependentUpon>P51Clock.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\P51CoolantT.xaml.cs">
+      <DependentUpon>P51CoolantT.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\P51DictionalGyro.xaml.cs">
+      <DependentUpon>P51DictionalGyro.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\P51FuelQFuselage.xaml.cs">
+      <DependentUpon>P51FuelQFuselage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\P51FuelQWing.xaml.cs">
+      <DependentUpon>P51FuelQWing.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\P51Gear.xaml.cs">
+      <DependentUpon>P51Gear.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\P51HydrP.xaml.cs">
+      <DependentUpon>P51HydrP.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\P51ManifoldP.xaml.cs">
+      <DependentUpon>P51ManifoldP.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\P51OilT.xaml.cs">
+      <DependentUpon>P51OilT.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\P51OxyP.xaml.cs">
+      <DependentUpon>P51OxyP.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\P51RemoteCompass.xaml.cs">
+      <DependentUpon>P51RemoteCompass.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\P51RPM.xaml.cs">
+      <DependentUpon>P51RPM.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\P51Suction.xaml.cs">
+      <DependentUpon>P51Suction.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\P51TurnIndicator.xaml.cs">
+      <DependentUpon>P51TurnIndicator.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\P51VVI.xaml.cs">
+      <DependentUpon>P51VVI.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\Rotary2.xaml.cs">
+      <DependentUpon>Rotary2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\SU25AFuel.xaml.cs">
+      <DependentUpon>SU25AFuel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\SU25MDI.xaml.cs">
+      <DependentUpon>SU25MDI.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\SU25TFuel.xaml.cs">
+      <DependentUpon>SU25TFuel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\SU25TWP.xaml.cs">
+      <DependentUpon>SU25TWP.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\SU27Fuel.xaml.cs">
+      <DependentUpon>SU27Fuel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\SU27MDI.xaml.cs">
+      <DependentUpon>SU27MDI.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\SU27WP.xaml.cs">
+      <DependentUpon>SU27WP.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\SU33FuelQ.xaml.cs">
+      <DependentUpon>SU33FuelQ.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\SU33FuelQ_stby.xaml.cs">
+      <DependentUpon>SU33FuelQ_stby.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\SU33MDI.xaml.cs">
+      <DependentUpon>SU33MDI.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\Rotary.xaml.cs">
+      <DependentUpon>Rotary.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\SwitchRotary.xaml.cs">
+      <DependentUpon>SwitchRotary.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\SwitchOnOffOn.xaml.cs">
+      <DependentUpon>SwitchOnOffOn.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\UH1_AltAAU31.xaml.cs">
+      <DependentUpon>UH1_AltAAU31.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\UH1_AltAAU32.xaml.cs">
+      <DependentUpon>UH1_AltAAU32.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\UH1_AltR.xaml.cs">
+      <DependentUpon>UH1_AltR.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\UH1_ASI.xaml.cs">
+      <DependentUpon>UH1_ASI.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\UH1_CDI.xaml.cs">
+      <DependentUpon>UH1_CDI.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\UH1_EGT.xaml.cs">
+      <DependentUpon>UH1_EGT.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\UH1_FuelP.xaml.cs">
+      <DependentUpon>UH1_FuelP.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\UH1_FuelQ.xaml.cs">
+      <DependentUpon>UH1_FuelQ.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\UH1_LoadMainGen.xaml.cs">
+      <DependentUpon>UH1_LoadMainGen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\UH1_LoadStbyGen.xaml.cs">
+      <DependentUpon>UH1_LoadStbyGen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\UH1_OilPEngine.xaml.cs">
+      <DependentUpon>UH1_OilPEngine.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\UH1_OilPTorque.xaml.cs">
+      <DependentUpon>UH1_OilPTorque.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\UH1_OilPTrans.xaml.cs">
+      <DependentUpon>UH1_OilPTrans.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\UH1_OilTEngine.xaml.cs">
+      <DependentUpon>UH1_OilTEngine.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\UH1_OilTTrans.xaml.cs">
+      <DependentUpon>UH1_OilTTrans.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\UH1_RadioCompassIndicator.xaml.cs">
+      <DependentUpon>UH1_RadioCompassIndicator.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\UH1_RadioCompassIndicator2.xaml.cs">
+      <DependentUpon>UH1_RadioCompassIndicator2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\UH1_RadioCompassIndicator2V2.xaml.cs">
+      <DependentUpon>UH1_RadioCompassIndicator2V2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\UH1_RadioCompassIndicatorV2.xaml.cs">
+      <DependentUpon>UH1_RadioCompassIndicatorV2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\UH1_RPM.xaml.cs">
+      <DependentUpon>UH1_RPM.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\UH1_RPMGasproducer.xaml.cs">
+      <DependentUpon>UH1_RPMGasproducer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\UH1_TurnIndicator.xaml.cs">
+      <DependentUpon>UH1_TurnIndicator.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\UH1_VoltAC.xaml.cs">
+      <DependentUpon>UH1_VoltAC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\UH1_VoltDC.xaml.cs">
+      <DependentUpon>UH1_VoltDC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\UH1_VVI.xaml.cs">
+      <DependentUpon>UH1_VVI.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\UH1_ADI.xaml.cs">
+      <DependentUpon>UH1_ADI.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\UH1_WhiskeyCompass.xaml.cs">
+      <DependentUpon>UH1_WhiskeyCompass.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\SwitchOffOn.xaml.cs">
+      <DependentUpon>SwitchOffOn.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\WPAirintake.xaml.cs">
+      <DependentUpon>WPAirintake.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\WPALT20.xaml.cs">
+      <DependentUpon>WPALT20.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\WPALT30.xaml.cs">
+      <DependentUpon>WPALT30.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\WPALTlate.xaml.cs">
+      <DependentUpon>WPALTlate.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\WPALTr10.xaml.cs">
+      <DependentUpon>WPALTr10.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\WPALTr15.xaml.cs">
+      <DependentUpon>WPALTr15.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\WPAOA.xaml.cs">
+      <DependentUpon>WPAOA.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\WPASI10.xaml.cs">
+      <DependentUpon>WPASI10.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\WPASI11.xaml.cs">
+      <DependentUpon>WPASI11.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\WPASI16.xaml.cs">
+      <DependentUpon>WPASI16.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\WPCabP.xaml.cs">
+      <DependentUpon>WPCabP.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\WPClock.xaml.cs">
+      <DependentUpon>WPClock.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\WPClockLate.xaml.cs">
+      <DependentUpon>WPClockLate.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\WPDistance.xaml.cs">
+      <DependentUpon>WPDistance.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\WPEngRPM.xaml.cs">
+      <DependentUpon>WPEngRPM.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\WPEngT10.xaml.cs">
+      <DependentUpon>WPEngT10.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\WPEngT12.xaml.cs">
+      <DependentUpon>WPEngT12.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\WPHSI_early.xaml.cs">
+      <DependentUpon>WPHSI_early.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\WPMach1.xaml.cs">
+      <DependentUpon>WPMach1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\WPMach3.xaml.cs">
+      <DependentUpon>WPMach3.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\WPPress24L.xaml.cs">
+      <DependentUpon>WPPress24L.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\WPPress24L3C.xaml.cs">
+      <DependentUpon>WPPress24L3C.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\WPPress24R.xaml.cs">
+      <DependentUpon>WPPress24R.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\WPPress24R3C.xaml.cs">
+      <DependentUpon>WPPress24R3C.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\WPPress3L.xaml.cs">
+      <DependentUpon>WPPress3L.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\WPPress3R.xaml.cs">
+      <DependentUpon>WPPress3R.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\WPPressBlank.xaml.cs">
+      <DependentUpon>WPPressBlank.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\WPREVEng.xaml.cs">
+      <DependentUpon>WPREVEng.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\WPVVI60.xaml.cs">
+      <DependentUpon>WPVVI60.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\WPWSP.xaml.cs">
+      <DependentUpon>WPWSP.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\MI8_ALT.xaml.cs">
+      <DependentUpon>MI8_ALT.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\MI8_ALTR.xaml.cs">
+      <DependentUpon>MI8_ALTR.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\MI8_RotorPitch.xaml.cs">
+      <DependentUpon>MI8_RotorPitch.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\MI8_APU.xaml.cs">
+      <DependentUpon>MI8_APU.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\MI8_ASI.xaml.cs">
+      <DependentUpon>MI8_ASI.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\MI8_Brake.xaml.cs">
+      <DependentUpon>MI8_Brake.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\MI8_CabinT.xaml.cs">
+      <DependentUpon>MI8_CabinT.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\MI8_Clock.xaml.cs">
+      <DependentUpon>MI8_Clock.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\MI8_DirectionalGyro.xaml.cs">
+      <DependentUpon>MI8_DirectionalGyro.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\MI8_DriftIndicator.xaml.cs">
+      <DependentUpon>MI8_DriftIndicator.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\MI8_EGT.xaml.cs">
+      <DependentUpon>MI8_EGT.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\MI8_EGT_APU.xaml.cs">
+      <DependentUpon>MI8_EGT_APU.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\MI8_EngPower.xaml.cs">
+      <DependentUpon>MI8_EngPower.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\MI8_FuelQ.xaml.cs">
+      <DependentUpon>MI8_FuelQ.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\MI8_Hover.xaml.cs">
+      <DependentUpon>MI8_Hover.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\MI8_HydrP.xaml.cs">
+      <DependentUpon>MI8_HydrP.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\MI8_OilEng.xaml.cs">
+      <DependentUpon>MI8_OilEng.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\MI8_OilP_Trans.xaml.cs">
+      <DependentUpon>MI8_OilP_Trans.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\MI8_OilT_Trans.xaml.cs">
+      <DependentUpon>MI8_OilT_Trans.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\MI8_PneuP.xaml.cs">
+      <DependentUpon>MI8_PneuP.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\MI8_RPM_Eng.xaml.cs">
+      <DependentUpon>MI8_RPM_Eng.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\MI8_RPM_Rot.xaml.cs">
+      <DependentUpon>MI8_RPM_Rot.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\MI8_TurnIndicator.xaml.cs">
+      <DependentUpon>MI8_TurnIndicator.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\MI8_VVI.xaml.cs">
+      <DependentUpon>MI8_VVI.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\US_Clock.xaml.cs">
+      <DependentUpon>US_Clock.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\KA50ACC.xaml.cs">
+      <DependentUpon>KA50ACC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\KA50ADI.xaml.cs">
+      <DependentUpon>KA50ADI.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\KA50ADIStby.xaml.cs">
+      <DependentUpon>KA50ADIStby.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\KA50ALT.xaml.cs">
+      <DependentUpon>KA50ALT.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\KA50ALTr.xaml.cs">
+      <DependentUpon>KA50ALTr.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\KA50APUTemp.xaml.cs">
+      <DependentUpon>KA50APUTemp.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\KA50ASI.xaml.cs">
+      <DependentUpon>KA50ASI.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\KA50EGT.xaml.cs">
+      <DependentUpon>KA50EGT.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\KA50EngOP.xaml.cs">
+      <DependentUpon>KA50EngOP.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\KA50EngOT.xaml.cs">
+      <DependentUpon>KA50EngOT.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\KA50EngP.xaml.cs">
+      <DependentUpon>KA50EngP.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\KA50EngRPM.xaml.cs">
+      <DependentUpon>KA50EngRPM.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\KA50FuelQ.xaml.cs">
+      <DependentUpon>KA50FuelQ.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\KA50Gear.xaml.cs">
+      <DependentUpon>KA50Gear.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\KA50HydB.xaml.cs">
+      <DependentUpon>KA50HydB.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\KA50HydP.xaml.cs">
+      <DependentUpon>KA50HydP.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\KA50HydT.xaml.cs">
+      <DependentUpon>KA50HydT.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\KA50OutTemp.xaml.cs">
+      <DependentUpon>KA50OutTemp.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\KA50RBPI.xaml.cs">
+      <DependentUpon>KA50RBPI.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\KA50RotRPM.xaml.cs">
+      <DependentUpon>KA50RotRPM.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\KA50TransOP.xaml.cs">
+      <DependentUpon>KA50TransOP.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\KA50TransOT.xaml.cs">
+      <DependentUpon>KA50TransOT.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\KA50VSI.xaml.cs">
+      <DependentUpon>KA50VSI.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\KA50WSC.xaml.cs">
+      <DependentUpon>KA50WSC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\WPEkran.xaml.cs">
+      <DependentUpon>WPEkran.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\WPHSI.xaml.cs">
+      <DependentUpon>WPHSI.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\WPCompass.xaml.cs">
+      <DependentUpon>WPCompass.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\US_WhiskeyCompass.xaml.cs">
+      <DependentUpon>US_WhiskeyCompass.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\US_HSI.xaml.cs">
+      <DependentUpon>US_HSI.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\US_AOA.xaml.cs">
+      <DependentUpon>US_AOA.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\US_ACC.xaml.cs">
+      <DependentUpon>US_ACC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\A10_ACP.xaml.cs">
+      <DependentUpon>A10_ACP.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\US_ADI.xaml.cs">
+      <DependentUpon>US_ADI.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\US_ADIstby.xaml.cs">
+      <DependentUpon>US_ADIstby.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\A10_ASI.xaml.cs">
+      <DependentUpon>A10_ASI.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\US_RWR.xaml.cs">
+      <DependentUpon>US_RWR.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MemoryManagement.cs" />
+    <Compile Include="MessageBoxWindow.xaml.cs">
+      <DependentUpon>MessageBoxWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MessageBoxInstruments.xaml.cs">
+      <DependentUpon>MessageBoxInstruments.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MessageBoxAccessories.xaml.cs">
+      <DependentUpon>MessageBoxAccessories.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ProzessHelper.cs" />
+    <Compile Include="UDP.cs" />
+    <Compile Include="UserControlExtender.cs" />
+    <Page Include="Assets\DiscoveryYellow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\A10_Clock.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\A10_CMSC.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\A10_EGT.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\A10_EGTAPU.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\A10_Flaps.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\A10_Fuel.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\A10_FuelFlow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\A10_HydP.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\A10_OilP.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\Button.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\ButtonWithRelease.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\ButtonWithRepeat.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\ButtonOffOn.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\DisplaySix.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\DisplayThree.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\DisplayTwo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\DisplayOne.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\Display_Eight.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\A10_RPMAPU.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\A10_RPMEng.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\A10_RPMFAN.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\A10_UHF.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\F15AltStby.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\LampOnOff30x30.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\LampOnOff80x200.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\LampOnOff200x80.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\MIG29FuelQ.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\MIG29MDI.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\Monitor10x24.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\Monitor10x24D.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Gauges\ButtonPanelOffOn.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\Switch_OnOFFOn.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\Switch_OFFOn.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\SwitchPanelOffOn.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\WPSPO15.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\Label400x400.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\Label300x200.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\Label300x100.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\Label200x200.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\Label200x100.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\LabelUFC.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\LabelCDU.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\LabelMFCD.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\LampOnOff70x70.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\LampOnOff.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\Experimental.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\F15Alt.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\F15ASI.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\F15ASIStby.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\F15CabP.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\F15EGT.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\F15EngRPM.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\F15Fuel.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\F15FuelFlow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\F15Gear.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\F15Nozzle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\F15OilP.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\F86_ACC.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\F86_ADI.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\F86_ALT.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\F86_ASI.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\F86_CabinP.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\F86_Clock.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\F86_Compass.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\F86_EGT.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\F86_FuelFlow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\F86_FuelQ.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\F86_Gear.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\F86_HydrP.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\F86_Labs.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\F86_Load.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\F86_Mach.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\F86_OilP.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\F86_RMI.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\F86_RPM.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\F86_TurnIndicator.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\F86_Volt.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\F86_VVI.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\FWD9Att.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\FWD9Fuel.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\FWD9Gear.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\LwH20Temp.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\FWD9IAS.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\LwMW50P.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\LwOilTemp.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\LwTrim.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\FWD9VVI.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\LwAFN2.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\LwAlt.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\LwAtt.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\LwBlink.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\LwClock.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\LwDblP.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\LwHeadCourse.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\LwIAS.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\LwMAP.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\LwO2P.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\LwProp.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\LwRPM.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\LwSZ100.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\LwSZ1000.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\LwSZ500.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\LwVVI.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\BfK4Att.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\BfK4DblP.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\LwFuel.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\BfK4Fuel.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\BfK4Gear.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\BfK4H2OT.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\BfK4MAP.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\BfK4MW50P.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\BfK4OilTemp.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\BfK4RPM.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\BfK4MG151Left.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\BfK4MG151Right.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\MIG15_ADI.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\MIG15_ALT.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\MIG15_AltR.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\MIG15_ASI.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\MIG15_Brake.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\MIG15_CabinP.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\MIG15_Clock.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\MIG15_EGT.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\MIG15_FuelFlow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\MIG15_FuelP.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\MIG15_FuelQ.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\MIG15_Gear.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\MIG15_GyroCompass.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\MIG15_HydrP_Aileron.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\MIG15_Mach.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\MIG15_Pressure250.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\MIG15_Pressure80.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\MIG15_PressureAirFlaps.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\MIG15_PressureAirGears.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\MIG15_PressureMain.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\MIG15_PressureMainAir.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\MIG15_PressureOxygen.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\MIG15_RadioCompass.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\MIG15_RPM.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\MIG15_VoltAmpMeter.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\MIG15_VVI.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\MIG21_ACC.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\WPADI.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\MIG21_ALT30.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\MIG21_AltR.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\MIG21_AOA.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\MIG21_ARU_3VM.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\MIG21_ASI10.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\MIG21_Clock.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\MIG21_Distance.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\MIG21_EGT.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\MIG21_FuelQ.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\MIG21_Gear.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\MIG21_HSI.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\MIG21_HydraulicPressure.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\MIG21_Mach.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\MIG21_Nosecone.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\MIG21_OilPressure.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\MIG21_RPM.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\MIG21_SPO10.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\MIG21_Volt.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\WPVVI200.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\MIG21_Wheelbrakes.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\P51ACC.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\P51ADI.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\P51ALT.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\P51Amp.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\P51ASI.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\P51Blinker.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\P51CarbT.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\P51Clock.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\P51CoolantT.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\P51DictionalGyro.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\P51FuelQFuselage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\P51FuelQWing.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\P51Gear.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\P51HydrP.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\P51ManifoldP.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\P51OilT.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\P51OxyP.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\P51RemoteCompass.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\P51RPM.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\P51Suction.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\P51TurnIndicator.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\P51VVI.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\Rotary2.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\SU25AFuel.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\SU25MDI.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\SU25TFuel.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\SU25TWP.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\SU27Fuel.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\SU27MDI.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\SU27WP.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\SU33FuelQ.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\SU33FuelQ_stby.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\SU33MDI.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\Rotary.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\SwitchRotary.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\SwitchOnOffOn.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\UH1_AltAAU31.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\UH1_AltAAU32.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\UH1_AltR.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\UH1_ASI.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\UH1_CDI.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\UH1_EGT.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\UH1_FuelP.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\UH1_FuelQ.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\UH1_LoadMainGen.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\UH1_LoadStbyGen.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\UH1_OilPEngine.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\UH1_OilPTorque.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\UH1_OilPTrans.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\UH1_OilTEngine.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\UH1_OilTTrans.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\UH1_RadioCompassIndicator.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\UH1_RadioCompassIndicator2.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\UH1_RadioCompassIndicator2V2.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\UH1_RadioCompassIndicatorV2.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\UH1_RPM.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\UH1_RPMGasproducer.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\UH1_TurnIndicator.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\UH1_VoltAC.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\UH1_VoltDC.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\UH1_VVI.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\UH1_ADI.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\UH1_WhiskeyCompass.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\SwitchOffOn.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Gauges\WPAirintake.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\WPALT20.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\WPALT30.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\WPALTlate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\WPALTr10.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\WPALTr15.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\WPAOA.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\WPASI10.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\WPASI11.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\WPASI16.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\WPCabP.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\WPClock.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\WPClockLate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\WPDistance.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\WPEngRPM.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\WPEngT10.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\WPEngT12.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\WPHSI_early.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\WPMach1.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\WPMach3.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\WPPress24L.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\WPPress24L3C.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\WPPress24R.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\WPPress24R3C.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\WPPress3L.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\WPPress3R.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\WPPressBlank.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\WPREVEng.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\WPVVI60.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\WPWSP.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\MI8_ALT.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\MI8_ALTR.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\MI8_RotorPitch.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\MI8_APU.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\MI8_ASI.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\MI8_Brake.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\MI8_CabinT.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\MI8_Clock.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\MI8_DirectionalGyro.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\MI8_DriftIndicator.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\MI8_EGT.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\MI8_EGT_APU.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\MI8_EngPower.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\MI8_FuelQ.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\MI8_Hover.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\MI8_HydrP.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\MI8_OilEng.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\MI8_OilP_Trans.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\MI8_OilT_Trans.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\MI8_PneuP.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\MI8_RPM_Eng.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\MI8_RPM_Rot.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\MI8_TurnIndicator.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\MI8_VVI.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\US_Clock.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\KA50ACC.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\KA50ADI.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\KA50ADIStby.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\KA50ALT.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\KA50ALTr.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\KA50APUTemp.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\KA50ASI.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\KA50EGT.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\KA50EngOP.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\KA50EngOT.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\KA50EngP.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\KA50EngRPM.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\KA50FuelQ.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\KA50Gear.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\KA50HydB.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\KA50HydP.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\KA50HydT.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\KA50OutTemp.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\KA50RBPI.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\KA50RotRPM.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\KA50TransOP.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\KA50TransOT.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\KA50VSI.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\KA50WSC.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\WPEkran.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\WPHSI.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\WPCompass.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\US_WhiskeyCompass.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\US_HSI.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\US_AOA.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\US_ACC.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\A10_ACP.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\US_ADI.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\US_ADIstby.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\A10_ALT.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\A10_ASI.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\US_VVI .xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\US_RWR.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Instruments.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="Gauges\A10_ALT.xaml.cs">
+      <DependentUpon>A10_ALT.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DataSet1.cs">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet2.cs">
+      <DependentUpon>DataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\US_VVI .xaml.cs">
+      <DependentUpon>US_VVI .xaml</DependentUpon>
+    </Compile>
+    <Compile Include="IGauge.cs" />
+    <Compile Include="ImportExport.cs" />
+    <Compile Include="Instruments.xaml.cs">
+      <DependentUpon>Instruments.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="MessageBoxWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MessageBoxInstruments.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MessageBoxLamps.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MessageBoxAccessories.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MessageBoxSwitch.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Masterdata.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Masterdata.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MessageBoxLamps.xaml.cs">
+      <DependentUpon>MessageBoxLamps.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MessageBoxSwitch.xaml.cs">
+      <DependentUpon>MessageBoxSwitch.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="DataSet1.xsc">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet1.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSet1.xss">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet2.xsc">
+      <DependentUpon>DataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet2.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet2.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSet2.xss">
+      <DependentUpon>DataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="Masterdata.xsc">
+      <DependentUpon>Masterdata.xsd</DependentUpon>
+    </None>
+    <None Include="Masterdata.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Masterdata.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Masterdata.xss">
+      <DependentUpon>Masterdata.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\background.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Logo_01.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\39.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Donations.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Select.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Select.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Logo_01_150.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Gauges\US-ADI_Images\Image.png" />
+    <Resource Include="Gauges\US-ADI_Images\Image1.png" />
+    <Resource Include="Gauges\US-ADI_Images\Image10.png" />
+    <Resource Include="Gauges\US-ADI_Images\Image2.png" />
+    <Resource Include="Gauges\US-ADI_Images\Image3.png" />
+    <Resource Include="Gauges\US-ADI_Images\Image4.png" />
+    <Resource Include="Gauges\US-ADI_Images\Image5.png" />
+    <Resource Include="Gauges\US-ADI_Images\Image6.png" />
+    <Resource Include="Gauges\US-ADI_Images\Image7.png" />
+    <Resource Include="Gauges\US-ADI_Images\Image8.png" />
+    <Resource Include="Gauges\US-ADI_Images\Image9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Gauges\US-ADI-stby_Images\Image.png" />
+    <Resource Include="Gauges\US-ADI-stby_Images\Image1.png" />
+    <Resource Include="Gauges\US-ADI-stby_Images\Image2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Gauges\US-VVI_Images\Image.png" />
+    <Resource Include="Gauges\US-VVI_Images\Image1.png" />
+    <Resource Include="Gauges\US-VVI_Images\Image2.png" />
+    <Resource Include="Gauges\US-VVI_Images\Image3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Gauges\US-HSI_Images\Image.png" />
+    <Resource Include="Gauges\US-HSI_Images\Image1.png" />
+    <Resource Include="Gauges\US-HSI_Images\Image2.png" />
+    <Resource Include="Gauges\US-HSI_Images\Image3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Gauges\A10-ASI_Images\Image.png" />
+    <Resource Include="Gauges\A10-ASI_Images\Image1.png" />
+    <Resource Include="Gauges\A10-ASI_Images\Image2.png" />
+    <Resource Include="Gauges\A10-ASI_Images\Image3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Gauges\A10-ALT_Images\Image.png" />
+    <Resource Include="Gauges\A10-ALT_Images\Image1.png" />
+    <Resource Include="Gauges\A10-ALT_Images\Image2.png" />
+    <Resource Include="Gauges\A10-ALT_Images\Image3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Gauges\A10-UHF_Images\Image.png" />
+    <Resource Include="Gauges\A10-UHF_Images\Image1.png" />
+    <Resource Include="Gauges\A10-UHF_Images\Image2.png" />
+    <Resource Include="Gauges\A10-UHF_Images\Image3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Gauges\KA50-HSI_Images\Image.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Gauges\KA50-ADI_Images\Image.png" />
+    <Resource Include="Gauges\KA50-ADI_Images\Image1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Gauges\KA50-WSC_Images\Image.png" />
+    <Resource Include="Gauges\KA50-WSC_Images\Image1.png" />
+    <Resource Include="Gauges\KA50-WSC_Images\Image10.png" />
+    <Resource Include="Gauges\KA50-WSC_Images\Image11.png" />
+    <Resource Include="Gauges\KA50-WSC_Images\Image12.png" />
+    <Resource Include="Gauges\KA50-WSC_Images\Image13.png" />
+    <Resource Include="Gauges\KA50-WSC_Images\Image14.png" />
+    <Resource Include="Gauges\KA50-WSC_Images\Image15.png" />
+    <Resource Include="Gauges\KA50-WSC_Images\Image2.png" />
+    <Resource Include="Gauges\KA50-WSC_Images\Image3.png" />
+    <Resource Include="Gauges\KA50-WSC_Images\Image4.png" />
+    <Resource Include="Gauges\KA50-WSC_Images\Image5.png" />
+    <Resource Include="Gauges\KA50-WSC_Images\Image6.png" />
+    <Resource Include="Gauges\KA50-WSC_Images\Image7.png" />
+    <Resource Include="Gauges\KA50-WSC_Images\Image8.png" />
+    <Resource Include="Gauges\KA50-WSC_Images\Image9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Gauges\KA50-ADI-stby_Images\Image.png" />
+    <Resource Include="Gauges\KA50-ADI-stby_Images\Image1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Gauges\All-WhCompass_Images\Image.png" />
+    <Resource Include="Gauges\All-WhCompass_Images\Image1.png" />
+    <Resource Include="Gauges\All-WhCompass_Images\Image2.png" />
+    <Resource Include="Gauges\All-WhCompass_Images\Image3.png" />
+    <Resource Include="Gauges\Bf-109 MG151 links_Images\Image.png" />
+    <Resource Include="Gauges\Bf-109 MG151 links_Images\Image1.png" />
+    <Resource Include="Gauges\Bf-109 MG151 links_Images\Image2.png" />
+    <Resource Include="Gauges\Bf-109 MG151 links_Images\Image3.png" />
+    <Resource Include="Gauges\Bf-109 MG151 rechts_Images\Image.png" />
+    <Resource Include="Gauges\Bf-109 MG151 rechts_Images\Image1.png" />
+    <Resource Include="Gauges\Bf-109 MG151 rechts_Images\Image2.png" />
+    <Resource Include="Gauges\Bf-109 MG151 rechts_Images\Image3.png" />
+    <Resource Include="Gauges\CMSC_Images\Image.png" />
+    <Resource Include="Gauges\F15-ALT_Images\Image.png" />
+    <Resource Include="Gauges\F15-ALT_Images\Image1.png" />
+    <Resource Include="Gauges\F15-ALT_Images\Image2.png" />
+    <Resource Include="Gauges\F15-ALT_Images\Image3.png" />
+    <Resource Include="Gauges\F15-ASI_Images\Image.png" />
+    <Resource Include="Gauges\F15-ASI_Images\Image1.png" />
+    <Resource Include="Gauges\F15-ASI_Images\Image2.png" />
+    <Resource Include="Gauges\F15-ASI_Images\Image3.png" />
+    <Resource Include="Gauges\F15-EGT_Images\Image.png" />
+    <Resource Include="Gauges\F15-EGT_Images\Image1.png" />
+    <Resource Include="Gauges\F15-EGT_Images\Image2.png" />
+    <Resource Include="Gauges\F15-EGT_Images\Image3.png" />
+    <Resource Include="Gauges\F15-FuelFlow_Images\Image.png" />
+    <Resource Include="Gauges\F15-FuelFlow_Images\Image1.png" />
+    <Resource Include="Gauges\F15-FuelFlow_Images\Image2.png" />
+    <Resource Include="Gauges\F15-FuelFlow_Images\Image3.png" />
+    <Resource Include="Gauges\F15-FuelQ_Images\Image.png" />
+    <Resource Include="Gauges\F15-FuelQ_Images\Image1.png" />
+    <Resource Include="Gauges\F15-FuelQ_Images\Image2.png" />
+    <Resource Include="Gauges\F15-FuelQ_Images\Image3.png" />
+    <Resource Include="Gauges\F15-Nozzle_Images\Image.png" />
+    <Resource Include="Gauges\F15-Nozzle_Images\Image1.png" />
+    <Resource Include="Gauges\F15-Nozzle_Images\Image2.png" />
+    <Resource Include="Gauges\F15-Nozzle_Images\Image3.png" />
+    <Resource Include="Gauges\F15-Nozzle_Images\Image4.png" />
+    <Resource Include="Gauges\F15-REV-Eng_Images\Image.png" />
+    <Resource Include="Gauges\F15-REV-Eng_Images\Image1.png" />
+    <Resource Include="Gauges\F15-REV-Eng_Images\Image2.png" />
+    <Resource Include="Gauges\F15-REV-Eng_Images\Image3.png" />
+    <Resource Include="Gauges\FW190RPM_Images\FWD9Fuel_Images.png" />
+    <Resource Include="Gauges\FW190RPM_Images\Image.png" />
+    <Resource Include="Gauges\FW190RPM_Images\image0.png" />
+    <Resource Include="Gauges\FW190RPM_Images\Image1.png" />
+    <Resource Include="Gauges\FW190RPM_Images\Image2.png" />
+    <Resource Include="Gauges\FW190RPM_Images\Image3.png" />
+    <Resource Include="Gauges\FW190RPM_Images\Image4.png" />
+    <Resource Include="Gauges\FW190RPM_Images\Image5.png" />
+    <Resource Include="Gauges\FW190RPM_Images\Image6.png" />
+    <Resource Include="Gauges\FW190RPM_Images\LwAFN2_Images.png" />
+    <Resource Include="Gauges\FW190RPM_Images\LwALT_Images.png" />
+    <Resource Include="Gauges\FW190RPM_Images\LwALT_Images5.png" />
+    <Resource Include="Gauges\FW190RPM_Images\LwALT_Images6.png" />
+    <Resource Include="Gauges\FW190RPM_Images\LwALT_Images7.png" />
+    <Resource Include="Gauges\FW190RPM_Images\LwATT_Image.png" />
+    <Resource Include="Gauges\FW190RPM_Images\LwATT_Image1.png" />
+    <Resource Include="Gauges\FW190RPM_Images\LwATT_Image2.png" />
+    <Resource Include="Gauges\FW190RPM_Images\LwATT_Image3.png" />
+    <Resource Include="Gauges\FW190RPM_Images\LwATT_Image4.png" />
+    <Resource Include="Gauges\FW190RPM_Images\LwATT_Image5.png" />
+    <Resource Include="Gauges\FW190RPM_Images\LwClock_Image.png" />
+    <Resource Include="Gauges\FWD9_Gear_Images\Image.png" />
+    <Resource Include="Gauges\FWD9_Gear_Images\Image1.png" />
+    <Resource Include="Gauges\FWD9_Gear_Images\Image10.png" />
+    <Resource Include="Gauges\FWD9_Gear_Images\Image11.png" />
+    <Resource Include="Gauges\FWD9_Gear_Images\Image12.png" />
+    <Resource Include="Gauges\FWD9_Gear_Images\Image2.png" />
+    <Resource Include="Gauges\FWD9_Gear_Images\Image3.png" />
+    <Resource Include="Gauges\FWD9_Gear_Images\Image4.png" />
+    <Resource Include="Gauges\FWD9_Gear_Images\Image5.png" />
+    <Resource Include="Gauges\FWD9_Gear_Images\Image6.png" />
+    <Resource Include="Gauges\FWD9_Gear_Images\Image7.png" />
+    <Resource Include="Gauges\FWD9_Gear_Images\Image8.png" />
+    <Resource Include="Gauges\FWD9_Gear_Images\Image9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Gauges\KA50-ALTr_Images\Image.png" />
+    <Resource Include="Gauges\KA50-ALTr_Images\Image1.png" />
+    <Resource Include="Gauges\KA50-ALTr_Images\Image2.png" />
+    <Resource Include="Gauges\KA50-ALTr_Images\Image3.png" />
+    <Resource Include="Gauges\KA50-AOA_Images\Image.png" />
+    <Resource Include="Gauges\KA50-AOA_Images\Image1.png" />
+    <Resource Include="Gauges\KA50-AOA_Images\Image2.png" />
+    <Resource Include="Gauges\KA50-AOA_Images\Image3.png" />
+    <Resource Include="Gauges\KA50-APUT_Images\Image.png" />
+    <Resource Include="Gauges\KA50-APUT_Images\Image1.png" />
+    <Resource Include="Gauges\KA50-APUT_Images\Image2.png" />
+    <Resource Include="Gauges\KA50-APUT_Images\Image3.png" />
+    <Resource Include="Gauges\KA50-APUT_Images\Image4.png" />
+    <Resource Include="Gauges\KA50-APUT_Images\Image5.png" />
+    <Resource Include="Gauges\KA50-APUT_Images\Image6.png" />
+    <Resource Include="Gauges\KA50-APUT_Images\Image7.png" />
+    <Resource Include="Gauges\KA50-ASI_Images\Image.png" />
+    <Resource Include="Gauges\KA50-ASI_Images\Image1.png" />
+    <Resource Include="Gauges\KA50-ASI_Images\Image2.png" />
+    <Resource Include="Gauges\KA50-ASI_Images\Image3.png" />
+    <Resource Include="Gauges\KA50-EGT_Images\Image.png" />
+    <Resource Include="Gauges\KA50-EGT_Images\Image1.png" />
+    <Resource Include="Gauges\KA50-EGT_Images\Image2.png" />
+    <Resource Include="Gauges\KA50-EGT_Images\Image3.png" />
+    <Resource Include="Gauges\KA50-EGT_Images\Image4.png" />
+    <Resource Include="Gauges\KA50-EGT_Images\Image5.png" />
+    <Resource Include="Gauges\KA50-EGT_Images\Image6.png" />
+    <Resource Include="Gauges\KA50-EGT_Images\Image7.png" />
+    <Resource Include="Gauges\KA50-FuelQ_Images\Image.png" />
+    <Resource Include="Gauges\KA50-FuelQ_Images\Image1.png" />
+    <Resource Include="Gauges\KA50-FuelQ_Images\Image2.png" />
+    <Resource Include="Gauges\KA50-FuelQ_Images\Image3.png" />
+    <Resource Include="Gauges\KA50-Gear_Images\Image.png" />
+    <Resource Include="Gauges\KA50-Gear_Images\Image1.png" />
+    <Resource Include="Gauges\KA50-Gear_Images\Image10.png" />
+    <Resource Include="Gauges\KA50-Gear_Images\Image11.png" />
+    <Resource Include="Gauges\KA50-Gear_Images\Image2.png" />
+    <Resource Include="Gauges\KA50-Gear_Images\Image3.png" />
+    <Resource Include="Gauges\KA50-Gear_Images\Image4.png" />
+    <Resource Include="Gauges\KA50-Gear_Images\Image5.png" />
+    <Resource Include="Gauges\KA50-Gear_Images\Image6.png" />
+    <Resource Include="Gauges\KA50-Gear_Images\Image7.png" />
+    <Resource Include="Gauges\KA50-Gear_Images\Image8.png" />
+    <Resource Include="Gauges\KA50-Gear_Images\Image9.png" />
+    <Resource Include="Gauges\KA50-HSI_Images1\Image.png" />
+    <Resource Include="Gauges\KA50-Rev-Eng_Images\Image.png" />
+    <Resource Include="Gauges\KA50-Rev-Eng_Images\Image1.png" />
+    <Resource Include="Gauges\KA50-Rev-Eng_Images\Image2.png" />
+    <Resource Include="Gauges\KA50-Rev-Eng_Images\Image3.png" />
+    <Resource Include="Gauges\KA50-Rev-Eng_Images\Image4.png" />
+    <Resource Include="Gauges\KA50-Rev-Eng_Images\Image5.png" />
+    <Resource Include="Gauges\KA50-Rev-Rot_Images\Image.png" />
+    <Resource Include="Gauges\KA50-Rev-Rot_Images\Image1.png" />
+    <Resource Include="Gauges\KA50-Rev-Rot_Images\Image2.png" />
+    <Resource Include="Gauges\KA50-Rev-Rot_Images\Image3.png" />
+    <Resource Include="Gauges\KA50-Rev-Rot_Images\Image4.png" />
+    <Resource Include="Gauges\KA50-Rev-Rot_Images\Image5.png" />
+    <Resource Include="Gauges\KA50_ALTr_Images\Image.png" />
+    <Resource Include="Gauges\KA50_ALTr_Images\Image1.png" />
+    <Resource Include="Gauges\KA50_ALTr_Images\Image2.png" />
+    <Resource Include="Gauges\KA50_ALTr_Images\Image3.png" />
+    <Resource Include="Gauges\LwALT2_Images\Image.png" />
+    <Resource Include="Gauges\LwALT2_Images\Image1.png" />
+    <Resource Include="Gauges\LwALT2_Images\Image10.png" />
+    <Resource Include="Gauges\LwALT2_Images\Image2.png" />
+    <Resource Include="Gauges\LwALT2_Images\Image3.png" />
+    <Resource Include="Gauges\LwALT2_Images\Image4.png" />
+    <Resource Include="Gauges\LwALT2_Images\Image5.png" />
+    <Resource Include="Gauges\LwALT2_Images\Image6.png" />
+    <Resource Include="Gauges\LwALT2_Images\Image7.png" />
+    <Resource Include="Gauges\LwALT2_Images\Image8.png" />
+    <Resource Include="Gauges\LwALT2_Images\Image9.png" />
+    <Resource Include="Gauges\LwALT_Images\Image.png" />
+    <Resource Include="Gauges\LwALT_Images\Image1.png" />
+    <Resource Include="Gauges\LwALT_Images\Image10.png" />
+    <Resource Include="Gauges\LwALT_Images\Image2.png" />
+    <Resource Include="Gauges\LwALT_Images\Image3.png" />
+    <Resource Include="Gauges\LwALT_Images\Image4.png" />
+    <Resource Include="Gauges\LwALT_Images\Image5.png" />
+    <Resource Include="Gauges\LwALT_Images\Image6.png" />
+    <Resource Include="Gauges\LwALT_Images\Image7.png" />
+    <Resource Include="Gauges\LwALT_Images\Image8.png" />
+    <Resource Include="Gauges\LwALT_Images\Image9.png" />
+    <Resource Include="Gauges\LwASI_Images\Image.png" />
+    <Resource Include="Gauges\LwASI_Images\Image1.png" />
+    <Resource Include="Gauges\LwASI_Images\Image2.png" />
+    <Resource Include="Gauges\LwASI_Images\Image3.png" />
+    <Resource Include="Gauges\LwASI_Images\Image4.png" />
+    <Resource Include="Gauges\LwASI_Images\Image5.png" />
+    <Resource Include="Gauges\LwASI_Images\Image6.png" />
+    <Resource Include="Gauges\LwATT_Images\Image.png" />
+    <Resource Include="Gauges\LwATT_Images\Image1.png" />
+    <Resource Include="Gauges\LwATT_Images\Image2.png" />
+    <Resource Include="Gauges\LwATT_Images\Image3.png" />
+    <Resource Include="Gauges\LwATT_Images\Image4.png" />
+    <Resource Include="Gauges\LwATT_Images\Image5.png" />
+    <Resource Include="Gauges\LwClock_Images\Image.png" />
+    <Resource Include="Gauges\LwClock_Images\Image1.png" />
+    <Resource Include="Gauges\LwClock_Images\Image2.png" />
+    <Resource Include="Gauges\LwClock_Images\Image3.png" />
+    <Resource Include="Gauges\LwHead_Images\Image.png" />
+    <Resource Include="Gauges\LwHead_Images\Image1.png" />
+    <Resource Include="Gauges\LwHead_Images\Image2.png" />
+    <Resource Include="Gauges\LwHead_Images\Image3.png" />
+    <Resource Include="Gauges\LwHead_Images\Image4.png" />
+    <Resource Include="Gauges\LwMW50P_Images\Image.png" />
+    <Resource Include="Gauges\LwMW50P_Images\Image1.png" />
+    <Resource Include="Gauges\LwMW50P_Images\Image2.png" />
+    <Resource Include="Gauges\LwMW50P_Images\Image3.png" />
+    <Resource Include="Gauges\LwMW50P_Images\Image4.png" />
+    <Resource Include="Gauges\LwMW50P_Images\Image5.png" />
+    <Resource Include="Gauges\LwRev_Images\Image.png" />
+    <Resource Include="Gauges\LwRev_Images\Image1.png" />
+    <Resource Include="Gauges\LwRev_Images\Image2.png" />
+    <Resource Include="Gauges\LwRev_Images\Image3.png" />
+    <Resource Include="Gauges\LwRev_Images\Image4.png" />
+    <Resource Include="Gauges\LwRev_Images\Image5.png" />
+    <Resource Include="Gauges\LwVSI_Images\Image.png" />
+    <Resource Include="Gauges\LW_SZ1000_Images\Image.png" />
+    <Resource Include="Gauges\LW_SZ1000_Images\Image1.png" />
+    <Resource Include="Gauges\LW_SZ100_Images\Image.png" />
+    <Resource Include="Gauges\LW_SZ100_Images\Image1.png" />
+    <Resource Include="Gauges\LW_SZ500_Images\Image.png" />
+    <Resource Include="Gauges\LW_SZ500_Images\Image1.png" />
+    <Resource Include="Gauges\MEK4Att_Images\Image.png" />
+    <Resource Include="Gauges\MEK4Att_Images\Image1.png" />
+    <Resource Include="Gauges\MEK4Att_Images\Image2.png" />
+    <Resource Include="Gauges\MEK4Att_Images\Image3.png" />
+    <Resource Include="Gauges\MEK4Att_Images\Image4.png" />
+    <Resource Include="Gauges\MEK4Att_Images\Image5.png" />
+    <Resource Include="Gauges\MEK4DblP_Images\Image.png" />
+    <Resource Include="Gauges\MEK4DblP_Images\Image1.png" />
+    <Resource Include="Gauges\MEK4DblP_Images\Image2.png" />
+    <Resource Include="Gauges\MEK4DblP_Images\Image3.png" />
+    <Resource Include="Gauges\MEK4DblP_Images\Image4.png" />
+    <Resource Include="Gauges\MEK4DblP_Images\Image5.png" />
+    <Resource Include="Gauges\MEK4DblP_Images\Image6.png" />
+    <Resource Include="Gauges\MEK4DblP_Images\Image7.png" />
+    <Resource Include="Gauges\MEK4FuelQ_Images\Image.png" />
+    <Resource Include="Gauges\MEK4FuelQ_Images\Image1.png" />
+    <Resource Include="Gauges\MEK4FuelQ_Images\Image2.png" />
+    <Resource Include="Gauges\MEK4FuelQ_Images\Image3.png" />
+    <Resource Include="Gauges\MEK4H2oT_Images\Image.png" />
+    <Resource Include="Gauges\MEK4H2oT_Images\Image1.png" />
+    <Resource Include="Gauges\MEK4H2oT_Images\Image2.png" />
+    <Resource Include="Gauges\MEK4H2oT_Images\Image3.png" />
+    <Resource Include="Gauges\MEK4MAP_Images\Image.png" />
+    <Resource Include="Gauges\MEK4MAP_Images\Image1.png" />
+    <Resource Include="Gauges\MEK4MAP_Images\Image2.png" />
+    <Resource Include="Gauges\MEK4MAP_Images\Image3.png" />
+    <Resource Include="Gauges\MEK4MAP_Images\Image4.png" />
+    <Resource Include="Gauges\MEK4MAP_Images\Image5.png" />
+    <Resource Include="Gauges\MEK4MW50P_Images\Image.png" />
+    <Resource Include="Gauges\MEK4MW50P_Images\Image1.png" />
+    <Resource Include="Gauges\MEK4MW50P_Images\Image2.png" />
+    <Resource Include="Gauges\MEK4MW50P_Images\Image3.png" />
+    <Resource Include="Gauges\MEK4MW50P_Images\Image4.png" />
+    <Resource Include="Gauges\MEK4MW50P_Images\Image5.png" />
+    <Resource Include="Gauges\MEK4OilT_Images\Image.png" />
+    <Resource Include="Gauges\MEK4OilT_Images\Image1.png" />
+    <Resource Include="Gauges\MEK4OilT_Images\Image2.png" />
+    <Resource Include="Gauges\MEK4OilT_Images\Image3.png" />
+    <Resource Include="Gauges\MEK4Rev_Images\Image.png" />
+    <Resource Include="Gauges\MEK4Rev_Images\Image1.png" />
+    <Resource Include="Gauges\MEK4Rev_Images\Image2.png" />
+    <Resource Include="Gauges\MEK4Rev_Images\Image3.png" />
+    <Resource Include="Gauges\MEK4Rev_Images\Image4.png" />
+    <Resource Include="Gauges\MEK4Rev_Images\Image5.png" />
+    <Resource Include="Gauges\MEK4_Gear_Images\Image.png" />
+    <Resource Include="Gauges\MEK4_Gear_Images\Image1.png" />
+    <Resource Include="Gauges\MEK4_Gear_Images\Image2.png" />
+    <Resource Include="Gauges\MEK4_Gear_Images\Image3.png" />
+    <Resource Include="Gauges\MEK4_Gear_Images\Image4.png" />
+    <Resource Include="Gauges\MEK4_Gear_Images\Image5.png" />
+    <Resource Include="Gauges\MEK4_Gear_Images\Image6.png" />
+    <Resource Include="Gauges\MEK4_Gear_Images\Image7.png" />
+    <Resource Include="Gauges\MEK4_Gear_Images\Image8.png" />
+    <Resource Include="Gauges\MEK4_Gear_Images\Image9.png" />
+    <Resource Include="Gauges\MIG-29_FuelQ_Images\Image.png" />
+    <Resource Include="Gauges\MIG-29_FuelQ_Images\Image1.png" />
+    <Resource Include="Gauges\MIG-29_FuelQ_Images\Image2.png" />
+    <Resource Include="Gauges\MIG-29_FuelQ_Images\Image3.png" />
+    <Resource Include="Gauges\MIG-29_FuelQ_Images\Image4.png" />
+    <Resource Include="Gauges\MIG15-VoltAmpMeter_Images\Image.png" />
+    <Resource Include="Gauges\MIG15-VoltAmpMeter_Images\Image1.png" />
+    <Resource Include="Gauges\P51-Acc_Images\Image.png" />
+    <Resource Include="Gauges\P51-Acc_Images\Image1.png" />
+    <Resource Include="Gauges\P51-Acc_Images\Image2.png" />
+    <Resource Include="Gauges\P51-ALT_Images\Image.png" />
+    <Resource Include="Gauges\P51-ALT_Images\Image1.png" />
+    <Resource Include="Gauges\P51-ALT_Images\Image2.png" />
+    <Resource Include="Gauges\P51-ALT_V4_Images\Image.png" />
+    <Resource Include="Gauges\P51-ALT_V4_Images\Image1.png" />
+    <Resource Include="Gauges\P51-ALT_V4_Images\Image2.png" />
+    <Resource Include="Gauges\P51-Ammeter_Images\Image.png" />
+    <Resource Include="Gauges\P51-Ammeter_Images\Image1.png" />
+    <Resource Include="Gauges\P51-Ammeter_Images\Image2.png" />
+    <Resource Include="Gauges\P51-Ammeter_Images\Image3.png" />
+    <Resource Include="Gauges\P51-Ammeter_Images\Image4.png" />
+    <Resource Include="Gauges\P51-ASI_Images\Image.png" />
+    <Resource Include="Gauges\P51-ASI_Images\Image1.png" />
+    <Resource Include="Gauges\P51-ASI_Images\Image2.png" />
+    <Resource Include="Gauges\P51-ASI_Images\Image3.png" />
+    <Resource Include="Gauges\P51-CarbT_Images\Image.png" />
+    <Resource Include="Gauges\P51-CarbT_Images\Image1.png" />
+    <Resource Include="Gauges\P51-CarbT_Images\Image2.png" />
+    <Resource Include="Gauges\P51-CarbT_Images\Image3.png" />
+    <Resource Include="Gauges\P51-CoolantT_Images\Image.png" />
+    <Resource Include="Gauges\P51-CoolantT_Images\Image1.png" />
+    <Resource Include="Gauges\P51-CoolantT_Images\Image2.png" />
+    <Resource Include="Gauges\P51-CoolantT_Images\Image3.png" />
+    <Resource Include="Gauges\P51-FuelQ-Fuselage_Images\Image.png" />
+    <Resource Include="Gauges\P51-FuelQ-Fuselage_Images\Image1.png" />
+    <Resource Include="Gauges\P51-FuelQ-Fuselage_Images\Image2.png" />
+    <Resource Include="Gauges\P51-FuelQ-Fuselage_Images\Image3.png" />
+    <Resource Include="Gauges\P51-FuelQ-Wing_Images\Image.png" />
+    <Resource Include="Gauges\P51-FuelQ-Wing_Images\Image1.png" />
+    <Resource Include="Gauges\P51-FuelQ-Wing_Images\Image2.png" />
+    <Resource Include="Gauges\P51-FuelQ-Wing_Images\Image3.png" />
+    <Resource Include="Gauges\P51-Gear_Images\Image.png" />
+    <Resource Include="Gauges\P51-Gear_Images\Image1.png" />
+    <Resource Include="Gauges\P51-Gear_Images\Image2.png" />
+    <Resource Include="Gauges\P51-Gear_Images\Image3.png" />
+    <Resource Include="Gauges\P51-HydraulicP_Images\Image.png" />
+    <Resource Include="Gauges\P51-HydraulicP_Images\Image1.png" />
+    <Resource Include="Gauges\P51-HydraulicP_Images\Image2.png" />
+    <Resource Include="Gauges\P51-HydraulicP_Images\Image3.png" />
+    <Resource Include="Gauges\P51-ManifoldP_Images\Image.png" />
+    <Resource Include="Gauges\P51-ManifoldP_Images\Image1.png" />
+    <Resource Include="Gauges\P51-ManifoldP_Images\Image2.png" />
+    <Resource Include="Gauges\P51-ManifoldP_Images\Image3.png" />
+    <Resource Include="Gauges\P51-OilT_Images\Image.png" />
+    <Resource Include="Gauges\P51-OilT_Images\Image1.png" />
+    <Resource Include="Gauges\P51-OilT_Images\Image2.png" />
+    <Resource Include="Gauges\P51-OilT_Images\Image3.png" />
+    <Resource Include="Gauges\P51-OxygenP_Images\Image.png" />
+    <Resource Include="Gauges\P51-OxygenP_Images\Image1.png" />
+    <Resource Include="Gauges\P51-OxygenP_Images\Image2.png" />
+    <Resource Include="Gauges\P51-OxygenP_Images\Image3.png" />
+    <Resource Include="Gauges\P51-RPM_Images\Image.png" />
+    <Resource Include="Gauges\P51-RPM_Images\Image1.png" />
+    <Resource Include="Gauges\P51-RPM_Images\Image2.png" />
+    <Resource Include="Gauges\P51-RPM_Images\Image3.png" />
+    <Resource Include="Gauges\P51-Suction_Images\Image.png" />
+    <Resource Include="Gauges\P51-Suction_Images\Image1.png" />
+    <Resource Include="Gauges\P51-Suction_Images\Image2.png" />
+    <Resource Include="Gauges\P51-Suction_Images\Image3.png" />
+    <Resource Include="Gauges\P51-VVI_Images\Image.png" />
+    <Resource Include="Gauges\P51-VVI_Images\Image1.png" />
+    <Resource Include="Gauges\P51-VVI_Images\Image2.png" />
+    <Resource Include="Gauges\P51-VVI_Images\Image3.png" />
+    <Resource Include="Gauges\SU-25A_FuelQ_Images\Image.png" />
+    <Resource Include="Gauges\SU-25T_FuelQ_Images\Image.png" />
+    <Resource Include="Gauges\SU-25_WSP_Images\Image.png" />
+    <Resource Include="Gauges\SU-25_WSP_Images\Image1.png" />
+    <Resource Include="Gauges\SU-25_WSP_Images\Image2.png" />
+    <Resource Include="Gauges\SU-25_WSP_Images\Image3.png" />
+    <Resource Include="Gauges\SU-25_WSP_Images\Image4.png" />
+    <Resource Include="Gauges\SU-25_WSP_Images\Image5.png" />
+    <Resource Include="Gauges\SU-27_WSP_Images\Image.png" />
+    <Resource Include="Gauges\SU-27_WSP_Images\Image1.png" />
+    <Resource Include="Gauges\SU-27_WSP_Images\Image2.png" />
+    <Resource Include="Gauges\SU-27_WSP_Images\Image3.png" />
+    <Resource Include="Gauges\SU-33_FuelQ_Images\Image.png" />
+    <Resource Include="Gauges\SU-33_FuelQ_Images\Image1.png" />
+    <Resource Include="Gauges\UH1_ALT-AAU31_Images\Image.png" />
+    <Resource Include="Gauges\UH1_ALT-AAU31_Images\Image1.png" />
+    <Resource Include="Gauges\UH1_ALT-AAU31_Images\Image2.png" />
+    <Resource Include="Gauges\UH1_ALT-AAU32_Images\Image.png" />
+    <Resource Include="Gauges\UH1_ALT-AAU32_Images\Image1.png" />
+    <Resource Include="Gauges\UH1_ALT-AAU32_Images\Image2.png" />
+    <Resource Include="Gauges\UH1_AltR_Images\Image.png" />
+    <Resource Include="Gauges\UH1_AltR_Images\Image1.png" />
+    <Resource Include="Gauges\UH1_ASI_Images\Image.png" />
+    <Resource Include="Gauges\UH1_ASI_Images\Image1.png" />
+    <Resource Include="Gauges\UH1_ASI_Images\Image2.png" />
+    <Resource Include="Gauges\UH1_ASI_Images\Image3.png" />
+    <Resource Include="Gauges\UH1_CDI_Images\Image.png" />
+    <Resource Include="Gauges\UH1_CDI_Images\Image1.png" />
+    <Resource Include="Gauges\UH1_CDI_Images\Image2.png" />
+    <Resource Include="Gauges\UH1_RadioCompassIndicator_2_Images\Image.png" />
+    <Resource Include="Gauges\UH1_RadioCompassIndicator_2_Images\Image1.png" />
+    <Resource Include="Gauges\UH1_RadioCompassIndicator_2_Images\Image2.png" />
+    <Resource Include="Gauges\UH1_RadioCompassIndicator_2_Images\Image3.png" />
+    <Resource Include="Gauges\UH1_RPM_Images\Image.png" />
+    <Resource Include="Gauges\UH1_RPM_Images\Image1.png" />
+    <Resource Include="Gauges\UH1_RPM_Images\Image2.png" />
+    <Resource Include="Gauges\UH1_RPM_Images\Image3.png" />
+    <Resource Include="Gauges\UH1_TurnIndicator_Images\Image.png" />
+    <Resource Include="Gauges\UH1_TurnIndicator_Images\Image1.png" />
+    <Resource Include="Gauges\UH1_TurnIndicator_Images\Image2.png" />
+    <Resource Include="Gauges\UH1_TurnIndicator_Images\Image3.png" />
+    <Resource Include="Gauges\UH1_TurnIndicator_Images\Image4.png" />
+    <Resource Include="Gauges\UH1_TurnIndicator_Images\Image5.png" />
+    <Resource Include="Gauges\UH1_VoltAC_Images\Image.png" />
+    <Resource Include="Gauges\UH1_VoltDC_Images\Image.png" />
+    <Resource Include="Gauges\UH1_VVI_Images\Image.png" />
+    <Resource Include="Gauges\UH1_VVI_Images\Image1.png" />
+    <Resource Include="Gauges\UH1_VVI_Images\Image2.png" />
+    <Resource Include="Gauges\UH1_VVI_Images\Image3.png" />
+    <Resource Include="Gauges\US-Acc_Images\Image.png" />
+    <Resource Include="Gauges\US-Acc_Images\Image1.png" />
+    <Resource Include="Gauges\US-Acc_Images\Image2.png" />
+    <Resource Include="Gauges\US-ADI-WW2_Images\Image.png" />
+    <Resource Include="Gauges\US-ADI-WW2_Images\Image1.png" />
+    <Resource Include="Gauges\US-ADI-WW2_Images\Image2.png" />
+    <Resource Include="Gauges\US-ADI-WW2_Images\Image3.png" />
+    <Resource Include="Gauges\US-AOA_Images1\Image.png" />
+    <Resource Include="Gauges\US-AOA_Images1\Image1.png" />
+    <Resource Include="Gauges\US-AOA_Images1\Image2.png" />
+    <Resource Include="Gauges\US-AOA_Images1\Image3.png" />
+    <Resource Include="Gauges\US-AOA_Images\Image.png" />
+    <Resource Include="Gauges\US-AOA_Images\Image1.png" />
+    <Resource Include="Gauges\US-AOA_Images\Image2.png" />
+    <Resource Include="Gauges\US-AOA_Images\Image3.png" />
+    <Resource Include="Gauges\US-CabP_Images\Image.png" />
+    <Resource Include="Gauges\US-CabP_Images\Image1.png" />
+    <Resource Include="Gauges\US-CabP_Images\Image2.png" />
+    <Resource Include="Gauges\US-CabP_Images\Image3.png" />
+    <Resource Include="Gauges\US-Clock-WW2_Images\Image.png" />
+    <Resource Include="Gauges\US-Clock-WW2_Images\Image1.png" />
+    <Resource Include="Gauges\US-Clock-WW2_Images\Image2.png" />
+    <Resource Include="Gauges\US-Clock_Images1\Image.png" />
+    <Resource Include="Gauges\US-Clock_Images1\Image1.png" />
+    <Resource Include="Gauges\US-Clock_Images\Image.png" />
+    <Resource Include="Gauges\US-Clock_Images\Image1.png" />
+    <Resource Include="Gauges\US-Remote-Compass-WW2_Images\Image.png" />
+    <Resource Include="Gauges\US-Remote-Compass-WW2_Images\Image1.png" />
+    <Resource Include="Gauges\US-Remote-Compass-WW2_Images\Image2.png" />
+    <Resource Include="Gauges\US-RWR_Images\Image.png" />
+    <Resource Include="Gauges\US-RWR_Images\Image1.png" />
+    <Resource Include="Gauges\US-RWR_Images\Image2.png" />
+    <Resource Include="Gauges\US-RWR_Images\Image3.png" />
+    <Resource Include="Gauges\US-TurnIndicator-WW2_Images\Image.png" />
+    <Resource Include="Gauges\US-TurnIndicator-WW2_Images\Image1.png" />
+    <Resource Include="Gauges\US-TurnIndicator-WW2_Images\Image2.png" />
+    <Resource Include="Gauges\US-TurnIndicator-WW2_Images\Image3.png" />
+    <Resource Include="Gauges\US-TurnIndicator-WW2_Images\Image4.png" />
+    <Resource Include="Gauges\US-TurnIndicator-WW2_Images\Image5.png" />
+    <Resource Include="Gauges\US-TurnIndicator-WW2_Images\Image6.png" />
+    <Resource Include="Gauges\US-TurnIndicator-WW2_Images\Image7.png" />
+    <Resource Include="Gauges\US-WhiskeyCompass-WW2_Images\Image.png" />
+    <Resource Include="Gauges\US-WhiskeyCompass-WW2_Images\Image1.png" />
+    <Resource Include="Gauges\US-WhiskeyCompass-WW2_Images\Image2.png" />
+    <Resource Include="Gauges\US-WhiskeyCompass-WW2_Images\Image3.png" />
+    <Resource Include="Gauges\US-WhiskeyCompass_Images\Image.png" />
+    <Resource Include="Gauges\US-WhiskeyCompass_Images\Image1.png" />
+    <Resource Include="Gauges\US-WhiskeyCompass_Images\Image2.png" />
+    <Resource Include="Gauges\US-WhiskeyCompass_Images\Image3.png" />
+    <Resource Include="Gauges\US_Blinker_Images\Image.png" />
+    <Resource Include="Gauges\US_Blinker_Images\Image1.png" />
+    <Resource Include="Gauges\US_Blinker_Images\Image2.png" />
+    <Resource Include="Gauges\US_Blinker_Images\Image3.png" />
+    <Resource Include="Gauges\Wp-ADI_Images\Image.png" />
+    <Resource Include="Gauges\Wp-ADI_Images\Image1.png" />
+    <Resource Include="Gauges\Wp-ADI_Images\Image2.png" />
+    <Resource Include="Gauges\Wp-ADI_Images\Image3.png" />
+    <Resource Include="Gauges\Wp-ADI_Images\Image4.png" />
+    <Resource Include="Gauges\Wp-Airintake_Images\Image.png" />
+    <Resource Include="Gauges\Wp-Airintake_Images\Image1.png" />
+    <Resource Include="Gauges\Wp-Airintake_Images\Image2.png" />
+    <Resource Include="Gauges\Wp-Airintake_Images\Image3.png" />
+    <Resource Include="Gauges\Wp-Airintake_Images\Image4.png" />
+    <Resource Include="Gauges\Wp-Airintake_Images\Image5.png" />
+    <Resource Include="Gauges\Wp-Airintake_Images\Image6.png" />
+    <Resource Include="Gauges\Wp-Airintake_Images\Image7.png" />
+    <Resource Include="Gauges\Wp-AltR_10_Images\Image.png" />
+    <Resource Include="Gauges\Wp-AltR_10_Images\Image1.png" />
+    <Resource Include="Gauges\Wp-AltR_10_Images\Image2.png" />
+    <Resource Include="Gauges\Wp-AltR_10_Images\Image3.png" />
+    <Resource Include="Gauges\Wp-AltR_15_Images\Image.png" />
+    <Resource Include="Gauges\Wp-AltR_15_Images\Image1.png" />
+    <Resource Include="Gauges\Wp-AltR_15_Images\Image2.png" />
+    <Resource Include="Gauges\Wp-AltR_15_Images\Image3.png" />
+    <Resource Include="Gauges\Wp-ALT_20_Images\Image.png" />
+    <Resource Include="Gauges\Wp-ALT_20_Images\Image1.png" />
+    <Resource Include="Gauges\Wp-ALT_20_Images\Image2.png" />
+    <Resource Include="Gauges\Wp-ALT_20_Images\Image3.png" />
+    <Resource Include="Gauges\Wp-ALT_30_Images\Image.png" />
+    <Resource Include="Gauges\Wp-ALT_30_Images\Image1.png" />
+    <Resource Include="Gauges\Wp-ALT_30_Images\Image2.png" />
+    <Resource Include="Gauges\Wp-ALT_30_Images\Image3.png" />
+    <Resource Include="Gauges\WP-ALT_Images\Image.png" />
+    <Resource Include="Gauges\WP-ALT_Images\Image1.png" />
+    <Resource Include="Gauges\WP-ALT_Images\Image2.png" />
+    <Resource Include="Gauges\WP-ALT_Images\Image3.png" />
+    <Resource Include="Gauges\Wp-AOA_Images\Image.png" />
+    <Resource Include="Gauges\Wp-ASI_10_Images\Image.png" />
+    <Resource Include="Gauges\Wp-ASI_10_Images\Image1.png" />
+    <Resource Include="Gauges\Wp-ASI_10_Images\Image2.png" />
+    <Resource Include="Gauges\Wp-ASI_10_Images\Image3.png" />
+    <Resource Include="Gauges\WP-Clock_Images1\Image.png" />
+    <Resource Include="Gauges\WP-Clock_Images1\Image1.png" />
+    <Resource Include="Gauges\WP-Clock_Images1\Image2.png" />
+    <Resource Include="Gauges\WP-Clock_Images1\Image3.png" />
+    <Resource Include="Gauges\WP-Clock_Images\Image.png" />
+    <Resource Include="Gauges\WP-Clock_Images\Image1.png" />
+    <Resource Include="Gauges\WP-Clock_Images\Image2.png" />
+    <Resource Include="Gauges\WP-Clock_Images\Image3.png" />
+    <Resource Include="Gauges\Wp-distance_Images\Image.png" />
+    <Resource Include="Gauges\Wp-distance_Images\Image1.png" />
+    <Resource Include="Gauges\Wp-distance_Images\Image10.png" />
+    <Resource Include="Gauges\Wp-distance_Images\Image2.png" />
+    <Resource Include="Gauges\Wp-distance_Images\Image3.png" />
+    <Resource Include="Gauges\Wp-distance_Images\Image4.png" />
+    <Resource Include="Gauges\Wp-distance_Images\Image5.png" />
+    <Resource Include="Gauges\Wp-distance_Images\Image6.png" />
+    <Resource Include="Gauges\Wp-distance_Images\Image7.png" />
+    <Resource Include="Gauges\Wp-distance_Images\Image8.png" />
+    <Resource Include="Gauges\Wp-distance_Images\Image9.png" />
+    <Resource Include="Gauges\Wp-EGT_10_Images\Image.png" />
+    <Resource Include="Gauges\Wp-EGT_10_Images\Image1.png" />
+    <Resource Include="Gauges\Wp-EGT_10_Images\Image2.png" />
+    <Resource Include="Gauges\Wp-EGT_10_Images\Image3.png" />
+    <Resource Include="Gauges\Wp-EGT_10_Images\Image4.png" />
+    <Resource Include="Gauges\Wp-EGT_10_Images\Image5.png" />
+    <Resource Include="Gauges\Wp-EGT_10_Images\Image6.png" />
+    <Resource Include="Gauges\Wp-EGT_10_Images\Image7.png" />
+    <Resource Include="Gauges\Wp-EGT_12_Images\Image.png" />
+    <Resource Include="Gauges\Wp-EGT_12_Images\Image1.png" />
+    <Resource Include="Gauges\Wp-FuelQ_stby_Images\Image.png" />
+    <Resource Include="Gauges\Wp-FuelQ_stby_Images\Image1.png" />
+    <Resource Include="Gauges\Wp-FuelQ_stby_Images\Image2.png" />
+    <Resource Include="Gauges\Wp-FuelQ_stby_Images\Image3.png" />
+    <Resource Include="Gauges\Wp-FuelQ_stby_Images\Image4.png" />
+    <Resource Include="Gauges\Wp-FuelQ_stby_Images\Image5.png" />
+    <Resource Include="Gauges\Wp-FuelQ_stby_Images\Image6.png" />
+    <Resource Include="Gauges\Wp-FuelQ_stby_Images\Image7.png" />
+    <Resource Include="Gauges\Wp-HSI_early_Images\Image.png" />
+    <Resource Include="Gauges\Wp-Mach3_Images\Image.png" />
+    <Resource Include="Gauges\Wp-Mach3_Images\Image1.png" />
+    <Resource Include="Gauges\Wp-Mach3_Images\Image2.png" />
+    <Resource Include="Gauges\Wp-Mach3_Images\Image3.png" />
+    <Resource Include="Gauges\Wp-REV_Eng_Images\Image.png" />
+    <Resource Include="Gauges\Wp-REV_Eng_Images\Image1.png" />
+    <Resource Include="Gauges\Wp-REV_Eng_Images\Image2.png" />
+    <Resource Include="Gauges\Wp-REV_Eng_Images\Image3.png" />
+    <Resource Include="Gauges\Wp-REV_Eng_Images\Image4.png" />
+    <Resource Include="Gauges\Wp-REV_Eng_Images\Image5.png" />
+    <Resource Include="Gauges\WP-VSI_Images\Image.png" />
+    <Resource Include="Gauges\WP-VSI_Images\Image1.png" />
+    <Resource Include="Gauges\WP-VSI_Images\Image2.png" />
+    <Resource Include="Gauges\WP-VSI_Images\Image3.png" />
+    <Resource Include="Gauges\WP-VSI_Images\Image4.png" />
+    <Resource Include="Gauges\Wp-VVI_200_Images\Image.png" />
+    <Resource Include="Gauges\Wp-VVI_200_Images\Image1.png" />
+    <Resource Include="Gauges\Wp-VVI_60_Images\Image.png" />
+    <Resource Include="Gauges\Wp-VVI_60_Images\Image1.png" />
+    <Resource Include="Gauges\Wp-VVI_60_Images\Image10.png" />
+    <Resource Include="Gauges\Wp-VVI_60_Images\Image11.png" />
+    <Resource Include="Gauges\Wp-VVI_60_Images\Image2.png" />
+    <Resource Include="Gauges\Wp-VVI_60_Images\Image3.png" />
+    <Resource Include="Gauges\Wp-VVI_60_Images\Image4.png" />
+    <Resource Include="Gauges\Wp-VVI_60_Images\Image5.png" />
+    <Resource Include="Gauges\Wp-VVI_60_Images\Image6.png" />
+    <Resource Include="Gauges\Wp-VVI_60_Images\Image7.png" />
+    <Resource Include="Gauges\Wp-VVI_60_Images\Image8.png" />
+    <Resource Include="Gauges\Wp-VVI_60_Images\Image9.png" />
+    <Resource Include="Gauges\Wp_FuelQ_Images\Image.png" />
+    <Resource Include="Gauges\Wp_SPO15_Images\Image.png" />
+    <Resource Include="Gauges\Wp_SPO15_Images\Image1.png" />
+    <Resource Include="Gauges\Wp_SPO15_Images\Image10.png" />
+    <Resource Include="Gauges\Wp_SPO15_Images\Image11.png" />
+    <Resource Include="Gauges\Wp_SPO15_Images\Image12.png" />
+    <Resource Include="Gauges\Wp_SPO15_Images\Image13.png" />
+    <Resource Include="Gauges\Wp_SPO15_Images\Image14.png" />
+    <Resource Include="Gauges\Wp_SPO15_Images\Image15.png" />
+    <Resource Include="Gauges\Wp_SPO15_Images\Image16.png" />
+    <Resource Include="Gauges\Wp_SPO15_Images\Image17.png" />
+    <Resource Include="Gauges\Wp_SPO15_Images\Image18.png" />
+    <Resource Include="Gauges\Wp_SPO15_Images\Image19.png" />
+    <Resource Include="Gauges\Wp_SPO15_Images\Image2.png" />
+    <Resource Include="Gauges\Wp_SPO15_Images\Image20.png" />
+    <Resource Include="Gauges\Wp_SPO15_Images\Image21.png" />
+    <Resource Include="Gauges\Wp_SPO15_Images\Image22.png" />
+    <Resource Include="Gauges\Wp_SPO15_Images\Image23.png" />
+    <Resource Include="Gauges\Wp_SPO15_Images\Image24.png" />
+    <Resource Include="Gauges\Wp_SPO15_Images\Image25.png" />
+    <Resource Include="Gauges\Wp_SPO15_Images\Image26.png" />
+    <Resource Include="Gauges\Wp_SPO15_Images\Image27.png" />
+    <Resource Include="Gauges\Wp_SPO15_Images\Image28.png" />
+    <Resource Include="Gauges\Wp_SPO15_Images\Image29.png" />
+    <Resource Include="Gauges\Wp_SPO15_Images\Image3.png" />
+    <Resource Include="Gauges\Wp_SPO15_Images\Image30.png" />
+    <Resource Include="Gauges\Wp_SPO15_Images\Image31.png" />
+    <Resource Include="Gauges\Wp_SPO15_Images\Image32.png" />
+    <Resource Include="Gauges\Wp_SPO15_Images\Image33.png" />
+    <Resource Include="Gauges\Wp_SPO15_Images\Image34.png" />
+    <Resource Include="Gauges\Wp_SPO15_Images\Image35.png" />
+    <Resource Include="Gauges\Wp_SPO15_Images\Image36.png" />
+    <Resource Include="Gauges\Wp_SPO15_Images\Image37.png" />
+    <Resource Include="Gauges\Wp_SPO15_Images\Image38.png" />
+    <Resource Include="Gauges\Wp_SPO15_Images\Image39.png" />
+    <Resource Include="Gauges\Wp_SPO15_Images\Image4.png" />
+    <Resource Include="Gauges\Wp_SPO15_Images\Image40.png" />
+    <Resource Include="Gauges\Wp_SPO15_Images\Image41.png" />
+    <Resource Include="Gauges\Wp_SPO15_Images\Image42.png" />
+    <Resource Include="Gauges\Wp_SPO15_Images\Image43.png" />
+    <Resource Include="Gauges\Wp_SPO15_Images\Image44.png" />
+    <Resource Include="Gauges\Wp_SPO15_Images\Image45.png" />
+    <Resource Include="Gauges\Wp_SPO15_Images\Image5.png" />
+    <Resource Include="Gauges\Wp_SPO15_Images\Image6.png" />
+    <Resource Include="Gauges\Wp_SPO15_Images\Image7.png" />
+    <Resource Include="Gauges\Wp_SPO15_Images\Image8.png" />
+    <Resource Include="Gauges\Wp_SPO15_Images\Image9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Ikarus_32.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Ikarus_64.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
