@@ -1,0 +1,1726 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D417E6ED-4DC8-4500-BFF6-D34A6BC4B21E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Ikarus</RootNamespace>
+    <AssemblyName>Ikarus</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <ExpressionBlendVersion>12.0.50429.0</ExpressionBlendVersion>
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Assets\Ikarus_64.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Gauges\A10_Clock.xaml.cs">
+      <DependentUpon>A10_Clock.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\A10_CMSC.xaml.cs">
+      <DependentUpon>A10_CMSC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\A10_EGT.xaml.cs">
+      <DependentUpon>A10_EGT.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\A10_EGTAPU.xaml.cs">
+      <DependentUpon>A10_EGTAPU.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\A10_Flaps.xaml.cs">
+      <DependentUpon>A10_Flaps.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\A10_Fuel.xaml.cs">
+      <DependentUpon>A10_Fuel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\A10_FuelFlow.xaml.cs">
+      <DependentUpon>A10_FuelFlow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\A10_HydP.xaml.cs">
+      <DependentUpon>A10_HydP.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\A10_OilP.xaml.cs">
+      <DependentUpon>A10_OilP.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\Button.xaml.cs">
+      <DependentUpon>Button.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\ButtonWithRelease.xaml.cs">
+      <DependentUpon>ButtonWithRelease.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\ButtonWithRepeat.xaml.cs">
+      <DependentUpon>ButtonWithRepeat.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\ButtonOffOn.xaml.cs">
+      <DependentUpon>ButtonOffOn.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\DisplaySix.xaml.cs">
+      <DependentUpon>DisplaySix.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\DisplayThree.xaml.cs">
+      <DependentUpon>DisplayThree.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\DisplayTwo.xaml.cs">
+      <DependentUpon>DisplayTwo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\DisplayOne.xaml.cs">
+      <DependentUpon>DisplayOne.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\Display_Eight.xaml.cs">
+      <DependentUpon>Display_Eight.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\A10_RPMAPU.xaml.cs">
+      <DependentUpon>A10_RPMAPU.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\A10_RPMEng.xaml.cs">
+      <DependentUpon>A10_RPMEng.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\A10_RPMFAN.xaml.cs">
+      <DependentUpon>A10_RPMFAN.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\A10_UHF.xaml.cs">
+      <DependentUpon>A10_UHF.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\F15AltStby.xaml.cs">
+      <DependentUpon>F15AltStby.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\F5E-AOA.xaml.cs">
+      <DependentUpon>F5E-AOA.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\F5E-ACC.xaml.cs">
+      <DependentUpon>F5E-ACC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\F5E-ADI.xaml.cs">
+      <DependentUpon>F5E-ADI.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\F5E-ASI.xaml.cs">
+      <DependentUpon>F5E-ASI.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\F5E-CAB_P.xaml.cs">
+      <DependentUpon>F5E-CAB_P.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\F5E-EGT.xaml.cs">
+      <DependentUpon>F5E-EGT.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\F5E-FUEL_FLOW.xaml.cs">
+      <DependentUpon>F5E-FUEL_FLOW.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\F5E-FUEL_Q.xaml.cs">
+      <DependentUpon>F5E-FUEL_Q.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\F5E-HSI.xaml.cs">
+      <DependentUpon>F5E-HSI.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\F5E-HYD.xaml.cs">
+      <DependentUpon>F5E-HYD.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\F5E-NOZZLE.xaml.cs">
+      <DependentUpon>F5E-NOZZLE.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\F5E-OIL_P.xaml.cs">
+      <DependentUpon>F5E-OIL_P.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\F5E-OXY_P.xaml.cs">
+      <DependentUpon>F5E-OXY_P.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\F5E-OXY_Q.xaml.cs">
+      <DependentUpon>F5E-OXY_Q.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\F5E-Radar.xaml.cs">
+      <DependentUpon>F5E-Radar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\F5E-RPM.xaml.cs">
+      <DependentUpon>F5E-RPM.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\F5E-UHF.xaml.cs">
+      <DependentUpon>F5E-UHF.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\LampOnOff100x40.xaml.cs">
+      <DependentUpon>LampOnOff100x40.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\SwitchRotary2.xaml.cs">
+      <DependentUpon>SwitchRotary2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\US_ASI10.xaml.cs">
+      <DependentUpon>US_ASI10.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\L39-Alt20.xaml.cs">
+      <DependentUpon>L39-Alt20.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\L39-ACC.xaml.cs">
+      <DependentUpon>L39-ACC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\L39-AltR.xaml.cs">
+      <DependentUpon>L39-AltR.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\L39-AltR_feet.xaml.cs">
+      <DependentUpon>L39-AltR_feet.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\L39-ASI.xaml.cs">
+      <DependentUpon>L39-ASI.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\L39-ASI_kts.xaml.cs">
+      <DependentUpon>L39-ASI_kts.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\L39-Brake.xaml.cs">
+      <DependentUpon>L39-Brake.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\L39-BrakeP.xaml.cs">
+      <DependentUpon>L39-BrakeP.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\L39-CabP.xaml.cs">
+      <DependentUpon>L39-CabP.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\L39-EGT.xaml.cs">
+      <DependentUpon>L39-EGT.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\L39-ADF.xaml.cs">
+      <DependentUpon>L39-ADF.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\L39-FuelQ.xaml.cs">
+      <DependentUpon>L39-FuelQ.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\L39-HSI.xaml.cs">
+      <DependentUpon>L39-HSI.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\L39-HydraulikP.xaml.cs">
+      <DependentUpon>L39-HydraulikP.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\L39-OilP.xaml.cs">
+      <DependentUpon>L39-OilP.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\L39-Oxy.xaml.cs">
+      <DependentUpon>L39-Oxy.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\L39-OxyH.xaml.cs">
+      <DependentUpon>L39-OxyH.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\L39-Vibe.xaml.cs">
+      <DependentUpon>L39-Vibe.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\L39-VoltAmpere.xaml.cs">
+      <DependentUpon>L39-VoltAmpere.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\L39-VVI.xaml.cs">
+      <DependentUpon>L39-VVI.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\L39-VVI_ft.xaml.cs">
+      <DependentUpon>L39-VVI_ft.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\LampOnOff30x30.xaml.cs">
+      <DependentUpon>LampOnOff30x30.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\LampOnOff80x200.xaml.cs">
+      <DependentUpon>LampOnOff80x200.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\LampOnOff200x80.xaml.cs">
+      <DependentUpon>LampOnOff200x80.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\LayerTest.xaml.cs">
+      <DependentUpon>LayerTest.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\MIG29FuelQ.xaml.cs">
+      <DependentUpon>MIG29FuelQ.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\MIG29MDI.xaml.cs">
+      <DependentUpon>MIG29MDI.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\Monitor10x24.xaml.cs">
+      <DependentUpon>Monitor10x24.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\Monitor10x24D.xaml.cs">
+      <DependentUpon>Monitor10x24D.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\ButtonPanelOffOn.xaml.cs">
+      <DependentUpon>ButtonPanelOffOn.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\Switch_OnOFFOn.xaml.cs">
+      <DependentUpon>Switch_OnOFFOn.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\Switch_OFFOn.xaml.cs">
+      <DependentUpon>Switch_OFFOn.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\SwitchPanelOffOn.xaml.cs">
+      <DependentUpon>SwitchPanelOffOn.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\UH1_RadioCompassIndicatorV2.xaml.cs">
+      <DependentUpon>UH1_RadioCompassIndicatorV2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\WPSPO15.xaml.cs">
+      <DependentUpon>WPSPO15.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\Label400x400.xaml.cs">
+      <DependentUpon>Label400x400.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\Label300x200.xaml.cs">
+      <DependentUpon>Label300x200.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\Label300x100.xaml.cs">
+      <DependentUpon>Label300x100.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\Label200x200.xaml.cs">
+      <DependentUpon>Label200x200.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\Label200x100.xaml.cs">
+      <DependentUpon>Label200x100.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\LabelUFC.xaml.cs">
+      <DependentUpon>LabelUFC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\LabelCDU.xaml.cs">
+      <DependentUpon>LabelCDU.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\LabelMFCD.xaml.cs">
+      <DependentUpon>LabelMFCD.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\LampOnOff70x70.xaml.cs">
+      <DependentUpon>LampOnOff70x70.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\LampOnOff.xaml.cs">
+      <DependentUpon>LampOnOff.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\Experimental.xaml.cs">
+      <DependentUpon>Experimental.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\F15Alt.xaml.cs">
+      <DependentUpon>F15Alt.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\F15ASI.xaml.cs">
+      <DependentUpon>F15ASI.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\F15ASIStby.xaml.cs">
+      <DependentUpon>F15ASIStby.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\F15CabP.xaml.cs">
+      <DependentUpon>F15CabP.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\F15EGT.xaml.cs">
+      <DependentUpon>F15EGT.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\F15EngRPM.xaml.cs">
+      <DependentUpon>F15EngRPM.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\F15Fuel.xaml.cs">
+      <DependentUpon>F15Fuel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\F15FuelFlow.xaml.cs">
+      <DependentUpon>F15FuelFlow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\F15Gear.xaml.cs">
+      <DependentUpon>F15Gear.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\F15Nozzle.xaml.cs">
+      <DependentUpon>F15Nozzle.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\F15OilP.xaml.cs">
+      <DependentUpon>F15OilP.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\F86_ACC.xaml.cs">
+      <DependentUpon>F86_ACC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\F86_ADI.xaml.cs">
+      <DependentUpon>F86_ADI.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\F86_ALT.xaml.cs">
+      <DependentUpon>F86_ALT.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\F86_ASI.xaml.cs">
+      <DependentUpon>F86_ASI.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\F86_CabinP.xaml.cs">
+      <DependentUpon>F86_CabinP.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\F86_Clock.xaml.cs">
+      <DependentUpon>F86_Clock.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\F86_Compass.xaml.cs">
+      <DependentUpon>F86_Compass.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\F86_EGT.xaml.cs">
+      <DependentUpon>F86_EGT.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\F86_FuelFlow.xaml.cs">
+      <DependentUpon>F86_FuelFlow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\F86_FuelQ.xaml.cs">
+      <DependentUpon>F86_FuelQ.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\F86_Gear.xaml.cs">
+      <DependentUpon>F86_Gear.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\F86_HydrP.xaml.cs">
+      <DependentUpon>F86_HydrP.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\F86_Labs.xaml.cs">
+      <DependentUpon>F86_Labs.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\F86_Load.xaml.cs">
+      <DependentUpon>F86_Load.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\F86_Mach.xaml.cs">
+      <DependentUpon>F86_Mach.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\F86_OilP.xaml.cs">
+      <DependentUpon>F86_OilP.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\F86_RMI.xaml.cs">
+      <DependentUpon>F86_RMI.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\F86_RPM.xaml.cs">
+      <DependentUpon>F86_RPM.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\F86_TurnIndicator.xaml.cs">
+      <DependentUpon>F86_TurnIndicator.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\F86_Volt.xaml.cs">
+      <DependentUpon>F86_Volt.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\F86_VVI.xaml.cs">
+      <DependentUpon>F86_VVI.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\FWD9Att.xaml.cs">
+      <DependentUpon>FWD9Att.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\FWD9Fuel.xaml.cs">
+      <DependentUpon>FWD9Fuel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\FWD9Gear.xaml.cs">
+      <DependentUpon>FWD9Gear.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\LwH20Temp.xaml.cs">
+      <DependentUpon>LwH20Temp.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\FWD9IAS.xaml.cs">
+      <DependentUpon>FWD9IAS.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\LwMW50P.xaml.cs">
+      <DependentUpon>LwMW50P.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\LwOilTemp.xaml.cs">
+      <DependentUpon>LwOilTemp.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\LwTrim.xaml.cs">
+      <DependentUpon>LwTrim.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\FWD9VVI.xaml.cs">
+      <DependentUpon>FWD9VVI.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\LwAFN2.xaml.cs">
+      <DependentUpon>LwAFN2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\LwAlt.xaml.cs">
+      <DependentUpon>LwAlt.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\LwAtt.xaml.cs">
+      <DependentUpon>LwAtt.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\LwBlink.xaml.cs">
+      <DependentUpon>LwBlink.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\LwClock.xaml.cs">
+      <DependentUpon>LwClock.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\LwDblP.xaml.cs">
+      <DependentUpon>LwDblP.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\LwHeadCourse.xaml.cs">
+      <DependentUpon>LwHeadCourse.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\LwIAS.xaml.cs">
+      <DependentUpon>LwIAS.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\LwMAP.xaml.cs">
+      <DependentUpon>LwMAP.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\LwO2P.xaml.cs">
+      <DependentUpon>LwO2P.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\LwProp.xaml.cs">
+      <DependentUpon>LwProp.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\LwRPM.xaml.cs">
+      <DependentUpon>LwRPM.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\LwSZ100.xaml.cs">
+      <DependentUpon>LwSZ100.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\LwSZ1000.xaml.cs">
+      <DependentUpon>LwSZ1000.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\LwSZ500.xaml.cs">
+      <DependentUpon>LwSZ500.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\LwVVI.xaml.cs">
+      <DependentUpon>LwVVI.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\BfK4Att.xaml.cs">
+      <DependentUpon>BfK4Att.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\BfK4DblP.xaml.cs">
+      <DependentUpon>BfK4DblP.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\LwFuel.xaml.cs">
+      <DependentUpon>LwFuel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\BfK4Fuel.xaml.cs">
+      <DependentUpon>BfK4Fuel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\BfK4Gear.xaml.cs">
+      <DependentUpon>BfK4Gear.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\BfK4H2OT.xaml.cs">
+      <DependentUpon>BfK4H2OT.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\BfK4MAP.xaml.cs">
+      <DependentUpon>BfK4MAP.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\BfK4MW50P.xaml.cs">
+      <DependentUpon>BfK4MW50P.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\BfK4OilTemp.xaml.cs">
+      <DependentUpon>BfK4OilTemp.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\BfK4RPM.xaml.cs">
+      <DependentUpon>BfK4RPM.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\BfK4MG151Left.xaml.cs">
+      <DependentUpon>BfK4MG151Left.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\BfK4MG151Right.xaml.cs">
+      <DependentUpon>BfK4MG151Right.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\MIG15_ADI.xaml.cs">
+      <DependentUpon>MIG15_ADI.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\MIG15_ALT.xaml.cs">
+      <DependentUpon>MIG15_ALT.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\MIG15_AltR.xaml.cs">
+      <DependentUpon>MIG15_AltR.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\MIG15_ASI.xaml.cs">
+      <DependentUpon>MIG15_ASI.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\MIG15_Brake.xaml.cs">
+      <DependentUpon>MIG15_Brake.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\MIG15_CabinP.xaml.cs">
+      <DependentUpon>MIG15_CabinP.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\MIG15_Clock.xaml.cs">
+      <DependentUpon>MIG15_Clock.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\MIG15_EGT.xaml.cs">
+      <DependentUpon>MIG15_EGT.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\MIG15_FuelFlow.xaml.cs">
+      <DependentUpon>MIG15_FuelFlow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\MIG15_FuelP.xaml.cs">
+      <DependentUpon>MIG15_FuelP.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\MIG15_FuelQ.xaml.cs">
+      <DependentUpon>MIG15_FuelQ.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\MIG15_Gear.xaml.cs">
+      <DependentUpon>MIG15_Gear.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\MIG15_GyroCompass.xaml.cs">
+      <DependentUpon>MIG15_GyroCompass.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\MIG15_HydrP_Aileron.xaml.cs">
+      <DependentUpon>MIG15_HydrP_Aileron.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\MIG15_Mach.xaml.cs">
+      <DependentUpon>MIG15_Mach.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\MIG15_Pressure250.xaml.cs">
+      <DependentUpon>MIG15_Pressure250.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\MIG15_Pressure80.xaml.cs">
+      <DependentUpon>MIG15_Pressure80.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\MIG15_PressureAirFlaps.xaml.cs">
+      <DependentUpon>MIG15_PressureAirFlaps.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\MIG15_PressureAirGears.xaml.cs">
+      <DependentUpon>MIG15_PressureAirGears.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\MIG15_PressureMain.xaml.cs">
+      <DependentUpon>MIG15_PressureMain.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\MIG15_PressureMainAir.xaml.cs">
+      <DependentUpon>MIG15_PressureMainAir.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\MIG15_PressureOxygen.xaml.cs">
+      <DependentUpon>MIG15_PressureOxygen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\MIG15_RadioCompass.xaml.cs">
+      <DependentUpon>MIG15_RadioCompass.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\MIG15_RPM.xaml.cs">
+      <DependentUpon>MIG15_RPM.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\MIG15_VoltAmpMeter.xaml.cs">
+      <DependentUpon>MIG15_VoltAmpMeter.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\MIG15_VVI.xaml.cs">
+      <DependentUpon>MIG15_VVI.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\MIG21_ACC.xaml.cs">
+      <DependentUpon>MIG21_ACC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\WPADI.xaml.cs">
+      <DependentUpon>WPADI.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\MIG21_ALT30.xaml.cs">
+      <DependentUpon>MIG21_ALT30.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\MIG21_AltR.xaml.cs">
+      <DependentUpon>MIG21_AltR.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\MIG21_AOA.xaml.cs">
+      <DependentUpon>MIG21_AOA.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\MIG21_ARU_3VM.xaml.cs">
+      <DependentUpon>MIG21_ARU_3VM.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\MIG21_ASI10.xaml.cs">
+      <DependentUpon>MIG21_ASI10.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\MIG21_Clock.xaml.cs">
+      <DependentUpon>MIG21_Clock.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\MIG21_Distance.xaml.cs">
+      <DependentUpon>MIG21_Distance.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\MIG21_EGT.xaml.cs">
+      <DependentUpon>MIG21_EGT.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\MIG21_FuelQ.xaml.cs">
+      <DependentUpon>MIG21_FuelQ.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\MIG21_Gear.xaml.cs">
+      <DependentUpon>MIG21_Gear.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\MIG21_HSI.xaml.cs">
+      <DependentUpon>MIG21_HSI.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\MIG21_HydraulicPressure.xaml.cs">
+      <DependentUpon>MIG21_HydraulicPressure.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\MIG21_Mach.xaml.cs">
+      <DependentUpon>MIG21_Mach.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\MIG21_Nosecone.xaml.cs">
+      <DependentUpon>MIG21_Nosecone.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\MIG21_OilPressure.xaml.cs">
+      <DependentUpon>MIG21_OilPressure.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\MIG21_RPM.xaml.cs">
+      <DependentUpon>MIG21_RPM.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\MIG21_SPO10.xaml.cs">
+      <DependentUpon>MIG21_SPO10.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\MIG21_Volt.xaml.cs">
+      <DependentUpon>MIG21_Volt.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\WPVVI200.xaml.cs">
+      <DependentUpon>WPVVI200.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\MIG21_Wheelbrakes.xaml.cs">
+      <DependentUpon>MIG21_Wheelbrakes.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\P51ACC.xaml.cs">
+      <DependentUpon>P51ACC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\P51ADI.xaml.cs">
+      <DependentUpon>P51ADI.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\P51ALT.xaml.cs">
+      <DependentUpon>P51ALT.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\P51Amp.xaml.cs">
+      <DependentUpon>P51Amp.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\P51ASI.xaml.cs">
+      <DependentUpon>P51ASI.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\P51Blinker.xaml.cs">
+      <DependentUpon>P51Blinker.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\P51CarbT.xaml.cs">
+      <DependentUpon>P51CarbT.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\P51Clock.xaml.cs">
+      <DependentUpon>P51Clock.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\P51CoolantT.xaml.cs">
+      <DependentUpon>P51CoolantT.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\P51DictionalGyro.xaml.cs">
+      <DependentUpon>P51DictionalGyro.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\P51FuelQFuselage.xaml.cs">
+      <DependentUpon>P51FuelQFuselage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\P51FuelQWing.xaml.cs">
+      <DependentUpon>P51FuelQWing.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\P51Gear.xaml.cs">
+      <DependentUpon>P51Gear.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\P51HydrP.xaml.cs">
+      <DependentUpon>P51HydrP.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\P51ManifoldP.xaml.cs">
+      <DependentUpon>P51ManifoldP.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\P51OilT.xaml.cs">
+      <DependentUpon>P51OilT.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\P51OxyP.xaml.cs">
+      <DependentUpon>P51OxyP.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\P51RemoteCompass.xaml.cs">
+      <DependentUpon>P51RemoteCompass.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\P51RPM.xaml.cs">
+      <DependentUpon>P51RPM.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\P51Suction.xaml.cs">
+      <DependentUpon>P51Suction.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\P51TurnIndicator.xaml.cs">
+      <DependentUpon>P51TurnIndicator.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\P51VVI.xaml.cs">
+      <DependentUpon>P51VVI.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\Rotary2.xaml.cs">
+      <DependentUpon>Rotary2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\SU25AFuel.xaml.cs">
+      <DependentUpon>SU25AFuel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\SU25MDI.xaml.cs">
+      <DependentUpon>SU25MDI.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\SU25TFuel.xaml.cs">
+      <DependentUpon>SU25TFuel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\SU25TWP.xaml.cs">
+      <DependentUpon>SU25TWP.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\SU27Fuel.xaml.cs">
+      <DependentUpon>SU27Fuel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\SU27MDI.xaml.cs">
+      <DependentUpon>SU27MDI.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\SU27WP.xaml.cs">
+      <DependentUpon>SU27WP.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\SU33FuelQ.xaml.cs">
+      <DependentUpon>SU33FuelQ.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\SU33FuelQ_stby.xaml.cs">
+      <DependentUpon>SU33FuelQ_stby.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\SU33MDI.xaml.cs">
+      <DependentUpon>SU33MDI.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\Rotary.xaml.cs">
+      <DependentUpon>Rotary.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\SwitchRotary.xaml.cs">
+      <DependentUpon>SwitchRotary.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\SwitchOnOffOn.xaml.cs">
+      <DependentUpon>SwitchOnOffOn.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\UH1_AltAAU31.xaml.cs">
+      <DependentUpon>UH1_AltAAU31.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\UH1_AltAAU32.xaml.cs">
+      <DependentUpon>UH1_AltAAU32.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\UH1_AltR.xaml.cs">
+      <DependentUpon>UH1_AltR.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\UH1_ASI.xaml.cs">
+      <DependentUpon>UH1_ASI.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\UH1_CDI.xaml.cs">
+      <DependentUpon>UH1_CDI.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\UH1_EGT.xaml.cs">
+      <DependentUpon>UH1_EGT.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\UH1_FuelP.xaml.cs">
+      <DependentUpon>UH1_FuelP.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\UH1_FuelQ.xaml.cs">
+      <DependentUpon>UH1_FuelQ.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\UH1_LoadMainGen.xaml.cs">
+      <DependentUpon>UH1_LoadMainGen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\UH1_LoadStbyGen.xaml.cs">
+      <DependentUpon>UH1_LoadStbyGen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\UH1_OilPEngine.xaml.cs">
+      <DependentUpon>UH1_OilPEngine.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\UH1_OilPTorque.xaml.cs">
+      <DependentUpon>UH1_OilPTorque.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\UH1_OilPTrans.xaml.cs">
+      <DependentUpon>UH1_OilPTrans.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\UH1_OilTEngine.xaml.cs">
+      <DependentUpon>UH1_OilTEngine.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\UH1_OilTTrans.xaml.cs">
+      <DependentUpon>UH1_OilTTrans.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\UH1_RadioCompassIndicator.xaml.cs">
+      <DependentUpon>UH1_RadioCompassIndicator.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\UH1_RPM.xaml.cs">
+      <DependentUpon>UH1_RPM.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\UH1_RPMGasproducer.xaml.cs">
+      <DependentUpon>UH1_RPMGasproducer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\UH1_TurnIndicator.xaml.cs">
+      <DependentUpon>UH1_TurnIndicator.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\UH1_VoltAC.xaml.cs">
+      <DependentUpon>UH1_VoltAC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\UH1_VoltDC.xaml.cs">
+      <DependentUpon>UH1_VoltDC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\UH1_VVI.xaml.cs">
+      <DependentUpon>UH1_VVI.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\UH1_ADI.xaml.cs">
+      <DependentUpon>UH1_ADI.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\UH1_WhiskeyCompass.xaml.cs">
+      <DependentUpon>UH1_WhiskeyCompass.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\SwitchOffOn.xaml.cs">
+      <DependentUpon>SwitchOffOn.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\WPAirintake.xaml.cs">
+      <DependentUpon>WPAirintake.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\WPALT20.xaml.cs">
+      <DependentUpon>WPALT20.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\WPALT30.xaml.cs">
+      <DependentUpon>WPALT30.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\WPALTlate.xaml.cs">
+      <DependentUpon>WPALTlate.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\WPALTr10.xaml.cs">
+      <DependentUpon>WPALTr10.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\WPALTr15.xaml.cs">
+      <DependentUpon>WPALTr15.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\WPAOA.xaml.cs">
+      <DependentUpon>WPAOA.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\WPASI10.xaml.cs">
+      <DependentUpon>WPASI10.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\WPASI11.xaml.cs">
+      <DependentUpon>WPASI11.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\WPASI16.xaml.cs">
+      <DependentUpon>WPASI16.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\WPCabP.xaml.cs">
+      <DependentUpon>WPCabP.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\WPClock.xaml.cs">
+      <DependentUpon>WPClock.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\WPClockLate.xaml.cs">
+      <DependentUpon>WPClockLate.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\WPDistance.xaml.cs">
+      <DependentUpon>WPDistance.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\WPEngRPM.xaml.cs">
+      <DependentUpon>WPEngRPM.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\WPEngT10.xaml.cs">
+      <DependentUpon>WPEngT10.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\WPEngT12.xaml.cs">
+      <DependentUpon>WPEngT12.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\WPHSI_early.xaml.cs">
+      <DependentUpon>WPHSI_early.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\WPMach1.xaml.cs">
+      <DependentUpon>WPMach1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\WPMach3.xaml.cs">
+      <DependentUpon>WPMach3.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\WPPress24L.xaml.cs">
+      <DependentUpon>WPPress24L.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\WPPress24L3C.xaml.cs">
+      <DependentUpon>WPPress24L3C.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\WPPress24R.xaml.cs">
+      <DependentUpon>WPPress24R.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\WPPress24R3C.xaml.cs">
+      <DependentUpon>WPPress24R3C.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\WPPress3L.xaml.cs">
+      <DependentUpon>WPPress3L.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\WPPress3R.xaml.cs">
+      <DependentUpon>WPPress3R.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\WPPressBlank.xaml.cs">
+      <DependentUpon>WPPressBlank.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\WPREVEng.xaml.cs">
+      <DependentUpon>WPREVEng.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\WPVVI60.xaml.cs">
+      <DependentUpon>WPVVI60.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\WPWSP.xaml.cs">
+      <DependentUpon>WPWSP.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\MI8_ALT.xaml.cs">
+      <DependentUpon>MI8_ALT.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\MI8_ALTR.xaml.cs">
+      <DependentUpon>MI8_ALTR.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\MI8_RotorPitch.xaml.cs">
+      <DependentUpon>MI8_RotorPitch.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\MI8_APU.xaml.cs">
+      <DependentUpon>MI8_APU.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\MI8_ASI.xaml.cs">
+      <DependentUpon>MI8_ASI.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\MI8_Brake.xaml.cs">
+      <DependentUpon>MI8_Brake.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\MI8_CabinT.xaml.cs">
+      <DependentUpon>MI8_CabinT.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\MI8_Clock.xaml.cs">
+      <DependentUpon>MI8_Clock.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\MI8_DirectionalGyro.xaml.cs">
+      <DependentUpon>MI8_DirectionalGyro.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\MI8_DriftIndicator.xaml.cs">
+      <DependentUpon>MI8_DriftIndicator.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\MI8_EGT.xaml.cs">
+      <DependentUpon>MI8_EGT.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\MI8_EGT_APU.xaml.cs">
+      <DependentUpon>MI8_EGT_APU.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\MI8_EngPower.xaml.cs">
+      <DependentUpon>MI8_EngPower.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\MI8_FuelQ.xaml.cs">
+      <DependentUpon>MI8_FuelQ.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\MI8_Hover.xaml.cs">
+      <DependentUpon>MI8_Hover.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\MI8_HydrP.xaml.cs">
+      <DependentUpon>MI8_HydrP.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\MI8_OilEng.xaml.cs">
+      <DependentUpon>MI8_OilEng.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\MI8_OilP_Trans.xaml.cs">
+      <DependentUpon>MI8_OilP_Trans.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\MI8_OilT_Trans.xaml.cs">
+      <DependentUpon>MI8_OilT_Trans.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\MI8_PneuP.xaml.cs">
+      <DependentUpon>MI8_PneuP.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\MI8_RPM_Eng.xaml.cs">
+      <DependentUpon>MI8_RPM_Eng.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\MI8_RPM_Rot.xaml.cs">
+      <DependentUpon>MI8_RPM_Rot.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\MI8_TurnIndicator.xaml.cs">
+      <DependentUpon>MI8_TurnIndicator.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\MI8_VVI.xaml.cs">
+      <DependentUpon>MI8_VVI.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\US_Clock.xaml.cs">
+      <DependentUpon>US_Clock.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\KA50ACC.xaml.cs">
+      <DependentUpon>KA50ACC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\KA50ADI.xaml.cs">
+      <DependentUpon>KA50ADI.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\KA50ADIStby.xaml.cs">
+      <DependentUpon>KA50ADIStby.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\KA50ALT.xaml.cs">
+      <DependentUpon>KA50ALT.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\KA50ALTr.xaml.cs">
+      <DependentUpon>KA50ALTr.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\KA50APUTemp.xaml.cs">
+      <DependentUpon>KA50APUTemp.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\KA50ASI.xaml.cs">
+      <DependentUpon>KA50ASI.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\KA50EGT.xaml.cs">
+      <DependentUpon>KA50EGT.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\KA50EngOP.xaml.cs">
+      <DependentUpon>KA50EngOP.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\KA50EngOT.xaml.cs">
+      <DependentUpon>KA50EngOT.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\KA50EngP.xaml.cs">
+      <DependentUpon>KA50EngP.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\KA50EngRPM.xaml.cs">
+      <DependentUpon>KA50EngRPM.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\KA50FuelQ.xaml.cs">
+      <DependentUpon>KA50FuelQ.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\KA50Gear.xaml.cs">
+      <DependentUpon>KA50Gear.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\KA50HydB.xaml.cs">
+      <DependentUpon>KA50HydB.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\KA50HydP.xaml.cs">
+      <DependentUpon>KA50HydP.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\KA50HydT.xaml.cs">
+      <DependentUpon>KA50HydT.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\KA50OutTemp.xaml.cs">
+      <DependentUpon>KA50OutTemp.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\KA50RBPI.xaml.cs">
+      <DependentUpon>KA50RBPI.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\KA50RotRPM.xaml.cs">
+      <DependentUpon>KA50RotRPM.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\KA50TransOP.xaml.cs">
+      <DependentUpon>KA50TransOP.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\KA50TransOT.xaml.cs">
+      <DependentUpon>KA50TransOT.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\KA50VSI.xaml.cs">
+      <DependentUpon>KA50VSI.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\KA50WSC.xaml.cs">
+      <DependentUpon>KA50WSC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\WPEkran.xaml.cs">
+      <DependentUpon>WPEkran.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\WPHSI.xaml.cs">
+      <DependentUpon>WPHSI.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\WPCompass.xaml.cs">
+      <DependentUpon>WPCompass.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\US_WhiskeyCompass.xaml.cs">
+      <DependentUpon>US_WhiskeyCompass.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\US_HSI.xaml.cs">
+      <DependentUpon>US_HSI.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\US_AOA.xaml.cs">
+      <DependentUpon>US_AOA.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\US_ACC.xaml.cs">
+      <DependentUpon>US_ACC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\A10_ACP.xaml.cs">
+      <DependentUpon>A10_ACP.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\US_ADI.xaml.cs">
+      <DependentUpon>US_ADI.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\US_ADIstby.xaml.cs">
+      <DependentUpon>US_ADIstby.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\A10_ASI.xaml.cs">
+      <DependentUpon>A10_ASI.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\US_RWR.xaml.cs">
+      <DependentUpon>US_RWR.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="MemoryManagement.cs" />
+    <Compile Include="MessageBoxWindow.xaml.cs">
+      <DependentUpon>MessageBoxWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MessageBoxInstruments.xaml.cs">
+      <DependentUpon>MessageBoxInstruments.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MessageBoxAccessories.xaml.cs">
+      <DependentUpon>MessageBoxAccessories.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ProzessHelper.cs" />
+    <Compile Include="Gauges\Test.xaml.cs">
+      <DependentUpon>Test.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UDP.cs" />
+    <Compile Include="UserControlExtender.cs" />
+    <Compile Include="Gauges\A10_ALT.xaml.cs">
+      <DependentUpon>A10_ALT.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DataSet1.cs">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet2.cs">
+      <DependentUpon>DataSet2.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\US_VVI .xaml.cs">
+      <DependentUpon>US_VVI .xaml</DependentUpon>
+    </Compile>
+    <Compile Include="IGauge.cs" />
+    <Compile Include="ImportExport.cs" />
+    <Compile Include="Instruments.xaml.cs">
+      <DependentUpon>Instruments.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Masterdata.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Masterdata.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MessageBoxLamps.xaml.cs">
+      <DependentUpon>MessageBoxLamps.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MessageBoxSwitch.xaml.cs">
+      <DependentUpon>MessageBoxSwitch.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="DataSet1.xsc">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet1.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSet1.xss">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet2.xsc">
+      <DependentUpon>DataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet2.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet2.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSet2.xss">
+      <DependentUpon>DataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="Masterdata.xsc">
+      <DependentUpon>Masterdata.xsd</DependentUpon>
+    </None>
+    <None Include="Masterdata.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Masterdata.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Masterdata.xss">
+      <DependentUpon>Masterdata.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ItemGroup>
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\Accessibility.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\Microsoft.CSharp.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\mscorlib.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\PresentationCore.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\PresentationFramework.Aero.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\PresentationFramework.dll" />
+    <ReferencePath Include="C:\Windows\Microsoft.Net\assembly\GAC_MSIL\PresentationUI\v4.0_4.0.0.0__31bf3856ad364e35\PresentationUI.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\ReachFramework.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Core.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Data.DataSetExtensions.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Data.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Deployment.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Printing.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Xaml.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Xml.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Xml.Linq.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\UIAutomationProvider.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\UIAutomationTypes.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\WindowsBase.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\A10_Clock.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\A10_CMSC.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\A10_EGT.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\A10_EGTAPU.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\A10_Flaps.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\A10_Fuel.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\A10_FuelFlow.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\A10_HydP.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\A10_OilP.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\Button.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\ButtonWithRelease.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\ButtonWithRepeat.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\ButtonOffOn.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\DisplaySix.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\DisplayThree.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\DisplayTwo.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\DisplayOne.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\Display_Eight.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\A10_RPMAPU.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\A10_RPMEng.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\A10_RPMFAN.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\A10_UHF.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\F15AltStby.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\F5E-AOA.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\F5E-ACC.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\F5E-ADI.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\F5E-ASI.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\F5E-CAB_P.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\F5E-EGT.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\F5E-FUEL_FLOW.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\F5E-FUEL_Q.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\F5E-HSI.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\F5E-HYD.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\F5E-NOZZLE.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\F5E-OIL_P.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\F5E-OXY_P.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\F5E-OXY_Q.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\F5E-Radar.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\F5E-RPM.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\F5E-UHF.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\LampOnOff100x40.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\SwitchRotary2.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\US_ASI10.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\L39-Alt20.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\L39-ACC.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\L39-AltR.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\L39-AltR_feet.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\L39-ASI.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\L39-ASI_kts.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\L39-Brake.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\L39-BrakeP.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\L39-CabP.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\L39-EGT.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\L39-ADF.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\L39-FuelQ.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\L39-HSI.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\L39-HydraulikP.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\L39-OilP.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\L39-Oxy.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\L39-OxyH.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\L39-Vibe.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\L39-VoltAmpere.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\L39-VVI.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\L39-VVI_ft.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\LampOnOff30x30.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\LampOnOff80x200.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\LampOnOff200x80.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\LayerTest.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\MIG29FuelQ.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\MIG29MDI.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\Monitor10x24.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\Monitor10x24D.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\ButtonPanelOffOn.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\Switch_OnOFFOn.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\Switch_OFFOn.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\SwitchPanelOffOn.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\UH1_RadioCompassIndicatorV2.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\WPSPO15.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\Label400x400.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\Label300x200.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\Label300x100.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\Label200x200.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\Label200x100.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\LabelUFC.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\LabelCDU.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\LabelMFCD.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\LampOnOff70x70.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\LampOnOff.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\Experimental.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\F15Alt.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\F15ASI.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\F15ASIStby.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\F15CabP.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\F15EGT.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\F15EngRPM.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\F15Fuel.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\F15FuelFlow.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\F15Gear.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\F15Nozzle.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\F15OilP.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\F86_ACC.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\F86_ADI.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\F86_ALT.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\F86_ASI.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\F86_CabinP.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\F86_Clock.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\F86_Compass.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\F86_EGT.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\F86_FuelFlow.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\F86_FuelQ.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\F86_Gear.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\F86_HydrP.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\F86_Labs.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\F86_Load.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\F86_Mach.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\F86_OilP.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\F86_RMI.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\F86_RPM.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\F86_TurnIndicator.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\F86_Volt.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\F86_VVI.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\FWD9Att.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\FWD9Fuel.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\FWD9Gear.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\LwH20Temp.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\FWD9IAS.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\LwMW50P.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\LwOilTemp.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\LwTrim.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\FWD9VVI.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\LwAFN2.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\LwAlt.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\LwAtt.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\LwBlink.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\LwClock.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\LwDblP.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\LwHeadCourse.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\LwIAS.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\LwMAP.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\LwO2P.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\LwProp.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\LwRPM.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\LwSZ100.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\LwSZ1000.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\LwSZ500.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\LwVVI.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\BfK4Att.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\BfK4DblP.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\LwFuel.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\BfK4Fuel.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\BfK4Gear.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\BfK4H2OT.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\BfK4MAP.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\BfK4MW50P.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\BfK4OilTemp.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\BfK4RPM.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\BfK4MG151Left.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\BfK4MG151Right.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\MIG15_ADI.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\MIG15_ALT.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\MIG15_AltR.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\MIG15_ASI.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\MIG15_Brake.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\MIG15_CabinP.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\MIG15_Clock.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\MIG15_EGT.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\MIG15_FuelFlow.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\MIG15_FuelP.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\MIG15_FuelQ.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\MIG15_Gear.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\MIG15_GyroCompass.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\MIG15_HydrP_Aileron.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\MIG15_Mach.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\MIG15_Pressure250.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\MIG15_Pressure80.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\MIG15_PressureAirFlaps.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\MIG15_PressureAirGears.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\MIG15_PressureMain.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\MIG15_PressureMainAir.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\MIG15_PressureOxygen.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\MIG15_RadioCompass.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\MIG15_RPM.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\MIG15_VoltAmpMeter.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\MIG15_VVI.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\MIG21_ACC.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\WPADI.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\MIG21_ALT30.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\MIG21_AltR.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\MIG21_AOA.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\MIG21_ARU_3VM.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\MIG21_ASI10.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\MIG21_Clock.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\MIG21_Distance.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\MIG21_EGT.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\MIG21_FuelQ.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\MIG21_Gear.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\MIG21_HSI.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\MIG21_HydraulicPressure.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\MIG21_Mach.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\MIG21_Nosecone.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\MIG21_OilPressure.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\MIG21_RPM.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\MIG21_SPO10.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\MIG21_Volt.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\WPVVI200.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\MIG21_Wheelbrakes.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\P51ACC.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\P51ADI.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\P51ALT.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\P51Amp.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\P51ASI.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\P51Blinker.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\P51CarbT.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\P51Clock.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\P51CoolantT.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\P51DictionalGyro.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\P51FuelQFuselage.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\P51FuelQWing.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\P51Gear.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\P51HydrP.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\P51ManifoldP.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\P51OilT.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\P51OxyP.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\P51RemoteCompass.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\P51RPM.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\P51Suction.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\P51TurnIndicator.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\P51VVI.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\Rotary2.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\SU25AFuel.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\SU25MDI.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\SU25TFuel.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\SU25TWP.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\SU27Fuel.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\SU27MDI.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\SU27WP.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\SU33FuelQ.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\SU33FuelQ_stby.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\SU33MDI.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\Rotary.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\SwitchRotary.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\SwitchOnOffOn.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\UH1_AltAAU31.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\UH1_AltAAU32.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\UH1_AltR.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\UH1_ASI.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\UH1_CDI.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\UH1_EGT.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\UH1_FuelP.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\UH1_FuelQ.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\UH1_LoadMainGen.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\UH1_LoadStbyGen.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\UH1_OilPEngine.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\UH1_OilPTorque.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\UH1_OilPTrans.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\UH1_OilTEngine.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\UH1_OilTTrans.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\UH1_RadioCompassIndicator.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\UH1_RPM.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\UH1_RPMGasproducer.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\UH1_TurnIndicator.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\UH1_VoltAC.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\UH1_VoltDC.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\UH1_VVI.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\UH1_ADI.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\UH1_WhiskeyCompass.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\SwitchOffOn.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\WPAirintake.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\WPALT20.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\WPALT30.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\WPALTlate.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\WPALTr10.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\WPALTr15.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\WPAOA.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\WPASI10.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\WPASI11.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\WPASI16.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\WPCabP.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\WPClock.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\WPClockLate.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\WPDistance.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\WPEngRPM.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\WPEngT10.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\WPEngT12.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\WPHSI_early.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\WPMach1.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\WPMach3.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\WPPress24L.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\WPPress24L3C.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\WPPress24R.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\WPPress24R3C.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\WPPress3L.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\WPPress3R.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\WPPressBlank.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\WPREVEng.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\WPVVI60.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\WPWSP.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\MI8_ALT.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\MI8_ALTR.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\MI8_RotorPitch.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\MI8_APU.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\MI8_ASI.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\MI8_Brake.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\MI8_CabinT.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\MI8_Clock.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\MI8_DirectionalGyro.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\MI8_DriftIndicator.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\MI8_EGT.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\MI8_EGT_APU.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\MI8_EngPower.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\MI8_FuelQ.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\MI8_Hover.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\MI8_HydrP.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\MI8_OilEng.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\MI8_OilP_Trans.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\MI8_OilT_Trans.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\MI8_PneuP.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\MI8_RPM_Eng.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\MI8_RPM_Rot.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\MI8_TurnIndicator.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\MI8_VVI.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\US_Clock.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\KA50ACC.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\KA50ADI.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\KA50ADIStby.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\KA50ALT.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\KA50ALTr.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\KA50APUTemp.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\KA50ASI.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\KA50EGT.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\KA50EngOP.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\KA50EngOT.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\KA50EngP.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\KA50EngRPM.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\KA50FuelQ.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\KA50Gear.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\KA50HydB.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\KA50HydP.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\KA50HydT.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\KA50OutTemp.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\KA50RBPI.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\KA50RotRPM.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\KA50TransOP.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\KA50TransOT.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\KA50VSI.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\KA50WSC.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\WPEkran.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\WPHSI.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\WPCompass.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\US_WhiskeyCompass.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\US_HSI.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\US_AOA.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\US_ACC.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\A10_ACP.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\US_ADI.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\US_ADIstby.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\A10_ALT.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\A10_ASI.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\US_VVI .g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\US_RWR.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Instruments.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\MainWindow.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\MessageBoxWindow.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\MessageBoxInstruments.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\MessageBoxLamps.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\MessageBoxAccessories.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\MessageBoxSwitch.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\Gauges\Test.g.cs" />
+    <Compile Include="C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Release\App.g.cs" />
+  </ItemGroup>
+</Project>

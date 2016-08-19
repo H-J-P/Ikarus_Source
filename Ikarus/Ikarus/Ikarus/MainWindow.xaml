@@ -1,0 +1,433 @@
+﻿<Window 
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" x:Name="Main" mc:Ignorable="d" x:Class="Ikarus.MainWindow"
+        Title="Ikarus" Height="728" Width="1074" Background="#FF434344" WindowStartupLocation="CenterScreen" Closed="Main_Closed" Icon="Assets/Ikarus_64.ico" Foreground="#FFFBFBFA">
+    <Grid>
+        <Grid>
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF666666" Offset="0"/>
+                    <GradientStop Color="#FF333333" Offset="1"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+            <TabControl Name="tabControl1" SelectionChanged="TabControl_SelectionChanged" Margin="10,0,10,34">
+                <TabItem Header="Instruments">
+                    <Grid Margin="0,0,0,0">
+                        <DataGrid Name="DataGridInstruments" ItemsSource="{Binding}" SelectionMode="Single" AlternatingRowBackground="#FF424242" ColumnHeaderHeight="25" AutoGenerateColumns="False" Margin="10,10,1,10" IsSynchronizedWithCurrentItem="True" SelectedCellsChanged="DataGridInstruments_SelectedCellsChanged" >
+                            <DataGrid.Columns>
+                                <DataGridTemplateColumn>
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Button Name="DetailSwitch" Width="60" Click="Button_DetailInstruments_Click">Detail</Button>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                                <DataGridTextColumn Binding="{Binding IDInst}" Width="30" Header="ID">
+                                    <DataGridTextColumn.ElementStyle>
+                                        <Style TargetType="{x:Type TextBlock}">
+                                            <Setter Property="TextAlignment" Value="Center" />
+                                        </Style>
+                                    </DataGridTextColumn.ElementStyle>
+                                </DataGridTextColumn>
+                                <DataGridTextColumn Binding="{Binding WindowID}" Width="40" Header="Panel">
+                                    <DataGridTextColumn.ElementStyle>
+                                        <Style TargetType="{x:Type TextBlock}">
+                                            <Setter Property="TextAlignment" Value="Center" />
+                                        </Style>
+                                    </DataGridTextColumn.ElementStyle>
+                                </DataGridTextColumn>
+                                <DataGridTextColumn Binding="{Binding Name}" Width="185" Header="Name"/>
+                                <DataGridTextColumn Binding="{Binding Class}" Width="130" Header="Class"/>
+                                <DataGridTextColumn Binding="{Binding PosX, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="50" Header="Pos. X">
+                                    <DataGridTextColumn.ElementStyle>
+                                        <Style TargetType="{x:Type TextBlock}">
+                                            <Setter Property="TextAlignment" Value="Right" />
+                                        </Style>
+                                    </DataGridTextColumn.ElementStyle>
+                                </DataGridTextColumn>
+                                <DataGridTextColumn Binding="{Binding PosY, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="50" Header="Pos. Y">
+                                    <DataGridTextColumn.ElementStyle>
+                                        <Style TargetType="{x:Type TextBlock}">
+                                            <Setter Property="TextAlignment" Value="Right" />
+                                        </Style>
+                                    </DataGridTextColumn.ElementStyle>
+                                </DataGridTextColumn>
+                                <DataGridTextColumn Binding="{Binding Size}" Width="50" Header="Size px">
+                                    <DataGridTextColumn.ElementStyle>
+                                        <Style TargetType="{x:Type TextBlock}">
+                                            <Setter Property="TextAlignment" Value="Right" />
+                                        </Style>
+                                    </DataGridTextColumn.ElementStyle>
+                                </DataGridTextColumn>
+                                <DataGridTextColumn Binding="{Binding Rotate}" Width="50" Header="Rotate">
+                                    <DataGridTextColumn.ElementStyle>
+                                        <Style TargetType="{x:Type TextBlock}">
+                                            <Setter Property="TextAlignment" Value="Right" />
+                                        </Style>
+                                    </DataGridTextColumn.ElementStyle>
+                                </DataGridTextColumn>
+                                <DataGridTextColumn Binding="{Binding ImageFrame}" Width="170" Header="Image for Frame" />
+                                <DataGridTextColumn Binding="{Binding ImageLight}" Width="150" Header="Image for Glass" />
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </Grid>
+                </TabItem>
+                <TabItem Name="Function" Header="Instrumentfunctions" >
+                    <Grid Margin="0,0,0,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <DataGrid x:Name="DatagridFunction" ItemsSource="{Binding}" AlternatingRowBackground="#FF424242" ColumnHeaderHeight="25" AutoGenerateColumns="False" Margin="10,10,10,29" SelectedCellsChanged="DatagridFunction_SelectedCellsChanged" >
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Binding="{Binding IDInst}" Width="30" Header="ID">
+                                    <DataGridTextColumn.ElementStyle>
+                                        <Style TargetType="{x:Type TextBlock}">
+                                            <Setter Property="TextAlignment" Value="Center" />
+                                        </Style>
+                                    </DataGridTextColumn.ElementStyle>
+                                </DataGridTextColumn>
+                                <DataGridTextColumn Binding="{Binding IDFct}" Width="45" Header="ID Fct">
+                                    <DataGridTextColumn.ElementStyle>
+                                        <Style TargetType="{x:Type TextBlock}">
+                                            <Setter Property="TextAlignment" Value="Center" />
+                                        </Style>
+                                    </DataGridTextColumn.ElementStyle>
+                                </DataGridTextColumn>
+                                <DataGridTextColumn Binding="{Binding Name}" Width="170" Header="Name"/>
+                                <DataGridTextColumn Binding="{Binding Arg_number}" Width="50" Header="DCS ID">
+                                    <DataGridTextColumn.ElementStyle>
+                                        <Style TargetType="{x:Type TextBlock}">
+                                            <Setter Property="TextAlignment" Value="Center" />
+                                        </Style>
+                                    </DataGridTextColumn.ElementStyle>
+                                </DataGridTextColumn>
+                                <DataGridTemplateColumn  Header="Ascii" >
+                                    <DataGridTemplateColumn.CellTemplate >
+                                        <DataTemplate>
+                                            <CheckBox Name="ASCII" IsChecked="{Binding Ascii, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Center" />
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                                <DataGridTextColumn Binding="{Binding OldValue}" Width="40" Header="Old" Visibility="Hidden">
+                                    <DataGridTextColumn.ElementStyle>
+                                        <Style TargetType="{x:Type TextBlock}">
+                                            <Setter Property="TextAlignment" Value="Right" />
+                                        </Style>
+                                    </DataGridTextColumn.ElementStyle>
+                                </DataGridTextColumn>
+                                <DataGridTextColumn Binding="{Binding Offset}" Visibility="Hidden" Width="50" Header="Offset">
+                                    <DataGridTextColumn.ElementStyle>
+                                        <Style TargetType="{x:Type TextBlock}">
+                                            <Setter Property="TextAlignment" Value="Right" />
+                                        </Style>
+                                    </DataGridTextColumn.ElementStyle>
+                                </DataGridTextColumn>
+                                <DataGridTextColumn Binding="{Binding Input}" Width="200" Header="Input"/>
+                                <DataGridTextColumn Binding="{Binding Output}" Width="200" Header="Output"/>
+                                <DataGridTemplateColumn  Header="Test" >
+                                    <DataGridTemplateColumn.CellTemplate >
+                                        <DataTemplate>
+                                            <Slider Name="SliderTest" Value="{Binding Value, UpdateSourceTrigger=PropertyChanged}" Width="215" SmallChange="0.001" LargeChange="0.01" Maximum="1" Minimum="-1" />
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                        <Button Content="Reset Select" Name="ShowAll" Height="24" VerticalAlignment="Bottom" Click="Button_ShowAll_Click" HorizontalAlignment="Left" Width="90" Margin="113,0,0,0" />
+                    </Grid>
+                </TabItem>
+                <TabItem Header="Switches" >
+                    <DataGrid Name="DataGridSwitches" ItemsSource="{Binding}" AlternatingRowBackground="#FF424242"  SelectionMode="Single" ColumnHeaderHeight="25" AutoGenerateColumns="False" Margin="10" SelectedCellsChanged="DataGridSwitches_SelectedCellsChanged" >
+                        <DataGrid.Columns>
+                            <DataGridTemplateColumn>
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Button Name="DetailSwitch" Width="60" Click="Button_DetailSwitch_Click">Detail</Button>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                            <DataGridTextColumn Binding="{Binding ID}" Width="30" Header="ID">
+                                <DataGridTextColumn.ElementStyle>
+                                    <Style TargetType="{x:Type TextBlock}">
+                                        <Setter Property="TextAlignment" Value="Center" />
+                                    </Style>
+                                </DataGridTextColumn.ElementStyle>
+                            </DataGridTextColumn>
+                            <DataGridTextColumn Binding="{Binding WindowID}" Width="53" Header="Panel">
+                                <DataGridTextColumn.ElementStyle>
+                                    <Style TargetType="{x:Type TextBlock}">
+                                        <Setter Property="TextAlignment" Value="Center" />
+                                    </Style>
+                                </DataGridTextColumn.ElementStyle>
+                            </DataGridTextColumn>
+                            <DataGridTextColumn Binding="{Binding Class}" Width="100" Header="Class name" IsReadOnly="True"/>
+                            <DataGridTextColumn Binding="{Binding Name}" Width="210" Header="Function"/>
+                            <DataGridTextColumn Binding="{Binding PosX}" Width="45" Header="Pos. X">
+                                <DataGridTextColumn.ElementStyle>
+                                    <Style TargetType="{x:Type TextBlock}">
+                                        <Setter Property="TextAlignment" Value="Right" />
+                                    </Style>
+                                </DataGridTextColumn.ElementStyle>
+                            </DataGridTextColumn>
+                            <DataGridTextColumn Binding="{Binding PosY}" Width="45" Header="Pos. Y">
+                                <DataGridTextColumn.ElementStyle>
+                                    <Style TargetType="{x:Type TextBlock}">
+                                        <Setter Property="TextAlignment" Value="Right" />
+                                    </Style>
+                                </DataGridTextColumn.ElementStyle>
+                            </DataGridTextColumn>
+                            <DataGridTextColumn Binding="{Binding Size}" Width="50" Header="Size px">
+                                <DataGridTextColumn.ElementStyle>
+                                    <Style TargetType="{x:Type TextBlock}">
+                                        <Setter Property="TextAlignment" Value="Right" />
+                                    </Style>
+                                </DataGridTextColumn.ElementStyle>
+                            </DataGridTextColumn>
+                            <DataGridTextColumn Binding="{Binding Rotate}" Width="50" Header="Rotate">
+                                <DataGridTextColumn.ElementStyle>
+                                    <Style TargetType="{x:Type TextBlock}">
+                                        <Setter Property="TextAlignment" Value="Right" />
+                                    </Style>
+                                </DataGridTextColumn.ElementStyle>
+                            </DataGridTextColumn>
+                            <DataGridTextColumn x:Name="Input" Binding="{Binding Input}" Width="100" Header="Input" />
+                            <DataGridTextColumn x:Name="Output" Binding="{Binding Output}" Width="100" Header="Output" />
+                            <DataGridTextColumn x:Name="ImageSwitchOn" Binding="{Binding FilePictureOn}" Width="135" Header="Image ON / Knob" />
+                            <DataGridTextColumn x:Name="ImageSwitchOff" Binding="{Binding FilePictureOff}" Width="135" Header="Image OFF / Base" />
+                            <DataGridTextColumn x:Name="ImageSwitch2On" Binding="{Binding FilePicture2On}" Width="135" Header="Image ON" />
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </TabItem>
+                <TabItem Header="Lamps" >
+                    <DataGrid Name="DataGridLamps" ItemsSource="{Binding}" SelectionMode="Single" AlternatingRowBackground="#FF424242" ColumnHeaderHeight="25" AutoGenerateColumns="False" Margin="10,10,10,10" SelectedCellsChanged="DataGridLamps_SelectedCellsChanged">
+                        <DataGrid.Columns>
+                            <DataGridTemplateColumn>
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Button Name="DetailLamp" Width="60" Click="Button_DetailLamp_Click">Detail</Button>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                            <DataGridTextColumn Binding="{Binding ID}" Width="30" Header="ID">
+                                <DataGridTextColumn.ElementStyle>
+                                    <Style TargetType="{x:Type TextBlock}">
+                                        <Setter Property="TextAlignment" Value="Center" />
+                                    </Style>
+                                </DataGridTextColumn.ElementStyle>
+                            </DataGridTextColumn>
+                            <DataGridTextColumn Binding="{Binding WindowID}" Width="45" Header="Panel">
+                                <DataGridTextColumn.ElementStyle>
+                                    <Style TargetType="{x:Type TextBlock}">
+                                        <Setter Property="TextAlignment" Value="Center" />
+                                    </Style>
+                                </DataGridTextColumn.ElementStyle>
+                            </DataGridTextColumn>
+                            <DataGridTextColumn Binding="{Binding Class}" Width="110" Header="Class name"/>
+                            <DataGridTextColumn Binding="{Binding Name}" Width="210" Header="Function" IsReadOnly="True"/>
+                            <DataGridTextColumn Binding="{Binding PosX}" Width="45" Header="Pos. X">
+                                <DataGridTextColumn.ElementStyle>
+                                    <Style TargetType="{x:Type TextBlock}">
+                                        <Setter Property="TextAlignment" Value="Right" />
+                                    </Style>
+                                </DataGridTextColumn.ElementStyle>
+                            </DataGridTextColumn>
+                            <DataGridTextColumn Binding="{Binding PosY}" Width="45" Header="Pos. Y">
+                                <DataGridTextColumn.ElementStyle>
+                                    <Style TargetType="{x:Type TextBlock}">
+                                        <Setter Property="TextAlignment" Value="Right" />
+                                    </Style>
+                                </DataGridTextColumn.ElementStyle>
+                            </DataGridTextColumn>
+                            <DataGridTextColumn Binding="{Binding Size}" Width="50" Header="Size px">
+                                <DataGridTextColumn.ElementStyle>
+                                    <Style TargetType="{x:Type TextBlock}">
+                                        <Setter Property="TextAlignment" Value="Right" />
+                                    </Style>
+                                </DataGridTextColumn.ElementStyle>
+                            </DataGridTextColumn>
+                            <DataGridTextColumn Binding="{Binding Rotate}" Width="50" Header="Rotate">
+                                <DataGridTextColumn.ElementStyle>
+                                    <Style TargetType="{x:Type TextBlock}">
+                                        <Setter Property="TextAlignment" Value="Right" />
+                                    </Style>
+                                </DataGridTextColumn.ElementStyle>
+                            </DataGridTextColumn>
+                            <DataGridTextColumn x:Name="ImageSwitchBackground_Copy" Binding="{Binding FileBackground}" Width="120" Header="Background" Visibility="Hidden" />
+                            <DataGridTextColumn x:Name="ImageSwitchOn_Copy" Binding="{Binding FilePictureOn}" Width="160" Header="Image ON" />
+                            <DataGridTextColumn x:Name="ImageSwitchOff_Copy" Binding="{Binding FilePictureOff}" Width="155" Header="Image OFF" />
+                        </DataGrid.Columns>
+                    </DataGrid>
+
+                </TabItem>
+                <TabItem Header="Accessories" >
+                    <DataGrid Name="DataGridAccessories" ItemsSource="{Binding}" SelectionMode="Single" AlternatingRowBackground="#FF424242" ColumnHeaderHeight="25" AutoGenerateColumns="False" Margin="10,10,10,10" SelectedCellsChanged="DataGridAccessories_SelectedCellsChanged">
+                        <DataGrid.Columns>
+                            <DataGridTemplateColumn>
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Button Name="DetailSwitch" Width="60" Click="Button_DetailAccessories_Click">Detail</Button>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                            <DataGridCheckBoxColumn x:Name="Active" Binding="{Binding Active}" Width="45" Header="Active" />
+                            <DataGridTextColumn Binding="{Binding ID}" Width="30" Header="ID">
+                                <DataGridTextColumn.ElementStyle>
+                                    <Style TargetType="{x:Type TextBlock}">
+                                        <Setter Property="TextAlignment" Value="Center" />
+                                    </Style>
+                                </DataGridTextColumn.ElementStyle>
+                            </DataGridTextColumn>
+                            <DataGridTextColumn Binding="{Binding WindowID}" Width="53" Header="Panel">
+                                <DataGridTextColumn.ElementStyle>
+                                    <Style TargetType="{x:Type TextBlock}">
+                                        <Setter Property="TextAlignment" Value="Center" />
+                                    </Style>
+                                </DataGridTextColumn.ElementStyle>
+                            </DataGridTextColumn>
+                            <DataGridTextColumn Binding="{Binding Class}" Width="150" Header="Class name" IsReadOnly="True"/>
+                            <DataGridTextColumn Binding="{Binding Name}" Width="210" Header="Description" />
+                            <DataGridTextColumn Binding="{Binding PosX}" Width="45" Header="Pos. X">
+                                <DataGridTextColumn.ElementStyle>
+                                    <Style TargetType="{x:Type TextBlock}">
+                                        <Setter Property="TextAlignment" Value="Right" />
+                                    </Style>
+                                </DataGridTextColumn.ElementStyle>
+                            </DataGridTextColumn>
+                            <DataGridTextColumn Binding="{Binding PosY}" Width="45" Header="Pos. Y">
+                                <DataGridTextColumn.ElementStyle>
+                                    <Style TargetType="{x:Type TextBlock}">
+                                        <Setter Property="TextAlignment" Value="Right" />
+                                    </Style>
+                                </DataGridTextColumn.ElementStyle>
+                            </DataGridTextColumn>
+                            <DataGridTextColumn Binding="{Binding Size}" Width="50" Header="Size px">
+                                <DataGridTextColumn.ElementStyle>
+                                    <Style TargetType="{x:Type TextBlock}">
+                                        <Setter Property="TextAlignment" Value="Right" />
+                                    </Style>
+                                </DataGridTextColumn.ElementStyle>
+                            </DataGridTextColumn>
+                            <DataGridTextColumn Binding="{Binding Rotate}" Width="50" Header="Rotate">
+                                <DataGridTextColumn.ElementStyle>
+                                    <Style TargetType="{x:Type TextBlock}">
+                                        <Setter Property="TextAlignment" Value="Right" />
+                                    </Style>
+                                </DataGridTextColumn.ElementStyle>
+                            </DataGridTextColumn>
+                            <DataGridTextColumn x:Name="ImageAccessories" Binding="{Binding FilePictureOn}" Width="210" Header="Image" />
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </TabItem>
+                <TabItem Header="Configuration" Height="34" VerticalAlignment="Bottom" Margin="-1,0,1,0">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="151*"/>
+                            <ColumnDefinition Width="881*"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBox Name="File" HorizontalAlignment="Left" Height="23" Margin="132,51,0,0" Visibility="Hidden" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="637" Grid.Column="1"/>
+                        <Label Content="File" HorizontalAlignment="Left" Margin="99,49,0,0" Visibility="Hidden" VerticalAlignment="Top" RenderTransformOrigin="0.607,1" Grid.Column="1" Height="16" Width="18"/>
+                        <Image Width="150" Source="Assets/Logo_01_150.png" Stretch="Fill" HorizontalAlignment="Right" Height="150" VerticalAlignment="Top" OpacityMask="#FFAFAC68" Margin="0,10,10,0" Grid.Column="1"/>
+                        <Button Name="EraseDatabases" Content="Deleting all records" Margin="721,0,0,10" Click="Button_DeleteDatabases_Click" ToolTip="Useful to create a new cockpit" Height="25" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="150" Grid.Column="1"/>
+                        <Button Name="Donate" Content="Donate" Margin="0,168,10,0" VerticalAlignment="Top" Click="Button_Donate_Click" Height="37" HorizontalAlignment="Right" Width="150" Grid.Column="1">
+                            <Button.ContentTemplate>
+                                <DataTemplate>
+                                    <Image Source="Assets/Donations.png"></Image>
+                                </DataTemplate>
+                            </Button.ContentTemplate>
+                        </Button>
+                        <Rectangle Height="42" Stroke="#FFAFAC68" VerticalAlignment="Top" Margin="10,59,207,0" Grid.ColumnSpan="2"/>
+                        <Label Content="Cockpit Panels" HorizontalAlignment="Right" Margin="0,106,10,0" VerticalAlignment="Top" Width="131" FontSize="18" Foreground="#FFF9F9F9" Height="24"/>
+                        <Label Content="Network" Margin="10,30,0,0" VerticalAlignment="Top" FontSize="18" Foreground="#FFF9F9F9" Height="24" HorizontalAlignment="Left" Width="110"/>
+                        <Label Content="IP" Margin="26,73,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.286,0.423" Foreground="#FFF9F9F9" Height="16" HorizontalAlignment="Left" Width="12"/>
+                        <TextBox Name="IPAddess" Height="23" Margin="43,69,0,0" TextWrapping="Wrap" Text="0" TextAlignment="Center" VerticalAlignment="Top" Grid.ColumnSpan="2" HorizontalAlignment="Left" Width="110" ToolTip="The IP where DCS runs"/>
+                        <Label Content="Port Listener" HorizontalAlignment="Left" Margin="27,72,0,0" VerticalAlignment="Top" Width="75" Foreground="#FFF9F9F9" Height="16" Grid.Column="1"/>
+                        <TextBox x:Name="PortListener" Height="23" Margin="107,69,0,0" TextWrapping="Wrap" Text="0" TextAlignment="Center" VerticalAlignment="Top" RenderTransformOrigin="0.463,2.217" HorizontalAlignment="Left" Width="60" Grid.Column="1"/>
+                        <Label Content="Port Sender" Margin="194,72,0,0" VerticalAlignment="Top" Foreground="#FFF9F9F9" Height="16" HorizontalAlignment="Left" Width="75" Grid.Column="1"/>
+                        <TextBox x:Name="PortSender" Height="23" Margin="274,69,0,0" TextWrapping="Wrap" Text="0" TextAlignment="Center" VerticalAlignment="Top" RenderTransformOrigin="0.463,2.217" HorizontalAlignment="Left" Width="60" Grid.Column="1"/>
+                        <Label Content="RenderCapability" Margin="99,101,0,0" RenderTransformOrigin="0.286,0.423" Foreground="#FFF9F9F9" HorizontalAlignment="Left" Width="95" Grid.Column="1" Height="16" VerticalAlignment="Top" Visibility="Hidden"/>
+                        <TextBox Name="Tier" Height="23" Margin="99,123,0,0" TextWrapping="Wrap" Text="0" TextAlignment="Center" VerticalAlignment="Top" HorizontalAlignment="Left" Width="298" Grid.Column="1" IsEnabled="False" Visibility="Hidden"/>
+                        <CheckBox Name="ShowFunctionTab" Content="Show Tab 'Instrumentfunctions'" Margin="224,0,0,10" Checked="CheckBox_ShowFunctionTab_Checked" Unchecked="CheckBox_ShowFunctionTab_Unchecked" Height="22" VerticalAlignment="Bottom" Foreground="#FFF9F9F9" HorizontalAlignment="Left" Width="198" Grid.Column="1" Visibility="Hidden"/>
+                        <CheckBox Name="EditMode" Content="Editor Mode" Margin="721,0,0,116" Height="21" VerticalAlignment="Bottom" Foreground="#FFF9F9F9" Click="Checkbox_EditMode_Click" Grid.Column="1" HorizontalAlignment="Left" Width="136" />
+                        <CheckBox Name="checkBoxLights" Content="Gauges Backlight" Margin="721,0,0,142" Height="21" VerticalAlignment="Bottom" Foreground="#FFF9F9F9" Checked="CheckBox_Lights_Checked" Unchecked="CheckBox_Lights_Unchecked" Grid.Column="1" HorizontalAlignment="Left" Width="136" ToolTip="If it is defined in  &quot;Image for Glass&quot; in Tab Instruments" />
+                        <CheckBox Name="checkBoxLog" Content="Log Details" Margin="721,0,0,90" Height="21" VerticalAlignment="Bottom" Foreground="#FFF9F9F9" Grid.Column="1" Click="CheckBox_Log_Click" HorizontalAlignment="Left" Width="136" />
+                        <CheckBox Name="checkBoxCleanMemory" Content="Clean up memory" Margin="0,0,10,40" Height="21" VerticalAlignment="Bottom" Foreground="#FFF9F9F9" Grid.Column="1" Click="CheckBox_CleanMemory_Click" HorizontalAlignment="Right" Width="119" Visibility="Hidden" />
+                        <DataGrid Name="DataGridWindows" ItemsSource="{Binding}" SelectionMode="Single" AlternatingRowBackground="#FF424242" ColumnHeaderHeight="25" AutoGenerateColumns="False" Margin="10,135,207,10" SelectedCellsChanged="DataGridWindows_SelectedCellsChanged" Grid.ColumnSpan="2">
+                            <DataGrid.Columns>
+                                <DataGridTemplateColumn>
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Button Name="DetailWindow" Width="70" Click="Button_DetailWindow_Click">Detail</Button>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                                <DataGridTextColumn Binding="{Binding WindowID}" Width="40" Header="Panel">
+                                    <DataGridTextColumn.ElementStyle>
+                                        <Style TargetType="{x:Type TextBlock}">
+                                            <Setter Property="TextAlignment" Value="Center" />
+                                        </Style>
+                                    </DataGridTextColumn.ElementStyle>
+                                </DataGridTextColumn>
+                                <DataGridTextColumn Binding="{Binding Name}" Width="150" Header="Description" />
+                                <DataGridTextColumn Binding="{Binding PosX}" Width="45" Header="Pos. X">
+                                    <DataGridTextColumn.ElementStyle>
+                                        <Style TargetType="{x:Type TextBlock}">
+                                            <Setter Property="TextAlignment" Value="Right" />
+                                        </Style>
+                                    </DataGridTextColumn.ElementStyle>
+                                </DataGridTextColumn>
+                                <DataGridTextColumn Binding="{Binding PosY}" Width="45" Header="Pos. Y">
+                                    <DataGridTextColumn.ElementStyle>
+                                        <Style TargetType="{x:Type TextBlock}">
+                                            <Setter Property="TextAlignment" Value="Right" />
+                                        </Style>
+                                    </DataGridTextColumn.ElementStyle>
+                                </DataGridTextColumn>
+                                <DataGridTextColumn Binding="{Binding Width}" Width="50" Header="Width">
+                                    <DataGridTextColumn.ElementStyle>
+                                        <Style TargetType="{x:Type TextBlock}">
+                                            <Setter Property="TextAlignment" Value="Right" />
+                                        </Style>
+                                    </DataGridTextColumn.ElementStyle>
+                                </DataGridTextColumn>
+                                <DataGridTextColumn Binding="{Binding Height}" Width="50" Header="Height">
+                                    <DataGridTextColumn.ElementStyle>
+                                        <Style TargetType="{x:Type TextBlock}">
+                                            <Setter Property="TextAlignment" Value="Right" />
+                                        </Style>
+                                    </DataGridTextColumn.ElementStyle>
+                                </DataGridTextColumn>
+                                <DataGridTextColumn Binding="{Binding Background}" Width="160" Header="Background Day" />
+                                <DataGridTextColumn Binding="{Binding BackgroundNight}" Width="160" Header="Background Night" />
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </Grid>
+                </TabItem>
+                <TabItem Header="Log" Name="Log" Height="34" VerticalAlignment="Bottom" Margin="-1,0,1,0">
+                    <Grid>
+                        <ListBox Name ="ListBox1" Margin="10,10,10,29" Background="Gray" BorderBrush="#FFAFAC68" Foreground="Black"/>
+                        <Button Content="Copy to clipboard" Name="Copy" Margin="10,0,0,0" Height="24" VerticalAlignment="Bottom" Click="Button_Copy_Click" HorizontalAlignment="Left" Width="110"/>
+                        <Button Content="Refresh" Name="LogRefresh" Margin="125,0,0,0" Height="24" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="110" Click="Button_LogRefresh_Click"/>
+                    </Grid>
+                </TabItem>
+            </TabControl>
+            <Button Content="Save" Name="Save" HorizontalAlignment="Right" Width="90" Height="24" VerticalAlignment="Bottom" Click="Button_Save_Click" Margin="0,0,3,5" Foreground="#FFFDD650">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                        <GradientStop Color="#FFEEEEEE" Offset="0"/>
+                        <GradientStop Color="#FFCCCCCC" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+            <Button Content="Load" Name="Load" Margin="0,0,93,5" HorizontalAlignment="Right" Width="90" Height="24" VerticalAlignment="Bottom" Click="Button_Load_Click"/>
+            <Button Content="Show Cockpit" Name="buttonShow" Margin="0,0,188,5" HorizontalAlignment="Right" Width="90" Click="Button_Show_Click" Height="24" VerticalAlignment="Bottom"/>
+            <Button Content="Exit" Name="buttonExit" Margin="0,0,278,5" HorizontalAlignment="Right" Width="90"  Height="24" VerticalAlignment="Bottom" Click="Button_Exit_Click"/>
+            <Button Content="Add Record" x:Name="buttonAdd" Margin="30,0,0,5" Height="24" VerticalAlignment="Bottom" Click="Button_Add_Click" HorizontalAlignment="Left" Width="90"/>
+            <Button Content="Delete Record" x:Name="buttonDel" Margin="130,0,0,4" Height="24" VerticalAlignment="Bottom" Click="Button_Del_Click" HorizontalAlignment="Left" Width="90"/>
+            <Button Content="Refresh" Name="Refresh" Margin="0,0,373,5" Height="24" VerticalAlignment="Bottom" Click="Button_Refresh_Click" HorizontalAlignment="Right" Width="90" />
+            <Label Name="Version" Content="(C) H.J.P. 2016  Version 0.9909" Margin="435,0,460,9" Foreground="#FFD8BC05" Height="19" VerticalAlignment="Bottom"/>
+            <Label Content="Editor Mode" Name="lbEditMode" Margin="262,0,0,10" Foreground="#FFFB063E" Height="19" VerticalAlignment="Bottom" HorizontalAlignment="Left" Visibility="Visible"  Width="78"/>
+            <Label Content="Log Details" Name="lbLogging" Margin="355,0,0,9" Foreground="#FFFB063E" Height="19" VerticalAlignment="Bottom" HorizontalAlignment="Left" Visibility="Visible"  Width="65"/>
+        </Grid>
+    </Grid>
+</Window>
