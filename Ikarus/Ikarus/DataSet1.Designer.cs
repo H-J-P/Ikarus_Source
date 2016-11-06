@@ -2944,6 +2944,8 @@ namespace Ikarus {
             
             private global::System.Data.DataColumn columnBackgroundNight;
             
+            private global::System.Data.DataColumn columnRefresh;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public WindowDataTable() {
@@ -3043,6 +3045,14 @@ namespace Ikarus {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn RefreshColumn {
+                get {
+                    return this.columnRefresh;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -3078,7 +3088,7 @@ namespace Ikarus {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public WindowRow AddWindowRow(string Name, int PosX, int PosY, int Height, int Width, string Background, string BackgroundNight) {
+            public WindowRow AddWindowRow(string Name, int PosX, int PosY, int Height, int Width, string Background, string BackgroundNight, bool Refresh) {
                 WindowRow rowWindowRow = ((WindowRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -3088,7 +3098,8 @@ namespace Ikarus {
                         Height,
                         Width,
                         Background,
-                        BackgroundNight};
+                        BackgroundNight,
+                        Refresh};
                 rowWindowRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowWindowRow);
                 return rowWindowRow;
@@ -3119,6 +3130,7 @@ namespace Ikarus {
                 this.columnWidth = base.Columns["Width"];
                 this.columnBackground = base.Columns["Background"];
                 this.columnBackgroundNight = base.Columns["BackgroundNight"];
+                this.columnRefresh = base.Columns["Refresh"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3140,6 +3152,8 @@ namespace Ikarus {
                 base.Columns.Add(this.columnBackground);
                 this.columnBackgroundNight = new global::System.Data.DataColumn("BackgroundNight", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnBackgroundNight);
+                this.columnRefresh = new global::System.Data.DataColumn("Refresh", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnRefresh);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnWindowID}, false));
                 this.columnWindowID.AutoIncrement = true;
@@ -3152,6 +3166,7 @@ namespace Ikarus {
                 this.columnWidth.DefaultValue = ((int)(1920));
                 this.columnBackground.DefaultValue = ((string)("-"));
                 this.columnBackgroundNight.DefaultValue = ((string)("-"));
+                this.columnRefresh.DefaultValue = ((bool)(false));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5348,6 +5363,22 @@ namespace Ikarus {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Refresh {
+                get {
+                    try {
+                        return ((bool)(this[this.tableWindow.RefreshColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Refresh\' in table \'Window\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableWindow.RefreshColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsWindowIDNull() {
                 return this.IsNull(this.tableWindow.WindowIDColumn);
             }
@@ -5440,6 +5471,18 @@ namespace Ikarus {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetBackgroundNightNull() {
                 this[this.tableWindow.BackgroundNightColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsRefreshNull() {
+                return this.IsNull(this.tableWindow.RefreshColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetRefreshNull() {
+                this[this.tableWindow.RefreshColumn] = global::System.Convert.DBNull;
             }
         }
         

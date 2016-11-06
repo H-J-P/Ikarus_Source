@@ -284,24 +284,28 @@ namespace Ikarus
 
         private void RightRec_MouseDown(object sender, MouseButtonEventArgs e)
         {
+            e.Handled = true;
             SetValue(1.0, true);
             if (!MainWindow.editmode) ProzessHelper.SetFocusToExternalApp(MainWindow.processNameDCS);
         }
 
         private void LeftRec_MouseDown(object sender, MouseButtonEventArgs e)
         {
+            e.Handled = true;
             SetValue(-1.0, true);
             if (!MainWindow.editmode) ProzessHelper.SetFocusToExternalApp(MainWindow.processNameDCS);
         }
 
         private void RightRec_TouchDown(object sender, TouchEventArgs e)
         {
+            e.Handled = true;
             SetValue(1.0, true);
             if (!MainWindow.editmode) ProzessHelper.SetFocusToExternalApp(MainWindow.processNameDCS);
         }
 
         private void LeftRec_TouchDown(object sender, TouchEventArgs e)
         {
+            e.Handled = true;
             SetValue(-1.0, true);
             if (!MainWindow.editmode) ProzessHelper.SetFocusToExternalApp(MainWindow.processNameDCS);
         }

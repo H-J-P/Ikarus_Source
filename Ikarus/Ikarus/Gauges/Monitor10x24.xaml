@@ -6,7 +6,7 @@
              mc:Ignorable="d" Width="290" Height="220" RenderTransformOrigin="0.5,0.5" MouseWheel="Light_MouseWheel">
     <Grid Margin="0,0,0,0">
         <Image x:Name="Frame" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Height="220" Width="290" MouseWheel="Light_MouseWheel" Stretch="Fill" />
-        <TextBlock x:Name="Line1" Foreground="#FF95E295" Text="123456789012345678901234" FontFamily="Courier New" FontSize="17" HorizontalAlignment="Left" Width="270" Height="18" VerticalAlignment="Top" Margin="22,22,0,0" Background="#00071901"/>
+        <TextBlock x:Name="Line1" Background="#00071901" Foreground="#FF95E295" Text="123456789012345678901234" FontFamily="Courier New" FontSize="17" HorizontalAlignment="Left" Width="270" Height="18" VerticalAlignment="Top" Margin="22,22,0,0"/>
         <TextBlock x:Name="Line2" Background="#00071901" Foreground="#FF95E295" Text="123456789012345678901234" FontFamily="Courier New" FontSize="17" HorizontalAlignment="Left" Width="270" Height="18" VerticalAlignment="Top" Margin="22,40,0,0"/>
         <TextBlock x:Name="Line3" Background="#00071901" Foreground="#FF95E295" Text="123456789012345678901234" FontFamily="Courier New" FontSize="17" HorizontalAlignment="Left" Width="270" Height="18" VerticalAlignment="Top" Margin="22,56,0,0"/>
         <TextBlock x:Name="Line4" Background="#00071901" Foreground="#FF95E295" Text="123456789012345678901234" FontFamily="Courier New" FontSize="17" HorizontalAlignment="Left" Width="270" Height="18" VerticalAlignment="Top" Margin="22,72,0,0"/>

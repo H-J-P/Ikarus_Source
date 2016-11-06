@@ -60,7 +60,7 @@ namespace Ikarus
 
             if (MainWindow.dtMasterLamps != null)
             {
-                dr = MainWindow.dtMasterLamps.Select("Type='Lamp'");
+                dr = MainWindow.dtMasterLamps.Select("Type='Lamp'", "Description");
                 lamps = dr.CopyToDataTable<DataRow>();
                 DataGridLamps.ItemsSource = lamps.DefaultView;
                 DataGridLamps.CanUserAddRows = false;
@@ -70,14 +70,22 @@ namespace Ikarus
                 DataGridLamps.ScrollIntoView(DataGridLamps.Items[DataGridLamps.Items.Count - 1]);
                 try
                 {
-                    for (int n = 0; n < dr.Length; n++)
+                    if (arg_number != 0)
                     {
-                        if (Convert.ToInt32(dr[n][0]) == arg_number)
+                        for (int n = 0; n < dr.Length; n++)
                         {
-                            DataGridLamps.SelectedIndex = n;
-                            DataGridLamps.ScrollIntoView(DataGridLamps.Items[n]);
-                            break;
+                            if (Convert.ToInt32(dr[n][0]) == arg_number)
+                            {
+                                DataGridLamps.SelectedIndex = n;
+                                DataGridLamps.ScrollIntoView(DataGridLamps.Items[n]);
+                                break;
+                            }
                         }
+                    }
+                    else
+                    {
+                        //DataGridLamps.SelectedIndex = 0;
+                        DataGridLamps.ScrollIntoView(DataGridLamps.Items[0]);
                     }
                 }
                 catch { }

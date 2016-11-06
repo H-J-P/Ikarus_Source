@@ -18,9 +18,9 @@ namespace Ikarus
         private int windowID = 0;
         private static string newline = Environment.NewLine;
 
-        private int[] codeChar = new int[18];
-        private string[] replaceString = new string[18];
-        private string[] character = new string[18];
+        private int[] codeChar = new int[19];
+        private string[] replaceString = new string[19];
+        private string[] character = new string[19];
 
         public void SetWindowID(int _windowID) { windowID = _windowID; }
         public int GetWindowID() { return windowID; }
@@ -60,6 +60,7 @@ namespace Ikarus
             codeChar[15] = 0x2195;
             codeChar[16] = 0x2588;
             codeChar[17] = 0x003A;
+            codeChar[18] = 0x002A;
 
 
             replaceString[0] = "0x00BB";
@@ -80,6 +81,7 @@ namespace Ikarus
             replaceString[15] = "0x2195";
             replaceString[16] = "0x2588";
             replaceString[17] = "0x003A";
+            replaceString[18] = "0x002A";
 
             for (int n = 0; n < codeChar.Length; n++)
             {
@@ -176,11 +178,11 @@ namespace Ikarus
 
         public void UpdateGauge(string strData)
         {
-            string[] vals = strData.Split(';');
-
             Dispatcher.BeginInvoke(DispatcherPriority.Normal,
                        (Action)(() =>
                        {
+                           string[] vals = strData.Split(';');
+
                            string line1 = "", line2 = "", line3 = "", line4 = "", line5 = "", line6 = "", line7 = "", line8 = "", line9 = "", line10 = "";
 
                            try

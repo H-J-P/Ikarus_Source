@@ -12,7 +12,7 @@
                 <Path Data="M4.436,0.354L144.025,0.354C146.269,0.354,148.106,2.191,148.106,4.435L148.106,43.054C148.106,45.3,146.269,47.136,144.025,47.136L4.436,47.136C2.191,47.136,0.355,45.3,0.355,43.054L0.355,4.435C0.355,2.191,2.191,0.354,4.436,0.354z" Height="47.491" Canvas.Left="14.828" Stroke="#FF1A1A1A" StrokeThickness="0.709" StrokeMiterLimit="22.926" Canvas.Top="13.161" Width="148.46"/>
                 <Path Data="M4.436,0.354L144.025,0.354C146.269,0.354,148.106,2.19,148.106,4.436L148.106,43.055C148.106,45.299,146.269,47.135,144.025,47.135L4.436,47.135C2.192,47.135,0.355,45.299,0.355,43.055L0.355,4.436C0.355,2.19,2.192,0.354,4.436,0.354z" Height="47.49" Canvas.Left="14.312" Stroke="Gray" StrokeThickness="0.709" StrokeMiterLimit="22.926" Canvas.Top="12.689" Width="148.46"/>
             </Canvas>
-            <TextBlock x:Name="Frequenz" TextWrapping="Wrap" Text="000.000" Foreground="#FFABF9AB" FontSize="26.667" FontFamily="LED Board-7" Width="130" HorizontalAlignment="Right" Height="37" Canvas.Left="24" Canvas.Top="20" TextAlignment="Center"/>
+            <TextBlock x:Name="Frequenz" TextWrapping="Wrap" Text="000.000" TextAlignment="Center" Foreground="#FFABF9AB" FontSize="26.667" FontFamily="LED Board-7" Width="130" HorizontalAlignment="Right" Height="37" Canvas.Left="24" Canvas.Top="20" />
         </Canvas>
         <Image x:Name="Light" HorizontalAlignment="Left" Width="178" MouseWheel="Light_MouseWheel" Stretch="Fill" />
     </Grid>

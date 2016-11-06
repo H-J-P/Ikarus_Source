@@ -9,6 +9,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Threading;
+using System.Runtime.InteropServices;
 
 namespace Ikarus
 {
@@ -57,8 +58,17 @@ namespace Ikarus
         private Switches switches = null;
         private Lamps lamp = null;
 
+        static readonly IntPtr HWND_TOPMOST = new IntPtr(-1);
+        static readonly IntPtr HWND_NOTOPMOST = new IntPtr(-2);
+        static readonly IntPtr HWND_TOP = new IntPtr(0);
+        static readonly IntPtr HWND_BOTTOM = new IntPtr(1);
+        const UInt32 SWP_NOSIZE = 0x0001;
+        const UInt32 SWP_NOMOVE = 0x0002;
+        const UInt32 TOPMOST_FLAGS = SWP_NOMOVE | SWP_NOSIZE;
+
         #endregion
 
+        #region Functions
         public Cockpit(int _windowID, string _backgroundFile)
         {
             try
@@ -71,6 +81,8 @@ namespace Ikarus
                 Focusable = false;
                 Topmost = true;
                 BackImage.Source = null;
+
+                //if (windowID > 0) Visibility = Visibility.Hidden;
 
                 ImportExport.LogMessage("Start loading Cockpit ... " + _backgroundFile);
 
@@ -133,8 +145,6 @@ namespace Ikarus
                 ImportExport.LogMessage("Generate Cockpit .... " + e.ToString());
             }
         }
-
-        #region member functions
 
         private void GenerateAccessory(int instanceID, string classname, string name)
         {
@@ -338,6 +348,7 @@ namespace Ikarus
             try
             {
                 MainWindow.cockpitWindows[windowID] = null;
+                Visibility = Visibility.Hidden;
 
                 accessories.Clear();
                 gaugeObjects.Clear();
@@ -625,12 +636,17 @@ namespace Ikarus
             InvalidateVisual();
         }
 
+        [DllImport("user32.dll")]
+        [return: MarshalAs(UnmanagedType.Bool)]
+        public static extern bool SetWindowPos(IntPtr hWnd, IntPtr hWndInsertAfter, int X, int Y, int cx, int cy, uint uFlags);
+
         #endregion
 
         #region event
 
         private void BackImage_GotFocus(object sender, RoutedEventArgs e)
         {
+            if (windowID == 0) MainWindow.refeshPopup = true;
             SetFocusTo();
         }
 
@@ -642,11 +658,13 @@ namespace Ikarus
 
         private void Window_GotFocus(object sender, RoutedEventArgs e)
         {
+            if (windowID == 0) MainWindow.refeshPopup = true;
             SetFocusTo();
         }
 
         private void Window_MouseDown(object sender, MouseButtonEventArgs e)
         {
+            if (windowID == 0) MainWindow.refeshPopup = true;
             SetFocusTo();
         }
 
@@ -656,6 +674,31 @@ namespace Ikarus
             if (!MainWindow.editmode) ProzessHelper.SetFocusToExternalApp(MainWindow.processNameDCS);
         }
 
+        private void Window_Deactivated(object sender, EventArgs e)
+        {
+            if (MainWindow.cockpitWindows[windowID] != null)
+            {
+                if (windowID > 0 && Visibility == Visibility.Visible)
+                {
+                    //Show();
+                    //Visibility = Visibility.Hidden;
+                    ////this.Topmost = true;
+                    ////this.Activate();
+                    ////this.Focus();
+                    //Visibility = Visibility.Visible;
+                }
+            }
+        }
         #endregion
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            //if (windowID > 0) // && Visibility == Visibility.Visible)
+            //{
+            //    // do this to get the HWND
+            //    WindowInteropHelper helper = new WindowInteropHelper(this);
+            //    SetWindowPos(helper.Handle, HWND_TOPMOST, 0, 0, 0, 0, TOPMOST_FLAGS);
+            //}
+        }
     }
 }

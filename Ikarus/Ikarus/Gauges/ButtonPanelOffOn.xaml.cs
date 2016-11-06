@@ -23,6 +23,7 @@ namespace Ikarus
         private int panelID = 0;
         private int _on = 0;
         private string[] vals = new string[] { };
+        //private bool touchDown = false;
 
         public void SetWindowID(int _windowID) { windowID = _windowID; }
         public int GetWindowID() { return windowID; }
@@ -79,8 +80,8 @@ namespace Ikarus
                     panelID = Convert.ToInt16(dataRows[0]["Input"]);
                     _on = Convert.ToInt16(dataRows[0]["Output"]);
                 }
-                catch 
-                { 
+                catch
+                {
                     panelID = 0;
                     _on = 0;
                 }
@@ -129,22 +130,22 @@ namespace Ikarus
             Dispatcher.BeginInvoke(DispatcherPriority.Normal,
                        (Action)(() =>
                        {
-                           vals = strData.Split(';');
+                           //vals = strData.Split(';');
 
-                           double switchState = 0.0;
+                           //try
+                           //{
+                           //    double switchState = 0.0;
 
-                           try
-                           {
-                               if (vals.Length > 0) { switchState = Convert.ToDouble(vals[0], CultureInfo.InvariantCulture); }
-                           }
-                           catch { return; };
+                           //    if (vals.Length > 0) { switchState = Convert.ToDouble(vals[0], CultureInfo.InvariantCulture); }
 
-                           if (switchState > 0.8) { SetValue(1.0, false); }
-                           else { SetValue(0.0, false); }
+                           //    if (switchState > 0.8) { SetValue(1.0, false); }
+                           //    else { SetValue(0.0, false); }
+                           //}
+                           //catch { return; };
                        }));
         }
 
-        private void SetValue(double _value, bool _event)
+        private void SetValue(double _value)
         {
             try
             {
@@ -172,6 +173,7 @@ namespace Ikarus
                     SwitchUp.Visibility = System.Windows.Visibility.Hidden;
                     SwitchDown.Visibility = System.Windows.Visibility.Visible;
                     if (MainWindow.cockpitWindows.Count > panelID) MainWindow.cockpitWindows[panelID].Visibility = System.Windows.Visibility.Hidden;
+
                 }
             }
             catch { }
@@ -212,28 +214,37 @@ namespace Ikarus
 
         private void UpperRec_MouseDown(object sender, MouseButtonEventArgs e)
         {
+            e.Handled = true;
+
             if (SwitchUp.Visibility == System.Windows.Visibility.Visible)
             {
-                SetValue(0.0, true);
+                SetValue(0.0);
             }
             else
             {
-                SetValue(1.0, true);
+                SetValue(1.0);
             }
             if (!MainWindow.editmode) ProzessHelper.SetFocusToExternalApp(MainWindow.processNameDCS);
         }
 
         private void UpperRec_TouchDown(object sender, TouchEventArgs e)
         {
-            if (SwitchUp.Visibility == System.Windows.Visibility.Visible)
-            {
-                SetValue(0.0, true);
-            }
-            else
-            {
-                SetValue(1.0, true);            
-            }
-            if (!MainWindow.editmode) ProzessHelper.SetFocusToExternalApp(MainWindow.processNameDCS);
+            e.Handled = true;
+
+                if (SwitchUp.Visibility == System.Windows.Visibility.Visible)
+                {
+                    SetValue(0.0);
+                }
+                else
+                {
+                    SetValue(1.0);
+                }
+                if (!MainWindow.editmode) ProzessHelper.SetFocusToExternalApp(MainWindow.processNameDCS);
+        }
+
+        private void UpperRec_TouchUp(object sender, TouchEventArgs e)
+        {
+            e.Handled = true;
         }
     }
 }

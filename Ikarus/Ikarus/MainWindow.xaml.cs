@@ -10,6 +10,7 @@ using System.Windows.Data;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Threading;
+using System.Runtime.InteropServices;
 
 namespace Ikarus
 {
@@ -110,11 +111,22 @@ namespace Ikarus
         public static bool lightsChecked = false;
         public static bool isRep = false;
         public static bool getAllDscData = false;
-        private static int dscDataLoopCounterMax = 25;
+
+        private static int dscDataLoopCounterMax = 15;
         private static int getAllDscDataLoopCounter = 0;
+        private static int cockpitRefreshLoopCounterMax = 15;
+        private static int cockpitRefreshLoopCounter = 0;
+
+        public static bool refeshPopup = false;
+        public static bool initInstruments = true;
 
         //private static int timerMainLoop = 0;
         //private static double flattening = 0.00025;
+
+        //private static readonly IntPtr HWND_TOPMOST = new IntPtr(-1);
+        //private const UInt32 SWP_NOSIZE = 0x0001;
+        //private const UInt32 SWP_NOMOVE = 0x0002;
+        //private const UInt32 TOPMOST_FLAGS = SWP_NOMOVE | SWP_NOSIZE;
 
         #endregion
 
@@ -135,7 +147,10 @@ namespace Ikarus
                 PortListener.Text = "1625";
                 portListener = PortListener.Text;
                 PortSender.Text = "26027";
+
                 getAllDscDataLoopCounter = dscDataLoopCounterMax;
+                cockpitRefreshLoopCounter = cockpitRefreshLoopCounterMax;
+
                 ImportExport.LogMessage(Version.Content + "   Application started .. ");
 
                 try
@@ -155,7 +170,10 @@ namespace Ikarus
                             portListener = dtConfig.Rows[0][6].ToString();
                             PortSender.Text = dtConfig.Rows[0][7].ToString();
 
-                            Main.Title = "Ikarus - ( Configured for " + dbFilename.Substring(0, dbFilename.LastIndexOf(".")) + " )";
+                            if (dbFilename.Length > 0)
+                            {
+                                Main.Title = "Ikarus - ( Configured for " + dbFilename.Substring(0, dbFilename.LastIndexOf(".")) + " )";
+                            }
                         }
                     }
                     else
@@ -170,8 +188,15 @@ namespace Ikarus
                 {
                     if (dtConfig.Rows.Count > 0)
                     {
-                        ImportExport.XmlToDataSet(dbFilename, dsInstruments);
-                        ImportExport.XmlToDataSet(dbFilename.Substring(0, dbFilename.LastIndexOf(".")) + ".xml", dsMaster);
+                        if (dbFilename.Length > 0)
+                        {
+                            ImportExport.XmlToDataSet(dbFilename, dsInstruments);
+                            ImportExport.XmlToDataSet(dbFilename.Substring(0, dbFilename.LastIndexOf(".")) + ".xml", dsMaster);
+                        }
+                        else
+                        {
+                            ImportExport.LogMessage("++++++ None configuration loaded. File=''");
+                        }
 
                         if (dsMaster.Tables.Count > 0)
                         {
@@ -234,7 +259,7 @@ namespace Ikarus
                     isRep = true;
                 }
 
-                if (isRep)
+                if (isRep && dbFilename.Length > 0)
                 {
                     ImportExport.DatasetToXml(dbFilename, dsInstruments);
                     ImportExport.LogMessage("Save file: " + dbFilename);
@@ -256,7 +281,7 @@ namespace Ikarus
                 checkBoxLog.IsChecked = detailLog;
                 lbLogging.Visibility = detailLog ? Visibility.Visible : Visibility.Hidden;
 
-                switchLog = true;
+                switchLog = false;
                 checkBoxLogSwitches.SetCurrentValue(CheckBox.IsCheckedProperty, switchLog);
 
                 lbLogging.Visibility = switchLog ? Visibility.Visible : Visibility.Hidden;
@@ -269,8 +294,6 @@ namespace Ikarus
                 DataGridSwitches.CanUserDeleteRows = true;
                 DataGridLamps.CanUserDeleteRows = true;
                 DataGridWindows.CanUserDeleteRows = true;
-
-
             }
             catch (Exception e) { ImportExport.LogMessage("Startup problem .. " + e.ToString()); }
 
@@ -289,6 +312,8 @@ namespace Ikarus
 
             GC.Collect(0, GCCollectionMode.Forced);
         }
+
+        #region member functions
 
         private void StartTimer()
         {
@@ -405,11 +430,13 @@ namespace Ikarus
 
                                            if (switches[n].events)
                                            {
+                                               if (windowID == 0) refeshPopup = true;
+
                                                if (!switches[n].dontReset) switches[n].events = false; //<---
 
                                                switches[n].ignoreNextPackage = true; // ignore next package from DCS
                                                getAllDscData = true;
-                                               getAllDscDataLoopCounter = dscDataLoopCounterMax; // next refresh for switches in 5 sec.
+                                               getAllDscDataLoopCounter = dscDataLoopCounterMax; // next refresh for switches in 3 sec.
 
                                                package = "C" + switches[n].deviceID.ToString() + "," + (3000 + switches[n].buttonID).ToString() + "," + switches[n].value.ToString();
 
@@ -442,8 +469,6 @@ namespace Ikarus
                                    }
                                    catch (Exception ex) { ImportExport.LogMessage("Switches " + switches[n].classname + " ID " + switches[n].dcsID.ToString() + " Update:" + ex.ToString()); }
                                }
-                               //loopCounterSwitches = 0;
-
                                lStateEnabled = true;
                            }
                            #endregion
@@ -468,23 +493,75 @@ namespace Ikarus
                            //lStateEnabled = true;
                            //}
 
+                           #region refresh switches
+
                            if (lStateEnabled)
                            {
                                lStateEnabled = false;
 
-                               if (getAllDscData)
+                               try
                                {
-                                   if (--getAllDscDataLoopCounter < 1)
+                                   if (getAllDscData)
                                    {
-                                       RefreshAllSwitches();
-                                       getAllDscDataLoopCounter = dscDataLoopCounterMax;
+                                       if (--getAllDscDataLoopCounter < 1)
+                                       {
+                                           RefreshAllSwitches(); // "R"
+                                           getAllDscDataLoopCounter = dscDataLoopCounterMax;
 
-                                       if (switchLog) UpdateLog();
+                                           if (switchLog) UpdateLog();
+                                       }
                                    }
+                               }
+                               catch (Exception ex)
+                               {
+                                   ImportExport.LogMessage("Refresh all switches: " + ex.ToString());
+                               }
+                               lStateEnabled = true;
+                           }
+                           #endregion
+
+                           #region refresh popup windows;
+
+                           if (lStateEnabled)
+                           {
+                               lStateEnabled = false;
+
+                               try
+                               {
+                                   if (cockpitWindowActiv && refeshPopup)
+                                   {
+                                       if (--cockpitRefreshLoopCounter < 1)
+                                       {
+                                           bool refresh = false;
+
+                                           for (int i = 1; i < dtWindows.Rows.Count; i++)
+                                           {
+                                               try
+                                               {
+                                                   refresh = Convert.ToBoolean(dtWindows.Rows[i][8]);
+                                               }
+                                               catch
+                                               {
+                                                   refresh = true;
+                                                   dtWindows.Rows[i][8] = true;
+                                               }
+
+                                               if (cockpitWindows[i].IsVisible && refresh) { cockpitWindows[i].Activate(); }
+                                               //SetWindowPos(this.Handle, HWND_TOPMOST, 0, 0, 0, 0, TOPMOST_FLAGS);
+                                           }
+                                           cockpitRefreshLoopCounter = cockpitRefreshLoopCounterMax;
+                                           refeshPopup = false;
+                                       }
+                                   }
+                               }
+                               catch (Exception ex)
+                               {
+                                   ImportExport.LogMessage("Refresh Panels: " + ex.ToString());
                                }
 
                                lStateEnabled = true;
                            }
+                           #endregion
 
                            #endregion
                        }));
@@ -493,7 +570,7 @@ namespace Ikarus
         }
         //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-        #region memberfunctions
+        //#region memberfunctions
 
         private void CockpitClose()
         {
@@ -536,15 +613,24 @@ namespace Ikarus
 
                 for (int i = 0; i < dtWindows.Rows.Count; i++)
                 {
-                    cockpitWindows.Add(new Cockpit(Convert.ToInt16(dtWindows.Rows[i]["WindowID"]), dtWindows.Rows[i]["Background"].ToString()));
+                    try
+                    {
+                        cockpitWindows.Add(new Cockpit(Convert.ToInt16(dtWindows.Rows[i]["WindowID"]), dtWindows.Rows[i]["Background"].ToString()));
 
-                    cockpitWindows[i].Left = double.Parse(dtWindows.Rows[i]["PosX"].ToString().Replace(",", "."), CultureInfo.InvariantCulture);
-                    cockpitWindows[i].Top = double.Parse(dtWindows.Rows[i]["PosY"].ToString().Replace(", ", "."), CultureInfo.InvariantCulture);
-                    cockpitWindows[i].Height = double.Parse(dtWindows.Rows[i]["Height"].ToString().Replace(", ", "."), CultureInfo.InvariantCulture);
-                    cockpitWindows[i].Width = double.Parse(dtWindows.Rows[i]["Width"].ToString().Replace(", ", "."), CultureInfo.InvariantCulture);
+                        cockpitWindows[i].Left = double.Parse(dtWindows.Rows[i]["PosX"].ToString().Replace(",", "."), CultureInfo.InvariantCulture);
+                        cockpitWindows[i].Top = double.Parse(dtWindows.Rows[i]["PosY"].ToString().Replace(", ", "."), CultureInfo.InvariantCulture);
+                        cockpitWindows[i].Height = double.Parse(dtWindows.Rows[i]["Height"].ToString().Replace(", ", "."), CultureInfo.InvariantCulture);
+                        cockpitWindows[i].Width = double.Parse(dtWindows.Rows[i]["Width"].ToString().Replace(", ", "."), CultureInfo.InvariantCulture);
 
-                    cockpitWindows[i].Show();
-                    if (lightsChecked) cockpitWindows[i].UpdateInstrumentLights(lightsChecked, dtWindows.Rows[i]["BackgroundNight"].ToString());
+                        cockpitWindows[i].Show();
+
+                        if (lightsChecked) cockpitWindows[i].UpdateInstrumentLights(lightsChecked, dtWindows.Rows[i]["BackgroundNight"].ToString());
+                    }
+                    catch (Exception ex)
+                    {
+                        ImportExport.LogMessage("Construct Panels ... " + ex.ToString());
+                    }
+                    //SetWindowPos(this.Handle, HWND_TOPMOST, 0, 0, 0, 0, TOPMOST_FLAGS);
                 }
 
                 HidePanels();
@@ -680,16 +766,20 @@ namespace Ikarus
 
                 for (int i = 0; i < dtSwitches.Rows.Count; i++)
                 {
-                    switches.Add(new Switches(Convert.ToInt32(dtSwitches.Rows[i]["ID"]), Convert.ToInt32(dtSwitches.Rows[i]["WindowID"]), Convert.ToInt32(dtSwitches.Rows[i]["ClickabledataID"]), dtSwitches.Rows[i]["Class"].ToString()));
-
-                    dataRowsMasterSwitches = dtMasterSwitches.Select("ID='" + switches[i].clickabledataID.ToString() + "'");
-
-                    if (dataRowsMasterSwitches.Length > 0)
+                    try
                     {
-                        switches[i].dcsID = Convert.ToInt32(dataRowsMasterSwitches[0]["DcsID"]);
-                        switches[i].deviceID = Convert.ToInt32(dataRowsMasterSwitches[0]["DeviceID"]);
-                        switches[i].buttonID = Convert.ToInt32(dataRowsMasterSwitches[0]["ButtonID"]);
+                        switches.Add(new Switches(Convert.ToInt32(dtSwitches.Rows[i]["ID"]), Convert.ToInt32(dtSwitches.Rows[i]["WindowID"]), Convert.ToInt32(dtSwitches.Rows[i]["ClickabledataID"]), dtSwitches.Rows[i]["Class"].ToString()));
+
+                        dataRowsMasterSwitches = dtMasterSwitches.Select("ID='" + switches[i].clickabledataID.ToString() + "'");
+
+                        if (dataRowsMasterSwitches.Length > 0)
+                        {
+                            switches[i].dcsID = Convert.ToInt32(dataRowsMasterSwitches[0]["DcsID"]);
+                            switches[i].deviceID = Convert.ToInt32(dataRowsMasterSwitches[0]["DeviceID"]);
+                            switches[i].buttonID = Convert.ToInt32(dataRowsMasterSwitches[0]["ButtonID"]);
+                        }
                     }
+                    catch (Exception e) { ImportExport.LogMessage("FillClasses problem .. " + i + " ... " + e.ToString()); }
                 }
             }
             catch (Exception e) { ImportExport.LogMessage("FillClasses problem .. " + e.ToString()); }
@@ -779,8 +869,8 @@ namespace Ikarus
                                     {
                                         instruments[i].instrumentFunction[n].value = double.Parse(newValue, CultureInfo.InvariantCulture);
 
-                                        if (instruments[i].instrumentFunction[n].value != instruments[i].instrumentFunction[n].oldValue) // &&
-                                                                                                                                         //Math.Abs(instruments[i].instrumentFunction[n].value - instruments[i].instrumentFunction[n].oldValue) > flattening)
+                                        if (instruments[i].instrumentFunction[n].value != instruments[i].instrumentFunction[n].oldValue || initInstruments)   // &&
+                                                                                                                                           //Math.Abs(instruments[i].instrumentFunction[n].value - instruments[i].instrumentFunction[n].oldValue) > flattening)
                                         {
                                             refreshInstruments = true;
                                             instruments[i].instrumentFunction[n].oldValue = instruments[i].instrumentFunction[n].value;
@@ -801,8 +891,10 @@ namespace Ikarus
                             cockpitWindows[windowID].UpdateInstruments(instruments[i].instID.ToString(), false);
                         }
                     }
-                    catch (Exception e) { ImportExport.LogMessage("Gauges " + (i + 1).ToString() + " problem .. " + e.ToString()); }
+                    catch { }
+                    //catch (Exception e) { ImportExport.LogMessage("Gauges " + (i + 1).ToString() + " problem .. " + e.ToString()); }
                 }
+                initInstruments = false;
 
                 #endregion
 
@@ -844,7 +936,7 @@ namespace Ikarus
 
                         if (newValue != "")
                         {
-                            if(switches[n].ignoreNextPackage)
+                            if (switches[n].ignoreNextPackage)
                             {
                                 if (detailLog || switchLog) { ImportExport.LogMessage("Ignore data for switch ID: " + switches[n].dcsID.ToString() + " value: " + newValue); }
                                 switches[n].ignoreNextPackage = false;
@@ -868,7 +960,7 @@ namespace Ikarus
             int visible = 0;
             int panelID = 1;
 
-            dataRows = dtSwitches.Select("Class='SwitchPanelOffOn'");
+            dataRows = dtSwitches.Select("Class='SwitchPanelOffOn' OR Class='ButtonPanelOffOn'");
 
             for (int i = 0; i < dataRows.Length; i++)
             {
@@ -884,7 +976,11 @@ namespace Ikarus
                 }
                 catch { visible = 0; }
 
-                cockpitWindows[panelID - 1].Visibility = (visible == 0) ? Visibility.Hidden : Visibility.Visible;
+                try
+                {
+                    cockpitWindows[panelID - 1].Visibility = (visible == 0) ? Visibility.Hidden : Visibility.Visible;
+                }
+                catch { return; }
             }
         }
 
@@ -913,7 +1009,7 @@ namespace Ikarus
                     ResetTables();
                     ImportExport.XmlToDataSet(filename + ".ikarus", dsInstruments);
 
-                    dsMaster.Clear();
+                    dsMaster = new Masterdata();
                     ImportExport.XmlToDataSet(filename + ".xml", dsMaster); // Load db for Switches and Lamps
 
                     if (dsMaster.Tables.Count > 0)
@@ -971,13 +1067,6 @@ namespace Ikarus
                     ImportExport.DatasetToXml(filename + ".ikarus", dsInstruments);
                     ImportExport.LogMessage("Save file: " + filename + ".ikarus");
                 }
-
-                //if (functionTabIsVisible)
-                //{
-                //    tabControl1.Items.Remove(Function);
-                //    functionTabIsVisible = false;
-                //    ShowFunctionTab.IsChecked = false;
-                //}
 
                 RefreshDatagrids();
                 CockpitShow();
@@ -1211,6 +1300,11 @@ namespace Ikarus
                     }
                 }
             }
+            if (_tablename == "Log")
+            {
+                ListBox1.SelectedIndex = logCount - 1;
+                ListBox1.ScrollIntoView(logCount - 1);
+            }
         }
 
         private void SetWindowID(DataTable table)
@@ -1362,6 +1456,7 @@ namespace Ikarus
                            ListBox1.ItemsSource = null;
                            ListBox1.ItemsSource = ImportExport.logItems;
                            logCount = ImportExport.logItems.Count;
+                           //ListBox1.SelectedIndex = logCount - 1;
                        }));
         }
 
@@ -1379,6 +1474,8 @@ namespace Ikarus
                     dtWindows.Rows.Add(dataRow);
                     dtWindows.AcceptChanges();
                     DataGridWindows.ItemsSource = dtWindows.DefaultView;
+                    DataGridWindows.ScrollIntoView(DataGridWindows.Items[DataGridWindows.Items.Count - 1]);
+                    DataGridWindows.SelectedIndex = DataGridWindows.Items.Count - 1;
                 }
                 catch { }
                 return;
@@ -1392,6 +1489,8 @@ namespace Ikarus
                     dtAccessories.Rows.Add(dataRow);
                     dtAccessories.AcceptChanges();
                     DataGridAccessories.ItemsSource = dtAccessories.DefaultView;
+                    DataGridAccessories.ScrollIntoView(DataGridAccessories.Items[DataGridAccessories.Items.Count - 1]);
+                    DataGridAccessories.SelectedIndex = DataGridAccessories.Items.Count - 1;
                 }
                 catch { }
                 return;
@@ -1405,6 +1504,8 @@ namespace Ikarus
                     dtLamps.Rows.Add(dataRow);
                     dtLamps.AcceptChanges();
                     DataGridLamps.ItemsSource = dtLamps.DefaultView;
+                    DataGridLamps.ScrollIntoView(DataGridLamps.Items[DataGridLamps.Items.Count - 1]);
+                    DataGridLamps.SelectedIndex = DataGridLamps.Items.Count - 1;
                 }
                 catch { }
                 return;
@@ -1418,6 +1519,8 @@ namespace Ikarus
                     dtSwitches.Rows.Add(dataRow);
                     dtSwitches.AcceptChanges();
                     DataGridSwitches.ItemsSource = dtSwitches.DefaultView;
+                    DataGridSwitches.ScrollIntoView(DataGridSwitches.Items[DataGridSwitches.Items.Count - 1]);
+                    DataGridSwitches.SelectedIndex = DataGridSwitches.Items.Count - 1;
                 }
                 catch { }
                 return;
@@ -1431,6 +1534,9 @@ namespace Ikarus
                     dtInstruments.Rows.Add(dataRow);
                     dtInstruments.AcceptChanges();
                     DataGridInstruments.ItemsSource = dtInstruments.DefaultView;
+                    DataGridInstruments.ScrollIntoView(DataGridInstruments.Items[DataGridInstruments.Items.Count - 1]);
+                    DataGridInstruments.SelectedIndex = DataGridInstruments.Items.Count - 1;
+
                     if (selectedInstrument == 0 || selectedInstrument == -1) selectedInstrument = 1;
                 }
                 catch { }
@@ -1572,9 +1678,12 @@ namespace Ikarus
         {
             CockpitClose();
             ResetTables();
-        }
+            readFile = "";
+            lastFile = "-";
+            dbFilename = "";
+    }
 
-        private void Button_DetailAccessories_Click(object sender, RoutedEventArgs e)
+    private void Button_DetailAccessories_Click(object sender, RoutedEventArgs e)
         {
             if (DataGridAccessories.SelectedItem == null) return;
 
@@ -1646,6 +1755,7 @@ namespace Ikarus
         {
             try
             {
+                CockpitClose();
                 Close();
             }
             catch { }
@@ -1800,6 +1910,7 @@ namespace Ikarus
                 lbEditMode.Visibility = Visibility.Hidden;
                 Refresh.Visibility = Visibility.Hidden;
                 editmode = false;
+                FillClasses();
                 CockpitShow();
             }
             else
@@ -1817,6 +1928,7 @@ namespace Ikarus
                 //ShowFunctionTab.IsChecked = true;
 
                 editmode = true;
+                FillClasses();
                 CockpitShow();
             }
             lastFile = "";
@@ -2023,6 +2135,11 @@ namespace Ikarus
             {
                 switchLog = false;
             }
+
+        }
+
+        private void Grid_GotFocus(object sender, RoutedEventArgs e)
+        {
 
         }
     }

@@ -212,6 +212,8 @@ namespace Ikarus
 
         private void UpperRec_MouseDown(object sender, MouseButtonEventArgs e)
         {
+            e.Handled = true;
+
             if (SwitchUp.Visibility == System.Windows.Visibility.Visible)
             {
                 SetValue(0, true);
@@ -225,6 +227,8 @@ namespace Ikarus
 
         private void UpperRec_TouchDown(object sender, TouchEventArgs e)
         {
+            e.Handled = true;
+
             if (SwitchUp.Visibility == System.Windows.Visibility.Visible)
             {
                 SetValue(0, true);

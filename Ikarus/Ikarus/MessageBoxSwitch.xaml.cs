@@ -26,6 +26,7 @@ namespace Ikarus
         private static string windowID = "";
         private static DataTable switches = new DataTable();
         private static DataRow[] dataRows = null;
+        private static bool classNameChanged = false;
 
         public MessageBoxSwitch(int _index)
         {
@@ -90,14 +91,22 @@ namespace Ikarus
 
                 try
                 {
-                    for (int n = 0; n < dataRows.Length; n++)
+                    if (clickable != 0)
                     {
-                        if (Convert.ToInt32(dataRows[n][0]) == clickable)
+                        for (int n = 0; n < dataRows.Length; n++)
                         {
-                            DataGridSwitches.SelectedIndex = n;
-                            DataGridSwitches.ScrollIntoView(DataGridSwitches.Items[n]);
-                            break;
+                            if (Convert.ToInt32(dataRows[n][0]) == clickable)
+                            {
+                                DataGridSwitches.SelectedIndex = n;
+                                DataGridSwitches.ScrollIntoView(DataGridSwitches.Items[n]);
+                                break;
+                            }
                         }
+                    }
+                    else
+                    {
+                        //DataGridSwitches.SelectedIndex = 0;
+                        DataGridSwitches.ScrollIntoView(DataGridSwitches.Items[0]);
                     }
                 }
                 catch { }
@@ -121,26 +130,26 @@ namespace Ikarus
                 if (Classname.Text == "Rotary") setSwitch = false;
                 if (Classname.Text == "RotaryWithPosition") setSwitch = false;
 
-                if (Classname.Text == "MultiSwitch")
+                if (Classname.Text == "MultiSwitch" || Classname.Text == "Rotary")
                 {
-                    dataRows = MainWindow.dtMasterSwitches.Select("Type='Switch' OR Type='Rotary'");
+                    dataRows = MainWindow.dtMasterSwitches.Select("Type='Switch' OR Type='Rotary'", "Discription");
                 }
                 else
                 {
                     if (setSwitch)
                     {
-                        dataRows = MainWindow.dtMasterSwitches.Select("Type='Switch'");
+                        dataRows = MainWindow.dtMasterSwitches.Select("Type='Switch'", "Discription");
                     }
                     else
                     {
-                        dataRows = MainWindow.dtMasterSwitches.Select("Type='Rotary'");
+                        dataRows = MainWindow.dtMasterSwitches.Select("Type='Rotary'", "Discription");
                     }
                 }
                 switches = dataRows.CopyToDataTable<DataRow>();
                 DataGridSwitches.ItemsSource = null;
                 DataGridSwitches.ItemsSource = switches.DefaultView;
 
-                if (Input.Text == "0.0,1.0" && Output.Text == "0.0,1.0")
+                if (classNameChanged)
                 {
                     if (Classname.Text == "Potentiometer" || Classname.Text == "Rotary")
                     {
@@ -151,11 +160,12 @@ namespace Ikarus
                     if (Classname.Text == "MultiSwitch")
                     {
                         Input.Text = "0.0,0.1,0.2,0.3,0.4";
-                        Output.Text = " 0, 72, 144, 216, 288";
+                        Output.Text = " 0, 45, 90, 135, 180";
                     }
 
                     if (Classname.Text == "SwitchOffOn" || Classname.Text == "ButtonOffOn" || Classname.Text == "ButtonWithRelease" || 
-                        Classname.Text == "Button" || Classname.Text == "ButtonWithRepeat" || Classname.Text == "Switch_OFFOn")
+                        Classname.Text == "Button45x45" || Classname.Text == "Button70x70" || Classname.Text == "ButtonWithRepeat" || 
+                        Classname.Text == "Switch_OFFOn")
                     {
                         Input.Text = "0.0,1.0";
                         Output.Text = "0.0,1.0";
@@ -166,6 +176,7 @@ namespace Ikarus
                         Input.Text = "-1.0,0.0,1.0";
                         Output.Text = "-1.0,0.0,1.0";
                     }
+                    classNameChanged = false;
                 }
             }
         }
@@ -199,7 +210,11 @@ namespace Ikarus
                     {
                         dataRows[0]["ClickabledataID"] = Convert.ToInt32(rowView.Row.ItemArray[0]);
                         dataRows[0]["Name"] = rowView.Row.ItemArray[3].ToString();
-                        dataRows[0]["DcsID"] = rowView.Row.ItemArray[5].ToString();
+
+                        if (rowView.Row.ItemArray[5].ToString() == "Switch")
+                            dataRows[0]["DcsID"] = rowView.Row.ItemArray[4].ToString();
+                        else
+                            dataRows[0]["DcsID"] = rowView.Row.ItemArray[5].ToString();
                     }
                     else
                     {
@@ -243,6 +258,7 @@ namespace Ikarus
 
         private void Classname_DropDownClosed(object sender, EventArgs e)
         {
+            classNameChanged = true;
             ChangeSourceDatagridSwitches();
         }
 

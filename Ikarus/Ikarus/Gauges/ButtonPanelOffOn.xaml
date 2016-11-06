@@ -9,6 +9,6 @@
         <Image x:Name="SwitchUp" Height="60" Margin="10,10,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="50"/>
         <Image x:Name="SwitchDown" HorizontalAlignment="Left" Height="60" Margin="10,10,0,0" VerticalAlignment="Top" Width="50" />
         <Rectangle x:Name="DesignFrame" Fill="#00EEDB21" HorizontalAlignment="Left" Height="70" Width="70" Margin="0,0,0,0" Stroke="#FFF38501" VerticalAlignment="Top"/>
-        <Rectangle x:Name="UpperRec" Fill="#00EEDB21" HorizontalAlignment="Left" Height="60" Stroke="#00000000" VerticalAlignment="Top" Width="60" MouseDown="UpperRec_MouseDown" TouchDown="UpperRec_TouchDown" Margin="5,5,0,0"/>
+        <Rectangle x:Name="UpperRec" Fill="#00EEDB21" HorizontalAlignment="Left" Height="60" Stroke="#00000000" VerticalAlignment="Top" Width="60" MouseDown="UpperRec_MouseDown" TouchUp="UpperRec_TouchUp" TouchDown="UpperRec_TouchDown" Margin="5,5,0,0"/>
     </Grid>
 </UserControl>

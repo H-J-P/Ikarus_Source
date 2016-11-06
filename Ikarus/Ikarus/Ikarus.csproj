@@ -132,6 +132,18 @@
     <Compile Include="Gauges\DisplaySix.xaml.cs">
       <DependentUpon>DisplaySix.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Gauges\Display_CMSP.xaml.cs">
+      <DependentUpon>Display_CMSP.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\Display_VHF.xaml.cs">
+      <DependentUpon>Display_VHF.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\Display_ILS_Khz.xaml.cs">
+      <DependentUpon>Display_ILS_Khz.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\Display_ILS_Mhz.xaml.cs">
+      <DependentUpon>Display_ILS_Mhz.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Gauges\F5E_UHFPresetChannel.xaml.cs">
       <DependentUpon>F5E_UHFPresetChannel.xaml</DependentUpon>
     </Compile>
@@ -210,14 +222,17 @@
     <Compile Include="Gauges\F5E-RPM.xaml.cs">
       <DependentUpon>F5E-RPM.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Gauges\F5E-TacanDisplay.xaml.cs">
-      <DependentUpon>F5E-TacanDisplay.xaml</DependentUpon>
+    <Compile Include="Gauges\Display_Tacan.xaml.cs">
+      <DependentUpon>Display_Tacan.xaml</DependentUpon>
     </Compile>
     <Compile Include="Gauges\F5E-UHF.xaml.cs">
       <DependentUpon>F5E-UHF.xaml</DependentUpon>
     </Compile>
     <Compile Include="Gauges\LampOnOff100x40.xaml.cs">
       <DependentUpon>LampOnOff100x40.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\Monitor04x08.xaml.cs">
+      <DependentUpon>Monitor04x08.xaml</DependentUpon>
     </Compile>
     <Compile Include="Gauges\RotaryWithPosition.xaml.cs">
       <DependentUpon>RotaryWithPosition.xaml</DependentUpon>
@@ -1255,6 +1270,22 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Gauges\Display_CMSP.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\Display_VHF.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\Display_ILS_Khz.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\Display_ILS_Mhz.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Gauges\F5E_UHFPresetChannel.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -1359,7 +1390,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Gauges\F5E-TacanDisplay.xaml">
+    <Page Include="Gauges\Display_Tacan.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -1368,6 +1399,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Gauges\LampOnOff100x40.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\Monitor04x08.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -2804,6 +2839,8 @@
     <Resource Include="Assets\Select.png" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Gauges\A10C-VHF-Display_Images\Image.png" />
+    <Resource Include="Gauges\A10C-VHF-Display_Images\Image1.png" />
     <Resource Include="Select.png" />
   </ItemGroup>
   <ItemGroup>

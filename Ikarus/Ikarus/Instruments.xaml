@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:local="clr-namespace:Ikarus" x:Class="Ikarus.Cockpit"
         WindowStyle="None"
-        Title="Instruments" Height="1080" Width="1920" Background="Transparent" AllowsTransparency="True" Topmost="True" GotFocus="Window_GotFocus" MouseDown="Window_MouseDown">
+        Title="Instruments" Height="1080" Width="1920" Background="Transparent" AllowsTransparency="True" Topmost="True" GotFocus="Window_GotFocus" MouseDown="Window_MouseDown" Deactivated="Window_Deactivated" Loaded="Window_Loaded">
     <Border BorderBrush="#00FFA500" BorderThickness="0" CornerRadius="0" Background="Transparent">
         <Grid x:Name="MainGrid"  Background="#00060606" Opacity="1.0" >
             <Image x:Name="BackImage" Margin="0,0,0,0"  Stretch="Fill" GotFocus="BackImage_GotFocus" />

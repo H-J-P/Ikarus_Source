@@ -29,7 +29,7 @@
                 </LinearGradientBrush>
             </DataGrid.Background>
             <DataGrid.Columns>
-                <DataGridTextColumn Binding="{Binding ExportID}" Width="50" Header="ID" IsReadOnly="True">
+                <DataGridTextColumn Binding="{Binding ExportID}" Width="50" Header="DCS ID" IsReadOnly="True">
                     <DataGridTextColumn.ElementStyle>
                         <Style TargetType="{x:Type TextBlock}">
                             <Setter Property="TextAlignment" Value="Right" />
