@@ -1,0 +1,41 @@
+﻿<UserControl
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	mc:Ignorable="d"
+	x:Class="HawgTouch.GaugePack.Gauges.A10VHF"
+	x:Name="UserControl"
+	d:DesignWidth="400" d:DesignHeight="100" Width="400" Height="100">
+
+    <Canvas xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Name="Untitled1" Width="400" Height="100" Clip="F1 M 0,0L 400,0L 400,100L 0,100L 0,0">
+        <Canvas x:Name="Layer_1" Width="400" Height="100" Canvas.Left="0" Canvas.Top="0">
+            <Rectangle x:Name="Rectangle" Width="400" Height="100" Canvas.Left="0" Canvas.Top="0" Stretch="Fill">
+                <Rectangle.Fill>
+                    <LinearGradientBrush StartPoint="0.139583,-1.05833" EndPoint="4.17898,-1.05833">
+                        <LinearGradientBrush.RelativeTransform>
+                            <TransformGroup>
+                                <SkewTransform CenterX="0.139583" CenterY="-1.05833" AngleX="61.5454" AngleY="0"/>
+                                <RotateTransform CenterX="0.139583" CenterY="-1.05833" Angle="73.3483"/>
+                            </TransformGroup>
+                        </LinearGradientBrush.RelativeTransform>
+                        <LinearGradientBrush.GradientStops>
+                            <GradientStop Color="#FF000000" Offset="0"/>
+                            <GradientStop Color="#FF505050" Offset="1"/>
+                        </LinearGradientBrush.GradientStops>
+                    </LinearGradientBrush>
+                </Rectangle.Fill>
+            </Rectangle>
+            <Rectangle x:Name="Rectangle_0" Width="71" Height="71.5" Canvas.Left="18" Canvas.Top="12.667" Stretch="Fill" Fill="#FF000000"/>
+            <Rectangle x:Name="Rectangle_1" Width="48.5002" Height="71.5" Canvas.Left="107.667" Canvas.Top="12.6667" Stretch="Fill" Fill="#FF000000"/>
+            <Path x:Name="Line" Width="2" Height="102" Canvas.Left="209.333" Canvas.Top="-0.999992" Stretch="Fill" StrokeThickness="2" StrokeLineJoin="Round" Stroke="#FF292929" Data="F1 M 210.333,7.62939e-006L 210.333,100"/>
+            <Path x:Name="Line_2" Width="2" Height="102" Canvas.Left="187.167" Canvas.Top="-0.999992" Stretch="Fill" StrokeThickness="2" StrokeLineJoin="Round" Stroke="#FF292929" Data="F1 M 188.167,7.62939e-006L 188.167,100"/>
+            <Rectangle x:Name="Rectangle_3" Width="48.5" Height="71.5" Canvas.Left="247.917" Canvas.Top="12.667" Stretch="Fill" Fill="#FF000000"/>
+            <Rectangle x:Name="Rectangle_4" Width="71" Height="71.5" Canvas.Left="314.167" Canvas.Top="12.667" Stretch="Fill" Fill="#FF000000"/>
+            <TextBlock x:Name="LeftT" Height="70.334" Canvas.Left="15.333" TextWrapping="Wrap" Text="12" Width="74.666" Foreground="White" FontSize="64" FontWeight="Bold" Canvas.Top="11"/>
+            <TextBlock x:Name="Left2T" Height="70.334" Canvas.Left="112.501" TextWrapping="Wrap" Text="4" Width="43.666" Foreground="White" FontSize="64" FontWeight="Bold" Canvas.Top="11"/>
+            <TextBlock x:Name="RightT2" Height="70.334" Canvas.Left="252.751" TextWrapping="Wrap" Text="0" Width="43.666" Foreground="White" FontSize="64" FontWeight="Bold" Canvas.Top="11"/>
+            <TextBlock x:Name="RightT" Height="70.334" Canvas.Left="312.564" TextWrapping="Wrap" Text="00" Width="74.666" Foreground="White" FontSize="64" FontWeight="Bold" Canvas.Top="11"/>
+        </Canvas>
+    </Canvas>
+</UserControl>

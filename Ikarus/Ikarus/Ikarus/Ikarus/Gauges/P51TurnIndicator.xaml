@@ -1,0 +1,115 @@
+﻿<UserControl x:Class="Ikarus.P51TurnIndicator"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="255" d:DesignWidth="255" MouseWheel="Light_MouseWheel">
+    <Grid>
+        <Canvas x:Name="US_TurnIndicator_WW2" HorizontalAlignment="Left" Height="255" UseLayoutRounding="False" VerticalAlignment="Top" Width="255">
+            <Canvas x:Name="background" Height="255.878" Canvas.Left="0.166" Canvas.Top="0.166" Width="449.531">
+                <Path Data="M0,77.258C0,71.688,0.652,65.986,1.939,60.492L11.118,21.329C12.142,16.964 17.064,12.118 21.33,11.118 34.384,8.058 47.438,4.999 60.492,1.939 65.969,0.656 71.669,0 77.258,0L177.576,0C183.24,0 188.92,0.668 194.343,1.939 207.397,4.999 220.451,8.059 233.506,11.118 238.267,12.234 242.638,16.729 243.717,21.329 246.775,34.384 249.836,47.438 252.896,60.492 254.173,65.941 254.834,71.726 254.834,77.259L254.834,177.576C254.834,183.127 254.162,188.94 252.896,194.343 249.836,207.396 246.775,220.451 243.716,233.505 242.619,238.187 237.674,242.738 233.506,243.716 220.451,246.775 207.397,249.835 194.343,252.895 188.979,254.152 183.202,254.834 177.576,254.834L77.258,254.834C71.707,254.834 65.987,254.184 60.492,252.895 47.438,249.835 34.384,246.775 21.33,243.716 16.47,242.577 12.214,238.179 11.119,233.505 8.059,220.451 4.999,207.396 1.939,194.343 0.638,188.789 0,183.127 0,177.576z" Fill="#FF121212" Height="254.834" Canvas.Left="0" Canvas.Top="0" Width="254.834"/>
+                <Canvas Clip="M8.873,1.377C13.101,1.377 16.529,4.805 16.529,9.034 16.529,13.262 13.101,16.69 8.873,16.69 4.644,16.69 1.215,13.262 1.215,9.034 1.215,4.805 4.644,1.377 8.873,1.377" Height="36" Canvas.Left="17.189" Canvas.Top="17.028" Width="40">
+                    <Canvas Clip="M1.215,1.377L16.528,1.377 16.528,16.69 1.215,16.69z" Height="36" Canvas.Left="0" Canvas.Top="0" Width="40">
+                        <Image Source="US-TurnIndicator-WW2_Images\Image7.png" Stretch="Fill">
+                            <Image.RenderTransform>
+                                <MatrixTransform Matrix="0.359999942779541,0,0,0.359999974568685,0,0"/>
+                            </Image.RenderTransform>
+                        </Image>
+                    </Canvas>
+                </Canvas>
+                <Path Data="M7.766,0.108C11.994,0.108 15.422,3.536 15.422,7.765 15.422,11.993 11.994,15.421 7.766,15.421 3.537,15.421 0.108,11.993 0.108,7.765 0.108,3.536 3.537,0.108 7.766,0.108z" Height="15.529" Canvas.Left="18.296" Stroke="Black" StrokeThickness="0.216" StrokeMiterLimit="22.926" Canvas.Top="18.297" Width="15.53"/>
+                <Path Data="M0,4.634L0.49,3.03 3.802,4.039C4.148,3.633,4.638,3.372,5.167,3.311L6.177,0 7.782,0.489 6.773,3.801C7.179,4.147,7.44,4.637,7.5,5.167L10.812,6.176 10.323,7.781 7.011,6.771C6.664,7.178,6.175,7.439,5.645,7.499L4.635,10.811 3.031,10.322 4.04,7.01C3.634,6.663,3.372,6.173,3.312,5.644z" Fill="#FF333333" Height="10.811" Canvas.Left="20.655" Canvas.Top="20.656" Width="10.812"/>
+                <Canvas Clip="M8.734,1.377C12.963,1.377 16.391,4.805 16.391,9.034 16.391,13.262 12.963,16.69 8.734,16.69 4.506,16.69 1.078,13.262 1.078,9.034 1.078,4.805 4.506,1.377 8.734,1.377" Height="36" Canvas.Left="220.039" Canvas.Top="17.028" Width="40">
+                    <Canvas Clip="M1.078,1.377L16.391,1.377 16.391,16.69 1.078,16.69z" Height="36" Canvas.Left="0" Canvas.Top="0" Width="40">
+                        <Image Source="US-TurnIndicator-WW2_Images\Image6.png" Stretch="Fill">
+                            <Image.RenderTransform>
+                                <MatrixTransform Matrix="0.359999942779541,0,0,0.359999974568685,0,0"/>
+                            </Image.RenderTransform>
+                        </Image>
+                    </Canvas>
+                </Canvas>
+                <Path Data="M7.764,0.108C11.993,0.108 15.421,3.536 15.421,7.765 15.421,11.993 11.993,15.421 7.764,15.421 3.536,15.421 0.108,11.993 0.108,7.765 0.108,3.536 3.536,0.108 7.764,0.108z" Height="15.529" Canvas.Left="221.009" Stroke="Black" StrokeThickness="0.216" StrokeMiterLimit="22.926" Canvas.Top="18.297" Width="15.529"/>
+                <Path Data="M0.086,6.544L0,4.869 3.457,4.692C3.645,4.192,4.017,3.78,4.494,3.543L4.318,0.086 5.994,0 6.17,3.457C6.67,3.646,7.082,4.017,7.318,4.495L10.777,4.319 10.862,5.994 7.404,6.17C7.217,6.67,6.845,7.082,6.367,7.319L6.543,10.777 4.869,10.862 4.692,7.405C4.191,7.217,3.779,6.845,3.543,6.367z" Fill="#FF333333" Height="10.862" Canvas.Left="223.342" Canvas.Top="20.63" Width="10.862"/>
+                <Canvas Clip="M8.734,1.238C12.963,1.238 16.391,4.667 16.391,8.895 16.391,13.124 12.963,16.552 8.734,16.552 4.506,16.552 1.078,13.124 1.078,8.895 1.078,4.667 4.506,1.238 8.734,1.238" Height="36" Canvas.Left="220.039" Canvas.Top="219.878" Width="40">
+                    <Canvas Clip="M1.078,1.238L16.391,1.238 16.391,16.551 1.078,16.551z" Height="36" Canvas.Left="0" Canvas.Top="0" Width="40">
+                        <Image Source="US-TurnIndicator-WW2_Images\Image5.png" Stretch="Fill">
+                            <Image.RenderTransform>
+                                <MatrixTransform Matrix="0.359999942779541,0,0,0.359999974568685,0,0"/>
+                            </Image.RenderTransform>
+                        </Image>
+                    </Canvas>
+                </Canvas>
+                <Path Data="M7.764,0.108C11.993,0.108 15.421,3.537 15.421,7.765 15.421,11.994 11.993,15.422 7.764,15.422 3.536,15.422 0.108,11.994 0.108,7.765 0.108,3.537 3.536,0.108 7.764,0.108z" Height="15.53" Canvas.Left="221.009" Stroke="Black" StrokeThickness="0.216" StrokeMiterLimit="22.926" Canvas.Top="221.008" Width="15.529"/>
+                <Path Data="M0.255,7.109L0,5.452 3.421,4.925C3.558,4.408,3.886,3.96,4.337,3.676L3.81,0.254 5.468,0 5.995,3.421C6.511,3.558,6.959,3.886,7.244,4.337L10.666,3.81 10.919,5.468 7.499,5.995C7.363,6.511,7.034,6.958,6.584,7.243L7.109,10.666 5.451,10.92 4.925,7.499C4.408,7.362,3.96,7.034,3.677,6.583z" Fill="#FF333333" Height="10.92" Canvas.Left="223.313" Canvas.Top="223.313" Width="10.919"/>
+                <Canvas Clip="M8.873,1.238C13.101,1.238 16.529,4.667 16.529,8.895 16.529,13.124 13.101,16.552 8.873,16.552 4.644,16.552 1.215,13.124 1.215,8.895 1.215,4.667 4.644,1.238 8.873,1.238" Height="36" Canvas.Left="17.189" Canvas.Top="219.878" Width="40">
+                    <Canvas Clip="M1.215,1.238L16.528,1.238 16.528,16.551 1.215,16.551z" Height="36" Canvas.Left="0" Canvas.Top="0" Width="40">
+                        <Image Source="US-TurnIndicator-WW2_Images\Image4.png" Stretch="Fill">
+                            <Image.RenderTransform>
+                                <MatrixTransform Matrix="0.359999942779541,0,0,0.359999974568685,0,0"/>
+                            </Image.RenderTransform>
+                        </Image>
+                    </Canvas>
+                </Canvas>
+                <Path Data="M7.766,0.108C11.994,0.108 15.422,3.537 15.422,7.765 15.422,11.994 11.994,15.422 7.766,15.422 3.537,15.422 0.108,11.994 0.108,7.765 0.108,3.537 3.537,0.108 7.766,0.108z" Height="15.53" Canvas.Left="18.296" Stroke="Black" StrokeThickness="0.216" StrokeMiterLimit="22.926" Canvas.Top="221.008" Width="15.53"/>
+                <Path Data="M0,3.589L0.739,2.084 3.847,3.609C4.254,3.262,4.779,3.083,5.312,3.108L6.838,0 8.343,0.739 6.818,3.847C7.164,4.253,7.343,4.78,7.318,5.312L10.426,6.836 9.687,8.342 6.58,6.817C6.172,7.164,5.646,7.343,5.115,7.318L3.59,10.426 2.084,9.687 3.608,6.579C3.263,6.172,3.083,5.647,3.108,5.115z" Fill="#FF333333" Height="10.426" Canvas.Left="20.848" Canvas.Top="223.56" Width="10.426"/>
+                <Canvas Clip="M1.131,1.366L201.861,1.366 201.861,59.815 1.131,59.815z" Height="126" Canvas.Left="25.531" Canvas.Top="129.381" Width="424">
+                    <Canvas Clip="M1.131,1.366L201.861,1.366 201.861,59.815 1.131,59.815z" Height="126" Canvas.Left="0" Canvas.Top="0" Width="424">
+                        <Image Source="US-TurnIndicator-WW2_Images\Image3.png" Stretch="Fill">
+                            <Image.RenderTransform>
+                                <MatrixTransform Matrix="0.360000007557419,0,0,0.359999974568685,0,0"/>
+                            </Image.RenderTransform>
+                        </Image>
+                    </Canvas>
+                </Canvas>
+            </Canvas>
+            <Canvas x:Name="Slipball" Height="88" Canvas.Left="106.061" Canvas.Top="144.57" Width="92" RenderTransformOrigin="0.217,-2.631">
+                <Canvas Clip="M21.522,1.071C32.739,1.071 41.834,10.164 41.834,21.382 41.834,32.599 32.739,41.693 21.522,41.693 10.304,41.693 1.21,32.599 1.21,21.382 1.21,10.164 10.304,1.071 21.522,1.071" Height="88" Canvas.Left="0" Canvas.Top="0" Width="92">
+                    <Canvas Clip="M1.21,1.071L41.833,1.071 41.833,41.693 1.21,41.693z" Height="88" Canvas.Left="0" Canvas.Top="0" Width="92">
+                        <Image Source="US-TurnIndicator-WW2_Images\Image2.png" Stretch="Fill">
+                            <Image.RenderTransform>
+                                <MatrixTransform Matrix="0.360000029854153,0,0,0.360000046816739,0,0"/>
+                            </Image.RenderTransform>
+                        </Image>
+                    </Canvas>
+                </Canvas>
+            </Canvas>
+            <Canvas x:Name="front" Height="243.158" Canvas.Left="6.004" Canvas.Top="6.004" Width="243.158">
+                <Path Data="M3.479,6.026L2.92,5.056 0,0 5.84,0 11.68,0 8.76,5.056 8.199,6.026 8.199,37.724 8.76,38.694 11.68,43.751 5.84,43.751 0,43.751 2.92,38.694 3.479,37.725z" Fill="#FFBFBFBF" Height="43.751" Canvas.Left="94.5" Canvas.Top="137.423" Width="11.68"/>
+                <Path Data="M3.48,6.026L2.92,5.056 0,0 5.84,0 11.679,0 8.76,5.056 8.2,6.026 8.2,37.724 8.76,38.694 11.679,43.751 5.84,43.751 0,43.751 2.92,38.694 3.48,37.725z" Fill="#FFBFBFBF" Height="43.751" Canvas.Left="136.978" Canvas.Top="137.423" Width="11.679"/>
+                <Path Data="M213.853,155.565C213.853,159.105 210.419,163.506 206.977,164.338 177.635,171.291 147.03,174.975 115.562,174.975 84.094,174.975 53.488,171.291 24.146,164.338 20.705,163.506 17.271,159.105 17.271,155.565L17.271,126.156C17.271,122.616 20.677,120.043 24.12,120.983 53.304,128.789 83.945,132.959 115.562,132.959 147.179,132.959 177.819,128.789 207.004,120.983 210.447,120.043 213.853,122.617 213.853,126.156z M115.562,231.124C51.74,231.124 0,179.385 0,115.562 0,51.739 51.74,0 115.562,0 179.385,0 231.124,51.739 231.124,115.562 231.124,179.385 179.385,231.124 115.562,231.124" Fill="#FF212121" Height="231.124" Canvas.Left="6.017" Canvas.Top="6.017" Width="231.124"/>
+                <Path Data="M121.688,238.872C186.407,238.872 238.873,186.407 238.873,121.687 238.873,56.968 186.407,4.502 121.688,4.502 56.967,4.502 4.502,56.968 4.502,121.687 4.502,186.407 56.967,238.872 121.688,238.872 M121.688,243.266C188.834,243.266 243.266,188.833 243.266,121.687 243.266,54.541 188.834,0.108 121.688,0.108 54.542,0.108 0.108,54.541 0.108,121.687 0.108,188.833 54.542,243.266 121.688,243.266" Fill="#FF3D3D3D" Height="243.374" Canvas.Left="-0.108" Stroke="#FF666666" StrokeThickness="0.216" StrokeMiterLimit="22.926" Canvas.Top="-0.108" Width="243.374"/>
+                <Path Data="M117.616,230.875C180.167,230.875 230.876,180.167 230.876,117.615 230.876,55.063 180.167,4.355 117.616,4.355 55.063,4.355 4.356,55.063 4.356,117.615 4.356,180.167 55.063,230.875 117.616,230.875 M117.616,235.122C182.512,235.122 235.122,182.512 235.122,117.615 235.122,52.718 182.512,0.108 117.616,0.108 52.719,0.108 0.108,52.718 0.108,117.615 0.108,182.512 52.719,235.122 117.616,235.122" Fill="Gray" Height="235.23" Canvas.Left="3.964" Stroke="#FFCCCCCC" StrokeThickness="0.216" StrokeMiterLimit="22.926" Canvas.Top="3.964" Width="235.23"/>
+                <Path Data="M11.419,19.778L5.709,9.889 0,0 11.419,0 22.838,0 17.129,9.889z" Fill="White" Height="19.778" Canvas.Left="110.16" Canvas.Top="35.45" Width="22.838"/>
+                <Path Data="M196.866,34.946C196.866,38.486 193.432,42.887 189.991,43.719 160.649,50.672 130.042,54.356 98.575,54.356 67.107,54.356 36.501,50.672 7.159,43.719 3.718,42.887 0.284,38.486 0.284,34.946L0.284,5.537C0.284,1.997 3.69,-0.576 7.132,0.364 36.317,8.17 66.958,12.34 98.575,12.34 130.192,12.34 160.833,8.17 190.017,0.364 193.46,-0.576 196.866,1.998 196.866,5.537L196.866,34.946" Height="54.639" Canvas.Left="23.005" Stroke="#FF666666" StrokeThickness="0.567" StrokeMiterLimit="22.926" Canvas.Top="126.636" Width="197.149"/>
+            </Canvas>
+            <Canvas x:Name="TurnNeedle" Height="177.15" Canvas.Left="110.141" Canvas.Top="54.377" Width="35.759" RenderTransformOrigin="0.499,0.907">
+                <Path Data="M15.478,54.243L15.478,0 0,0 0,54.243 3.87,60.945 7.739,67.647 11.608,60.945z" Fill="#FFCCCCCC" Height="67.647" Canvas.Left="9.703" Canvas.Top="0" Width="15.478"/>
+                <Path Data="M17.442,104.611C7.809,104.611 0,96.802 0,87.169 0,77.943 7.162,70.393 16.229,69.77L16.229,0 18.655,0 18.655,69.77C27.722,70.393 34.884,77.943 34.884,87.169 34.884,96.802 27.075,104.611 17.442,104.611" Fill="#FF0D0D0D" Height="104.611" Canvas.Left="0" Canvas.Top="65.285" Width="34.884"/>
+                <Canvas Clip="M5.683,1.07C8.029,1.07 9.93,2.973 9.93,5.318 9.93,7.664 8.029,9.565 5.683,9.565 3.337,9.565 1.436,7.664 1.436,5.318 1.436,2.973 3.337,1.07 5.683,1.07" Height="21" Canvas.Left="11.759" Canvas.Top="138.792" Width="24">
+                    <Canvas Clip="M1.436,1.07L9.93,1.07 9.93,9.565 1.436,9.565z" Height="21" Canvas.Left="0" Canvas.Top="0" Width="24">
+                        <Image Source="US-TurnIndicator-WW2_Images\Image1.png" Stretch="Fill">
+                            <Image.RenderTransform>
+                                <MatrixTransform Matrix="0.360000133514404,0,0,0.36000006539481,0,0"/>
+                            </Image.RenderTransform>
+                        </Image>
+                    </Canvas>
+                </Canvas>
+                <Path Data="M3.165,0L4.028,0.349 0.863,8.175 0,7.827z" Fill="#FF333333" Height="8.175" Canvas.Left="15.428" Canvas.Top="140.022" Width="4.028"/>
+                <Canvas Clip="M5.683,1.401C8.029,1.401 9.93,3.302 9.93,5.648 9.93,7.994 8.029,9.895 5.683,9.895 3.337,9.895 1.436,7.994 1.436,5.648 1.436,3.302 3.337,1.401 5.683,1.401" Height="22" Canvas.Left="11.759" Canvas.Top="155.15" Width="24">
+                    <Canvas Clip="M1.436,1.401L9.93,1.401 9.93,9.895 1.436,9.895z" Height="22" Canvas.Left="0" Canvas.Top="0" Width="24">
+                        <Image Source="US-TurnIndicator-WW2_Images\Image.png" Stretch="Fill">
+                            <Image.RenderTransform>
+                                <MatrixTransform Matrix="0.360000133514404,0,0,0.359999916770242,0,0"/>
+                            </Image.RenderTransform>
+                        </Image>
+                    </Canvas>
+                </Canvas>
+                <Path Data="M6.482,6.129L5.806,6.769 0,0.641 0.676,0z" Fill="#FF333333" Height="6.769" Canvas.Left="14.201" Canvas.Top="157.413" Width="6.482"/>
+                <Path Data="M17.489,34.87C7.89,34.87 0.108,27.087 0.108,17.489 0.108,7.89 7.89,0.108 17.489,0.108 27.088,0.108 34.87,7.89 34.87,17.489 34.87,27.087 27.088,34.87 17.489,34.87z" Height="34.978" Canvas.Left="-0.047" Stroke="Black" StrokeThickness="0.216" StrokeMiterLimit="22.926" Canvas.Top="134.939" Width="34.978"/>
+            </Canvas>
+        </Canvas>
+        <Image x:Name="Light" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Height="255" Width="255" MouseWheel="Light_MouseWheel" />
+        <Image x:Name="Frame" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Height="255" Width="255" MouseWheel="Light_MouseWheel" />
+    </Grid>
+</UserControl>

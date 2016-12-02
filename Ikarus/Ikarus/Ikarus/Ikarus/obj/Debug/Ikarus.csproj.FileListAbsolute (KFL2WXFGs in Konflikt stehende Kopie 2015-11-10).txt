@@ -1,0 +1,50 @@
+C:\Users\uidf6927\Dropbox\Projects\Ikarus\Ikarus\Ikarus\bin\Debug\Ikarus.exe.config
+C:\Users\uidf6927\Dropbox\Projects\Ikarus\Ikarus\Ikarus\bin\Debug\Ikarus.exe
+C:\Users\uidf6927\Dropbox\Projects\Ikarus\Ikarus\Ikarus\bin\Debug\Ikarus.pdb
+C:\Users\uidf6927\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Debug\Ikarus.csprojResolveAssemblyReference.cache
+C:\Users\uidf6927\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Debug\MainWindow.baml
+C:\Users\uidf6927\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Debug\MainWindow.g.cs
+C:\Users\uidf6927\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Debug\App.g.cs
+C:\Users\uidf6927\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Debug\Ikarus_MarkupCompile.cache
+C:\Users\uidf6927\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Debug\Ikarus.g.resources
+C:\Users\uidf6927\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Debug\Ikarus.Properties.Resources.resources
+C:\Users\uidf6927\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Debug\Ikarus.csproj.GenerateResource.Cache
+C:\Users\uidf6927\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Debug\Ikarus.exe
+C:\Users\uidf6927\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Debug\Ikarus.pdb
+C:\Users\uidf6927\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Debug\Instruments.baml
+C:\Users\uidf6927\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Debug\Instruments.g.cs
+C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\bin\Debug\Ikarus.exe.config
+C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Debug\Ikarus.exe
+C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Debug\Ikarus.pdb
+C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\bin\Debug\Ikarus.exe
+C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\bin\Debug\Ikarus.pdb
+C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Debug\Ikarus.csprojResolveAssemblyReference.cache
+C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Debug\Instruments.baml
+C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Debug\MainWindow.baml
+C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Debug\Instruments.g.cs
+C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Debug\MainWindow.g.cs
+C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Debug\App.g.cs
+C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Debug\Ikarus_MarkupCompile.cache
+C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Debug\Ikarus.g.resources
+C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Debug\Ikarus.Properties.Resources.resources
+C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Debug\Ikarus.csproj.GenerateResource.Cache
+C:\Users\uidf6927\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Debug\Gauges\A10_ALT.baml
+C:\Users\uidf6927\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Debug\Gauges\A10_ALT.g.cs
+C:\Users\uidf6927\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Debug\Ikarus_MarkupCompile.lref
+C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Debug\Gauges\A10_ALT.baml
+C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Debug\Gauges\A10_ALT.g.cs
+C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Debug\Ikarus_MarkupCompile.lref
+C:\Users\uidf6927\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Debug\Gauges\A10_VVI .baml
+C:\Users\uidf6927\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Debug\Gauges\A10_VVI .g.cs
+C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Debug\Gauges\A10_VVI .baml
+C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Debug\App.baml
+C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Debug\Gauges\A10_VVI .g.cs
+C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Debug\Assets\DiscoveryYellow.baml
+C:\Users\uidf6927\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Debug\Assets\DiscoveryYellow.baml
+C:\Users\uidf6927\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Debug\App.baml
+C:\Users\uidf6927\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Debug\MessageBoxSwitch.baml
+C:\Users\uidf6927\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Debug\MessageBoxSwitch.g.cs
+C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Debug\MessageBoxSwitch.baml
+C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Debug\MessageBoxSwitch.g.cs
+C:\Users\uidf6927\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Debug\MessageBoxLamps.baml
+C:\Users\uidf6927\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Debug\MessageBoxLamps.g.cs
