@@ -43,8 +43,7 @@
                 <Path Data="M30.1,5.478L1.547,0.411 0.411,6.811 28.966,11.877z" Fill="#FF33CC33" Height="12.288" Canvas.Left="104.244" Stroke="#FF21E663" StrokeThickness="0.709" StrokeMiterLimit="22.926" Canvas.Top="-0.411" Width="30.511"/>
             </Canvas>
             <Canvas x:Name="Airbrake" Height="6.5" Canvas.Left="74.205" Canvas.Top="30.014" Width="16">
-                <Path Data="M0,0L16,0 16,6.5 0,6.5z" Fill="#FF33CC33" Height="6.5" Canvas.Left="0" Canvas.Top="0" Width="16"/>
-                <Path Data="M0.354,0.354L16.353,0.354 16.353,6.853 0.354,6.853z" Height="7.208" Canvas.Left="-0.354" Stroke="#FF21E663" StrokeThickness="0.709" StrokeMiterLimit="22.926" Canvas.Top="-0.354" Width="16.708"/>
+                <Path Data="M0,0L16,0 16,6.5 0,6.5z" Fill="#FFFFDD23" Height="6.5" Canvas.Left="0" Canvas.Top="0" Width="16" Stroke="#FFFFDD23"/>
             </Canvas>
         </Canvas>
         <Image x:Name="Light" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Height="164" Width="164" MouseWheel="Light_MouseWheel" />

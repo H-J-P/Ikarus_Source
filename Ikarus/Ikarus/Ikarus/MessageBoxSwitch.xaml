@@ -162,7 +162,7 @@
                  VerticalAlignment="Bottom"
                  TextWrapping="Wrap" />
         <Label Height="16"
-               Margin="424,0,0,95"
+               Margin="432,0,0,95"
                HorizontalAlignment="Left"
                VerticalAlignment="Bottom"
                Content="Size"
@@ -251,5 +251,19 @@
                VerticalAlignment="Bottom"
                Content="Output"
                Foreground="#FFFDFDFD" />
+        <TextBox x:Name="Rotate"
+        	Width="40"
+        	Height="23"
+        	Margin="78,0,0,11"
+        	HorizontalAlignment="Left"
+        	VerticalAlignment="Bottom"
+        	TextWrapping="Wrap" />
+        <Label x:Name="lbRotate" Height="16"
+        	Margin="28,0,0,11"
+        	HorizontalAlignment="Left"
+        	VerticalAlignment="Bottom"
+        	Content="Rotate"
+        	Foreground="#FFFFFEFE"
+        	RenderTransformOrigin="-0.81,0.625" Width="45" />
     </Grid>
 </Window>

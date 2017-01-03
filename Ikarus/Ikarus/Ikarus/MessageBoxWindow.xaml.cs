@@ -69,6 +69,7 @@ namespace Ikarus
         private string FileSelectDialog(string defaultExt, string filter)
         {
             Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog();
+            dlg.InitialDirectory = MainWindow.currentDirectory + "\\Images\\Backgounds";
 
             dlg.DefaultExt = defaultExt;
             dlg.Filter = filter;

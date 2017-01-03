@@ -322,9 +322,6 @@
     <Compile Include="Gauges\Labels\LayerTest.xaml.cs">
       <DependentUpon>LayerTest.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Gauges\MIG29\MIG29FuelQ.xaml.cs">
-      <DependentUpon>MIG29FuelQ.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Gauges\MIG29\MIG29MDI.xaml.cs">
       <DependentUpon>MIG29MDI.xaml</DependentUpon>
     </Compile>
@@ -367,15 +364,6 @@
     <Compile Include="Gauges\Labels\Label200x100.xaml.cs">
       <DependentUpon>Label200x100.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Gauges\Labels\LabelUFC.xaml.cs">
-      <DependentUpon>LabelUFC.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Gauges\Labels\LabelCDU.xaml.cs">
-      <DependentUpon>LabelCDU.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Gauges\Labels\LabelMFCD.xaml.cs">
-      <DependentUpon>LabelMFCD.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Gauges\Lamp\LampOnOff70x70.xaml.cs">
       <DependentUpon>LampOnOff70x70.xaml</DependentUpon>
     </Compile>
@@ -408,9 +396,6 @@
     </Compile>
     <Compile Include="Gauges\F15\F15FuelFlow.xaml.cs">
       <DependentUpon>F15FuelFlow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Gauges\F15\F15Gear.xaml.cs">
-      <DependentUpon>F15Gear.xaml</DependentUpon>
     </Compile>
     <Compile Include="Gauges\F15\F15Nozzle.xaml.cs">
       <DependentUpon>F15Nozzle.xaml</DependentUpon>
@@ -1526,10 +1511,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Gauges\MIG29\MIG29FuelQ.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Page Include="Gauges\MIG29\MIG29MDI.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -1586,18 +1567,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Gauges\Labels\LabelUFC.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Gauges\Labels\LabelCDU.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Gauges\Labels\LabelMFCD.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Page Include="Gauges\Lamp\LampOnOff70x70.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -1639,10 +1608,6 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Gauges\F15\F15FuelFlow.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Gauges\F15\F15Gear.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -2707,6 +2672,7 @@
     </Compile>
     <Compile Include="DataSet1.cs">
       <DependentUpon>DataSet1.xsd</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="DataSet1.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -2715,6 +2681,7 @@
     </Compile>
     <Compile Include="DataSet2.cs">
       <DependentUpon>DataSet2.xsd</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="DataSet2.Designer.cs">
       <AutoGen>True</AutoGen>

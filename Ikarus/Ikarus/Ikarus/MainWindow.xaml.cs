@@ -63,7 +63,7 @@ namespace Ikarus
         public static string dbFilename = "";
         public static bool functionTabIsVisible = true;
         private static string newline = Environment.NewLine;
-        private static string currentDirectory = Environment.CurrentDirectory;
+        public static string currentDirectory = Environment.CurrentDirectory;
 
         private static DataRowView rowView = null;
         private static DataRow[] dataRows = new DataRow[] { };
@@ -1235,7 +1235,6 @@ namespace Ikarus
         private void ResetTables()
         {
             dsInstruments.Clear();
-
             dtInstruments.Columns["IDInst"].AutoIncrementStep = -1;
             dtInstruments.Columns["IDInst"].AutoIncrementSeed = -1;
             dtInstruments.Columns["IDInst"].AutoIncrementStep = 1;
@@ -1246,25 +1245,29 @@ namespace Ikarus
             //dtInstrumentFunctions.Columns["ID"].AutoIncrementStep = 1;
             //dtInstrumentFunctions.Columns["ID"].AutoIncrementSeed = 1;
 
+            dtLamps.Clear();
             dtLamps.Columns["ID"].AutoIncrementStep = -1;
             dtLamps.Columns["ID"].AutoIncrementSeed = -1;
             dtLamps.Columns["ID"].AutoIncrementStep = 1;
             dtLamps.Columns["ID"].AutoIncrementSeed = 1;
 
+            dtSwitches.Clear();
             dtSwitches.Columns["ID"].AutoIncrementStep = -1;
             dtSwitches.Columns["ID"].AutoIncrementSeed = -1;
             dtSwitches.Columns["ID"].AutoIncrementStep = 1;
             dtSwitches.Columns["ID"].AutoIncrementSeed = 1;
 
+            dtAccessories.Clear();
             dtAccessories.Columns["ID"].AutoIncrementStep = -1;
-            dtAccessories.Columns["ID"].AutoIncrementStep = -1;
+            dtAccessories.Columns["ID"].AutoIncrementSeed = -1;
             dtAccessories.Columns["ID"].AutoIncrementStep = 1;
-            dtAccessories.Columns["ID"].AutoIncrementStep = 1;
+            dtAccessories.Columns["ID"].AutoIncrementSeed = 1;
 
+            dtWindows.Clear();
             dtWindows.Columns["WindowID"].AutoIncrementStep = -1;
-            dtWindows.Columns["WindowID"].AutoIncrementStep = -1;
+            dtWindows.Columns["WindowID"].AutoIncrementSeed = -1;
             dtWindows.Columns["WindowID"].AutoIncrementStep = 1;
-            dtWindows.Columns["WindowID"].AutoIncrementStep = 1;
+            dtWindows.Columns["WindowID"].AutoIncrementSeed = 1;
         }
 
         public void SelectDataGridItem(string _tablename, int impordID)

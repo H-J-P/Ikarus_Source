@@ -53,7 +53,7 @@
                 <Path Data="M3.233,0L7.566,23.962 2.42,24.478 0,0.323z" Fill="#FF33CC33" Height="24.478" Canvas.Left="86.761" Canvas.Top="0" Width="7.566"/>
             </Canvas>
             <Canvas x:Name="Airbreak" Height="6.5" Canvas.Left="74.205" Canvas.Top="30.014" Width="16">
-                <Path Data="M0,0L16,0 16,6.5 0,6.5z" Fill="#FF33CC33" Height="6.5" Canvas.Left="0" Canvas.Top="0" Width="16"/>
+                <Path Data="M0,0L16,0 16,6.5 0,6.5z" Fill="#FFFFDD23" Height="6.5" Canvas.Left="0" Canvas.Top="0" Width="16"/>
             </Canvas>
         </Canvas>
         <Image x:Name="Light" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Height="164" Width="164" MouseWheel="Light_MouseWheel" />

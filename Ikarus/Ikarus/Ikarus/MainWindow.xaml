@@ -490,7 +490,7 @@
                                                 IsReadOnly="True" />
                             <DataGridTextColumn Width="210"
                                                 Binding="{Binding Name}"
-                                                Header="Description" />
+                                                Header="Name" />
                             <DataGridTextColumn Width="45"
                                                 Binding="{Binding PosX}"
                                                 Header="Pos. X">
@@ -876,7 +876,7 @@
                                 HorizontalAlignment="Left"
                                 VerticalAlignment="Bottom"
                                 Click="Button_LogRefresh_Click"
-                                Content="Refresh" />
+                                Content="Refresh" Visibility="Hidden" />
                     </Grid>
                 </TabItem>
             </TabControl>
@@ -957,7 +957,7 @@
                    Height="19"
                    Margin="466,0,488,10"
                    VerticalAlignment="Bottom"
-                   Content="(C) H.J.P. 2016  Version 0.9930"
+                   Content="(C) H.J.P. 2017  Version 0.9936"
                    Foreground="#FFD8BC05" />
             <Label Name="lbEditMode"
                    Width="72"

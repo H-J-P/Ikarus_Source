@@ -18,6 +18,7 @@ namespace Ikarus
         private static string pictureOn = "";
         private static string pictureOff = "";
         private static string picture2On = "";
+        private static string rotate = "";
         private static string input = "";
         private static string output = "";
         private static string posX = "";
@@ -48,6 +49,7 @@ namespace Ikarus
                     posX = dataRows[0]["PosX"].ToString();
                     posY = dataRows[0]["PosY"].ToString();
                     size = dataRows[0]["Size"].ToString();
+                    rotate = dataRows[0]["Rotate"].ToString();
                     windowID = dataRows[0]["WindowID"].ToString();
                 }
             }
@@ -82,6 +84,7 @@ namespace Ikarus
             PosX.Text = posX;
             PosY.Text = posY;
             Size.Text = size;
+            Rotate.Text = rotate;
 
             if (MainWindow.dtMasterSwitches != null)
             {
@@ -184,6 +187,7 @@ namespace Ikarus
         private string FileSelectDialog(string defaultExt, string filter)
         {
             Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog();
+            dlg.InitialDirectory = MainWindow.currentDirectory + "\\Images\\Switches";
 
             dlg.DefaultExt = defaultExt;
             dlg.Filter = filter;
@@ -229,6 +233,7 @@ namespace Ikarus
                     dataRows[0]["PosX"] = PosX.Text;
                     dataRows[0]["PosY"] = PosY.Text;
                     dataRows[0]["Size"] = Size.Text;
+                    dataRows[0]["Rotate"] = Rotate.Text;
                     dataRows[0]["WindowID"] = WindowID.SelectedIndex + 1;
                 }
             }

@@ -17,6 +17,7 @@ namespace Ikarus
         private static string posX = "";
         private static string posY = "";
         private static string size = "";
+        private static string rotate = "";
         private static string windowID = "";
 
         public MessageBoxAccessories(int _index)
@@ -35,6 +36,7 @@ namespace Ikarus
                     posX = dataRows[0]["PosX"].ToString();
                     posY = dataRows[0]["PosY"].ToString();
                     size = dataRows[0]["Size"].ToString();
+                    rotate = dataRows[0]["Rotate"].ToString();
                     windowID = dataRows[0]["WindowID"].ToString();
                 }
             }
@@ -62,6 +64,7 @@ namespace Ikarus
             PosX.Text = posX;
             PosY.Text = posY;
             Size.Text = size;
+            Rotate.Text = rotate;
 
             Show();
         }
@@ -79,6 +82,9 @@ namespace Ikarus
         private string FileSelectDialog(string defaultExt, string filter)
         {
             Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog();
+            dlg.InitialDirectory = MainWindow.currentDirectory + "\\Images\\Accessories";
+
+            string path = Environment.CurrentDirectory;
 
             dlg.DefaultExt = defaultExt;
             dlg.Filter = filter;
@@ -104,6 +110,7 @@ namespace Ikarus
                     dataRows[0]["PosX"] = PosX.Text;
                     dataRows[0]["PosY"] = PosY.Text;
                     dataRows[0]["Size"] = Size.Text;
+                    dataRows[0]["Rotate"] = Rotate.Text;
                     dataRows[0]["WindowID"] = WindowID.SelectedIndex + 1;
                 }
             }
