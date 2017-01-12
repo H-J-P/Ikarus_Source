@@ -1,0 +1,118 @@
+﻿<UserControl x:Class="Ikarus.BfK4Gear"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="68" d:DesignWidth="73"  MouseWheel="Light_MouseWheel">
+    <Grid>
+    	<Canvas x:Name="MEK4_Gear" HorizontalAlignment="Left" Height="68" UseLayoutRounding="False" VerticalAlignment="Top" Width="73">
+            <Canvas x:Name="background" Height="64.693" Canvas.Left="0.83" Canvas.Top="1.816" Width="72.254">
+    			<Path Data="M14.174,28.347C22,28.347 28.346,22.001 28.346,14.173 28.346,6.346 22,0 14.174,0 6.345,0 0,6.346 0,14.173 0,22.001 6.345,28.347 14.174,28.347" Fill="Black" Height="28.347" Canvas.Left="21.954" Canvas.Top="0" Width="28.346"/>
+    			<Path Data="M14.173,28.346C22.001,28.346 28.346,22 28.346,14.173 28.346,6.346 22.001,0 14.173,0 6.345,0 0,6.346 0,14.173 0,22 6.345,28.346 14.173,28.346" Fill="Black" Height="28.346" Canvas.Left="0" Canvas.Top="36.347" Width="28.346"/>
+    			<Path Data="M14.174,28.346C22.001,28.346 28.347,22 28.347,14.173 28.347,6.346 22.001,0 14.174,0 6.346,0 0,6.346 0,14.173 0,22 6.346,28.346 14.174,28.346" Fill="Black" Height="28.346" Canvas.Left="43.907" Canvas.Top="36.347" Width="28.347"/>
+    		</Canvas>
+    		<Canvas x:Name="R_GEAR_DOWN" Height="64" Canvas.Left="43.51" Canvas.Top="37.221" Width="64">
+    			<Canvas Clip="M15.401,29.288C23.228,29.288 29.574,22.942 29.574,15.115 29.574,7.288 23.228,0.942 15.401,0.942 7.573,0.942 1.227,7.288 1.227,15.115 1.227,22.942 7.573,29.288 15.401,29.288" Height="64" Canvas.Left="0" Canvas.Top="0" Width="64">
+    				<Canvas Clip="M1.227,0.942L29.574,0.942 29.574,29.288 1.227,29.288z" Height="64" Canvas.Left="0" Canvas.Top="0" Width="64">
+                        <Image Source="/Ikarus;component/Gauges/_Images\MEK4_Gear_Images\Image9.png" Stretch="Fill">
+    						<Image.RenderTransform>
+    							<MatrixTransform Matrix="0.360000014305115,0,0,0.360000014305115,0,0"/>
+    						</Image.RenderTransform>
+    					</Image>
+    				</Canvas>
+    			</Canvas>
+    		</Canvas>
+    		<Canvas x:Name="L_GEAR_DOWN" Height="64" Canvas.Left="-0.442" Canvas.Top="37.221" Width="64">
+    			<Canvas Clip="M15.445,29.288C23.273,29.288 29.618,22.942 29.618,15.115 29.618,7.288 23.273,0.942 15.445,0.942 7.617,0.942 1.272,7.288 1.272,15.115 1.272,22.942 7.617,29.288 15.445,29.288" Height="64" Canvas.Left="0" Canvas.Top="0" Width="64">
+    				<Canvas Clip="M1.272,0.942L29.618,0.942 29.618,29.288 1.272,29.288z" Height="64" Canvas.Left="0" Canvas.Top="0" Width="64">
+                        <Image Source="/Ikarus;component/Gauges/_Images\MEK4_Gear_Images\Image8.png" Stretch="Fill">
+    						<Image.RenderTransform>
+    							<MatrixTransform Matrix="0.360000014305115,0,0,0.360000014305115,0,0"/>
+    						</Image.RenderTransform>
+    					</Image>
+    				</Canvas>
+    			</Canvas>
+    		</Canvas>
+    		<Canvas x:Name="GEAR_UP" Height="63" Canvas.Left="21.535" Canvas.Top="1.04" Width="64">
+    			<Canvas Clip="M15.423,29.123C23.249,29.123 29.595,22.777 29.595,14.949 29.595,7.122 23.249,0.776 15.423,0.776 7.594,0.776 1.249,7.122 1.249,14.949 1.249,22.777 7.594,29.123 15.423,29.123" Height="63" Canvas.Left="0" Canvas.Top="0" Width="64">
+    				<Canvas Clip="M1.249,0.776L29.595,0.776 29.595,29.123 1.249,29.123z" Height="63" Canvas.Left="0" Canvas.Top="0" Width="64">
+                        <Image Source="/Ikarus;component/Gauges/_Images\MEK4_Gear_Images\Image7.png" Stretch="Fill">
+    						<Image.RenderTransform>
+    							<MatrixTransform Matrix="0.360000014305115,0,0,0.36000006539481,0,0"/>
+    						</Image.RenderTransform>
+    					</Image>
+    				</Canvas>
+    				<Canvas Clip="M1.249,0.776L29.595,0.776 29.595,29.123 1.249,29.123z" Height="63" Canvas.Left="0" Canvas.Top="0" Width="64">
+                        <Image Source="/Ikarus;component/Gauges/_Images\MEK4_Gear_Images\Image6.png" Stretch="Fill">
+    						<Image.RenderTransform>
+    							<MatrixTransform Matrix="0.360000014305115,0,0,0.36000006539481,0,0"/>
+    						</Image.RenderTransform>
+    					</Image>
+    				</Canvas>
+    				<Canvas Clip="M1.249,0.776L29.595,0.776 29.595,29.123 1.249,29.123z" Height="63" Canvas.Left="0" Canvas.Top="0" Width="64">
+                        <Image Source="/Ikarus;component/Gauges/_Images\MEK4_Gear_Images\Image5.png" Stretch="Fill">
+    						<Image.RenderTransform>
+    							<MatrixTransform Matrix="0.360000014305115,0,0,0.36000006539481,0,0"/>
+    						</Image.RenderTransform>
+    					</Image>
+    				</Canvas>
+    				<Canvas Clip="M1.249,0.776L29.595,0.776 29.595,29.123 1.249,29.123z" Height="63" Canvas.Left="0" Canvas.Top="0" Width="64">
+                        <Image Source="/Ikarus;component/Gauges/_Images\MEK4_Gear_Images\Image4.png" Stretch="Fill">
+    						<Image.RenderTransform>
+    							<MatrixTransform Matrix="0.360000014305115,0,0,0.36000006539481,0,0"/>
+    						</Image.RenderTransform>
+    					</Image>
+    				</Canvas>
+    				<Canvas Clip="M1.249,0.776L29.595,0.776 29.595,29.123 1.249,29.123z" Height="63" Canvas.Left="0" Canvas.Top="0" Width="64">
+                        <Image Source="/Ikarus;component/Gauges/_Images\MEK4_Gear_Images\Image3.png" Stretch="Fill">
+    						<Image.RenderTransform>
+    							<MatrixTransform Matrix="0.360000014305115,0,0,0.36000006539481,0,0"/>
+    						</Image.RenderTransform>
+    					</Image>
+    				</Canvas>
+    			</Canvas>
+    		</Canvas>
+    		<Canvas x:Name="front" Height="95.18" Canvas.Left="0.039" Canvas.Top="0.862" Width="107.951">
+    			<Path Data="M14.836,1.14C7.272,1.14 1.14,7.271 1.14,14.834 1.14,22.399 7.272,28.53 14.836,28.53 22.399,28.53 28.529,22.399 28.529,14.834 28.529,7.271 22.399,1.14 14.836,1.14 M14.836,0.108C6.702,0.108 0.108,6.701 0.108,14.834 0.108,22.968 6.702,29.561 14.836,29.561 22.968,29.561 29.562,22.968 29.562,14.834 29.562,6.701 22.968,0.108 14.836,0.108" Fill="#FF1A1A1A" Height="29.669" Canvas.Left="22.083" Stroke="Black" StrokeThickness="0.216" StrokeMiterLimit="22.926" Canvas.Top="0.293" Width="29.67"/>
+    			<Canvas Clip="M1.248,15.127C1.248,20.197,4.002,24.621,8.094,26.99L8.096,26.988 14.943,15.129 21.789,26.989C26.177,24.453,28.633,19.857,28.637,15.128L28.635,15.127 14.945,15.127 21.791,3.27C17.401,0.736,12.193,0.908,8.095,3.268L8.096,3.27 14.943,15.127 14.942,15.127z" Height="59" Canvas.Left="21.975" Canvas.Top="0" Width="64">
+    				<Canvas Clip="M1.248,0.736L28.637,0.736 28.637,26.99 1.248,26.99z" Height="59" Canvas.Left="0" Canvas.Top="0" Width="64">
+                        <Image Source="/Ikarus;component/Gauges/_Images\MEK4_Gear_Images\Image2.png" Stretch="Fill">
+    						<Image.RenderTransform>
+    							<MatrixTransform Matrix="0.360000014305115,0,0,0.360000093104476,0,0"/>
+    						</Image.RenderTransform>
+    					</Image>
+    				</Canvas>
+    			</Canvas>
+    			<Path Data="M14.835,1.14C7.271,1.14 1.14,7.271 1.14,14.835 1.14,22.398 7.271,28.53 14.835,28.53 22.399,28.53 28.53,22.398 28.53,14.835 28.53,7.271 22.399,1.14 14.835,1.14 M14.835,0.108C6.702,0.108 0.108,6.701 0.108,14.835 0.108,22.969 6.702,29.561 14.835,29.561 22.969,29.561 29.561,22.969 29.561,14.835 29.561,6.701 22.969,0.108 14.835,0.108" Fill="#FF1A1A1A" Height="29.669" Canvas.Left="0.129" Stroke="Black" StrokeThickness="0.216" StrokeMiterLimit="22.926" Canvas.Top="36.639" Width="29.669"/>
+    			<Canvas Clip="M1.269,15.294C1.269,20.362,4.023,24.787,8.115,27.155L8.117,27.154 14.963,15.296 21.81,27.154C26.199,24.62,28.655,20.023,28.659,15.295L28.657,15.294 14.966,15.294 21.812,3.437C17.422,0.902,12.213,1.074,8.116,3.435L8.117,3.437 14.963,15.294 14.962,15.294z" Height="59" Canvas.Left="0" Canvas.Top="36.18" Width="64">
+    				<Canvas Clip="M1.269,0.902L28.659,0.902 28.659,27.155 1.269,27.155z" Height="59" Canvas.Left="0" Canvas.Top="0" Width="64">
+                        <Image Source="/Ikarus;component/Gauges/_Images\MEK4_Gear_Images\Image1.png" Stretch="Fill">
+    						<Image.RenderTransform>
+    							<MatrixTransform Matrix="0.360000014305115,0,0,0.360000093104476,0,0"/>
+    						</Image.RenderTransform>
+    					</Image>
+    				</Canvas>
+    			</Canvas>
+    			<Path Data="M14.834,1.14C7.27,1.14 1.139,7.271 1.139,14.835 1.139,22.398 7.27,28.53 14.834,28.53 22.398,28.53 28.528,22.398 28.528,14.835 28.528,7.271 22.398,1.14 14.834,1.14 M14.834,0.108C6.7,0.108 0.108,6.701 0.108,14.835 0.108,22.969 6.7,29.561 14.834,29.561 22.967,29.561 29.561,22.969 29.561,14.835 29.561,6.701 22.967,0.108 14.834,0.108" Fill="#FF1A1A1A" Height="29.669" Canvas.Left="44.038" Stroke="Black" StrokeThickness="0.216" StrokeMiterLimit="22.926" Canvas.Top="36.639" Width="29.669"/>
+    			<Canvas Clip="M1.226,15.294C1.226,20.362,3.98,24.787,8.072,27.155L8.073,27.154 14.92,15.296 21.767,27.154C26.156,24.62,28.612,20.023,28.615,15.295L28.614,15.294 14.922,15.294 21.769,3.437C17.379,0.902,12.17,1.074,8.073,3.435L8.073,3.437 14.919,15.294z" Height="59" Canvas.Left="43.951" Canvas.Top="36.18" Width="64">
+    				<Canvas Clip="M1.226,0.902L28.616,0.902 28.616,27.155 1.226,27.155z" Height="59" Canvas.Left="0" Canvas.Top="0" Width="64">
+                        <Image Source="/Ikarus;component/Gauges/_Images\MEK4_Gear_Images\Image.png" Stretch="Fill">
+    						<Image.RenderTransform>
+    							<MatrixTransform Matrix="0.360000014305115,0,0,0.360000093104476,0,0"/>
+    						</Image.RenderTransform>
+    					</Image>
+    				</Canvas>
+    			</Canvas>
+    			<Path Data="M0.108,13.801C0.108,18.871,2.862,23.295,6.954,25.664L6.956,25.662 13.803,13.803 20.649,25.663C25.037,23.127,27.493,18.531,27.497,13.802L27.495,13.801 13.805,13.801 20.651,1.944C16.261,-0.59,11.053,-0.418,6.955,1.942L6.956,1.944 13.803,13.801 13.802,13.801z" Height="25.811" Canvas.Left="23.115" Stroke="Black" StrokeThickness="0.216" StrokeMiterLimit="22.926" Canvas.Top="1.326" Width="27.605"/>
+    			<Path Data="M0.108,13.802C0.108,18.87,2.862,23.295,6.954,25.663L6.956,25.662 13.802,13.804 20.649,25.662C25.038,23.128,27.494,18.531,27.498,13.803L27.496,13.802 13.805,13.802 20.651,1.945C16.261,-0.59,11.052,-0.418,6.955,1.943L6.956,1.945 13.802,13.802 13.801,13.802z" Height="25.81" Canvas.Left="1.161" Stroke="Black" StrokeThickness="0.216" StrokeMiterLimit="22.926" Canvas.Top="37.672" Width="27.606"/>
+    			<Path Data="M0.108,13.802C0.108,18.87,2.862,23.295,6.954,25.663L6.955,25.662 13.802,13.804 20.649,25.662C25.038,23.128,27.494,18.531,27.497,13.803L27.496,13.802 13.804,13.802 20.651,1.945C16.261,-0.59,11.052,-0.418,6.955,1.943L6.955,1.945 13.801,13.802z" Height="25.81" Canvas.Left="45.069" Stroke="Black" StrokeThickness="0.216" StrokeMiterLimit="22.926" Canvas.Top="37.672" Width="27.605"/>
+    			<Path Data="M4.012,0.142C1.874,0.142 0.141,1.876 0.141,4.012 0.141,6.15 1.874,7.882 4.012,7.882 6.148,7.882 7.881,6.15 7.881,4.012 7.881,1.876 6.148,0.142 4.012,0.142" Fill="#FF303030" Height="8.023" Canvas.Left="32.907" Stroke="Black" StrokeThickness="0.283" StrokeMiterLimit="22.926" Canvas.Top="11.115" Width="8.023"/>
+    			<Path Data="M4.012,0.141C1.875,0.141 0.142,1.873 0.142,4.011 0.142,6.149 1.875,7.881 4.012,7.881 6.15,7.881 7.883,6.149 7.883,4.011 7.883,1.873 6.15,0.141 4.012,0.141" Fill="#FF303030" Height="8.023" Canvas.Left="10.952" Stroke="Black" StrokeThickness="0.283" StrokeMiterLimit="22.926" Canvas.Top="47.463" Width="8.024"/>
+    			<Path Data="M4.011,0.141C1.873,0.141 0.141,1.873 0.141,4.011 0.141,6.149 1.873,7.881 4.011,7.881 6.148,7.881 7.881,6.149 7.881,4.011 7.881,1.873 6.148,0.141 4.011,0.141" Fill="#FF303030" Height="8.023" Canvas.Left="54.861" Stroke="Black" StrokeThickness="0.283" StrokeMiterLimit="22.926" Canvas.Top="47.463" Width="8.023"/>
+    		</Canvas>
+    	</Canvas>
+        <Image x:Name="Frame" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Height="68" Width="73" MouseWheel="Light_MouseWheel" />
+        <Image x:Name="Light" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Height="68" Width="73" MouseWheel="Light_MouseWheel" />
+    </Grid>
+</UserControl>

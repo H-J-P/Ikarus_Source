@@ -1,0 +1,26 @@
+﻿<UserControl
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	mc:Ignorable="d"
+	x:Class="HawgTouch.GaugePack.Gauges.A10TACAN"
+	x:Name="UserControl"
+	d:DesignWidth="270" d:DesignHeight="100" Width="270" Height="100">
+
+    <Canvas xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Name="Untitled1" Width="270" Height="100" Clip="F1 M 0,0L 270,0L 270,100L 0,100L 0,0">
+        <Canvas x:Name="Layer_1" Width="270" Height="100" Canvas.Left="0" Canvas.Top="0">
+            <Rectangle x:Name="Rectangle" Width="270" Height="100" Canvas.Left="0" Canvas.Top="0" Stretch="Fill" Fill="#FF373737" Stroke="Black" StrokeThickness="2"/>
+            <Rectangle x:Name="Rectangle_0" Width="60.6667" Height="87.9999" Canvas.Left="5.58334" Canvas.Top="5.8334" Stretch="Fill" Fill="#FF000000"/>
+            <Rectangle x:Name="Rectangle_1" Width="60.6667" Height="87.9999" Canvas.Left="71.9167" Canvas.Top="5.50003" Stretch="Fill" Fill="#FF000000"/>
+            <Rectangle x:Name="Rectangle_2" Width="60.6667" Height="87.9999" Canvas.Left="137.917" Canvas.Top="5.50003" Stretch="Fill" Fill="#FF000000"/>
+            <Rectangle x:Name="Rectangle_3" Width="60.6667" Height="87.9999" Canvas.Left="203.917" Canvas.Top="5.50003" Stretch="Fill" Fill="#FF000000"/>
+            <TextBlock x:Name="LeftT" Height="105.75" Canvas.Left="9" TextWrapping="Wrap" Text="0" Canvas.Top="-8" Width="50" FontSize="115" Foreground="White" FontFamily="Digital-7 Mono"/>
+            <TextBlock x:Name="MiddleT" Height="105.75" Canvas.Left="75" TextWrapping="Wrap" Text="0" Canvas.Top="-8" Width="50" FontSize="115" Foreground="White" FontFamily="Digital-7 Mono"/>
+            <TextBlock x:Name="RightT" Height="105.75" Canvas.Left="141" TextWrapping="Wrap" Text="0" Canvas.Top="-8" Width="50" FontSize="115" Foreground="White" FontFamily="Digital-7 Mono"/>
+            <TextBlock x:Name="XY" Height="105.75" Canvas.Left="201" TextWrapping="Wrap" Text="X" Canvas.Top="-8" Width="62" FontSize="115" Foreground="White" FontFamily="Digital-7 Mono"/>
+        </Canvas>
+    </Canvas>
+
+
+</UserControl>
