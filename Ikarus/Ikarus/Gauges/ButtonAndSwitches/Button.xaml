@@ -22,7 +22,8 @@
                Stretch="UniformToFill" />
         <Rectangle x:Name="UpperRec"
                    Width="45"
-                   Height="45"
+                   Height="35"
+                   Margin="0,5,0,0"
                    HorizontalAlignment="Left"
                    VerticalAlignment="Top"
                    Fill="#00EEDB21"

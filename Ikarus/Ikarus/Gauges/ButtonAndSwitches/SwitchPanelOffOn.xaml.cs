@@ -146,9 +146,12 @@ namespace Ikarus
                 }
                 else
                 {
-                    if (MainWindow.cockpitWindows.Count > panelID) MainWindow.cockpitWindows[panelID].Visibility = System.Windows.Visibility.Hidden;
-                    SwitchUp.Visibility = System.Windows.Visibility.Hidden;
-                    SwitchDown.Visibility = System.Windows.Visibility.Visible;
+                    if (panelID > 0)
+                    {
+                        if (MainWindow.cockpitWindows.Count > panelID) MainWindow.cockpitWindows[panelID].Visibility = System.Windows.Visibility.Hidden;
+                        SwitchUp.Visibility = System.Windows.Visibility.Hidden;
+                        SwitchDown.Visibility = System.Windows.Visibility.Visible;
+                    }
                 }
             }
         }

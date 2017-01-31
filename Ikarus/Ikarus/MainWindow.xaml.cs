@@ -89,7 +89,7 @@ namespace Ikarus
         public static bool dataLog = false;
         private static bool cleanupMemory = false;
 
-        private static string readFile = "";
+        public static string readFile = "";
         private static string lastFile = "-";
         private static string searchStringForFile = "File";
         private static List<string> updateLamp = new List<string>();
@@ -1946,7 +1946,7 @@ namespace Ikarus
 
         private void Checkbox_EditMode_Click(object sender, RoutedEventArgs e)
         {
-            if (timerstate == State.stop)
+            if (editmode) //(timerstate == State.stop)
             {
                 ImportExport.LogMessage("Edit mode: OFF");
 
@@ -2190,6 +2190,11 @@ namespace Ikarus
         private void Capture_Click(object sender, RoutedEventArgs e)
         {
             ScreenCapture(Convert.ToInt32(Left), Convert.ToInt32(Top), Convert.ToInt32(Width), Convert.ToInt32(Height));
+        }
+
+        private void EditMode_Checked(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 

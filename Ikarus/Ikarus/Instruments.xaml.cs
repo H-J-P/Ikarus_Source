@@ -304,7 +304,7 @@ namespace Ikarus
             }
             catch (Exception e)
             {
-                ImportExport.LogMessage("Generate switches: " + userControl.ToString() + " .... " + e.ToString());
+                ImportExport.LogMessage("Generate switches: " + classname + " .... " + e.ToString());
             }
         }
 

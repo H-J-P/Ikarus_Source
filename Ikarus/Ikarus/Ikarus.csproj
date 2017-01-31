@@ -127,35 +127,50 @@
     <Compile Include="Gauges\ButtonAndSwitches\ButtonOffOn.xaml.cs">
       <DependentUpon>ButtonOffOn.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Gauges\Displays\DisplaySix.xaml.cs">
+    <Compile Include="Gauges\Clipboard\Kneeboard.xaml.cs">
+      <DependentUpon>Kneeboard.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\DisplaysAndMonitors\DisplayOne.xaml.cs">
+      <DependentUpon>DisplayOne.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\DisplaysAndMonitors\DisplaySix.xaml.cs">
       <DependentUpon>DisplaySix.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Gauges\Displays\Display_CMSP.xaml.cs">
+    <Compile Include="Gauges\DisplaysAndMonitors\DisplayThree.xaml.cs">
+      <DependentUpon>DisplayThree.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\DisplaysAndMonitors\DisplayTwo.xaml.cs">
+      <DependentUpon>DisplayTwo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\DisplaysAndMonitors\Display_CMSP.xaml.cs">
       <DependentUpon>Display_CMSP.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Gauges\Displays\Display_VHF.xaml.cs">
-      <DependentUpon>Display_VHF.xaml</DependentUpon>
+    <Compile Include="Gauges\DisplaysAndMonitors\Display_Eight.xaml.cs">
+      <DependentUpon>Display_Eight.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Gauges\Displays\Display_ILS_Khz.xaml.cs">
+    <Compile Include="Gauges\DisplaysAndMonitors\Display_ILS_Khz.xaml.cs">
       <DependentUpon>Display_ILS_Khz.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Gauges\Displays\Display_ILS_Mhz.xaml.cs">
+    <Compile Include="Gauges\DisplaysAndMonitors\Display_ILS_Mhz.xaml.cs">
       <DependentUpon>Display_ILS_Mhz.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\DisplaysAndMonitors\Display_Tacan.xaml.cs">
+      <DependentUpon>Display_Tacan.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\DisplaysAndMonitors\Display_VHF.xaml.cs">
+      <DependentUpon>Display_VHF.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\DisplaysAndMonitors\Monitor04x08.xaml.cs">
+      <DependentUpon>Monitor04x08.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\DisplaysAndMonitors\Monitor10x24.xaml.cs">
+      <DependentUpon>Monitor10x24.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\DisplaysAndMonitors\Monitor10x24D.xaml.cs">
+      <DependentUpon>Monitor10x24D.xaml</DependentUpon>
     </Compile>
     <Compile Include="Gauges\F5E\F5E_UHFPresetChannel.xaml.cs">
       <DependentUpon>F5E_UHFPresetChannel.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Gauges\Displays\DisplayThree.xaml.cs">
-      <DependentUpon>DisplayThree.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Gauges\Displays\DisplayTwo.xaml.cs">
-      <DependentUpon>DisplayTwo.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Gauges\Displays\DisplayOne.xaml.cs">
-      <DependentUpon>DisplayOne.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Gauges\Displays\Display_Eight.xaml.cs">
-      <DependentUpon>Display_Eight.xaml</DependentUpon>
     </Compile>
     <Compile Include="Gauges\A10\A10_RPMAPU.xaml.cs">
       <DependentUpon>A10_RPMAPU.xaml</DependentUpon>
@@ -217,9 +232,6 @@
     <Compile Include="Gauges\F5E\F5E-RPM.xaml.cs">
       <DependentUpon>F5E-RPM.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Gauges\Displays\Display_Tacan.xaml.cs">
-      <DependentUpon>Display_Tacan.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Gauges\F5E\F5E-UHF.xaml.cs">
       <DependentUpon>F5E-UHF.xaml</DependentUpon>
     </Compile>
@@ -232,14 +244,11 @@
     <Compile Include="Gauges\MIG29\MIG29-FuelQV2.xaml.cs">
       <DependentUpon>MIG29-FuelQV2.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Gauges\Labels\Monitor04x08.xaml.cs">
-      <DependentUpon>Monitor04x08.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Gauges\ButtonAndSwitches\RotaryWithPosition.xaml.cs">
       <DependentUpon>RotaryWithPosition.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Gauges\ButtonAndSwitches\Switch_On_OFFON.xaml.cs">
-      <DependentUpon>Switch_On_OFFON.xaml</DependentUpon>
+    <Compile Include="Gauges\ButtonAndSwitches\SwitchOn_OffOn.xaml.cs">
+      <DependentUpon>SwitchOn_OffOn.xaml</DependentUpon>
     </Compile>
     <Compile Include="Gauges\US\US_ASI10.xaml.cs">
       <DependentUpon>US_ASI10.xaml</DependentUpon>
@@ -310,20 +319,14 @@
     <Compile Include="Gauges\MIG29\MIG29MDI.xaml.cs">
       <DependentUpon>MIG29MDI.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Gauges\Labels\Monitor10x24.xaml.cs">
-      <DependentUpon>Monitor10x24.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Gauges\Labels\Monitor10x24D.xaml.cs">
-      <DependentUpon>Monitor10x24D.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Gauges\ButtonAndSwitches\ButtonPanelOffOn.xaml.cs">
       <DependentUpon>ButtonPanelOffOn.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Gauges\ButtonAndSwitches\Switch_OnOFFOn.xaml.cs">
-      <DependentUpon>Switch_OnOFFOn.xaml</DependentUpon>
+    <Compile Include="Gauges\ButtonAndSwitches\SwitchOn_Off_On.xaml.cs">
+      <DependentUpon>SwitchOn_Off_On.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Gauges\ButtonAndSwitches\Switch_OFFOn.xaml.cs">
-      <DependentUpon>Switch_OFFOn.xaml</DependentUpon>
+    <Compile Include="Gauges\ButtonAndSwitches\SwitchOff_On.xaml.cs">
+      <DependentUpon>SwitchOff_On.xaml</DependentUpon>
     </Compile>
     <Compile Include="Gauges\ButtonAndSwitches\SwitchPanelOffOn.xaml.cs">
       <DependentUpon>SwitchPanelOffOn.xaml</DependentUpon>
@@ -517,9 +520,6 @@
     <Compile Include="Gauges\BfK4\BfK4Fuel.xaml.cs">
       <DependentUpon>BfK4Fuel.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Gauges\BfK4\BfK4Gear.xaml.cs">
-      <DependentUpon>BfK4Gear.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Gauges\BfK4\BfK4H2OT.xaml.cs">
       <DependentUpon>BfK4H2OT.xaml</DependentUpon>
     </Compile>
@@ -534,12 +534,6 @@
     </Compile>
     <Compile Include="Gauges\BfK4\BfK4RPM.xaml.cs">
       <DependentUpon>BfK4RPM.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Gauges\BfK4\BfK4MG151Left.xaml.cs">
-      <DependentUpon>BfK4MG151Left.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Gauges\BfK4\BfK4MG151Right.xaml.cs">
-      <DependentUpon>BfK4MG151Right.xaml</DependentUpon>
     </Compile>
     <Compile Include="Gauges\MIG15\MIG15_ADI.xaml.cs">
       <DependentUpon>MIG15_ADI.xaml</DependentUpon>
@@ -1212,43 +1206,63 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Gauges\Displays\DisplaySix.xaml">
+    <Page Include="Gauges\Clipboard\Kneeboard.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Gauges\Displays\Display_CMSP.xaml">
+    <Page Include="Gauges\DisplaysAndMonitors\DisplayOne.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Gauges\Displays\Display_VHF.xaml">
+    <Page Include="Gauges\DisplaysAndMonitors\DisplaySix.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Gauges\Displays\Display_ILS_Khz.xaml">
+    <Page Include="Gauges\DisplaysAndMonitors\DisplayThree.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Gauges\Displays\Display_ILS_Mhz.xaml">
+    <Page Include="Gauges\DisplaysAndMonitors\DisplayTwo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\DisplaysAndMonitors\Display_CMSP.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\DisplaysAndMonitors\Display_Eight.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\DisplaysAndMonitors\Display_ILS_Khz.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\DisplaysAndMonitors\Display_ILS_Mhz.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\DisplaysAndMonitors\Display_Tacan.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\DisplaysAndMonitors\Display_VHF.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\DisplaysAndMonitors\Monitor04x08.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\DisplaysAndMonitors\Monitor10x24.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\DisplaysAndMonitors\Monitor10x24D.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Gauges\F5E\F5E_UHFPresetChannel.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Gauges\Displays\DisplayThree.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Gauges\Displays\DisplayTwo.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Gauges\Displays\DisplayOne.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Gauges\Displays\Display_Eight.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -1332,10 +1346,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Gauges\Displays\Display_Tacan.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Gauges\F5E\F5E-UHF.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -1352,15 +1362,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Gauges\Labels\Monitor04x08.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Page Include="Gauges\ButtonAndSwitches\RotaryWithPosition.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Gauges\ButtonAndSwitches\Switch_On_OFFON.xaml">
+    <Page Include="Gauges\ButtonAndSwitches\SwitchOn_OffOn.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -1456,23 +1462,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Gauges\Labels\Monitor10x24.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Gauges\Labels\Monitor10x24D.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Gauges\ButtonAndSwitches\ButtonPanelOffOn.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Gauges\ButtonAndSwitches\Switch_OnOFFOn.xaml">
+    <Page Include="Gauges\ButtonAndSwitches\SwitchOn_Off_On.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Gauges\ButtonAndSwitches\Switch_OFFOn.xaml">
+    <Page Include="Gauges\ButtonAndSwitches\SwitchOff_On.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -1732,10 +1730,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Gauges\BfK4\BfK4Gear.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Page Include="Gauges\BfK4\BfK4H2OT.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -1753,14 +1747,6 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Gauges\BfK4\BfK4RPM.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Gauges\BfK4\BfK4MG151Left.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Gauges\BfK4\BfK4MG151Right.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

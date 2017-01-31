@@ -84,7 +84,7 @@ namespace Ikarus
             SwitchDown.Height = bitmapHeight;
             SwitchDown.Width = bitmapWidth;
 
-            UpperRec.Height = bitmapHeight;
+            UpperRec.Height = bitmapHeight - 10;
             UpperRec.Width = bitmapWidth;
         }
 
@@ -183,10 +183,12 @@ namespace Ikarus
                 }
                 else
                 {
-                    SwitchUp.Visibility = System.Windows.Visibility.Hidden;
-                    SwitchDown.Visibility = System.Windows.Visibility.Visible;
-                    if (MainWindow.cockpitWindows.Count > panelID) MainWindow.cockpitWindows[panelID].Visibility = System.Windows.Visibility.Hidden;
-
+                    if (panelID > 0)
+                    {
+                        SwitchUp.Visibility = System.Windows.Visibility.Hidden;
+                        SwitchDown.Visibility = System.Windows.Visibility.Visible;
+                        if (MainWindow.cockpitWindows.Count > panelID) MainWindow.cockpitWindows[panelID].Visibility = System.Windows.Visibility.Hidden;
+                    }
                 }
             }
             catch { }

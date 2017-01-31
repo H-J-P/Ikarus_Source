@@ -77,8 +77,8 @@ namespace Ikarus
             LampOff.Height = bitmapHeight;
             LampOff.Width = bitmapWidth;
 
-            UpperRec.Height = bitmapHeight;
-            UpperRec.Width = bitmapWidth;
+            UpperRec.Height = bitmapHeight - 10;
+            UpperRec.Width = bitmapWidth - 10;
         }
 
         private void LoadBmaps()

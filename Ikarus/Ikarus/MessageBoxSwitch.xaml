@@ -189,10 +189,10 @@
             <ComboBoxItem Content="MultiSwitch" />
             <ComboBoxItem Content="Rotary" />
             <ComboBoxItem Content="SwitchOffOn" />
-            <ComboBoxItem Content="Switch_OFFOn" />
+            <ComboBoxItem Content="SwitchOff_On" />
             <ComboBoxItem Content="SwitchOnOffOn" />
-            <ComboBoxItem Content="Switch_OnOFFOn" />
-            <ComboBoxItem Content="Switch_OnOFFON" />
+            <ComboBoxItem Content="SwitchOn_Off_On" />
+            <ComboBoxItem Content="SwitchOn_OffOn" />
             <ComboBoxItem Content="SwitchPanelOffOn" />
         </ComboBox>
         <TextBox x:Name="Image2on"

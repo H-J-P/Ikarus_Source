@@ -802,6 +802,7 @@
                                   Margin="0,0,24,116"
                                   HorizontalAlignment="Right"
                                   VerticalAlignment="Bottom"
+                                  Checked="EditMode_Checked"
                                   Click="Checkbox_EditMode_Click"
                                   Content="Editor Mode"
                                   Foreground="#FFF9F9F9" />
@@ -958,7 +959,7 @@
                    Height="19"
                    Margin="466,0,488,10"
                    VerticalAlignment="Bottom"
-                   Content="(C) H.J.P. 2017  Version 0.9940"
+                   Content="(C) H.J.P. 2017  Version 0.9946"
                    Foreground="#FFD8BC05" />
             <Label Name="lbEditMode"
                    Width="72"

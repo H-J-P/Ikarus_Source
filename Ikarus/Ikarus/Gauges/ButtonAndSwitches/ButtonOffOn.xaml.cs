@@ -103,7 +103,7 @@ namespace Ikarus
             SwitchDown.Height = bitmapHeight;
             SwitchDown.Width = bitmapWidth;
 
-            UpperRec.Height = bitmapHeight;
+            UpperRec.Height = bitmapHeight - 10;
             UpperRec.Width = bitmapWidth;
         }
 
