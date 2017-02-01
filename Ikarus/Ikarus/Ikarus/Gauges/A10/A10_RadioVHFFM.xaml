@@ -1,0 +1,25 @@
+﻿<UserControl x:Class="Ikarus.A10_RadioVHFFM"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="102" d:DesignWidth="178" MouseWheel="Light_MouseWheel">
+    <Grid>
+        <Canvas x:Name="VHF2" HorizontalAlignment="Left" Height="102" UseLayoutRounding="False" VerticalAlignment="Top" Width="178">
+            <Canvas x:Name="background" Height="100.199" Canvas.Left="0" Canvas.Top="0" Width="177.601">
+                <Path Data="M9.641,0L167.959,0C173.263,0,177.601,4.338,177.601,9.641L177.601,90.559C177.601,95.861,173.263,100.199,167.959,100.199L9.641,100.199C4.338,100.199,0,95.861,0,90.559L0,9.641C0,4.338,4.338,0,9.641,0" Fill="#FF1A1A1A" Height="100.199" Canvas.Left="0" Canvas.Top="0" Width="177.601"/>
+                <Path Data="F1M5.739,14.81L0,0 2.125,0 5.973,10.76C6.284,11.621 6.542,12.431 6.75,13.183 6.98,12.377 7.246,11.568 7.549,10.76L11.549,0 13.55,0 7.75,14.81z" Fill="White" Height="14.81" Canvas.Left="60" Canvas.Top="72.094" Width="13.55"/>
+                <Path Data="F1M0,14.81L0,0 1.962,0 1.962,6.082 9.659,6.082 9.659,0 11.622,0 11.622,14.81 9.659,14.81 9.659,7.832 1.962,7.832 1.962,14.81z" Fill="White" Height="14.81" Canvas.Left="75.367" Canvas.Top="72.094" Width="11.622"/>
+                <Path Data="F1M0,14.81L0,0 9.993,0 9.993,1.748 1.961,1.748 1.961,6.334 8.91,6.334 8.91,8.082 1.961,8.082 1.961,14.81z" Fill="White" Height="14.81" Canvas.Left="90.352" Canvas.Top="72.094" Width="9.993"/>
+                <Path Data="F1M9.793,13.125L9.793,14.873 0.002,14.873C-0.012,14.436 0.058,14.016 0.213,13.612 0.461,12.942 0.861,12.287 1.409,11.639 1.961,10.994 2.754,10.246 3.789,9.397 5.399,8.076 6.489,7.031 7.055,6.26 7.62,5.49 7.903,4.76 7.903,4.073 7.903,3.352 7.645,2.744 7.131,2.248 6.613,1.756 5.94,1.508 5.113,1.508 4.237,1.508 3.537,1.77 3.013,2.297 2.485,2.821 2.22,3.549 2.213,4.477L0.344,4.287C0.472,2.891 0.954,1.828 1.789,1.096 2.623,0.365 3.748,0 5.154,0 6.575,0 7.699,0.397 8.527,1.184 9.358,1.973 9.772,2.949 9.772,4.114 9.772,4.707 9.651,5.291 9.406,5.864 9.165,6.436 8.762,7.039 8.199,7.67 7.638,8.305 6.703,9.174 5.396,10.278 4.307,11.194 3.606,11.815 3.296,12.143 2.985,12.467 2.73,12.795 2.526,13.125z" Fill="White" Height="14.873" Canvas.Left="107.667" Canvas.Top="72.031" Width="9.793"/>
+                <Path Data="M4.082,46.781L143.67,46.781C145.914,46.781,147.751,44.945,147.751,42.701L147.751,4.081C147.751,1.836,145.914,0,143.67,0L4.082,0C1.837,0,0,1.836,0,4.081L0,42.701C0,44.945,1.837,46.781,4.082,46.781" Fill="Black" Height="46.781" Canvas.Left="14.667" Canvas.Top="13.043" Width="147.751"/>
+                <Path Data="M4.436,0.354L144.025,0.354C146.269,0.354,148.106,2.19,148.106,4.435L148.106,43.054C148.106,45.3,146.269,47.136,144.025,47.136L4.436,47.136C2.191,47.136,0.355,45.3,0.355,43.054L0.355,4.435C0.355,2.19,2.191,0.354,4.436,0.354z" Height="47.491" Canvas.Left="14.828" Stroke="#FF1A1A1A" StrokeThickness="0.709" StrokeMiterLimit="22.926" Canvas.Top="13.161" Width="148.46"/>
+                <Path Data="M4.436,0.354L144.025,0.354C146.269,0.354,148.106,2.19,148.106,4.435L148.106,43.055C148.106,45.299,146.269,47.135,144.025,47.135L4.436,47.135C2.192,47.135,0.355,45.299,0.355,43.055L0.355,4.435C0.355,2.19,2.192,0.354,4.436,0.354z" Height="47.49" Canvas.Left="14.312" Stroke="Gray" StrokeThickness="0.709" StrokeMiterLimit="22.926" Canvas.Top="12.689" Width="148.46"/>
+            </Canvas>
+        </Canvas>
+        <TextBlock x:Name="Frequenz" TextWrapping="Wrap" Text="000.000" Margin="0,20,30,49" Foreground="#FFABF9AB" FontSize="24" FontFamily="LED Board-7" Width="118" HorizontalAlignment="Right" TextAlignment="Center" d:IsHidden="True"/>
+        <Image x:Name="Frame" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Height="102" Width="178" MouseWheel="Light_MouseWheel" />
+        <Image x:Name="Light" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Height="102" Width="178" MouseWheel="Light_MouseWheel" />
+    </Grid>
+</UserControl>
