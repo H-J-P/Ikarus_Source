@@ -2692,9 +2692,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Assets\background.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Assets\Logo_01.jpg" />
   </ItemGroup>
   <ItemGroup>

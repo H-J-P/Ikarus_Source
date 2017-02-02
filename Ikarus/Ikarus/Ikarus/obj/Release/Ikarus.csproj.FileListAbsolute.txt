@@ -2999,8 +2999,6 @@ C:\Users\uidf6927\Desktop\Ikarus_Source-master\Ikarus\Ikarus\obj\Release\Gauges\
 C:\Users\uidf6927\Desktop\Ikarus_Source-master\Ikarus\Ikarus\obj\Release\Gauges\Clipboard\Kneeboard.baml
 C:\Users\uidf6927\Desktop\Ikarus_Source-master\Ikarus\Ikarus\obj\Release\Gauges\DisplaysAndMonitors\Display_Tacan.baml
 E:\Projekte\Ikarus\Ikarus\Ikarus\bin\Release\Ikarus.exe.config
-E:\Projekte\Ikarus\Ikarus\Ikarus\obj\Release\Ikarus.exe
-E:\Projekte\Ikarus\Ikarus\Ikarus\obj\Release\Ikarus.pdb
 E:\Projekte\Ikarus\Ikarus\Ikarus\bin\Release\Ikarus.exe
 E:\Projekte\Ikarus\Ikarus\Ikarus\bin\Release\Ikarus.pdb
 E:\Projekte\Ikarus\Ikarus\Ikarus\obj\Release\Ikarus.csprojResolveAssemblyReference.cache
@@ -3728,3 +3726,5 @@ E:\Projekte\Ikarus\Ikarus\Ikarus\obj\Release\Instruments.baml
 E:\Projekte\Ikarus\Ikarus\Ikarus\obj\Release\Ikarus.g.resources
 E:\Projekte\Ikarus\Ikarus\Ikarus\obj\Release\Ikarus.Properties.Resources.resources
 E:\Projekte\Ikarus\Ikarus\Ikarus\obj\Release\Ikarus.csproj.GenerateResource.Cache
+E:\Projekte\Ikarus\Ikarus\Ikarus\obj\Release\Ikarus.exe
+E:\Projekte\Ikarus\Ikarus\Ikarus\obj\Release\Ikarus.pdb

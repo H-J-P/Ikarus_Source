@@ -203,10 +203,9 @@ namespace Ikarus
         {
             try
             {
-                //Switches switches = MainWindow.switches.Find(x => x.ID == Convert.ToInt32(dataImportID));
-
                 if (switches == null) return;
 
+                MainWindow.refeshPopup = true;
                 switches.value = output[_state];
                 switches.oldValue = _state == 1 ? output[0] : output[1];
                 switches.events = true;
@@ -290,7 +289,6 @@ namespace Ikarus
         private void UpperRec_MouseUp(object sender, MouseButtonEventArgs e)
         {
             e.Handled = true;
-
             SetValue(0);
             if (!MainWindow.editmode) ProzessHelper.SetFocusToExternalApp(MainWindow.processNameDCS);
         }

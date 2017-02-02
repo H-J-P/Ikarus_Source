@@ -3713,12 +3713,6 @@ E:\Dropbox\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Debug\Gauges\L39\L39-VVI_ft
 E:\Dropbox\Dropbox\Projects\Ikarus\Ikarus\Ikarus\obj\Debug\Gauges\Labels\Test.baml
 C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\bin\Debug\Ikarus.exe.CodeAnalysisLog.xml
 C:\Users\Heinz\Dropbox\Projects\Ikarus\Ikarus\Ikarus\bin\Debug\Ikarus.exe.lastcodeanalysissucceeded
-E:\Projekte\Ikarus\Ikarus\Ikarus\bin\Debug\Ikarus.exe.config
-E:\Projekte\Ikarus\Ikarus\Ikarus\obj\Debug\Ikarus.exe
-E:\Projekte\Ikarus\Ikarus\Ikarus\obj\Debug\Ikarus.pdb
-E:\Projekte\Ikarus\Ikarus\Ikarus\bin\Debug\Ikarus.exe
-E:\Projekte\Ikarus\Ikarus\Ikarus\bin\Debug\Ikarus.pdb
-E:\Projekte\Ikarus\Ikarus\Ikarus\obj\Debug\Ikarus.csprojResolveAssemblyReference.cache
 E:\Projekte\Ikarus\Ikarus\Ikarus\obj\Debug\Assets\DiscoveryYellow.baml
 E:\Projekte\Ikarus\Ikarus\Ikarus\obj\Debug\Gauges\A10\A10_Clock.baml
 E:\Projekte\Ikarus\Ikarus\Ikarus\obj\Debug\Gauges\A10\A10_CMSC.baml
@@ -4441,5 +4435,10 @@ E:\Projekte\Ikarus\Ikarus\Ikarus\obj\Debug\Gauges\L39\L39-ASI_kts.baml
 E:\Projekte\Ikarus\Ikarus\Ikarus\obj\Debug\Gauges\L39\L39-VVI_ft.baml
 E:\Projekte\Ikarus\Ikarus\Ikarus\obj\Debug\Instruments.baml
 E:\Projekte\Ikarus\Ikarus\Ikarus\obj\Debug\Ikarus.g.resources
+E:\Projekte\Ikarus\Ikarus\Ikarus\obj\Debug\Ikarus.pdb
+E:\Projekte\Ikarus\Ikarus\Ikarus\bin\Debug\Ikarus.exe.config
+E:\Projekte\Ikarus\Ikarus\Ikarus\bin\Debug\Ikarus.exe
+E:\Projekte\Ikarus\Ikarus\Ikarus\bin\Debug\Ikarus.pdb
 E:\Projekte\Ikarus\Ikarus\Ikarus\obj\Debug\Ikarus.Properties.Resources.resources
 E:\Projekte\Ikarus\Ikarus\Ikarus\obj\Debug\Ikarus.csproj.GenerateResource.Cache
+E:\Projekte\Ikarus\Ikarus\Ikarus\obj\Debug\Ikarus.exe

@@ -207,8 +207,6 @@ namespace Ikarus
                 trUsercontrol.Y += currentPoint.Y - originalPoint.Y;
 
                 moveThisElement.RenderTransform = trUsercontrol;
-
-                //MainWindow.cockpitWindows[windowID].UpdatePosition(PointToScreen(new System.Windows.Point(0, 0)), "ID", MainWindow.dtSwitches, dataImportID);
             };
         }
 
@@ -221,8 +219,6 @@ namespace Ikarus
         {
             try
             {
-                //Switches switches = MainWindow.switches.Find(x => x.ID == Convert.ToInt32(dataImportID));
-
                 if (switches == null) return;
 
                 //MainWindow.refeshPopup = true;

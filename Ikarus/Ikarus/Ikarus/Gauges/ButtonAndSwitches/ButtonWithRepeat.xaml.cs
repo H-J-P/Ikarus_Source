@@ -206,6 +206,8 @@ namespace Ikarus
 
                 if (switches == null) return;
 
+                MainWindow.refeshPopup = true;
+
                 switches.value = output[_state];
                 switches.oldValue = _state == 1 ? output[0] : output[1]; // Send 0.0 one time
                 switches.events = true;

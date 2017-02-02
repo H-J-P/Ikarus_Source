@@ -103,7 +103,7 @@ namespace Ikarus
             SwitchDown.Height = bitmapHeight;
             SwitchDown.Width = bitmapWidth;
 
-            UpperRec.Height = bitmapHeight - 10;
+            UpperRec.Height = bitmapHeight - 6;
             UpperRec.Width = bitmapWidth;
         }
 
@@ -197,6 +197,7 @@ namespace Ikarus
 
                 if (switches == null) return;
 
+                MainWindow.refeshPopup = true;
                 switches.value = output[_state];
                 switches.events = _event;
                 switches.dontReset = dontReset;
