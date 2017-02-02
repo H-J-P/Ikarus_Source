@@ -12,8 +12,6 @@ Ikarus/.DS_Store
 
 *.config
 
-*.vshost.exe
-
 /_DelSyncFiles/*
 
 /.vs/*
