@@ -11,4 +11,26 @@ Ikarus/Ikarus/.vs/Ikarus/v14/ (MacBookProHJP's conflicted copy 2016-12-08).suo
 
 Ikarus/Ikarus/.vs/Ikarus/v14/ (WIN-EHGOMFTU333s in Konflikt stehende Kopie 2016-11-21).suo
 
-_DelSyncFiles/*
+*.pdf
+
+*.psd
+
+*.dds
+
+.DS_Store
+
+Ikarus/Images/.DS_Store
+
+Ikarus/.DS_Store
+
+*.config
+
+*.vshost.exe
+
+/_DelSyncFiles/*
+
+/Backup/*
+
+Ikarus/Images/Backgounds/A10-Radios-Panel copy.png
+
+.com.greenworldsoft.syncfolderspro
