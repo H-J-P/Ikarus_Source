@@ -18,7 +18,6 @@ namespace Ikarus
     {
         private bool touchDown = false;
         private bool leftMousePressed = false;
-
         private double deltaRotate = 90;
         private double deltaScale = 0.025;
         private double diffX = 0.0;
@@ -53,13 +52,20 @@ namespace Ikarus
             InitializeComponent();
             Focusable = false;
 
-            // Checklists
+            // Load checklists
             pathToPicture = Environment.CurrentDirectory + "\\Kneeboards\\Mods\\" + MainWindow.readFile + "\\";
             LoadDirectoryInfo(pathToPicture);
             filenames.Sort();
 
-            // Airport charts
-            pathToPicture = Environment.CurrentDirectory + "\\Kneeboards\\AirportCharts\\Georgia\\";
+            // Load airport charts
+            if (MainWindow.map == "")
+            {
+                pathToPicture = Environment.CurrentDirectory + "\\Kneeboards\\AirportCharts\\CaucasusBase\\";
+            }
+            else
+            {
+                pathToPicture = Environment.CurrentDirectory + "\\Kneeboards\\AirportCharts\\" + MainWindow.map + "\\";
+            }
             LoadDirectoryInfo(pathToPicture);
 
             files = filenames.ToArray();
@@ -93,25 +99,28 @@ namespace Ikarus
 
         private void LoadDirectoryInfo(string pathToPicture)
         {
-            directoryInfo = new DirectoryInfo(pathToPicture);
-            try
+            if (Directory.Exists(pathToPicture))
             {
-                foreach (var file in directoryInfo.GetFiles("*.png"))
+                directoryInfo = new DirectoryInfo(pathToPicture);
+                try
                 {
-                    if (file.Name.IndexOf("._") == -1)
-                        filenames.Add(pathToPicture + file.Name);
+                    foreach (var file in directoryInfo.GetFiles("*.png"))
+                    {
+                        if (file.Name.IndexOf("._") == -1)
+                            filenames.Add(pathToPicture + file.Name);
+                    }
                 }
-            }
-            catch { }
-            try
-            {
-                foreach (var file in directoryInfo.GetFiles("*.jpg"))
+                catch { }
+                try
                 {
-                    if (file.Name.IndexOf("._") == -1)
-                        filenames.Add(pathToPicture + file.Name);
+                    foreach (var file in directoryInfo.GetFiles("*.jpg"))
+                    {
+                        if (file.Name.IndexOf("._") == -1)
+                            filenames.Add(pathToPicture + file.Name);
+                    }
                 }
+                catch { }
             }
-            catch { }
         }
 
         public void SetID(string _dataImportID)

@@ -11,7 +11,6 @@ using System.Windows.Data;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Threading;
-using System.Runtime.InteropServices;
 using System.Drawing.Imaging;
 
 namespace Ikarus
@@ -30,18 +29,26 @@ namespace Ikarus
         }
         public static State timerstate = State.startup;
 
-        public static List<Cockpit> cockpitWindows = new List<Cockpit> { };
-        public static List<Instrument> instruments = new List<Instrument> { };
-        public static List<Lamps> lamps = new List<Lamps> { };
-        public static List<Switches> switches = new List<Switches> { };
+        private static bool cleanupMemory = false;
+        public static bool cockpitWindowActiv = false;
+        public static bool dataLog = false;
+        public static bool detailLog = false;
+        public static bool editmode = false;
+        public static bool functionTabIsVisible = true;
+        public static bool getAllDscData = false;
+        public static bool initInstruments = true;
+        public static bool isRep = false;
+        public static bool lightsChecked = false;
+        private static bool lStateEnabled = true;
+        public static bool refreshCockpit = false;
+        public static bool refreshInstruments = false;
+        public static bool refeshPopup = false;
+        public static bool switchLog = false;
 
         public static System.Windows.Point cockpitKoord = new System.Windows.Point();
         public static CultureInfo cult = new CultureInfo("en-GB");
         //---------------------- D A T A B A S E ----------------------
         public static DataSet1 dsInstruments = new DataSet1();
-        public static bool cockpitWindowActiv = false;
-        public static bool refreshCockpit = false;
-        public static bool refreshInstruments = false;
         public static DataSet2 dsConfig = new DataSet2();
 
         public static DataTable dtConfig;
@@ -53,17 +60,10 @@ namespace Ikarus
         public static DataTable dtAccessories;
         public static DataTable dtClassnames;
         public static DataTable dtWindows;
-
-        //---------------------- D A C --------------------------------- 
+        //---------------------- D A C datas --------------------------------- 
         public static Masterdata dsMaster = new Masterdata();
         public static DataTable dtMasterLamps;
         public static DataTable dtMasterSwitches;
-
-        private static string background = "";
-        public static string dbFilename = "";
-        public static bool functionTabIsVisible = true;
-        private static string newline = Environment.NewLine;
-        public static string currentDirectory = Environment.CurrentDirectory;
 
         private static DataRowView rowView = null;
         private static DataRow[] dataRows = new DataRow[] { };
@@ -72,33 +72,22 @@ namespace Ikarus
         private static DataRow[] dataRowsMasterSwitches = new DataRow[] { };
         private static DataRow[] dataRowsSwitches = new DataRow[] { };
 
-        //private static int loopCounterSwitches = 0;
-        //private static int loopSwitches = 1; // 151
-        private static int selectedIndexSwitches = 0;
-        private static int selectedIndexLamps = 0;
-        private static int windowID = 0;
-        private static int logCount = 0;
-
-        private static bool lStateEnabled = true;
-        private static Thread udpThread = null;
-        private static string portListener = "";
-        public static string receivedData = "";
-        private static string[] receivedItems = new string[] { };
-        public static bool detailLog = false;
-        public static bool switchLog = false;
-        public static bool dataLog = false;
-        private static bool cleanupMemory = false;
-
-        public static string readFile = "";
-        private static string lastFile = "-";
-        private static string searchStringForFile = "File";
+        public static List<Cockpit> cockpitWindows = new List<Cockpit> { };
+        public static List<Instrument> instruments = new List<Instrument> { };
+        public static List<Lamps> lamps = new List<Lamps> { };
+        public static List<Switches> switches = new List<Switches> { };
         private static List<string> updateLamp = new List<string>();
         private static List<int> updateWindowID = new List<int>();
 
-        public static bool editmode = false;
+        private static Thread udpThread = null;
 
-        private static string package = "";
-
+        private static int cockpitRefreshLoopCounterMax = 1;
+        private static int cockpitRefreshLoopCounter = 0;
+        private static int dataStackSize = 0;
+        private static int dscDataLoopCounterMax = 15;
+        private static int getAllDscDataLoopCounter = 0;
+        private static int logCount = 0;
+        private static int renderTier = 0;
         private static int selectedInstrument = -1;
         private static int selectedFunction = -1;
         private static int selectedSwitch = -1;
@@ -106,29 +95,24 @@ namespace Ikarus
         private static int selectedTab = -1;
         private static int selectedAccessories = -1;
         private static int selectedWindows = -1;
-        private static int dataStackSize = 0;
+        private static int selectedIndexSwitches = 0;
+        private static int selectedIndexLamps = 0;
+        private static int windowID = 0;
+
+        private static string background = "";
+        public static string dbFilename = "";
+        private static string newline = Environment.NewLine;
+        public static string currentDirectory = Environment.CurrentDirectory;
+        private static string portListener = "";
+        public static string receivedData = "";
+        private static string[] receivedItems = new string[] { };
+        public static string readFile = "";
+        private static string lastFile = "-";
+        private static string searchStringForFile = "File";
         private static string lastSelectedInstrumentsClass = "";
-        private static int renderTier = 0;
+        public static string map = "";
+        private static string package = "";
         public static string processNameDCS = "DCS";
-        public static bool lightsChecked = false;
-        public static bool isRep = false;
-        public static bool getAllDscData = false;
-
-        private static int dscDataLoopCounterMax = 15;
-        private static int getAllDscDataLoopCounter = 0;
-        private static int cockpitRefreshLoopCounterMax = 1;
-        private static int cockpitRefreshLoopCounter = 0;
-
-        public static bool refeshPopup = false;
-        public static bool initInstruments = true;
-
-        //private static int timerMainLoop = 0;
-        //private static double flattening = 0.00025;
-
-        //private static readonly IntPtr HWND_TOPMOST = new IntPtr(-1);
-        //private const UInt32 SWP_NOSIZE = 0x0001;
-        //private const UInt32 SWP_NOMOVE = 0x0002;
-        //private const UInt32 TOPMOST_FLAGS = SWP_NOMOVE | SWP_NOSIZE;
 
         #endregion
 
@@ -422,6 +406,11 @@ namespace Ikarus
                                            }
                                            if (receivedData.IndexOf("2222=1.0") != -1) { Lights_IsChecked(true); }
                                            if (receivedData.IndexOf("2222=0.0") != -1) { Lights_IsChecked(false); }
+                                           if (receivedData.IndexOf("Map=") != -1)
+                                           {
+                                               map = receivedData.Substring(receivedData.IndexOf("=", 0) + 1).Trim();
+                                               ImportExport.LogMessage(map + " loaded");
+                                           }
                                        }
                                        UDP.receivedDataStack.Clear();
                                    }
@@ -600,8 +589,6 @@ namespace Ikarus
             //timerMainLoop--;
         }
         //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
-        //#region memberfunctions
 
         private void CockpitClose()
         {
