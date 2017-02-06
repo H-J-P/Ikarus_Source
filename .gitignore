@@ -10,6 +10,7 @@ Ikarus/.DS_Store
 
 *.config
 
+/_DelSyncFiles/
 /_DelSyncFiles/*
 
 /.vs/*
