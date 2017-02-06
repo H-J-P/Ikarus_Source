@@ -1,7 +1,5 @@
 *.pdf
-
 *.psd
-
 *.dds
 
 .DS_Store
@@ -15,6 +13,7 @@ Ikarus/.DS_Store
 /_DelSyncFiles/*
 
 /.vs/*
+/v14/*
 
 /Backup/*
 
