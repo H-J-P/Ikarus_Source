@@ -14,7 +14,7 @@ namespace Ikarus
             if (arrProcesses.Length > 0)
             {
                 IntPtr ipHwnd = arrProcesses[0].MainWindowHandle;
-                Thread.Sleep(100);
+                Thread.Sleep(10); // ms ??????
                 SetForegroundWindow(ipHwnd);
             }
         }

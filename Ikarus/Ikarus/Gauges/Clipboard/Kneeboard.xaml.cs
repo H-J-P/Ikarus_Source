@@ -273,6 +273,8 @@ namespace Ikarus
             transformGroup.Children.Add(rotateTransform);
 
             Picture.RenderTransform = transformGroup;
+
+            if (!MainWindow.editmode) ProzessHelper.SetFocusToExternalApp(MainWindow.processNameDCS);
         }
 
         #region Events
