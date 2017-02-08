@@ -9,7 +9,6 @@ Ikarus/Images/.DS_Store
 Ikarus/.DS_Store
 
 *.config
-
 _DelSyncFiles*/
 
 .vs*/
@@ -19,6 +18,22 @@ Backup*/
 
 .com.greenworldsoft.syncfolderspro
 
-*.log
-
 Log.png
+
+#Ignore files build by Visual Studio
+*.user
+*.aps
+*.pch
+*.vspscc
+*_i.c
+*_p.c
+*.ncb
+*.suo
+*.bak
+*.cache
+*.ilk
+*.log
+[Dd]ebug*/
+*.sbr
+obj/
+_ReSharper*/
