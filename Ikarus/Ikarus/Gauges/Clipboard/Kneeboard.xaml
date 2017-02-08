@@ -36,7 +36,14 @@
                Margin="0,0,0,0"
                HorizontalAlignment="Left"
                VerticalAlignment="Top"
-               MouseWheel="Light_MouseWheel" />
+               MouseLeftButtonDown="Picture_MouseLeftButtonDown"
+               MouseLeftButtonUp="Picture_MouseLeftButtonUp"
+               MouseMove="Picture_MouseMove"
+               MouseWheel="Picture_MouseWheel"
+               RenderTransformOrigin="0.5,0.5"
+               TouchDown="Picture_TouchDown"
+               TouchMove="Picture_TouchMove"
+               TouchUp="Picture_TouchUp" />
         <Rectangle x:Name="DesignFrame"
                    Width="768"
                    Height="1024"
