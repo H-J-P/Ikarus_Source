@@ -178,6 +178,7 @@ namespace Ikarus
                         {
                             ImportExport.XmlToDataSet(dbFilename, dsInstruments);
                             ImportExport.XmlToDataSet(dbFilename.Substring(0, dbFilename.LastIndexOf(".")) + ".xml", dsMaster);
+                            readFile = dbFilename.Substring(0, dbFilename.LastIndexOf("."));
                         }
                         else
                         {
@@ -399,6 +400,11 @@ namespace Ikarus
                                                ResetCockpit();
                                                break;
                                            }
+                                           if (receivedData.IndexOf("Map=") != -1)
+                                           {
+                                               GrabMap(ref receivedData);
+                                               ImportExport.LogMessage("Airport charts for map '" + map + "' loaded");
+                                           }
                                            if (receivedData.IndexOf(searchStringForFile) != -1)
                                            {
                                                CockpitLoad(ref receivedData);
@@ -406,11 +412,6 @@ namespace Ikarus
                                            }
                                            if (receivedData.IndexOf("2222=1.0") != -1) { Lights_IsChecked(true); }
                                            if (receivedData.IndexOf("2222=0.0") != -1) { Lights_IsChecked(false); }
-                                           if (receivedData.IndexOf("Map=") != -1)
-                                           {
-                                               map = receivedData.Substring(receivedData.IndexOf("=", 0) + 1).Trim();
-                                               ImportExport.LogMessage(map + " loaded");
-                                           }
                                        }
                                        UDP.receivedDataStack.Clear();
                                    }
@@ -677,6 +678,7 @@ namespace Ikarus
 
                     if (readFile.Length > 0 && readFile != lastFile)
                     {
+                        //string test = currentDirectory + "\\" + readFile + ".ikarus";
                         if (System.IO.File.Exists(currentDirectory + "\\" + readFile + ".ikarus"))
                         {
                             dbFilename = readFile + ".ikarus";
@@ -810,6 +812,20 @@ namespace Ikarus
             if (renderTier == 0) Tier.Text = "No graphics hardware acceleration";
             if (renderTier == 1) Tier.Text = "Partial grafics hardware acceleration";
             if (renderTier == 2) Tier.Text = "Hardware acceleration";
+        }
+
+        private static void GrabMap(ref string gotData)
+        {
+            string[] receivedItems = gotData.Split(':');
+
+            for (int n = 0; n < receivedItems.Length; n++)
+            {
+                if (receivedItems[n].IndexOf("Map=") != -1)
+                {
+                    map = receivedItems[n].Substring(receivedItems[n].IndexOf("=", 0) + 1);
+                    break;
+                }
+            }
         }
 
         private static bool GrabFile(string ID, ref string gotData)
@@ -1449,35 +1465,6 @@ namespace Ikarus
                     cockpitWindows[windowID].UpdateInstruments(dtInstruments.Rows[i]["IDInst"].ToString(), true);
             }
         }
-
-        //private void SortTables()
-        //{
-        //    try
-        //    {
-        //        dataRows = dsInstruments.Tables[0].Select("", "IDInst ASC");
-
-        //        if (dataRows.Length > 0)
-        //        {
-        //            dtInstruments = dataRows.CopyToDataTable();
-        //        }
-        //        else
-        //        {
-        //            dtInstruments = dsInstruments.Tables[0];
-        //        }
-
-        //        dataRows = dsInstruments.Tables[1].Select("", "IDInst ASC, IDFct ASC");
-
-        //        if (dataRows.Length > 0)
-        //        {
-        //            dtInstrumentFunctions = dataRows.CopyToDataTable();
-        //        }
-        //        else
-        //        {
-        //            dtInstrumentFunctions = dsInstruments.Tables[1];
-        //        }
-        //    }
-        //    catch (Exception e) { ImportExport.LogMessage("Startup problem .. " + e.ToString()); }
-        //}
 
         private void UpdateLog()
         {
@@ -2166,7 +2153,6 @@ namespace Ikarus
             {
                 switchLog = false;
             }
-
         }
 
         private void Grid_GotFocus(object sender, RoutedEventArgs e)
