@@ -10,15 +10,12 @@ Ikarus/.DS_Store
 
 *.config
 
-/_DelSyncFiles/
-/_DelSyncFiles/*
+_DelSyncFiles*/
 
-/.vs/
-/v14/
-/.vs/*
-/v14/*
+.vs*/
+v14*/
 
-/Backup/*
+Backup*/
 
 .com.greenworldsoft.syncfolderspro
 
