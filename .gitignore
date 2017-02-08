@@ -10,6 +10,7 @@ Ikarus/.DS_Store
 
 *.config
 _DelSyncFiles*/
+Blend.Interactivity.Wpf.1.0.1340.0*/
 
 .vs*/
 v14*/
