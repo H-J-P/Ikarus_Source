@@ -200,7 +200,6 @@ namespace Ikarus
                     bitmapImage.DecodePixelWidth = Convert.ToInt32(DesignFrame.Width);
 
                     Picture.Source = bitmapImage;
-                    //Picture.Stretch = Stretch.None;
                 }
             }
             catch { }
