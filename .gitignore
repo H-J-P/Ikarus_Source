@@ -11,6 +11,7 @@ Ikarus/.DS_Store
 *.config
 _DelSyncFiles*/
 Blend.Interactivity.Wpf.1.0.1340.0*/
+DiscoveryYellow.xaml
 
 .vs*/
 v14*/
