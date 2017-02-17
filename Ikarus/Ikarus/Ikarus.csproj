@@ -130,29 +130,14 @@
     <Compile Include="Gauges\Clipboard\Kneeboard.xaml.cs">
       <DependentUpon>Kneeboard.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Gauges\DisplaysAndMonitors\DisplayOne.xaml.cs">
-      <DependentUpon>DisplayOne.xaml</DependentUpon>
+    <Compile Include="Gauges\DisplaysAndMonitors\Display7Segment.xaml.cs">
+      <DependentUpon>Display7Segment.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Gauges\DisplaysAndMonitors\DisplaySix.xaml.cs">
-      <DependentUpon>DisplaySix.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Gauges\DisplaysAndMonitors\DisplayThree.xaml.cs">
-      <DependentUpon>DisplayThree.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Gauges\DisplaysAndMonitors\DisplayTwo.xaml.cs">
-      <DependentUpon>DisplayTwo.xaml</DependentUpon>
+    <Compile Include="Gauges\DisplaysAndMonitors\DisplayDotMatrix.xaml.cs">
+      <DependentUpon>DisplayDotMatrix.xaml</DependentUpon>
     </Compile>
     <Compile Include="Gauges\DisplaysAndMonitors\Display_CMSP.xaml.cs">
       <DependentUpon>Display_CMSP.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Gauges\DisplaysAndMonitors\Display_Eight.xaml.cs">
-      <DependentUpon>Display_Eight.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Gauges\DisplaysAndMonitors\Display_ILS_Khz.xaml.cs">
-      <DependentUpon>Display_ILS_Khz.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Gauges\DisplaysAndMonitors\Display_ILS_Mhz.xaml.cs">
-      <DependentUpon>Display_ILS_Mhz.xaml</DependentUpon>
     </Compile>
     <Compile Include="Gauges\DisplaysAndMonitors\Display_Tacan.xaml.cs">
       <DependentUpon>Display_Tacan.xaml</DependentUpon>
@@ -165,9 +150,6 @@
     </Compile>
     <Compile Include="Gauges\DisplaysAndMonitors\Monitor10x24.xaml.cs">
       <DependentUpon>Monitor10x24.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Gauges\DisplaysAndMonitors\Monitor10x24D.xaml.cs">
-      <DependentUpon>Monitor10x24D.xaml</DependentUpon>
     </Compile>
     <Compile Include="Gauges\F5E\F5E_UHFPresetChannel.xaml.cs">
       <DependentUpon>F5E_UHFPresetChannel.xaml</DependentUpon>
@@ -1210,35 +1192,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Gauges\DisplaysAndMonitors\DisplayOne.xaml">
+    <Page Include="Gauges\DisplaysAndMonitors\Display7Segment.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Gauges\DisplaysAndMonitors\DisplaySix.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Gauges\DisplaysAndMonitors\DisplayThree.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Gauges\DisplaysAndMonitors\DisplayTwo.xaml">
+    <Page Include="Gauges\DisplaysAndMonitors\DisplayDotMatrix.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Gauges\DisplaysAndMonitors\Display_CMSP.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Gauges\DisplaysAndMonitors\Display_Eight.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Gauges\DisplaysAndMonitors\Display_ILS_Khz.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Gauges\DisplaysAndMonitors\Display_ILS_Mhz.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -1255,10 +1217,6 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Gauges\DisplaysAndMonitors\Monitor10x24.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Gauges\DisplaysAndMonitors\Monitor10x24D.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
