@@ -130,6 +130,9 @@
     <Compile Include="Gauges\Clipboard\Kneeboard.xaml.cs">
       <DependentUpon>Kneeboard.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Gauges\DisplaysAndMonitors\Display.xaml.cs">
+      <DependentUpon>Display.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Gauges\DisplaysAndMonitors\Display7Segment.xaml.cs">
       <DependentUpon>Display7Segment.xaml</DependentUpon>
     </Compile>
@@ -1189,6 +1192,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Gauges\Clipboard\Kneeboard.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\DisplaysAndMonitors\Display.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

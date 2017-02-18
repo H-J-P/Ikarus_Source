@@ -17,12 +17,12 @@ namespace Ikarus
         private string dataImportID = "";
         private int windowID = 0;
         private string[] vals = new string[] { };
-        private const string font = "LED Board-7"; // Default Font
-        private const string defaultFontColor = "ABF9AB"; // Hexdezimal Color Value (Light Green)
+        private const string defaultFontColor = "F7F9F7"; // Hexdezimal Color Value
         private const string defaultErrorText = "ERROR";
         private string errorText = "";
-        private string fontColor = defaultFontColor; // Hexdezimal Color Value
-        private string numberChars = "5";  // Display with 5 chars
+        private string fontColor = defaultFontColor;
+        private string numberChars = "";
+        private int numberOfSegments = 1;
         private string displayText = "";
 
         public void SetWindowID(int _windowID) { windowID = _windowID; }
@@ -66,12 +66,8 @@ namespace Ikarus
                     }
                 }
 
-                int tmp = 0;
-                if (!int.TryParse(numberChars, out tmp))
-                {
-                    numberChars = "5";
-                }
-                errorText = "Init1";
+                if (!int.TryParse(numberChars, out numberOfSegments)) { numberOfSegments = 5; } 
+                //errorText = "Init1";
             }
             else
             {
@@ -80,16 +76,6 @@ namespace Ikarus
                 errorText = defaultErrorText;
             }
 
-            FontFamily fontFamily = new FontFamily(font);
-            string[] checkFontFamily = new string[1] { "" };
-            fontFamily.FamilyNames.Values.CopyTo(checkFontFamily, 0);
-
-            if (checkFontFamily[0] != font) // verify loaded font
-            {
-                Segments.FontFamily = new FontFamily("Courier New"); // switch to a default font
-                Segments.FontSize = 40;
-                Segments.Width = 24;
-            }
             Segments.Foreground = (SolidColorBrush)new BrushConverter().ConvertFromString("#FF" + fontColor);
 
             PathBackground.Width = PathBackground.Width + (Segments.Width * int.Parse(numberChars)) - Segments.Width;
@@ -109,7 +95,7 @@ namespace Ikarus
             string hx = "0123456789ABCDEF";
             foreach (char c in value.ToUpper())
             {
-                if (!hx.Contains(Char.ToString(c)))
+                if (!hx.Contains(char.ToString(c)))
                     return false;
             }
             return true;
