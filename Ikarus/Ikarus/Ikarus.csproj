@@ -241,6 +241,9 @@
     <Compile Include="Gauges\ButtonAndSwitches\SwitchOn_OffOn.xaml.cs">
       <DependentUpon>SwitchOn_OffOn.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Gauges\UH\UH1_RadioCompassIndicatorCopilot.xaml.cs">
+      <DependentUpon>UH1_RadioCompassIndicatorCopilot.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Gauges\US\US_ASI10.xaml.cs">
       <DependentUpon>US_ASI10.xaml</DependentUpon>
     </Compile>
@@ -1343,6 +1346,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Gauges\ButtonAndSwitches\SwitchOn_OffOn.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\UH\UH1_RadioCompassIndicatorCopilot.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

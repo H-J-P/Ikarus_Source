@@ -86,6 +86,20 @@
                     </Rectangle.RenderTransform>
                 </Rectangle>
             </Canvas>
+            <Canvas x:Name="RMI_Off_Flagg"
+                    Canvas.Left="186.047"
+                    Canvas.Top="172.072"
+                    Width="55.769"
+                    Height="72.08"
+                    RenderTransformOrigin="0.179,0.874">
+                <Path Canvas.Left="0"
+                      Canvas.Top="0"
+                      Width="55.769"
+                      Height="72.08"
+                      Data="M0,62.635C25.873,36.182,36.701,18.444,39.232,0L55.769,31.44 14.082,72.08z"
+                      Fill="#FFE8D43B"
+                      RenderTransformOrigin="0.251,0.874" />
+            </Canvas>
             <Canvas x:Name="front"
                     Canvas.Left="-0.016"
                     Canvas.Top="5.844"
@@ -4058,20 +4072,6 @@
                       Stroke="#FF666666"
                       StrokeMiterLimit="22.926"
                       StrokeThickness="0.283" />
-            </Canvas>
-            <Canvas x:Name="RMI_Off_Flagg"
-                    Canvas.Left="186.047"
-                    Canvas.Top="172.072"
-                    Width="55.769"
-                    Height="72.08"
-                    RenderTransformOrigin="0.179,0.874">
-                <Path Canvas.Left="0"
-                      Canvas.Top="0"
-                      Width="55.769"
-                      Height="72.08"
-                      Data="M0,62.635C25.873,36.182,36.701,18.444,39.232,0L55.769,31.44 14.082,72.08z"
-                      Fill="#FFE8D43B"
-                      RenderTransformOrigin="0.251,0.874" />
             </Canvas>
         </Canvas>
         <Image x:Name="Light"
