@@ -142,6 +142,12 @@
     <Compile Include="Gauges\DisplaysAndMonitors\Display_CMSP.xaml.cs">
       <DependentUpon>Display_CMSP.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Gauges\DisplaysAndMonitors\Display_ILS_Khz.xaml.cs">
+      <DependentUpon>Display_ILS_Khz.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\DisplaysAndMonitors\Display_ILS_Mhz.xaml.cs">
+      <DependentUpon>Display_ILS_Mhz.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Gauges\DisplaysAndMonitors\Display_Tacan.xaml.cs">
       <DependentUpon>Display_Tacan.xaml</DependentUpon>
     </Compile>
@@ -838,9 +844,6 @@
     <Compile Include="Gauges\UH\UH1_ADI.xaml.cs">
       <DependentUpon>UH1_ADI.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Gauges\UH\UH1_WhiskeyCompass.xaml.cs">
-      <DependentUpon>UH1_WhiskeyCompass.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Gauges\ButtonAndSwitches\SwitchOffOn.xaml.cs">
       <DependentUpon>SwitchOffOn.xaml</DependentUpon>
     </Compile>
@@ -1208,6 +1211,14 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Gauges\DisplaysAndMonitors\Display_CMSP.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\DisplaysAndMonitors\Display_ILS_Khz.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\DisplaysAndMonitors\Display_ILS_Mhz.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -2136,10 +2147,6 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Gauges\UH\UH1_ADI.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Gauges\UH\UH1_WhiskeyCompass.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

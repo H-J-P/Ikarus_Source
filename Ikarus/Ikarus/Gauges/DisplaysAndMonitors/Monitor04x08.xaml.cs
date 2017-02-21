@@ -121,7 +121,7 @@ namespace Ikarus
 
         public void SwitchLight(bool _on)
         {
-            //Light.Visibility = _on ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
+            Light.Visibility = _on ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
         }
 
         public void SetInput(string _input)
@@ -228,8 +228,6 @@ namespace Ikarus
                 trUsercontrol.X += currentPoint.X - originalPoint.X;
                 trUsercontrol.Y += currentPoint.Y - originalPoint.Y;
                 moveThisElement.RenderTransform = trUsercontrol;
-
-
             };
         }
 

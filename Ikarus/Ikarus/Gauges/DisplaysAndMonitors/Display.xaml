@@ -31,19 +31,16 @@
                   Stroke="Gray"
                   StrokeMiterLimit="22.926"
                   StrokeThickness="0.7" />
-            <TextBlock x:Name="Segments"
-                       Canvas.Left="5"
-                       Canvas.Top="3"
+        </Canvas>
+        <TextBlock x:Name="Segments"
                        Width="30"
-                       Height="51"
                        HorizontalAlignment="Right"
                        FontFamily="Courier New"
                        FontSize="48"
                        Foreground="#FFF7F9F7"
                        Text="H"
                        TextAlignment="Center"
-                       TextWrapping="Wrap" />
-        </Canvas>
+                       TextWrapping="Wrap" Margin="0,3,5,5" />
         <Image x:Name="Light"
                Width="40"
                Height="59"

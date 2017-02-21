@@ -32,9 +32,9 @@
                   StrokeMiterLimit="22.926"
                   StrokeThickness="0.7" />
             <TextBlock x:Name="Segments"
-                       Canvas.Left="10"
+                       Canvas.Left="8"
                        Canvas.Top="7"
-                       Width="20"
+                       Width="24"
                        Height="45"
                        HorizontalAlignment="Right"
                        FontFamily="LED Board-7"

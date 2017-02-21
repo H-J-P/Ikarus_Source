@@ -67,21 +67,26 @@ namespace Ikarus
                 }
 
                 if (!int.TryParse(numberChars, out numberOfSegments)) { numberOfSegments = 5; } 
-                //errorText = "Init1";
+                errorText = "Init1";
             }
             else
             {
                 fontColor = defaultFontColor;
-                numberChars = "5";
+                numberOfSegments = 5;
                 errorText = defaultErrorText;
             }
 
             Segments.Foreground = (SolidColorBrush)new BrushConverter().ConvertFromString("#FF" + fontColor);
 
-            PathBackground.Width = PathBackground.Width + (Segments.Width * int.Parse(numberChars)) - Segments.Width;
-            PathBorder.Width = PathBorder.Width + (Segments.Width * int.Parse(numberChars)) - Segments.Width;
-            this.Width = PathBackground.Width + Segments.Width / 2;
+            PathBackground.Width = PathBackground.Width + (Segments.Width * numberOfSegments);// - Segments.Width;
+            PathBorder.Width = PathBorder.Width + (Segments.Width * numberOfSegments);// - Segments.Width;
+            this.Width = PathBackground.Width + 12; //Segments.Width / 2;
             Segments.Width = PathBorder.Width;
+
+            //TextBlock[] textBlock = new TextBlock[10];
+            //textBlock[0].Text = "";
+
+            //textBlock = Segments;
 
             //this.UpdateLayout();
             //Display.UpdateLayout();
