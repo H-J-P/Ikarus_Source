@@ -23,11 +23,11 @@ namespace Ikarus
 
         double bank = 0.0;
         double pitch = 0.0;
-        double attitudeWarningFlag = 0.0;
+        double flagOff = 0.0;
 
         double lbank = 0.0;
         double lpitch = 0.0;
-        double lattitudeWarningFlag = 0.0;
+        double lFlagOff = 0.0;
 
         TransformGroup grp = new TransformGroup();
         RotateTransform rt = new RotateTransform();
@@ -39,13 +39,6 @@ namespace Ikarus
 
             if (MainWindow.editmode) MakeDraggable(this, this);
 
-            banksteering.Visibility = System.Windows.Visibility.Hidden;
-            pichsteering.Visibility = System.Windows.Visibility.Hidden;
-            SlipBallPosition.Visibility = System.Windows.Visibility.Hidden;
-            Turnindicator.Visibility = System.Windows.Visibility.Hidden;
-
-            Flagg_course_off.Visibility = System.Windows.Visibility.Hidden;
-            Flagg_glide_off.Visibility = System.Windows.Visibility.Hidden;
             Flagg_off.Visibility = System.Windows.Visibility.Visible;
         }
 
@@ -113,7 +106,7 @@ namespace Ikarus
 
                                if (vals.Length > 0) { bank = Convert.ToDouble(vals[0], CultureInfo.InvariantCulture); }
                                if (vals.Length > 1) { pitch = Convert.ToDouble(vals[1], CultureInfo.InvariantCulture); }
-                               if (vals.Length > 2) { attitudeWarningFlag = Convert.ToDouble(vals[2], CultureInfo.InvariantCulture); }
+                               if (vals.Length > 2) { flagOff = Convert.ToDouble(vals[2], CultureInfo.InvariantCulture); }
 
                                if (lbank != bank || lpitch != pitch)
                                {
@@ -129,11 +122,11 @@ namespace Ikarus
                                    Pitch.RenderTransform = grp;
                                    Bank.RenderTransform = rt;
                                }
-                               Flagg_off.Visibility = (attitudeWarningFlag > 0.8) ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
+                               Flagg_off.Visibility = (flagOff > 0.8) ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
 
                                lbank = bank;
                                lpitch = pitch;
-                               lattitudeWarningFlag = attitudeWarningFlag;
+                               lFlagOff = flagOff;
                            }
                            catch { return; };
                        }));
@@ -166,8 +159,6 @@ namespace Ikarus
                 trUsercontrol.X += currentPoint.X - originalPoint.X;
                 trUsercontrol.Y += currentPoint.Y - originalPoint.Y;
                 moveThisElement.RenderTransform = trUsercontrol;
-
-
             };
         }
 
