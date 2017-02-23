@@ -28,9 +28,14 @@ namespace Ikarus
         public Monitor04x08()
         {
             InitializeComponent();
+            DesignFrame.Visibility = System.Windows.Visibility.Hidden;
 
-            if (MainWindow.editmode) MakeDraggable(this, this);
-
+            if (MainWindow.editmode)
+            {
+                MakeDraggable(this, this);
+                DesignFrame.Visibility = System.Windows.Visibility.Visible;
+                DesignFrame.StrokeThickness = 3.0;
+            }
             Line1.Text = "";
             Line2.Text = "";
             Line3.Text = "";

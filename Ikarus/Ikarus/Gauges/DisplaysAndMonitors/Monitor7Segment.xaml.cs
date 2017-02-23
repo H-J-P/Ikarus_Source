@@ -19,10 +19,14 @@ namespace Ikarus
         private string dataImportID = "";
         private int windowID = 0;
         private string[] vals = new string[] { };
+
         private const string font = "Digital-7 Mono";
-        private const double fontSize = 10.1;
+        private double fontSize = 22;
+        private double lineWidth = 10.1;
+        private double lineHeight = 18;
         private const string defaultFontColor = "FF9430"; // Hexdezimal Color Value (Red)
-        private Boolean errorText = false;
+
+        private bool errorText = false;
         private string fontColor = defaultFontColor;
         private string numberCharsNumberLines = "";
         private int numberOfSegments = 1;
@@ -39,9 +43,14 @@ namespace Ikarus
         public Monitor7Segment()
         {
             InitializeComponent();
+            DesignFrame.Visibility = Visibility.Hidden;
 
-            if (MainWindow.editmode) MakeDraggable(this, this);
-
+            if (MainWindow.editmode)
+            {
+                MakeDraggable(this, this);
+                DesignFrame.Visibility = Visibility.Visible;
+                DesignFrame.StrokeThickness = 3.0;
+            }
             Line1.Text = "";
 
             codeChar[0] = 0x00BB;
@@ -103,9 +112,6 @@ namespace Ikarus
         private void InitialDisplay()
         {
             SolidColorBrush LineBackground = (SolidColorBrush)new BrushConverter().ConvertFromString("#00000000");
-            double fontSize = 22;
-            double lineWidth = 10.1;
-            double lineHeight = 18;
             Thickness myThickness = new Thickness(14,22,0,0);
 
             dataRows = MainWindow.dtInstrumentFunctions.Select("IDInst=" + dataImportID); // instrument functions
@@ -128,7 +134,7 @@ namespace Ikarus
                     }
                 }
 
-                string[] TmpSplit = numberCharsNumberLines.Split(new Char[] { ',' });
+                string[] TmpSplit = numberCharsNumberLines.Split(new char[] { ',' });
                 if (TmpSplit.Length == 2)
                 {
                     if (!int.TryParse(TmpSplit[0], out numberOfSegments))
@@ -179,6 +185,8 @@ namespace Ikarus
 
             this.Width = Frame.Width;
             this.Height = Frame.Height;
+            DesignFrame.Height = Frame.Height;
+            DesignFrame.Width = Frame.Width;
 
             if (numberOfLines > 1)
             {
@@ -248,7 +256,7 @@ namespace Ikarus
 
         public void SwitchLight(bool _on)
         {
-            //Light.Visibility = _on ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
+            Light.Visibility = _on ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
         }
 
         public void SetInput(string _input)
@@ -261,7 +269,7 @@ namespace Ikarus
 
         public double GetSize()
         {
-            return 290.0; // Width
+            return Frame.Width; // Width
         }
 
         public void UpdateGauge(string strData)

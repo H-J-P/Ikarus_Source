@@ -48,5 +48,12 @@
                VerticalAlignment="Top"
                MouseWheel="Light_MouseWheel"
                Stretch="Fill" />
+        <Rectangle x:Name="DesignFrame"
+            Width="54"
+            Height="64"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Fill="#00EEDB21"
+            Stroke="#FFF38501" />
     </Grid>
 </UserControl>

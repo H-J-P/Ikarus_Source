@@ -134,5 +134,12 @@
                VerticalAlignment="Top"
                MouseWheel="Light_MouseWheel"
                Stretch="Fill" />
+        <Rectangle x:Name="DesignFrame"
+            Width="260"
+            Height="190"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Fill="#00EEDB21"
+            Stroke="#FFF38501" Margin="15,15,0,0" />
     </Grid>
 </UserControl>
