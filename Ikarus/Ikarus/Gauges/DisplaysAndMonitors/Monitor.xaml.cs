@@ -109,9 +109,6 @@ namespace Ikarus
 
         private void InitialDisplay()
         {
-            SolidColorBrush LineBackground = (SolidColorBrush)new BrushConverter().ConvertFromString("#00000000");
-            Thickness myThickness = new Thickness(0,0,0,0);
-
             dataRows = MainWindow.dtInstrumentFunctions.Select("IDInst=" + dataImportID); // instrument functions
 
             if (dataRows.Length > 0)
@@ -182,17 +179,17 @@ namespace Ikarus
                 lineHeight = 19;
             }
 
-            SolidColorBrush LineForeground = (SolidColorBrush)new BrushConverter().ConvertFromString("#FF" + fontColor);
+            //SolidColorBrush lineForeground = (SolidColorBrush)new BrushConverter().ConvertFromString("#FF" + fontColor);
+            //SolidColorBrush lineBackground = (SolidColorBrush)new BrushConverter().ConvertFromString("#00000000");
+            Thickness thickness = new Thickness(0, 0, 0, 0);
 
             lineWidth = lineWidth * numberOfSegments;
             Light.Width = lineWidth;
-
             Light.Height = lineHeight * numberOfLines;
-
             this.Width = Light.Width;
             this.Height = Light.Height;
-            DesignFrame.Height = Light.Height;
             DesignFrame.Width = Light.Width;
+            DesignFrame.Height = Light.Height;
 
             if (numberOfLines > 0)
             {
@@ -200,18 +197,17 @@ namespace Ikarus
                 {
                     textBlockLines.Add(new TextBlock());
                     textBlockLines[i].Name = "Line_" + i.ToString();
-                    textBlockLines[i].Background = LineBackground;
-                    textBlockLines[i].Foreground = LineForeground;
+                    textBlockLines[i].Background = (SolidColorBrush)new BrushConverter().ConvertFromString("#00000000");
+                    textBlockLines[i].Foreground = (SolidColorBrush)new BrushConverter().ConvertFromString("#FF" + fontColor);
                     textBlockLines[i].FontFamily = fontFamily;
                     textBlockLines[i].FontSize = fontSize;
                     textBlockLines[i].Width = lineWidth;
                     textBlockLines[i].Height = lineHeight;
                     textBlockLines[i].VerticalAlignment = VerticalAlignment.Top;
-                    textBlockLines[i].Margin = myThickness;
+                    textBlockLines[i].Margin = thickness;
 
                     MonitorGrid.Children.Add(textBlockLines[i]);
-
-                    myThickness.Top = myThickness.Top + lineHeight;
+                    thickness.Top = thickness.Top + lineHeight;
                 }
             }
 
@@ -337,9 +333,7 @@ namespace Ikarus
 
                 currentPoint = ((System.Windows.Input.MouseEventArgs)b).GetPosition(moveThisElement);
                 trUsercontrol.X += currentPoint.X - originalPoint.X;
-
                 trUsercontrol.Y += currentPoint.Y - originalPoint.Y;
-
                 moveThisElement.RenderTransform = trUsercontrol;
             };
         }

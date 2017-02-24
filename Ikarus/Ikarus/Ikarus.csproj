@@ -157,12 +157,6 @@
     <Compile Include="Gauges\DisplaysAndMonitors\Monitor.xaml.cs">
       <DependentUpon>Monitor.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Gauges\DisplaysAndMonitors\Monitor04x08.xaml.cs">
-      <DependentUpon>Monitor04x08.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Gauges\DisplaysAndMonitors\Monitor10x24.xaml.cs">
-      <DependentUpon>Monitor10x24.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Gauges\DisplaysAndMonitors\Monitor7Segment.xaml.cs">
       <DependentUpon>Monitor7Segment.xaml</DependentUpon>
     </Compile>
@@ -1243,14 +1237,6 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Gauges\DisplaysAndMonitors\Monitor.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Gauges\DisplaysAndMonitors\Monitor04x08.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Gauges\DisplaysAndMonitors\Monitor10x24.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
