@@ -10,9 +10,9 @@ using System.Windows;
 namespace Ikarus
 {
     /// <summary>
-    /// Interaction logic for Monitor7Segment.xaml
+    /// Interaction logic for MonitorDotMatrix.xaml
     /// </summary>
-    public partial class Monitor7Segment : UserControl, I_Ikarus
+    public partial class MonitorDotMatrix : UserControl, I_Ikarus
     {
         private static string newline = Environment.NewLine;
         private DataRow[] dataRows = new DataRow[] { };
@@ -20,11 +20,11 @@ namespace Ikarus
         private int windowID = 0;
         private string[] vals = new string[] { };
 
-        private const string font = "Digital-7 Mono";
-        private double fontSize = 22;
-        private double lineWidth = 10.1;
-        private double lineHeight = 18;
-        private const string defaultFontColor = "FF9430"; // Hexdezimal Color Value (Red)
+        private const string font = "LED Board-7";
+        private double fontSize = 17;
+        private double lineWidth = 12.25;
+        private double lineHeight = 22.04;
+        private const string defaultFontColor = "ABF9AB"; // Hexdezimal Color Value (Light Green)
         private bool errorText = false;
         private string fontColor = defaultFontColor;
         private string numberCharsNumberLines = "";
@@ -39,7 +39,7 @@ namespace Ikarus
         public void SetWindowID(int _windowID) { windowID = _windowID; }
         public int GetWindowID() { return windowID; }
 
-        public Monitor7Segment()
+        public MonitorDotMatrix()
         {
             InitializeComponent();
             DesignFrame.Visibility = Visibility.Hidden;

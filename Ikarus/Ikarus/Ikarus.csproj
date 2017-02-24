@@ -154,6 +154,9 @@
     <Compile Include="Gauges\DisplaysAndMonitors\Display_VHF.xaml.cs">
       <DependentUpon>Display_VHF.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Gauges\DisplaysAndMonitors\Monitor.xaml.cs">
+      <DependentUpon>Monitor.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Gauges\DisplaysAndMonitors\Monitor04x08.xaml.cs">
       <DependentUpon>Monitor04x08.xaml</DependentUpon>
     </Compile>
@@ -162,6 +165,9 @@
     </Compile>
     <Compile Include="Gauges\DisplaysAndMonitors\Monitor7Segment.xaml.cs">
       <DependentUpon>Monitor7Segment.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\DisplaysAndMonitors\MonitorDotMatrix.xaml.cs">
+      <DependentUpon>MonitorDotMatrix.xaml</DependentUpon>
     </Compile>
     <Compile Include="Gauges\F5E\F5E_UHFPresetChannel.xaml.cs">
       <DependentUpon>F5E_UHFPresetChannel.xaml</DependentUpon>
@@ -1236,6 +1242,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Gauges\DisplaysAndMonitors\Monitor.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Gauges\DisplaysAndMonitors\Monitor04x08.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -1245,6 +1255,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Gauges\DisplaysAndMonitors\Monitor7Segment.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\DisplaysAndMonitors\MonitorDotMatrix.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
