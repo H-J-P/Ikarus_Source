@@ -25,6 +25,8 @@ namespace Ikarus
         private double lineWidth = 12.25;
         private double lineHeight = 22.04;
         private const string defaultFontColor = "ABF9AB"; // Hexdezimal Color Value (Light Green)
+        private Thickness thickness = new Thickness(0, 0, 0, 0);
+
         private bool errorText = false;
         private string fontColor = defaultFontColor;
         private string numberCharsNumberLines = "";
@@ -177,10 +179,6 @@ namespace Ikarus
                 lineWidth = 13.2;
                 lineHeight = 23.7;
             }
-
-            //SolidColorBrush lineForeground = (SolidColorBrush)new BrushConverter().ConvertFromString("#FF" + fontColor);
-            //SolidColorBrush lineBackground = (SolidColorBrush)new BrushConverter().ConvertFromString("#00000000");
-            Thickness thickness = new Thickness(0, 0, 0, 0);
 
             lineWidth = lineWidth * numberOfSegments;
             Light.Width = lineWidth;
