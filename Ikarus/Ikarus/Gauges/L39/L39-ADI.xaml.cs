@@ -12,7 +12,7 @@ namespace Ikarus
     /// <summary>
     /// Interaction logic for WPADI.xaml
     /// </summary>
-    public partial class WPADI : UserControl, I_Ikarus
+    public partial class L39_ADI : UserControl, I_Ikarus
     {
         private string dataImportID = "";
         private int windowID = 0;
@@ -24,8 +24,8 @@ namespace Ikarus
         double bank = 0.0;
         double pitch = 0.0;
         double sideslip = 0.0;
-        double steeringWarningFlag = 1.0; // Flag_L
-        double attitudeWarningFlag = 1.0; // Flag_R
+        double steeringWarningFlag = 1.0; // Flag_L/K
+        double attitudeWarningFlag = 1.0; // Flag_R/T
         double desiredBank = 0.0;
         double desirePitch = 0.0;
         double trackDeviation = 0.0;
@@ -34,8 +34,8 @@ namespace Ikarus
         double lbank = 0.0;
         double lpitch = 0.0;
         double lsideslip = 0.0;
-        double lsteeringWarningFlag = 1.0; // Flag_L
-        double lattitudeWarningFlag = 1.0; // Flag_R
+        double lsteeringWarningFlag = 1.0; // Flag_L/K
+        double lattitudeWarningFlag = 1.0; // Flag_R/T
         double ldesiredBank = 0.0;
         double ldesirePitch = 0.0;
         double ltrackDeviation = 0.0;
@@ -49,16 +49,16 @@ namespace Ikarus
         TranslateTransform ttHeightDeviation = new TranslateTransform();
         RotateTransform rtSideslip = new RotateTransform();
 
-        public WPADI()
+        public L39_ADI()
         {
             InitializeComponent();
 
             if (MainWindow.editmode) MakeDraggable(this, this);
 
-            Flag_L.Visibility = System.Windows.Visibility.Visible;
-            Flag_R.Visibility = System.Windows.Visibility.Visible;
-            Flag_K.Visibility = System.Windows.Visibility.Hidden;
-            Flag_T.Visibility = System.Windows.Visibility.Hidden;
+            Flag_L.Visibility = System.Windows.Visibility.Hidden;
+            Flag_R.Visibility = System.Windows.Visibility.Hidden;
+            Flag_K.Visibility = System.Windows.Visibility.Visible;
+            Flag_T.Visibility = System.Windows.Visibility.Visible;
         }
 
         public void SetID(string _dataImportID)
@@ -150,12 +150,12 @@ namespace Ikarus
                                }
 
                                if (lsteeringWarningFlag != steeringWarningFlag)
-                                    Flag_L.Visibility = (steeringWarningFlag > 0.9) ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
+                                   Flag_K.Visibility = (steeringWarningFlag > 0.9) ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
                                if (lattitudeWarningFlag != attitudeWarningFlag)
-                                    Flag_R.Visibility = (attitudeWarningFlag > 0.9) ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
+                                   Flag_T.Visibility = (attitudeWarningFlag > 0.9) ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
 
-                               Flag_K.Visibility = System.Windows.Visibility.Hidden;
-                               Flag_T.Visibility = System.Windows.Visibility.Hidden;
+                               //Flag_L.Visibility = System.Windows.Visibility.Hidden;
+                               //Flag_R.Visibility = System.Windows.Visibility.Hidden;
 
                                if (ldesiredBank != desiredBank)
                                {

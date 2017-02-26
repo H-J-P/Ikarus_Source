@@ -229,6 +229,9 @@
     <Compile Include="Gauges\F5E\F5E-UHF.xaml.cs">
       <DependentUpon>F5E-UHF.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Gauges\L39\L39-ADI.xaml.cs">
+      <DependentUpon>L39-ADI.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Gauges\Labels\Label.xaml.cs">
       <DependentUpon>Label.xaml</DependentUpon>
     </Compile>
@@ -1335,6 +1338,10 @@
     <Page Include="Gauges\F5E\F5E-UHF.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Gauges\L39\L39-ADI.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Gauges\Labels\Label.xaml">
       <Generator>MSBuild:Compile</Generator>
