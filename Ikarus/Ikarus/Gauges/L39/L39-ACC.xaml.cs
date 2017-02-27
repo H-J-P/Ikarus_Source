@@ -117,7 +117,7 @@ namespace Ikarus
                                }
                                if (lminG != minG)
                                {
-                                   rtMinG.Angle = minG *(226 + 112) - 112;
+                                   rtMinG.Angle = (minG *(226 + 112) - 112) * -1.0;
                                    MIN_G_needle.RenderTransform = rtMinG;
                                }
                                if (lmaxG != maxG)
@@ -160,8 +160,6 @@ namespace Ikarus
                 trUsercontrol.X += currentPoint.X - originalPoint.X;
                 trUsercontrol.Y += currentPoint.Y - originalPoint.Y;
                 moveThisElement.RenderTransform = trUsercontrol;
-
-
             };
         }
 
