@@ -180,8 +180,8 @@ namespace Ikarus
                                lbank = bank;
                                lpitch = pitch;
                                lsideslip = sideslip;
-                               lsteeringWarningFlag = steeringWarningFlag; // Flag_L
-                               lattitudeWarningFlag = attitudeWarningFlag; // Flag_R
+                               lsteeringWarningFlag = steeringWarningFlag; // Flag_K
+                               lattitudeWarningFlag = attitudeWarningFlag; // Flag_T
                                ldesiredBank = desiredBank;
                                ldesirePitch = desirePitch;
                                ltrackDeviation = trackDeviation;
@@ -218,8 +218,6 @@ namespace Ikarus
                 trUsercontrol.X += currentPoint.X - originalPoint.X;
                 trUsercontrol.Y += currentPoint.Y - originalPoint.Y;
                 moveThisElement.RenderTransform = trUsercontrol;
-
-
             };
         }
 

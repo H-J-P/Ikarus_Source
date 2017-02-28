@@ -140,8 +140,9 @@ namespace Ikarus
                                    rtBearingNeedle.Angle = bearingNeedle * 360;
                                    BearingPointer.RenderTransform = rtBearingNeedle;
                                }
-                               //Flagg_G.Visibility = warningFlagG > 0.8 ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
-                               //Flagg_K.Visibility = warningFlagK > 0.8 ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
+
+                               Flagg_G.Visibility = warningFlagG > 0.8 ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
+                               Flagg_K.Visibility = warningFlagK > 0.8 ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
 
                                if (lglide != glide)
                                {

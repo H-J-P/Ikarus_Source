@@ -154,8 +154,8 @@ namespace Ikarus
                                if (lattitudeWarningFlag != attitudeWarningFlag)
                                     Flag_R.Visibility = (attitudeWarningFlag > 0.9) ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
 
-                               Flag_K.Visibility = System.Windows.Visibility.Hidden;
-                               Flag_T.Visibility = System.Windows.Visibility.Hidden;
+                               //Flag_K.Visibility = System.Windows.Visibility.Hidden;
+                               //Flag_T.Visibility = System.Windows.Visibility.Hidden;
 
                                if (ldesiredBank != desiredBank)
                                {
