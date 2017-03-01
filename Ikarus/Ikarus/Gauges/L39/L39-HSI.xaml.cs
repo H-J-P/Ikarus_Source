@@ -141,8 +141,8 @@ namespace Ikarus
                                    BearingPointer.RenderTransform = rtBearingNeedle;
                                }
 
-                               Flagg_G.Visibility = warningFlagG > 0.8 ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
-                               Flagg_K.Visibility = warningFlagK > 0.8 ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
+                               Flagg_G.Visibility = warningFlagG > 0.3 ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
+                               Flagg_K.Visibility = warningFlagK > 0.3 ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
 
                                if (lglide != glide)
                                {
@@ -193,8 +193,6 @@ namespace Ikarus
                 trUsercontrol.X += currentPoint.X - originalPoint.X;
                 trUsercontrol.Y += currentPoint.Y - originalPoint.Y;
                 moveThisElement.RenderTransform = trUsercontrol;
-
-
             };
         }
 

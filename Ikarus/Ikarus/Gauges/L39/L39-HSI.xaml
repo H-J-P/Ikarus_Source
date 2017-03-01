@@ -34,30 +34,6 @@
                       StrokeMiterLimit="2.414"
                       StrokeThickness="0.216" />
             </Canvas>
-            <Canvas x:Name="Flagg_K"
-                    Canvas.Left="70"
-                    Canvas.Top="67"
-                    Width="8"
-                    Height="13">
-                <Path Canvas.Left="0"
-                      Canvas.Top="0"
-                      Width="7.725"
-                      Height="12.675"
-                      Data="M3.863,0C5.987,0,7.725,1.738,7.725,3.863L7.725,8.812C7.725,10.937 5.987,12.675 3.863,12.675 1.738,12.675 0,10.937 0,8.812L0,3.863C0,1.738,1.738,0,3.863,0"
-                      Fill="#FFCCCCCC" />
-            </Canvas>
-            <Canvas x:Name="Flagg_G"
-                    Canvas.Left="92"
-                    Canvas.Top="88"
-                    Width="8"
-                    Height="13">
-                <Path Canvas.Left="0"
-                      Canvas.Top="0"
-                      Width="7.726"
-                      Height="12.675"
-                      Data="M3.863,12.675C1.738,12.675,0,10.937,0,8.812L0,3.862C0,1.738 1.738,0 3.863,0 5.987,0 7.726,1.738 7.726,3.862L7.726,8.812C7.726,10.937,5.987,12.675,3.863,12.675"
-                      Fill="#FFCCCCCC" />
-            </Canvas>
             <Canvas x:Name="Heading"
                     Canvas.Left="27.82"
                     Canvas.Top="26.821"
@@ -1235,18 +1211,6 @@
                       Data="M3.983,0.139L3.963,0.722 0,0.583 0.02,0z"
                       Fill="White" />
             </Canvas>
-            <Canvas x:Name="Side"
-                    Canvas.Left="84.27"
-                    Canvas.Top="43.823"
-                    Width="1.458"
-                    Height="68.387">
-                <Path Canvas.Left="0"
-                      Canvas.Top="0"
-                      Width="1.458"
-                      Height="68.387"
-                      Data="M0,0L1.458,0 1.458,68.387 0,68.387z"
-                      Fill="#FFCCCCCC" />
-            </Canvas>
             <Canvas x:Name="dial"
                     Canvas.Left="10.936"
                     Canvas.Top="9.936"
@@ -1553,19 +1517,7 @@
                       Height="2.599"
                       Data="M1.299,0C2.017,0 2.598,0.582 2.598,1.299 2.598,2.017 2.017,2.599 1.299,2.599 0.582,2.599 0,2.017 0,1.299 0,0.582 0.582,0 1.299,0"
                       Fill="White" />
-                <Path Canvas.Left="19.483"
-                      Canvas.Top="17.389"
-                      Width="7.95"
-                      Height="13.045"
-                      Data="M3.975,0C6.161,0,7.95,1.789,7.95,3.975L7.95,9.069C7.95,11.256 6.161,13.045 3.975,13.045 1.788,13.045 0,11.256 0,9.069L0,3.975C0,1.789,1.788,0,3.975,0"
-                      Fill="#FF1A1A1A" />
-                <Path Canvas.Left="19.483"
-                      Canvas.Top="17.389"
-                      Width="7.95"
-                      Height="13.045"
-                      Data="M3.975,0C6.161,0,7.95,1.789,7.95,3.975L7.95,9.069C7.95,11.256 6.161,13.045 3.975,13.045 1.788,13.045 0,11.256 0,9.069L0,3.975C0,1.789,1.788,0,3.975,0"
-                      Fill="#FFCCCCCC" />
-                <Path Canvas.Left="19.792"
+                <Path Canvas.Left="19.791"
                       Canvas.Top="32.697"
                       Width="2.598"
                       Height="2.599"
@@ -1637,18 +1589,6 @@
                       Height="2.599"
                       Data="M0,1.299C0,0.581 0.582,0 1.3,0 2.017,0 2.6,0.581 2.6,1.299 2.6,2.017 2.017,2.599 1.3,2.599 0.582,2.599 0,2.017 0,1.299"
                       Fill="White" />
-                <Path Canvas.Left="40.559"
-                      Canvas.Top="37.558"
-                      Width="7.95"
-                      Height="13.045"
-                      Data="M3.974,13.045C1.788,13.045,0,11.256,0,9.071L0,3.976C0,1.79 1.788,0 3.974,0 6.161,0 7.95,1.79 7.95,3.976L7.95,9.071C7.95,11.256,6.161,13.045,3.974,13.045"
-                      Fill="#FF1A1A1A" />
-                <Path Canvas.Left="40.559"
-                      Canvas.Top="37.558"
-                      Width="7.95"
-                      Height="13.045"
-                      Data="M3.974,13.045C1.788,13.045,0,11.256,0,9.071L0,3.976C0,1.79 1.788,0 3.974,0 6.161,0 7.95,1.79 7.95,3.976L7.95,9.071C7.95,11.256,6.161,13.045,3.974,13.045"
-                      Fill="#FFCCCCCC" />
                 <Path Canvas.Left="45.601"
                       Canvas.Top="32.697"
                       Width="2.598"
@@ -1678,6 +1618,42 @@
                       Width="68.389"
                       Height="1.459"
                       Data="M0,0L68.389,0 68.389,1.459 0,1.459z"
+                      Fill="#FFCCCCCC" />
+            </Canvas>
+            <Canvas x:Name="Side"
+                    Canvas.Left="84.27"
+                    Canvas.Top="43.823"
+                    Width="1.458"
+                    Height="68.387">
+                <Path Canvas.Left="0"
+                      Canvas.Top="0"
+                      Width="1.458"
+                      Height="68.387"
+                      Data="M0,0L1.458,0 1.458,68.387 0,68.387z"
+                      Fill="#FFCCCCCC" />
+            </Canvas>
+            <Canvas x:Name="Flagg_K"
+                    Canvas.Left="70"
+                    Canvas.Top="67"
+                    Width="8"
+                    Height="13">
+                <Path Canvas.Left="0"
+                      Canvas.Top="0"
+                      Width="7.725"
+                      Height="12.675"
+                      Data="M3.863,0C5.987,0,7.725,1.738,7.725,3.863L7.725,8.812C7.725,10.937 5.987,12.675 3.863,12.675 1.738,12.675 0,10.937 0,8.812L0,3.863C0,1.738,1.738,0,3.863,0"
+                      Fill="#FFCCCCCC" />
+            </Canvas>
+            <Canvas x:Name="Flagg_G"
+                    Canvas.Left="92"
+                    Canvas.Top="88"
+                    Width="8"
+                    Height="13">
+                <Path Canvas.Left="0"
+                      Canvas.Top="0"
+                      Width="7.726"
+                      Height="12.675"
+                      Data="M3.863,12.675C1.738,12.675,0,10.937,0,8.812L0,3.862C0,1.738 1.738,0 3.863,0 5.987,0 7.726,1.738 7.726,3.862L7.726,8.812C7.726,10.937,5.987,12.675,3.863,12.675"
                       Fill="#FFCCCCCC" />
             </Canvas>
             <Canvas x:Name="RequiredHeading"
