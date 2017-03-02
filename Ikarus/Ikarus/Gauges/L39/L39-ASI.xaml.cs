@@ -132,10 +132,6 @@ namespace Ikarus
                        {
                            vals = strData.Split(';');
 
-                           // IAS / TAS {0.0, 1.0}                           { 0.0, 100.0, 150.0, 200.0, 300.0, 400.0, 500.0, 600.0, 700.0, 800.0, 1200.0 }
-                           //Double[] valueScale = new double[valueScaleIndex] { 0.0,  0.08, 0.186, 0.296, 0.436,  0.55, 0.635, 0.705, 0.765, 0.824, 1.0 };
-                           //Double[] degreeDial = new double[valueScaleIndex] {  10,  29.5,    69, 108.5,   157,   197,   225,   251, 272.5,   294, 360 };
-
                            try
                            {
                                if (vals.Length > 0) { ias = Convert.ToDouble(vals[0], CultureInfo.InvariantCulture); }
@@ -212,8 +208,6 @@ namespace Ikarus
                 trUsercontrol.X += currentPoint.X - originalPoint.X;
                 trUsercontrol.Y += currentPoint.Y - originalPoint.Y;
                 moveThisElement.RenderTransform = trUsercontrol;
-
-
             };
         }
 

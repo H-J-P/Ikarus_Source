@@ -168,16 +168,10 @@ namespace Ikarus
                                    TAS.RenderTransform = rtTAS;
                                }
 
-                               //if (mach == 0.0)
-                               //{
-                               //    rtMach.Angle = 90;
-                               //    MACH.RenderTransform = rtMach;
-                               //}
-
                                if (lmach != mach && mach > 0.4)
                                {
                                    mach = mach - 0.4;
-                                   rtMach.Angle = (mach * -220) + 11; // + 90;
+                                   rtMach.Angle = (mach * -220) + 11;
                                    MACH.RenderTransform = rtMach;
                                }
                                lias = ias;
@@ -215,8 +209,6 @@ namespace Ikarus
                 trUsercontrol.X += currentPoint.X - originalPoint.X;
                 trUsercontrol.Y += currentPoint.Y - originalPoint.Y;
                 moveThisElement.RenderTransform = trUsercontrol;
-
-
             };
         }
 

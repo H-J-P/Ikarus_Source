@@ -137,10 +137,6 @@ namespace Ikarus
                                if (vals.Length > 2) { warningFlag = Convert.ToDouble(vals[2], CultureInfo.InvariantCulture); }
                                if (vals.Length > 3) { dangerAltimeterLamp = Convert.ToDouble(vals[3], CultureInfo.InvariantCulture); }
 
-                               // RV_5_RALT.input				    = {0.0,	 20.0,	100.0,	700.0,	800.0}
-                               // RV_5_RALT.output					= {0.0,	0.086,	0.439,	0.878,	0.955}
-                               // °                                      0,    32,    150,    299,   330
-
                                if (lrAltimeter != rAltimeter)
                                {
                                    for (int n = 0; n < valueScaleIndex - 1; n++)
@@ -206,8 +202,6 @@ namespace Ikarus
                 trUsercontrol.X += currentPoint.X - originalPoint.X;
                 trUsercontrol.Y += currentPoint.Y - originalPoint.Y;
                 moveThisElement.RenderTransform = trUsercontrol;
-
-
             };
         }
 

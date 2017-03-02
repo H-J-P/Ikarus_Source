@@ -131,10 +131,6 @@ namespace Ikarus
                                if (vals.Length > 1) { sideslip = Convert.ToDouble(vals[1], CultureInfo.InvariantCulture); }
                                if (vals.Length > 2) { turn = Convert.ToDouble(vals[2], CultureInfo.InvariantCulture); }
 
-                               // Variometer.input			= {-80.0,	-50.0, -20.0,	-10.0,	0.0,	10.0,	20.0,	50.0,	80.0}
-                               // Variometer.output			= { -1.0,  -0.875, -0.775,	-0.44,	0.0,	0.44,	0.775,	0.875,	1.0}
-                               // °                             -173,    -152,   -135,    -75,  0.0,      75,     135,   152,   173     
-
                                if (lvvi != vvi)
                                {
                                    for (int n = 0; n < (valueScaleIndex - 1); n++)
@@ -194,8 +190,6 @@ namespace Ikarus
                 trUsercontrol.X += currentPoint.X - originalPoint.X;
                 trUsercontrol.Y += currentPoint.Y - originalPoint.Y;
                 moveThisElement.RenderTransform = trUsercontrol;
-
-
             };
         }
 
