@@ -163,6 +163,9 @@
     <Compile Include="Gauges\DisplaysAndMonitors\MonitorDotMatrix.xaml.cs">
       <DependentUpon>MonitorDotMatrix.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Gauges\Div\Alt_Pressure.xaml.cs">
+      <DependentUpon>Alt_Pressure.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Gauges\F5E\F5E_UHFPresetChannel.xaml.cs">
       <DependentUpon>F5E_UHFPresetChannel.xaml</DependentUpon>
     </Compile>
@@ -246,6 +249,72 @@
     </Compile>
     <Compile Include="Gauges\ButtonAndSwitches\SwitchOn_OffOn.xaml.cs">
       <DependentUpon>SwitchOn_OffOn.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\Spitfire\Spit_ADI.xaml.cs">
+      <DependentUpon>Spit_ADI.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\Spitfire\Spit_Alt.xaml.cs">
+      <DependentUpon>Spit_Alt.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\Spitfire\Spit_ASI.xaml.cs">
+      <DependentUpon>Spit_ASI.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\Spitfire\Spit_Boost.xaml.cs">
+      <DependentUpon>Spit_Boost.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\Spitfire\Spit_BrakeP.xaml.cs">
+      <DependentUpon>Spit_BrakeP.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\Spitfire\Spit_Clock.xaml.cs">
+      <DependentUpon>Spit_Clock.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\Spitfire\Spit_Compass.xaml.cs">
+      <DependentUpon>Spit_Compass.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\Spitfire\Spit_DirectionalGyro.xaml.cs">
+      <DependentUpon>Spit_DirectionalGyro.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\Spitfire\Spit_ElevTrim.xaml.cs">
+      <DependentUpon>Spit_ElevTrim.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\Spitfire\Spit_FS_WL.xaml.cs">
+      <DependentUpon>Spit_FS_WL.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\Spitfire\Spit_FuelP_WL.xaml.cs">
+      <DependentUpon>Spit_FuelP_WL.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\Spitfire\Spit_FuelQ.xaml.cs">
+      <DependentUpon>Spit_FuelQ.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\Spitfire\Spit_Gear.xaml.cs">
+      <DependentUpon>Spit_Gear.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\Spitfire\Spit_H2oT.xaml.cs">
+      <DependentUpon>Spit_H2oT.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\Spitfire\Spit_OilP.xaml.cs">
+      <DependentUpon>Spit_OilP.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\Spitfire\Spit_OilT.xaml.cs">
+      <DependentUpon>Spit_OilT.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\Spitfire\Spit_OxyP.xaml.cs">
+      <DependentUpon>Spit_OxyP.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\Spitfire\Spit_OxyQ.xaml.cs">
+      <DependentUpon>Spit_OxyQ.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\Spitfire\Spit_RPM.xaml.cs">
+      <DependentUpon>Spit_RPM.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\Spitfire\Spit_Turn.xaml.cs">
+      <DependentUpon>Spit_Turn.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\Spitfire\Spit_Volt.xaml.cs">
+      <DependentUpon>Spit_Volt.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\Spitfire\Spit_VVI.xaml.cs">
+      <DependentUpon>Spit_VVI.xaml</DependentUpon>
     </Compile>
     <Compile Include="Gauges\UH\UH1_RadioCompassIndicatorCopilot.xaml.cs">
       <DependentUpon>UH1_RadioCompassIndicatorCopilot.xaml</DependentUpon>
@@ -1251,6 +1320,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Gauges\Div\Alt_Pressure.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Gauges\F5E\F5E_UHFPresetChannel.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -1360,6 +1433,94 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Gauges\ButtonAndSwitches\SwitchOn_OffOn.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\Spitfire\Spit_ADI.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\Spitfire\Spit_Alt.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\Spitfire\Spit_ASI.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\Spitfire\Spit_Boost.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\Spitfire\Spit_BrakeP.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\Spitfire\Spit_Clock.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\Spitfire\Spit_Compass.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\Spitfire\Spit_DirectionalGyro.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\Spitfire\Spit_ElevTrim.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\Spitfire\Spit_FS_WL.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\Spitfire\Spit_FuelP_WL.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\Spitfire\Spit_FuelQ.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\Spitfire\Spit_Gear.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\Spitfire\Spit_H2oT.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\Spitfire\Spit_OilP.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\Spitfire\Spit_OilT.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\Spitfire\Spit_OxyP.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\Spitfire\Spit_OxyQ.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\Spitfire\Spit_RPM.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\Spitfire\Spit_Turn.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\Spitfire\Spit_Volt.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\Spitfire\Spit_VVI.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -3388,9 +3549,6 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Gauges\Div\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -44,7 +44,7 @@ namespace Ikarus
 
             RotateTransform rtpressure = new RotateTransform();
             rtpressure.Angle = -35;
-            Altimeter_Pressure.RenderTransform = rtpressure;
+            Pressure.RenderTransform = rtpressure;
 
         }
 
@@ -133,7 +133,7 @@ namespace Ikarus
                                if (lpressure != pressure)
                                {
                                    rtpressure.Angle = (pressure * -338) - 5;
-                                   Altimeter_Pressure.RenderTransform = rtpressure;
+                                   Pressure.RenderTransform = rtpressure;
                                }
                                lalt10000 = alt10000;
                                lalt1000 = alt1000;
