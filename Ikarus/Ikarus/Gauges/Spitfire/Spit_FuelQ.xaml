@@ -5,7 +5,8 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              x:Name="UserControl"
              d:DesignHeight="283"
-             d:DesignWidth="255" MouseWheel="Light_MouseWheel"
+             d:DesignWidth="255"
+             MouseWheel="Light_MouseWheel"
              mc:Ignorable="d">
 
     <Grid x:Name="LayoutRoot">
@@ -442,7 +443,8 @@
                     Canvas.Left="39.522"
                     Canvas.Top="43.83"
                     Width="100.058"
-                    Height="136.381" RenderTransformOrigin="0.874,0.081">
+                    Height="136.381"
+                    RenderTransformOrigin="0.874,0.081">
                 <Path Canvas.Left="0"
                       Canvas.Top="15.54"
                       Width="86.841"
@@ -463,7 +465,18 @@
                       Fill="#FF101010" />
             </Canvas>
         </Canvas>
-        <Image x:Name="Light" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Height="283" Width="255" MouseWheel="Light_MouseWheel" />
-        <Image x:Name="Frame" HorizontalAlignment="Left" VerticalAlignment="Top" Height="283" Width="255" MouseWheel="Light_MouseWheel" />
+        <Image x:Name="Light"
+               Width="255"
+               Height="283"
+               Margin="0,0,0,0"
+               HorizontalAlignment="Left"
+               VerticalAlignment="Top"
+               MouseWheel="Light_MouseWheel" />
+        <Image x:Name="Frame"
+               Width="255"
+               Height="283"
+               HorizontalAlignment="Left"
+               VerticalAlignment="Top"
+               MouseWheel="Light_MouseWheel" />
     </Grid>
 </UserControl>

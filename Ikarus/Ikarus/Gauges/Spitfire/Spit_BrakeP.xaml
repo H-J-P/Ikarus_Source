@@ -5,7 +5,8 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              x:Name="UserControl"
              d:DesignHeight="255"
-             d:DesignWidth="255" MouseWheel="Light_MouseWheel"
+             d:DesignWidth="255"
+             MouseWheel="Light_MouseWheel"
              mc:Ignorable="d">
 
     <Grid x:Name="LayoutRoot">
@@ -615,7 +616,8 @@
                     Canvas.Left="127.57"
                     Canvas.Top="148.291"
                     Width="31.493"
-                    Height="87.812" RenderTransformOrigin="0.222,0.08">
+                    Height="87.812"
+                    RenderTransformOrigin="0.222,0.08">
                 <Path Canvas.Left="0"
                       Canvas.Top="0"
                       Width="14.172"
@@ -639,7 +641,8 @@
                     Canvas.Left="15.932"
                     Canvas.Top="117.863"
                     Width="121.171"
-                    Height="23.529" RenderTransformOrigin="0.92,0.404">
+                    Height="23.529"
+                    RenderTransformOrigin="0.92,0.404">
                 <Path Canvas.Left="0"
                       Canvas.Top="5.981"
                       Width="109.305"
@@ -663,7 +666,8 @@
                     Canvas.Left="94.694"
                     Canvas.Top="7.96"
                     Width="60.564"
-                    Height="20.879" RenderTransformOrigin="0.532,5.723">
+                    Height="20.879"
+                    RenderTransformOrigin="0.532,5.723">
                 <Path Canvas.Left="-0.175"
                       Canvas.Top="-0.141"
                       Width="60.909"
@@ -693,7 +697,8 @@
                     Canvas.Left="95.765"
                     Canvas.Top="148.29"
                     Width="31.817"
-                    Height="87.714" RenderTransformOrigin="0.754,0.08">
+                    Height="87.714"
+                    RenderTransformOrigin="0.754,0.08">
                 <Path Canvas.Left="0"
                       Canvas.Top="8.33"
                       Width="26.255"

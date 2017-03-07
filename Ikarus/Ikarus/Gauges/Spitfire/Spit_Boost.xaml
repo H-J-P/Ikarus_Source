@@ -5,7 +5,8 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              x:Name="UserControl"
              d:DesignHeight="255"
-             d:DesignWidth="255" MouseWheel="Light_MouseWheel"
+             d:DesignWidth="255"
+             MouseWheel="Light_MouseWheel"
              mc:Ignorable="d">
 
     <Grid x:Name="LayoutRoot">

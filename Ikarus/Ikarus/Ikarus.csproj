@@ -277,17 +277,8 @@
     <Compile Include="Gauges\Spitfire\Spit_ElevTrim.xaml.cs">
       <DependentUpon>Spit_ElevTrim.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Gauges\Spitfire\Spit_FS_WL.xaml.cs">
-      <DependentUpon>Spit_FS_WL.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Gauges\Spitfire\Spit_FuelP_WL.xaml.cs">
-      <DependentUpon>Spit_FuelP_WL.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Gauges\Spitfire\Spit_FuelQ.xaml.cs">
       <DependentUpon>Spit_FuelQ.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Gauges\Spitfire\Spit_Gear.xaml.cs">
-      <DependentUpon>Spit_Gear.xaml</DependentUpon>
     </Compile>
     <Compile Include="Gauges\Spitfire\Spit_H2oT.xaml.cs">
       <DependentUpon>Spit_H2oT.xaml</DependentUpon>
@@ -1472,19 +1463,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Gauges\Spitfire\Spit_FS_WL.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Gauges\Spitfire\Spit_FuelP_WL.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Page Include="Gauges\Spitfire\Spit_FuelQ.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Gauges\Spitfire\Spit_Gear.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
