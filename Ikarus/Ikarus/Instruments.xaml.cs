@@ -173,6 +173,8 @@ namespace Ikarus
         {
             try
             {
+                if (classname == "-" || classname == "") return;
+
                 try
                 {
                     gaugeObjects.Add(Activator.CreateInstance(Type.GetType("Ikarus." + classname)));
