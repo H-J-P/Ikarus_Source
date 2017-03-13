@@ -267,11 +267,11 @@
                       Data="M0,1.179L0.157,0 10.862,1.434 10.705,2.614z"
                       Fill="#FF4D4D4D" />
             </Canvas>
-            <Canvas x:Name="C_Heading"
+            <Canvas x:Name="Heading"
                     Canvas.Left="41.535"
                     Canvas.Top="41.338"
                     Width="342.127"
-                    Height="342.127">
+                    Height="342.127" RenderTransformOrigin="0.5,0.5">
                 <Path Canvas.Left="-0.284"
                       Canvas.Top="-0.283"
                       Width="342.694"
@@ -1879,7 +1879,7 @@
                     Canvas.Left="79.589"
                     Canvas.Top="79.392"
                     Width="266.019"
-                    Height="266.019">
+                    Height="266.019" RenderTransformOrigin="0.5,0.5">
                 <Path Canvas.Left="0"
                       Canvas.Top="132.097"
                       Width="266.019"

@@ -43,7 +43,7 @@ namespace Ikarus
             if (MainWindow.editmode) MakeDraggable(this, this);
 
             rtpressure.Angle = -45;
-            Altimeter_Pressure.RenderTransform = rtpressure;
+            Pressure.RenderTransform = rtpressure;
 
         }
 
@@ -137,7 +137,7 @@ namespace Ikarus
                                if (lpressure != pressure)
                                {
                                    rtpressure.Angle = (pressure * -338) + -42;
-                                   Altimeter_Pressure.RenderTransform = rtpressure;
+                                   Pressure.RenderTransform = rtpressure;
                                }
                                lalt10000 = alt10000;
                                lalt1000 = alt1000;

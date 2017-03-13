@@ -17,10 +17,13 @@ namespace Ikarus
         private string dataImportID = "";
         private int windowID = 0;
         private string[] vals = new string[] { };
-        double pointer = 0.0;
-        double lpointer = 0.0;
+        private double heading = 0.0;
+        private double compass = 0.0;
+        private double lheading = 0.0;
+        private double lcompass = 0.0;
 
-        RotateTransform rtpointer = new RotateTransform();
+        private RotateTransform rtheading = new RotateTransform();
+        private RotateTransform rtcompass = new RotateTransform();
 
         public void SetWindowID(int _windowID) { windowID = _windowID; }
         public int GetWindowID() { return windowID; }
@@ -81,7 +84,7 @@ namespace Ikarus
 
         public double GetSize()
         {
-            return 255; // Width
+            return 425; // Width
         }
 
         public void UpdateGauge(string strData)
@@ -93,16 +96,22 @@ namespace Ikarus
                            {
                                vals = strData.Split(';');
 
-                               if (vals.Length > 0) { pointer = Convert.ToDouble(vals[0], CultureInfo.InvariantCulture); }
+                               if (vals.Length > 0) { heading = Convert.ToDouble(vals[0], CultureInfo.InvariantCulture); }
+                               if (vals.Length > 1) { compass = Convert.ToDouble(vals[1], CultureInfo.InvariantCulture); }
+                               //if (vals.Length > 2) { heading = Convert.ToDouble(vals[2], CultureInfo.InvariantCulture); }
 
-                               if (pointer < 0.0) { pointer = 0.0; }
-
-                               if (lpointer != pointer)
+                               if (lheading != heading)
                                {
-                                   rtpointer.Angle = pointer * 320;
-                                   C_Heading.RenderTransform = rtpointer;
+                                   rtheading.Angle = heading * 360;
+                                   Heading.RenderTransform = rtheading;
                                }
-                               lpointer = pointer;
+                               if (lcompass != compass)
+                               {
+                                   rtcompass.Angle = compass * 360;
+                                   Compass.RenderTransform = rtcompass;
+                               }
+                               lheading = heading;
+                               lcompass = compass;
                            }
                            catch { return; }
                        }));

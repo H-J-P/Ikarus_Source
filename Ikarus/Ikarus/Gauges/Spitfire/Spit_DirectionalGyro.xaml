@@ -20,7 +20,7 @@
                     Canvas.Left="-447.46"
                     Canvas.Top="60.28"
                     Width="1150.038"
-                    Height="64.407">
+                    Height="64.407" RenderTransformOrigin="0.5,0.5">
                 <Path Canvas.Left="0"
                       Canvas.Top="0"
                       Width="1150.038"

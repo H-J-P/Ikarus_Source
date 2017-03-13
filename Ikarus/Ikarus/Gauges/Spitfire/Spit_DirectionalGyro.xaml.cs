@@ -17,10 +17,11 @@ namespace Ikarus
         private string dataImportID = "";
         private int windowID = 0;
         private string[] vals = new string[] { };
-        double pointer = 0.0;
-        double lpointer = 0.0;
+        double heading = 0.0;
+        double lheading = 0.0;
 
-        RotateTransform rtpointer = new RotateTransform();
+        //RotateTransform rtpointer = new RotateTransform();
+        TranslateTransform ttHeading = new TranslateTransform();
 
         public void SetWindowID(int _windowID) { windowID = _windowID; }
         public int GetWindowID() { return windowID; }
@@ -93,16 +94,14 @@ namespace Ikarus
                            {
                                vals = strData.Split(';');
 
-                               if (vals.Length > 0) { pointer = Convert.ToDouble(vals[0], CultureInfo.InvariantCulture); }
+                               if (vals.Length > 0) { heading = Convert.ToDouble(vals[0], CultureInfo.InvariantCulture); }
 
-                               if (pointer < 0.0) { pointer = 0.0; }
-
-                               if (lpointer != pointer)
+                               if (lheading != heading)
                                {
-                                   rtpointer.Angle = pointer * 320;
-                                   Heading.RenderTransform = rtpointer;
+                                   ttHeading.X = heading * 418;
+                                   Heading.RenderTransform = ttHeading;
                                }
-                               lpointer = pointer;
+                               lheading = heading;
                            }
                            catch { return; }
                        }));
