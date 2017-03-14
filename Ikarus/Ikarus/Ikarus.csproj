@@ -166,6 +166,9 @@
     <Compile Include="Gauges\Div\Alt_Pressure.xaml.cs">
       <DependentUpon>Alt_Pressure.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Gauges\Div\Alt_Pressure_170.xaml.cs">
+      <DependentUpon>Alt_Pressure_170.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Gauges\F5E\F5E_UHFPresetChannel.xaml.cs">
       <DependentUpon>F5E_UHFPresetChannel.xaml</DependentUpon>
     </Compile>
@@ -1312,6 +1315,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Gauges\Div\Alt_Pressure.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\Div\Alt_Pressure_170.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

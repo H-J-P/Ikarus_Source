@@ -41,9 +41,9 @@ namespace Ikarus
         {
             InitializeComponent();
 
-            RotateTransform rtBaroPressure = new RotateTransform();
-            rtBaroPressure.Angle = -37;
-            Altimeter_Pressure.RenderTransform = rtBaroPressure;
+            //RotateTransform rtBaroPressure = new RotateTransform();
+            //rtBaroPressure.Angle = -37;
+            //Pressure.RenderTransform = rtBaroPressure;
 
             if (MainWindow.editmode) MakeDraggable(this, this);
         }
@@ -155,7 +155,7 @@ namespace Ikarus
                                            break;
                                        }
                                    }
-                                   Altimeter_Pressure.RenderTransform = rtBaroPressure;
+                                   Pressure.RenderTransform = rtBaroPressure;
                                }
                                laltituteKM = altituteKM;
                                laltituteMeter = altituteMeter;

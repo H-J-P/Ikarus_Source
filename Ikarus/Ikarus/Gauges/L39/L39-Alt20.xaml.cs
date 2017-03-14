@@ -38,8 +38,8 @@ namespace Ikarus
             InitializeComponent();
             if (MainWindow.editmode) MakeDraggable(this, this);
 
-            rtBaroPressure.Angle = -37;
-            Altimeter_Pressure.RenderTransform = rtBaroPressure;
+            //rtBaroPressure.Angle = -37;
+            //Pressure.RenderTransform = rtBaroPressure;
         }
 
         public void SetID(string _dataImportID)
@@ -125,8 +125,9 @@ namespace Ikarus
 
                                if (lbaroPressure != baroPressure)
                                {
-                                   rtBaroPressure.Angle = (baroPressure * -373) - 37;
-                                   Altimeter_Pressure.RenderTransform = rtBaroPressure;
+                                   //rtBaroPressure.Angle = (baroPressure * -373) - 37;
+                                   rtBaroPressure.Angle = (baroPressure * -360);
+                                   Pressure.RenderTransform = rtBaroPressure;
                                }
                                laltituteKmNeedle = altituteKmNeedle;
                                laltituteMeterNeedle = altituteMeterNeedle;

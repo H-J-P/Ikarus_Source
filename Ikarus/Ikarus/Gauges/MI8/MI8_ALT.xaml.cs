@@ -122,8 +122,8 @@ namespace Ikarus
                                }
                                if (lvd10KL10Press != vd10KL10Press)
                                {
-                                   rtvd10KL10Press.Angle = (vd10KL10Press * -360) + 5;
-                                   VD_10K_L_PRESS.RenderTransform = rtvd10KL10Press;
+                                   rtvd10KL10Press.Angle = (vd10KL10Press * -360); // + 5;
+                                   Pressure.RenderTransform = rtvd10KL10Press;
                                }
                                lvd10KL100Ind = vd10KL100Ind;
                                lvd10KL10Ind = vd10KL10Ind;
