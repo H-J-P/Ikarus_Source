@@ -95,11 +95,8 @@ namespace Ikarus
                            {
                                vals = strData.Split(';');
 
-                               if (vals.Length > 0) { turn = Convert.ToDouble(vals[0], CultureInfo.InvariantCulture); }
                                if (vals.Length > 0) { slip = Convert.ToDouble(vals[0], CultureInfo.InvariantCulture); }
-
-                               if (turn < 0.0) { turn = 0.0; }
-                               if (slip < 0.0) { slip = 0.0; }
+                               if (vals.Length > 1) { turn = Convert.ToDouble(vals[1], CultureInfo.InvariantCulture); }
 
                                if (lturn != turn)
                                {
@@ -108,7 +105,7 @@ namespace Ikarus
                                }
                                if (lslip != slip)
                                {
-                                   rtslip.Angle = slip * 45;
+                                   rtslip.Angle = slip * 33;
                                    Slip.RenderTransform = rtslip;
                                }
                                lturn = turn;

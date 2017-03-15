@@ -100,7 +100,6 @@ namespace Ikarus
                                if (vals.Length > 0) { pitch = Convert.ToDouble(vals[0], CultureInfo.InvariantCulture); }
                                if (vals.Length > 1) { roll = Convert.ToDouble(vals[1], CultureInfo.InvariantCulture); }
 
-                               if (pitch < 0.0) { pitch = 0.0; }
 
                                if (lpitch != pitch || lroll != roll)
                                {
@@ -108,7 +107,7 @@ namespace Ikarus
                                    rt = new RotateTransform();
                                    tt = new TranslateTransform();
 
-                                   tt.Y = pitch * 340;
+                                   tt.Y = pitch * 78;
                                    rt.Angle = roll * 180;
                                    grp.Children.Add(tt);
                                    grp.Children.Add(rt);

@@ -21,6 +21,8 @@ namespace Ikarus
         private double compass = 0.0;
         private double lheading = 0.0;
         private double lcompass = 0.0;
+        private double roll = 0.0;
+        private double pitch = 0.0;
 
         private RotateTransform rtheading = new RotateTransform();
         private RotateTransform rtcompass = new RotateTransform();
@@ -96,22 +98,16 @@ namespace Ikarus
                            {
                                vals = strData.Split(';');
 
-                               if (vals.Length > 0) { heading = Convert.ToDouble(vals[0], CultureInfo.InvariantCulture); }
-                               if (vals.Length > 1) { compass = Convert.ToDouble(vals[1], CultureInfo.InvariantCulture); }
-                               //if (vals.Length > 2) { heading = Convert.ToDouble(vals[2], CultureInfo.InvariantCulture); }
+                               if (vals.Length > 0) { roll = Convert.ToDouble(vals[0], CultureInfo.InvariantCulture); }
+                               if (vals.Length > 1) { pitch = Convert.ToDouble(vals[1], CultureInfo.InvariantCulture); }
+                               if (vals.Length > 2) { heading = Convert.ToDouble(vals[2], CultureInfo.InvariantCulture); }
 
                                if (lheading != heading)
                                {
                                    rtheading.Angle = heading * 360;
                                    Heading.RenderTransform = rtheading;
                                }
-                               if (lcompass != compass)
-                               {
-                                   rtcompass.Angle = compass * 360;
-                                   Compass.RenderTransform = rtcompass;
-                               }
                                lheading = heading;
-                               lcompass = compass;
                            }
                            catch { return; }
                        }));

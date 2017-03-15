@@ -1,4 +1,4 @@
-﻿<Window x:Class="Ikarus.MainWindow"                                              
+﻿<Window x:Class="Ikarus.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -959,7 +959,7 @@
                    Height="19"
                    Margin="466,0,488,10"
                    VerticalAlignment="Bottom"
-                   Content="(C) H.J.P. 2017  Version 0.9963"
+                   Content="(C) H.J.P. 2017  Version 0.9964"
                    Foreground="#FFD8BC05" />
             <Label Name="lbEditMode"
                    Width="72"

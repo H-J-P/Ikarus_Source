@@ -1709,7 +1709,7 @@
                 Canvas.Left="14.114"
                 Canvas.Top="14.114"
                 Width="226.771"
-                Height="226.772">
+                Height="226.772" RenderTransformOrigin="0.5,0.5">
                 <Path Canvas.Left="-0.108"
                     Canvas.Top="-0.108"
                     Width="226.987"

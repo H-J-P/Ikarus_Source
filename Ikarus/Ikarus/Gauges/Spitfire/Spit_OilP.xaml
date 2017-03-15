@@ -169,7 +169,7 @@
                       Fill="White" />
             </Canvas>
         </Canvas>
-        <Canvas x:Name="Oil_P" Margin="23,192,70,54">
+        <Canvas x:Name="Oil_P" Margin="23,192,70,54" RenderTransformOrigin="0.5,0.5">
             <Path Canvas.Left="0"
                   Canvas.Top="0"
                   Width="33.669"

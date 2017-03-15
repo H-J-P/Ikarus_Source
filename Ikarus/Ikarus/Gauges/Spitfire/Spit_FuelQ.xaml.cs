@@ -9,11 +9,14 @@ using System.Windows.Threading;
 
 namespace Ikarus
 {
-	/// <summary>
-	/// Interaction logic for Spit_FuelQ.xaml
-	/// </summary>
-	public partial class Spit_FuelQ : UserControl, I_Ikarus
+    /// <summary>
+    /// Interaction logic for Spit_FuelQ.xaml
+    /// </summary>
+    public partial class Spit_FuelQ : UserControl, I_Ikarus
     {
+        private double[] valueScale = new double[] { };
+        private double[] degreeDial = new double[] { };
+        int valueScaleIndex = 0;
         private string dataImportID = "";
         private int windowID = 0;
         private string[] vals = new string[] { };
@@ -26,8 +29,8 @@ namespace Ikarus
         public int GetWindowID() { return windowID; }
 
         public Spit_FuelQ()
-		{
-			this.InitializeComponent();
+        {
+            this.InitializeComponent();
             if (MainWindow.editmode) MakeDraggable(this, this);
         }
 
@@ -73,10 +76,31 @@ namespace Ikarus
 
         public void SetInput(string _input)
         {
+            string[] vals = _input.Split(',');
+
+            if (vals.Length < 3) return;
+
+            valueScale = new double[vals.Length];
+
+            for (int i = 0; i < vals.Length; i++)
+            {
+                valueScale[i] = Convert.ToDouble(vals[i], CultureInfo.InvariantCulture);
+            }
+            valueScaleIndex = vals.Length;
         }
 
         public void SetOutput(string _output)
         {
+            string[] vals = _output.Split(',');
+
+            if (vals.Length < 3) return;
+
+            degreeDial = new double[vals.Length];
+
+            for (int i = 0; i < vals.Length; i++)
+            {
+                degreeDial[i] = Convert.ToDouble(vals[i], CultureInfo.InvariantCulture);
+            }
         }
 
         public double GetSize()
@@ -95,11 +119,16 @@ namespace Ikarus
 
                                if (vals.Length > 0) { pointer = Convert.ToDouble(vals[0], CultureInfo.InvariantCulture); }
 
-                               if (pointer < 0.0) { pointer = 0.0; }
-
                                if (lpointer != pointer)
                                {
-                                   rtpointer.Angle = pointer * -68;
+                                   for (int n = 0; n < valueScaleIndex - 1; n++)
+                                   {
+                                       if (pointer > valueScale[n] && pointer <= valueScale[n + 1])
+                                       {
+                                           rtpointer.Angle = -1 * (degreeDial[n] - degreeDial[n + 1]) / (valueScale[n] - valueScale[n + 1]) * (pointer - valueScale[n]) + degreeDial[n];
+                                           break;
+                                       }
+                                   }
                                    fuel_quant.RenderTransform = rtpointer;
                                }
                                lpointer = pointer;

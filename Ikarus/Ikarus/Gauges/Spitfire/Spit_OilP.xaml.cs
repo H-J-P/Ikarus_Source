@@ -20,7 +20,7 @@ namespace Ikarus
         double pointer = 0.0;
         double lpointer = 0.0;
 
-        RotateTransform rtpointer = new RotateTransform();
+        TranslateTransform ttpointer = new TranslateTransform();
 
         public void SetWindowID(int _windowID) { windowID = _windowID; }
         public int GetWindowID() { return windowID; }
@@ -99,8 +99,8 @@ namespace Ikarus
 
                                if (lpointer != pointer)
                                {
-                                   rtpointer.Angle = pointer * 320;
-                                   Oil_P.RenderTransform = rtpointer;
+                                   ttpointer.Y = pointer * -140;
+                                   Oil_P.RenderTransform = ttpointer;
                                }
                                lpointer = pointer;
                            }

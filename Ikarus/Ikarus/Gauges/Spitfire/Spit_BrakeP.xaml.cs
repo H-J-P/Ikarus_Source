@@ -100,9 +100,9 @@ namespace Ikarus
                            {
                                vals = strData.Split(';');
 
-                               if (vals.Length > 0) { port = Convert.ToDouble(vals[0], CultureInfo.InvariantCulture); }
-                               if (vals.Length > 1) { starb = Convert.ToDouble(vals[1], CultureInfo.InvariantCulture); }
-                               if (vals.Length > 2) { supply = Convert.ToDouble(vals[2], CultureInfo.InvariantCulture); }
+                               if (vals.Length > 0) { supply = Convert.ToDouble(vals[0], CultureInfo.InvariantCulture); }
+                               if (vals.Length > 1) { port = Convert.ToDouble(vals[1], CultureInfo.InvariantCulture); }
+                               if (vals.Length > 2) { starb = Convert.ToDouble(vals[2], CultureInfo.InvariantCulture); }
 
                                if (port < 0.0) { port = 0.0; }
                                if (starb < 0.0) { starb = 0.0; }
@@ -110,17 +110,17 @@ namespace Ikarus
 
                                if (lport != port)
                                {
-                                   rtport.Angle = port * 320;
+                                   rtport.Angle = port * 143;
                                    Port.RenderTransform = rtport;
                                }
                                if (lstarb != starb)
                                {
-                                   rtstaff.Angle = starb * 320;
+                                   rtstaff.Angle = starb * -143;
                                    Starb.RenderTransform = rtstaff;
                                }
                                if (lsupply != supply)
                                {
-                                   rtsupply.Angle = supply * 320;
+                                   rtsupply.Angle = supply * 188;
                                    Supply.RenderTransform = rtsupply;
                                }
                                lport = port;

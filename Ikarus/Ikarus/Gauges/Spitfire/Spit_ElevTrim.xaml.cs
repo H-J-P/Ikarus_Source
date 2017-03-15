@@ -96,8 +96,6 @@ namespace Ikarus
 
                                if (vals.Length > 0) { pointer = Convert.ToDouble(vals[0], CultureInfo.InvariantCulture); }
 
-                               if (pointer < 0.0) { pointer = 0.0; }
-
                                if (lpointer != pointer)
                                {
                                    rtpointer.Angle = pointer * 35;

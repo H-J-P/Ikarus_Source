@@ -28,6 +28,10 @@ namespace Ikarus
         public Spit_Boost()
 		{
 			this.InitializeComponent();
+
+            rtpointer.Angle =  - 71;
+            Boost.RenderTransform = rtpointer;
+
             if (MainWindow.editmode) MakeDraggable(this, this);
         }
 

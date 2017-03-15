@@ -163,12 +163,6 @@
     <Compile Include="Gauges\DisplaysAndMonitors\MonitorDotMatrix.xaml.cs">
       <DependentUpon>MonitorDotMatrix.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Gauges\Div\Alt_Pressure.xaml.cs">
-      <DependentUpon>Alt_Pressure.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Gauges\Div\Alt_Pressure_170.xaml.cs">
-      <DependentUpon>Alt_Pressure_170.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Gauges\F5E\F5E_UHFPresetChannel.xaml.cs">
       <DependentUpon>F5E_UHFPresetChannel.xaml</DependentUpon>
     </Compile>
@@ -1311,14 +1305,6 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Gauges\DisplaysAndMonitors\MonitorDotMatrix.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Gauges\Div\Alt_Pressure.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Gauges\Div\Alt_Pressure_170.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -3535,6 +3521,9 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Gauges\Div\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
