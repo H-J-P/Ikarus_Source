@@ -47,13 +47,13 @@ namespace Ikarus
         private Model3DGroup model3DGroup;
         private Matrix3D matrix = Matrix3D.Identity;
         private MatrixTransform3D matrixTransform3D;
-        private Quaternion qXdown = new Quaternion(new Vector3D(1, 0, 0), 1); //rotations around X-axis (pitch), down direction
-        private Quaternion qXup = new Quaternion(new Vector3D(1, 0, 0), -1); //rotations around X-axis (pitch), up direction
-        private Quaternion qYright = new Quaternion(new Vector3D(0, 1, 0), 1); //rotations around Y-axis (yaw), right direction
-        private Quaternion qYleft = new Quaternion(new Vector3D(0, 1, 0), -1); //rotations around Y-axis (yaw), left direction
-        private Quaternion qZleft = new Quaternion(new Vector3D(0, 0, 1), 1); //rotations around Z-axis (roll), left direction
-        private Quaternion qZright = new Quaternion(new Vector3D(0, 0, 1), -1); //rotations around Z-axis (roll), right direction
-        private System.Windows.Threading.DispatcherTimer timer = new System.Windows.Threading.DispatcherTimer();
+        //private Quaternion qXdown = new Quaternion(new Vector3D(1, 0, 0), 1); //rotations around X-axis (pitch), down direction
+        //private Quaternion qXup = new Quaternion(new Vector3D(1, 0, 0), -1); //rotations around X-axis (pitch), up direction
+        //private Quaternion qYright = new Quaternion(new Vector3D(0, 1, 0), 1); //rotations around Y-axis (yaw), right direction
+        //private Quaternion qYleft = new Quaternion(new Vector3D(0, 1, 0), -1); //rotations around Y-axis (yaw), left direction
+        //private Quaternion qZleft = new Quaternion(new Vector3D(0, 0, 1), 1); //rotations around Z-axis (roll), left direction
+        //private Quaternion qZright = new Quaternion(new Vector3D(0, 0, 1), -1); //rotations around Z-axis (roll), right direction
+        //private System.Windows.Threading.DispatcherTimer timer = new System.Windows.Threading.DispatcherTimer();
         private BitmapImage Sphere3DTextur;
         Matrix3D matrix3D = new Matrix3D();
 
