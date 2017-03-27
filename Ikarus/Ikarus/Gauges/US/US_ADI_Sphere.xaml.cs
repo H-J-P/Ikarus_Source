@@ -53,12 +53,10 @@ namespace Ikarus
         TranslateTransform rtpitchSteering = new TranslateTransform();
         TranslateTransform rtbanksteering = new TranslateTransform();
         TranslateTransform rtglideSlopeIndicator = new TranslateTransform();
-        TransformGroup grp = new TransformGroup();
-        RotateTransform rt = new RotateTransform();
-        TranslateTransform tt = new TranslateTransform();
-
-        // defination on Sphere Object
-        Sphere3D sphere;
+        //TransformGroup grp = new TransformGroup();
+        //RotateTransform rt = new RotateTransform();
+        //TranslateTransform tt = new TranslateTransform();
+        Sphere3D sphere3D;
 
         public US_ADI_Sphere()
         {
@@ -150,7 +148,7 @@ namespace Ikarus
 
                                if (lpitch != pitch || lbank != bank || lyaw != yaw)
                                {
-                                   sphere.Rotate(pitch * 180, yaw * 360, bank * 180);
+                                   sphere3D.Rotate(pitch * 180, yaw * 360, bank * 180);
 
                                    lpitch = pitch;
                                    lbank = bank;
@@ -234,9 +232,7 @@ namespace Ikarus
 
                 currentPoint = ((System.Windows.Input.MouseEventArgs)b).GetPosition(moveThisElement);
                 trUsercontrol.X += currentPoint.X - originalPoint.X;
-
                 trUsercontrol.Y += currentPoint.Y - originalPoint.Y;
-
                 moveThisElement.RenderTransform = trUsercontrol;
             };
         }
@@ -248,15 +244,15 @@ namespace Ikarus
 
         private void InitialSphere()
         {
-            BitmapImage myTextureImage = new BitmapImage();
+            BitmapImage bitmapImage = new BitmapImage();
 
-            myTextureImage.BeginInit();
-            myTextureImage.UriSource = new Uri(@"http://www.miszalok.de/C_3D_WPF/C4_Sphere/Images/earth.bmp");
-            myTextureImage.DecodePixelWidth = 512;
-            myTextureImage.EndInit();
+            bitmapImage.BeginInit();
+            bitmapImage.UriSource = new Uri(Environment.CurrentDirectory + "\\Images\\Frames\\earth.bmp");
+            bitmapImage.DecodePixelWidth = 512;
+            bitmapImage.EndInit();
 
-            // declaration Sphere Object with model3Dgroup Name from XAML file and Sphre texture
-            sphere = new Sphere3D(model3DGroup, myTextureImage);
+            // declaration Sphere Object with model3Dgroup Name from XAML file and Sphere texture
+            sphere3D = new Sphere3D(model3DGroup, bitmapImage);
         }
     }
 }
