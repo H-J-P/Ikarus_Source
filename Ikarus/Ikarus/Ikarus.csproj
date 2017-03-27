@@ -307,6 +307,9 @@
     <Compile Include="Gauges\UH\UH1_RadioCompassIndicatorCopilot.xaml.cs">
       <DependentUpon>UH1_RadioCompassIndicatorCopilot.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Gauges\US\US_ADI_Sphere.xaml.cs">
+      <DependentUpon>US_ADI_Sphere.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Gauges\US\US_ASI10.xaml.cs">
       <DependentUpon>US_ASI10.xaml</DependentUpon>
     </Compile>
@@ -1198,6 +1201,7 @@
       <DependentUpon>MessageBoxAccessories.xaml</DependentUpon>
     </Compile>
     <Compile Include="ProzessHelper.cs" />
+    <Compile Include="Sphere3D.cs" />
     <Compile Include="UDP.cs" />
     <Compile Include="UserControlExtender.cs" />
     <Page Include="Assets\DiscoveryYellow.xaml">
@@ -1497,6 +1501,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Gauges\UH\UH1_RadioCompassIndicatorCopilot.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\US\US_ADI_Sphere.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
