@@ -55,6 +55,7 @@ namespace Ikarus
         private Quaternion qZright = new Quaternion(new Vector3D(0, 0, 1), -1); //rotations around Z-axis (roll), right direction
         private System.Windows.Threading.DispatcherTimer timer = new System.Windows.Threading.DispatcherTimer();
         private BitmapImage Sphere3DTextur;
+        Matrix3D matrix3D = new Matrix3D();
 
         public Sphere3D(Model3DGroup model3DGroupValue, BitmapImage Textur) //constructor
         {
@@ -161,13 +162,13 @@ namespace Ikarus
 
         Matrix3D CalculateRotationMatrix(double x, double y, double z) // in degrees
         {
-            Matrix3D matrix = new Matrix3D();
+            matrix3D = new Matrix3D();
 
-            matrix.Rotate(new Quaternion(new Vector3D(1, 0, 0), x));
-            matrix.Rotate(new Quaternion(new Vector3D(0, 1, 0) * matrix, y));
-            matrix.Rotate(new Quaternion(new Vector3D(0, 0, 1) * matrix, z));
+            matrix3D.Rotate(new Quaternion(new Vector3D(1, 0, 0), x));
+            matrix3D.Rotate(new Quaternion(new Vector3D(0, 1, 0) * matrix3D, y));
+            matrix3D.Rotate(new Quaternion(new Vector3D(0, 0, 1) * matrix3D, z));
 
-            return matrix;
+            return matrix3D;
         }
 
         public void Rotate(double x, double y, double z) // in degrees
