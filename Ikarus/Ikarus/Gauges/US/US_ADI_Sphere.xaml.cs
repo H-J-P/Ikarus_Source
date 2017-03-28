@@ -53,9 +53,6 @@ namespace Ikarus
         TranslateTransform rtpitchSteering = new TranslateTransform();
         TranslateTransform rtbanksteering = new TranslateTransform();
         TranslateTransform rtglideSlopeIndicator = new TranslateTransform();
-        //TransformGroup grp = new TransformGroup();
-        //RotateTransform rt = new RotateTransform();
-        //TranslateTransform tt = new TranslateTransform();
         Sphere3D sphere3D;
 
         public US_ADI_Sphere()
@@ -147,13 +144,7 @@ namespace Ikarus
                                if (vals.Length > 10) { courceWarningFlag = Convert.ToDouble(vals[10], CultureInfo.InvariantCulture); }
 
                                if (lpitch != pitch || lbank != bank || lyaw != yaw)
-                               {
                                    sphere3D.Rotate(pitch * 180, yaw * 360, bank * 180);
-
-                                   lpitch = pitch;
-                                   lbank = bank;
-                                   lyaw = yaw;
-                               }
 
                                if (lslipBall != slipBall)
                                {
