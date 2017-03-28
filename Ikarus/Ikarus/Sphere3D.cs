@@ -1,9 +1,4 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Diagnostics;
 using System.Windows;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
@@ -42,17 +37,18 @@ namespace Ikarus
         private Point3D[,] position = new Point3D[Longitudes + 1, Latitudes];
         private Point[,] texture = new Point[Longitudes + 1, Latitudes];
         private DiffuseMaterial[] frontMaterial = new DiffuseMaterial[Latitudes - 1];
-        private int emptySlices = 0; //cuts slices out of the apple
-        private int IndexOfFirstGeometryModel3DInModel3DGroup; //= no of lights = 2
+        private int emptySlices = 0;                            //cuts slices out of the apple
+        private int IndexOfFirstGeometryModel3DInModel3DGroup;  //= no of lights = 2
         private Model3DGroup model3DGroup;
         private Matrix3D matrix = Matrix3D.Identity;
         private MatrixTransform3D matrixTransform3D;
         private BitmapImage Sphere3DTextur;
-        Matrix3D matrix3D = new Matrix3D();
+        private Matrix3D matrix3D = new Matrix3D();
 
         public Sphere3D(Model3DGroup model3DGroupValue, BitmapImage Textur) //constructor
         {
             Sphere3DTextur = Textur;
+            
             // model3DGroupValue is Model3DGroup from Gauges
             model3DGroup = model3DGroupValue;
             IndexOfFirstGeometryModel3DInModel3DGroup = model3DGroup.Children.Count;
@@ -90,9 +86,11 @@ namespace Ikarus
         {
             double latitudeArcusIncrement = Math.PI / (latitudes - 1);
             double longitudeArcusIncrement = 2.0 * Math.PI / longitudes;
+
             for (int lat = 0; lat < latitudes; lat++)
             {
-                double latitudeArcus = lat * latitudeArcusIncrement;
+                double latitudeArcus = lat * latitudeArcusIncrement;
+
                 double radius = Math.Sin(latitudeArcus);
                 //if ( lat == latitudes/2 ) radius *= 1.3;
                 double y = Math.Cos(latitudeArcus);
@@ -110,12 +108,13 @@ namespace Ikarus
         }
 
         private void GenerateAllCylinders()
-        { //At first delete all existing flats beginning with the last one
+        {                                                       //At first delete all existing flats beginning with the last one
             SolidColorBrush backBrush = Brushes.LightGreen;
             DiffuseMaterial backMaterial = new DiffuseMaterial(backBrush);
 
             for (int i = model3DGroup.Children.Count - 1; i >= IndexOfFirstGeometryModel3DInModel3DGroup; i--)
                 model3DGroup.Children.Remove((GeometryModel3D)model3DGroup.Children[i]);
+
             for (int lat = 0; lat < Latitudes - 1; lat++)
             {
                 GeometryModel3D geometryModel3D = new GeometryModel3D();
@@ -129,26 +128,26 @@ namespace Ikarus
         private MeshGeometry3D GenerateCylinder(int lat)
         {
             MeshGeometry3D meshGeometry3D = new MeshGeometry3D();
-            for (int lon = 0; lon <= Longitudes - emptySlices; lon++)    //create a zigzaging point collection
+            for (int lon = 0; lon <= Longitudes - emptySlices; lon++)           //create a zigzaging point collection
             {
-                Point3D p0 = position[lon, lat];                           //on the ceiling
-                Point3D p1 = position[lon, lat + 1];                           //on the floor
-                meshGeometry3D.Positions.Add(p0);                          //on the ceiling
-                meshGeometry3D.Positions.Add(p1);                          //on the floor
-                meshGeometry3D.Normals.Add((Vector3D)p0);                  //ceiling normal
-                meshGeometry3D.Normals.Add((Vector3D)p1);                  //floor normal
-                meshGeometry3D.TextureCoordinates.Add(texture[lon, lat]); //on the ceiling
-                meshGeometry3D.TextureCoordinates.Add(texture[lon, lat + 1]); //on the floor
+                Point3D p0 = position[lon, lat];                                //on the ceiling
+                Point3D p1 = position[lon, lat + 1];                            //on the floor
+                meshGeometry3D.Positions.Add(p0);                               //on the ceiling
+                meshGeometry3D.Positions.Add(p1);                               //on the floor
+                meshGeometry3D.Normals.Add((Vector3D)p0);                       //ceiling normal
+                meshGeometry3D.Normals.Add((Vector3D)p1);                       //floor normal
+                meshGeometry3D.TextureCoordinates.Add(texture[lon, lat]);       //on the ceiling
+                meshGeometry3D.TextureCoordinates.Add(texture[lon, lat + 1]);   //on the floor
             }
             for (int lon = 1; lon < meshGeometry3D.Positions.Count - 2; lon += 2)
-            { //first triangle = left upper part of a rectangle
-                meshGeometry3D.TriangleIndices.Add(lon - 1); //left  upper point
-                meshGeometry3D.TriangleIndices.Add(lon); //left  lower point
-                meshGeometry3D.TriangleIndices.Add(lon + 1); //right upper point
-                                                             //second triangle = right lower part of the rectangle
-                meshGeometry3D.TriangleIndices.Add(lon + 1); //right upper point
-                meshGeometry3D.TriangleIndices.Add(lon); //left  lower point
-                meshGeometry3D.TriangleIndices.Add(lon + 2); //right lower point
+            {                                                   //first triangle = left upper part of a rectangle
+                meshGeometry3D.TriangleIndices.Add(lon - 1);    //left  upper point
+                meshGeometry3D.TriangleIndices.Add(lon);        //left  lower point
+                meshGeometry3D.TriangleIndices.Add(lon + 1);    //right upper point
+                                                                //second triangle = right lower part of the rectangle
+                meshGeometry3D.TriangleIndices.Add(lon + 1);    //right upper point
+                meshGeometry3D.TriangleIndices.Add(lon);        //left  lower point
+                meshGeometry3D.TriangleIndices.Add(lon + 2);    //right lower point
             }
             return meshGeometry3D;
         }
