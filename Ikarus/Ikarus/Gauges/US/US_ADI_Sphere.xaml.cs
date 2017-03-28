@@ -82,9 +82,7 @@ namespace Ikarus
             if (dataRows.Length > 0)
             {
                 string frame = dataRows[0]["ImageFrame"].ToString();
-
                 string light = dataRows[0]["ImageLight"].ToString();
-
 
                 try
                 {
@@ -149,7 +147,6 @@ namespace Ikarus
                                if (lslipBall != slipBall)
                                {
                                    rtSlipball.Angle = slipBall * -9;
-
                                    SlipBallPosition.RenderTransform = rtSlipball;
                                }
                                if (lturnNeedle != turnNeedle)
@@ -238,7 +235,7 @@ namespace Ikarus
             BitmapImage bitmapImage = new BitmapImage();
 
             bitmapImage.BeginInit();
-            bitmapImage.UriSource = new Uri(Environment.CurrentDirectory + "\\Images\\Frames\\earth.bmp");
+            bitmapImage.UriSource = new Uri(Environment.CurrentDirectory + "\\Images\\Textures3D\\UVTextureChecker.png");
             bitmapImage.DecodePixelWidth = 512;
             bitmapImage.EndInit();
 
