@@ -17,13 +17,14 @@ namespace Ikarus
         private string dataImportID = "";
         private int windowID = 0;
         private string[] vals = new string[] { };
-        private const string defaultFontColor = "F7F9F7"; // Hexdezimal Color Value
+        private const string font = "Digital-7 Mono";
+        private const string defaultFontColor = "FF9430"; // Hexdezimal Color Value (Red)
         private const string defaultErrorText = "ERROR";
         private string errorText = "";
         private string fontColor = defaultFontColor;
         private string numberChars = "";
-        private int numberOfSegments = 1;
-        private string displayText = "";
+        private int numberOfSegments = 0;
+        private string textForDisplay = "";
 
         public void SetWindowID(int _windowID) { windowID = _windowID; }
         public int GetWindowID() { return windowID; }
@@ -66,8 +67,8 @@ namespace Ikarus
                     }
                 }
 
-                if (!int.TryParse(numberChars, out numberOfSegments)) { numberOfSegments = 5; } 
-                errorText = "Init1";
+                if (!int.TryParse(numberChars, out numberOfSegments)) { numberOfSegments = 5; }
+                //errorText = "Init1";
             }
             else
             {
@@ -76,22 +77,23 @@ namespace Ikarus
                 errorText = defaultErrorText;
             }
 
+            FontFamily fontFamily = new FontFamily(font);
+            string[] checkFontFamily = new string[1] { "" };
+            fontFamily.FamilyNames.Values.CopyTo(checkFontFamily, 0);
+
+            if (checkFontFamily[0] != font) // verify loaded font
+            {
+                Segments.FontFamily = new FontFamily("Courier New"); // switch to a default font
+                Segments.FontSize = 40;
+                Segments.Width = 24;
+            }
             Segments.Foreground = (SolidColorBrush)new BrushConverter().ConvertFromString("#FF" + fontColor);
 
             PathBackground.Width = PathBackground.Width + (Segments.Width * numberOfSegments);// - Segments.Width;
             PathBorder.Width = PathBorder.Width + (Segments.Width * numberOfSegments);// - Segments.Width;
-            this.Width = PathBackground.Width + 12; //Segments.Width / 2;
+            this.Width = PathBackground.Width + 12; // Segments.Width / 2;
             Segments.Width = PathBorder.Width;
 
-            //TextBlock[] textBlock = new TextBlock[10];
-            //textBlock[0].Text = "";
-
-            //textBlock = Segments;
-
-            //this.UpdateLayout();
-            //Display.UpdateLayout();
-            //PathBackground.UpdateLayout();
-            //PathBorder.UpdateLayout();
             Segments.Text = errorText;
         }
 
@@ -160,9 +162,12 @@ namespace Ikarus
                            {
                                vals = strData.Split(';');
 
-                               if (vals.Length > 0) { displayText = vals[0]; }
+                               if (vals.Length > 0) { textForDisplay = vals[0]; }
 
-                               Segments.Text = displayText;
+                               if (textForDisplay.Length > numberOfSegments)
+                                   textForDisplay = textForDisplay.Substring(0, numberOfSegments);
+
+                               Segments.Text = textForDisplay;
                            }
                            catch { return; }
                        }));

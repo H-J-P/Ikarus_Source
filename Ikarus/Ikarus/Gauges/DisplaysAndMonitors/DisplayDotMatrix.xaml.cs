@@ -68,7 +68,6 @@ namespace Ikarus
                 }
 
                 if (!int.TryParse(numberChars, out numberOfSegments)) { numberOfSegments = 5; }
-                //errorText = "Init1";
             }
             else
             {
@@ -209,5 +208,3 @@ namespace Ikarus
         }
     }
 }
-
-

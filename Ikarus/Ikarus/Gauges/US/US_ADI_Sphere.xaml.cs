@@ -65,6 +65,8 @@ namespace Ikarus
             //Flagg_course_off.Visibility = System.Windows.Visibility.Hidden;
             Flagg_off.Visibility = System.Windows.Visibility.Visible;
             InitialSphere();
+            sphere3D.Rotate(0, 90, 0); // Null position
+
         }
 
         public void SetID(string _dataImportID)
@@ -141,8 +143,8 @@ namespace Ikarus
                                if (vals.Length > 9) { attitudeWarningFlag = Convert.ToDouble(vals[9], CultureInfo.InvariantCulture); }
                                if (vals.Length > 10) { courceWarningFlag = Convert.ToDouble(vals[10], CultureInfo.InvariantCulture); }
 
-                               if (lpitch != pitch || lbank != bank || lyaw != yaw)
-                                   sphere3D.Rotate(pitch * 180, yaw * 360, bank * 180);
+                               if (lpitch != pitch || lyaw != yaw || lbank != bank)
+                                   sphere3D.Rotate(pitch * 180, (yaw * 360) + 90, bank * 180);
 
                                if (lslipBall != slipBall)
                                {
@@ -180,8 +182,8 @@ namespace Ikarus
                                     pichsteering.Visibility = pitchSteering < -0.9 ? System.Windows.Visibility.Hidden : System.Windows.Visibility.Visible;
 
                                lpitch = pitch;
-                               lbank = bank;
                                lyaw = yaw;
+                               lbank = bank;
                                lslipBall = slipBall;
                                lbankSteering = bankSteering;
                                lpitchSteering = pitchSteering;
@@ -235,12 +237,11 @@ namespace Ikarus
             BitmapImage bitmapImage = new BitmapImage();
 
             bitmapImage.BeginInit();
-            bitmapImage.UriSource = new Uri(Environment.CurrentDirectory + "\\Images\\Textures3D\\UVTextureChecker.png");
-            bitmapImage.DecodePixelWidth = 512;
+            bitmapImage.UriSource = new Uri(Environment.CurrentDirectory + "\\Images\\Textures3D\\US_ADI.jpg");
+            bitmapImage.DecodePixelWidth = 1024;
             bitmapImage.EndInit();
 
-            // declaration Sphere Object with model3Dgroup Name from XAML file and Sphere texture
-            sphere3D = new Sphere3D(model3DGroup, bitmapImage);
+            sphere3D = new Sphere3D(model3DGroup, bitmapImage); // Sphere3D object name from xaml with sphere texture
         }
     }
 }
