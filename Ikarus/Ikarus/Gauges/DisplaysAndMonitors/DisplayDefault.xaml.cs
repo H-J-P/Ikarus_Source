@@ -17,7 +17,6 @@ namespace Ikarus
         private string dataImportID = "";
         private int windowID = 0;
         private string[] vals = new string[] { };
-        private const string font = "Digital-7 Mono";
         private const string defaultFontColor = "FF9430"; // Hexdezimal Color Value (Red)
         private const string defaultErrorText = "ERROR";
         private string errorText = "";
@@ -68,8 +67,7 @@ namespace Ikarus
                 }
 
                 if (!int.TryParse(numberChars, out numberOfSegments)) { numberOfSegments = 5; }
-                //errorText = "Init1";
-            }
+           }
             else
             {
                 fontColor = defaultFontColor;
@@ -77,16 +75,6 @@ namespace Ikarus
                 errorText = defaultErrorText;
             }
 
-            FontFamily fontFamily = new FontFamily(font);
-            string[] checkFontFamily = new string[1] { "" };
-            fontFamily.FamilyNames.Values.CopyTo(checkFontFamily, 0);
-
-            if (checkFontFamily[0] != font) // verify loaded font
-            {
-                Segments.FontFamily = new FontFamily("Courier New"); // switch to a default font
-                Segments.FontSize = 40;
-                Segments.Width = 24;
-            }
             Segments.Foreground = (SolidColorBrush)new BrushConverter().ConvertFromString("#FF" + fontColor);
 
             PathBackground.Width = PathBackground.Width + (Segments.Width * numberOfSegments);// - Segments.Width;
@@ -209,4 +197,5 @@ namespace Ikarus
         }
     }
 }
+
 

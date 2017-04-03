@@ -65,8 +65,8 @@ namespace Ikarus
             //Flagg_course_off.Visibility = System.Windows.Visibility.Hidden;
             Flagg_off.Visibility = System.Windows.Visibility.Visible;
             InitialSphere();
-            sphere3D.Rotate(0, 90, 0); // Null position
 
+            //sphere3D.Rotate(0, 90, 0);
         }
 
         public void SetID(string _dataImportID)
@@ -132,8 +132,8 @@ namespace Ikarus
                                vals = strData.Split(';');
 
                                if (vals.Length > 0) { pitch = Convert.ToDouble(vals[0], CultureInfo.InvariantCulture); }
-                               if (vals.Length > 1) { bank = Convert.ToDouble(vals[1], CultureInfo.InvariantCulture); }
-                               if (vals.Length > 2) { yaw = Convert.ToDouble(vals[2], CultureInfo.InvariantCulture); }
+                               if (vals.Length > 1) { yaw = Convert.ToDouble(vals[1], CultureInfo.InvariantCulture); }
+                               if (vals.Length > 2) { bank = Convert.ToDouble(vals[2], CultureInfo.InvariantCulture); }
                                if (vals.Length > 3) { slipBall = Convert.ToDouble(vals[3], CultureInfo.InvariantCulture); }
                                if (vals.Length > 4) { bankSteering = Convert.ToDouble(vals[4], CultureInfo.InvariantCulture); }
                                if (vals.Length > 5) { pitchSteering = Convert.ToDouble(vals[5], CultureInfo.InvariantCulture); }
@@ -144,8 +144,14 @@ namespace Ikarus
                                if (vals.Length > 10) { courceWarningFlag = Convert.ToDouble(vals[10], CultureInfo.InvariantCulture); }
 
                                if (lpitch != pitch || lyaw != yaw || lbank != bank)
-                                   sphere3D.Rotate(pitch * 180, (yaw * 360) + 90, bank * 180);
+                               {
+                                   lyaw = yaw;
+                                   lpitch = pitch;
+                                   lbank = bank;
 
+                                   //yaw += 0.25; // 90° Das geht nicht ->> 3DTexture muss geändert werden
+                                   sphere3D.Rotate(pitch * 180, yaw * 360, bank * 180);
+                               }
                                if (lslipBall != slipBall)
                                {
                                    rtSlipball.Angle = slipBall * -9;
@@ -181,9 +187,6 @@ namespace Ikarus
                                if (lpitchSteering != pitchSteering)
                                     pichsteering.Visibility = pitchSteering < -0.9 ? System.Windows.Visibility.Hidden : System.Windows.Visibility.Visible;
 
-                               lpitch = pitch;
-                               lyaw = yaw;
-                               lbank = bank;
                                lslipBall = slipBall;
                                lbankSteering = bankSteering;
                                lpitchSteering = pitchSteering;
@@ -237,12 +240,12 @@ namespace Ikarus
             BitmapImage bitmapImage = new BitmapImage();
 
             bitmapImage.BeginInit();
-            bitmapImage.UriSource = new Uri(Environment.CurrentDirectory + "\\Images\\Textures3D\\US_ADI.jpg");
-            bitmapImage.DecodePixelWidth = 1024;
+            bitmapImage.UriSource = new Uri(Environment.CurrentDirectory + "\\Images\\Textures3D\\ADI_J-37.jpg");
+            bitmapImage.DecodePixelWidth = 2024;
             bitmapImage.EndInit();
 
-            sphere3D = new Sphere3D(model3DGroup, bitmapImage); // Sphere3D object name from xaml with sphere texture
+            // declaration Sphere Object with model3Dgroup Name from XAML file and Sphere texture
+            sphere3D = new Sphere3D(model3DGroup, bitmapImage);
         }
     }
 }
-

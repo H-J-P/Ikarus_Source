@@ -133,6 +133,9 @@
     <Compile Include="Gauges\DisplaysAndMonitors\Display7Segment.xaml.cs">
       <DependentUpon>Display7Segment.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Gauges\DisplaysAndMonitors\DisplayDefault.xaml.cs">
+      <DependentUpon>DisplayDefault.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Gauges\DisplaysAndMonitors\DisplayDotMatrix.xaml.cs">
       <DependentUpon>DisplayDotMatrix.xaml</DependentUpon>
     </Compile>
@@ -1266,6 +1269,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Gauges\DisplaysAndMonitors\Display7Segment.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\DisplaysAndMonitors\DisplayDefault.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
