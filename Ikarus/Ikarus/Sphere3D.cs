@@ -154,11 +154,11 @@ namespace Ikarus
         {
             matrix3D = new Matrix3D();
 
-            //matrix3D.Rotate(new Quaternion(new Vector3D(1, 0, 0), x));
+            //matrix3D.Rotate(new Quaternion(new Vector3D(1, 0, 0), x));                  // this is for a 3D Object in a 3D world.
             //matrix3D.Rotate(new Quaternion(new Vector3D(0, 1, 0) * matrix3D, y));
             //matrix3D.Rotate(new Quaternion(new Vector3D(0, 0, 1) * matrix3D, z));
 
-            matrix3D.Rotate(new Quaternion(new Vector3D(1, 0, 0), x));
+            matrix3D.Rotate(new Quaternion(new Vector3D(1, 0, 0), x));                  // and this is for a ADI. The mechanic is difference.
             matrix3D.Rotate(new Quaternion(new Vector3D(0, 1, 0) * matrix3D, y));
             matrix3D.Rotate(new Quaternion(new Vector3D(0, 0, 1), z));
 
