@@ -150,13 +150,17 @@ namespace Ikarus
             return meshGeometry3D;
         }
 
-        Matrix3D CalculateRotationMatrix(double x, double y, double z) // in degrees
+        private Matrix3D CalculateRotationMatrix(double x, double y, double z) // in degrees
         {
             matrix3D = new Matrix3D();
 
+            //matrix3D.Rotate(new Quaternion(new Vector3D(1, 0, 0), x));
+            //matrix3D.Rotate(new Quaternion(new Vector3D(0, 1, 0) * matrix3D, y));
+            //matrix3D.Rotate(new Quaternion(new Vector3D(0, 0, 1) * matrix3D, z));
+
             matrix3D.Rotate(new Quaternion(new Vector3D(1, 0, 0), x));
             matrix3D.Rotate(new Quaternion(new Vector3D(0, 1, 0) * matrix3D, y));
-            matrix3D.Rotate(new Quaternion(new Vector3D(0, 0, 1) * matrix3D, z));
+            matrix3D.Rotate(new Quaternion(new Vector3D(0, 0, 1), z));
 
             return matrix3D;
         }

@@ -66,7 +66,7 @@ namespace Ikarus
             Flagg_off.Visibility = System.Windows.Visibility.Visible;
             InitialSphere();
 
-            //sphere3D.Rotate(0, 90, 0);
+            sphere3D.Rotate(0, 90, 0);
         }
 
         public void SetID(string _dataImportID)
@@ -144,14 +144,8 @@ namespace Ikarus
                                if (vals.Length > 10) { courceWarningFlag = Convert.ToDouble(vals[10], CultureInfo.InvariantCulture); }
 
                                if (lpitch != pitch || lyaw != yaw || lbank != bank)
-                               {
-                                   lyaw = yaw;
-                                   lpitch = pitch;
-                                   lbank = bank;
+                                   sphere3D.Rotate(pitch * 180, ((yaw * 360) + 90), bank * 180);
 
-                                   //yaw += 0.25; // 90° Das geht nicht ->> 3DTexture muss geändert werden
-                                   sphere3D.Rotate(pitch * 180, yaw * 360, bank * 180);
-                               }
                                if (lslipBall != slipBall)
                                {
                                    rtSlipball.Angle = slipBall * -9;
@@ -187,6 +181,9 @@ namespace Ikarus
                                if (lpitchSteering != pitchSteering)
                                     pichsteering.Visibility = pitchSteering < -0.9 ? System.Windows.Visibility.Hidden : System.Windows.Visibility.Visible;
 
+                               lpitch = pitch;
+                               lyaw = yaw;
+                               lbank = bank;
                                lslipBall = slipBall;
                                lbankSteering = bankSteering;
                                lpitchSteering = pitchSteering;
