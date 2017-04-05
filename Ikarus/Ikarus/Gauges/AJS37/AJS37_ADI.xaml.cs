@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Windows.Controls;
 using System.Data;
 using System.IO;
@@ -7,15 +7,12 @@ using System.Windows.Media;
 using System.Windows.Threading;
 using System.Globalization;
 
-using System.Windows.Media.Media3D;
-using System.Windows.Media.Animation;
-
 namespace Ikarus
 {
     /// <summary>
-    /// Interaction logic for USADI.xaml
+    /// Interaction logic for AJS37_ADI.xaml
     /// </summary>
-    public partial class US_ADI_Sphere : UserControl, I_Ikarus
+    public partial class AJS37_ADI : UserControl, I_Ikarus
     {
         private string dataImportID = "";
         private int windowID = 0;
@@ -55,7 +52,7 @@ namespace Ikarus
         TranslateTransform rtglideSlopeIndicator = new TranslateTransform();
         Sphere3D sphere3D;
 
-        public US_ADI_Sphere()
+        public AJS37_ADI()
         {
             InitializeComponent();
             if (MainWindow.editmode) MakeDraggable(this, this);
@@ -63,12 +60,11 @@ namespace Ikarus
             //Flagg_course_off.Visibility = System.Windows.Visibility.Hidden;
             //Flagg_glide_off.Visibility = System.Windows.Visibility.Hidden;
             //Flagg_course_off.Visibility = System.Windows.Visibility.Hidden;
-            Flagg_off.Visibility = System.Windows.Visibility.Visible;
+            //Flagg_off.Visibility = System.Windows.Visibility.Visible;
             InitialSphere();
 
             sphere3D.Rotate(0, 90, 0);
         }
-
         public void SetID(string _dataImportID)
         {
             dataImportID = _dataImportID;
@@ -119,7 +115,7 @@ namespace Ikarus
 
         public double GetSize()
         {
-            return 314; // Width
+            return 255; // Width
         }
 
         public void UpdateGauge(string strData)
@@ -146,40 +142,40 @@ namespace Ikarus
                                if (lpitch != pitch || lyaw != yaw || lbank != bank)
                                    sphere3D.Rotate(pitch * 180, ((yaw * 360) + 90), bank * 180);
 
-                               if (lslipBall != slipBall)
-                               {
-                                   rtSlipball.Angle = slipBall * -9;
-                                   SlipBallPosition.RenderTransform = rtSlipball;
-                               }
-                               if (lturnNeedle != turnNeedle)
-                               {
-                                   ttTurnIndicator.X = turnNeedle * 40;
-                                   Turnindicator.RenderTransform = ttTurnIndicator;
-                               }
-                               if (lpitchSteering != pitchSteering)
-                               {
-                                   rtpitchSteering.Y = pitchSteering * -100;
-                                   pichsteering.RenderTransform = rtpitchSteering;
-                               }
-                               if (lbankSteering != bankSteering)
-                               {
-                                   rtbanksteering.X = bankSteering * 120;
-                                   banksteering.RenderTransform = rtbanksteering;
-                               }
-                               if (lglideSlopeIndicator != glideSlopeIndicator)
-                               {
-                                   rtglideSlopeIndicator.Y = glideSlopeIndicator * -55;
-                                   GlideSlopeIndicator.RenderTransform = rtglideSlopeIndicator;
-                               }
+                               //if (lslipBall != slipBall)
+                               //{
+                               //    rtSlipball.Angle = slipBall * -9;
+                               //    SlipBallPosition.RenderTransform = rtSlipball;
+                               //}
+                               //if (lturnNeedle != turnNeedle)
+                               //{
+                               //    ttTurnIndicator.X = turnNeedle * 40;
+                               //    Turnindicator.RenderTransform = ttTurnIndicator;
+                               //}
+                               //if (lpitchSteering != pitchSteering)
+                               //{
+                               //    rtpitchSteering.Y = pitchSteering * -100;
+                               //    pichsteering.RenderTransform = rtpitchSteering;
+                               //}
+                               //if (lbankSteering != bankSteering)
+                               //{
+                               //    rtbanksteering.X = bankSteering * 120;
+                               //    banksteering.RenderTransform = rtbanksteering;
+                               //}
+                               //if (lglideSlopeIndicator != glideSlopeIndicator)
+                               //{
+                               //    rtglideSlopeIndicator.Y = glideSlopeIndicator * -55;
+                               //    GlideSlopeIndicator.RenderTransform = rtglideSlopeIndicator;
+                               //}
 
-                               if (lcourceWarningFlag != courceWarningFlag)
-                                    Flagg_course_off.Visibility = (courceWarningFlag > 0.8) ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
-                               if (lglideSlopeWarningFlag != glideSlopeWarningFlag)
-                                    Flagg_glide_off.Visibility = (glideSlopeWarningFlag > 0.8) ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
-                               if (lattitudeWarningFlag != attitudeWarningFlag)
-                                    Flagg_off.Visibility = (attitudeWarningFlag > 0.8) ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
-                               if (lpitchSteering != pitchSteering)
-                                    pichsteering.Visibility = pitchSteering < -0.9 ? System.Windows.Visibility.Hidden : System.Windows.Visibility.Visible;
+                               //if (lcourceWarningFlag != courceWarningFlag)
+                               //    Flagg_course_off.Visibility = (courceWarningFlag > 0.8) ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
+                               //if (lglideSlopeWarningFlag != glideSlopeWarningFlag)
+                               //    Flagg_glide_off.Visibility = (glideSlopeWarningFlag > 0.8) ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
+                               //if (lattitudeWarningFlag != attitudeWarningFlag)
+                               //    Flagg_off.Visibility = (attitudeWarningFlag > 0.8) ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
+                               //if (lpitchSteering != pitchSteering)
+                               //    pichsteering.Visibility = pitchSteering < -0.9 ? System.Windows.Visibility.Hidden : System.Windows.Visibility.Visible;
 
                                lpitch = pitch;
                                lyaw = yaw;
@@ -238,9 +234,10 @@ namespace Ikarus
 
             bitmapImage.BeginInit();
 
-            if (File.Exists(Environment.CurrentDirectory + "\\Images\\Textures3D\\US_ADI.jpg"))
-                bitmapImage.UriSource = new Uri(Environment.CurrentDirectory + "\\Images\\Textures3D\\US_ADI.jpg"); // Test map
-
+            if (File.Exists(Environment.CurrentDirectory + "\\Images\\Textures3D\\AJS37_ADI.jpg"))
+                bitmapImage.UriSource = new Uri(Environment.CurrentDirectory + "\\Images\\Textures3D\\AJS37_ADI.jpg");
+            //bitmapImage.UriSource = new Uri(Environment.CurrentDirectory + "\\Images\\Textures3D\\M-2000C_ADI.jpg");
+            //bitmapImage.UriSource = new Uri(Environment.CurrentDirectory + "\\Images\\Textures3D\\US_ADI.jpg"); Test map
             bitmapImage.DecodePixelWidth = 1024;
             bitmapImage.EndInit();
 

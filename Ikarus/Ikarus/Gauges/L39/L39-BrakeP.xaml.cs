@@ -7,7 +7,7 @@ using System.Windows.Media;
 using System.Windows.Threading;
 using System.Globalization;
 
-namespace Ikarus.Gauges
+namespace Ikarus
 {
     /// <summary>
     /// Interaction logic for L39_BrakeP.xaml

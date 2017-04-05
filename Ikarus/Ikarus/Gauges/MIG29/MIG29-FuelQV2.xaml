@@ -2,7 +2,6 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:local="clr-namespace:Ikarus.Gauges"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              d:DesignHeight="352"
              d:DesignWidth="141"
@@ -308,6 +307,53 @@
                       d:IsHidden="True"
                       Data="M0,0L62.88,0 62.88,210.482 54.121,219.301 0,219.301z"
                       Fill="Black" />
+            </Canvas>
+            <Canvas x:Name="TotalFuel_0_4"
+                    Canvas.Left="62.484"
+                    Canvas.Top="121.468"
+                    Width="8.928"
+                    Height="189.109"
+                    RenderTransformOrigin="0.5,0.5">
+                <Path x:Name="TotalFuelLong"
+                      Canvas.Left="0"
+                      Canvas.Top="0"
+                      Width="8.928"
+                      Height="177"
+                      Data="M0,0L8.928,0 8.928,189.109 0,189.109z"
+                      Fill="White"
+                      RenderTransformOrigin="0.5,0.5">
+                    <Path.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform />
+                            <SkewTransform />
+                            <RotateTransform Angle="180" />
+                            <TranslateTransform />
+                        </TransformGroup>
+                    </Path.RenderTransform>
+                </Path>
+            </Canvas>
+            <Canvas x:Name="TotalFuel_4_5_5"
+                    Canvas.Left="90.782"
+                    Canvas.Top="121.467"
+                    Width="5.952"
+                    Height="78.686">
+                <Path x:Name="TotalFuelShort"
+                      Canvas.Left="0"
+                      Canvas.Top="0"
+                      Width="5.952"
+                      Height="78.686"
+                      Data="M0,0L5.952,0 5.952,78.686 0,78.686z"
+                      Fill="White"
+                      RenderTransformOrigin="0.5,0.5">
+                    <Path.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform />
+                            <SkewTransform />
+                            <RotateTransform Angle="180" />
+                            <TranslateTransform />
+                        </TransformGroup>
+                    </Path.RenderTransform>
+                </Path>
             </Canvas>
             <Canvas x:Name="dial"
                     Canvas.Left="4.852"
@@ -1680,53 +1726,6 @@
                       Height="7.972"
                       Data="F1M0,0L1.047,0 1.047,7.972 0,7.972z"
                       Fill="#FFFFC300" />
-            </Canvas>
-            <Canvas x:Name="TotalFuel_0_4"
-                    Canvas.Left="62.484"
-                    Canvas.Top="121.468"
-                    Width="8.928"
-                    Height="189.109"
-                    RenderTransformOrigin="0.5,0.5">
-                <Path x:Name="TotalFuelLong"
-                      Canvas.Left="0"
-                      Canvas.Top="0"
-                      Width="8.928"
-                      Height="177"
-                      Data="M0,0L8.928,0 8.928,189.109 0,189.109z"
-                      Fill="White"
-                      RenderTransformOrigin="0.5,0.5">
-                    <Path.RenderTransform>
-                        <TransformGroup>
-                            <ScaleTransform />
-                            <SkewTransform />
-                            <RotateTransform Angle="180" />
-                            <TranslateTransform />
-                        </TransformGroup>
-                    </Path.RenderTransform>
-                </Path>
-            </Canvas>
-            <Canvas x:Name="TotalFuel_4_5_5"
-                    Canvas.Left="90.782"
-                    Canvas.Top="121.467"
-                    Width="5.952"
-                    Height="78.686">
-                <Path x:Name="TotalFuelShort"
-                      Canvas.Left="0"
-                      Canvas.Top="0"
-                      Width="5.952"
-                      Height="78.686"
-                      Data="M0,0L5.952,0 5.952,78.686 0,78.686z"
-                      Fill="White"
-                      RenderTransformOrigin="0.5,0.5">
-                    <Path.RenderTransform>
-                        <TransformGroup>
-                            <ScaleTransform />
-                            <SkewTransform />
-                            <RotateTransform Angle="180" />
-                            <TranslateTransform />
-                        </TransformGroup>
-                    </Path.RenderTransform>
-                </Path>
             </Canvas>
         </Canvas>
         <Image x:Name="Light"
