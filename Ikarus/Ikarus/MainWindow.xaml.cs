@@ -113,6 +113,7 @@ namespace Ikarus
         public static string map = "";
         private static string package = "";
         public static string processNameDCS = "DCS";
+        public static string lightOnColor = "#95E295"; // green
 
         #endregion
 
@@ -133,7 +134,7 @@ namespace Ikarus
                 PortListener.Text = "1625";
                 portListener = PortListener.Text;
                 PortSender.Text = "26027";
-
+                textBoxLightColor.Text = "#95E295";
                 getAllDscDataLoopCounter = dscDataLoopCounterMax;
                 cockpitRefreshLoopCounter = cockpitRefreshLoopCounterMax;
 
@@ -227,6 +228,9 @@ namespace Ikarus
                 RefreshDatagrids();
                 DatabaseResetValue();
                 FillClasses();
+
+                textBoxLightColor.Text = dtWindows.Rows[0][9].ToString();
+                lightOnColor = textBoxLightColor.Text;
 
                 for (int n = 0; n < dtSwitches.Rows.Count; n++) // update switches
                 {
@@ -1086,6 +1090,9 @@ namespace Ikarus
                     SetWindowID(dtSwitches);
                     SetWindowID(dtAccessories);
 
+                    textBoxLightColor.Text = dtWindows.Rows[0][9].ToString();
+
+
                     FillClasses();
                 }
                 catch (Exception e) { ImportExport.LogMessage("XmlToDataSet problem .. " + e.ToString()); }
@@ -1873,6 +1880,8 @@ namespace Ikarus
             else
                 dtParameter.Rows[0][0] = background;
 
+            dtWindows.Rows[0][9] = textBoxLightColor.Text;
+
             dsConfig.AcceptChanges();
 
             //CockpitReset();
@@ -1892,6 +1901,7 @@ namespace Ikarus
         {
             if (!cockpitWindowActiv)
             {
+                lightOnColor = textBoxLightColor.Text;
                 CockpitShow();
             }
             else

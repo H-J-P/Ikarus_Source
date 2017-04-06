@@ -838,6 +838,8 @@
                                   Click="checkBoxLogSwitches_Click"
                                   Content="Log Switches only"
                                   Foreground="#FFF9F9F9" />
+                        <Label x:Name="labelLight" Content="Light Color ADI" VerticalAlignment="Bottom" Grid.Column="1" Margin="0,0,79,215" Foreground="#FFECE8E8" HorizontalAlignment="Right" Width="81"/>
+                        <TextBox x:Name="textBoxLightColor" Text="#95E295" TextWrapping="Wrap" Margin="0,0,79,187" Grid.Column="1" HorizontalAlignment="Right" Width="81" Height="23" VerticalAlignment="Bottom"/>
                         <CheckBox Name="checkBoxCleanMemory"
                                   Grid.Column="1"
                                   Width="119"
@@ -959,7 +961,7 @@
                    Height="19"
                    Margin="466,0,488,10"
                    VerticalAlignment="Bottom"
-                   Content="(C) H.J.P. 2017  Version 1.0.01"
+                   Content="(C) H.J.P. 2017  Version 1.0.02"
                    Foreground="#FFD8BC05" />
             <Label Name="lbEditMode"
                    Width="72"

@@ -13,7 +13,7 @@
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <WarningLevel>4</WarningLevel>
-    <ExpressionBlendVersion>12.0.51020.0</ExpressionBlendVersion>
+    <ExpressionBlendVersion>12.0.50429.0</ExpressionBlendVersion>
     <TargetFrameworkProfile />
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
@@ -396,9 +396,6 @@
     </Compile>
     <Compile Include="Gauges\UH\UH1_RadioCompassIndicatorV2.xaml.cs">
       <DependentUpon>UH1_RadioCompassIndicatorV2.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Gauges\Viggen.xaml.cs">
-      <DependentUpon>Viggen.xaml</DependentUpon>
     </Compile>
     <Compile Include="Gauges\WP\WPSPO15.xaml.cs">
       <DependentUpon>WPSPO15.xaml</DependentUpon>
@@ -1255,8 +1252,8 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Gauges\AJS37\AJS37_ADI.xaml">
-      <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Gauges\ButtonAndSwitches\Button.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -1629,10 +1626,6 @@
     <Page Include="Gauges\UH\UH1_RadioCompassIndicatorV2.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Gauges\Viggen.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
     </Page>
     <Page Include="Gauges\WP\WPSPO15.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -3546,6 +3539,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Gauges\Div\" />
+    <Folder Include="Gauges\M-2000C\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

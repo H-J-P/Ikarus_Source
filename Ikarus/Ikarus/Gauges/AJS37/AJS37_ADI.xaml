@@ -7,10 +7,10 @@
              d:DesignHeight="275" d:DesignWidth="255">
     <Grid>
         <!--Viewport3D is a drawing canvas which resizes its Content automatically-->
-        <Viewport3D x:Name="viewport" Margin="54,52,50,78" RenderTransformOrigin="0.5,0.5">
+        <Viewport3D x:Name="viewport" Margin="38,30,37,58" RenderTransformOrigin="0.5,0.5">
             <Viewport3D.RenderTransform>
                 <TransformGroup>
-                    <ScaleTransform ScaleX="1.2" ScaleY="1.2"/>
+                    <ScaleTransform ScaleX="1.1" ScaleY="1.1"/>
                     <SkewTransform/>
                     <RotateTransform/>
                     <TranslateTransform/>
@@ -25,7 +25,7 @@
                     <!--Only one Content is allowed. Thus we use a Model3DGroup as envelope for our two lights and all further GeometryModel3Ds.-->
                     <Model3DGroup x:Name="model3DGroup">
                         <AmbientLight Color="#444444"/>
-                        <DirectionalLight x:Name="directionalLight" Color="#ffffff" Direction="-1 -1 -1" />
+                        <DirectionalLight x:Name="directionalLight" Color="#FFFFFF" Direction="-1 -1 -1" />
                         <!--A lot of GeometryModel3Ds will be inserted here.-->
                     </Model3DGroup>
                 </ModelVisual3D.Content>
@@ -51,7 +51,7 @@
             <Canvas x:Name="TURN" Height="16.066" Canvas.Left="120.475" Canvas.Top="246.356" Width="14.169">
                 <Path Data="M11.338,6.972L11.338,16.066 2.83,16.066 2.83,6.972 0,4.183 0,0 14.169,0 14.169,4.183z" Fill="#FFFEFEFE" Height="16.066" Canvas.Left="0" Canvas.Top="0" Width="14.169"/>
             </Canvas>
-            <Canvas x:Name="SlipBallPosition" Height="14.595" Canvas.Left="120.239" Canvas.Top="226.014" Width="14.64">
+            <Canvas x:Name="SlipBallPosition" Height="14.595" Canvas.Left="120.239" Canvas.Top="226.014" Width="14.64" RenderTransformOrigin="0.438,-9.764">
                 <Path Data="M7.32,0C11.363,0 14.64,3.267 14.64,7.298 14.64,11.328 11.363,14.595 7.32,14.595 3.277,14.595 0,11.328 0,7.298 0,3.267 3.277,0 7.32,0" Height="14.595" Canvas.Left="0" Canvas.Top="0" Width="14.64">
                     <Path.Fill>
                         <RadialGradientBrush Center="0.4,0.35" GradientOrigin="0.4,0.35" RadiusY="0.65" RadiusX="0.648">
@@ -67,9 +67,9 @@
                 <Path Data="M42.304,7.685L28.135,7.685 28.135,2.676C30.487,2.753 32.848,2.802 35.219,2.802 37.591,2.802 39.951,2.753 42.304,2.676z M14.688,1.846L14.688,7.685 0,7.685 0,0C4.846,0.775,9.743,1.391,14.688,1.846 M70.437,0L70.437,7.685 55.75,7.685 55.75,1.846C60.694,1.388,65.593,0.775,70.437,0" Fill="#FFFEFEFE" Height="7.685" Canvas.Left="0" Canvas.Top="0" Width="70.437"/>
             </Canvas>
             <Canvas x:Name="shadow" Height="145.836" Canvas.Left="42.339" Canvas.Top="39.287" Width="162.013">
-                <Path Data="M85.22,0C119.029,0 148.24,19.629 162.013,48.078 146.584,29.526 123.291,17.709 97.229,17.709 50.774,17.709 13.114,55.254 13.114,101.567 13.114,117.819 17.756,132.987 25.783,145.836 9.881,130.401 0,108.833 0,84.959 0,38.038 38.155,0 85.22,0" Fill="Black" Height="145.836" Canvas.Left="0" Opacity="0.7" Canvas.Top="0" Width="162.013"/>
+                <Path Data="M85.22,0C119.029,0 148.24,19.629 162.013,48.078 146.584,29.526 123.291,17.709 97.229,17.709 50.774,17.709 13.114,55.254 13.114,101.567 13.114,117.819 17.756,132.987 25.783,145.836 9.881,130.401 0,108.833 0,84.959 0,38.038 38.155,0 85.22,0" Fill="#7F000000" Height="145.836" Canvas.Left="0" Opacity="0.7" Canvas.Top="0" Width="162.013"/>
             </Canvas>
-            <Canvas x:Name="BANK" Height="173.895" Canvas.Left="122.439" Canvas.Top="37.299" Width="10.24">
+            <Canvas x:Name="Bank" Height="173.895" Canvas.Left="122.439" Canvas.Top="37.299" Width="10.24" RenderTransformOrigin="0.5,0.5">
                 <Path Data="M0,15.723L2.758,15.723 2.758,0 0,0z" Fill="Black" Height="15.723" Canvas.Left="3.741" Canvas.Top="158.172" Width="2.758"/>
                 <Path Data="M5.12,13.201L2.56,6.6 0,0 5.12,0 10.24,0 7.68,6.6z" Fill="#FFFEFEFE" Height="13.201" Canvas.Left="0" Canvas.Top="154.458" Width="10.24"/>
                 <Path Data="M2.758,0L0,0 0,15.723 2.758,15.723z" Fill="Black" Height="15.723" Canvas.Left="3.741" Canvas.Top="0" Width="2.758"/>
@@ -133,7 +133,7 @@
                 <Path Data="M12.771,24.45L0,24.45 0,0 12.771,0z" Fill="#FF9E2022" Height="24.45" Canvas.Left="20.878" Canvas.Top="0" Width="12.771"/>
                 <Path Data="M0,24.45L20.878,24.45 20.878,0 0,0z" Fill="#FF0B0A0B" Height="24.45" Canvas.Left="0" Canvas.Top="0" Width="20.878"/>
             </Canvas>
-            <Canvas x:Name="VVI" Height="6.871" Canvas.Left="10.273" Canvas.Top="120.812" Width="33.091">
+            <Canvas x:Name="VVI" Height="6.871" Canvas.Left="10.273" Canvas.Top="120.812" Width="33.091" RenderTransformOrigin="0.5,0.5">
                 <Path Data="M0,0L30,0 30,6.871 0,6.871z" Fill="#FF0B0A0B" Height="6.871" Canvas.Left="0" Canvas.Top="0" Width="30"/>
                 <Path Data="M0,3.435L6.089,6.87 11.655,6.87 11.655,0 6.089,0z" Fill="#FFFEFEFE" Height="6.87" Canvas.Left="21.436" Canvas.Top="0" Width="11.655"/>
             </Canvas>
@@ -255,16 +255,14 @@
             </Canvas>
         </Canvas>
         <Image x:Name="Light"
-               Width="314"
-               Height="340"
-               Margin="0,0,0,0"
+               Width="255"
+               Height="275"
                HorizontalAlignment="Left"
                VerticalAlignment="Top"
                MouseWheel="Light_MouseWheel" />
         <Image x:Name="Frame"
-               Width="314"
-               Height="340"
-               Margin="10,0,-10,0"
+               Width="255"
+               Height="275"
                HorizontalAlignment="Left"
                VerticalAlignment="Top"
                MouseWheel="Light_MouseWheel" />

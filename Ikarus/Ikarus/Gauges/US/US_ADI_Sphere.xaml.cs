@@ -66,7 +66,7 @@ namespace Ikarus
             Flagg_off.Visibility = System.Windows.Visibility.Visible;
             InitialSphere();
 
-            sphere3D.Rotate(0, 90, 0);
+            //sphere3D.Rotate(0, 90, 0);
         }
 
         public void SetID(string _dataImportID)
@@ -144,7 +144,7 @@ namespace Ikarus
                                if (vals.Length > 10) { courceWarningFlag = Convert.ToDouble(vals[10], CultureInfo.InvariantCulture); }
 
                                if (lpitch != pitch || lyaw != yaw || lbank != bank)
-                                   sphere3D.Rotate(pitch * 180, ((yaw * 360) + 90), bank * 180);
+                                   sphere3D.Rotate(pitch * 180, yaw * 360, bank * 180);
 
                                if (lslipBall != slipBall)
                                {
