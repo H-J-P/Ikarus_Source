@@ -316,9 +316,6 @@
     <Compile Include="Gauges\US\US_ASI10.xaml.cs">
       <DependentUpon>US_ASI10.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Gauges\L39\L39-Alt20.xaml.cs">
-      <DependentUpon>L39-Alt20.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Gauges\L39\L39-ACC.xaml.cs">
       <DependentUpon>L39-ACC.xaml</DependentUpon>
     </Compile>
@@ -1518,10 +1515,6 @@
     <Page Include="Gauges\US\US_ASI10.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Gauges\L39\L39-Alt20.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Gauges\L39\L39-ACC.xaml">
       <SubType>Designer</SubType>

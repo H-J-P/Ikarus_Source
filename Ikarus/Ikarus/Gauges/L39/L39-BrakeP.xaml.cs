@@ -21,11 +21,11 @@ namespace Ikarus
         public void SetWindowID(int _windowID) { windowID = _windowID; }
         public int GetWindowID() { return windowID; }
 
-        double brakeL = 0.0;
-        double brakeR = 0.0;
+        private double brakeL = 0.0;
+        private double brakeR = 0.0;
 
-        double lbrakeL = 0.0;
-        double lbrakeR = 0.0;
+        private double lbrakeL = 0.0;
+        private double lbrakeR = 0.0;
 
         RotateTransform rtBrakeL = new RotateTransform();
         RotateTransform rtBrakeR = new RotateTransform();
@@ -113,7 +113,7 @@ namespace Ikarus
                                if (lbrakeR != brakeR)
                                {
                                    rtBrakeR.Angle = brakeR * -172;
-                                   Brake_Left.RenderTransform = rtBrakeR;
+                                   Brake_Right.RenderTransform = rtBrakeR;
                                }
                                lbrakeL = brakeL;
                                lbrakeR = brakeR;

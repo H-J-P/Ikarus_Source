@@ -22,29 +22,29 @@ namespace Ikarus
         public int GetWindowID() { return windowID; }
         private string lightColor = "#FFFFFF"; // white
 
-        double pitch = 0.0;
-        double bank = 0.0;
-        double heading = 0.0;
-        double slipBall = 0.0;
-        double vvi = 0.0;
-        double flag_vvi_off = 0.0;
-        double flag_off = 0.0;
-        double courceWarningFlag = 0.0;
+        private double pitch = 0.0;
+        private double bank = 0.0;
+        private double heading = 0.0;
+        private double slipBall = 0.0;
+        private double vvi = 0.0;
+        private double flag_vvi_off = 0.0;
+        private double flag_off = 0.0;
+        private double courceWarningFlag = 0.0;
 
-        double lpitch = 0.0;
-        double lbank = 0.0;
-        double lheading = 0.0;
-        double lslipBall = 0.0;
-        double lvvi = 0.0;
-        double lFlag_vvi_off = 1.0;
-        double lFlag_off = 1.0;
-        double lcourceWarningFlag = 1.0;
+        private double lpitch = 0.0;
+        private double lbank = 0.0;
+        private double lheading = 0.0;
+        private double lslipBall = 0.0;
+        private double lvvi = 0.0;
+        private double lFlag_vvi_off = 1.0;
+        private double lFlag_off = 1.0;
+        private double lcourceWarningFlag = 1.0;
 
-        RotateTransform rtSlipball = new RotateTransform();
-        TranslateTransform ttTurnIndicator = new TranslateTransform();
-        TranslateTransform rtpitchSteering = new TranslateTransform();
-        RotateTransform rtbank = new RotateTransform();
-        TranslateTransform rtvvi = new TranslateTransform();
+        private RotateTransform rtSlipball = new RotateTransform();
+        private TranslateTransform ttTurnIndicator = new TranslateTransform();
+        private TranslateTransform rtpitchSteering = new TranslateTransform();
+        private RotateTransform rtbank = new RotateTransform();
+        private TranslateTransform rtvvi = new TranslateTransform();
         Sphere3D sphere3D;
 
         public AJS37_ADI()
@@ -97,7 +97,7 @@ namespace Ikarus
         public void SwitchLight(bool _on)
         {
             Light.Visibility = _on ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
-            directionalLight.Color = _on ? (Color)ColorConverter.ConvertFromString(MainWindow.lightOnColor) : (Color)ColorConverter.ConvertFromString(lightColor);
+            directionalLight.Color = _on ? (Color)ColorConverter.ConvertFromString("#" + MainWindow.lightOnColor) : (Color)ColorConverter.ConvertFromString(lightColor);
         }
 
         public void SetInput(string _input)

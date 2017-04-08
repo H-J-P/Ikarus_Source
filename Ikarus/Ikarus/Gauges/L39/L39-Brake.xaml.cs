@@ -18,8 +18,8 @@ namespace Ikarus
         private int windowID = 0;
         private string[] vals = new string[] { };
 
-        double brake = 0.0;
-        double lbrake = 0.0;
+        private double brake = 0.0;
+        private double lbrake = 0.0;
 
         RotateTransform rtBrake = new RotateTransform();
 
@@ -101,7 +101,7 @@ namespace Ikarus
 
                                if (lbrake != brake)
                                {
-                                   rtBrake.Angle = brake * 225;
+                                   rtBrake.Angle = brake * 270;
                                    Brake.RenderTransform = rtBrake;
                                }
                                lbrake = brake;

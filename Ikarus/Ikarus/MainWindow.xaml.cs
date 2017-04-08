@@ -113,7 +113,7 @@ namespace Ikarus
         public static string map = "";
         private static string package = "";
         public static string processNameDCS = "DCS";
-        public static string lightOnColor = "#95E295"; // green
+        public static string lightOnColor = "95E295"; // green
 
         #endregion
 
@@ -134,7 +134,7 @@ namespace Ikarus
                 PortListener.Text = "1625";
                 portListener = PortListener.Text;
                 PortSender.Text = "26027";
-                textBoxLightColor.Text = "#95E295";
+                textBoxLightColor.Text = "95E295";
                 getAllDscDataLoopCounter = dscDataLoopCounterMax;
                 cockpitRefreshLoopCounter = cockpitRefreshLoopCounterMax;
 
