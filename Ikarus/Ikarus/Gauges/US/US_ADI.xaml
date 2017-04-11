@@ -1251,7 +1251,7 @@
                         Width="36"
                         Height="35"
                         Clip="M0.918,0.695L15.74,0.695 15.74,15.517 0.918,15.517z">
-                    <Image Source="/Ikarus;component/Gauges/_Images\US-ADI_Images\Image3.png" Stretch="Fill">
+                    <Image Source="/Ikarus;component/Gauges/_Images\US-ADI_Images\Image.png" Stretch="Fill">
                         <Image.RenderTransform>
                             <MatrixTransform Matrix="0.359999974568685,0,0,0.36000006539481,0,0" />
                         </Image.RenderTransform>
@@ -1354,7 +1354,17 @@
                   Data="M20.552,40.819C9.358,40.819 0.283,31.745 0.283,20.552 0.283,9.358 9.358,0.284 20.552,0.284 31.745,0.284 40.819,9.358 40.819,20.552 40.819,31.745 31.745,40.819 20.552,40.819z"
                   Stroke="#FF3D3D3D"
                   StrokeMiterLimit="22.926"
-                  StrokeThickness="0.567" />
+                  StrokeThickness="0.567" >
+                <Path.Fill>
+                    <LinearGradientBrush EndPoint="0.983,0.63" StartPoint="0.017,0.37">
+                        <GradientStop Color="#FF42454B" Offset="0"/>
+                        <GradientStop Color="#FF4C5056" Offset="0.11"/>
+                        <GradientStop Color="#FF8B8F95" Offset="0.5"/>
+                        <GradientStop Color="#FF575B61" Offset="0.86"/>
+                        <GradientStop Color="#FF42454B" Offset="1"/>
+                    </LinearGradientBrush>
+                </Path.Fill>
+            </Path>
             <Path Canvas.Left="257.031"
                   Canvas.Top="291.08"
                   Width="22.621"
@@ -1374,7 +1384,7 @@
                         Width="36"
                         Height="35"
                         Clip="M0.66,0.579L15.482,0.579 15.482,15.401 0.66,15.401z">
-                    <Image Source="/Ikarus;component/Gauges/_Images\US-ADI_Images\Image1.png" Stretch="Fill">
+                    <Image Source="/Ikarus;component/Gauges/_Images\US-ADI_Images\Image.png" Stretch="Fill">
                         <Image.RenderTransform>
                             <MatrixTransform Matrix="0.359999974568685,0,0,0.36000006539481,0,0" />
                         </Image.RenderTransform>
@@ -1391,7 +1401,7 @@
                         Width="36"
                         Height="35"
                         Clip="M0.66,0.695L15.482,0.695 15.482,15.517 0.66,15.517z">
-                    <Image Source="/Ikarus;component/Gauges/_Images\US-ADI_Images\Image2.png" Stretch="Fill">
+                    <Image Source="/Ikarus;component/Gauges/_Images\US-ADI_Images\Image.png" Stretch="Fill">
                         <Image.RenderTransform>
                             <MatrixTransform Matrix="0.359999974568685,0,0,0.36000006539481,0,0" />
                         </Image.RenderTransform>

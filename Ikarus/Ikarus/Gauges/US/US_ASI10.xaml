@@ -38,7 +38,7 @@
                             Width="40"
                             Height="36"
                             Clip="M0.875,0.577L16.205,0.577 16.205,15.907 0.875,15.907z">
-                        <Image Source="/Ikarus;component/Gauges/_Images\F15-ASI_Images\Image3.png" Stretch="Fill">
+                        <Image Source="/Ikarus;component/Gauges/_Images\F15-ASI_Images\Image.png" Stretch="Fill">
                             <Image.RenderTransform>
                                 <MatrixTransform Matrix="0.359999942779541,0,0,0.359999974568685,0,0" />
                             </Image.RenderTransform>
@@ -55,7 +55,7 @@
                             Width="40"
                             Height="36"
                             Clip="M0.875,0.951L16.205,0.951 16.205,16.281 0.875,16.281z">
-                        <Image Source="/Ikarus;component/Gauges/_Images\F15-ASI_Images\Image1.png" Stretch="Fill">
+                        <Image Source="/Ikarus;component/Gauges/_Images\F15-ASI_Images\Image.png" Stretch="Fill">
                             <Image.RenderTransform>
                                 <MatrixTransform Matrix="0.359999942779541,0,0,0.359999974568685,0,0" />
                             </Image.RenderTransform>
@@ -100,7 +100,7 @@
                             Width="40"
                             Height="36"
                             Clip="M0.77,0.577L16.1,0.577 16.1,15.907 0.77,15.907z">
-                        <Image Source="/Ikarus;component/Gauges/_Images\F15-ASI_Images\Image2.png" Stretch="Fill">
+                        <Image Source="/Ikarus;component/Gauges/_Images\F15-ASI_Images\Image.png" Stretch="Fill">
                             <Image.RenderTransform>
                                 <MatrixTransform Matrix="0.359999942779541,0,0,0.359999974568685,0,0" />
                             </Image.RenderTransform>

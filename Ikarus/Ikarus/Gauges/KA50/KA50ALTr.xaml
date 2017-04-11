@@ -104,7 +104,7 @@
                 <Path Data="M7.031,0.108C10.854,0.108 13.954,3.208 13.954,7.031 13.954,10.854 10.854,13.954 7.031,13.954 3.208,13.954 0.108,10.854 0.108,7.031 0.108,3.208 3.208,0.108 7.031,0.108" Fill="#FF1A1A1A" Height="14.062" Canvas.Left="63.835" Stroke="#FF999999" StrokeThickness="0.216" StrokeMiterLimit="22.926" Canvas.Top="63.835" Width="14.062"/>
                 <Canvas Clip="M3.89,0.644C5.767,0.644 7.291,2.168 7.291,4.046 7.291,5.924 5.767,7.447 3.89,7.447 2.011,7.447 0.488,5.924 0.488,4.046 0.488,2.168 2.011,0.644 3.89,0.644" Height="18" Canvas.Left="86.664" Canvas.Top="66.82" Width="20">
                     <Canvas Clip="M0.488,0.644L7.291,0.644 7.291,7.447 0.488,7.447z" Height="18" Canvas.Left="0" Canvas.Top="0" Width="20">
-                        <Image Source="/Ikarus;component/Gauges/_Images\KA50_ALTr_Images\Image3.png" Stretch="Fill">
+                        <Image Source="/Ikarus;component/Gauges/_Images\KA50_ALTr_Images\Image1.png" Stretch="Fill">
                             <Image.RenderTransform>
                                 <MatrixTransform Matrix="0.360000228881836,0,0,0.359999974568685,0,0"/>
                             </Image.RenderTransform>

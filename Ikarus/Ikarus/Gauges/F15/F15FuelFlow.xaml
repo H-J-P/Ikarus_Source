@@ -64,7 +64,7 @@
                 <Path Data="M97.411,60.907L175.898,60.907 175.898,94.553 97.411,94.553z M24.25,0.284L231.436,0.284C244.617,0.284,255.402,11.069,255.402,24.25L255.402,231.436C255.402,244.618,244.617,255.403,231.436,255.403L24.25,255.403C11.069,255.403,0.284,244.618,0.284,231.436L0.284,24.25C0.284,11.069,11.069,0.284,24.25,0.284" Fill="#FF1A1A1A" Height="255.686" Canvas.Left="-0.284" Stroke="Black" StrokeThickness="0.567" StrokeMiterLimit="22.926" Canvas.Top="-0.284" Width="255.685"/>
                 <Canvas Clip="M10.557,0.847C16.037,0.847 20.479,5.289 20.479,10.768 20.479,16.248 16.037,20.69 10.557,20.69 5.078,20.69 0.636,16.248 0.636,10.768 0.636,5.289 5.078,0.847 10.557,0.847" Height="46" Canvas.Left="11.281" Canvas.Top="11.07" Width="48">
                     <Canvas Clip="M0.636,0.847L20.478,0.847 20.478,20.689 0.636,20.689z" Height="46" Canvas.Left="0" Canvas.Top="0" Width="48">
-                        <Image Source="/Ikarus;component/Gauges/_Images\F15-FuelFlow_Images\Image3.png" Stretch="Fill">
+                        <Image Source="/Ikarus;component/Gauges/_Images\F15-FuelFlow_Images\Image.png" Stretch="Fill">
                             <Image.RenderTransform>
                                 <MatrixTransform Matrix="0.360000133514404,0,0,0.360000029854153,0,0"/>
                             </Image.RenderTransform>
@@ -75,7 +75,7 @@
                 <Path Data="M0,7.365L0.243,5.205 4.701,5.708C5.047,5.109,5.609,4.66,6.27,4.458L6.773,0 8.933,0.244 8.43,4.702C9.029,5.048,9.478,5.61,9.68,6.27L14.138,6.773 13.894,8.933 9.436,8.43C9.09,9.03,8.528,9.478,7.867,9.681L7.364,14.138 5.205,13.894 5.708,9.436C5.108,9.091,4.66,8.529,4.457,7.868z" Fill="#FF333333" Height="14.138" Canvas.Left="14.77" Canvas.Top="14.769" Width="14.138"/>
                 <Canvas Clip="M10.768,0.847C16.248,0.847 20.69,5.289 20.69,10.768 20.69,16.247 16.248,20.69 10.768,20.69 5.29,20.69 0.846,16.247 0.846,10.768 0.846,5.289 5.29,0.847 10.768,0.847" Height="46" Canvas.Left="222.511" Canvas.Top="11.07" Width="48">
                     <Canvas Clip="M0.846,0.847L20.69,0.847 20.69,20.69 0.846,20.69z" Height="46" Canvas.Left="0" Canvas.Top="0" Width="48">
-                        <Image Source="/Ikarus;component/Gauges/_Images\F15-FuelFlow_Images\Image2.png" Stretch="Fill">
+                        <Image Source="/Ikarus;component/Gauges/_Images\F15-FuelFlow_Images\Image.png" Stretch="Fill">
                             <Image.RenderTransform>
                                 <MatrixTransform Matrix="0.360000133514404,0,0,0.360000029854153,0,0"/>
                             </Image.RenderTransform>
@@ -86,7 +86,7 @@
                 <Path Data="M0,5.166L0.84,3.162 4.978,4.897C5.477,4.418,6.143,4.146,6.834,4.137L8.568,0 10.573,0.84 8.838,4.978C9.317,5.478,9.589,6.143,9.598,6.834L13.734,8.569 12.895,10.573 8.757,8.838C8.257,9.317,7.592,9.589,6.901,9.598L5.166,13.735 3.161,12.895 4.897,8.757C4.418,8.257,4.146,7.592,4.137,6.901z" Fill="#FF333333" Height="13.735" Canvas.Left="226.412" Canvas.Top="14.971" Width="13.734"/>
                 <Canvas Clip="M10.557,0.578C16.036,0.578 20.478,5.02 20.478,10.498 20.478,15.979 16.036,20.42 10.557,20.42 5.078,20.42 0.636,15.979 0.636,10.498 0.636,5.02 5.078,0.578 10.557,0.578" Height="45" Canvas.Left="11.281" Canvas.Top="222.781" Width="48">
                     <Canvas Clip="M0.636,0.578L20.479,0.578 20.479,20.42 0.636,20.42z" Height="45" Canvas.Left="0" Canvas.Top="0" Width="48">
-                        <Image Source="/Ikarus;component/Gauges/_Images\F15-FuelFlow_Images\Image1.png" Stretch="Fill">
+                        <Image Source="/Ikarus;component/Gauges/_Images\F15-FuelFlow_Images\Image.png" Stretch="Fill">
                             <Image.RenderTransform>
                                 <MatrixTransform Matrix="0.360000133514404,0,0,0.36000010172526,0,0"/>
                             </Image.RenderTransform>

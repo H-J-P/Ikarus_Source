@@ -44,7 +44,7 @@
                             Width="40"
                             Height="36"
                             Clip="M1.41,0.68L16.74,0.68 16.74,16.01 1.41,16.01z">
-                        <Image Source="/Ikarus;component/Gauges/_Images\UH1_RadioCompassIndicator_2_Images\Image3.png" Stretch="Fill">
+                        <Image Source="/Ikarus;component/Gauges/_Images\UH1_RadioCompassIndicator_2_Images\Image.png" Stretch="Fill">
                             <Image.RenderTransform>
                                 <MatrixTransform Matrix="0.359999942779541,0,0,0.359999974568685,0,0" />
                             </Image.RenderTransform>
@@ -106,7 +106,7 @@
                             Width="40"
                             Height="36"
                             Clip="M1.381,0.68L16.711,0.68 16.711,16.01 1.381,16.01z">
-                        <Image Source="/Ikarus;component/Gauges/_Images\UH1_RadioCompassIndicator_2_Images\Image2.png" Stretch="Fill">
+                        <Image Source="/Ikarus;component/Gauges/_Images\UH1_RadioCompassIndicator_2_Images\Image.png" Stretch="Fill">
                             <Image.RenderTransform>
                                 <MatrixTransform Matrix="0.359999942779541,0,0,0.359999974568685,0,0" />
                             </Image.RenderTransform>
@@ -123,7 +123,7 @@
                             Width="40"
                             Height="36"
                             Clip="M1.381,0.65L16.711,0.65 16.711,15.978 1.381,15.978z">
-                        <Image Source="/Ikarus;component/Gauges/_Images\UH1_RadioCompassIndicator_2_Images\Image1.png" Stretch="Fill">
+                        <Image Source="/Ikarus;component/Gauges/_Images\UH1_RadioCompassIndicator_2_Images\Image.png" Stretch="Fill">
                             <Image.RenderTransform>
                                 <MatrixTransform Matrix="0.359999942779541,0,0,0.359999974568685,0,0" />
                             </Image.RenderTransform>

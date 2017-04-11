@@ -146,7 +146,7 @@
                 <Path Data="M4.405,0.354L92.874,0.354C95.102,0.354,96.924,2.177,96.924,4.405L96.924,55.971C96.924,58.199,95.102,60.022,92.874,60.022L4.405,60.022C2.177,60.022,0.355,58.199,0.355,55.971L0.355,4.405C0.355,2.177,2.177,0.354,4.405,0.354z" Height="60.377" Canvas.Left="19.392" Stroke="#FF666666" StrokeThickness="0.709" StrokeMiterLimit="22.926" Canvas.Top="37.102" Width="97.278"/>
                 <Canvas Clip="F1M6.304,0.813C9.417,0.813 11.941,3.337 11.941,6.45 11.941,9.562 9.417,12.087 6.304,12.087 3.191,12.087 0.667,9.562 0.667,6.45 0.667,3.337 3.191,0.813 6.304,0.813" Height="28" Canvas.Left="5.691" Canvas.Top="5.538" Width="28">
                     <Canvas Clip="M0.667,0.813L11.941,0.813 11.941,12.087 0.667,12.087z" Height="28" Canvas.Left="0" Canvas.Top="0" Width="28">
-                        <Image Source="/Ikarus;component/Gauges/_Images\US-WhiskeyCompass_Images\Image3.png" Stretch="Fill">
+                        <Image Source="/Ikarus;component/Gauges/_Images\US-WhiskeyCompass_Images\Image.png" Stretch="Fill">
                             <Image.RenderTransform>
                                 <MatrixTransform Matrix="0.36000006539481,0,0,0.36000006539481,0,0"/>
                             </Image.RenderTransform>
@@ -157,7 +157,7 @@
                 <Path Data="M0.858,6.49L0,5.602 1.833,3.83C1.694,3.462,1.701,3.054,1.852,2.691L0.08,0.859 0.968,0 2.739,1.832C3.107,1.695,3.516,1.702,3.879,1.851L5.711,0.08 6.569,0.968 4.737,2.74C4.875,3.107,4.868,3.516,4.719,3.879L6.49,5.711 5.603,6.569 3.831,4.737C3.462,4.875,3.054,4.868,2.691,4.718z" Fill="#FF333333" Height="6.569" Canvas.Left="8.71" Canvas.Top="8.703" Width="6.569"/>
                 <Canvas Clip="F1M6.304,0.855C9.417,0.855 11.941,3.379 11.941,6.492 11.941,9.605 9.417,12.129 6.304,12.129 3.191,12.129 0.667,9.605 0.667,6.492 0.667,3.379 3.191,0.855 6.304,0.855" Height="28" Canvas.Left="5.691" Canvas.Top="117.583" Width="28">
                     <Canvas Clip="M0.667,0.855L11.941,0.855 11.941,12.128 0.667,12.128z" Height="28" Canvas.Left="0" Canvas.Top="0" Width="28">
-                        <Image Source="/Ikarus;component/Gauges/_Images\US-WhiskeyCompass_Images\Image2.png" Stretch="Fill">
+                        <Image Source="/Ikarus;component/Gauges/_Images\US-WhiskeyCompass_Images\Image.png" Stretch="Fill">
                             <Image.RenderTransform>
                                 <MatrixTransform Matrix="0.36000006539481,0,0,0.36000006539481,0,0"/>
                             </Image.RenderTransform>
@@ -168,7 +168,7 @@
                 <Path Data="M0,2.767L0.516,1.645 2.831,2.711C3.124,2.449,3.508,2.307,3.9,2.316L4.966,0 6.088,0.516 5.022,2.832C5.284,3.126,5.426,3.509,5.417,3.901L7.732,4.967 7.216,6.088 4.901,5.023C4.607,5.285,4.225,5.427,3.832,5.418L2.767,7.733 1.644,7.218 2.71,4.902C2.448,4.608,2.307,4.225,2.315,3.833z" Fill="#FF333333" Height="7.733" Canvas.Left="8.129" Canvas.Top="120.208" Width="7.732"/>
                 <Canvas Clip="F1M6.339,0.813C9.453,0.813 11.976,3.337 11.976,6.45 11.976,9.562 9.453,12.087 6.339,12.087 3.226,12.087 0.703,9.562 0.703,6.45 0.703,3.337 3.226,0.813 6.339,0.813" Height="28" Canvas.Left="117.729" Canvas.Top="5.538" Width="28">
                     <Canvas Clip="M0.703,0.813L11.976,0.813 11.976,12.087 0.703,12.087z" Height="28" Canvas.Left="0" Canvas.Top="0" Width="28">
-                        <Image Source="/Ikarus;component/Gauges/_Images\US-WhiskeyCompass_Images\Image1.png" Stretch="Fill">
+                        <Image Source="/Ikarus;component/Gauges/_Images\US-WhiskeyCompass_Images\Image.png" Stretch="Fill">
                             <Image.RenderTransform>
                                 <MatrixTransform Matrix="0.36000006539481,0,0,0.36000006539481,0,0"/>
                             </Image.RenderTransform>

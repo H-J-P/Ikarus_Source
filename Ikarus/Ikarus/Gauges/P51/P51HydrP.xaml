@@ -11,7 +11,7 @@
                 <Path Data="M24.805,0.108L230.53,0.108C244.113,0.108,255.226,11.222,255.226,24.805L255.226,230.53C255.226,244.113,244.113,255.225,230.53,255.225L24.805,255.225C11.222,255.225,0.108,244.113,0.108,230.53L0.108,24.805C0.108,11.222,11.222,0.108,24.805,0.108" Fill="#FF121212" Height="255.333" Canvas.Left="-0.108" Stroke="#FF666666" StrokeThickness="0.216" StrokeMiterLimit="22.926" Canvas.Top="-0.108" Width="255.334"/>
                 <Canvas Clip="M9.243,0.685C13.649,0.685 17.221,4.257 17.221,8.663 17.221,13.069 13.649,16.641 9.243,16.641 4.837,16.641 1.264,13.069 1.264,8.663 1.264,4.257 4.837,0.685 9.243,0.685" Height="37" Canvas.Left="12.702" Canvas.Top="13.282" Width="40">
                     <Canvas Clip="M1.264,0.685L17.221,0.685 17.221,16.642 1.264,16.642z" Height="37" Canvas.Left="0" Canvas.Top="0" Width="40">
-                        <Image Source="/Ikarus;component/Gauges/_Images\P51-HydraulicP_Images\Image3.png" Stretch="Fill">
+                        <Image Source="/Ikarus;component/Gauges/_Images\P51-HydraulicP_Images\Image.png" Stretch="Fill">
                             <Image.RenderTransform>
                                 <MatrixTransform Matrix="0.359999942779541,0,0,0.35999988865208,0,0"/>
                             </Image.RenderTransform>
@@ -22,7 +22,7 @@
                 <Path Data="M0.153,7.041L0,5.3 3.593,4.983C3.77,4.455,4.141,4.012,4.629,3.747L4.312,0.153 6.053,0 6.37,3.594C6.898,3.769,7.341,4.141,7.607,4.629L11.2,4.312 11.354,6.053 7.76,6.37C7.584,6.898,7.212,7.342,6.724,7.607L7.042,11.2 5.3,11.354 4.983,7.76C4.455,7.584,4.012,7.212,3.747,6.724z" Fill="#FF333333" Height="11.354" Canvas.Left="16.268" Canvas.Top="16.268" Width="11.354"/>
                 <Canvas Clip="M9.354,0.685C13.759,0.685 17.331,4.257 17.331,8.663 17.331,13.069 13.759,16.641 9.354,16.641 4.948,16.641 1.375,13.069 1.375,8.663 1.375,4.257 4.948,0.685 9.354,0.685" Height="37" Canvas.Left="223.821" Canvas.Top="13.282" Width="40">
                     <Canvas Clip="M1.375,0.685L17.331,0.685 17.331,16.642 1.375,16.642z" Height="37" Canvas.Left="0" Canvas.Top="0" Width="40">
-                        <Image Source="/Ikarus;component/Gauges/_Images\P51-HydraulicP_Images\Image2.png" Stretch="Fill">
+                        <Image Source="/Ikarus;component/Gauges/_Images\P51-HydraulicP_Images\Image.png" Stretch="Fill">
                             <Image.RenderTransform>
                                 <MatrixTransform Matrix="0.359999942779541,0,0,0.35999988865208,0,0"/>
                             </Image.RenderTransform>
@@ -33,7 +33,7 @@
                 <Path Data="M0,4.51L0.591,2.865 3.986,4.084C4.367,3.678,4.891,3.432,5.445,3.396L6.663,0 8.309,0.59 7.09,3.986C7.495,4.367,7.742,4.89,7.778,5.445L11.174,6.663 10.584,8.308 7.187,7.09C6.807,7.495,6.283,7.742,5.729,7.778L4.511,11.174 2.865,10.584 4.084,7.188C3.679,6.806,3.432,6.283,3.396,5.729z" Fill="#FF333333" Height="11.174" Canvas.Left="227.587" Canvas.Top="16.358" Width="11.174"/>
                 <Canvas Clip="M9.243,1.274C13.649,1.274 17.221,4.846 17.221,9.253 17.221,13.659 13.649,17.231 9.243,17.231 4.837,17.231 1.264,13.659 1.264,9.253 1.264,4.846 4.837,1.274 9.243,1.274" Height="37" Canvas.Left="12.702" Canvas.Top="223.921" Width="40">
                     <Canvas Clip="M1.264,1.274L17.221,1.274 17.221,17.231 1.264,17.231z" Height="37" Canvas.Left="0" Canvas.Top="0" Width="40">
-                        <Image Source="/Ikarus;component/Gauges/_Images\P51-HydraulicP_Images\Image1.png" Stretch="Fill">
+                        <Image Source="/Ikarus;component/Gauges/_Images\P51-HydraulicP_Images\Image.png" Stretch="Fill">
                             <Image.RenderTransform>
                                 <MatrixTransform Matrix="0.359999942779541,0,0,0.35999988865208,0,0"/>
                             </Image.RenderTransform>
