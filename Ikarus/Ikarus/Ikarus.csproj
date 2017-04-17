@@ -118,6 +118,51 @@
     <Compile Include="Gauges\AJS37\AJS37_ADI.xaml.cs">
       <DependentUpon>AJS37_ADI.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Gauges\AJS37\AJS37_ACC.xaml.cs">
+      <DependentUpon>AJS37_ACC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\AJS37\AJS37_ALT_stby.xaml.cs">
+      <DependentUpon>AJS37_ALT_stby.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\AJS37\AJS37_AOA.xaml.cs">
+      <DependentUpon>AJS37_AOA.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\AJS37\AJS37_ASI.xaml.cs">
+      <DependentUpon>AJS37_ASI.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\AJS37\AJS37_ASI_stby.xaml.cs">
+      <DependentUpon>AJS37_ASI_stby.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\AJS37\AJS37_DIST.xaml.cs">
+      <DependentUpon>AJS37_DIST.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\AJS37\AJS37_EGT.xaml.cs">
+      <DependentUpon>AJS37_EGT.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\AJS37\AJS37_ELEV_TRIM.xaml.cs">
+      <DependentUpon>AJS37_ELEV_TRIM.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\AJS37\AJS37_EPR.xaml.cs">
+      <DependentUpon>AJS37_EPR.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\AJS37\AJS37_FUEL_Q.xaml.cs">
+      <DependentUpon>AJS37_FUEL_Q.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\AJS37\AJS37_HSI.xaml.cs">
+      <DependentUpon>AJS37_HSI.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\AJS37\AJS37_KURS.xaml.cs">
+      <DependentUpon>AJS37_KURS.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\AJS37\AJS37_NOZ.xaml.cs">
+      <DependentUpon>AJS37_NOZ.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\AJS37\AJS37_OXY_Q.xaml.cs">
+      <DependentUpon>AJS37_OXY_Q.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\AJS37\AJS37_RPM.xaml.cs">
+      <DependentUpon>AJS37_RPM.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Gauges\ButtonAndSwitches\Button.xaml.cs">
       <DependentUpon>Button.xaml</DependentUpon>
     </Compile>
@@ -234,6 +279,9 @@
     </Compile>
     <Compile Include="Gauges\L39\L39-ADI.xaml.cs">
       <DependentUpon>L39-ADI.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\L39\L39-ZDV30.xaml.cs">
+      <DependentUpon>L39-ZDV30.xaml</DependentUpon>
     </Compile>
     <Compile Include="Gauges\Labels\Label.xaml.cs">
       <DependentUpon>Label.xaml</DependentUpon>
@@ -1252,6 +1300,66 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Gauges\AJS37\AJS37_ACC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Gauges\AJS37\AJS37_ALT_stby.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Gauges\AJS37\AJS37_AOA.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Gauges\AJS37\AJS37_ASI.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Gauges\AJS37\AJS37_ASI_stby.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Gauges\AJS37\AJS37_DIST.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Gauges\AJS37\AJS37_EGT.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Gauges\AJS37\AJS37_ELEV_TRIM.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Gauges\AJS37\AJS37_EPR.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Gauges\AJS37\AJS37_FUEL_Q.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Gauges\AJS37\AJS37_HSI.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Gauges\AJS37\AJS37_KURS.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Gauges\AJS37\AJS37_NOZ.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Gauges\AJS37\AJS37_OXY_Q.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Gauges\AJS37\AJS37_RPM.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Gauges\ButtonAndSwitches\Button.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -1407,6 +1515,10 @@
     <Page Include="Gauges\L39\L39-ADI.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\L39\L39-ZDV30.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Gauges\Labels\Label.xaml">
       <Generator>MSBuild:Compile</Generator>
