@@ -4,7 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="300">
+             d:DesignHeight="255" d:DesignWidth="255">
     <Grid>
     	<Canvas x:Name="AOA" HorizontalAlignment="Left" Height="238.11" UseLayoutRounding="False" VerticalAlignment="Top" Width="238.11">
     		<Canvas x:Name="dial" Height="222.22" Canvas.Left="7.946" Canvas.Top="7.835" Width="222.218">
@@ -51,8 +51,8 @@
     		<Canvas x:Name="shadow" Height="188.107" Canvas.Left="9.47" Canvas.Top="9.36" Width="208.333">
     			<Path Data="M109.585,0C153.06,0 190.623,25.318 208.333,62.014 188.493,38.085 158.542,22.842 125.028,22.842 65.291,22.842 16.864,71.268 16.864,131.007 16.864,151.969 22.832,171.534 33.155,188.107 12.706,168.199 0,140.378 0,109.585 0,49.063 49.063,0 109.585,0" Fill="Black" Height="188.107" Canvas.Left="0" Opacity="0.7" Canvas.Top="0" Width="208.333"/>
     		</Canvas>
-    		<Canvas x:Name="AOA1" Height="115.586" Canvas.Left="94.936" Canvas.Top="87.127" Width="83.884">
-    			<Path Data="M4.52,5.151C3.304,6.02 1.614,5.736 0.747,4.521 -0.122,3.303 0.161,1.614 1.377,0.746 2.594,-0.122 4.284,0.161 5.151,1.377 6.019,2.593 5.737,4.283 4.52,5.151z" Height="5.897" Canvas.Left="21.17" Stroke="Red" StrokeThickness="0.567" StrokeMiterLimit="2.414" Canvas.Top="28.869" Width="5.896"/>
+    		<Canvas x:Name="AOA1" Height="115.586" Canvas.Left="94.936" Canvas.Top="87.127" Width="83.884" RenderTransformOrigin="0.28,0.273">
+                <Path Data="M4.52,5.151C3.304,6.02 1.614,5.736 0.747,4.521 -0.122,3.303 0.161,1.614 1.377,0.746 2.594,-0.122 4.284,0.161 5.151,1.377 6.019,2.593 5.737,4.283 4.52,5.151z" Height="5.897" Canvas.Left="21.17" Stroke="Red" StrokeThickness="0.567" StrokeMiterLimit="2.414" Canvas.Top="28.869" Width="5.896"/>
     			<Path Data="M3.071,0L0,3.851 58.524,84.95 56.69,75.154z" Fill="#FFB3B3B3" Height="84.95" Canvas.Left="25.36" Canvas.Top="30.636" Width="58.524"/>
     			<Path Data="M0,1.456L4.116,0 62.285,81.53 53.619,76.609z" Fill="#FFC4C4C4" Height="81.53" Canvas.Left="21.599" Canvas.Top="34.056" Width="62.285"/>
     			<Path Data="M3.384,0L0,2.415 20.531,31.191 23.915,28.777z" Fill="#FF1A1A1A" Height="31.191" Canvas.Left="2.397" Canvas.Top="0" Width="23.915"/>

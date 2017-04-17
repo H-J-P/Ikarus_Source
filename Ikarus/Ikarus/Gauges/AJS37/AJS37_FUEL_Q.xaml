@@ -95,8 +95,8 @@
     		<Canvas x:Name="shadow" Height="175.951" Canvas.Left="25.056" Canvas.Top="24.938" Width="194.869">
     			<Path Data="M102.503,0C143.169,0 178.303,23.682 194.869,58.006 176.311,35.624 148.296,21.366 116.948,21.366 61.071,21.366 15.774,66.663 15.774,122.541 15.774,142.148 21.357,160.448 31.012,175.951 11.885,157.33 0,131.306 0,102.503 0,45.893 45.892,0 102.503,0" Fill="Black" Height="175.951" Canvas.Left="0" Opacity="0.7" Canvas.Top="0" Width="194.869"/>
     		</Canvas>
-    		<Canvas x:Name="JOKER_TIE" Height="63.918" Canvas.Left="101.691" Canvas.Top="125.397" Width="27.911">
-    			<Path Data="M0,3.103L3.254,3.15 3.792,0.807 1.31,0z" Fill="#FFCCCCCC" Height="3.15" Canvas.Left="23.715" Canvas.Top="0.415" Width="3.792"/>
+    		<Canvas x:Name="JOKER_TIE" Height="63.918" Canvas.Left="101.691" Canvas.Top="125.397" Width="27.911" RenderTransformOrigin="0.914,0.023">
+                <Path Data="M0,3.103L3.254,3.15 3.792,0.807 1.31,0z" Fill="#FFCCCCCC" Height="3.15" Canvas.Left="23.715" Canvas.Top="0.415" Width="3.792"/>
     			<Path Data="M0,5.032L4.217,5.093 5.378,0.047 2.125,0z" Fill="Black" Height="5.093" Canvas.Left="21.591" Canvas.Top="3.518" Width="5.378"/>
     			<Path Data="M0,5.032L5.182,5.107 6.343,0.061 2.125,0z" Fill="#FFCCCCCC" Height="5.107" Canvas.Left="19.466" Canvas.Top="8.55" Width="6.343"/>
     			<Path Data="M0,5.032L6.146,5.121 7.306,0.075 2.125,0z" Fill="Black" Height="5.121" Canvas.Left="17.342" Canvas.Top="13.582" Width="7.306"/>
@@ -250,8 +250,8 @@
     			<Path Data="M3.989,2.678C3.64,3.751 2.488,4.338 1.414,3.99 0.341,3.641 -0.246,2.488 0.103,1.415 0.451,0.342 1.604,-0.246 2.677,0.103 3.751,0.451 4.338,1.605 3.989,2.678" Fill="#FF666666" Height="4.092" Canvas.Left="23.822" Stroke="#FF1A1A1A" StrokeThickness="0.216" StrokeMiterLimit="2.414" Canvas.Top="-0.002" Width="4.091"/>
     			<Path Data="M1.066,0.741C0.98,1.007 0.693,1.152 0.428,1.066 0.162,0.979 0.016,0.694 0.103,0.429 0.189,0.162 0.475,0.017 0.741,0.103 1.006,0.189 1.152,0.476 1.066,0.741" Fill="#FF999999" Height="1.168" Canvas.Left="25.284" Stroke="Black" StrokeThickness="0.216" StrokeMiterLimit="2.414" Canvas.Top="1.459" Width="1.168"/>
     		</Canvas>
-    		<Canvas x:Name="FUEL_Q1" Height="90.266" Canvas.Left="99.66" Canvas.Top="121.273" Width="34.067">
-    			<Path Data="M27.568,0L0,85.05 3.242,81.667 29.508,0.629z" Fill="#FFC4C4C4" Height="85.05" Canvas.Left="0.64" Canvas.Top="5.216" Width="29.508"/>
+    		<Canvas x:Name="FUEL_Q1" Height="90.266" Canvas.Left="99.66" Canvas.Top="121.273" Width="34.067" RenderTransformOrigin="0.778,0.066">
+                <Path Data="M27.568,0L0,85.05 3.242,81.667 29.508,0.629z" Fill="#FFC4C4C4" Height="85.05" Canvas.Left="0.64" Canvas.Top="5.216" Width="29.508"/>
     			<Path Data="M28.208,0.629L0.64,85.679 0,81.038 26.267,0z" Fill="#FFB3B3B3" Height="85.679" Canvas.Left="0" Canvas.Top="4.587" Width="28.208"/>
     			<Path Data="M3.992,82.432L0.75,85.815 0.11,81.173 26.377,0.136 30.259,1.394z" Height="86.051" Canvas.Left="-0.11" Stroke="#FFCCCCCC" StrokeThickness="0.216" StrokeMiterLimit="2.414" Canvas.Top="4.451" Width="30.395"/>
     			<Path Data="M0.103,85.083L27.671,0.033" Height="85.117" Canvas.Left="0.537" Stroke="#FFCCCCCC" StrokeThickness="0.216" StrokeMiterLimit="2.414" Canvas.Top="5.183" Width="27.773"/>

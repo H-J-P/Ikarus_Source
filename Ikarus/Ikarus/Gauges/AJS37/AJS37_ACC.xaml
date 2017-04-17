@@ -4,7 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="300">
+             d:DesignHeight="255" d:DesignWidth="255">
     <Grid>
     	<Canvas x:Name="ACC" HorizontalAlignment="Left" Height="255.118" UseLayoutRounding="False" VerticalAlignment="Top" Width="255.118">
     		<Canvas x:Name="bezel" Height="255.118" Canvas.Left="0" Canvas.Top="-0.118" Width="255.118">
@@ -119,15 +119,15 @@
     		<Canvas x:Name="shadow" Height="197.064" Canvas.Left="12.756" Canvas.Top="12.638" Width="218.253">
     			<Path Data="M114.803,0C160.348,0 199.7,26.524 218.253,64.967 197.469,39.899 166.091,23.93 130.981,23.93 68.399,23.93 17.666,74.662 17.666,137.246 17.666,159.206 23.919,179.702 34.733,197.064 13.311,176.209 0,147.063 0,114.803 0,51.4 51.399,0 114.803,0" Fill="Black" Height="197.064" Canvas.Left="0" Opacity="0.7" Canvas.Top="0" Width="218.253"/>
     		</Canvas>
-    		<Canvas x:Name="MAX_G_needle" Height="118.412" Canvas.Left="110.096" Canvas.Top="42.288" Width="34.925">
+    		<Canvas x:Name="MAX_G_needle" Height="118.412" Canvas.Left="110.096" Canvas.Top="42.288" Width="34.925" RenderTransformOrigin="0.487,0.718">
     			<Path Data="M0,28.314C10.67,34.907,24.257,34.907,34.925,28.314L17.464,0 17.462,0z" Fill="#FF1E1E21" Height="33.259" Canvas.Left="0" Canvas.Top="85.153" Width="34.925"/>
     			<Path Data="M0,83.537L4.961,82.122 4.396,0 0,9.469z" Fill="#FFA7A9AC" Height="83.537" Canvas.Left="13.068" Canvas.Top="0" Width="4.961"/>
     			<Path Data="M4.396,83.537L0,82.273 0,0 4.396,9.469z" Fill="#FFB7B9BC" Height="83.537" Canvas.Left="17.464" Canvas.Top="0" Width="4.396"/>
     			<Path Data="M10.68,10.681C13.124,8.238 13.124,4.275 10.68,1.833 8.237,-0.611 4.276,-0.611 1.833,1.833 -0.611,4.275 -0.611,8.238 1.833,10.681 4.276,13.125 8.237,13.125 10.68,10.681" Fill="#FF2B2D31" Height="12.514" Canvas.Left="11.207" Canvas.Top="78.896" Width="12.513"/>
     			<Path Data="M1.953,3.55C2.835,3.55 3.55,2.834 3.55,1.952 3.55,1.069 2.835,0.354 1.953,0.354 1.071,0.354 0.355,1.069 0.355,1.952 0.355,2.834 1.071,3.55 1.953,3.55" Fill="#FFFEFEFE" Height="3.905" Canvas.Left="15.51" Stroke="#FFED2629" StrokeThickness="0.709" StrokeMiterLimit="2.414" Canvas.Top="83.201" Width="3.904"/>
     		</Canvas>
-    		<Canvas x:Name="MIN_G" Height="118.412" Canvas.Left="110.096" Canvas.Top="42.288" Width="34.925">
-    			<Path Data="M0,28.314C10.67,34.907,24.257,34.907,34.925,28.314L17.464,0 17.462,0z" Fill="#FF1E1E21" Height="33.259" Canvas.Left="0" Canvas.Top="85.153" Width="34.925"/>
+    		<Canvas x:Name="MIN_G" Height="118.412" Canvas.Left="110.096" Canvas.Top="42.288" Width="34.925" RenderTransformOrigin="0.487,0.714">
+                <Path Data="M0,28.314C10.67,34.907,24.257,34.907,34.925,28.314L17.464,0 17.462,0z" Fill="#FF1E1E21" Height="33.259" Canvas.Left="0" Canvas.Top="85.153" Width="34.925"/>
     			<Path Data="M0,83.537L4.961,82.122 4.396,0 0,9.469z" Fill="#FFA7A9AC" Height="83.537" Canvas.Left="13.068" Canvas.Top="0" Width="4.961"/>
     			<Path Data="M4.396,83.537L0,82.273 0,0 4.396,9.469z" Fill="#FFB7B9BC" Height="83.537" Canvas.Left="17.464" Canvas.Top="0" Width="4.396"/>
     			<Path Data="M10.68,10.681C13.124,8.238 13.124,4.275 10.68,1.833 8.237,-0.611 4.276,-0.611 1.833,1.833 -0.611,4.275 -0.611,8.238 1.833,10.681 4.276,13.125 8.237,13.125 10.68,10.681" Fill="#FF2B2D31" Height="12.514" Canvas.Left="11.207" Canvas.Top="78.896" Width="12.513"/>

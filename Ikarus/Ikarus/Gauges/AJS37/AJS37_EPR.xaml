@@ -83,8 +83,8 @@
     		<Canvas x:Name="shadow" Height="197.064" Canvas.Left="12.756" Canvas.Top="12.638" Width="218.253">
     			<Path Data="M114.803,0C160.348,0 199.7,26.524 218.253,64.967 197.469,39.899 166.091,23.93 130.981,23.93 68.399,23.93 17.666,74.662 17.666,137.246 17.666,159.206 23.919,179.702 34.733,197.064 13.311,176.209 0,147.063 0,114.803 0,51.4 51.399,0 114.803,0" Fill="Black" Height="197.064" Canvas.Left="0" Opacity="0.7" Canvas.Top="0" Width="218.253"/>
     		</Canvas>
-    		<Canvas x:Name="EPR1" Height="105.503" Canvas.Left="91.675" Canvas.Top="113.465" Width="49.86">
-    			<Path Data="M40.06,1.13L32.023,0 0,91.331 10.409,83.225z" Fill="#FFB3B3B3" Height="91.331" Canvas.Left="2.828" Canvas.Top="14.172" Width="40.06"/>
+    		<Canvas x:Name="EPR1" Height="105.503" Canvas.Left="91.675" Canvas.Top="113.465" Width="49.86" RenderTransformOrigin="0.722,0.128">
+                <Path Data="M40.06,1.13L32.023,0 0,91.331 10.409,83.225z" Fill="#FFB3B3B3" Height="91.331" Canvas.Left="2.828" Canvas.Top="14.172" Width="40.06"/>
     			<Path Data="M29.65,0L35.763,3.79 2.827,94.981 0,82.095z" Fill="#FFC4C4C4" Height="94.981" Canvas.Left="0" Canvas.Top="10.522" Width="35.763"/>
     			<Path Data="M8.17,1.458C1.184,4.737 -1.821,13.057 1.458,20.044 4.736,27.029 13.056,30.034 20.042,26.755 27.027,23.478 30.032,15.156 26.754,8.17 23.476,1.185 15.155,-1.82 8.17,1.458" Fill="#FF333333" Height="28.213" Canvas.Left="21.779" Stroke="#FF1A1A1A" StrokeThickness="0.283" StrokeMiterLimit="2.414" Canvas.Top="-0.131" Width="28.212"/>
     			<Path Data="M2.421,0.416C1.867,-0.138 0.969,-0.138 0.416,0.416 -0.138,0.97 -0.138,1.867 0.416,2.42 0.969,2.974 1.867,2.974 2.421,2.42 2.973,1.867 2.973,0.97 2.421,0.416" Fill="#FF4D4D4D" Height="2.835" Canvas.Left="34.466" Canvas.Top="12.558" Width="2.835"/>

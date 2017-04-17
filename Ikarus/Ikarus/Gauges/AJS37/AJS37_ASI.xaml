@@ -4,7 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="300">
+             d:DesignHeight="255" d:DesignWidth="255">
     <Grid>
     	<Canvas x:Name="ASI" HorizontalAlignment="Left" Height="255.118" UseLayoutRounding="False" VerticalAlignment="Top" Width="255.118">
     		<Canvas x:Name="background" Height="141.955" Canvas.Left="56.582" Canvas.Top="56.463" Width="141.954">
@@ -193,8 +193,8 @@
     		<Canvas x:Name="shadow" Height="197.064" Canvas.Left="12.756" Canvas.Top="12.637" Width="218.253">
     			<Path Data="M114.803,0C160.348,0 199.7,26.524 218.253,64.967 197.469,39.899 166.091,23.93 130.981,23.93 68.399,23.93 17.666,74.662 17.666,137.246 17.666,159.206 23.919,179.702 34.733,197.064 13.311,176.209 0,147.063 0,114.803 0,51.4 51.399,0 114.803,0" Fill="Black" Height="197.064" Canvas.Left="0" Opacity="0.7" Canvas.Top="0" Width="218.253"/>
     		</Canvas>
-    		<Canvas x:Name="ASI1" Height="133.407" Canvas.Left="89.335" Canvas.Top="46.265" Width="96.85">
-    			<Path Data="M14.476,3.32L4.596,16.999 0,13.68 9.879,0z" Fill="Black" Height="16.999" Canvas.Left="38.734" Canvas.Top="61.948" Width="14.476"/>
+    		<Canvas x:Name="ASI1" Height="133.407" Canvas.Left="89.335" Canvas.Top="46.265" Width="96.85" RenderTransformOrigin="0.392,0.607">
+                <Path Data="M14.476,3.32L4.596,16.999 0,13.68 9.879,0z" Fill="Black" Height="16.999" Canvas.Left="38.734" Canvas.Top="61.948" Width="14.476"/>
     			<Path Data="M4.595,65.268L42.579,12.673 48.236,0 37.984,9.355 0,61.948z" Fill="#FFCCCCCC" Height="65.268" Canvas.Left="48.614" Canvas.Top="0" Width="48.236"/>
     			<Path Data="M14.404,12.614C11.832,16.175 6.859,16.978 3.298,14.405 -0.264,11.833 -1.066,6.86 1.506,3.299 4.078,-0.263 9.051,-1.066 12.612,1.507 16.173,4.079 16.976,9.052 14.404,12.614" Fill="Black" Height="15.912" Canvas.Left="30.269" Canvas.Top="73.22" Width="15.91"/>
     			<Path Data="M3.025,55.965L41.581,2.578C42.038,1.945,41.894,1.056,41.262,0.599L40.802,0.267C40.169,-0.19,39.281,-0.046,38.824,0.587L0.268,53.974C-0.189,54.607,-0.046,55.495,0.586,55.952L1.046,56.284C1.679,56.741,2.568,56.598,3.025,55.965" Fill="Black" Height="56.552" Canvas.Left="0" Canvas.Top="76.855" Width="41.848"/>

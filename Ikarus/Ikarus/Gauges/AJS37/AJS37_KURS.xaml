@@ -162,8 +162,8 @@
     		<Canvas x:Name="shadow" Height="197.064" Canvas.Left="12.756" Canvas.Top="12.638" Width="218.253">
     			<Path Data="M114.803,0C160.348,0 199.7,26.524 218.253,64.967 197.469,39.899 166.091,23.93 130.981,23.93 68.399,23.93 17.666,74.662 17.666,137.246 17.666,159.206 23.919,179.702 34.733,197.064 13.311,176.209 0,147.063 0,114.803 0,51.4 51.399,0 114.803,0" Fill="Black" Height="197.064" Canvas.Left="0" Opacity="0.7" Canvas.Top="0" Width="218.253"/>
     		</Canvas>
-    		<Canvas x:Name="Kompass_Heading" Height="166.027" Canvas.Left="114.18" Canvas.Top="25.031" Width="26.758">
-    			<Path Data="M13.663,0.284C21.052,0.284 27.042,6.274 27.042,13.663 27.042,21.052 21.052,27.042 13.663,27.042 6.274,27.042 0.284,21.052 0.284,13.663 0.284,6.274 6.274,0.284 13.663,0.284" Fill="#FF333333" Height="27.325" Canvas.Left="-0.284" Stroke="Black" StrokeThickness="0.567" StrokeMiterLimit="2.414" Canvas.Top="88.747" Width="27.325"/>
+    		<Canvas x:Name="Kompass_Heading" Height="166.027" Canvas.Left="114.18" Canvas.Top="25.031" Width="26.758" RenderTransformOrigin="0.505,0.611">
+                <Path Data="M13.663,0.284C21.052,0.284 27.042,6.274 27.042,13.663 27.042,21.052 21.052,27.042 13.663,27.042 6.274,27.042 0.284,21.052 0.284,13.663 0.284,6.274 6.274,0.284 13.663,0.284" Fill="#FF333333" Height="27.325" Canvas.Left="-0.284" Stroke="Black" StrokeThickness="0.567" StrokeMiterLimit="2.414" Canvas.Top="88.747" Width="27.325"/>
     			<Path Data="M3.788,166.026L3.788,0 0,7.832 0,166.026z" Fill="#FFC4C4C4" Height="166.026" Canvas.Left="9.591" Canvas.Top="0.001" Width="3.788"/>
     			<Path Data="M0,166.026L0,0 3.788,7.832 3.788,166.026z" Fill="#FFB3B3B3" Height="166.026" Canvas.Left="13.379" Canvas.Top="0.001" Width="3.788"/>
     			<Path Data="M0.108,8.081L3.896,0.248 7.684,8.081 7.684,166.274 0.108,166.274z" Height="166.382" Canvas.Left="9.483" Stroke="#FFCCCCCC" StrokeThickness="0.216" StrokeMiterLimit="2.414" Canvas.Top="-0.248" Width="7.792"/>
