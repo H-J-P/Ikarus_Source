@@ -465,6 +465,8 @@
                 <Path Data="M123.106,0.496C190.822,0.496 245.716,55.391 245.716,123.107 245.716,190.822 190.822,245.716 123.106,245.716 55.391,245.716 0.496,190.822 0.496,123.107 0.496,55.391 55.391,0.496 123.106,0.496z M123.106,7.674C186.857,7.674 238.539,59.355 238.539,123.107 238.539,186.859 186.857,238.539 123.106,238.539 59.354,238.539 7.674,186.859 7.674,123.107 7.674,59.355 59.354,7.674 123.106,7.674z" Height="246.212" Canvas.Left="17.151" Stroke="#FF0A0A0A" StrokeThickness="0.992" StrokeMiterLimit="2.414" Canvas.Top="17.151" Width="246.212"/>
             </Canvas>
         </Canvas>
+        <Image x:Name="Light" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Height="255" Width="255" MouseWheel="Light_MouseWheel" />
+        <Image x:Name="Frame" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Height="255" Width="255" MouseWheel="Light_MouseWheel" />
 
     </Grid>
 </UserControl>

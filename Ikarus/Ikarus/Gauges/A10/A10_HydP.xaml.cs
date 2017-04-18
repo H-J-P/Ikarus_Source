@@ -21,8 +21,8 @@ namespace Ikarus
         public void SetWindowID(int _windowID) { windowID = _windowID; }
         public int GetWindowID() { return windowID; }
 
-        double hydPressure = 0.0;
-        double lhydPressure = 0.0;
+        private double hydPressure = 0.0;
+        private double lhydPressure = 0.0;
 
         RotateTransform rthydPressure = new RotateTransform();
 
