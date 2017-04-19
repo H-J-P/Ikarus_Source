@@ -54,6 +54,14 @@ namespace Ikarus
             InitializeComponent();
 
             if (MainWindow.editmode) MakeDraggable(this, this);
+
+            RWR_3.Visibility = System.Windows.Visibility.Hidden;
+            RWR_9.Visibility =System.Windows.Visibility.Hidden;
+            RWR_15.Visibility =  System.Windows.Visibility.Hidden;
+            RWR_21.Visibility = System.Windows.Visibility.Hidden;
+            RWR_27.Visibility = System.Windows.Visibility.Hidden;
+            RWR_33.Visibility = System.Windows.Visibility.Hidden;
+            Warning_flag.Visibility =  System.Windows.Visibility.Hidden;
         }
 
         public void SetID(string _dataImportID)
