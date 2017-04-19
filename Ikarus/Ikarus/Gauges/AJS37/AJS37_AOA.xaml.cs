@@ -12,7 +12,7 @@ namespace Ikarus
     /// <summary>
     /// Interaktionslogik für AJS37_AOA.xaml
     /// </summary>
-    public partial class AJS37_AOA : UserControl
+    public partial class AJS37_AOA : UserControl, I_Ikarus
     {
         private string dataImportID = "";
         private int windowID = 0;
@@ -24,7 +24,7 @@ namespace Ikarus
         private double readValue = 0.0;
         private double lreadValue = 0.0;
 
-        RotateTransform rthydPressure = new RotateTransform();
+        RotateTransform rtAOA = new RotateTransform();
 
         public AJS37_AOA()
         {
@@ -100,8 +100,8 @@ namespace Ikarus
 
                                if (lreadValue != readValue)
                                {
-                                   rthydPressure.Angle = readValue * 320;
-                                   AOA1.RenderTransform = rthydPressure;
+                                   rtAOA.Angle = readValue * 251;
+                                   AOA1.RenderTransform = rtAOA;
                                }
                                lreadValue = readValue;
                            }
@@ -136,8 +136,6 @@ namespace Ikarus
                 trUsercontrol.X += currentPoint.X - originalPoint.X;
                 trUsercontrol.Y += currentPoint.Y - originalPoint.Y;
                 moveThisElement.RenderTransform = trUsercontrol;
-
-
             };
         }
 

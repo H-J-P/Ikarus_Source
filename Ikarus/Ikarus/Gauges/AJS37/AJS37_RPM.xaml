@@ -100,7 +100,7 @@
             <Canvas x:Name="shadow" Height="197.064" Canvas.Left="12.756" Canvas.Top="12.638" Width="218.253">
                 <Path Data="M114.803,0C160.348,0 199.7,26.524 218.253,64.967 197.469,39.899 166.091,23.93 130.981,23.93 68.399,23.93 17.666,74.662 17.666,137.246 17.666,159.206 23.919,179.702 34.733,197.064 13.311,176.209 0,147.063 0,114.803 0,51.4 51.399,0 114.803,0" Fill="Black" Height="197.064" Canvas.Left="0" Opacity="0.7" Canvas.Top="0" Width="218.253"/>
             </Canvas>
-            <Canvas x:Name="RPM_0_1" Height="39.414" Canvas.Left="107.853" Canvas.Top="168.317" Width="39.413" RenderTransformOrigin="0.5,0.5">
+            <Canvas x:Name="RPM1" Height="39.414" Canvas.Left="107.853" Canvas.Top="168.317" Width="39.413" RenderTransformOrigin="0.5,0.5">
                 <Path Data="M19.814,0.108C30.697,0.108 39.521,8.932 39.521,19.815 39.521,30.699 30.697,39.521 19.814,39.521 8.93,39.521 0.108,30.699 0.108,19.815 0.108,8.932 8.93,0.108 19.814,0.108" Fill="#FF080808" Height="39.629" Canvas.Left="-0.108" Stroke="Black" StrokeThickness="0.216" StrokeMiterLimit="2.414" Canvas.Top="-0.107" Width="39.629"/>
                 <Path Data="M3.666,19.707L3.666,23.372 0,19.707 0,0.342C1.188,0.119,2.413,0,3.666,0z" Fill="#FFB3B3B3" Height="23.372" Canvas.Left="16.04" Canvas.Top="0.001" Width="3.666"/>
                 <Path Data="M0,0C1.253,0,2.478,0.119,3.666,0.342L3.666,19.707 0,23.372 0,19.707z" Fill="#FFC4C4C4" Height="23.372" Canvas.Left="19.706" Canvas.Top="0.001" Width="3.666"/>
@@ -108,7 +108,7 @@
                 <Path Data="M0.108,23.373L0.108,0" Height="23.373" Canvas.Left="19.598" Stroke="#FFE6E6E6" StrokeThickness="0.216" StrokeMiterLimit="2.414" Canvas.Top="0.001" Width="0.216"/>
                 <Path Data="M0.974,0.108C1.452,0.108 1.84,0.496 1.84,0.973 1.84,1.452 1.452,1.84 0.974,1.84 0.496,1.84 0.108,1.452 0.108,0.973 0.108,0.496 0.496,0.108 0.974,0.108" Fill="#FFCCCCCC" Height="1.948" Canvas.Left="18.732" Stroke="#FF999999" StrokeThickness="0.216" StrokeMiterLimit="2.414" Canvas.Top="18.734" Width="1.948"/>
             </Canvas>
-            <Canvas x:Name="RPM1" Height="78.09" Canvas.Left="53.225" Canvas.Top="116.304" Width="85.953" RenderTransformOrigin="0.862,0.133">
+            <Canvas x:Name="RPM10" Height="78.09" Canvas.Left="53.225" Canvas.Top="116.304" Width="85.953" RenderTransformOrigin="0.862,0.133">
                 <Path Data="M0.153,3.016L2.812,5.976 5.997,3.113 3.339,0.153z" Fill="Black" Height="6.128" Canvas.Left="61.198" Stroke="#FF4D4D4D" StrokeThickness="0.216" StrokeMiterLimit="2.414" Canvas.Top="14.611" Width="6.149"/>
                 <Path Data="M0.153,3.016L2.812,5.976 5.997,3.113 3.339,0.153z" Fill="Black" Height="6.128" Canvas.Left="63.857" Stroke="#FF4D4D4D" StrokeThickness="0.216" StrokeMiterLimit="2.414" Canvas.Top="17.57" Width="6.149"/>
                 <Path Data="M65.085,2.842C64.189,1.845,63.256,0.899,62.295,0L3.934,52.429 0,61.312 6.592,55.389z" Fill="#FFB3B3B3" Height="61.312" Canvas.Left="0" Canvas.Top="16.778" Width="65.085"/>

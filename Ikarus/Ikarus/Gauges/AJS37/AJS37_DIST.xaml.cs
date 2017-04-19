@@ -12,7 +12,7 @@ namespace Ikarus
     /// <summary>
     /// Interaktionslogik für AJS37_DIST.xaml
     /// </summary>
-    public partial class AJS37_DIST : UserControl
+    public partial class AJS37_DIST : UserControl, I_Ikarus
     {
         private string dataImportID = "";
         private int windowID = 0;
@@ -21,15 +21,19 @@ namespace Ikarus
         public void SetWindowID(int _windowID) { windowID = _windowID; }
         public int GetWindowID() { return windowID; }
 
-        private double readValue = 0.0;
-        private double lreadValue = 0.0;
+        private double distance = 0.0;
+        private double mslFlag = 0.0;
+        private double ldistance = 0.0;
+        private double lmslFlag = 0.0;
 
-        RotateTransform rthydPressure = new RotateTransform();
+        RotateTransform rtDistance = new RotateTransform();
 
         public AJS37_DIST()
         {
             InitializeComponent();
+
             if (MainWindow.editmode) MakeDraggable(this, this);
+            MLS_flag.Visibility = System.Windows.Visibility.Visible;
         }
 
         public void SetID(string _dataImportID)
@@ -94,16 +98,21 @@ namespace Ikarus
                            {
                                vals = strData.Split(';');
 
-                               if (vals.Length > 0) { readValue = Convert.ToDouble(vals[0], CultureInfo.InvariantCulture); }
+                               if (vals.Length > 0) { distance = Convert.ToDouble(vals[0], CultureInfo.InvariantCulture); }
+                               if (vals.Length > 1) { mslFlag = Convert.ToDouble(vals[1], CultureInfo.InvariantCulture); }
 
-                               if (readValue < 0.0) { readValue = 0.0; }
+                               if (distance < 0.0) { distance = 0.0; }
 
-                               if (lreadValue != readValue)
+                               if (ldistance != distance)
                                {
-                                   rthydPressure.Angle = readValue * 320;
-                                   Distanz.RenderTransform = rthydPressure;
+                                   rtDistance.Angle = distance * 250;
+                                   Distanz.RenderTransform = rtDistance;
                                }
-                               lreadValue = readValue;
+                               if (lmslFlag != mslFlag)
+                                   MLS_flag.Visibility = (mslFlag > 0.9) ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
+
+                               lmslFlag = mslFlag;
+                               ldistance = distance;
                            }
                            catch { return; }
                        }));

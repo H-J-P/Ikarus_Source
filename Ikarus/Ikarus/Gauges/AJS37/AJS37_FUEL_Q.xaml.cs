@@ -12,7 +12,7 @@ namespace Ikarus
     /// <summary>
     /// Interaktionslogik für AJS37_FUEL_Q.xaml
     /// </summary>
-    public partial class AJS37_FUEL_Q : UserControl
+    public partial class AJS37_FUEL_Q : UserControl, I_Ikarus
     {
         private string dataImportID = "";
         private int windowID = 0;
@@ -21,10 +21,13 @@ namespace Ikarus
         public void SetWindowID(int _windowID) { windowID = _windowID; }
         public int GetWindowID() { return windowID; }
 
-        private double readValue = 0.0;
-        private double lreadValue = 0.0;
+        private double fuelQ = 0.0;
+        private double joker= 0.0;
+        private double lfuelQ = 0.0;
+        private double ljoker = 0.0;
 
-        RotateTransform rthydPressure = new RotateTransform();
+        RotateTransform rtFuelQ = new RotateTransform();
+        RotateTransform rtJoker = new RotateTransform();
 
         public AJS37_FUEL_Q()
         {
@@ -94,16 +97,23 @@ namespace Ikarus
                            {
                                vals = strData.Split(';');
 
-                               if (vals.Length > 0) { readValue = Convert.ToDouble(vals[0], CultureInfo.InvariantCulture); }
+                               if (vals.Length > 0) { fuelQ = Convert.ToDouble(vals[0], CultureInfo.InvariantCulture); }
+                               if (vals.Length > 1) { joker = Convert.ToDouble(vals[1], CultureInfo.InvariantCulture); }
 
-                               if (readValue < 0.0) { readValue = 0.0; }
+                               if (fuelQ < 0.0) { fuelQ = 0.0; }
+                               if (joker < 0.0) { joker = 0.0; }
 
-                               if (lreadValue != readValue)
+                               if (lfuelQ != fuelQ)
                                {
-                                   rthydPressure.Angle = readValue * 320;
-                                   FUEL_Q1.RenderTransform = rthydPressure;
+                                   rtFuelQ.Angle = fuelQ * 324;
+                                   FUEL_Q1.RenderTransform = rtFuelQ;
                                }
-                               lreadValue = readValue;
+                               if (ljoker != joker)
+                               {
+                                   rtJoker.Angle = joker * 324;
+                                   JOKER_TIE.RenderTransform = rtJoker;
+                               }
+                               lfuelQ = fuelQ;
                            }
                            catch { return; }
                        }));

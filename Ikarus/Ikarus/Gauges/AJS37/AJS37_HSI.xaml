@@ -417,10 +417,10 @@
                 <Path Data="M11.202,11.432L10.331,9.363 9.46,11.432 1.596,11.432 0.596,0 0,0.052 1.078,12.376 1.078,12.389 9.46,12.389 9.46,11.911 11.202,11.911 11.202,12.389 19.597,12.389 19.597,12.221 20.662,0.052 20.067,0 19.066,11.432z" Fill="Yellow" Height="12.389" Canvas.Left="0" Canvas.Top="0" Width="20.662"/>
                 <Path Data="M1.692,0.496C2.353,0.496 2.888,1.031 2.888,1.692 2.888,2.353 2.353,2.888 1.692,2.888 1.032,2.888 0.496,2.353 0.496,1.692 0.496,1.031 1.032,0.496 1.692,0.496z" Height="3.384" Canvas.Left="8.639" Stroke="Red" StrokeThickness="0.992" StrokeMiterLimit="2.414" Canvas.Top="113.011" Width="3.384"/>
             </Canvas>
-            <Canvas x:Name="fixed_course_indexer" Height="7.687" Canvas.Left="151.965" Canvas.Top="50.233" Width="8.876" RenderTransformOrigin="0.507,14.31">
+            <Canvas x:Name="Fixed_course_indexer" Height="7.687" Canvas.Left="151.965" Canvas.Top="50.233" Width="8.876" RenderTransformOrigin="0.507,14.31">
                 <Path Data="M4.437,7.687L2.219,3.844 0,0 4.437,0 8.876,0 6.656,3.844z" Fill="#FFCCCCCC" Height="7.687" Canvas.Left="0" Canvas.Top="0" Width="8.876"/>
             </Canvas>
-            <Canvas x:Name="cover" Height="163.97" Canvas.Left="74.417" Canvas.Top="82.405" Width="163.97">
+            <Canvas x:Name="cover" Height="163.97" Canvas.Left="74.417" Canvas.Top="82.405" Width="163.97" d:IsHidden="True">
                 <Path Data="M82.481,0.496C127.761,0.496 164.466,37.202 164.466,82.481 164.466,127.76 127.761,164.466 82.481,164.466 37.202,164.466 0.496,127.76 0.496,82.481 0.496,37.202 37.202,0.496 82.481,0.496" Fill="#FF0C0C0C" Height="164.962" Canvas.Left="-0.496" Stroke="#FF1A1A1A" StrokeThickness="0.992" StrokeMiterLimit="2.414" Canvas.Top="-0.496" Width="164.962"/>
             </Canvas>
             <Canvas x:Name="shadow" Height="151.862" Canvas.Left="40.418" Canvas.Top="48.406" Width="231.013">
@@ -465,8 +465,8 @@
                 <Path Data="M123.106,0.496C190.822,0.496 245.716,55.391 245.716,123.107 245.716,190.822 190.822,245.716 123.106,245.716 55.391,245.716 0.496,190.822 0.496,123.107 0.496,55.391 55.391,0.496 123.106,0.496z M123.106,7.674C186.857,7.674 238.539,59.355 238.539,123.107 238.539,186.859 186.857,238.539 123.106,238.539 59.354,238.539 7.674,186.859 7.674,123.107 7.674,59.355 59.354,7.674 123.106,7.674z" Height="246.212" Canvas.Left="17.151" Stroke="#FF0A0A0A" StrokeThickness="0.992" StrokeMiterLimit="2.414" Canvas.Top="17.151" Width="246.212"/>
             </Canvas>
         </Canvas>
-        <Image x:Name="Light" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Height="255" Width="255" MouseWheel="Light_MouseWheel" />
-        <Image x:Name="Frame" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Height="255" Width="255" MouseWheel="Light_MouseWheel" />
+        <Image x:Name="Light" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Height="411" Width="311" MouseWheel="Light_MouseWheel" />
+        <Image x:Name="Frame" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Height="411" Width="311" MouseWheel="Light_MouseWheel" />
 
     </Grid>
 </UserControl>

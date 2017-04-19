@@ -12,7 +12,7 @@ namespace Ikarus
     /// <summary>
     /// Interaktionslogik für AJS37_ELEV_TRIM.xaml
     /// </summary>
-    public partial class AJS37_ELEV_TRIM : UserControl
+    public partial class AJS37_ELEV_TRIM : UserControl, I_Ikarus
     {
         private string dataImportID = "";
         private int windowID = 0;
@@ -24,7 +24,7 @@ namespace Ikarus
         private double readValue = 0.0;
         private double lreadValue = 0.0;
 
-        RotateTransform rthydPressure = new RotateTransform();
+        RotateTransform rtElevTrim = new RotateTransform();
 
         public AJS37_ELEV_TRIM()
         {
@@ -100,8 +100,8 @@ namespace Ikarus
 
                                if (lreadValue != readValue)
                                {
-                                   rthydPressure.Angle = readValue * 320;
-                                   ELEV_TRIM.RenderTransform = rthydPressure;
+                                   rtElevTrim.Angle = readValue * 60;
+                                   ELEV_TRIM.RenderTransform = rtElevTrim;
                                }
                                lreadValue = readValue;
                            }

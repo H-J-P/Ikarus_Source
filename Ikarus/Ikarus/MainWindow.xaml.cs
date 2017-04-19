@@ -1091,7 +1091,7 @@ namespace Ikarus
                     SetWindowID(dtAccessories);
 
                     textBoxLightColor.Text = dtWindows.Rows[0][9].ToString();
-
+                    lightOnColor = textBoxLightColor.Text;
 
                     FillClasses();
                 }
@@ -1706,6 +1706,8 @@ namespace Ikarus
             readFile = "";
             lastFile = "-";
             dbFilename = "";
+            textBoxLightColor.Text = "95E295";
+            lightOnColor = textBoxLightColor.Text;
         }
 
         private void Button_DetailAccessories_Click(object sender, RoutedEventArgs e)
@@ -1880,7 +1882,11 @@ namespace Ikarus
             else
                 dtParameter.Rows[0][0] = background;
 
-            dtWindows.Rows[0][9] = textBoxLightColor.Text;
+            try
+            {
+                dtWindows.Rows[0][9] = textBoxLightColor.Text;
+            }
+            catch { }
 
             dsConfig.AcceptChanges();
 

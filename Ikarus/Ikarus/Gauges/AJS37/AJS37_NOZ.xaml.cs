@@ -12,7 +12,7 @@ namespace Ikarus
     /// <summary>
     /// Interaktionslogik für AJS37_NOZ.xaml
     /// </summary>
-    public partial class AJS37_NOZ : UserControl
+    public partial class AJS37_NOZ : UserControl, I_Ikarus
     {
         private string dataImportID = "";
         private int windowID = 0;
@@ -24,7 +24,7 @@ namespace Ikarus
         private double readValue = 0.0;
         private double lreadValue = 0.0;
 
-        RotateTransform rthydPressure = new RotateTransform();
+        RotateTransform rtNozzle = new RotateTransform();
 
         public AJS37_NOZ()
         {
@@ -100,8 +100,8 @@ namespace Ikarus
 
                                if (lreadValue != readValue)
                                {
-                                   rthydPressure.Angle = readValue * 320;
-                                   NOZ1.RenderTransform = rthydPressure;
+                                   rtNozzle.Angle = readValue * 236;
+                                   NOZ1.RenderTransform = rtNozzle;
                                }
                                lreadValue = readValue;
                            }

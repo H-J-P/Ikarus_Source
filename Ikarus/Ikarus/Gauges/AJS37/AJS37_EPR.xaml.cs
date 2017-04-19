@@ -12,7 +12,7 @@ namespace Ikarus
     /// <summary>
     /// Interaktionslogik für AJS37_EPR.xaml
     /// </summary>
-    public partial class AJS37_EPR : UserControl
+    public partial class AJS37_EPR : UserControl, I_Ikarus
     {
         private string dataImportID = "";
         private int windowID = 0;
@@ -24,7 +24,7 @@ namespace Ikarus
         private double readValue = 0.0;
         private double lreadValue = 0.0;
 
-        RotateTransform rthydPressure = new RotateTransform();
+        RotateTransform rtEPR = new RotateTransform();
 
         public AJS37_EPR()
         {
@@ -100,8 +100,8 @@ namespace Ikarus
 
                                if (lreadValue != readValue)
                                {
-                                   rthydPressure.Angle = readValue * 320;
-                                   EPR1.RenderTransform = rthydPressure;
+                                   rtEPR.Angle = readValue * 321;
+                                   EPR1.RenderTransform = rtEPR;
                                }
                                lreadValue = readValue;
                            }

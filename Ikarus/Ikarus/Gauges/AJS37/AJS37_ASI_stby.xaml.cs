@@ -12,7 +12,7 @@ namespace Ikarus
     /// <summary>
     /// Interaktionslogik für AJS37_ASI_stby.xaml
     /// </summary>
-    public partial class AJS37_ASI_stby : UserControl
+    public partial class AJS37_ASI_stby : UserControl, I_Ikarus
     {
         private string dataImportID = "";
         private int windowID = 0;
@@ -24,11 +24,12 @@ namespace Ikarus
         private double readValue = 0.0;
         private double lreadValue = 0.0;
 
-        RotateTransform rthydPressure = new RotateTransform();
+        RotateTransform rtASI = new RotateTransform();
 
         public AJS37_ASI_stby()
         {
             InitializeComponent();
+
             if (MainWindow.editmode) MakeDraggable(this, this);
         }
 
@@ -100,8 +101,8 @@ namespace Ikarus
 
                                if (lreadValue != readValue)
                                {
-                                   rthydPressure.Angle = readValue * 320;
-                                   ASI_stby1.RenderTransform = rthydPressure;
+                                   rtASI.Angle = readValue * 338;
+                                   ASI_stby1.RenderTransform = rtASI;
                                }
                                lreadValue = readValue;
                            }

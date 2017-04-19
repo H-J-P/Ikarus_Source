@@ -12,7 +12,7 @@ namespace Ikarus
     /// <summary>
     /// Interaktionslogik für AJS37_OXY_Q.xaml
     /// </summary>
-    public partial class AJS37_OXY_Q : UserControl
+    public partial class AJS37_OXY_Q : UserControl, I_Ikarus
     {
         private string dataImportID = "";
         private int windowID = 0;
@@ -24,7 +24,7 @@ namespace Ikarus
         private double readValue = 0.0;
         private double lreadValue = 0.0;
 
-        RotateTransform rthydPressure = new RotateTransform();
+        RotateTransform rtOxyQ = new RotateTransform();
 
         public AJS37_OXY_Q()
         {
@@ -100,8 +100,8 @@ namespace Ikarus
 
                                if (lreadValue != readValue)
                                {
-                                   rthydPressure.Angle = readValue * 320;
-                                   OXY_Q1.RenderTransform = rthydPressure;
+                                   rtOxyQ.Angle = readValue * 200;
+                                   OXY_Q1.RenderTransform = rtOxyQ;
                                }
                                lreadValue = readValue;
                            }

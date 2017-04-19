@@ -12,7 +12,7 @@ namespace Ikarus
     /// <summary>
     /// Interaktionslogik für AJS37_EGT.xaml
     /// </summary>
-    public partial class AJS37_EGT : UserControl
+    public partial class AJS37_EGT : UserControl, I_Ikarus
     {
         private string dataImportID = "";
         private int windowID = 0;
@@ -21,15 +21,19 @@ namespace Ikarus
         public void SetWindowID(int _windowID) { windowID = _windowID; }
         public int GetWindowID() { return windowID; }
 
-        private double readValue = 0.0;
-        private double lreadValue = 0.0;
+        private double egt = 0.0;
+        private double egtOff = 0.0;
+        private double legt = 0.0;
+        private double legtOff = 0.0;
 
-        RotateTransform rthydPressure = new RotateTransform();
+        RotateTransform rtEgt = new RotateTransform();
 
         public AJS37_EGT()
         {
             InitializeComponent();
             if (MainWindow.editmode) MakeDraggable(this, this);
+
+            EGT_OFF_flag.Visibility = System.Windows.Visibility.Visible;
         }
 
         public void SetID(string _dataImportID)
@@ -94,16 +98,21 @@ namespace Ikarus
                            {
                                vals = strData.Split(';');
 
-                               if (vals.Length > 0) { readValue = Convert.ToDouble(vals[0], CultureInfo.InvariantCulture); }
+                               if (vals.Length > 0) { egt = Convert.ToDouble(vals[0], CultureInfo.InvariantCulture); }
+                               if (vals.Length > 1) { egtOff = Convert.ToDouble(vals[1], CultureInfo.InvariantCulture); }
 
-                               if (readValue < 0.0) { readValue = 0.0; }
+                               if (egt < 0.0) { egt = 0.0; }
 
-                               if (lreadValue != readValue)
+                               if (legt != egt)
                                {
-                                   rthydPressure.Angle = readValue * 320;
-                                   EGT1.RenderTransform = rthydPressure;
+                                   rtEgt.Angle = egt * 222;
+                                   EGT1.RenderTransform = rtEgt;
                                }
-                               lreadValue = readValue;
+                               if (legtOff != egtOff)
+                                   EGT_OFF_flag.Visibility = (egtOff > 0.9) ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
+
+                               legt = egt;
+                               legtOff = egtOff;
                            }
                            catch { return; }
                        }));

@@ -12,7 +12,7 @@ namespace Ikarus
     /// <summary>
     /// Interaktionslogik für AJS37_KURS.xaml
     /// </summary>
-    public partial class AJS37_KURS : UserControl
+    public partial class AJS37_KURS : UserControl, I_Ikarus
     {
         private string dataImportID = "";
         private int windowID = 0;
@@ -24,7 +24,7 @@ namespace Ikarus
         private double readValue = 0.0;
         private double lreadValue = 0.0;
 
-        RotateTransform rthydPressure = new RotateTransform();
+        RotateTransform rtHeading = new RotateTransform();
 
         public AJS37_KURS()
         {
@@ -100,8 +100,8 @@ namespace Ikarus
 
                                if (lreadValue != readValue)
                                {
-                                   rthydPressure.Angle = readValue * 320;
-                                   Kompass_Heading.RenderTransform = rthydPressure;
+                                   rtHeading.Angle = readValue * 360;
+                                   Kompass_Heading.RenderTransform = rtHeading;
                                }
                                lreadValue = readValue;
                            }
