@@ -34,7 +34,6 @@ namespace Ikarus
         double pressure_1 = 0.0;
         double pressure_2 = 0.0;
         double pressure_3 = 0.0;
-        double flag_pneu = 0.0;
 
         double lalt100FP = 0.0;
         double lalt1000FP = 0.0;

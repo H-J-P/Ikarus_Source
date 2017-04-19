@@ -18,9 +18,7 @@ namespace Ikarus
         private int windowID = 0;
         private string[] vals = new string[] { };
         private double heading = 0.0;
-        private double compass = 0.0;
         private double lheading = 0.0;
-        private double lcompass = 0.0;
         private double roll = 0.0;
         private double pitch = 0.0;
 

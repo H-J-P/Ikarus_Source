@@ -4,7 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d" 
-             d:DesignHeight="255" d:DesignWidth="255">
+             d:DesignHeight="255" d:DesignWidth="255" MouseWheel="Light_MouseWheel">
     <Grid>
     	<Canvas x:Name="AOA" HorizontalAlignment="Left" Height="238.11" UseLayoutRounding="False" VerticalAlignment="Top" Width="238.11">
     		<Canvas x:Name="dial" Height="222.22" Canvas.Left="7.946" Canvas.Top="7.835" Width="222.218">

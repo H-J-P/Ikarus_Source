@@ -4,7 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d" 
-             d:DesignHeight="411" d:DesignWidth="311">
+             d:DesignHeight="411" d:DesignWidth="311" MouseWheel="Light_MouseWheel">
     <Grid>
         <Canvas x:Name="HSI" HorizontalAlignment="Left" Height="411.024" UseLayoutRounding="False" VerticalAlignment="Top" Width="311.811">
             <Canvas x:Name="bezel" Height="411.054" Canvas.Left="0" Canvas.Top="-0.024" Width="311.811">
