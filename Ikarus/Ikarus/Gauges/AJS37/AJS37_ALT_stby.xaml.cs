@@ -47,6 +47,12 @@ namespace Ikarus
             InitializeComponent();
 
             if (MainWindow.editmode) MakeDraggable(this, this);
+
+            rtalt100FP.Angle =  180;
+            Altimeter_100.RenderTransform = rtalt100FP;
+            rtalt1000FP.Angle =  180;
+            Altimeter_1000.RenderTransform = rtalt1000FP;
+
         }
 
         public void SetID(string _dataImportID)
@@ -122,13 +128,13 @@ namespace Ikarus
 
                            if (alt100FP != lalt100FP)
                            {
-                               rtalt100FP.Angle = alt100FP * 360;
+                               rtalt100FP.Angle = (alt100FP * 360) + 180;
                                Altimeter_100.RenderTransform = rtalt100FP;
                            }
 
                            if (alt1000FP != lalt1000FP)
                            {
-                               rtalt1000FP.Angle = alt1000FP * 360;
+                               rtalt1000FP.Angle = (alt1000FP * 360) + 180;
                                Altimeter_1000.RenderTransform = rtalt1000FP;
                            }
 

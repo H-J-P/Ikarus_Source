@@ -62,6 +62,7 @@ namespace Ikarus
             RWR_27.Visibility = System.Windows.Visibility.Hidden;
             RWR_33.Visibility = System.Windows.Visibility.Hidden;
             Warning_flag.Visibility =  System.Windows.Visibility.Hidden;
+            ALTITUDE_WARNING.Visibility = System.Windows.Visibility.Hidden;
         }
 
         public void SetID(string _dataImportID)

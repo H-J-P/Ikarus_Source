@@ -229,7 +229,9 @@ namespace Ikarus
                 DatabaseResetValue();
                 FillClasses();
 
-                textBoxLightColor.Text = dtWindows.Rows[0][9].ToString();
+                if (dtWindows.Rows.Count > 0)
+                    textBoxLightColor.Text = dtWindows.Rows[0][9].ToString();
+
                 lightOnColor = textBoxLightColor.Text;
 
                 for (int n = 0; n < dtSwitches.Rows.Count; n++) // update switches
@@ -247,14 +249,14 @@ namespace Ikarus
                 {
                     if (dtConfig.Rows.Count > 0)
                         dtWindows.Rows.Add(1, "Front Panel", dtConfig.Rows[0][0].ToString(), dtConfig.Rows[0][1].ToString(), dtConfig.Rows[0][2].ToString(), dtConfig.Rows[0][3].ToString(), background);
-                    isRep = true;
+                    //isRep = true;
                 }
 
-                if (isRep && dbFilename.Length > 0)
-                {
-                    ImportExport.DatasetToXml(dbFilename, dsInstruments);
-                    ImportExport.LogMessage("Save file: " + dbFilename);
-                }
+                //if (isRep && dbFilename.Length > 0)
+                //{
+                //    ImportExport.DatasetToXml(dbFilename, dsInstruments);
+                //    ImportExport.LogMessage("Save file: " + dbFilename);
+                //}
 
                 tabControl1.SelectedIndex = 5;
                 selectedTab = 0;
@@ -1110,14 +1112,14 @@ namespace Ikarus
                 if (dtWindows.Rows.Count == 0)
                 {
                     dtWindows.Rows.Add(1, "Front Panel", dtConfig.Rows[0][0].ToString(), dtConfig.Rows[0][1].ToString(), dtConfig.Rows[0][2].ToString(), dtConfig.Rows[0][3].ToString(), background);
-                    isRep = true;
+                    //isRep = true;
                 }
 
-                if (isRep)
-                {
-                    ImportExport.DatasetToXml(filename + ".ikarus", dsInstruments);
-                    ImportExport.LogMessage("Save file: " + filename + ".ikarus");
-                }
+                //if (isRep)
+                //{
+                //    ImportExport.DatasetToXml(filename + ".ikarus", dsInstruments);
+                //    ImportExport.LogMessage("Save file: " + filename + ".ikarus");
+                //}
 
                 RefreshDatagrids();
                 CockpitShow();
@@ -1374,7 +1376,7 @@ namespace Ikarus
                             table.Rows[i]["WindowID"] = 1;
                         }
                         ImportExport.LogMessage(table.TableName + ": Set WindowID = 1");
-                        isRep = true;
+                        //isRep = true;
                     }
                 }
             }
@@ -2151,7 +2153,12 @@ namespace Ikarus
 
                 selectedTab = tabControl1.SelectedIndex;
                 UpdateLog();
-                ListBox1.ScrollIntoView(ListBox1.Items[ListBox1.Items.Count - 1]); // scroll to the last entries
+
+                try
+                {
+                    ListBox1.ScrollIntoView(ListBox1.Items[ListBox1.Items.Count - 1]); // scroll to the last entries
+                }
+                catch { }
 
                 Mouse.OverrideCursor = null;
             }
