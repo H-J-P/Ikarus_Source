@@ -98,15 +98,15 @@ namespace Ikarus
                                if (vals.Length > 0) { slip = Convert.ToDouble(vals[0], CultureInfo.InvariantCulture); }
                                if (vals.Length > 1) { turn = Convert.ToDouble(vals[1], CultureInfo.InvariantCulture); }
 
-                               if (lturn != turn)
-                               {
-                                   rtturn.Angle = turn * 45;
-                                   Turn.RenderTransform = rtturn;
-                               }
                                if (lslip != slip)
                                {
                                    rtslip.Angle = slip * 33;
                                    Slip.RenderTransform = rtslip;
+                               }
+                               if (lturn != turn)
+                               {
+                                   rtturn.Angle = turn * -45;
+                                   Turn.RenderTransform = rtturn;
                                }
                                lturn = turn;
                                lslip = slip;

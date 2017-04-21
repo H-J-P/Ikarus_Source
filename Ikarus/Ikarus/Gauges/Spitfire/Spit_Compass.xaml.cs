@@ -19,6 +19,8 @@ namespace Ikarus
         private string[] vals = new string[] { };
         private double heading = 0.0;
         private double lheading = 0.0;
+        private double compass = 0.0;
+        private double lcompass = 0.0;
         private double roll = 0.0;
         private double pitch = 0.0;
 
@@ -99,13 +101,20 @@ namespace Ikarus
                                if (vals.Length > 0) { roll = Convert.ToDouble(vals[0], CultureInfo.InvariantCulture); }
                                if (vals.Length > 1) { pitch = Convert.ToDouble(vals[1], CultureInfo.InvariantCulture); }
                                if (vals.Length > 2) { heading = Convert.ToDouble(vals[2], CultureInfo.InvariantCulture); }
+                               if (vals.Length > 3) { compass = Convert.ToDouble(vals[3], CultureInfo.InvariantCulture); }
 
                                if (lheading != heading)
                                {
                                    rtheading.Angle = heading * 360;
                                    Heading.RenderTransform = rtheading;
                                }
+                               if (lcompass != compass)
+                               {
+                                   rtcompass.Angle = compass * 360;
+                                   Compass.RenderTransform = rtcompass;
+                               }
                                lheading = heading;
+                               lcompass = compass;
                            }
                            catch { return; }
                        }));

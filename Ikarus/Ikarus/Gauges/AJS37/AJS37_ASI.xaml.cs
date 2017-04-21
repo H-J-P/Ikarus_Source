@@ -16,6 +16,9 @@ namespace Ikarus
     {
         private string dataImportID = "";
         private int windowID = 0;
+        private double[] valueScale = new double[] { };
+        private double[] degreeDial = new double[] { };
+        int valueScaleIndex = 0;
         private string[] vals = new string[] { };
 
         public void SetWindowID(int _windowID) { windowID = _windowID; }
@@ -92,10 +95,31 @@ namespace Ikarus
 
         public void SetInput(string _input)
         {
+            string[] vals = _input.Split(',');
+
+            if (vals.Length < 3) return;
+
+            valueScale = new double[vals.Length];
+
+            for (int i = 0; i < vals.Length; i++)
+            {
+                valueScale[i] = Convert.ToDouble(vals[i], CultureInfo.InvariantCulture);
+            }
+            valueScaleIndex = vals.Length;
         }
 
         public void SetOutput(string _output)
         {
+            string[] vals = _output.Split(',');
+
+            if (vals.Length < 3) return;
+
+            degreeDial = new double[vals.Length];
+
+            for (int i = 0; i < vals.Length; i++)
+            {
+                degreeDial[i] = Convert.ToDouble(vals[i], CultureInfo.InvariantCulture);
+            }
         }
 
         public double GetSize()
@@ -119,9 +143,23 @@ namespace Ikarus
                                if (vals.Length > 4) { asiOff = Convert.ToDouble(vals[4], CultureInfo.InvariantCulture); }
                                if (vals.Length > 5) { machOff = Convert.ToDouble(vals[5], CultureInfo.InvariantCulture); }
 
+                               // km/h  { 0,   150,   200,   231,   265,   300,   355,   385,    440,   490,    555,    700,    860,    950,   1040,   1150,   1260,   1370,   1500}
+                               // m/s   { 0, 41.66, 55.56, 64.17, 73.61, 83.33, 98.61, 106.9, 122.22, 136.1, 154.16, 194.44, 239.00, 263.89, 288.89, 319.44, 350.00, 380.55, 416.66}
+                               // input { 0,  0.01,  0.10,  0.15,  0.20,  0.25,  0.30,   0.35,  0.40,   0.45,   0.50,   0.60,   0.70,   0.75,   0.80,   0.85,   0.90,   0.95,     1}
+                               // °     { 0,    21,    32,    41,    66,    85,   107,   118,    135,   150,    169,    205,    236,    252,    270,    285,    303,    317,    340}
+
+                               if (ias < 0.0) { ias = 0.0; }
+
                                if (lias != ias)
                                {
-                                   rtIas.Angle = ias * 325;
+                                   for (int n = 0; n < valueScaleIndex - 1; n++)
+                                   {
+                                       if (ias > valueScale[n] && ias <= valueScale[n + 1])
+                                       {
+                                           rtIas.Angle = (degreeDial[n] - degreeDial[n + 1]) / (valueScale[n] - valueScale[n + 1]) * (ias - valueScale[n]) + degreeDial[n];
+                                           break;
+                                       }
+                                   }
                                    ASI1.RenderTransform = rtIas;
                                }
 

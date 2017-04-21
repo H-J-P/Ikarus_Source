@@ -29,7 +29,7 @@ namespace Ikarus
 		{
 			this.InitializeComponent();
 
-            rtpointer.Angle =  - 71;
+            rtpointer.Angle =  - 70;
             Boost.RenderTransform = rtpointer;
 
             if (MainWindow.editmode) MakeDraggable(this, this);
@@ -103,7 +103,7 @@ namespace Ikarus
 
                                if (lpointer != pointer)
                                {
-                                   rtpointer.Angle = (pointer * (239 + 71)) - 71;
+                                   rtpointer.Angle = (pointer * (240 + 70)) - 70;
                                    Boost.RenderTransform = rtpointer;
                                }
                                lpointer = pointer;

@@ -93,7 +93,7 @@
     		<Canvas x:Name="shadow" Height="197.064" Canvas.Left="12.756" Canvas.Top="12.638" Width="218.253">
     			<Path Data="M114.803,0C160.348,0 199.7,26.524 218.253,64.967 197.469,39.899 166.091,23.93 130.981,23.93 68.399,23.93 17.666,74.662 17.666,137.246 17.666,159.206 23.919,179.702 34.733,197.064 13.311,176.209 0,147.063 0,114.803 0,51.4 51.399,0 114.803,0" Fill="Black" Height="197.064" Canvas.Left="0" Opacity="0.7" Canvas.Top="0" Width="218.253"/>
     		</Canvas>
-    		<Canvas x:Name="ASI_stby1" Height="110.447" Canvas.Left="101.16" Canvas.Top="49.853" Width="84.906" RenderTransformOrigin="0.3,0.706">
+    		<Canvas x:Name="ASI1" Height="110.447" Canvas.Left="101.16" Canvas.Top="49.853" Width="84.906" RenderTransformOrigin="0.3,0.706">
                 <Path Data="M0.397,27.043L4.156,29.878 24.249,3.231 20.49,0.397z" Fill="#FF333333" Height="30.275" Canvas.Left="3.362" Stroke="Black" StrokeThickness="0.567" StrokeMiterLimit="2.414" Canvas.Top="80.569" Width="24.646"/>
     			<Path Data="M3.91,73.515L59.112,0.311 49.493,5.248 0.151,70.68z" Fill="#FFC4C4C4" Height="73.667" Canvas.Left="25.794" Stroke="#FFE6E6E6" StrokeThickness="0.216" StrokeMiterLimit="2.414" Canvas.Top="-0.311" Width="59.482"/>
     			<Path Data="M0.151,73.645L55.353,0.441 53.252,11.047 3.91,76.48z" Fill="#FFB3B3B3" Height="76.632" Canvas.Left="29.553" Stroke="#FFE6E6E6" StrokeThickness="0.216" StrokeMiterLimit="2.414" Canvas.Top="-0.441" Width="55.551"/>

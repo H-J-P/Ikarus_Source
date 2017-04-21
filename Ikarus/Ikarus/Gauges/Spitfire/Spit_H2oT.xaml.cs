@@ -29,6 +29,9 @@ namespace Ikarus
 		{
 			this.InitializeComponent();
             if (MainWindow.editmode) MakeDraggable(this, this);
+
+            rtpointer.Angle = -24;
+            Rad_T.RenderTransform = rtpointer;
         }
 
         public void SetID(string _dataImportID)
@@ -99,7 +102,7 @@ namespace Ikarus
 
                                if (lpointer != pointer)
                                {
-                                   rtpointer.Angle = pointer * 305;
+                                   rtpointer.Angle = pointer * (305 + 24) - 24;
                                    Rad_T.RenderTransform = rtpointer;
                                }
                                lpointer = pointer;

@@ -17,14 +17,17 @@ namespace Ikarus
         private string dataImportID = "";
         private int windowID = 0;
         private string[] vals = new string[] { };
+        private double[] valueScale = new double[] { };
+        private double[] degreeDial = new double[] { };
+        int valueScaleIndex = 0;
 
         public void SetWindowID(int _windowID) { windowID = _windowID; }
         public int GetWindowID() { return windowID; }
 
-        private double readValue = 0.0;
-        private double lreadValue = 0.0;
+        private double ias = 0.0;
+        private double lias = 0.0;
 
-        RotateTransform rtASI = new RotateTransform();
+        RotateTransform rtIas = new RotateTransform();
 
         public AJS37_ASI_stby()
         {
@@ -75,10 +78,31 @@ namespace Ikarus
 
         public void SetInput(string _input)
         {
+            string[] vals = _input.Split(',');
+
+            if (vals.Length < 3) return;
+
+            valueScale = new double[vals.Length];
+
+            for (int i = 0; i < vals.Length; i++)
+            {
+                valueScale[i] = Convert.ToDouble(vals[i], CultureInfo.InvariantCulture);
+            }
+            valueScaleIndex = vals.Length;
         }
 
         public void SetOutput(string _output)
         {
+            string[] vals = _output.Split(',');
+
+            if (vals.Length < 3) return;
+
+            degreeDial = new double[vals.Length];
+
+            for (int i = 0; i < vals.Length; i++)
+            {
+                degreeDial[i] = Convert.ToDouble(vals[i], CultureInfo.InvariantCulture);
+            }
         }
 
         public double GetSize()
@@ -94,17 +118,28 @@ namespace Ikarus
                            try
                            {
                                vals = strData.Split(';');
+                             
+                       //km/h  { 0.0,   203,   218,   237,   255,   273,   292,   310,   360,   410,    470,   540,   615,   695,    800}
+                       //m/s   { 0.0, 56.39, 60.56, 65.83, 70.83, 75.83, 81.11, 86.11, 100.0, 113.9, 130.55, 150.0, 170.8, 193.0, 222.22}
+                       //input { 0.0,  0.01,  0.05,  0.10,  0.15,  0.20,  0.25,  0.30,  0.40,  0.50,   0.60,  0.70,  0.80,  0.90,   1.00}
+                       // °    {   0,    25,    45,    64,    78,    95,   110,   120,   155,   185,    215,   248,   278,   306,    338}
+                               if (vals.Length > 0) { ias = Convert.ToDouble(vals[0], CultureInfo.InvariantCulture); }
 
-                               if (vals.Length > 0) { readValue = Convert.ToDouble(vals[0], CultureInfo.InvariantCulture); }
+                               if (ias < 0.0) { ias = 0.0; }
 
-                               if (readValue < 0.0) { readValue = 0.0; }
-
-                               if (lreadValue != readValue)
+                               if (lias != ias)
                                {
-                                   rtASI.Angle = readValue * 338;
-                                   ASI_stby1.RenderTransform = rtASI;
+                                   for (int n = 0; n < valueScaleIndex - 1; n++)
+                                   {
+                                       if (ias > valueScale[n] && ias <= valueScale[n + 1])
+                                       {
+                                           rtIas.Angle = (degreeDial[n] - degreeDial[n + 1]) / (valueScale[n] - valueScale[n + 1]) * (ias - valueScale[n]) + degreeDial[n];
+                                           break;
+                                       }
+                                   }
+                                   ASI1.RenderTransform = rtIas;
                                }
-                               lreadValue = readValue;
+                               lias = ias;
                            }
                            catch { return; }
                        }));

@@ -267,7 +267,7 @@
                       Data="M0,1.179L0.157,0 10.862,1.434 10.705,2.614z"
                       Fill="#FF4D4D4D" />
             </Canvas>
-            <Canvas x:Name="Heading"
+            <Canvas x:Name="Compass"
                     Canvas.Left="41.535"
                     Canvas.Top="41.338"
                     Width="342.127"
@@ -1875,7 +1875,7 @@
                       Data="F1M0,0L20.94,0 20.94,14.798 18.469,14.798 18.469,2.706 12.056,2.706 12.056,14.032 9.599,14.032 9.599,2.706 2.472,2.706 2.472,15.275 0,15.275z"
                       Fill="#FFD6B153" />
             </Canvas>
-            <Canvas x:Name="Compass"
+            <Canvas x:Name="Heading"
                     Canvas.Left="79.589"
                     Canvas.Top="79.392"
                     Width="266.019"

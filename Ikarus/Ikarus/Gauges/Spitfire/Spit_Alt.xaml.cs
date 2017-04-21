@@ -128,7 +128,7 @@ namespace Ikarus
 
                                if (lpressure != pressure)
                                {
-                                   rtpressure.Angle = pressure * 360;
+                                   rtpressure.Angle = pressure * 346;
                                    Pressure.RenderTransform = rtpressure;
                                }
                                lalt100 = alt100;

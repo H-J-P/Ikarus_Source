@@ -125,7 +125,7 @@ namespace Ikarus
                                    {
                                        if (pointer > valueScale[n] && pointer <= valueScale[n + 1])
                                        {
-                                           rtpointer.Angle = -1 * (degreeDial[n] - degreeDial[n + 1]) / (valueScale[n] - valueScale[n + 1]) * (pointer - valueScale[n]) + degreeDial[n];
+                                           rtpointer.Angle = 5 + (-1 * (degreeDial[n] - degreeDial[n + 1]) / (valueScale[n] - valueScale[n + 1]) * (pointer - valueScale[n]) + degreeDial[n]);
                                            break;
                                        }
                                    }
