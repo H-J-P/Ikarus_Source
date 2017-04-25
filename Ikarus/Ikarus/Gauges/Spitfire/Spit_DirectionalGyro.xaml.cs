@@ -98,7 +98,7 @@ namespace Ikarus
 
                                if (lheading != heading)
                                {
-                                   ttHeading.X = heading * 418;
+                                   ttHeading.X = 418 * (heading < 0 ? -1 - heading : 1 - heading);
                                    Heading.RenderTransform = ttHeading;
                                }
                                lheading = heading;

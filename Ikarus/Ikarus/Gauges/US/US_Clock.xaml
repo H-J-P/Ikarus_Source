@@ -11,7 +11,7 @@
                 <Path Data="M127.843,198.104C89.038,198.104 57.582,166.647 57.582,127.843 57.582,89.039 89.038,57.583 127.843,57.583 166.646,57.583 198.102,89.039 198.102,127.843 198.102,166.647 166.646,198.104 127.843,198.104 M24.249,0.284L231.435,0.284C244.617,0.284,255.401,11.069,255.401,24.25L255.401,231.437C255.401,244.618,244.617,255.402,231.435,255.402L24.249,255.402C11.068,255.402,0.284,244.618,0.284,231.437L0.284,24.25C0.284,11.069,11.068,0.284,24.249,0.284" Fill="#FF1A1A1A" Height="255.685" Canvas.Left="-0.284" Stroke="Black" StrokeThickness="0.567" StrokeMiterLimit="22.926" Canvas.Top="-0.284" Width="255.684"/>
                 <Canvas Clip="F1M10.587,0.5C16.066,0.5 20.508,4.942 20.508,10.422 20.508,15.901 16.066,20.343 10.587,20.343 5.108,20.343 0.666,15.901 0.666,10.422 0.666,4.942 5.108,0.5 10.587,0.5" Height="45" Canvas.Left="11.251" Canvas.Top="11.417" Width="48">
                     <Canvas Clip="M0.666,0.5L20.508,0.5 20.508,20.343 0.666,20.343z" Height="45" Canvas.Left="0" Canvas.Top="0" Width="48">
-                        <Image Source="/Ikarus;component/Gauges/_Images\US-Clock_Images1/Image.png" Stretch="Fill">
+                        <Image Source="/Ikarus;component/Gauges/_Images\US-Acc_Images/Image.png" Stretch="Fill">
                             <Image.RenderTransform>
                                 <MatrixTransform Matrix="0.359999895095825,0,0,0.36000010172526,0,0"/>
                             </Image.RenderTransform>
@@ -22,7 +22,7 @@
                 <Path Data="M0.031,8.194L0,6.02 4.485,5.956C4.752,5.317,5.253,4.802,5.883,4.517L5.819,0.032 7.992,0 8.056,4.486C8.695,4.753,9.211,5.254,9.495,5.884L13.981,5.819 14.012,7.993 9.526,8.057C9.26,8.696,8.758,9.212,8.129,9.495L8.193,13.981 6.02,14.013 5.956,9.527C5.317,9.26,4.801,8.759,4.517,8.129z" Fill="#FF333333" Height="14.013" Canvas.Left="14.832" Canvas.Top="14.832" Width="14.012"/>
                 <Canvas Clip="F1M10.799,0.713C16.278,0.713 20.72,5.155 20.72,10.634 20.72,16.113 16.278,20.555 10.799,20.555 5.32,20.555 0.877,16.113 0.877,10.634 0.877,5.155 5.32,0.713 10.799,0.713" Height="45" Canvas.Left="222.48" Canvas.Top="222.646" Width="48">
                     <Canvas Clip="M0.877,0.713L20.72,0.713 20.72,20.555 0.877,20.555z" Height="45" Canvas.Left="0" Canvas.Top="0" Width="48">
-                        <Image Source="/Ikarus;component/Gauges/_Images\US-Clock_Images1/Image.png" Stretch="Fill">
+                        <Image Source="/Ikarus;component/Gauges/_Images\US-Acc_Images/Image.png" Stretch="Fill">
                             <Image.RenderTransform>
                                 <MatrixTransform Matrix="0.359999895095825,0,0,0.36000010172526,0,0"/>
                             </Image.RenderTransform>

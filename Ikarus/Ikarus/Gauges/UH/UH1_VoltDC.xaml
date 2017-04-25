@@ -63,7 +63,7 @@
                 <Path Data="M91.439,13.289C99.048,5.279 109.8,0.283 121.719,0.283 133.639,0.283 144.39,5.279 152,13.289L243.107,13.289C233.92,72.064 183.074,117.035 121.719,117.035 60.365,117.035 9.518,72.064 0.331,13.289z" Fill="#FF0A0A0A" Height="117.319" Canvas.Left="5.84" Stroke="#FF333333" StrokeThickness="0.567" StrokeMiterLimit="22.926" Canvas.Top="133.398" Width="243.439"/>
                 <Canvas Clip="M13.297,0.749C19.926,0.749 25.297,6.122 25.297,12.749 25.297,19.375 19.926,24.749 13.297,24.749 6.67,24.749 1.297,19.375 1.297,12.749 1.297,6.122 6.67,0.749 13.297,0.749" Height="54" Canvas.Left="114.262" Canvas.Top="204.188" Width="56">
                     <Canvas Clip="M1.297,0.749L25.297,0.749 25.297,24.749 1.297,24.749z" Height="54" Canvas.Left="0" Canvas.Top="0" Width="56">
-                        <Image Source="/Ikarus;component/Gauges/_Images\UH1_VoltDC_Images\Image.png" Stretch="Fill">
+                        <Image Source="/Ikarus;component/Gauges/_Images\UH1_VoltAC_Images\Image.png" Stretch="Fill">
                             <Image.RenderTransform>
                                 <MatrixTransform Matrix="0.36000006539481,0,0,0.359999974568685,0,0"/>
                             </Image.RenderTransform>

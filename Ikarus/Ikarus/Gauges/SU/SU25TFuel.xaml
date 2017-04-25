@@ -108,7 +108,7 @@
                 <Path Data="M7.873,15.747C3.525,15.747 0,12.222 0,7.873 0,3.525 3.525,0 7.873,0 12.222,0 15.747,3.525 15.747,7.873 15.747,12.222 12.222,15.747 7.873,15.747" Fill="#FF333333" Height="15.747" Canvas.Left="5.07" Canvas.Top="60.376" Width="15.747"/>
                 <Canvas Clip="M8,14.448C4.326,14.448 1.347,11.469 1.347,7.794 1.347,4.12 4.326,1.141 8,1.141 11.675,1.141 14.653,4.12 14.653,7.794 14.653,11.469 11.675,14.448 8,14.448" Height="32" Canvas.Left="4.943" Canvas.Top="60.455" Width="36">
                     <Canvas Clip="M1.347,1.141L14.653,1.141 14.653,14.448 1.347,14.448z" Height="32" Canvas.Left="0" Canvas.Top="0" Width="36">
-                        <Image Source="/Ikarus;component/Gauges/_Images\SU-25T_FuelQ_Images\Image.png" Stretch="Fill">
+                        <Image Source="/Ikarus;component/Gauges/_Images\SU-25A_FuelQ_Images\Image.png" Stretch="Fill">
                             <Image.RenderTransform>
                                 <MatrixTransform Matrix="0.359999974568685,0,0,0.360000014305115,0,0"/>
                             </Image.RenderTransform>

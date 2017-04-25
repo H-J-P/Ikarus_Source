@@ -235,7 +235,7 @@
                 <Path Data="F1M1.678,0.417L1.706,1.211C1.711,1.373 1.731,1.499 1.763,1.591 1.795,1.684 1.855,1.756 1.94,1.809 2.026,1.863 2.121,1.887 2.225,1.884 2.36,1.879 2.473,1.829 2.565,1.732 2.656,1.636 2.698,1.481 2.691,1.267L2.659,0.382z M0.086,2.573L0.071,2.107C0.529,1.811 0.81,1.628 0.914,1.556 1.019,1.485 1.108,1.412 1.181,1.334 1.255,1.256 1.301,1.185 1.32,1.119 1.337,1.052 1.345,0.965 1.341,0.857L1.325,0.428 0.013,0.474 0,0.103 2.974,0 3.017,1.24C3.023,1.41 3.016,1.552 2.997,1.668 2.978,1.783 2.934,1.885 2.863,1.974 2.792,2.064 2.701,2.133 2.591,2.184 2.48,2.234 2.363,2.262 2.238,2.266 2.014,2.274 1.83,2.213 1.69,2.085 1.549,1.955 1.455,1.764 1.41,1.509L1.402,1.509C1.321,1.7,1.146,1.881,0.879,2.055z" Fill="White" Height="2.573" Canvas.Left="78.957" Canvas.Top="102.884" Width="3.019"/>
                 <Canvas Clip="M4.25,0.61C6.128,0.61 7.652,2.133 7.652,4.011 7.652,5.89 6.128,7.414 4.25,7.414 2.371,7.414 0.849,5.89 0.849,4.011 0.849,2.133 2.371,0.61 4.25,0.61" Height="18" Canvas.Left="97.953" Canvas.Top="76.213" Width="20">
                     <Canvas Clip="M0.849,0.61L7.652,0.61 7.652,7.414 0.849,7.414z" Height="18" Canvas.Left="0" Canvas.Top="0" Width="20">
-                        <Image Source="/Ikarus;component/Gauges/_Images\WP-Clock_Images1\Image3.png" Stretch="Fill">
+                        <Image Source="/Ikarus;component/Gauges/_Images\Wp-ALT_20_Images\Image3.png" Stretch="Fill">
                             <Image.RenderTransform>
                                 <MatrixTransform Matrix="0.360000228881836,0,0,0.359999974568685,0,0"/>
                             </Image.RenderTransform>
@@ -245,7 +245,7 @@
                 <Path Data="M2.976,0C4.62,0 5.953,1.333 5.953,2.976 5.953,4.621 4.62,5.953 2.976,5.953 1.333,5.953 0,4.621 0,2.976 0,1.333 1.333,0 2.976,0" Fill="#FF333333" Height="5.953" Canvas.Left="99.227" Canvas.Top="77.248" Width="5.953"/>
                 <Canvas Clip="M3.29,0.945C4.719,0.945 5.878,2.104 5.878,3.532 5.878,4.962 4.719,6.12 3.29,6.12 1.861,6.12 0.702,4.962 0.702,3.532 0.702,2.104 1.861,0.945 3.29,0.945" Height="15" Canvas.Left="98.913" Canvas.Top="76.692" Width="16">
                     <Canvas Clip="M0.702,0.945L5.878,0.945 5.878,6.121 0.702,6.121z" Height="15" Canvas.Left="0" Canvas.Top="0" Width="16">
-                        <Image Source="/Ikarus;component/Gauges/_Images\WP-Clock_Images1\Image2.png" Stretch="Fill">
+                        <Image Source="/Ikarus;component/Gauges/_Images\Wp-ALT_20_Images\Image2.png" Stretch="Fill">
                             <Image.RenderTransform>
                                 <MatrixTransform Matrix="0.360000371932983,0,0,0.359999847412109,0,0"/>
                             </Image.RenderTransform>
@@ -255,7 +255,7 @@
                 <Path Data="M3.765,3.918L3.333,4.285 0,0.367 0.433,0z" Fill="#FF333333" Height="4.285" Canvas.Left="100.32" Canvas.Top="78.082" Width="3.765"/>
                 <Canvas Clip="M3.927,0.61C5.806,0.61 7.329,2.133 7.329,4.011 7.329,5.89 5.806,7.414 3.927,7.414 2.049,7.414 0.526,5.89 0.526,4.011 0.526,2.133 2.049,0.61 3.927,0.61" Height="18" Canvas.Left="35.603" Canvas.Top="76.213" Width="20">
                     <Canvas Clip="M0.526,0.61L7.329,0.61 7.329,7.414 0.526,7.414z" Height="18" Canvas.Left="0" Canvas.Top="0" Width="20">
-                        <Image Source="/Ikarus;component/Gauges/_Images\WP-Clock_Images1\Image1.png" Stretch="Fill">
+                        <Image Source="/Ikarus;component/Gauges/_Images\Wp-ALT_20_Images\Image1.png" Stretch="Fill">
                             <Image.RenderTransform>
                                 <MatrixTransform Matrix="0.360000228881836,0,0,0.359999974568685,0,0"/>
                             </Image.RenderTransform>
@@ -265,7 +265,7 @@
                 <Path Data="M2.976,0C4.62,0 5.953,1.333 5.953,2.976 5.953,4.621 4.62,5.953 2.976,5.953 1.332,5.953 0,4.621 0,2.976 0,1.333 1.332,0 2.976,0" Fill="#FF333333" Height="5.953" Canvas.Left="36.554" Canvas.Top="77.248" Width="5.953"/>
                 <Canvas Clip="M3.447,0.945C4.877,0.945 6.035,2.104 6.035,3.532 6.035,4.962 4.877,6.12 3.447,6.12 2.018,6.12 0.86,4.962 0.86,3.532 0.86,2.104 2.018,0.945 3.447,0.945" Height="15" Canvas.Left="36.083" Canvas.Top="76.692" Width="16">
                     <Canvas Clip="M0.86,0.945L6.036,0.945 6.036,6.121 0.86,6.121z" Height="15" Canvas.Left="0" Canvas.Top="0" Width="16">
-                        <Image Source="/Ikarus;component/Gauges/_Images\WP-Clock_Images1\Image.png" Stretch="Fill">
+                        <Image Source="/Ikarus;component/Gauges/_Images\Wp-ALT_20_Images\Image.png" Stretch="Fill">
                             <Image.RenderTransform>
                                 <MatrixTransform Matrix="0.360000371932983,0,0,0.359999847412109,0,0"/>
                             </Image.RenderTransform>

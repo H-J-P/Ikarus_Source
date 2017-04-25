@@ -139,7 +139,7 @@
                             Width="40"
                             Height="36"
                             Clip="M1.303,0.683L16.633,0.683 16.633,16.013 1.303,16.013z">
-                        <Image Source="/Ikarus;component/Gauges/_Images\P51-Acc_Images\Image.png" Stretch="Fill">
+                        <Image Source="/Ikarus;component/Gauges/_Images\P51-ALT_Images\Image.png" Stretch="Fill">
                             <Image.RenderTransform>
                                 <MatrixTransform Matrix="0.359999942779541,0,0,0.359999974568685,0,0" />
                             </Image.RenderTransform>
@@ -872,7 +872,7 @@
                             Width="40"
                             Height="36"
                             Clip="M1.273,0.683L16.603,0.683 16.603,16.013 1.273,16.013z">
-                        <Image Source="/Ikarus;component/Gauges/_Images\P51-Acc_Images\Image.png" Stretch="Fill">
+                        <Image Source="/Ikarus;component/Gauges/_Images\P51-ALT_Images\Image.png" Stretch="Fill">
                             <Image.RenderTransform>
                                 <MatrixTransform Matrix="0.359999942779541,0,0,0.359999974568685,0,0" />
                             </Image.RenderTransform>
@@ -889,7 +889,7 @@
                             Width="40"
                             Height="36"
                             Clip="M1.273,0.652L16.603,0.652 16.603,15.982 1.273,15.982z">
-                        <Image Source="/Ikarus;component/Gauges/_Images\P51-Acc_Images\Image.png" Stretch="Fill">
+                        <Image Source="/Ikarus;component/Gauges/_Images\P51-ALT_Images\Image.png" Stretch="Fill">
                             <Image.RenderTransform>
                                 <MatrixTransform Matrix="0.359999942779541,0,0,0.359999974568685,0,0" />
                             </Image.RenderTransform>

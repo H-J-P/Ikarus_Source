@@ -966,7 +966,7 @@
                             Width="48"
                             Height="45"
                             Clip="M1.285,0.709L21.127,0.709 21.127,20.551 1.285,20.551z">
-                        <Image Source="/Ikarus;component/Gauges/_Images\LwALT_Images\Image10.png" Stretch="Fill">
+                        <Image Source="/Ikarus;component/Gauges/_Images\MEK4DblP_Images\Image4.png" Stretch="Fill">
                             <Image.RenderTransform>
                                 <MatrixTransform Matrix="0.359999895095825,0,0,0.36000010172526,0,0" />
                             </Image.RenderTransform>
@@ -1039,12 +1039,6 @@
                       Height="22.677"
                       Data="M11.339,0C17.601,0 22.678,5.076 22.678,11.338 22.678,17.6 17.601,22.677 11.339,22.677 5.077,22.677 0,17.6 0,11.338 0,5.076 5.077,0 11.339,0"
                       Fill="#FF4D4D4D" />
-                <Path Canvas.Left="196.544"
-                      Canvas.Top="197.911"
-                      Width="22.678"
-                      Height="22.676"
-                      Data="M11.339,0C17.601,0 22.678,5.077 22.678,11.338 22.678,17.6 17.601,22.676 11.339,22.676 5.077,22.676 0,17.6 0,11.338 0,5.077 5.077,0 11.339,0"
-                      Fill="#FF4D4D4D" />
                 <Canvas Canvas.Left="196.981"
                         Canvas.Top="16.521"
                         Width="48"
@@ -1055,12 +1049,18 @@
                             Width="48"
                             Height="45"
                             Clip="M0.98,0.709L20.823,0.709 20.823,20.551 0.98,20.551z">
-                        <Image Source="/Ikarus;component/Gauges/_Images\LwALT_Images\Image9.png" Stretch="Fill">
+                        <Image Source="/Ikarus;component/Gauges/_Images\MEK4DblP_Images\Image4.png" Stretch="Fill">
                             <Image.RenderTransform>
                                 <MatrixTransform Matrix="0.359999895095825,0,0,0.36000010172526,0,0" />
                             </Image.RenderTransform>
                         </Image>
                     </Canvas>
+                    <Path Canvas.Left="197.161"
+                      Canvas.Top="198.162"
+                      Width="22.678"
+                      Height="22.676"
+                      Data="M11.339,0C17.601,0 22.678,5.077 22.678,11.338 22.678,17.6 17.601,22.676 11.339,22.676 5.077,22.676 0,17.6 0,11.338 0,5.077 5.077,0 11.339,0"
+                      Fill="#FF4D4D4D" />
                 </Canvas>
                 <Canvas Canvas.Left="196.981"
                         Canvas.Top="198.573"
@@ -1072,7 +1072,7 @@
                             Width="48"
                             Height="45"
                             Clip="M0.98,0.754L20.823,0.754 20.823,20.598 0.98,20.598z">
-                        <Image Source="/Ikarus;component/Gauges/_Images\LwALT_Images\Image7.png" Stretch="Fill">
+                        <Image Source="/Ikarus;component/Gauges/_Images\MEK4DblP_Images\Image4.png" Stretch="Fill">
                             <Image.RenderTransform>
                                 <MatrixTransform Matrix="0.359999895095825,0,0,0.36000010172526,0,0" />
                             </Image.RenderTransform>

@@ -11,7 +11,7 @@
                 <Path Data="M24.804,0.108L230.53,0.108C244.113,0.108,255.225,11.221,255.225,24.804L255.225,230.53C255.225,244.112,244.113,255.225,230.53,255.225L24.804,255.225C11.221,255.225,0.108,244.112,0.108,230.53L0.108,24.804C0.108,11.221,11.221,0.108,24.804,0.108" Fill="#FF121212" Height="255.333" Canvas.Left="-0.108" Stroke="#FF666666" StrokeThickness="0.216" StrokeMiterLimit="22.926" Canvas.Top="-0.108" Width="255.333"/>
                 <Canvas Clip="M9.207,1.122C13.613,1.122 17.185,4.694 17.185,9.1 17.185,13.506 13.613,17.079 9.207,17.079 4.801,17.079 1.229,13.506 1.229,9.1 1.229,4.694 4.801,1.122 9.207,1.122" Height="37" Canvas.Left="12.738" Canvas.Top="12.844" Width="40">
                     <Canvas Clip="M1.229,1.122L17.185,1.122 17.185,17.079 1.229,17.079z" Height="37" Canvas.Left="0" Canvas.Top="0" Width="40">
-                        <Image Source="/Ikarus;component/Gauges/_Images\P51-FuelQ-Fuselage_Images\Image.png" Stretch="Fill">
+                        <Image Source="/Ikarus;component/Gauges/_Images\P51-ALT_Images\Image.png" Stretch="Fill">
                             <Image.RenderTransform>
                                 <MatrixTransform Matrix="0.359999942779541,0,0,0.35999988865208,0,0"/>
                             </Image.RenderTransform>
@@ -22,7 +22,7 @@
                 <Path Data="M0.416,7.854L0,6.156 3.504,5.299C3.599,4.75,3.899,4.256,4.341,3.92L3.483,0.416 5.181,0 6.038,3.504C6.587,3.598,7.081,3.898,7.417,4.341L10.922,3.483 11.337,5.18 7.833,6.038C7.739,6.587,7.439,7.082,6.996,7.417L7.855,10.921 6.157,11.337 5.299,7.832C4.75,7.738,4.256,7.439,3.92,6.996z" Fill="#FF333333" Height="11.337" Canvas.Left="16.276" Canvas.Top="16.276" Width="11.337"/>
                 <Canvas Clip="M9.318,1.122C13.723,1.122 17.295,4.694 17.295,9.1 17.295,13.506 13.723,17.079 9.318,17.079 4.912,17.079 1.339,13.506 1.339,9.1 1.339,4.694 4.912,1.122 9.318,1.122" Height="37" Canvas.Left="223.856" Canvas.Top="12.844" Width="40">
                     <Canvas Clip="M1.339,1.122L17.295,1.122 17.295,17.079 1.339,17.079z" Height="37" Canvas.Left="0" Canvas.Top="0" Width="40">
-                        <Image Source="/Ikarus;component/Gauges/_Images\P51-FuelQ-Fuselage_Images\Image.png" Stretch="Fill">
+                        <Image Source="/Ikarus;component/Gauges/_Images\P51-ALT_Images\Image.png" Stretch="Fill">
                             <Image.RenderTransform>
                                 <MatrixTransform Matrix="0.359999942779541,0,0,0.35999988865208,0,0"/>
                             </Image.RenderTransform>
@@ -33,7 +33,7 @@
                 <Path Data="M0.464,7.989L0,6.304 3.478,5.345C3.557,4.794,3.842,4.291,4.275,3.943L3.316,0.465 5.001,0 5.96,3.478C6.511,3.556,7.014,3.842,7.363,4.275L10.84,3.316 11.304,5.001 7.827,5.96C7.749,6.511,7.462,7.014,7.03,7.362L7.989,10.841 6.303,11.305 5.345,7.826C4.794,7.748,4.292,7.463,3.943,7.031z" Fill="#FF333333" Height="11.305" Canvas.Left="227.521" Canvas.Top="16.292" Width="11.304"/>
                 <Canvas Clip="M9.207,1.232C13.613,1.232 17.185,4.804 17.185,9.211 17.185,13.617 13.613,17.189 9.207,17.189 4.801,17.189 1.229,13.617 1.229,9.211 1.229,4.804 4.801,1.232 9.207,1.232" Height="37" Canvas.Left="12.738" Canvas.Top="223.963" Width="40">
                     <Canvas Clip="M1.229,1.232L17.185,1.232 17.185,17.189 1.229,17.189z" Height="37" Canvas.Left="0" Canvas.Top="0" Width="40">
-                        <Image Source="/Ikarus;component/Gauges/_Images\P51-FuelQ-Fuselage_Images\Image.png" Stretch="Fill">
+                        <Image Source="/Ikarus;component/Gauges/_Images\P51-ALT_Images\Image.png" Stretch="Fill">
                             <Image.RenderTransform>
                                 <MatrixTransform Matrix="0.359999942779541,0,0,0.35999988865208,0,0"/>
                             </Image.RenderTransform>
@@ -44,7 +44,7 @@
                 <Path Data="M5.119,0L6.864,0.101 6.654,3.703C7.15,3.955,7.534,4.386,7.726,4.908L11.327,5.119 11.225,6.865 7.623,6.654C7.372,7.15,6.94,7.535,6.419,7.726L6.208,11.326 4.463,11.224 4.674,7.623C4.177,7.373,3.793,6.939,3.602,6.418L0,6.209 0.102,4.462 3.703,4.673C3.955,4.177,4.387,3.793,4.908,3.601z" Fill="#FF333333" Height="11.326" Canvas.Left="16.281" Canvas.Top="227.51" Width="11.327"/>
                 <Canvas Clip="M9.318,1.232C13.723,1.232 17.295,4.804 17.295,9.211 17.295,13.617 13.723,17.189 9.318,17.189 4.912,17.189 1.339,13.617 1.339,9.211 1.339,4.804 4.912,1.232 9.318,1.232" Height="37" Canvas.Left="223.856" Canvas.Top="223.963" Width="40">
                     <Canvas Clip="M1.339,1.232L17.295,1.232 17.295,17.189 1.339,17.189z" Height="37" Canvas.Left="0" Canvas.Top="0" Width="40">
-                        <Image Source="/Ikarus;component/Gauges/_Images\P51-FuelQ-Fuselage_Images\Image.png" Stretch="Fill">
+                        <Image Source="/Ikarus;component/Gauges/_Images\P51-ALT_Images\Image.png" Stretch="Fill">
                             <Image.RenderTransform>
                                 <MatrixTransform Matrix="0.359999942779541,0,0,0.35999988865208,0,0"/>
                             </Image.RenderTransform>

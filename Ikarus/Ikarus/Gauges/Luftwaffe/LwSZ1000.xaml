@@ -15,7 +15,7 @@
                 <Path Data="M0,116.1L0,0 8.776,10.529 8.776,116.1z" Fill="#FFCCCCCC" Height="116.1" Canvas.Left="0" Canvas.Top="0" Width="8.776"/>
             </Canvas>
             <Canvas x:Name="BreechLamp" Height="63" Canvas.Left="7.192" Canvas.Top="9.883" Width="64">
-                <Image Source="/Ikarus;component/Gauges/_Images\LW_SZ1000_Images\Image1.png" Stretch="Fill">
+                <Image Source="/Ikarus;component/Gauges/_Images\LW_SZ100_Images\Image1.png" Stretch="Fill">
                     <Image.RenderTransform>
                         <MatrixTransform Matrix="0.360000014305115,0,0,0.36000006539481,0,0"/>
                     </Image.RenderTransform>
@@ -28,7 +28,7 @@
                 <Path Data="M13.109,0.284L0.283,0.284 0.283,116.385 21.885,116.385 21.885,114.661 13.109,106.065 13.109,1.492z" Fill="Black" Height="116.668" Canvas.Left="11.717" Stroke="#FF333333" StrokeThickness="0.567" StrokeMiterLimit="22.926" Canvas.Top="43.216" Width="22.169"/>
                 <Canvas Clip="M1.309,15.176C1.309,20.245,4.063,24.67,8.156,27.038L8.157,27.037 15.004,15.178 21.85,27.037C26.241,24.503,28.696,19.905,28.7,15.177L28.698,15.176 15.006,15.176 21.852,3.318C17.464,0.784,12.254,0.957,8.157,3.317L8.157,3.319 15.004,15.176 15.003,15.176z" Height="59" Canvas.Left="7.796" Canvas.Top="9.949" Width="64">
                     <Canvas Clip="M1.309,0.784L28.7,0.784 28.7,27.038 1.309,27.038z" Height="59" Canvas.Left="0" Canvas.Top="0" Width="64">
-                        <Image Source="/Ikarus;component/Gauges/_Images\LW_SZ1000_Images\Image.png" Stretch="Fill">
+                        <Image Source="/Ikarus;component/Gauges/_Images\LW_SZ100_Images\Image.png" Stretch="Fill">
                             <Image.RenderTransform>
                                 <MatrixTransform Matrix="0.360000014305115,0,0,0.359999899136818,0,0"/>
                             </Image.RenderTransform>
