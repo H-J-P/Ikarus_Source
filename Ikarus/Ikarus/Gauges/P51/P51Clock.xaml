@@ -11,7 +11,7 @@
                 <Path Data="M24.668,0L230.166,0C243.732,0,254.834,11.101,254.834,24.668L254.834,230.164C254.834,243.732,243.732,254.834,230.166,254.834L24.668,254.834C11.102,254.834,0,243.732,0,230.164L0,24.668C0,11.101,11.102,0,24.668,0" Fill="#FF121212" Height="254.834" Canvas.Left="0" Canvas.Top="0" Width="254.834"/>
                 <Canvas Clip="M9.286,0.996C13.687,0.996 17.255,4.564 17.255,8.964 17.255,13.366 13.687,16.934 9.286,16.934 4.886,16.934 1.317,13.366 1.317,8.964 1.317,4.564 4.886,0.996 9.286,0.996" Height="37" Canvas.Left="12.634" Canvas.Top="12.955" Width="40">
                     <Canvas Clip="M1.317,0.996L17.255,0.996 17.255,16.934 1.317,16.934z" Height="37" Canvas.Left="0" Canvas.Top="0" Width="40">
-                        <Image Source="/Ikarus;component/Gauges/_Images\US-Clock-WW2_Images\Image2.png" Stretch="Fill">
+                        <Image Source="/Ikarus;component/Gauges/_Images\US-WhiskeyCompass-WW2_Images\Image.png" Stretch="Fill">
                             <Image.RenderTransform>
                                 <MatrixTransform Matrix="0.359999942779541,0,0,0.35999988865208,0,0"/>
                             </Image.RenderTransform>
@@ -22,7 +22,7 @@
                 <Path Data="M0.529,8.149L0,6.485 3.435,5.394C3.492,4.841,3.758,4.328,4.176,3.963L3.086,0.529 4.75,0 5.84,3.435C6.392,3.492,6.906,3.758,7.271,4.176L10.705,3.085 11.234,4.749 7.799,5.84C7.742,6.393,7.476,6.906,7.058,7.27L8.148,10.705 6.484,11.234 5.394,7.799C4.842,7.742,4.328,7.476,3.965,7.058z" Fill="#FF333333" Height="11.234" Canvas.Left="16.303" Canvas.Top="16.303" Width="11.234"/>
                 <Canvas Clip="M9.283,0.996C13.683,0.996 17.252,4.564 17.252,8.964 17.252,13.366 13.683,16.934 9.283,16.934 4.883,16.934 1.314,13.366 1.314,8.964 1.314,4.564 4.883,0.996 9.283,0.996" Height="37" Canvas.Left="223.631" Canvas.Top="12.955" Width="40">
                     <Canvas Clip="M1.314,0.996L17.252,0.996 17.252,16.934 1.314,16.934z" Height="37" Canvas.Left="0" Canvas.Top="0" Width="40">
-                        <Image Source="/Ikarus;component/Gauges/_Images\US-Clock-WW2_Images\Image1.png" Stretch="Fill">
+                        <Image Source="/Ikarus;component/Gauges/_Images\US-WhiskeyCompass-WW2_Images\Image.png" Stretch="Fill">
                             <Image.RenderTransform>
                                 <MatrixTransform Matrix="0.359999942779541,0,0,0.35999988865208,0,0"/>
                             </Image.RenderTransform>
@@ -33,7 +33,7 @@
                 <Path Data="M0.402,1.158L1.709,0 4.099,2.696C4.629,2.524,5.205,2.559,5.707,2.793L8.404,0.402 9.562,1.708 6.865,4.099C7.039,4.628,7.004,5.204,6.769,5.707L9.16,8.403 7.853,9.562 5.463,6.865C4.935,7.038,4.357,7.003,3.855,6.769L1.158,9.16 0,7.854 2.697,5.463C2.523,4.934,2.558,4.358,2.793,3.855z" Fill="#FF333333" Height="9.562" Canvas.Left="228.133" Canvas.Top="17.139" Width="9.562"/>
                 <Canvas Clip="M9.283,0.994C13.683,0.994 17.252,4.561 17.252,8.963 17.252,13.363 13.683,16.932 9.283,16.932 4.883,16.932 1.314,13.363 1.314,8.963 1.314,4.561 4.883,0.994 9.283,0.994" Height="37" Canvas.Left="223.631" Canvas.Top="223.951" Width="40">
                     <Canvas Clip="M1.314,0.994L17.252,0.994 17.252,16.932 1.314,16.932z" Height="37" Canvas.Left="0" Canvas.Top="0" Width="40">
-                        <Image Source="/Ikarus;component/Gauges/_Images\US-Clock-WW2_Images\Image.png" Stretch="Fill">
+                        <Image Source="/Ikarus;component/Gauges/_Images\US-WhiskeyCompass-WW2_Images\Image.png" Stretch="Fill">
                             <Image.RenderTransform>
                                 <MatrixTransform Matrix="0.359999942779541,0,0,0.35999988865208,0,0"/>
                             </Image.RenderTransform>

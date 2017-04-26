@@ -3290,6 +3290,37 @@
     <Folder Include="Gauges\Div\" />
     <Folder Include="Gauges\M-2000C\" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Gauges\_Images\UH1_TurnIndicator_Images\Image.png" />
+    <Resource Include="Gauges\_Images\UH1_TurnIndicator_Images\Image1.png" />
+    <Resource Include="Gauges\_Images\UH1_TurnIndicator_Images\Image2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Gauges\_Images\US-ADI-WW2_Images\Image.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Gauges\_Images\US-TurnIndicator-WW2_Images\Image.png" />
+    <Resource Include="Gauges\_Images\US-TurnIndicator-WW2_Images\Image1.png" />
+    <Resource Include="Gauges\_Images\US-TurnIndicator-WW2_Images\Image2.png" />
+    <Resource Include="Gauges\_Images\US-TurnIndicator-WW2_Images\Image3.png" />
+    <Resource Include="Gauges\_Images\US-TurnIndicator-WW2_Images\Image4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Gauges\_Images\US-WhiskeyCompass_Images\Image.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Gauges\_Images\US-WhiskeyCompass-WW2_Images\Image.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Gauges\_Images\US-ADI_Images\Image.png" />
+    <Resource Include="Gauges\_Images\US-ADI_Images\Image10.png" />
+    <Resource Include="Gauges\_Images\US-ADI_Images\Image4.png" />
+    <Resource Include="Gauges\_Images\US-ADI_Images\Image5.png" />
+    <Resource Include="Gauges\_Images\US-ADI_Images\Image6.png" />
+    <Resource Include="Gauges\_Images\US-ADI_Images\Image7.png" />
+    <Resource Include="Gauges\_Images\US-ADI_Images\Image8.png" />
+    <Resource Include="Gauges\_Images\US-ADI_Images\Image9.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

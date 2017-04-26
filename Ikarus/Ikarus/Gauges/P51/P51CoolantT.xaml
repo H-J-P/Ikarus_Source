@@ -44,7 +44,7 @@
                 <Path Data="M0,3.821L0.752,2.243 4.009,3.795C4.429,3.43,4.974,3.237,5.529,3.256L7.082,0 8.659,0.752 7.107,4.008C7.472,4.428,7.665,4.973,7.646,5.528L10.902,7.083 10.15,8.659 6.893,7.106C6.473,7.471,5.928,7.665,5.373,7.645L3.82,10.901 2.242,10.149 3.795,6.893C3.43,6.473,3.236,5.928,3.256,5.374z" Fill="#FF333333" Height="10.901" Canvas.Left="16.494" Canvas.Top="227.722" Width="10.902"/>
                 <Canvas Clip="F1M9.318,1.275C13.723,1.275 17.295,4.847 17.295,9.254 17.295,13.66 13.723,17.232 9.318,17.232 4.912,17.232 1.339,13.66 1.339,9.254 1.339,4.847 4.912,1.275 9.318,1.275" Height="37" Canvas.Left="223.856" Canvas.Top="223.92" Width="40">
                     <Canvas Clip="M1.339,1.275L17.295,1.275 17.295,17.232 1.339,17.232z" Height="37" Canvas.Left="0" Canvas.Top="0" Width="40">
-                        <Image Source="/Ikarus;component/Gauges/_Images\P51-CoolantT_Images\Image.png" Stretch="Fill">
+                        <Image Source="/Ikarus;component/Gauges/_Images\P51-ALT_Images\Image.png" Stretch="Fill">
                             <Image.RenderTransform>
                                 <MatrixTransform Matrix="0.359999942779541,0,0,0.35999988865208,0,0"/>
                             </Image.RenderTransform>
