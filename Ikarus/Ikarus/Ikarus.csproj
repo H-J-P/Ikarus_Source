@@ -1168,9 +1168,6 @@
     <Compile Include="Gauges\KA50\KA50FuelQ.xaml.cs">
       <DependentUpon>KA50FuelQ.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Gauges\KA50\KA50Gear.xaml.cs">
-      <DependentUpon>KA50Gear.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Gauges\KA50\KA50HydB.xaml.cs">
       <DependentUpon>KA50HydB.xaml</DependentUpon>
     </Compile>
@@ -1197,9 +1194,6 @@
     </Compile>
     <Compile Include="Gauges\KA50\KA50VSI.xaml.cs">
       <DependentUpon>KA50VSI.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Gauges\KA50\KA50WSC.xaml.cs">
-      <DependentUpon>KA50WSC.xaml</DependentUpon>
     </Compile>
     <Compile Include="Gauges\WP\WPEkran.xaml.cs">
       <DependentUpon>WPEkran.xaml</DependentUpon>
@@ -2700,10 +2694,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Gauges\KA50\KA50Gear.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Page Include="Gauges\KA50\KA50HydB.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -2737,10 +2727,6 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Gauges\KA50\KA50VSI.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Gauges\KA50\KA50WSC.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -2951,7 +2937,7 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Gauges\_Images\A10C-VHF-Display_Images\Image.png" />
-    <Resource Include="Gauges\_Images\A10C-VHF-Display_Images\Image1.png" />
+    <Resource Include="Gauges\_Images\LwALT_Images\Image5.png" />
     <Resource Include="Select.png" />
   </ItemGroup>
   <ItemGroup>
@@ -2971,45 +2957,16 @@
     <Resource Include="Gauges\_Images\KA50-ADI_Images\Image1.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Gauges\_Images\KA50-WSC_Images\Image.png" />
-    <Resource Include="Gauges\_Images\KA50-WSC_Images\Image1.png" />
-    <Resource Include="Gauges\_Images\KA50-WSC_Images\Image10.png" />
-    <Resource Include="Gauges\_Images\KA50-WSC_Images\Image11.png" />
-    <Resource Include="Gauges\_Images\KA50-WSC_Images\Image12.png" />
-    <Resource Include="Gauges\_Images\KA50-WSC_Images\Image13.png" />
-    <Resource Include="Gauges\_Images\KA50-WSC_Images\Image14.png" />
-    <Resource Include="Gauges\_Images\KA50-WSC_Images\Image15.png" />
-    <Resource Include="Gauges\_Images\KA50-WSC_Images\Image2.png" />
-    <Resource Include="Gauges\_Images\KA50-WSC_Images\Image3.png" />
-    <Resource Include="Gauges\_Images\KA50-WSC_Images\Image4.png" />
-    <Resource Include="Gauges\_Images\KA50-WSC_Images\Image5.png" />
-    <Resource Include="Gauges\_Images\KA50-WSC_Images\Image6.png" />
-    <Resource Include="Gauges\_Images\KA50-WSC_Images\Image7.png" />
-    <Resource Include="Gauges\_Images\KA50-WSC_Images\Image8.png" />
-    <Resource Include="Gauges\_Images\KA50-WSC_Images\Image9.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Gauges\_Images\CMSC_Images\Image.png" />
     <Resource Include="Gauges\_Images\FW190RPM_Images\FWD9Fuel_Images.png" />
     <Resource Include="Gauges\_Images\FW190RPM_Images\Image.png" />
     <Resource Include="Gauges\_Images\FW190RPM_Images\image0.png" />
     <Resource Include="Gauges\_Images\FW190RPM_Images\Image1.png" />
-    <Resource Include="Gauges\_Images\FW190RPM_Images\Image2.png" />
     <Resource Include="Gauges\_Images\FW190RPM_Images\Image3.png" />
     <Resource Include="Gauges\_Images\FW190RPM_Images\Image4.png" />
     <Resource Include="Gauges\_Images\FW190RPM_Images\Image5.png" />
     <Resource Include="Gauges\_Images\FW190RPM_Images\Image6.png" />
     <Resource Include="Gauges\_Images\FW190RPM_Images\LwAFN2_Images.png" />
-    <Resource Include="Gauges\_Images\FW190RPM_Images\LwALT_Images.png" />
-    <Resource Include="Gauges\_Images\FW190RPM_Images\LwALT_Images5.png" />
-    <Resource Include="Gauges\_Images\FW190RPM_Images\LwALT_Images6.png" />
-    <Resource Include="Gauges\_Images\FW190RPM_Images\LwALT_Images7.png" />
-    <Resource Include="Gauges\_Images\FW190RPM_Images\LwATT_Image.png" />
-    <Resource Include="Gauges\_Images\FW190RPM_Images\LwATT_Image1.png" />
-    <Resource Include="Gauges\_Images\FW190RPM_Images\LwATT_Image2.png" />
-    <Resource Include="Gauges\_Images\FW190RPM_Images\LwATT_Image3.png" />
-    <Resource Include="Gauges\_Images\FW190RPM_Images\LwATT_Image4.png" />
-    <Resource Include="Gauges\_Images\FW190RPM_Images\LwATT_Image5.png" />
     <Resource Include="Gauges\_Images\FW190RPM_Images\LwClock_Image.png" />
     <Resource Include="Gauges\_Images\FWD9_Gear_Images\Image.png" />
     <Resource Include="Gauges\_Images\FWD9_Gear_Images\Image1.png" />
@@ -3028,12 +2985,8 @@
   <ItemGroup>
     <Resource Include="Gauges\_Images\KA50-ALTr_Images\Image.png" />
     <Resource Include="Gauges\_Images\KA50-ALTr_Images\Image1.png" />
-    <Resource Include="Gauges\_Images\KA50-ALTr_Images\Image2.png" />
-    <Resource Include="Gauges\_Images\KA50-ALTr_Images\Image3.png" />
     <Resource Include="Gauges\_Images\KA50-AOA_Images\Image.png" />
     <Resource Include="Gauges\_Images\KA50-AOA_Images\Image1.png" />
-    <Resource Include="Gauges\_Images\KA50-AOA_Images\Image2.png" />
-    <Resource Include="Gauges\_Images\KA50-AOA_Images\Image3.png" />
     <Resource Include="Gauges\_Images\KA50-APUT_Images\Image.png" />
     <Resource Include="Gauges\_Images\KA50-APUT_Images\Image1.png" />
     <Resource Include="Gauges\_Images\KA50-APUT_Images\Image2.png" />
@@ -3044,59 +2997,27 @@
     <Resource Include="Gauges\_Images\KA50-APUT_Images\Image7.png" />
     <Resource Include="Gauges\_Images\KA50-EGT_Images\Image.png" />
     <Resource Include="Gauges\_Images\KA50-EGT_Images\Image1.png" />
-    <Resource Include="Gauges\_Images\KA50-EGT_Images\Image2.png" />
-    <Resource Include="Gauges\_Images\KA50-EGT_Images\Image3.png" />
     <Resource Include="Gauges\_Images\KA50-EGT_Images\Image4.png" />
     <Resource Include="Gauges\_Images\KA50-EGT_Images\Image5.png" />
-    <Resource Include="Gauges\_Images\KA50-EGT_Images\Image6.png" />
-    <Resource Include="Gauges\_Images\KA50-EGT_Images\Image7.png" />
     <Resource Include="Gauges\_Images\KA50-FuelQ_Images\Image.png" />
-    <Resource Include="Gauges\_Images\KA50-FuelQ_Images\Image1.png" />
     <Resource Include="Gauges\_Images\KA50-FuelQ_Images\Image2.png" />
-    <Resource Include="Gauges\_Images\KA50-FuelQ_Images\Image3.png" />
-    <Resource Include="Gauges\_Images\KA50-Gear_Images\Image.png" />
-    <Resource Include="Gauges\_Images\KA50-Gear_Images\Image1.png" />
-    <Resource Include="Gauges\_Images\KA50-Gear_Images\Image10.png" />
-    <Resource Include="Gauges\_Images\KA50-Gear_Images\Image11.png" />
-    <Resource Include="Gauges\_Images\KA50-Gear_Images\Image2.png" />
-    <Resource Include="Gauges\_Images\KA50-Gear_Images\Image3.png" />
-    <Resource Include="Gauges\_Images\KA50-Gear_Images\Image4.png" />
-    <Resource Include="Gauges\_Images\KA50-Gear_Images\Image5.png" />
-    <Resource Include="Gauges\_Images\KA50-Gear_Images\Image6.png" />
-    <Resource Include="Gauges\_Images\KA50-Gear_Images\Image7.png" />
-    <Resource Include="Gauges\_Images\KA50-Gear_Images\Image8.png" />
-    <Resource Include="Gauges\_Images\KA50-Gear_Images\Image9.png" />
     <Resource Include="Gauges\_Images\KA50-Rev-Eng_Images\Image.png" />
     <Resource Include="Gauges\_Images\KA50-Rev-Eng_Images\Image1.png" />
-    <Resource Include="Gauges\_Images\KA50-Rev-Eng_Images\Image2.png" />
-    <Resource Include="Gauges\_Images\KA50-Rev-Eng_Images\Image3.png" />
-    <Resource Include="Gauges\_Images\KA50-Rev-Eng_Images\Image4.png" />
-    <Resource Include="Gauges\_Images\KA50-Rev-Eng_Images\Image5.png" />
     <Resource Include="Gauges\_Images\KA50-Rev-Rot_Images\Image.png" />
     <Resource Include="Gauges\_Images\KA50-Rev-Rot_Images\Image1.png" />
-    <Resource Include="Gauges\_Images\KA50-Rev-Rot_Images\Image2.png" />
-    <Resource Include="Gauges\_Images\KA50-Rev-Rot_Images\Image3.png" />
-    <Resource Include="Gauges\_Images\KA50-Rev-Rot_Images\Image4.png" />
-    <Resource Include="Gauges\_Images\KA50-Rev-Rot_Images\Image5.png" />
     <Resource Include="Gauges\_Images\LwALT_Images\Image.png" />
     <Resource Include="Gauges\_Images\LwALT_Images\Image1.png" />
     <Resource Include="Gauges\_Images\LwALT_Images\Image10.png" />
     <Resource Include="Gauges\_Images\LwALT_Images\Image2.png" />
     <Resource Include="Gauges\_Images\LwALT_Images\Image3.png" />
     <Resource Include="Gauges\_Images\LwALT_Images\Image4.png" />
-    <Resource Include="Gauges\_Images\LwALT_Images\Image5.png" />
-    <Resource Include="Gauges\_Images\LwALT_Images\Image6.png" />
-    <Resource Include="Gauges\_Images\LwALT_Images\Image7.png" />
     <Resource Include="Gauges\_Images\LwALT_Images\Image8.png" />
-    <Resource Include="Gauges\_Images\LwALT_Images\Image9.png" />
     <Resource Include="Gauges\_Images\LwASI_Images\Image.png" />
     <Resource Include="Gauges\_Images\LwASI_Images\Image1.png" />
     <Resource Include="Gauges\_Images\LwASI_Images\Image2.png" />
     <Resource Include="Gauges\_Images\LwASI_Images\Image3.png" />
     <Resource Include="Gauges\_Images\LwATT_Images\Image.png" />
-    <Resource Include="Gauges\_Images\LwATT_Images\Image1.png" />
     <Resource Include="Gauges\_Images\LwATT_Images\Image2.png" />
-    <Resource Include="Gauges\_Images\LwATT_Images\Image3.png" />
     <Resource Include="Gauges\_Images\LwATT_Images\Image4.png" />
     <Resource Include="Gauges\_Images\LwATT_Images\Image5.png" />
     <Resource Include="Gauges\_Images\LwHead_Images\Image.png" />
@@ -3111,9 +3032,7 @@
     <Resource Include="Gauges\_Images\LW_SZ100_Images\Image.png" />
     <Resource Include="Gauges\_Images\LW_SZ100_Images\Image1.png" />
     <Resource Include="Gauges\_Images\MEK4Att_Images\Image.png" />
-    <Resource Include="Gauges\_Images\MEK4Att_Images\Image1.png" />
     <Resource Include="Gauges\_Images\MEK4Att_Images\Image2.png" />
-    <Resource Include="Gauges\_Images\MEK4Att_Images\Image3.png" />
     <Resource Include="Gauges\_Images\MEK4Att_Images\Image4.png" />
     <Resource Include="Gauges\_Images\MEK4Att_Images\Image5.png" />
     <Resource Include="Gauges\_Images\MEK4DblP_Images\Image.png" />
@@ -3149,89 +3068,37 @@
     <Resource Include="Gauges\_Images\Wp-ADI_Images\Image4.png" />
     <Resource Include="Gauges\_Images\Wp-Airintake_Images\Image.png" />
     <Resource Include="Gauges\_Images\Wp-Airintake_Images\Image1.png" />
-    <Resource Include="Gauges\_Images\Wp-Airintake_Images\Image2.png" />
-    <Resource Include="Gauges\_Images\Wp-Airintake_Images\Image3.png" />
-    <Resource Include="Gauges\_Images\Wp-Airintake_Images\Image4.png" />
-    <Resource Include="Gauges\_Images\Wp-Airintake_Images\Image5.png" />
-    <Resource Include="Gauges\_Images\Wp-Airintake_Images\Image6.png" />
-    <Resource Include="Gauges\_Images\Wp-Airintake_Images\Image7.png" />
     <Resource Include="Gauges\_Images\Wp-ALT_20_Images\Image.png" />
     <Resource Include="Gauges\_Images\Wp-ALT_20_Images\Image1.png" />
-    <Resource Include="Gauges\_Images\Wp-ALT_20_Images\Image2.png" />
-    <Resource Include="Gauges\_Images\Wp-ALT_20_Images\Image3.png" />
     <Resource Include="Gauges\_Images\Wp-AOA_Images\Image.png" />
     <Resource Include="Gauges\_Images\Wp-distance_Images\Image.png" />
     <Resource Include="Gauges\_Images\Wp-distance_Images\Image1.png" />
-    <Resource Include="Gauges\_Images\Wp-distance_Images\Image10.png" />
-    <Resource Include="Gauges\_Images\Wp-distance_Images\Image2.png" />
     <Resource Include="Gauges\_Images\Wp-distance_Images\Image3.png" />
     <Resource Include="Gauges\_Images\Wp-distance_Images\Image4.png" />
-    <Resource Include="Gauges\_Images\Wp-distance_Images\Image5.png" />
-    <Resource Include="Gauges\_Images\Wp-distance_Images\Image6.png" />
-    <Resource Include="Gauges\_Images\Wp-distance_Images\Image7.png" />
-    <Resource Include="Gauges\_Images\Wp-distance_Images\Image8.png" />
-    <Resource Include="Gauges\_Images\Wp-distance_Images\Image9.png" />
-    <Resource Include="Gauges\_Images\Wp-EGT_10_Images\Image.png" />
     <Resource Include="Gauges\_Images\Wp-EGT_10_Images\Image1.png" />
     <Resource Include="Gauges\_Images\Wp-EGT_10_Images\Image2.png" />
-    <Resource Include="Gauges\_Images\Wp-EGT_10_Images\Image3.png" />
-    <Resource Include="Gauges\_Images\Wp-EGT_10_Images\Image4.png" />
-    <Resource Include="Gauges\_Images\Wp-EGT_10_Images\Image5.png" />
-    <Resource Include="Gauges\_Images\Wp-EGT_10_Images\Image6.png" />
-    <Resource Include="Gauges\_Images\Wp-EGT_10_Images\Image7.png" />
     <Resource Include="Gauges\_Images\Wp-EGT_12_Images\Image.png" />
     <Resource Include="Gauges\_Images\Wp-EGT_12_Images\Image1.png" />
     <Resource Include="Gauges\_Images\Wp-FuelQ_stby_Images\Image.png" />
     <Resource Include="Gauges\_Images\Wp-FuelQ_stby_Images\Image1.png" />
-    <Resource Include="Gauges\_Images\Wp-FuelQ_stby_Images\Image2.png" />
-    <Resource Include="Gauges\_Images\Wp-FuelQ_stby_Images\Image3.png" />
-    <Resource Include="Gauges\_Images\Wp-FuelQ_stby_Images\Image4.png" />
-    <Resource Include="Gauges\_Images\Wp-FuelQ_stby_Images\Image5.png" />
-    <Resource Include="Gauges\_Images\Wp-FuelQ_stby_Images\Image6.png" />
-    <Resource Include="Gauges\_Images\Wp-FuelQ_stby_Images\Image7.png" />
     <Resource Include="Gauges\_Images\Wp-HSI_early_Images\Image.png" />
     <Resource Include="Gauges\_Images\Wp-REV_Eng_Images\Image.png" />
     <Resource Include="Gauges\_Images\Wp-REV_Eng_Images\Image1.png" />
-    <Resource Include="Gauges\_Images\Wp-REV_Eng_Images\Image2.png" />
-    <Resource Include="Gauges\_Images\Wp-REV_Eng_Images\Image3.png" />
-    <Resource Include="Gauges\_Images\Wp-REV_Eng_Images\Image4.png" />
-    <Resource Include="Gauges\_Images\Wp-REV_Eng_Images\Image5.png" />
     <Resource Include="Gauges\_Images\WP-VSI_Images\Image.png" />
     <Resource Include="Gauges\_Images\WP-VSI_Images\Image1.png" />
-    <Resource Include="Gauges\_Images\WP-VSI_Images\Image2.png" />
-    <Resource Include="Gauges\_Images\WP-VSI_Images\Image3.png" />
-    <Resource Include="Gauges\_Images\WP-VSI_Images\Image4.png" />
     <Resource Include="Gauges\_Images\Wp-VVI_200_Images\Image.png" />
     <Resource Include="Gauges\_Images\Wp-VVI_200_Images\Image1.png" />
     <Resource Include="Gauges\_Images\Wp-VVI_60_Images\Image.png" />
     <Resource Include="Gauges\_Images\Wp-VVI_60_Images\Image1.png" />
-    <Resource Include="Gauges\_Images\Wp-VVI_60_Images\Image10.png" />
-    <Resource Include="Gauges\_Images\Wp-VVI_60_Images\Image11.png" />
-    <Resource Include="Gauges\_Images\Wp-VVI_60_Images\Image2.png" />
-    <Resource Include="Gauges\_Images\Wp-VVI_60_Images\Image3.png" />
-    <Resource Include="Gauges\_Images\Wp-VVI_60_Images\Image4.png" />
     <Resource Include="Gauges\_Images\Wp-VVI_60_Images\Image5.png" />
     <Resource Include="Gauges\_Images\Wp-VVI_60_Images\Image6.png" />
-    <Resource Include="Gauges\_Images\Wp-VVI_60_Images\Image7.png" />
-    <Resource Include="Gauges\_Images\Wp-VVI_60_Images\Image8.png" />
-    <Resource Include="Gauges\_Images\Wp-VVI_60_Images\Image9.png" />
     <Resource Include="Gauges\_Images\Wp_FuelQ_Images\Image.png" />
     <Resource Include="Gauges\_Images\Wp_SPO15_Images\Image.png" />
     <Resource Include="Gauges\_Images\Wp_SPO15_Images\Image1.png" />
-    <Resource Include="Gauges\_Images\Wp_SPO15_Images\Image10.png" />
     <Resource Include="Gauges\_Images\Wp_SPO15_Images\Image11.png" />
     <Resource Include="Gauges\_Images\Wp_SPO15_Images\Image12.png" />
-    <Resource Include="Gauges\_Images\Wp_SPO15_Images\Image13.png" />
-    <Resource Include="Gauges\_Images\Wp_SPO15_Images\Image14.png" />
-    <Resource Include="Gauges\_Images\Wp_SPO15_Images\Image15.png" />
-    <Resource Include="Gauges\_Images\Wp_SPO15_Images\Image16.png" />
-    <Resource Include="Gauges\_Images\Wp_SPO15_Images\Image17.png" />
-    <Resource Include="Gauges\_Images\Wp_SPO15_Images\Image18.png" />
-    <Resource Include="Gauges\_Images\Wp_SPO15_Images\Image19.png" />
-    <Resource Include="Gauges\_Images\Wp_SPO15_Images\Image2.png" />
     <Resource Include="Gauges\_Images\Wp_SPO15_Images\Image20.png" />
     <Resource Include="Gauges\_Images\Wp_SPO15_Images\Image21.png" />
-    <Resource Include="Gauges\_Images\Wp_SPO15_Images\Image22.png" />
     <Resource Include="Gauges\_Images\Wp_SPO15_Images\Image23.png" />
     <Resource Include="Gauges\_Images\Wp_SPO15_Images\Image24.png" />
     <Resource Include="Gauges\_Images\Wp_SPO15_Images\Image25.png" />
@@ -3252,16 +3119,7 @@
     <Resource Include="Gauges\_Images\Wp_SPO15_Images\Image39.png" />
     <Resource Include="Gauges\_Images\Wp_SPO15_Images\Image4.png" />
     <Resource Include="Gauges\_Images\Wp_SPO15_Images\Image40.png" />
-    <Resource Include="Gauges\_Images\Wp_SPO15_Images\Image41.png" />
-    <Resource Include="Gauges\_Images\Wp_SPO15_Images\Image42.png" />
-    <Resource Include="Gauges\_Images\Wp_SPO15_Images\Image43.png" />
-    <Resource Include="Gauges\_Images\Wp_SPO15_Images\Image44.png" />
-    <Resource Include="Gauges\_Images\Wp_SPO15_Images\Image45.png" />
-    <Resource Include="Gauges\_Images\Wp_SPO15_Images\Image5.png" />
-    <Resource Include="Gauges\_Images\Wp_SPO15_Images\Image6.png" />
-    <Resource Include="Gauges\_Images\Wp_SPO15_Images\Image7.png" />
     <Resource Include="Gauges\_Images\Wp_SPO15_Images\Image8.png" />
-    <Resource Include="Gauges\_Images\Wp_SPO15_Images\Image9.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Assets\Ikarus_32.ico" />
@@ -3300,7 +3158,6 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Gauges\_Images\US-TurnIndicator-WW2_Images\Image.png" />
-    <Resource Include="Gauges\_Images\US-TurnIndicator-WW2_Images\Image1.png" />
     <Resource Include="Gauges\_Images\US-TurnIndicator-WW2_Images\Image2.png" />
     <Resource Include="Gauges\_Images\US-TurnIndicator-WW2_Images\Image3.png" />
     <Resource Include="Gauges\_Images\US-TurnIndicator-WW2_Images\Image4.png" />

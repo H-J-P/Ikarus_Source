@@ -458,14 +458,6 @@
                     Width="62.597"
                     Height="142.506"
                     RenderTransformOrigin="0.647,0.312">
-                <Canvas.RenderTransform>
-                    <TransformGroup>
-                        <ScaleTransform/>
-                        <SkewTransform/>
-                        <RotateTransform Angle="-23"/>
-                        <TranslateTransform/>
-                    </TransformGroup>
-                </Canvas.RenderTransform>
                 <Path Canvas.Left="0"
                       Canvas.Top="32.29"
                       Width="47.659"

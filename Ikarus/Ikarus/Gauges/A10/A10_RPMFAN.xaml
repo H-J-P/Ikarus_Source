@@ -5,7 +5,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" 
              d:DesignHeight="156"
-             d:DesignWidth="156">
+             d:DesignWidth="156" MouseWheel="Light_MouseWheel">
     <Grid>
         <Canvas x:Name="A10_REV_FAN"
                 Width="155.906"
@@ -411,6 +411,12 @@
                     Width="59.032"
                     Height="48.623"
                     RenderTransformOrigin="0.195,0.765">
+                <Path Canvas.Left="6.308"
+                      Canvas.Top="0"
+                      Width="52.724"
+                      Height="41.801"
+                      Data="M0,38.66L2.454,41.801 47.095,6.926 52.724,0 44.641,3.786z"
+                      Fill="#FFCCCCCC" />
                 <Path Canvas.Left="-0.113"
                       Canvas.Top="25.597"
                       Width="23.142"
@@ -420,12 +426,6 @@
                       Stroke="#FF999999"
                       StrokeMiterLimit="2.414"
                       StrokeThickness="0.283" />
-                <Path Canvas.Left="6.308"
-                      Canvas.Top="0"
-                      Width="52.724"
-                      Height="41.801"
-                      Data="M0,38.66L2.454,41.801 47.095,6.926 52.724,0 44.641,3.786z"
-                      Fill="#FFCCCCCC" />
             </Canvas>
             <Canvas x:Name="Marker_in"
                     Canvas.Left="71.128"

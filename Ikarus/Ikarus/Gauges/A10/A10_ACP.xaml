@@ -4,7 +4,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              d:DesignHeight="155"
-             d:DesignWidth="354"
+             d:DesignWidth="354" MouseWheel="Light_MouseWheel"
              mc:Ignorable="d">
     <Grid>
         <Canvas x:Name="A10_WSP"

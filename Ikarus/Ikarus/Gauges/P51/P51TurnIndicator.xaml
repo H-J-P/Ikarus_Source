@@ -88,7 +88,7 @@
                 <Path Data="M17.442,104.611C7.809,104.611 0,96.802 0,87.169 0,77.943 7.162,70.393 16.229,69.77L16.229,0 18.655,0 18.655,69.77C27.722,70.393 34.884,77.943 34.884,87.169 34.884,96.802 27.075,104.611 17.442,104.611" Fill="#FF0D0D0D" Height="104.611" Canvas.Left="0" Canvas.Top="65.285" Width="34.884"/>
                 <Canvas Clip="M5.683,1.07C8.029,1.07 9.93,2.973 9.93,5.318 9.93,7.664 8.029,9.565 5.683,9.565 3.337,9.565 1.436,7.664 1.436,5.318 1.436,2.973 3.337,1.07 5.683,1.07" Height="21" Canvas.Left="11.759" Canvas.Top="138.792" Width="24">
                     <Canvas Clip="M1.436,1.07L9.93,1.07 9.93,9.565 1.436,9.565z" Height="21" Canvas.Left="0" Canvas.Top="0" Width="24">
-                        <Image Source="/Ikarus;component/Gauges/_Images\US-TurnIndicator-WW2_Images\Image1.png" Stretch="Fill">
+                        <Image Source="/Ikarus;component/Gauges/_Images\US-TurnIndicator-WW2_Images\Image.png" Stretch="Fill">
                             <Image.RenderTransform>
                                 <MatrixTransform Matrix="0.360000133514404,0,0,0.36000006539481,0,0"/>
                             </Image.RenderTransform>

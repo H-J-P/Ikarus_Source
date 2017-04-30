@@ -157,7 +157,7 @@
                 <Path Data="M1.131,7.228L0,7.14 0.557,0 1.688,0.088z" Fill="White" Height="7.228" Canvas.Left="75.025" Canvas.Top="3.059" Width="1.688"/>
                 <Canvas Clip="M4.224,0.755C6.102,0.755 7.625,2.278 7.625,4.157 7.625,6.035 6.102,7.559 4.224,7.559 2.345,7.559 0.822,6.035 0.822,4.157 0.822,2.278 2.345,0.755 4.224,0.755" Height="18" Canvas.Left="66.642" Canvas.Top="34.368" Width="20">
                     <Canvas Clip="M0.822,0.755L7.625,0.755 7.625,7.558 0.822,7.558z" Height="18" Canvas.Left="0" Canvas.Top="0" Width="20">
-                        <Image Source="/Ikarus;component/Gauges/_Images\KA50-Rev-Rot_Images\Image5.png" Stretch="Fill">
+                        <Image Source="/Ikarus;component/Gauges/_Images\KA50-Rev-Rot_Images\Image1.png" Stretch="Fill">
                             <Image.RenderTransform>
                                 <MatrixTransform Matrix="0.360000228881836,0,0,0.359999974568685,0,0"/>
                             </Image.RenderTransform>
@@ -167,7 +167,7 @@
                 <Path Data="M2.977,0C4.621,0 5.953,1.332 5.953,2.976 5.953,4.62 4.621,5.952 2.977,5.952 1.333,5.952 0,4.62 0,2.976 0,1.332 1.333,0 2.977,0" Fill="#FF333333" Height="5.952" Canvas.Left="67.889" Canvas.Top="35.549" Width="5.953"/>
                 <Canvas Clip="M3.264,0.609C4.693,0.609 5.851,1.767 5.851,3.197 5.851,4.626 4.693,5.785 3.264,5.785 1.834,5.785 0.676,4.626 0.676,3.197 0.676,1.767 1.834,0.609 3.264,0.609" Height="15" Canvas.Left="67.602" Canvas.Top="35.328" Width="16">
                     <Canvas Clip="M0.676,0.609L5.851,0.609 5.851,5.784 0.676,5.784z" Height="15" Canvas.Left="0" Canvas.Top="0" Width="16">
-                        <Image Source="/Ikarus;component/Gauges/_Images\KA50-Rev-Rot_Images\Image4.png" Stretch="Fill">
+                        <Image Source="/Ikarus;component/Gauges/_Images\KA50-Rev-Rot_Images\Image.png" Stretch="Fill">
                             <Image.RenderTransform>
                                 <MatrixTransform Matrix="0.360000371932983,0,0,0.359999847412109,0,0"/>
                             </Image.RenderTransform>
@@ -177,7 +177,7 @@
                 <Path Data="M0,0.261L0.503,0 2.872,4.566 2.368,4.827z" Fill="#FF333333" Height="4.827" Canvas.Left="69.43" Canvas.Top="36.111" Width="2.872"/>
                 <Canvas Clip="M4.04,0.918C5.918,0.918 7.441,2.441 7.441,4.32 7.441,6.198 5.918,7.721 4.04,7.721 2.161,7.721 0.638,6.198 0.638,4.32 0.638,2.441 2.161,0.918 4.04,0.918" Height="19" Canvas.Left="48.444" Canvas.Top="66.546" Width="20">
                     <Canvas Clip="M0.638,0.918L7.441,0.918 7.441,7.721 0.638,7.721z" Height="19" Canvas.Left="0" Canvas.Top="0" Width="20">
-                        <Image Source="/Ikarus;component/Gauges/_Images\KA50-Rev-Rot_Images\Image3.png" Stretch="Fill">
+                        <Image Source="/Ikarus;component/Gauges/_Images\KA50-Rev-Rot_Images\Image1.png" Stretch="Fill">
                             <Image.RenderTransform>
                                 <MatrixTransform Matrix="0.360000228881836,0,0,0.359999807257401,0,0"/>
                             </Image.RenderTransform>
@@ -187,7 +187,7 @@
                 <Path Data="M2.977,0C4.62,0 5.953,1.333 5.953,2.977 5.953,4.621 4.62,5.954 2.977,5.954 1.333,5.954 0,4.621 0,2.977 0,1.333 1.333,0 2.977,0" Fill="#FF333333" Height="5.954" Canvas.Left="49.507" Canvas.Top="67.889" Width="5.953"/>
                 <Canvas Clip="M3.08,0.772C4.509,0.772 5.667,1.93 5.667,3.36 5.667,4.789 4.509,5.948 3.08,5.948 1.65,5.948 0.492,4.789 0.492,3.36 0.492,1.93 1.65,0.772 3.08,0.772" Height="15" Canvas.Left="49.404" Canvas.Top="67.506" Width="16">
                     <Canvas Clip="M0.492,0.772L5.667,0.772 5.667,5.948 0.492,5.948z" Height="15" Canvas.Left="0" Canvas.Top="0" Width="16">
-                        <Image Source="/Ikarus;component/Gauges/_Images\KA50-Rev-Rot_Images\Image2.png" Stretch="Fill">
+                        <Image Source="/Ikarus;component/Gauges/_Images\KA50-Rev-Rot_Images\Image.png" Stretch="Fill">
                             <Image.RenderTransform>
                                 <MatrixTransform Matrix="0.360000371932983,0,0,0.359999847412109,0,0"/>
                             </Image.RenderTransform>

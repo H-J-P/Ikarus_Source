@@ -422,7 +422,7 @@
                             Width="24"
                             Height="21"
                             Clip="M1.276,0.615L9.78,0.615 9.78,9.119 1.276,9.119z">
-                        <Image Source="/Ikarus;component/Gauges/_Images\LwALT_Images\Image5.png" Stretch="Fill">
+                        <Image Source="/Ikarus;component/Gauges/_Images\LwALT_Images\Image4.png" Stretch="Fill">
                             <Image.RenderTransform>
                                 <MatrixTransform Matrix="0.360000133514404,0,0,0.36000006539481,0,0" />
                             </Image.RenderTransform>
@@ -545,7 +545,7 @@
                             Width="24"
                             Height="21"
                             Clip="M1.061,0.507L9.565,0.507 9.565,9.011 1.061,9.011z">
-                        <Image Source="/Ikarus;component/Gauges/_Images\LwALT_Images\Image6.png" Stretch="Fill">
+                        <Image Source="/Ikarus;component/Gauges/_Images\LwALT_Images\Image4.png" Stretch="Fill">
                             <Image.RenderTransform>
                                 <MatrixTransform Matrix="0.360000133514404,0,0,0.36000006539481,0,0" />
                             </Image.RenderTransform>

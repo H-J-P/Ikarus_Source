@@ -16,11 +16,13 @@ namespace Ikarus
     {
         private string dataImportID = "";
         private int windowID = 0;
+        private double[] valueScale = new double[] { };
+        private double[] degreeDial = new double[] { };
+        int valueScaleIndex = 0;
         private string[] vals = new string[] { };
         double heading = 0.0;
         double lheading = 0.0;
 
-        //RotateTransform rtpointer = new RotateTransform();
         TranslateTransform ttHeading = new TranslateTransform();
 
         public void SetWindowID(int _windowID) { windowID = _windowID; }
@@ -30,6 +32,8 @@ namespace Ikarus
 		{
 			this.InitializeComponent();
             if (MainWindow.editmode) MakeDraggable(this, this);
+
+            Input.Visibility = System.Windows.Visibility.Hidden;
         }
 
         public void SetID(string _dataImportID)
@@ -74,10 +78,31 @@ namespace Ikarus
 
         public void SetInput(string _input)
         {
+            string[] vals = _input.Split(',');
+
+            if (vals.Length < 3) return;
+
+            valueScale = new double[vals.Length];
+
+            for (int i = 0; i < vals.Length; i++)
+            {
+                valueScale[i] = Convert.ToDouble(vals[i], CultureInfo.InvariantCulture);
+            }
+            valueScaleIndex = vals.Length;
         }
 
         public void SetOutput(string _output)
         {
+            string[] vals = _output.Split(',');
+
+            if (vals.Length < 3) return;
+
+            degreeDial = new double[vals.Length];
+
+            for (int i = 0; i < vals.Length; i++)
+            {
+                degreeDial[i] = Convert.ToDouble(vals[i], CultureInfo.InvariantCulture);
+            }
         }
 
         public double GetSize()
@@ -96,9 +121,27 @@ namespace Ikarus
 
                                if (vals.Length > 0) { heading = Convert.ToDouble(vals[0], CultureInfo.InvariantCulture); }
 
+                               //Input.Text = heading.ToString();
+
+                               //heading = 1 - heading;
+                               //heading -= 0.5;
+
+                               // DIGauge.input = { 0.0, 2.0 * 3.1415926}
+                               // DIGauge.output = { 0.0, 1.0}
+                               // Input:   0.0,0.080,0.163,0.249,0.332,0.415,0.500,0.500,0.583,0.670,0.751,0.826,0.923, 1.0
+                               //     °:     0,   30,   60,   90,  120,  150,  180,  180,  210,  240,  270,  300,  330, 360
+                               //   Out:     0,   69,  138,  208,  278,  348,  417, -417, -348, -279, -209, -139,  -70,   0
+
                                if (lheading != heading)
                                {
-                                   ttHeading.X = 418 * (heading < 0 ? -1 - heading : 1 - heading);
+                                   for (int n = 0; n < valueScaleIndex - 1; n++)
+                                   {
+                                       if (heading > valueScale[n] && heading <= valueScale[n + 1])
+                                       {
+                                           ttHeading.X = (degreeDial[n] - degreeDial[n + 1]) / (valueScale[n] - valueScale[n + 1]) * (heading - valueScale[n]) + degreeDial[n];
+                                           break;
+                                       }
+                                   }
                                    Heading.RenderTransform = ttHeading;
                                }
                                lheading = heading;

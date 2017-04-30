@@ -240,7 +240,7 @@
             <Canvas x:Name="PrimaryAWACS" Height="45" Canvas.Left="292.127" Canvas.Top="364.292" Width="96" d:IsHidden="True">
                 <Canvas Clip="M11.258,0.83L34.059,0.83C39.463,0.83 43.883,5.25 43.883,10.654 43.883,16.059 39.463,20.48 34.059,20.48L11.258,20.48C5.853,20.48 1.434,16.059 1.434,10.654 1.434,5.25 5.853,0.83 11.258,0.83" Height="45" Canvas.Left="0" Canvas.Top="0" Width="96">
                     <Canvas Clip="M1.434,0.83L43.883,0.83 43.883,20.48 1.434,20.48z" Height="45" Canvas.Left="0" Canvas.Top="0" Width="96">
-                        <Image Source="/Ikarus;component/Gauges/_Images\Wp_SPO15_Images\Image45.png" Stretch="Fill">
+                        <Image Source="/Ikarus;component/Gauges/_Images\Wp_SPO15_Images\Image40.png" Stretch="Fill">
                             <Image.RenderTransform>
                                 <MatrixTransform Matrix="0.360000014305115,0,0,0.36000010172526,0,0"/>
                             </Image.RenderTransform>
@@ -251,7 +251,7 @@
             <Canvas x:Name="PrimaryEarlywarning" Height="45" Canvas.Left="244.125" Canvas.Top="364.292" Width="96" d:IsHidden="True">
                 <Canvas Clip="M11.26,0.83L34.061,0.83C39.465,0.83 43.885,5.25 43.885,10.654 43.885,16.059 39.465,20.48 34.061,20.48L11.26,20.48C5.855,20.48 1.436,16.059 1.436,10.654 1.436,5.25 5.855,0.83 11.26,0.83" Height="45" Canvas.Left="0" Canvas.Top="0" Width="96">
                     <Canvas Clip="M1.436,0.83L43.885,0.83 43.885,20.48 1.436,20.48z" Height="45" Canvas.Left="0" Canvas.Top="0" Width="96">
-                        <Image Source="/Ikarus;component/Gauges/_Images\Wp_SPO15_Images\Image44.png" Stretch="Fill">
+                        <Image Source="/Ikarus;component/Gauges/_Images\Wp_SPO15_Images\Image40.png" Stretch="Fill">
                             <Image.RenderTransform>
                                 <MatrixTransform Matrix="0.360000014305115,0,0,0.36000010172526,0,0"/>
                             </Image.RenderTransform>
@@ -262,7 +262,7 @@
             <Canvas x:Name="PrimaryShortrange" Height="45" Canvas.Left="196.125" Canvas.Top="364.292" Width="96" d:IsHidden="True">
                 <Canvas Clip="M11.26,0.83L34.059,0.83C39.463,0.83 43.885,5.25 43.885,10.654 43.885,16.059 39.463,20.48 34.059,20.48L11.26,20.48C5.855,20.48 1.436,16.059 1.436,10.654 1.436,5.25 5.855,0.83 11.26,0.83" Height="45" Canvas.Left="0" Canvas.Top="0" Width="96">
                     <Canvas Clip="M1.436,0.83L43.885,0.83 43.885,20.48 1.436,20.48z" Height="45" Canvas.Left="0" Canvas.Top="0" Width="96">
-                        <Image Source="/Ikarus;component/Gauges/_Images\Wp_SPO15_Images\Image43.png" Stretch="Fill">
+                        <Image Source="/Ikarus;component/Gauges/_Images\Wp_SPO15_Images\Image40.png" Stretch="Fill">
                             <Image.RenderTransform>
                                 <MatrixTransform Matrix="0.360000014305115,0,0,0.36000010172526,0,0"/>
                             </Image.RenderTransform>
@@ -273,7 +273,7 @@
             <Canvas x:Name="PrimaryMediumrange" Height="45" Canvas.Left="148.126" Canvas.Top="364.292" Width="96" d:IsHidden="True">
                 <Canvas Clip="M11.259,0.83L34.059,0.83C39.463,0.83 43.884,5.25 43.884,10.654 43.884,16.059 39.463,20.48 34.059,20.48L11.259,20.48C5.855,20.48 1.434,16.059 1.434,10.654 1.434,5.25 5.855,0.83 11.259,0.83" Height="45" Canvas.Left="0" Canvas.Top="0" Width="96">
                     <Canvas Clip="M1.434,0.83L43.884,0.83 43.884,20.48 1.434,20.48z" Height="45" Canvas.Left="0" Canvas.Top="0" Width="96">
-                        <Image Source="/Ikarus;component/Gauges/_Images\Wp_SPO15_Images\Image42.png" Stretch="Fill">
+                        <Image Source="/Ikarus;component/Gauges/_Images\Wp_SPO15_Images\Image40.png" Stretch="Fill">
                             <Image.RenderTransform>
                                 <MatrixTransform Matrix="0.360000014305115,0,0,0.36000010172526,0,0"/>
                             </Image.RenderTransform>
@@ -284,7 +284,7 @@
             <Canvas x:Name="PrimaryLongrange" Height="45" Canvas.Left="100.126" Canvas.Top="364.292" Width="96" d:IsHidden="True">
                 <Canvas Clip="M11.259,0.83L34.059,0.83C39.463,0.83 43.884,5.25 43.884,10.654 43.884,16.059 39.463,20.48 34.059,20.48L11.259,20.48C5.855,20.48 1.434,16.059 1.434,10.654 1.434,5.25 5.855,0.83 11.259,0.83" Height="45" Canvas.Left="0" Canvas.Top="0" Width="96">
                     <Canvas Clip="M1.434,0.83L43.884,0.83 43.884,20.48 1.434,20.48z" Height="45" Canvas.Left="0" Canvas.Top="0" Width="96">
-                        <Image Source="/Ikarus;component/Gauges/_Images\Wp_SPO15_Images\Image41.png" Stretch="Fill">
+                        <Image Source="/Ikarus;component/Gauges/_Images\Wp_SPO15_Images\Image40.png" Stretch="Fill">
                             <Image.RenderTransform>
                                 <MatrixTransform Matrix="0.360000014305115,0,0,0.36000010172526,0,0"/>
                             </Image.RenderTransform>
@@ -493,7 +493,7 @@
             <Canvas x:Name="EmmissionLevel15" Height="59" Canvas.Left="112.081" Canvas.Top="242.896" Width="60" d:IsHidden="True">
                 <Canvas Clip="M27.206,20.609L8.599,0.655 1.414,7.355 20.021,27.308z" Height="59" Canvas.Left="0" Canvas.Top="0" Width="60">
                     <Canvas Clip="M1.414,0.655L27.206,0.655 27.206,27.308 1.414,27.308z" Height="59" Canvas.Left="0" Canvas.Top="0" Width="60">
-                        <Image Source="/Ikarus;component/Gauges/_Images\Wp_SPO15_Images\Image22.png" Stretch="Fill">
+                        <Image Source="/Ikarus;component/Gauges/_Images\Wp_SPO15_Images\Image21.png" Stretch="Fill">
                             <Image.RenderTransform>
                                 <MatrixTransform Matrix="0.360000038146973,0,0,0.360000093104476,0,0"/>
                             </Image.RenderTransform>
@@ -526,7 +526,7 @@
             <Canvas x:Name="SecondaryThreatRight90" Height="35" Canvas.Left="298.871" Canvas.Top="170.701" Width="36" d:IsHidden="True">
                 <Canvas Clip="M15.608,7.376C16.098,11.258 13.348,14.804 9.465,15.295 5.582,15.785 2.037,13.035 1.547,9.152 1.057,5.269 3.807,1.724 7.69,1.233 11.572,0.742 15.117,3.492 15.608,7.376" Height="35" Canvas.Left="0" Canvas.Top="0" Width="36">
                     <Canvas Clip="M1.057,0.742L16.098,0.742 16.098,15.784 1.057,15.784z" Height="35" Canvas.Left="0" Canvas.Top="0" Width="36">
-                        <Image Source="/Ikarus;component/Gauges/_Images\Wp_SPO15_Images\Image19.png" Stretch="Fill">
+                        <Image Source="/Ikarus;component/Gauges/_Images\Wp_SPO15_Images\Image12.png" Stretch="Fill">
                             <Image.RenderTransform>
                                 <MatrixTransform Matrix="0.359999974568685,0,0,0.36000006539481,0,0"/>
                             </Image.RenderTransform>
@@ -537,7 +537,7 @@
             <Canvas x:Name="SecondaryThreatRight50" Height="38" Canvas.Left="284.697" Canvas.Top="129.25" Width="40" d:IsHidden="True">
                 <Canvas Clip="M15.535,5.33C17.438,8.75 16.205,13.065 12.785,14.967 9.364,16.868 5.049,15.637 3.149,12.216 1.246,8.795 2.479,4.48 5.899,2.579 9.321,0.677 13.635,1.909 15.535,5.33" Height="38" Canvas.Left="0" Canvas.Top="0" Width="40">
                     <Canvas Clip="M1.246,0.677L17.437,0.677 17.437,16.868 1.246,16.868z" Height="38" Canvas.Left="0" Canvas.Top="0" Width="40">
-                        <Image Source="/Ikarus;component/Gauges/_Images\Wp_SPO15_Images\Image18.png" Stretch="Fill">
+                        <Image Source="/Ikarus;component/Gauges/_Images\Wp_SPO15_Images\Image12.png" Stretch="Fill">
                             <Image.RenderTransform>
                                 <MatrixTransform Matrix="0.359999942779541,0,0,0.360000108417712,0,0"/>
                             </Image.RenderTransform>
@@ -548,7 +548,7 @@
             <Canvas x:Name="SecondaryThreatRight30" Height="37" Canvas.Left="257.336" Canvas.Top="96.25" Width="40" d:IsHidden="True">
                 <Canvas Clip="M13.475,3.27C16.514,5.735 16.977,10.199 14.512,13.237 12.045,16.276 7.582,16.741 4.543,14.274 1.504,11.808 1.039,7.345 3.506,4.306 5.973,1.267 10.435,0.803 13.475,3.27" Height="37" Canvas.Left="0" Canvas.Top="0" Width="40">
                     <Canvas Clip="M1.039,0.803L16.977,0.803 16.977,16.741 1.039,16.741z" Height="37" Canvas.Left="0" Canvas.Top="0" Width="40">
-                        <Image Source="/Ikarus;component/Gauges/_Images\Wp_SPO15_Images\Image17.png" Stretch="Fill">
+                        <Image Source="/Ikarus;component/Gauges/_Images\Wp_SPO15_Images\Image12.png" Stretch="Fill">
                             <Image.RenderTransform>
                                 <MatrixTransform Matrix="0.359999942779541,0,0,0.35999988865208,0,0"/>
                             </Image.RenderTransform>
@@ -559,7 +559,7 @@
             <Canvas x:Name="SecondaryThreatRight10" Height="37" Canvas.Left="219.34" Canvas.Top="76.089" Width="40" d:IsHidden="True">
                 <Canvas Clip="M11.105,1.853C14.844,3.01 16.937,6.978 15.781,10.718 14.623,14.457 10.654,16.55 6.916,15.393 3.178,14.236 1.084,10.267 2.24,6.528 3.396,2.789 7.367,0.696 11.105,1.853" Height="37" Canvas.Left="0" Canvas.Top="0" Width="40">
                     <Canvas Clip="M1.084,0.696L16.938,0.696 16.938,16.55 1.084,16.55z" Height="37" Canvas.Left="0" Canvas.Top="0" Width="40">
-                        <Image Source="/Ikarus;component/Gauges/_Images\Wp_SPO15_Images\Image16.png" Stretch="Fill">
+                        <Image Source="/Ikarus;component/Gauges/_Images\Wp_SPO15_Images\Image12.png" Stretch="Fill">
                             <Image.RenderTransform>
                                 <MatrixTransform Matrix="0.359999942779541,0,0,0.35999988865208,0,0"/>
                             </Image.RenderTransform>
@@ -570,7 +570,7 @@
             <Canvas x:Name="SecondaryThreatLeft10" Height="37" Canvas.Left="152.272" Canvas.Top="76.089" Width="40" d:IsHidden="True">
                 <Canvas Clip="M6.853,1.853C3.114,3.01 1.02,6.978 2.177,10.718 3.334,14.457 7.303,16.55 11.042,15.393 14.781,14.236 16.874,10.267 15.717,6.528 14.561,2.789 10.592,0.696 6.853,1.853" Height="37" Canvas.Left="0" Canvas.Top="0" Width="40">
                     <Canvas Clip="M1.02,0.696L16.874,0.696 16.874,16.55 1.02,16.55z" Height="37" Canvas.Left="0" Canvas.Top="0" Width="40">
-                        <Image Source="/Ikarus;component/Gauges/_Images\Wp_SPO15_Images\Image15.png" Stretch="Fill">
+                        <Image Source="/Ikarus;component/Gauges/_Images\Wp_SPO15_Images\Image12.png" Stretch="Fill">
                             <Image.RenderTransform>
                                 <MatrixTransform Matrix="0.359999942779541,0,0,0.35999988865208,0,0"/>
                             </Image.RenderTransform>
@@ -581,7 +581,7 @@
             <Canvas x:Name="SecondaryThreatLeft30" Height="37" Canvas.Left="114.275" Canvas.Top="96.25" Width="40" d:IsHidden="True">
                 <Canvas Clip="M4.485,3.27C1.446,5.735 0.981,10.199 3.448,13.237 5.914,16.276 10.377,16.741 13.416,14.274 16.455,11.808 16.919,7.345 14.453,4.306 11.986,1.267 7.524,0.803 4.485,3.27" Height="37" Canvas.Left="0" Canvas.Top="0" Width="40">
                     <Canvas Clip="M0.981,0.803L16.919,0.803 16.919,16.741 0.981,16.741z" Height="37" Canvas.Left="0" Canvas.Top="0" Width="40">
-                        <Image Source="/Ikarus;component/Gauges/_Images\Wp_SPO15_Images\Image14.png" Stretch="Fill">
+                        <Image Source="/Ikarus;component/Gauges/_Images\Wp_SPO15_Images\Image12.png" Stretch="Fill">
                             <Image.RenderTransform>
                                 <MatrixTransform Matrix="0.359999942779541,0,0,0.35999988865208,0,0"/>
                             </Image.RenderTransform>
@@ -592,7 +592,7 @@
             <Canvas x:Name="SecondaryThreatLeft50" Height="38" Canvas.Left="86.434" Canvas.Top="129.25" Width="40" d:IsHidden="True">
                 <Canvas Clip="M2.903,5.33C1.001,8.75 2.233,13.065 5.653,14.967 9.075,16.868 13.389,15.637 15.291,12.216 17.192,8.795 15.961,4.48 12.54,2.579 9.119,0.677 4.804,1.909 2.903,5.33" Height="38" Canvas.Left="0" Canvas.Top="0" Width="40">
                     <Canvas Clip="M1.001,0.677L17.192,0.677 17.192,16.868 1.001,16.868z" Height="38" Canvas.Left="0" Canvas.Top="0" Width="40">
-                        <Image Source="/Ikarus;component/Gauges/_Images\Wp_SPO15_Images\Image13.png" Stretch="Fill">
+                        <Image Source="/Ikarus;component/Gauges/_Images\Wp_SPO15_Images\Image11.png" Stretch="Fill">
                             <Image.RenderTransform>
                                 <MatrixTransform Matrix="0.359999942779541,0,0,0.360000108417712,0,0"/>
                             </Image.RenderTransform>
@@ -625,7 +625,7 @@
             <Canvas x:Name="PrimaryThreatRightBack" Height="98" Canvas.Left="248.498" Canvas.Top="296.067" Width="100" d:IsHidden="True">
                 <Canvas Clip="M34.348,40.319C24.988,46.077 12.734,43.155 6.979,33.793 1.221,24.434 4.143,12.18 13.502,6.422 22.863,0.666 35.117,3.588 40.873,12.948 46.629,22.309 43.709,34.563 34.348,40.319" Height="98" Canvas.Left="0" Canvas.Top="0" Width="100">
                     <Canvas Clip="M1.221,0.666L46.629,0.666 46.629,46.076 1.221,46.076z" Height="98" Canvas.Left="0" Canvas.Top="0" Width="100">
-                        <Image Source="/Ikarus;component/Gauges/_Images\Wp_SPO15_Images\Image10.png" Stretch="Fill">
+                        <Image Source="/Ikarus;component/Gauges/_Images\Wp_SPO15_Images\Image1.png" Stretch="Fill">
                             <Image.RenderTransform>
                                 <MatrixTransform Matrix="0.36,0,0,0.36000006539481,0,0"/>
                             </Image.RenderTransform>
@@ -636,7 +636,7 @@
             <Canvas x:Name="PrimaryThreatLeftBack" Height="98" Canvas.Left="93.354" Canvas.Top="296.067" Width="100" d:IsHidden="True">
                 <Canvas Clip="M13.37,40.319C22.729,46.077 34.984,43.155 40.74,33.793 46.497,24.434 43.576,12.18 34.215,6.422 24.855,0.666 12.601,3.588 6.844,12.948 1.088,22.309 4.009,34.563 13.37,40.319" Height="98" Canvas.Left="0" Canvas.Top="0" Width="100">
                     <Canvas Clip="M1.088,0.666L46.496,0.666 46.496,46.076 1.088,46.076z" Height="98" Canvas.Left="0" Canvas.Top="0" Width="100">
-                        <Image Source="/Ikarus;component/Gauges/_Images\Wp_SPO15_Images\Image9.png" Stretch="Fill">
+                        <Image Source="/Ikarus;component/Gauges/_Images\Wp_SPO15_Images\Image1.png" Stretch="Fill">
                             <Image.RenderTransform>
                                 <MatrixTransform Matrix="0.36,0,0,0.36000006539481,0,0"/>
                             </Image.RenderTransform>
@@ -658,7 +658,7 @@
             <Canvas x:Name="PrimaryThreatRight50" Height="98" Canvas.Left="300.445" Canvas.Top="97.938" Width="100" d:IsHidden="True">
                 <Canvas Clip="M41.266,13.584C46.606,23.189 43.147,35.302 33.543,40.642 23.938,45.98 11.825,42.522 6.487,32.918 1.147,23.313 4.604,11.2 14.209,5.861 23.815,0.522 35.928,3.98 41.266,13.584" Height="98" Canvas.Left="0" Canvas.Top="0" Width="100">
                     <Canvas Clip="M1.147,0.522L46.606,0.522 46.606,45.98 1.147,45.98z" Height="98" Canvas.Left="0" Canvas.Top="0" Width="100">
-                        <Image Source="/Ikarus;component/Gauges/_Images\Wp_SPO15_Images\Image7.png" Stretch="Fill">
+                        <Image Source="/Ikarus;component/Gauges/_Images\Wp_SPO15_Images\Image1.png" Stretch="Fill">
                             <Image.RenderTransform>
                                 <MatrixTransform Matrix="0.36,0,0,0.36000006539481,0,0"/>
                             </Image.RenderTransform>
@@ -669,7 +669,7 @@
             <Canvas x:Name="PrimaryThreatRight30" Height="97" Canvas.Left="264.369" Canvas.Top="54.901" Width="100" d:IsHidden="True">
                 <Canvas Clip="M36.346,7.77C44.879,14.695 46.182,27.224 39.256,35.757 32.332,44.289 19.803,45.593 11.27,38.668 2.738,31.744 1.434,19.214 8.36,10.681 15.283,2.149 27.813,0.845 36.346,7.77" Height="97" Canvas.Left="0" Canvas.Top="0" Width="100">
                     <Canvas Clip="M1.434,0.845L46.182,0.845 46.182,45.593 1.434,45.593z" Height="97" Canvas.Left="0" Canvas.Top="0" Width="100">
-                        <Image Source="/Ikarus;component/Gauges/_Images\Wp_SPO15_Images\Image6.png" Stretch="Fill">
+                        <Image Source="/Ikarus;component/Gauges/_Images\Wp_SPO15_Images\Image1.png" Stretch="Fill">
                             <Image.RenderTransform>
                                 <MatrixTransform Matrix="0.36,0,0,0.359999981123148,0,0"/>
                             </Image.RenderTransform>
@@ -680,7 +680,7 @@
             <Canvas x:Name="PrimaryThreatRight10" Height="97" Canvas.Left="215.064" Canvas.Top="28.638" Width="100" d:IsHidden="True">
                 <Canvas Clip="M29.409,3.968C39.905,7.216 45.782,18.359 42.534,28.857 39.286,39.354 28.143,45.231 17.645,41.983 7.149,38.735 1.272,27.592 4.52,17.094 7.768,6.597 18.911,0.72 29.409,3.968" Height="97" Canvas.Left="0" Canvas.Top="0" Width="100">
                     <Canvas Clip="M1.272,0.72L45.782,0.72 45.782,45.231 1.272,45.231z" Height="97" Canvas.Left="0" Canvas.Top="0" Width="100">
-                        <Image Source="/Ikarus;component/Gauges/_Images\Wp_SPO15_Images\Image5.png" Stretch="Fill">
+                        <Image Source="/Ikarus;component/Gauges/_Images\Wp_SPO15_Images\Image1.png" Stretch="Fill">
                             <Image.RenderTransform>
                                 <MatrixTransform Matrix="0.36,0,0,0.359999981123148,0,0"/>
                             </Image.RenderTransform>
@@ -702,7 +702,7 @@
             <Canvas x:Name="PrimaryThreatLeft10" Height="97" Canvas.Left="127.747" Canvas.Top="28.638" Width="100" d:IsHidden="True">
                 <Canvas Clip="M17.351,3.968C6.853,7.216 0.976,18.359 4.225,28.857 7.473,39.354 18.615,45.231 29.112,41.983 39.61,38.735 45.487,27.592 42.239,17.094 38.991,6.597 27.849,0.72 17.351,3.968" Height="97" Canvas.Left="0" Canvas.Top="0" Width="100">
                     <Canvas Clip="M0.976,0.72L45.487,0.72 45.487,45.231 0.976,45.231z" Height="97" Canvas.Left="0" Canvas.Top="0" Width="100">
-                        <Image Source="/Ikarus;component/Gauges/_Images\Wp_SPO15_Images\Image3.png" Stretch="Fill">
+                        <Image Source="/Ikarus;component/Gauges/_Images\Wp_SPO15_Images\Image1.png" Stretch="Fill">
                             <Image.RenderTransform>
                                 <MatrixTransform Matrix="0.36,0,0,0.359999981123148,0,0"/>
                             </Image.RenderTransform>
@@ -713,7 +713,7 @@
             <Canvas x:Name="PrimaryThreatLeft30" Height="97" Canvas.Left="77.962" Canvas.Top="54.901" Width="100" d:IsHidden="True">
                 <Canvas Clip="M10.892,7.77C2.36,14.695 1.057,27.224 7.981,35.757 14.906,44.289 27.436,45.593 35.969,38.668 44.501,31.744 45.804,19.214 38.88,10.681 31.955,2.149 19.425,0.845 10.892,7.77" Height="97" Canvas.Left="0" Canvas.Top="0" Width="100">
                     <Canvas Clip="M1.057,0.845L45.804,0.845 45.804,45.593 1.057,45.593z" Height="97" Canvas.Left="0" Canvas.Top="0" Width="100">
-                        <Image Source="/Ikarus;component/Gauges/_Images\Wp_SPO15_Images\Image2.png" Stretch="Fill">
+                        <Image Source="/Ikarus;component/Gauges/_Images\Wp_SPO15_Images\Image1.png" Stretch="Fill">
                             <Image.RenderTransform>
                                 <MatrixTransform Matrix="0.36,0,0,0.359999981123148,0,0"/>
                             </Image.RenderTransform>

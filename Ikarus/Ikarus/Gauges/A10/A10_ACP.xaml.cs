@@ -484,9 +484,12 @@ namespace Ikarus
                 trUsercontrol.X += currentPoint.X - originalPoint.X;
                 trUsercontrol.Y += currentPoint.Y - originalPoint.Y;
                 moveThisElement.RenderTransform = trUsercontrol;
-
-
             };
+        }
+
+        private void Light_MouseWheel(object sender, System.Windows.Input.MouseWheelEventArgs e)
+        {
+            if (MainWindow.editmode) MainWindow.cockpitWindows[windowID].UpdatePosition(PointToScreen(new System.Windows.Point(0, 0)), "IDInst", MainWindow.dtInstruments, dataImportID, e.Delta);
         }
     }
 }

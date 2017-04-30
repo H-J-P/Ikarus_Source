@@ -12,7 +12,7 @@
                 <Path Data="M85.323,160.337C126.752,160.337 160.336,126.752 160.336,85.322 160.336,43.893 126.752,10.308 85.323,10.308 43.894,10.308 10.309,43.893 10.309,85.322 10.309,126.752 43.894,160.337 85.323,160.337 M170.645,129.3L129.301,170.645 18.554,170.645C8.349,170.645,0,162.296,0,152.091L0,41.345 41.345,0 129.301,0 170.645,41.345z" Fill="#FF333333" Height="170.645" Canvas.Left="0" Canvas.Top="0" Width="170.645"/>
                 <Canvas Clip="M8.288,0.94C12.201,0.94 15.374,4.113 15.374,8.026 15.374,11.94 12.201,15.113 8.288,15.113 4.374,15.113 1.201,11.94 1.201,8.026 1.201,4.113 4.374,0.94 8.288,0.94" Height="34" Canvas.Left="6.686" Canvas.Top="6.947" Width="36">
                     <Canvas Clip="M1.201,0.94L15.374,0.94 15.374,15.113 1.201,15.113z" Height="34" Canvas.Left="0" Canvas.Top="0" Width="36">
-                        <Image Source="/Ikarus;component/Gauges/_Images\Wp-VVI_60_Images\Image11.png" Stretch="Fill">
+                        <Image Source="/Ikarus;component/Gauges/_Images\Wp-VVI_60_Images\Image6.png" Stretch="Fill">
                             <Image.RenderTransform>
                                 <MatrixTransform Matrix="0.359999974568685,0,0,0.360000161563649,0,0"/>
                             </Image.RenderTransform>
@@ -22,7 +22,7 @@
                 <Path Data="M6.201,0C9.625,0 12.401,2.777 12.401,6.201 12.401,9.626 9.625,12.402 6.201,12.402 2.776,12.402 0,9.626 0,6.201 0,2.777 2.776,0 6.201,0" Fill="#FF333333" Height="12.402" Canvas.Left="8.773" Canvas.Top="8.772" Width="12.401"/>
                 <Canvas Clip="M6.368,0.715C9.345,0.715 11.759,3.129 11.759,6.106 11.759,9.083 9.345,11.497 6.368,11.497 3.391,11.497 0.977,9.083 0.977,6.106 0.977,3.129 3.391,0.715 6.368,0.715" Height="26" Canvas.Left="8.606" Canvas.Top="8.867" Width="28">
                     <Canvas Clip="M0.977,0.715L11.759,0.715 11.759,11.497 0.977,11.497z" Height="26" Canvas.Left="0" Canvas.Top="0" Width="28">
-                        <Image Source="/Ikarus;component/Gauges/_Images\Wp-VVI_60_Images\Image10.png" Stretch="Fill">
+                        <Image Source="/Ikarus;component/Gauges/_Images\Wp-VVI_60_Images\Image5.png" Stretch="Fill">
                             <Image.RenderTransform>
                                 <MatrixTransform Matrix="0.36000006539481,0,0,0.359999876755935,0,0"/>
                             </Image.RenderTransform>
@@ -32,7 +32,7 @@
                 <Path Data="M10.515,3.497L10.13,4.613 0,1.116 0.386,0z" Fill="#FF333333" Height="4.613" Canvas.Left="9.716" Canvas.Top="12.667" Width="10.515"/>
                 <Canvas Clip="M8.143,0.94C12.057,0.94 15.229,4.113 15.229,8.026 15.229,11.94 12.057,15.113 8.143,15.113 4.229,15.113 1.057,11.94 1.057,8.026 1.057,4.113 4.229,0.94 8.143,0.94" Height="34" Canvas.Left="147.529" Canvas.Top="6.947" Width="36">
                     <Canvas Clip="M1.057,0.94L15.229,0.94 15.229,15.113 1.057,15.113z" Height="34" Canvas.Left="0" Canvas.Top="0" Width="36">
-                        <Image Source="/Ikarus;component/Gauges/_Images\Wp-VVI_60_Images\Image9.png" Stretch="Fill">
+                        <Image Source="/Ikarus;component/Gauges/_Images\Wp-VVI_60_Images\Image6.png" Stretch="Fill">
                             <Image.RenderTransform>
                                 <MatrixTransform Matrix="0.359999974568685,0,0,0.360000161563649,0,0"/>
                             </Image.RenderTransform>
@@ -42,7 +42,7 @@
                 <Path Data="M6.201,0C9.625,0 12.402,2.777 12.402,6.201 12.402,9.626 9.625,12.402 6.201,12.402 2.777,12.402 0,9.626 0,6.201 0,2.777 2.777,0 6.201,0" Fill="#FF333333" Height="12.402" Canvas.Left="149.471" Canvas.Top="8.772" Width="12.402"/>
                 <Canvas Clip="M6.703,0.715C9.679,0.715 12.094,3.129 12.094,6.106 12.094,9.083 9.679,11.497 6.703,11.497 3.726,11.497 1.312,9.083 1.312,6.106 1.312,3.129 3.726,0.715 6.703,0.715" Height="26" Canvas.Left="148.969" Canvas.Top="8.867" Width="28">
                     <Canvas Clip="M1.312,0.715L12.093,0.715 12.093,11.497 1.312,11.497z" Height="26" Canvas.Left="0" Canvas.Top="0" Width="28">
-                        <Image Source="/Ikarus;component/Gauges/_Images\Wp-VVI_60_Images\Image8.png" Stretch="Fill">
+                        <Image Source="/Ikarus;component/Gauges/_Images\Wp-VVI_60_Images\Image5.png" Stretch="Fill">
                             <Image.RenderTransform>
                                 <MatrixTransform Matrix="0.36000006539481,0,0,0.359999876755935,0,0"/>
                             </Image.RenderTransform>
@@ -52,7 +52,7 @@
                 <Path Data="M1.135,10.623L0,10.296 2.971,0 4.106,0.327z" Fill="#FF333333" Height="10.623" Canvas.Left="153.619" Canvas.Top="9.662" Width="4.106"/>
                 <Canvas Clip="M8.288,0.796C12.201,0.796 15.374,3.969 15.374,7.883 15.374,11.796 12.201,14.969 8.288,14.969 4.374,14.969 1.201,11.796 1.201,7.883 1.201,3.969 4.374,0.796 8.288,0.796" Height="34" Canvas.Left="6.686" Canvas.Top="147.789" Width="36">
                     <Canvas Clip="M1.201,0.796L15.374,0.796 15.374,14.969 1.201,14.969z" Height="34" Canvas.Left="0" Canvas.Top="0" Width="36">
-                        <Image Source="/Ikarus;component/Gauges/_Images\Wp-VVI_60_Images\Image7.png" Stretch="Fill">
+                        <Image Source="/Ikarus;component/Gauges/_Images\Wp-VVI_60_Images\Image6.png" Stretch="Fill">
                             <Image.RenderTransform>
                                 <MatrixTransform Matrix="0.359999974568685,0,0,0.360000161563649,0,0"/>
                             </Image.RenderTransform>
@@ -84,7 +84,7 @@
                 <Path Data="M0.81,0L1.988,0.089 1.177,10.775 0,10.686z" Fill="#FF333333" Height="10.775" Canvas.Left="154.678" Canvas.Top="150.284" Width="1.988"/>
                 <Canvas Clip="M4.446,0.953C6.324,0.953 7.848,2.476 7.848,4.354 7.848,6.233 6.324,7.756 4.446,7.756 2.567,7.756 1.044,6.233 1.044,4.354 1.044,2.476 2.567,0.953 4.446,0.953" Height="19" Canvas.Left="60.523" Canvas.Top="80.968" Width="20">
                     <Canvas Clip="M1.044,0.953L7.847,0.953 7.847,7.756 1.044,7.756z" Height="19" Canvas.Left="0" Canvas.Top="0" Width="20">
-                        <Image Source="/Ikarus;component/Gauges/_Images\Wp-VVI_60_Images\Image4.png" Stretch="Fill">
+                        <Image Source="/Ikarus;component/Gauges/_Images\Wp-VVI_60_Images\Image.png" Stretch="Fill">
                             <Image.RenderTransform>
                                 <MatrixTransform Matrix="0.360000228881836,0,0,0.359999807257401,0,0"/>
                             </Image.RenderTransform>
@@ -94,7 +94,7 @@
                 <Path Data="M2.976,0C4.62,0 5.952,1.333 5.952,2.976 5.952,4.62 4.62,5.953 2.976,5.953 1.332,5.953 0,4.62 0,2.976 0,1.333 1.332,0 2.976,0" Fill="#FF333333" Height="5.953" Canvas.Left="61.993" Canvas.Top="82.346" Width="5.952"/>
                 <Canvas Clip="M3.966,0.806C5.395,0.806 6.554,1.965 6.554,3.394 6.554,4.823 5.395,5.982 3.966,5.982 2.537,5.982 1.378,4.823 1.378,3.394 1.378,1.965 2.537,0.806 3.966,0.806" Height="15" Canvas.Left="61.003" Canvas.Top="81.928" Width="16">
                     <Canvas Clip="M1.378,0.806L6.554,0.806 6.554,5.982 1.378,5.982z" Height="15" Canvas.Left="0" Canvas.Top="0" Width="16">
-                        <Image Source="/Ikarus;component/Gauges/_Images\Wp-VVI_60_Images\Image3.png" Stretch="Fill">
+                        <Image Source="/Ikarus;component/Gauges/_Images\Wp-VVI_60_Images\Image1.png" Stretch="Fill">
                             <Image.RenderTransform>
                                 <MatrixTransform Matrix="0.360000371932983,0,0,0.359999847412109,0,0"/>
                             </Image.RenderTransform>
@@ -104,7 +104,7 @@
                 <Path Data="M0.193,2.699L0,2.166 1.1,1.767C1.111,1.587,1.191,1.417,1.322,1.293L0.924,0.193 1.457,0 1.855,1.1C2.035,1.112,2.205,1.192,2.329,1.322L3.429,0.924 3.622,1.457 2.522,1.856C2.51,2.035,2.431,2.205,2.3,2.329L2.698,3.429 2.165,3.623 1.766,2.522C1.587,2.511,1.417,2.431,1.293,2.301z" Fill="#FF333333" Height="3.623" Canvas.Left="63.158" Canvas.Top="83.511" Width="3.622"/>
                 <Canvas Clip="M4.785,7.756C2.908,7.756 1.384,6.233 1.384,4.354 1.384,2.476 2.908,0.953 4.785,0.953 6.664,0.953 8.187,2.476 8.187,4.354 8.187,6.233 6.664,7.756 4.785,7.756" Height="19" Canvas.Left="100.891" Canvas.Top="80.968" Width="20">
                     <Canvas Clip="M1.384,0.953L8.187,0.953 8.187,7.756 1.384,7.756z" Height="19" Canvas.Left="0" Canvas.Top="0" Width="20">
-                        <Image Source="/Ikarus;component/Gauges/_Images\Wp-VVI_60_Images\Image2.png" Stretch="Fill">
+                        <Image Source="/Ikarus;component/Gauges/_Images\Wp-VVI_60_Images\Image.png" Stretch="Fill">
                             <Image.RenderTransform>
                                 <MatrixTransform Matrix="0.360000228881836,0,0,0.359999807257401,0,0"/>
                             </Image.RenderTransform>

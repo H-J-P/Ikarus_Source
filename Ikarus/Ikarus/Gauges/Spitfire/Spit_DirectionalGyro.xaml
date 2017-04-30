@@ -21,12 +21,20 @@
                     Canvas.Top="60.28"
                     Width="1150.038"
                     Height="64.407" RenderTransformOrigin="0.5,0.5">
+                <Canvas.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform X="-70"/>
+                    </TransformGroup>
+                </Canvas.RenderTransform>
                 <Path Canvas.Left="0"
                       Canvas.Top="0"
                       Width="1150.038"
                       Height="64.407"
                       Data="M0,0L1150.038,0 1150.038,64.407 0,64.407z"
-                      Fill="#FF0C0C0C" />
+                      Fill="#FF0C0C0C" RenderTransformOrigin="0.5,0.5" />
                 <Path Canvas.Left="549"
                       Canvas.Top="39.684"
                       Width="6.021"
@@ -991,5 +999,6 @@
                HorizontalAlignment="Left"
                VerticalAlignment="Top"
                MouseWheel="Light_MouseWheel" />
+        <TextBlock x:Name="Input" HorizontalAlignment="Left" Margin="115,211,0,0" TextWrapping="Wrap" Text="0.000" VerticalAlignment="Top" Foreground="#FFE6E6E6" Width="31"/>
     </Grid>
 </UserControl>

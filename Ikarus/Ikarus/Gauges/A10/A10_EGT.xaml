@@ -7,8 +7,7 @@
              d:DesignHeight="155.906" d:DesignWidth="155.906" MouseWheel="Light_MouseWheel">
     <Grid>
         <Canvas x:Name="A10_EGT1" HorizontalAlignment="Left" Height="155.906" UseLayoutRounding="False" VerticalAlignment="Top" Width="155.906">
-            <Image Source="pack://siteoforigin:,,,/Images/BackgroundGauges/A10_EGT.png" Height="155.906" Width="155.906" />
-            <Canvas x:Name="dial" Height="155.213" Canvas.Left="0.692" Canvas.Top="-0.213" Width="155.213">
+             <Canvas x:Name="dial" Height="155.213" Canvas.Left="0.692" Canvas.Top="-0.213" Width="155.213">
                 <Path Data="M71.433,72.051C71.774,72.051 72.051,71.774 72.051,71.434 72.051,71.092 71.774,70.816 71.433,70.816 71.092,70.816 70.816,71.092 70.816,71.434 70.816,71.774 71.092,72.051 71.433,72.051 M71.433,142.866C110.883,142.866 142.865,110.884 142.865,71.434 142.865,31.982 110.883,0 71.433,0 31.982,0 0,31.982 0,71.434 0,110.884 31.982,142.866 71.433,142.866" Fill="#FF0D0D0D" Height="142.866" Canvas.Left="6.174" Canvas.Top="6.173" Width="142.865"/>
                 <Path Data="M15.678,13.625L17.043,11.812 1.366,0 0,1.81z" Fill="White" Height="13.625" Canvas.Left="116.164" Canvas.Top="106.272" Width="17.043"/>
                 <Path Data="M8.586,11.525L10.308,10.052 1.724,0 0,1.472z" Fill="White" Height="11.525" Canvas.Left="112.819" Canvas.Top="119.108" Width="10.308"/>

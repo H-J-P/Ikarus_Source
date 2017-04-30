@@ -16,6 +16,9 @@ namespace Ikarus
     {
         private string dataImportID = "";
         private int windowID = 0;
+        private double[] valueScale = new double[] { };
+        private double[] degreeDial = new double[] { };
+        int valueScaleIndex = 0;
         private string[] vals = new string[] { };
         double pointer = 0.0;
         double lpointer = 0.0;
@@ -29,6 +32,9 @@ namespace Ikarus
 		{
 			this.InitializeComponent();
             if (MainWindow.editmode) MakeDraggable(this, this);
+
+            rtpointer.Angle = - 23;
+            RPM.RenderTransform = rtpointer;
         }
 
         public void SetID(string _dataImportID)
@@ -73,10 +79,31 @@ namespace Ikarus
 
         public void SetInput(string _input)
         {
+            string[] vals = _input.Split(',');
+
+            if (vals.Length < 3) return;
+
+            valueScale = new double[vals.Length];
+
+            for (int i = 0; i < vals.Length; i++)
+            {
+                valueScale[i] = Convert.ToDouble(vals[i], CultureInfo.InvariantCulture);
+            }
+            valueScaleIndex = vals.Length;
         }
 
         public void SetOutput(string _output)
         {
+            string[] vals = _output.Split(',');
+
+            if (vals.Length < 3) return;
+
+            degreeDial = new double[vals.Length];
+
+            for (int i = 0; i < vals.Length; i++)
+            {
+                degreeDial[i] = Convert.ToDouble(vals[i], CultureInfo.InvariantCulture);
+            }
         }
 
         public double GetSize()
@@ -98,11 +125,19 @@ namespace Ikarus
                                if (pointer < 0.0) { pointer = 0.0; }
                                if (pointer > 0.5) { pointer = 0.5; }
 
-                               pointer *= 2;
-
+                               //pointer *= 2;
+                               // 0.0, 0.1, 0.2, 0.3, 0.4, 0.5
+                               // -23,   0,  68, 157, 247, 315
                                if (lpointer != pointer)
                                {
-                                   rtpointer.Angle = pointer * (315 + 22) - 22;
+                                   for (int n = 0; n < valueScaleIndex - 1; n++)
+                                   {
+                                       if (pointer > valueScale[n] && pointer <= valueScale[n + 1])
+                                       {
+                                           rtpointer.Angle = (degreeDial[n] - degreeDial[n + 1]) / (valueScale[n] - valueScale[n + 1]) * (pointer - valueScale[n]) + degreeDial[n];
+                                           break;
+                                       }
+                                   }
                                    RPM.RenderTransform = rtpointer;
                                }
                                lpointer = pointer;

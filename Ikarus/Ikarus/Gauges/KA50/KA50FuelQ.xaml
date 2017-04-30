@@ -10,7 +10,7 @@
             <Canvas x:Name="KA50_backgrd_FuelQ" Height="21" Canvas.Left="69.487" Canvas.Top="116.154" Width="39.351">
                 <Canvas Clip="M4.798,0.712C6.993,0.712 8.773,2.492 8.773,4.688 8.773,6.883 6.993,8.662 4.798,8.662 2.602,8.662 0.823,6.883 0.823,4.688 0.823,2.492 2.602,0.712 4.798,0.712" Height="21" Canvas.Left="15.351" Canvas.Top="0" Width="24">
                     <Canvas Clip="M0.823,0.712L8.773,0.712 8.773,8.662 0.823,8.662z" Height="21" Canvas.Left="0" Canvas.Top="0" Width="24">
-                        <Image Source="/Ikarus;component/Gauges/_Images\KA50-FuelQ_Images\Image3.png" Stretch="Fill">
+                        <Image Source="/Ikarus;component/Gauges/_Images\KA50-FuelQ_Images\Image2.png" Stretch="Fill">
                             <Image.RenderTransform>
                                 <MatrixTransform Matrix="0.360000133514404,0,0,0.36000006539481,0,0"/>
                             </Image.RenderTransform>
@@ -34,7 +34,7 @@
                 <Path Data="M20.387,6.015C20.936,6.015 21.379,5.571 21.379,5.023 21.379,4.475 20.936,4.031 20.387,4.031 19.839,4.031 19.395,4.475 19.395,5.023 19.395,5.571 19.839,6.015 20.387,6.015 M5.023,9.938C2.309,9.938 0.108,7.737 0.108,5.023 0.108,2.308 2.309,0.108 5.023,0.108 5.224,0.108 5.422,0.12 5.616,0.143L17.844,1.615C18.553,1.084 19.434,0.771 20.387,0.771 22.736,0.771 24.639,2.674 24.639,5.023 24.639,7.37 22.736,9.275 20.387,9.275 19.434,9.275 18.553,8.96 17.844,8.43L5.616,9.902C5.422,9.925,5.224,9.938,5.023,9.938" Fill="#FF666666" Height="10.046" Canvas.Left="-0.108" Stroke="Black" StrokeThickness="0.216" StrokeMiterLimit="22.926" Canvas.Top="-0.108" Width="24.747"/>
                 <Canvas Clip="M4.798,0.712C6.993,0.712 8.772,2.492 8.772,4.688 8.772,6.883 6.993,8.662 4.798,8.662 2.602,8.662 0.823,6.883 0.823,4.688 0.823,2.492 2.602,0.712 4.798,0.712" Height="21" Canvas.Left="0.117" Canvas.Top="0.227" Width="24">
                     <Canvas Clip="M0.823,0.712L8.772,0.712 8.772,8.662 0.823,8.662z" Height="21" Canvas.Left="0" Canvas.Top="0" Width="24">
-                        <Image Source="/Ikarus;component/Gauges/_Images\KA50-FuelQ_Images\Image1.png" Stretch="Fill">
+                        <Image Source="/Ikarus;component/Gauges/_Images\KA50-FuelQ_Images\Image.png" Stretch="Fill">
                             <Image.RenderTransform>
                                 <MatrixTransform Matrix="0.360000133514404,0,0,0.36000006539481,0,0"/>
                             </Image.RenderTransform>
