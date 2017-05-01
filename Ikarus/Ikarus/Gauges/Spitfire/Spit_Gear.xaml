@@ -283,8 +283,7 @@
                     Canvas.Left="25.451"
                     Canvas.Top="56.914"
                     Width="147.522"
-                    Height="74.068"
-                    d:IsHidden="True">
+                    Height="74.068" d:IsHidden="True">
                 <Path Canvas.Left="0"
                       Canvas.Top="0"
                       Width="147.522"
@@ -308,8 +307,7 @@
                     Canvas.Left="25.451"
                     Canvas.Top="155.256"
                     Width="147.522"
-                    Height="74.067"
-                    d:IsHidden="True">
+                    Height="74.067" d:IsHidden="True">
                 <Path Canvas.Left="0"
                       Canvas.Top="0"
                       Width="147.522"

@@ -432,6 +432,7 @@
                       StrokeMiterLimit="2.414"
                       StrokeThickness="0.216" />
             </Canvas>
+            <TextBlock x:Name="Value" Canvas.Left="175" TextWrapping="Wrap" Text="0.000" Canvas.Top="160" Foreground="#FFF7F6F6" FontSize="16"/>
         </Canvas>
         <Image x:Name="Light"
                Width="255"

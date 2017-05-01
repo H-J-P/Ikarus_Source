@@ -34,6 +34,8 @@ namespace Ikarus
             if (MainWindow.editmode) MakeDraggable(this, this);
 
             Input.Visibility = System.Windows.Visibility.Hidden;
+            ttHeading.X = 0;
+            Heading.RenderTransform = ttHeading;
         }
 
         public void SetID(string _dataImportID)

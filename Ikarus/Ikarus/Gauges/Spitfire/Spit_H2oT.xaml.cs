@@ -16,6 +16,9 @@ namespace Ikarus
     {
         private string dataImportID = "";
         private int windowID = 0;
+        private double[] valueScale = new double[] { };
+        private double[] degreeDial = new double[] { };
+        int valueScaleIndex = 0;
         private string[] vals = new string[] { };
         double pointer = 0.0;
         double lpointer = 0.0;
@@ -32,6 +35,8 @@ namespace Ikarus
 
             rtpointer.Angle = -24;
             Rad_T.RenderTransform = rtpointer;
+
+            Value.Visibility = System.Windows.Visibility.Hidden;
         }
 
         public void SetID(string _dataImportID)
@@ -76,10 +81,31 @@ namespace Ikarus
 
         public void SetInput(string _input)
         {
+            string[] vals = _input.Split(',');
+
+            if (vals.Length < 3) return;
+
+            valueScale = new double[vals.Length];
+
+            for (int i = 0; i < vals.Length; i++)
+            {
+                valueScale[i] = Convert.ToDouble(vals[i], CultureInfo.InvariantCulture);
+            }
+            valueScaleIndex = vals.Length;
         }
 
         public void SetOutput(string _output)
         {
+            string[] vals = _output.Split(',');
+
+            if (vals.Length < 3) return;
+
+            degreeDial = new double[vals.Length];
+
+            for (int i = 0; i < vals.Length; i++)
+            {
+                degreeDial[i] = Convert.ToDouble(vals[i], CultureInfo.InvariantCulture);
+            }
         }
 
         public double GetSize()
@@ -98,11 +124,26 @@ namespace Ikarus
 
                                if (vals.Length > 0) { pointer = Convert.ToDouble(vals[0], CultureInfo.InvariantCulture); }
 
+                               if (pointer < 0.0) pointer = 0.0;
+                               if (pointer > 0.7) pointer = 0.7;
+
+                               //Value.Text = pointer.ToString();
+
+                               // Input:  0.0,0.31,0.38,0.7
+                               // °    :  -24,  29,  66,305
+
                                if (pointer < 0.0) { pointer = 0.0; }
 
                                if (lpointer != pointer)
                                {
-                                   rtpointer.Angle = pointer * (305 + 24) - 24;
+                                   for (int n = 0; n < valueScaleIndex - 1; n++)
+                                   {
+                                       if (pointer > valueScale[n] && pointer <= valueScale[n + 1])
+                                       {
+                                           rtpointer.Angle = (degreeDial[n] - degreeDial[n + 1]) / (valueScale[n] - valueScale[n + 1]) * (pointer - valueScale[n]) + degreeDial[n];
+                                           break;
+                                       }
+                                   }
                                    Rad_T.RenderTransform = rtpointer;
                                }
                                lpointer = pointer;
