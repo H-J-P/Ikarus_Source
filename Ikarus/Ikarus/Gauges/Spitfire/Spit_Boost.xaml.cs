@@ -16,6 +16,9 @@ namespace Ikarus
     {
         private string dataImportID = "";
         private int windowID = 0;
+        private double[] valueScale = new double[] { };
+        private double[] degreeDial = new double[] { };
+        int valueScaleIndex = 0;
         private string[] vals = new string[] { };
         double pointer = 0.0;
         double lpointer = 0.0;
@@ -77,10 +80,31 @@ namespace Ikarus
 
         public void SetInput(string _input)
         {
+            string[] vals = _input.Split(',');
+
+            if (vals.Length < 3) return;
+
+            valueScale = new double[vals.Length];
+
+            for (int i = 0; i < vals.Length; i++)
+            {
+                valueScale[i] = Convert.ToDouble(vals[i], CultureInfo.InvariantCulture);
+            }
+            valueScaleIndex = vals.Length;
         }
 
         public void SetOutput(string _output)
         {
+            string[] vals = _output.Split(',');
+
+            if (vals.Length < 3) return;
+
+            degreeDial = new double[vals.Length];
+
+            for (int i = 0; i < vals.Length; i++)
+            {
+                degreeDial[i] = Convert.ToDouble(vals[i], CultureInfo.InvariantCulture);
+            }
         }
 
         public double GetSize()
@@ -101,9 +125,19 @@ namespace Ikarus
 
                                if (pointer < 0.0) { pointer = 0.0; }
 
+                               // Input: 0.0,0.25,0.5,1.0
+                               // °    : -70,  60,120,240
+
                                if (lpointer != pointer)
                                {
-                                   rtpointer.Angle = (pointer * (240 + 70)) - 70;
+                                   for (int n = 0; n < valueScaleIndex - 1; n++)
+                                   {
+                                       if (pointer > valueScale[n] && pointer <= valueScale[n + 1])
+                                       {
+                                           rtpointer.Angle = (degreeDial[n] - degreeDial[n + 1]) / (valueScale[n] - valueScale[n + 1]) * (pointer - valueScale[n]) + degreeDial[n];
+                                           break;
+                                       }
+                                   }
                                    Boost.RenderTransform = rtpointer;
                                }
                                lpointer = pointer;

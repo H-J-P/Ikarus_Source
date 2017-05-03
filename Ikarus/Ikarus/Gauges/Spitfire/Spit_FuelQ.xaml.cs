@@ -32,6 +32,9 @@ namespace Ikarus
         {
             this.InitializeComponent();
             if (MainWindow.editmode) MakeDraggable(this, this);
+
+            rtpointer.Angle = 5;
+            fuel_quant.RenderTransform = rtpointer;
         }
 
         public void SetID(string _dataImportID)
@@ -119,13 +122,16 @@ namespace Ikarus
 
                                if (vals.Length > 0) { pointer = Convert.ToDouble(vals[0], CultureInfo.InvariantCulture); }
 
+                               // Input: 0.0,0.1,  1.0
+                               // °    : 5.0,0.0,-68.0
+
                                if (lpointer != pointer)
                                {
                                    for (int n = 0; n < valueScaleIndex - 1; n++)
                                    {
                                        if (pointer > valueScale[n] && pointer <= valueScale[n + 1])
                                        {
-                                           rtpointer.Angle = 5 + (-1 * (degreeDial[n] - degreeDial[n + 1]) / (valueScale[n] - valueScale[n + 1]) * (pointer - valueScale[n]) + degreeDial[n]);
+                                           rtpointer.Angle = (degreeDial[n] - degreeDial[n + 1]) / (valueScale[n] - valueScale[n + 1]) * (pointer - valueScale[n]) + degreeDial[n];
                                            break;
                                        }
                                    }

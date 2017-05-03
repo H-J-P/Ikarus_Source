@@ -82,8 +82,6 @@ namespace Ikarus
         {
             string[] vals = _input.Split(',');
 
-            if (vals.Length < 3) return;
-
             valueScale = new double[vals.Length];
 
             for (int i = 0; i < vals.Length; i++)
@@ -96,8 +94,6 @@ namespace Ikarus
         public void SetOutput(string _output)
         {
             string[] vals = _output.Split(',');
-
-            if (vals.Length < 3) return;
 
             degreeDial = new double[vals.Length];
 
