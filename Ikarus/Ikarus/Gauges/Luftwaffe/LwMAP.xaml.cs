@@ -16,6 +16,9 @@ namespace Ikarus
     {
         private string dataImportID = "";
         private int windowID = 0;
+        private double[] valueScale = new double[] { };
+        private double[] degreeDial = new double[] { };
+        int valueScaleIndex = 0;
         private string[] vals = new string[] { };
 
         public void SetWindowID(int _windowID) { windowID = _windowID; }
@@ -75,10 +78,27 @@ namespace Ikarus
 
         public void SetInput(string _input)
         {
+            string[] vals = _input.Split(',');
+
+            valueScale = new double[vals.Length];
+
+            for (int i = 0; i < vals.Length; i++)
+            {
+                valueScale[i] = Convert.ToDouble(vals[i], CultureInfo.InvariantCulture);
+            }
+            valueScaleIndex = vals.Length;
         }
 
         public void SetOutput(string _output)
         {
+            string[] vals = _output.Split(',');
+
+            degreeDial = new double[vals.Length];
+
+            for (int i = 0; i < vals.Length; i++)
+            {
+                degreeDial[i] = Convert.ToDouble(vals[i], CultureInfo.InvariantCulture);
+            }
         }
 
         public double GetSize()
@@ -97,11 +117,17 @@ namespace Ikarus
 
                                if (vals.Length > 0) { manifoldPressure = Convert.ToDouble(vals[0], CultureInfo.InvariantCulture); }
 
-                               if (manifoldPressure < 0.0) manifoldPressure = 0.0;
-
                                if (lmanifoldPressure != manifoldPressure)
                                {
-                                   rtManifoldPressure.Angle = (manifoldPressure * 325); // -18;
+                                   for (int n = 0; n < valueScaleIndex - 1; n++)
+                                   {
+                                       if (manifoldPressure > valueScale[n] && manifoldPressure <= valueScale[n + 1])
+                                       {
+                                           rtManifoldPressure.Angle = (degreeDial[n] - degreeDial[n + 1]) / (valueScale[n] - valueScale[n + 1]) * (manifoldPressure - valueScale[n]) + degreeDial[n];
+                                           break;
+                                       }
+                                   }
+                                   //rtManifoldPressure.Angle = (manifoldPressure * 325); // -18;
                                    Lw_MAP_Needle.RenderTransform = rtManifoldPressure;
                                }
                                lmanifoldPressure = manifoldPressure;

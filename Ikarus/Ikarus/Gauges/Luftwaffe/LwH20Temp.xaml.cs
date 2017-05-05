@@ -16,6 +16,9 @@ namespace Ikarus
     {
         private string dataImportID = "";
         private int windowID = 0;
+        private double[] valueScale = new double[] { };
+        private double[] degreeDial = new double[] { };
+        int valueScaleIndex = 0;
         private string[] vals = new string[] { };
 
         public void SetWindowID(int _windowID) { windowID = _windowID; }
@@ -27,10 +30,6 @@ namespace Ikarus
 
             if (MainWindow.editmode) MakeDraggable(this, this);
         }
-
-        private double[] valueScale = new double[] { };
-        private double[] degreeDial = new double[] { };
-        int valueScaleIndex = 0;
 
         double h2oTemp = 0.0;
         double lh2oTemp = 0.0;
@@ -81,8 +80,6 @@ namespace Ikarus
         {
             string[] vals = _input.Split(',');
 
-            if (valueScale.Length > 1) { return; }
-
             valueScale = new double[vals.Length];
 
             for (int i = 0; i < vals.Length; i++)
@@ -95,8 +92,6 @@ namespace Ikarus
         public void SetOutput(string _output)
         {
             string[] vals = _output.Split(',');
-
-            if (degreeDial.Length > 1) { return; }
 
             degreeDial = new double[vals.Length];
 

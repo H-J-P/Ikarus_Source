@@ -81,8 +81,6 @@ namespace Ikarus
         {
             string[] vals = _input.Split(',');
 
-            if (valueScale.Length > 1) { return; }
-
             valueScale = new double[vals.Length];
 
             for (int i = 0; i < vals.Length; i++)
@@ -96,8 +94,6 @@ namespace Ikarus
         {
             string[] vals = _output.Split(',');
 
-            if (degreeDial.Length > 1) { return; }
-
             degreeDial = new double[vals.Length];
 
             for (int i = 0; i < vals.Length; i++)
@@ -105,6 +101,7 @@ namespace Ikarus
                 degreeDial[i] = Convert.ToDouble(vals[i], CultureInfo.InvariantCulture);
             }
         }
+
         public double GetSize()
         {
             return 241.0; // Width
@@ -166,8 +163,6 @@ namespace Ikarus
                 trUsercontrol.X += currentPoint.X - originalPoint.X;
                 trUsercontrol.Y += currentPoint.Y - originalPoint.Y;
                 moveThisElement.RenderTransform = trUsercontrol;
-
-
             };
         }
 

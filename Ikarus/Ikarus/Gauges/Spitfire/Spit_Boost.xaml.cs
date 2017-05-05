@@ -34,6 +34,7 @@ namespace Ikarus
 
             rtpointer.Angle =  - 70;
             Boost.RenderTransform = rtpointer;
+            Value.Visibility = System.Windows.Visibility.Visible;
 
             if (MainWindow.editmode) MakeDraggable(this, this);
         }
@@ -82,8 +83,6 @@ namespace Ikarus
         {
             string[] vals = _input.Split(',');
 
-            if (vals.Length < 3) return;
-
             valueScale = new double[vals.Length];
 
             for (int i = 0; i < vals.Length; i++)
@@ -96,8 +95,6 @@ namespace Ikarus
         public void SetOutput(string _output)
         {
             string[] vals = _output.Split(',');
-
-            if (vals.Length < 3) return;
 
             degreeDial = new double[vals.Length];
 
@@ -124,6 +121,8 @@ namespace Ikarus
                                if (vals.Length > 0) { pointer = Convert.ToDouble(vals[0], CultureInfo.InvariantCulture); }
 
                                if (pointer < 0.0) { pointer = 0.0; }
+
+                               Value.Text = pointer.ToString();
 
                                // Input: 0.0,0.25,0.5,1.0
                                // °    : -70,  60,120,240

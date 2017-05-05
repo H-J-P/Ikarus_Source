@@ -16,6 +16,9 @@ namespace Ikarus
     {
         private string dataImportID = "";
         private int windowID = 0;
+        private double[] valueScale = new double[] { };
+        private double[] degreeDial = new double[] { };
+        int valueScaleIndex = 0;
         private string[] vals = new string[] { };
 
         public void SetWindowID(int _windowID) { windowID = _windowID; }
@@ -75,10 +78,27 @@ namespace Ikarus
 
         public void SetInput(string _input)
         {
+            string[] vals = _input.Split(',');
+
+            valueScale = new double[vals.Length];
+
+            for (int i = 0; i < vals.Length; i++)
+            {
+                valueScale[i] = Convert.ToDouble(vals[i], CultureInfo.InvariantCulture);
+            }
+            valueScaleIndex = vals.Length;
         }
 
         public void SetOutput(string _output)
         {
+            string[] vals = _output.Split(',');
+
+            degreeDial = new double[vals.Length];
+
+            for (int i = 0; i < vals.Length; i++)
+            {
+                degreeDial[i] = Convert.ToDouble(vals[i], CultureInfo.InvariantCulture);
+            }
         }
 
         public double GetSize()
@@ -99,7 +119,14 @@ namespace Ikarus
 
                                if (loxygenPressure != oxygenPressure)
                                {
-                                   rtOxygenPressure.Angle = oxygenPressure * 252;
+                                   for (int n = 0; n < valueScaleIndex - 1; n++)
+                                   {
+                                       if (oxygenPressure > valueScale[n] && oxygenPressure <= valueScale[n + 1])
+                                       {
+                                           rtOxygenPressure.Angle = (degreeDial[n] - degreeDial[n + 1]) / (valueScale[n] - valueScale[n + 1]) * (oxygenPressure - valueScale[n]) + degreeDial[n];
+                                           break;
+                                       }
+                                   }
                                    Lw_O2P_Needle.RenderTransform = rtOxygenPressure;
                                }
                                loxygenPressure = oxygenPressure;
@@ -135,8 +162,6 @@ namespace Ikarus
                 trUsercontrol.X += currentPoint.X - originalPoint.X;
                 trUsercontrol.Y += currentPoint.Y - originalPoint.Y;
                 moveThisElement.RenderTransform = trUsercontrol;
-
-
             };
         }
 

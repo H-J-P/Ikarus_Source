@@ -17,6 +17,9 @@ namespace Ikarus
         private string dataImportID = "";
         private int windowID = 0;
         private string[] vals = new string[] { };
+        private double[] valueScale = new double[] { };
+        private double[] degreeDial = new double[] { };
+        int valueScaleIndex = 0;
 
         public void SetWindowID(int _windowID) { windowID = _windowID; }
         public int GetWindowID() { return windowID; }
@@ -32,10 +35,6 @@ namespace Ikarus
 
             if (MainWindow.editmode) MakeDraggable(this, this);
         }
-
-        private double[] valueScale = new double[] { };
-        private double[] degreeDial = new double[] { };
-        int valueScaleIndex = 0;
 
         public void SetID(string _dataImportID)
         {
@@ -167,8 +166,6 @@ namespace Ikarus
                 trUsercontrol.X += currentPoint.X - originalPoint.X;
                 trUsercontrol.Y += currentPoint.Y - originalPoint.Y;
                 moveThisElement.RenderTransform = trUsercontrol;
-
-
             };
         }
 

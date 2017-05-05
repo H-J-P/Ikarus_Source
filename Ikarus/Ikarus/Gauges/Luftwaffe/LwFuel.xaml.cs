@@ -16,12 +16,14 @@ namespace Ikarus
     {
         private string dataImportID = "";
         private int windowID = 0;
+        private double[] valueScale = new double[] { };
+        private double[] degreeDial = new double[] { };
+        int valueScaleIndex = 0;
         private string[] vals = new string[] { };
 
         public void SetWindowID(int _windowID) { windowID = _windowID; }
         public int GetWindowID() { return windowID; }
 
-        int valueScaleIndex = 8;
         double value = 0.0;
         double lvalue = 0.0;
 
@@ -33,9 +35,6 @@ namespace Ikarus
 
             if (MainWindow.editmode) MakeDraggable(this, this);
         }
-
-        private double[] valueScale = new double[] { };
-        private double[] degreeDial = new double[] { };
 
         public void SetID(string _dataImportID)
         {
@@ -81,6 +80,8 @@ namespace Ikarus
         {
             string[] vals = _input.Split(',');
 
+            if (vals.Length < 3) return;
+
             valueScale = new double[vals.Length];
 
             for (int i = 0; i < vals.Length; i++)
@@ -94,6 +95,7 @@ namespace Ikarus
         {
             string[] vals = _output.Split(',');
 
+            if (vals.Length < 3) return;
 
             degreeDial = new double[vals.Length];
 
@@ -121,11 +123,11 @@ namespace Ikarus
 
                                if (lvalue != value)
                                {
-                                   const int valueScaleIndex = 8;
+                                   //const int valueScaleIndex = 8;
 
                                    // Fuel_Tank_Fuselage.input        	           = { 0.0,  100,   150,  200,  250,  300,  350, 400 } -- Liter
-                                   Double[] valueScale = new double[valueScaleIndex] { 0.0, 0.07, 0.175, 0.31, 0.52, 0.73, 0.88, 1.0 };
-                                   Double[] degreeDial = new double[valueScaleIndex] { 0, 23, 35, 45, 57, 68, 79, 90 };
+                                   //Double[] valueScale = new double[valueScaleIndex] { 0.0, 0.07, 0.175, 0.31, 0.52, 0.73, 0.88, 1.0 };
+                                   //Double[] degreeDial = new double[valueScaleIndex] { 0, 23, 35, 45, 57, 68, 79, 90 };
 
                                    for (int n = 0; n < valueScaleIndex - 1; n++)
                                    {
@@ -171,8 +173,6 @@ namespace Ikarus
                 trUsercontrol.X += currentPoint.X - originalPoint.X;
                 trUsercontrol.Y += currentPoint.Y - originalPoint.Y;
                 moveThisElement.RenderTransform = trUsercontrol;
-
-
             };
         }
 

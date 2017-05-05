@@ -484,6 +484,14 @@
                     Width="14.081"
                     Height="149.258"
                     RenderTransformOrigin="0.462,0.693">
+                <Canvas.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-1"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Canvas.RenderTransform>
                 <Path Canvas.Left="0"
                       Canvas.Top="94.637"
                       Width="14.081"
@@ -530,5 +538,6 @@
                HorizontalAlignment="Left"
                VerticalAlignment="Top"
                MouseWheel="Light_MouseWheel" />
+        <TextBlock x:Name="Value" HorizontalAlignment="Left" Margin="108,161,0,0" TextWrapping="Wrap" Text="0.000" VerticalAlignment="Top" Foreground="#FFF3F1F1" FontSize="16"/>
     </Grid>
 </UserControl>

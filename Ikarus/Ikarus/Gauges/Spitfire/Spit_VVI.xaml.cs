@@ -124,7 +124,6 @@ namespace Ikarus
                                            break;
                                        }
                                    }
-                                   //rtpointer.Angle = pointer * 149;
                                    VVI.RenderTransform = rtpointer;
                                }
                                lpointer = pointer;
@@ -167,6 +166,5 @@ namespace Ikarus
         {
             if (MainWindow.editmode) MainWindow.cockpitWindows[windowID].UpdatePosition(PointToScreen(new System.Windows.Point(0, 0)), "IDInst", MainWindow.dtInstruments, dataImportID, e.Delta);
         }
-
     }
 }
