@@ -16,6 +16,9 @@ namespace Ikarus
     {
         private string dataImportID = "";
         private int windowID = 0;
+        private double[] valueScale = new double[] { };
+        private double[] degreeDial = new double[] { };
+        int valueScaleIndex = 0;
         private string[] vals = new string[] { };
 
         public void SetWindowID(int _windowID) { windowID = _windowID; }
@@ -81,10 +84,27 @@ namespace Ikarus
 
         public void SetInput(string _input)
         {
+            string[] vals = _input.Split(',');
+
+            valueScale = new double[vals.Length];
+
+            for (int i = 0; i < vals.Length; i++)
+            {
+                valueScale[i] = Convert.ToDouble(vals[i], CultureInfo.InvariantCulture);
+            }
+            valueScaleIndex = vals.Length;
         }
 
         public void SetOutput(string _output)
         {
+            string[] vals = _output.Split(',');
+
+            degreeDial = new double[vals.Length];
+
+            for (int i = 0; i < vals.Length; i++)
+            {
+                degreeDial[i] = Convert.ToDouble(vals[i], CultureInfo.InvariantCulture);
+            }
         }
 
         public double GetSize()
@@ -101,18 +121,15 @@ namespace Ikarus
                            {
                                vals = strData.Split(';');
 
-                               const int valueScaleIndex = 5;
-
                                if (vals.Length > 0) { acceleration = Convert.ToDouble(vals[0], CultureInfo.InvariantCulture); }
                                if (vals.Length > 1) { accelerationMax = Convert.ToDouble(vals[1], CultureInfo.InvariantCulture); }
                                if (vals.Length > 2) { accelerationMin = Convert.ToDouble(vals[2], CultureInfo.InvariantCulture); }
 
                                if (lacceleration != acceleration)
                                {
-                                   // 110   ACCELEROMETER.input =                    {  -5.0,     1,   5,    8, 10.0 } 
-                                   double[] valueScale = new double[valueScaleIndex] { -0.41, 0.096, 0.5, 0.81, 1 };
-                                   double[] degreeDial = new double[valueScaleIndex] { -110, 23, 114, 180, 225 };
-
+                                   // Onput = { -2.0,0.0, 9.0}  
+                                   // Input = { -0.3,0.0, 0.8}
+                                   // °          -60,  0, 270
                                    for (int n = 0; n < (valueScaleIndex - 1); n++)
                                    {
                                        if (acceleration >= valueScale[n] && acceleration <= valueScale[n + 1])

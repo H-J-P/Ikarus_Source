@@ -16,7 +16,13 @@ namespace Ikarus
     {
         private string dataImportID = "";
         private int windowID = 0;
+        private double[] valueScale = new double[] { };
+        private double[] degreeDial = new double[] { };
+        int valueScaleIndex = 0;
         private string[] vals = new string[] { };
+        private bool firstInput = false;
+        private bool firstoutput = false;
+
 
         public void SetWindowID(int _windowID) { windowID = _windowID; }
         public int GetWindowID() { return windowID; }
@@ -78,10 +84,35 @@ namespace Ikarus
 
         public void SetInput(string _input)
         {
+            if (firstInput == false)
+            {
+                string[] vals = _input.Split(',');
+
+                valueScale = new double[vals.Length];
+
+                for (int i = 0; i < vals.Length; i++)
+                {
+                    valueScale[i] = Convert.ToDouble(vals[i], CultureInfo.InvariantCulture);
+                }
+                valueScaleIndex = vals.Length;
+                firstInput = true;
+            }
         }
 
         public void SetOutput(string _output)
         {
+            if (firstoutput == false)
+            {
+                string[] vals = _output.Split(',');
+
+                degreeDial = new double[vals.Length];
+
+                for (int i = 0; i < vals.Length; i++)
+                {
+                    degreeDial[i] = Convert.ToDouble(vals[i], CultureInfo.InvariantCulture);
+                }
+                firstoutput = true;
+            }
         }
 
         public double GetSize()
@@ -105,7 +136,15 @@ namespace Ikarus
 
                                if (legt != egt)
                                {
-                                   rtEgt.Angle = egt * 222;
+                                   for (int n = 0; n < (valueScaleIndex - 1); n++)
+                                   {
+                                       if (egt >= valueScale[n] && egt <= valueScale[n + 1])
+                                       {
+                                           rtEgt.Angle = (degreeDial[n] - degreeDial[n + 1]) / (valueScale[n] - valueScale[n + 1]) * (egt - valueScale[n]) + degreeDial[n];
+                                           break;
+                                       }
+                                   }
+                                   //rtEgt.Angle = egt * 222;
                                    EGT1.RenderTransform = rtEgt;
                                }
                                if (legtOff != egtOff)

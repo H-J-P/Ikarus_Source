@@ -42,6 +42,24 @@
                     </LinearGradientBrush>
                 </Button.Background>
             </Button>
+            <Button x:Name="btClose_Copy"
+                Width="25"
+                Height="24"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Top"
+                Click="Button_Close_Click"
+                Content="X"
+                Foreground="#FF190301"
+                RenderTransformOrigin="0.895,7.292" Margin="0,0,1895,0">
+                <Button.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                        <GradientStop Offset="0" Color="#FFF3F3F3" />
+                        <GradientStop Offset="0.5" Color="#FFEBEBEB" />
+                        <GradientStop Offset="0.5" Color="#FFDDDDDD" />
+                        <GradientStop Offset="1" Color="#FFAFAC68" />
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
         </Grid>
     </Border>
 </Window>

@@ -16,6 +16,9 @@ namespace Ikarus
     {
         private string dataImportID = "";
         private int windowID = 0;
+        private double[] valueScale = new double[] { };
+        private double[] degreeDial = new double[] { };
+        int valueScaleIndex = 0;
         private string[] vals = new string[] { };
 
         public void SetWindowID(int _windowID) { windowID = _windowID; }
@@ -29,6 +32,10 @@ namespace Ikarus
         public AJS37_OXY_Q()
         {
             InitializeComponent();
+
+            rtOxyQ.Angle = -30;
+            OXY_Q1.RenderTransform = rtOxyQ;
+
             if (MainWindow.editmode) MakeDraggable(this, this);
         }
 
@@ -74,10 +81,27 @@ namespace Ikarus
 
         public void SetInput(string _input)
         {
+            string[] vals = _input.Split(',');
+
+            valueScale = new double[vals.Length];
+
+            for (int i = 0; i < vals.Length; i++)
+            {
+                valueScale[i] = Convert.ToDouble(vals[i], CultureInfo.InvariantCulture);
+            }
+            valueScaleIndex = vals.Length;
         }
 
         public void SetOutput(string _output)
         {
+            string[] vals = _output.Split(',');
+
+            degreeDial = new double[vals.Length];
+
+            for (int i = 0; i < vals.Length; i++)
+            {
+                degreeDial[i] = Convert.ToDouble(vals[i], CultureInfo.InvariantCulture);
+            }
         }
 
         public double GetSize()
@@ -100,7 +124,15 @@ namespace Ikarus
 
                                if (lreadValue != readValue)
                                {
-                                   rtOxyQ.Angle = readValue * 200;
+                                   for (int n = 0; n < (valueScaleIndex - 1); n++)
+                                   {
+                                       if (readValue >= valueScale[n] && readValue <= valueScale[n + 1])
+                                       {
+                                           rtOxyQ.Angle = (degreeDial[n] - degreeDial[n + 1]) / (valueScale[n] - valueScale[n + 1]) * (readValue - valueScale[n]) + degreeDial[n];
+                                           break;
+                                       }
+                                   }
+                                   //rtOxyQ.Angle = readValue * 200;
                                    OXY_Q1.RenderTransform = rtOxyQ;
                                }
                                lreadValue = readValue;
