@@ -24,7 +24,7 @@
                    Margin="0,0,0,0"
                    GotFocus="BackImage_GotFocus"
                    Stretch="Fill" />
-            <Button x:Name="btClose"
+            <Button x:Name="btCloseRight"
                     Width="25"
                     Height="24"
                     HorizontalAlignment="Right"
@@ -42,7 +42,7 @@
                     </LinearGradientBrush>
                 </Button.Background>
             </Button>
-            <Button x:Name="btClose_Copy"
+            <Button x:Name="btCloseLeft"
                 Width="25"
                 Height="24"
                 HorizontalAlignment="Right"
@@ -51,6 +51,42 @@
                 Content="X"
                 Foreground="#FF190301"
                 RenderTransformOrigin="0.895,7.292" Margin="0,0,1895,0">
+                <Button.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                        <GradientStop Offset="0" Color="#FFF3F3F3" />
+                        <GradientStop Offset="0.5" Color="#FFEBEBEB" />
+                        <GradientStop Offset="0.5" Color="#FFDDDDDD" />
+                        <GradientStop Offset="1" Color="#FFAFAC68" />
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+            <Button x:Name="btCloseLeftDown"
+                Width="25"
+                Height="24"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Top"
+                Click="Button_Close_Click"
+                Content="X"
+                Foreground="#FF190301"
+                RenderTransformOrigin="0.895,7.292" Margin="0,1056,1895,0">
+                <Button.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                        <GradientStop Offset="0" Color="#FFF3F3F3" />
+                        <GradientStop Offset="0.5" Color="#FFEBEBEB" />
+                        <GradientStop Offset="0.5" Color="#FFDDDDDD" />
+                        <GradientStop Offset="1" Color="#FFAFAC68" />
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+            <Button x:Name="btCloseRightDown"
+                Width="25"
+                Height="24"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Top"
+                Click="Button_Close_Click"
+                Content="X"
+                Foreground="#FF190301"
+                RenderTransformOrigin="0.895,7.292" Margin="0,1056,0,0">
                 <Button.Background>
                     <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
                         <GradientStop Offset="0" Color="#FFF3F3F3" />

@@ -106,6 +106,8 @@ namespace Ikarus
                                if (vals.Length > 1) { altitute_M = Convert.ToDouble(vals[1], CultureInfo.InvariantCulture); }
                                if (vals.Length > 2) { altitute_C = Convert.ToDouble(vals[2], CultureInfo.InvariantCulture); }
 
+                               if (baroPressure < 0.0) baroPressure = 0.0;
+
                                if (laltitute_M != altitute_M)
                                {
                                    rtAltBar_M.Angle = altitute_M * 360;

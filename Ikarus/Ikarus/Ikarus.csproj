@@ -13,7 +13,7 @@
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <WarningLevel>4</WarningLevel>
-    <ExpressionBlendVersion>12.0.50429.0</ExpressionBlendVersion>
+    <ExpressionBlendVersion>12.0.51020.0</ExpressionBlendVersion>
     <TargetFrameworkProfile />
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
@@ -355,8 +355,17 @@
     <Compile Include="Gauges\Spitfire\Spit_VVI.xaml.cs">
       <DependentUpon>Spit_VVI.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Gauges\UH\UH1_AirTemp.xaml.cs">
+      <DependentUpon>UH1_AirTemp.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Gauges\UH\UH1_RadioCompassIndicatorCopilot.xaml.cs">
       <DependentUpon>UH1_RadioCompassIndicatorCopilot.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\UH\UH1_RMI.xaml.cs">
+      <DependentUpon>UH1_RMI.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\UH\UH1_RMI_Green.xaml.cs">
+      <DependentUpon>UH1_RMI_Green.xaml</DependentUpon>
     </Compile>
     <Compile Include="Gauges\US\US_ADI_Sphere.xaml.cs">
       <DependentUpon>US_ADI_Sphere.xaml</DependentUpon>
@@ -441,6 +450,9 @@
     </Compile>
     <Compile Include="Gauges\UH\UH1_RadioCompassIndicatorV2.xaml.cs">
       <DependentUpon>UH1_RadioCompassIndicatorV2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\WP\WPALT20V2.xaml.cs">
+      <DependentUpon>WPALT20V2.xaml</DependentUpon>
     </Compile>
     <Compile Include="Gauges\WP\WPSPO15.xaml.cs">
       <DependentUpon>WPSPO15.xaml</DependentUpon>
@@ -1610,9 +1622,21 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Gauges\UH\UH1_AirTemp.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Gauges\UH\UH1_RadioCompassIndicatorCopilot.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\UH\UH1_RMI.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Gauges\UH\UH1_RMI_Green.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Gauges\US\US_ADI_Sphere.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -1723,6 +1747,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Gauges\UH\UH1_RadioCompassIndicatorV2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Gauges\WP\WPALT20V2.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -2936,6 +2964,14 @@
     <Resource Include="Assets\Select.png" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Gauges\UH\UH1_RMI_Green_2_17-5_Images\Image.png" />
+    <Resource Include="Gauges\UH\UH1_RMI_Green_2_17-5_Images\Image1.png" />
+    <Resource Include="Gauges\UH\UH1_RMI_Green_2_17-5_Images\Image2.png" />
+    <Resource Include="Gauges\UH\UH1_RMI_Green_2_17-5_Images\Image3.png" />
+    <Resource Include="Gauges\WP\Wp-ALT_20_Images\Image.png" />
+    <Resource Include="Gauges\WP\Wp-ALT_20_Images\Image1.png" />
+    <Resource Include="Gauges\WP\Wp-ALT_20_Images\Image2.png" />
+    <Resource Include="Gauges\WP\Wp-ALT_20_Images\Image3.png" />
     <Resource Include="Gauges\_Images\A10C-VHF-Display_Images\Image.png" />
     <Resource Include="Gauges\_Images\LwALT_Images\Image5.png" />
     <Resource Include="Select.png" />

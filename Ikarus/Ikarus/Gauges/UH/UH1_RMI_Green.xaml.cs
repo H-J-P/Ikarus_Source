@@ -10,9 +10,9 @@ using System.Globalization;
 namespace Ikarus
 {
     /// <summary>
-    /// Interaction logic for WPALT20.xaml
+    /// Interaktionslogik für UH1_RMI_Green.xaml
     /// </summary>
-    public partial class WPALT20 : UserControl, I_Ikarus
+    public partial class UH1_RMI_Green : UserControl, I_Ikarus
     {
         private string dataImportID = "";
         private int windowID = 0;
@@ -21,26 +21,25 @@ namespace Ikarus
         public void SetWindowID(int _windowID) { windowID = _windowID; }
         public int GetWindowID() { return windowID; }
 
-        double altituteKmNeedle = 0.0;
-        double altituteMeterNeedle = 0.0;
-        double baroPressure = 0.0;
+        double coursePointer1 = 0.0;
+        double coursePointer2 = 0.0;
+        double heading = 0.0;
 
-        double laltituteKmNeedle = 0.0;
-        double laltituteMeterNeedle = 0.0;
-        double lbaroPressure = 0.0;
+        double lcoursePointer1 = 0.0;
+        double lcoursePointer2 = 0.0;
+        double lheading = 0.0;
 
-        RotateTransform rtAltituteKmNeedle = new RotateTransform();
-        RotateTransform rtAltituteMeterNeedle = new RotateTransform();
-        RotateTransform rtBaroPressure = new RotateTransform();
+        RotateTransform rtHeading = new RotateTransform();
+        RotateTransform rtCoursePointer1 = new RotateTransform();
+        RotateTransform rtCoursePointer2 = new RotateTransform();
 
-        public WPALT20()
+        public UH1_RMI_Green()
         {
             InitializeComponent();
 
             if (MainWindow.editmode) MakeDraggable(this, this);
 
-            rtBaroPressure.Angle =  - 37;
-            Altimeter_Pressure.RenderTransform = rtBaroPressure;
+            RMI_Off_Flagg.Visibility = System.Windows.Visibility.Hidden;
         }
 
         public void SetID(string _dataImportID)
@@ -93,7 +92,7 @@ namespace Ikarus
 
         public double GetSize()
         {
-            return 170.0; // Width
+            return 255.0; // Width
         }
 
         public void UpdateGauge(string strData)
@@ -105,31 +104,31 @@ namespace Ikarus
                            {
                                vals = strData.Split(';');
 
-                               if (vals.Length > 0) { altituteKmNeedle = Convert.ToDouble(vals[0], CultureInfo.InvariantCulture); }
-                               if (vals.Length > 1) { altituteMeterNeedle = Convert.ToDouble(vals[1], CultureInfo.InvariantCulture); }
-                               if (vals.Length > 2) { baroPressure = Convert.ToDouble(vals[2], CultureInfo.InvariantCulture); }
+                               if (vals.Length > 0) { coursePointer1 = Convert.ToDouble(vals[0], CultureInfo.InvariantCulture); }
+                               if (vals.Length > 1) { coursePointer2 = Convert.ToDouble(vals[1], CultureInfo.InvariantCulture); }
+                               if (vals.Length > 2) { heading = Convert.ToDouble(vals[2], CultureInfo.InvariantCulture); }
 
-                               if (baroPressure > 0.962) baroPressure = 0.962;
-                               if (baroPressure < 0.0) baroPressure = 0.0;
+                               if (lheading != heading)
+                               {
+                                   rtHeading.Angle = heading * -360;
+                                   RMI_Heading.RenderTransform = rtHeading;
+                               }
 
-                               if (laltituteKmNeedle != altituteKmNeedle)
+                               if (lcoursePointer1 != coursePointer1)
                                {
-                                   rtAltituteKmNeedle.Angle = altituteKmNeedle * 360;
-                                   Altimeter_km.RenderTransform = rtAltituteKmNeedle;
+                                   rtCoursePointer1.Angle = coursePointer1 * 360;
+                                   RMI_CoursePointer1.RenderTransform = rtCoursePointer1;
                                }
-                               if (laltituteMeterNeedle != altituteMeterNeedle)
+
+                               if (lcoursePointer2 != coursePointer2)
                                {
-                                   rtAltituteMeterNeedle.Angle = altituteMeterNeedle * 360;
-                                   Altimeter_m.RenderTransform = rtAltituteMeterNeedle;
+                                   rtCoursePointer2.Angle = coursePointer2 * 360;
+                                   RMI_CoursePointer2.RenderTransform = rtCoursePointer2;
                                }
-                               if (lbaroPressure != baroPressure)
-                               {
-                                   rtBaroPressure.Angle = (baroPressure * -323 ) - 37;
-                                   Altimeter_Pressure.RenderTransform = rtBaroPressure;
-                               }
-                               laltituteKmNeedle = altituteKmNeedle;
-                               laltituteMeterNeedle = altituteMeterNeedle;
-                               lbaroPressure = baroPressure;
+
+                               lcoursePointer1 = coursePointer1;
+                               lcoursePointer2 = coursePointer2;
+                               lheading = heading;
                            }
                            catch { return; }
                        }));
@@ -162,8 +161,6 @@ namespace Ikarus
                 trUsercontrol.X += currentPoint.X - originalPoint.X;
                 trUsercontrol.Y += currentPoint.Y - originalPoint.Y;
                 moveThisElement.RenderTransform = trUsercontrol;
-
-
             };
         }
 

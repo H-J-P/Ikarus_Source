@@ -10,9 +10,9 @@ using System.Globalization;
 namespace Ikarus
 {
     /// <summary>
-    /// Interaction logic for WPALT20.xaml
+    /// Interaktionslogik für WPALT20V2.xaml
     /// </summary>
-    public partial class WPALT20 : UserControl, I_Ikarus
+    public partial class WPALT20V2 : UserControl, I_Ikarus
     {
         private string dataImportID = "";
         private int windowID = 0;
@@ -33,14 +33,11 @@ namespace Ikarus
         RotateTransform rtAltituteMeterNeedle = new RotateTransform();
         RotateTransform rtBaroPressure = new RotateTransform();
 
-        public WPALT20()
+        public WPALT20V2()
         {
             InitializeComponent();
 
             if (MainWindow.editmode) MakeDraggable(this, this);
-
-            rtBaroPressure.Angle =  - 37;
-            Altimeter_Pressure.RenderTransform = rtBaroPressure;
         }
 
         public void SetID(string _dataImportID)
@@ -124,7 +121,7 @@ namespace Ikarus
                                }
                                if (lbaroPressure != baroPressure)
                                {
-                                   rtBaroPressure.Angle = (baroPressure * -323 ) - 37;
+                                   rtBaroPressure.Angle = baroPressure * -300;
                                    Altimeter_Pressure.RenderTransform = rtBaroPressure;
                                }
                                laltituteKmNeedle = altituteKmNeedle;
@@ -162,8 +159,6 @@ namespace Ikarus
                 trUsercontrol.X += currentPoint.X - originalPoint.X;
                 trUsercontrol.Y += currentPoint.Y - originalPoint.Y;
                 moveThisElement.RenderTransform = trUsercontrol;
-
-
             };
         }
 
