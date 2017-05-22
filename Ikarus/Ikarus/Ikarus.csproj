@@ -2964,14 +2964,8 @@
     <Resource Include="Assets\Select.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Gauges\UH\UH1_RMI_Green_2_17-5_Images\Image.png" />
-    <Resource Include="Gauges\UH\UH1_RMI_Green_2_17-5_Images\Image1.png" />
-    <Resource Include="Gauges\UH\UH1_RMI_Green_2_17-5_Images\Image2.png" />
-    <Resource Include="Gauges\UH\UH1_RMI_Green_2_17-5_Images\Image3.png" />
     <Resource Include="Gauges\WP\Wp-ALT_20_Images\Image.png" />
     <Resource Include="Gauges\WP\Wp-ALT_20_Images\Image1.png" />
-    <Resource Include="Gauges\WP\Wp-ALT_20_Images\Image2.png" />
-    <Resource Include="Gauges\WP\Wp-ALT_20_Images\Image3.png" />
     <Resource Include="Gauges\_Images\A10C-VHF-Display_Images\Image.png" />
     <Resource Include="Gauges\_Images\LwALT_Images\Image5.png" />
     <Resource Include="Select.png" />
