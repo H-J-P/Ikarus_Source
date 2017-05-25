@@ -163,6 +163,9 @@
     <Compile Include="Gauges\AJS37\AJS37_RPM.xaml.cs">
       <DependentUpon>AJS37_RPM.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Gauges\AJS37\AJS37_ADIstby.xaml.cs">
+      <DependentUpon>AJS37_ADIstby.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Gauges\ButtonAndSwitches\Button.xaml.cs">
       <DependentUpon>Button.xaml</DependentUpon>
     </Compile>
@@ -1365,6 +1368,10 @@
     <Page Include="Gauges\AJS37\AJS37_RPM.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Gauges\AJS37\AJS37_ADIstby.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Gauges\ButtonAndSwitches\Button.xaml">
       <Generator>MSBuild:Compile</Generator>

@@ -16,6 +16,9 @@ namespace Ikarus
     {
         private string dataImportID = "";
         private int windowID = 0;
+        private double[] valueScale = new double[] { };
+        private double[] degreeDial = new double[] { };
+        int valueScaleIndex = 0;
         private string[] vals = new string[] { };
 
         public void SetWindowID(int _windowID) { windowID = _windowID; }
@@ -77,10 +80,31 @@ namespace Ikarus
 
         public void SetInput(string _input)
         {
+            string[] vals = _input.Split(',');
+
+            if (vals.Length < 3) return;
+
+            valueScale = new double[vals.Length];
+
+            for (int i = 0; i < vals.Length; i++)
+            {
+                valueScale[i] = Convert.ToDouble(vals[i], CultureInfo.InvariantCulture);
+            }
+            valueScaleIndex = vals.Length;
         }
 
         public void SetOutput(string _output)
         {
+            string[] vals = _output.Split(',');
+
+            if (vals.Length < 3) return;
+
+            degreeDial = new double[vals.Length];
+
+            for (int i = 0; i < vals.Length; i++)
+            {
+                degreeDial[i] = Convert.ToDouble(vals[i], CultureInfo.InvariantCulture);
+            }
         }
 
         public double GetSize()
@@ -100,11 +124,18 @@ namespace Ikarus
                                if (vals.Length > 0) { rpm10 = Convert.ToDouble(vals[0], CultureInfo.InvariantCulture); }
                                if (vals.Length > 1) { rpm1 = Convert.ToDouble(vals[1], CultureInfo.InvariantCulture); }
 
-                               if (rpm10 < 0.0) { rpm10 = 0.0; }
-
+                               // Engine_RPM_100     -1.0, 0.0, 1.0
+                               // °                     0, 120, 265
                                if (lrpm10 != rpm10)
                                {
-                                   rtRpm10.Angle = rpm10 * 265;
+                                   for (int n = 0; n < (valueScaleIndex - 1); n++)
+                                   {
+                                       if (rpm10 >= valueScale[n] && rpm10 <= valueScale[n + 1])
+                                       {
+                                           rtRpm10.Angle = (degreeDial[n] - degreeDial[n + 1]) / (valueScale[n] - valueScale[n + 1]) * (rpm10 - valueScale[n]) + degreeDial[n];
+                                           break;
+                                       }
+                                   }
                                    RPM10.RenderTransform = rtRpm10;
                                }
                                if (lrpm1 != rpm1)

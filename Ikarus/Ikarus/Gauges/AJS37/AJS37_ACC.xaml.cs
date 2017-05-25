@@ -25,22 +25,25 @@ namespace Ikarus
         public int GetWindowID() { return windowID; }
 
         double acceleration = 0.0;
-        double accelerationMax = 0.0;
-        double accelerationMin = 0.0;
+        //double accelerationMax = 0.0;
+        //double accelerationMin = 0.0;
 
         double lacceleration = 0.0;
-        double laccelerationMax = 0.0;
-        double laccelerationMin = 0.0;
+        //double laccelerationMax = 0.0;
+        //double laccelerationMin = 0.0;
 
         RotateTransform rtAcceleration = new RotateTransform();
-        RotateTransform rtAccelerationMax = new RotateTransform();
-        RotateTransform rtAccelerationMin = new RotateTransform();
+        //RotateTransform rtAccelerationMax = new RotateTransform();
+        //RotateTransform rtAccelerationMin = new RotateTransform();
 
         public AJS37_ACC()
         {
             InitializeComponent();
 
             if (MainWindow.editmode) MakeDraggable(this, this);
+
+            MAX_G_needle.Visibility = System.Windows.Visibility.Hidden;
+            MIN_G_needle.Visibility = System.Windows.Visibility.Hidden;
         }
         public void SetID(string _dataImportID)
         {
@@ -86,6 +89,8 @@ namespace Ikarus
         {
             string[] vals = _input.Split(',');
 
+            if (vals.Length < 3) return;
+
             valueScale = new double[vals.Length];
 
             for (int i = 0; i < vals.Length; i++)
@@ -98,6 +103,8 @@ namespace Ikarus
         public void SetOutput(string _output)
         {
             string[] vals = _output.Split(',');
+
+            if (vals.Length < 3) return;
 
             degreeDial = new double[vals.Length];
 
@@ -122,8 +129,14 @@ namespace Ikarus
                                vals = strData.Split(';');
 
                                if (vals.Length > 0) { acceleration = Convert.ToDouble(vals[0], CultureInfo.InvariantCulture); }
-                               if (vals.Length > 1) { accelerationMax = Convert.ToDouble(vals[1], CultureInfo.InvariantCulture); }
-                               if (vals.Length > 2) { accelerationMin = Convert.ToDouble(vals[2], CultureInfo.InvariantCulture); }
+                               //if (vals.Length > 1) { accelerationMax = Convert.ToDouble(vals[1], CultureInfo.InvariantCulture); }
+                               //if (vals.Length > 2) { accelerationMin = Convert.ToDouble(vals[2], CultureInfo.InvariantCulture); }
+
+                               if (acceleration > valueScale[valueScaleIndex - 1])
+                                   acceleration = valueScale[valueScaleIndex - 1];
+
+                               if (acceleration < valueScale[0])
+                                   acceleration = valueScale[0];
 
                                if (lacceleration != acceleration)
                                {
@@ -140,19 +153,19 @@ namespace Ikarus
                                    }
                                    ACCELEROMETER.RenderTransform = rtAcceleration;
                                }
-                               if (laccelerationMax != accelerationMax)
-                               {
-                                   rtAccelerationMax.Angle = (accelerationMax * 270);
-                                   MAX_G_needle.RenderTransform = rtAccelerationMax;
-                               }
-                               if (laccelerationMin != accelerationMin)
-                               {
-                                   rtAccelerationMin.Angle = (accelerationMin * -60);
-                                   MIN_G_needle.RenderTransform = rtAccelerationMin;
-                               }
+                               //if (laccelerationMax != accelerationMax)
+                               //{
+                               //    rtAccelerationMax.Angle = (accelerationMax * 270);
+                               //    MAX_G_needle.RenderTransform = rtAccelerationMax;
+                               //}
+                               //if (laccelerationMin != accelerationMin)
+                               //{
+                               //    rtAccelerationMin.Angle = (accelerationMin * -60);
+                               //    MIN_G_needle.RenderTransform = rtAccelerationMin;
+                               //}
                                lacceleration = acceleration;
-                               laccelerationMax = accelerationMax;
-                               laccelerationMin = accelerationMin;
+                               //laccelerationMax = accelerationMax;
+                               //laccelerationMin = accelerationMin;
                            }
                            catch { return; }
                        }));

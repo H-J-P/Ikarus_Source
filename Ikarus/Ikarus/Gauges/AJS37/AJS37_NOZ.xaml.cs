@@ -16,6 +16,9 @@ namespace Ikarus
     {
         private string dataImportID = "";
         private int windowID = 0;
+        private double[] valueScale = new double[] { };
+        private double[] degreeDial = new double[] { };
+        int valueScaleIndex = 0;
         private string[] vals = new string[] { };
 
         public void SetWindowID(int _windowID) { windowID = _windowID; }
@@ -74,10 +77,27 @@ namespace Ikarus
 
         public void SetInput(string _input)
         {
+            string[] vals = _input.Split(',');
+
+            valueScale = new double[vals.Length];
+
+            for (int i = 0; i < vals.Length; i++)
+            {
+                valueScale[i] = Convert.ToDouble(vals[i], CultureInfo.InvariantCulture);
+            }
+            valueScaleIndex = vals.Length;
         }
 
         public void SetOutput(string _output)
         {
+            string[] vals = _output.Split(',');
+
+            degreeDial = new double[vals.Length];
+
+            for (int i = 0; i < vals.Length; i++)
+            {
+                degreeDial[i] = Convert.ToDouble(vals[i], CultureInfo.InvariantCulture);
+            }
         }
 
         public double GetSize()
@@ -96,11 +116,16 @@ namespace Ikarus
 
                                if (vals.Length > 0) { readValue = Convert.ToDouble(vals[0], CultureInfo.InvariantCulture); }
 
-                               if (readValue < 0.0) { readValue = 0.0; }
-
                                if (lreadValue != readValue)
                                {
-                                   rtNozzle.Angle = readValue * 236;
+                                   for (int n = 0; n < (valueScaleIndex - 1); n++)
+                                   {
+                                       if (readValue >= valueScale[n] && readValue <= valueScale[n + 1])
+                                       {
+                                           rtNozzle.Angle = (degreeDial[n] - degreeDial[n + 1]) / (valueScale[n] - valueScale[n + 1]) * (readValue - valueScale[n]) + degreeDial[n];
+                                           break;
+                                       }
+                                   }
                                    NOZ1.RenderTransform = rtNozzle;
                                }
                                lreadValue = readValue;

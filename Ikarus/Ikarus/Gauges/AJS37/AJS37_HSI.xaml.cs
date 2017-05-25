@@ -140,7 +140,7 @@ namespace Ikarus
 
                                if (lheading != heading)
                                {
-                                   rtHeading.Angle = heading * 360;
+                                   rtHeading.Angle = heading * -180;
                                    Heading.RenderTransform = rtHeading;
                                }
                                if (lcommandedCourse != commandedCourse)

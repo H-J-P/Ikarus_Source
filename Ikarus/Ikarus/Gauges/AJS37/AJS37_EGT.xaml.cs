@@ -39,7 +39,7 @@ namespace Ikarus
             InitializeComponent();
             if (MainWindow.editmode) MakeDraggable(this, this);
 
-            EGT_OFF_flag.Visibility = System.Windows.Visibility.Visible;
+            EGT_OFF_flag.Visibility = System.Windows.Visibility.Hidden;
         }
 
         public void SetID(string _dataImportID)

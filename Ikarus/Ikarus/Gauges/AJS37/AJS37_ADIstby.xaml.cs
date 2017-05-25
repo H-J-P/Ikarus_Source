@@ -10,9 +10,9 @@ using System.Globalization;
 namespace Ikarus
 {
     /// <summary>
-    /// Interaktionslogik für AJS37_KURS.xaml
+    /// Interaction logic for USADIstby.xaml
     /// </summary>
-    public partial class AJS37_KURS : UserControl, I_Ikarus
+    public partial class AJS37_ADIstby : UserControl, I_Ikarus
     {
         private string dataImportID = "";
         private int windowID = 0;
@@ -21,15 +21,25 @@ namespace Ikarus
         public void SetWindowID(int _windowID) { windowID = _windowID; }
         public int GetWindowID() { return windowID; }
 
-        private double readValue = 0.0;
-        private double lreadValue = 0.0;
+        double pitch = 0.0;
+        double bank = 0.0;
+        double flagOff = 0.0;
+        double manualPitch = 0.0;
 
-        RotateTransform rtHeading = new RotateTransform();
+        double lpitch = 0.0;
+        double lbank = 0.0;
+        double lflagOff = 0.0;
 
-        public AJS37_KURS()
+        RotateTransform rtFlagOff = new RotateTransform();
+
+        public AJS37_ADIstby()
         {
             InitializeComponent();
             if (MainWindow.editmode) MakeDraggable(this, this);
+
+            rtFlagOff.Angle = 18;
+            flagg_off.RenderTransform = rtFlagOff;
+            lflagOff = 1.0;
         }
 
         public void SetID(string _dataImportID)
@@ -82,28 +92,52 @@ namespace Ikarus
 
         public double GetSize()
         {
-            return 255; // Width
+            return 255.0; // Width
         }
+
 
         public void UpdateGauge(string strData)
         {
-            Dispatcher.BeginInvoke(DispatcherPriority.Normal,
+            Dispatcher.BeginInvoke(DispatcherPriority.Send,
                        (Action)(() =>
                        {
                            try
                            {
                                vals = strData.Split(';');
 
-                               if (vals.Length > 0) { readValue = Convert.ToDouble(vals[0], CultureInfo.InvariantCulture); }
+                               if (vals.Length > 0) { pitch = Convert.ToDouble(vals[0], CultureInfo.InvariantCulture); }
+                               if (vals.Length > 1) { bank = Convert.ToDouble(vals[1], CultureInfo.InvariantCulture); }
+                               if (vals.Length > 2) { flagOff = Convert.ToDouble(vals[2], CultureInfo.InvariantCulture); }
+                               if (vals.Length > 3) { manualPitch = Convert.ToDouble(vals[3], CultureInfo.InvariantCulture); }
 
-                               if (lreadValue != readValue)
+                               if (lpitch != pitch || lbank != bank)
                                {
-                                   rtHeading.Angle = (readValue * -180) - 180;
-                                   Kompass_Heading.RenderTransform = rtHeading;
+                                   TransformGroup grp = new TransformGroup();
+                                   RotateTransform rt = new RotateTransform();
+                                   TranslateTransform tt = new TranslateTransform();
+
+                                   tt.Y = pitch * -270;
+                                   rt.Angle = bank * 180;
+                                   grp.Children.Add(tt);
+                                   grp.Children.Add(rt);
+                                   bank_pitch.RenderTransform = grp;
+
+                                   //RotateTransform rtTurn = new RotateTransform();
+                                   //rtTurn.Angle = turn * 45;
+                                   turn.RenderTransform = rt;
                                }
-                               lreadValue = readValue;
+
+                               if (lflagOff != flagOff)
+                               {
+                                   rtFlagOff.Angle = flagOff * 18;
+                                   flagg_off.RenderTransform = rtFlagOff;
+                               }
+
+                               lpitch = pitch;
+                               lbank = bank;
+                               lflagOff = flagOff;
                            }
-                           catch { return; }
+                           catch { return; };
                        }));
         }
 
@@ -134,6 +168,8 @@ namespace Ikarus
                 trUsercontrol.X += currentPoint.X - originalPoint.X;
                 trUsercontrol.Y += currentPoint.Y - originalPoint.Y;
                 moveThisElement.RenderTransform = trUsercontrol;
+
+
             };
         }
 

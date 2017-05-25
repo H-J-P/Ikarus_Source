@@ -16,6 +16,9 @@ namespace Ikarus
     {
         private string dataImportID = "";
         private int windowID = 0;
+        private double[] valueScale = new double[] { };
+        private double[] degreeDial = new double[] { };
+        int valueScaleIndex = 0;
         private string[] vals = new string[] { };
 
         public void SetWindowID(int _windowID) { windowID = _windowID; }
@@ -33,7 +36,7 @@ namespace Ikarus
             InitializeComponent();
 
             if (MainWindow.editmode) MakeDraggable(this, this);
-            MLS_flag.Visibility = System.Windows.Visibility.Visible;
+            MLS_flag.Visibility = System.Windows.Visibility.Hidden;
         }
 
         public void SetID(string _dataImportID)
@@ -78,10 +81,31 @@ namespace Ikarus
 
         public void SetInput(string _input)
         {
+            string[] vals = _input.Split(',');
+
+            if (vals.Length < 3) return;
+
+            valueScale = new double[vals.Length];
+
+            for (int i = 0; i < vals.Length; i++)
+            {
+                valueScale[i] = Convert.ToDouble(vals[i], CultureInfo.InvariantCulture);
+            }
+            valueScaleIndex = vals.Length;
         }
 
         public void SetOutput(string _output)
         {
+            string[] vals = _output.Split(',');
+
+            if (vals.Length < 3) return;
+
+            degreeDial = new double[vals.Length];
+
+            for (int i = 0; i < vals.Length; i++)
+            {
+                degreeDial[i] = Convert.ToDouble(vals[i], CultureInfo.InvariantCulture);
+            }
         }
 
         public double GetSize()
@@ -102,10 +126,21 @@ namespace Ikarus
                                if (vals.Length > 1) { mslFlag = Convert.ToDouble(vals[1], CultureInfo.InvariantCulture); }
 
                                if (distance < 0.0) { distance = 0.0; }
+                               if (distance > 0.4) { distance = 0.4; }
+
+                               //    0.0, 0.15, 0.20, 0.30, 0.4
+                               // °    0,   93,  125,  192, 250
 
                                if (ldistance != distance)
                                {
-                                   rtDistance.Angle = distance * 250;
+                                   for (int n = 0; n < (valueScaleIndex - 1); n++)
+                                   {
+                                       if (distance >= valueScale[n] && distance <= valueScale[n + 1])
+                                       {
+                                           rtDistance.Angle = (degreeDial[n] - degreeDial[n + 1]) / (valueScale[n] - valueScale[n + 1]) * (distance - valueScale[n]) + degreeDial[n];
+                                           break;
+                                       }
+                                   }
                                    Distanz.RenderTransform = rtDistance;
                                }
                                if (lmslFlag != mslFlag)

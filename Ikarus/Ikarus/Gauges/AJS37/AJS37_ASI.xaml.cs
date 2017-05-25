@@ -47,8 +47,8 @@ namespace Ikarus
         {
             InitializeComponent();
 
-            ASI_OFF_flag.Visibility = System.Windows.Visibility.Visible;
-            Mach_OFF_flag.Visibility = System.Windows.Visibility.Visible;
+            ASI_OFF_flag.Visibility = System.Windows.Visibility.Hidden;
+            Mach_OFF_flag.Visibility = System.Windows.Visibility.Hidden;
 
             if (MainWindow.editmode) MakeDraggable(this, this);
         }

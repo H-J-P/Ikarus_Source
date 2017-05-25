@@ -16,6 +16,9 @@ namespace Ikarus
     {
         private string dataImportID = "";
         private int windowID = 0;
+        private double[] valueScale = new double[] { };
+        private double[] degreeDial = new double[] { };
+        int valueScaleIndex = 0;
         private string[] vals = new string[] { };
 
         public void SetWindowID(int _windowID) { windowID = _windowID; }
@@ -24,15 +27,18 @@ namespace Ikarus
 
         private double pitch = 0.0;
         private double bank = 0.0;
+        private double bankNeedle = 0.0;
         private double heading = 0.0;
         private double slipBall = 0.0;
         private double vvi = 0.0;
         private double flag_vvi_off = 0.0;
         private double flag_off = 0.0;
         private double courceWarningFlag = 0.0;
+        private double headingAngle = 0.0;
 
         private double lpitch = 0.0;
         private double lbank = 0.0;
+        private double lbankNeedle = 0.0;
         private double lheading = 0.0;
         private double lslipBall = 0.0;
         private double lvvi = 0.0;
@@ -102,10 +108,31 @@ namespace Ikarus
 
         public void SetInput(string _input)
         {
+            string[] vals = _input.Split(',');
+
+            if (vals.Length < 3) return;
+
+            valueScale = new double[vals.Length];
+
+            for (int i = 0; i < vals.Length; i++)
+            {
+                valueScale[i] = Convert.ToDouble(vals[i], CultureInfo.InvariantCulture);
+            }
+            valueScaleIndex = vals.Length;
         }
 
         public void SetOutput(string _output)
         {
+            string[] vals = _output.Split(',');
+
+            if (vals.Length < 3) return;
+
+            degreeDial = new double[vals.Length];
+
+            for (int i = 0; i < vals.Length; i++)
+            {
+                degreeDial[i] = Convert.ToDouble(vals[i], CultureInfo.InvariantCulture);
+            }
         }
 
         public double GetSize()
@@ -131,17 +158,34 @@ namespace Ikarus
                                if (vals.Length > 6) { flag_off = Convert.ToDouble(vals[6], CultureInfo.InvariantCulture); }
                                if (vals.Length > 7) { courceWarningFlag = Convert.ToDouble(vals[7], CultureInfo.InvariantCulture); }
 
+                               bankNeedle = bank;
+
+                               if (lheading != heading)
+                               {
+                                   //    -1.0, -0.5, 0.0, 0.5, 1.0,
+                                   //     0.0,   90, 180, 270, 360,
+                                   for (int n = 0; n < valueScaleIndex - 1; n++)
+                                   {
+                                       if (heading > valueScale[n] && heading <= valueScale[n + 1])
+                                       {
+                                           headingAngle = (degreeDial[n] - degreeDial[n + 1]) / (valueScale[n] - valueScale[n + 1]) * (heading - valueScale[n]) + degreeDial[n];
+                                           break;
+                                       }
+                                   }
+                               }
+
                                if (lpitch != pitch || lheading != heading || lbank != bank)
-                                   sphere3D.Rotate(pitch * 180, heading * 360, bank * 180);
+                                   sphere3D.Rotate(pitch * -180, headingAngle * -1, bank * -180);
 
                                if (lslipBall != slipBall)
                                {
                                    rtSlipball.Angle = slipBall * -12;
                                    SlipBallPosition.RenderTransform = rtSlipball;
                                }
-                               if (lbank != bank)
+
+                               if (lbankNeedle != bankNeedle)
                                {
-                                   rtbank.Angle = bank * -180;
+                                   rtbank.Angle = bankNeedle * -180;
                                    Bank.RenderTransform = rtbank;
                                }
                                if (lvvi != vvi)
@@ -165,6 +209,7 @@ namespace Ikarus
                                lFlag_vvi_off = flag_vvi_off;
                                lFlag_off = flag_off;
                                lcourceWarningFlag = courceWarningFlag;
+                               lbankNeedle = bankNeedle;
                            }
                            catch { return; };
                        }));
