@@ -180,9 +180,9 @@ namespace Ikarus
                                }
 
                                if (lasiOff != asiOff)
-                                   ASI_OFF_flag.Visibility = (asiOff > 0.9) ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
+                                   ASI_OFF_flag.Visibility = (asiOff > 0.9) ? System.Windows.Visibility.Hidden : System.Windows.Visibility.Visible;
                                if (lmachOff != machOff)
-                                   Mach_OFF_flag.Visibility = (machOff > 0.9) ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
+                                   Mach_OFF_flag.Visibility = (machOff > 0.9) ? System.Windows.Visibility.Hidden : System.Windows.Visibility.Visible;
 
                                lias = ias;
                                lmach1 = mach1;

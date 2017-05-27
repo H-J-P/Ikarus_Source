@@ -35,6 +35,8 @@ namespace Ikarus
         private double flag_off = 0.0;
         private double courceWarningFlag = 0.0;
         private double headingAngle = 0.0;
+        private double bankSteering = 0.0;
+        private double glideSlope = 0.0;
 
         private double lpitch = 0.0;
         private double lbank = 0.0;
@@ -45,12 +47,16 @@ namespace Ikarus
         private double lFlag_vvi_off = 1.0;
         private double lFlag_off = 1.0;
         private double lcourceWarningFlag = 1.0;
+        private double lbankSteering = 0.0;
+        private double lglideSlope = 0.0;
 
         private RotateTransform rtSlipball = new RotateTransform();
         private TranslateTransform ttTurnIndicator = new TranslateTransform();
         private TranslateTransform rtpitchSteering = new TranslateTransform();
         private RotateTransform rtbank = new RotateTransform();
         private TranslateTransform rtvvi = new TranslateTransform();
+        private TranslateTransform ttglideSlope = new TranslateTransform();
+        private TranslateTransform ttbanksteering = new TranslateTransform();
         Sphere3D sphere3D;
 
         public AJS37_ADI()
@@ -58,8 +64,8 @@ namespace Ikarus
             InitializeComponent();
             if (MainWindow.editmode) MakeDraggable(this, this);
 
-            //Flagg_course_off.Visibility = System.Windows.Visibility.Hidden;
-            //lFlag_vvi_off.Visibility = System.Windows.Visibility.Hidden;
+            Flagg_course_off.Visibility = System.Windows.Visibility.Hidden;
+            Flagg_VVI_off.Visibility = System.Windows.Visibility.Hidden;
             Flagg_off.Visibility = System.Windows.Visibility.Visible;
 
             InitialSphere();
@@ -154,9 +160,11 @@ namespace Ikarus
                                if (vals.Length > 2) { bank = Convert.ToDouble(vals[2], CultureInfo.InvariantCulture); }
                                if (vals.Length > 3) { slipBall = Convert.ToDouble(vals[3], CultureInfo.InvariantCulture); }
                                if (vals.Length > 4) { vvi = Convert.ToDouble(vals[4], CultureInfo.InvariantCulture); }
-                               if (vals.Length > 5) { flag_vvi_off = Convert.ToDouble(vals[5], CultureInfo.InvariantCulture); }
-                               if (vals.Length > 6) { flag_off = Convert.ToDouble(vals[6], CultureInfo.InvariantCulture); }
-                               if (vals.Length > 7) { courceWarningFlag = Convert.ToDouble(vals[7], CultureInfo.InvariantCulture); }
+                               if (vals.Length > 5) { bankSteering = Convert.ToDouble(vals[5], CultureInfo.InvariantCulture); }
+                               if (vals.Length > 6) { glideSlope = Convert.ToDouble(vals[6], CultureInfo.InvariantCulture); }
+                               if (vals.Length > 7) { flag_vvi_off = Convert.ToDouble(vals[7], CultureInfo.InvariantCulture); }
+                               if (vals.Length > 8) { flag_off = Convert.ToDouble(vals[8], CultureInfo.InvariantCulture); }
+                               if (vals.Length > 9) { courceWarningFlag = Convert.ToDouble(vals[9], CultureInfo.InvariantCulture); }
 
                                bankNeedle = bank;
 
@@ -177,6 +185,9 @@ namespace Ikarus
                                if (lpitch != pitch || lheading != heading || lbank != bank)
                                    sphere3D.Rotate(pitch * -180, headingAngle * -1, bank * -180);
 
+                               if (glideSlope > 0.5) glideSlope = 0.5;
+                               if (bankSteering > 0.5) bankSteering = 0.5;
+
                                if (lslipBall != slipBall)
                                {
                                    rtSlipball.Angle = slipBall * -12;
@@ -194,12 +205,23 @@ namespace Ikarus
                                    VVI.RenderTransform = rtvvi;
                                }
 
+                               if (lbankSteering != bankSteering)
+                               {
+                                   ttbanksteering.X = bankSteering * 140;
+                                   banksteering.RenderTransform = ttbanksteering;
+                               }
+                               if (lglideSlope != glideSlope)
+                               {
+                                   ttglideSlope.Y = glideSlope * -125;
+                                   pichsteering.RenderTransform = ttglideSlope;
+                               }
+
                                if (lcourceWarningFlag != courceWarningFlag)
-                                   Flagg_course_off.Visibility = (courceWarningFlag > 0.8) ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
+                                   Flagg_course_off.Visibility = (courceWarningFlag > 0.8) ? System.Windows.Visibility.Hidden : System.Windows.Visibility.Hidden;
                                if (lFlag_vvi_off != flag_vvi_off)
-                                   Flagg_VVI_off.Visibility = (flag_vvi_off > 0.8) ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
+                                   Flagg_VVI_off.Visibility = (flag_vvi_off > 0.8) ? System.Windows.Visibility.Hidden : System.Windows.Visibility.Hidden;
                                if (lFlag_off != flag_off)
-                                   Flagg_off.Visibility = (flag_off > 0.8) ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
+                                   Flagg_off.Visibility = (flag_off > 0.8) ? System.Windows.Visibility.Hidden : System.Windows.Visibility.Visible;
 
                                lpitch = pitch;
                                lheading = heading;

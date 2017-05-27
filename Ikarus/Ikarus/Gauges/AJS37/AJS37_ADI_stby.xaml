@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="Ikarus.AJS37_ADIstby"
+﻿<UserControl x:Class="Ikarus.AJS37_ADI_stby"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -9,7 +9,7 @@
         <Canvas x:Name="US_ADI_stby1" HorizontalAlignment="Left" Height="255.118" UseLayoutRounding="False" VerticalAlignment="Top" Width="255.118">
             <Canvas x:Name="bank_pitch" Height="670.433" Canvas.Left="30.408" Canvas.Top="-207.75" Width="194.369" RenderTransformOrigin="0.502,0.504">
                 <Path Data="M0,0L146.349,0 146.349,335.217 0,335.217z" Fill="#FF4D4D4D" Height="335.217" Canvas.Left="24.01" Canvas.Top="335.216" Width="146.349" RenderTransformOrigin="0.506,0.001"/>
-                <Path Data="M0,0L146.349,0 146.349,335.216 0,335.216z" Fill="#FFE6E6E6" Height="335.216" Canvas.Left="24.01" Canvas.Top="0" Width="146.349"/>
+                <Path Data="M0,0L146.349,0 146.349,335.216 0,335.216z" Fill="#FF7A5844" Height="335.216" Canvas.Left="24.01" Canvas.Top="0" Width="146.349" RenderTransformOrigin="0.5,0.5"/>
                 <Path Data="M0,0L117.001,0 117.001,1.416 0,1.416z" Fill="White" Height="1.416" Canvas.Left="38.685" Canvas.Top="362.854" Width="117.001"/>
                 <Path Data="M0,0L22.592,0 22.592,1.418 0,1.418z" Fill="White" Height="1.418" Canvas.Left="85.888" Canvas.Top="348.681" Width="22.592"/>
                 <Path Data="M0,0L117.001,0 117.001,1.418 0,1.418z" Fill="White" Height="1.418" Canvas.Left="38.685" Canvas.Top="391.2" Width="117.001"/>

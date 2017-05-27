@@ -61,7 +61,7 @@ namespace Ikarus
             RWR_21.Visibility = System.Windows.Visibility.Hidden;
             RWR_27.Visibility = System.Windows.Visibility.Hidden;
             RWR_33.Visibility = System.Windows.Visibility.Hidden;
-            Warning_flag.Visibility =  System.Windows.Visibility.Hidden;
+            Warning_flag.Visibility =  System.Windows.Visibility.Visible;
             ALTITUDE_WARNING.Visibility = System.Windows.Visibility.Hidden;
         }
 
@@ -167,7 +167,7 @@ namespace Ikarus
                                if (lrwr33 != rwr33)
                                    RWR_33.Visibility = (rwr33 > 0.9) ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
                                if (lwarningFlag != warningFlag)
-                                   Warning_flag.Visibility = (warningFlag > 0.9) ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
+                                   Warning_flag.Visibility = (warningFlag > 0.9) ? System.Windows.Visibility.Hidden : System.Windows.Visibility.Visible;
 
                                lheading = heading;
                                lcommandedCourse = commandedCourse;

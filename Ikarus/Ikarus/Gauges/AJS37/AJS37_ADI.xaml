@@ -51,6 +51,44 @@
             <Canvas x:Name="TURN" Height="16.066" Canvas.Left="120.475" Canvas.Top="246.356" Width="14.169">
                 <Path Data="M11.338,6.972L11.338,16.066 2.83,16.066 2.83,6.972 0,4.183 0,0 14.169,0 14.169,4.183z" Fill="#FFFEFEFE" Height="16.066" Canvas.Left="0" Canvas.Top="0" Width="14.169"/>
             </Canvas>
+            <Canvas x:Name="banksteering"
+                Canvas.Left="89"
+                Canvas.Top="11"
+                Width="39.76"
+                Height="218.313"
+                RenderTransformOrigin="0.5,0.5">
+                <Path Canvas.Left="0"
+                    Canvas.Top="0"
+                    Width="39.759"
+                    Height="92.312"
+                    Data="M39.759,90.317C39.759,82.534,33.45,76.225,25.666,76.225L14.093,76.225C7.876,76.225,2.836,71.185,2.836,64.968L2.836,0 0,0 0,64.968C0,72.751,6.31,79.06,14.093,79.06L25.666,79.06C31.884,79.06,36.924,84.1,36.924,90.317L36.924,92.312 39.759,92.312z"
+                    Fill="Black" />
+                <Path Canvas.Left="36.924"
+                    Canvas.Top="92.312"
+                    Width="2.834"
+                    Height="106.001"
+                    Data="M0,126.001L2.834,126.001 2.834,0 0,0z"
+                    Fill="#FFE8D43B" />
+            </Canvas>
+            <Canvas x:Name="pichsteering"
+                Canvas.Left="10"
+                Canvas.Top="123"
+                Width="211"
+                Height="3"
+                RenderTransformOrigin="0.5,0.5">
+                <Path Canvas.Left="0"
+                    Canvas.Top="0"
+                    Width="85.252"
+                    Height="2.835"
+                    Data="M0,2.835L85.252,2.835 85.252,0 0,0z"
+                    Fill="Black" />
+                <Path Canvas.Left="85.252"
+                    Canvas.Top="0"
+                    Width="110.349"
+                    Height="2.835"
+                    Data="M125.349,2.835L0,2.835 0,0 125.349,0z"
+                    Fill="#FFE8D43B" />
+            </Canvas>
             <Canvas x:Name="SlipBallPosition" Height="14.595" Canvas.Left="120.239" Canvas.Top="226.014" Width="14.64" RenderTransformOrigin="0.438,-9.764">
                 <Path Data="M7.32,0C11.363,0 14.64,3.267 14.64,7.298 14.64,11.328 11.363,14.595 7.32,14.595 3.277,14.595 0,11.328 0,7.298 0,3.267 3.277,0 7.32,0" Height="14.595" Canvas.Left="0" Canvas.Top="0" Width="14.64">
                     <Path.Fill>

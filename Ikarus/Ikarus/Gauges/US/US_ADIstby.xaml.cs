@@ -116,7 +116,7 @@ namespace Ikarus
                                    RotateTransform rt = new RotateTransform();
                                    TranslateTransform tt = new TranslateTransform();
 
-                                   tt.Y = pitch * 270;
+                                   tt.Y = pitch * 242;
                                    rt.Angle = bank * 180;
                                    grp.Children.Add(tt);
                                    grp.Children.Add(rt);

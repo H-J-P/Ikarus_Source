@@ -12,7 +12,7 @@ namespace Ikarus
     /// <summary>
     /// Interaction logic for USADIstby.xaml
     /// </summary>
-    public partial class AJS37_ADIstby : UserControl, I_Ikarus
+    public partial class AJS37_ADI_stby : UserControl, I_Ikarus
     {
         private string dataImportID = "";
         private int windowID = 0;
@@ -32,7 +32,7 @@ namespace Ikarus
 
         RotateTransform rtFlagOff = new RotateTransform();
 
-        public AJS37_ADIstby()
+        public AJS37_ADI_stby()
         {
             InitializeComponent();
             if (MainWindow.editmode) MakeDraggable(this, this);
@@ -116,7 +116,7 @@ namespace Ikarus
                                    RotateTransform rt = new RotateTransform();
                                    TranslateTransform tt = new TranslateTransform();
 
-                                   tt.Y = pitch * -270;
+                                   tt.Y = pitch * (242 - 50);
                                    rt.Angle = bank * 180;
                                    grp.Children.Add(tt);
                                    grp.Children.Add(rt);
