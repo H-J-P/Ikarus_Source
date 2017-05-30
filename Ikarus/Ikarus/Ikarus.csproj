@@ -148,8 +148,8 @@
     <Compile Include="Gauges\AJS37\AJS37_FUEL_Q.xaml.cs">
       <DependentUpon>AJS37_FUEL_Q.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Gauges\AJS37\AJS37_HSI.xaml.cs">
-      <DependentUpon>AJS37_HSI.xaml</DependentUpon>
+    <Compile Include="Gauges\AJS37\AJS37_CI.xaml.cs">
+      <DependentUpon>AJS37_CI.xaml</DependentUpon>
     </Compile>
     <Compile Include="Gauges\AJS37\AJS37_KURS.xaml.cs">
       <DependentUpon>AJS37_KURS.xaml</DependentUpon>
@@ -1349,7 +1349,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Gauges\AJS37\AJS37_HSI.xaml">
+    <Page Include="Gauges\AJS37\AJS37_CI.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

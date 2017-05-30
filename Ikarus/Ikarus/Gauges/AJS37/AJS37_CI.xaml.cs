@@ -12,7 +12,7 @@ namespace Ikarus
     /// <summary>
     /// Interaktionslogik für AJS37_HSI.xaml
     /// </summary>
-    public partial class AJS37_HSI : UserControl, I_Ikarus
+    public partial class AJS37_CI : UserControl, I_Ikarus
     {
         private string dataImportID = "";
         private int windowID = 0;
@@ -32,6 +32,7 @@ namespace Ikarus
         private double rwr9 = 0.0;
         private double rwr3 = 0.0;
         private double warningFlag = 0.0;
+        private double radarRange = 0.0;
 
         private double lheading = 0.0;
         private double lcommandedCourse = 0.0;
@@ -44,12 +45,13 @@ namespace Ikarus
         private double lrwr9 = 0.0;
         private double lrwr3 = 0.0;
         private double lwarningFlag = 0.0;
+        private double lradarRange = 0.0;
 
         RotateTransform rtHeading = new RotateTransform();
         RotateTransform rtCommandedCourse = new RotateTransform();
         RotateTransform rtFixedCourseIndexer = new RotateTransform();
 
-        public AJS37_HSI()
+        public AJS37_CI()
         {
             InitializeComponent();
 
@@ -137,6 +139,7 @@ namespace Ikarus
                                if (vals.Length > 7) { rwr27 = Convert.ToDouble(vals[7], CultureInfo.InvariantCulture); }
                                if (vals.Length > 8) { rwr33 = Convert.ToDouble(vals[8], CultureInfo.InvariantCulture); }
                                if (vals.Length > 9) { warningFlag = Convert.ToDouble(vals[9], CultureInfo.InvariantCulture); }
+                               if (vals.Length > 10) { radarRange = Convert.ToDouble(vals[10], CultureInfo.InvariantCulture); }
 
                                if (lheading != heading)
                                {
@@ -169,6 +172,30 @@ namespace Ikarus
                                if (lwarningFlag != warningFlag)
                                    Warning_flag.Visibility = (warningFlag > 0.9) ? System.Windows.Visibility.Hidden : System.Windows.Visibility.Visible;
 
+                               if (lradarRange != radarRange)
+                               {
+                                   if (radarRange == 0.0)
+                                   {
+
+                                   }
+                                   if (radarRange == 0.1)
+                                   {
+
+                                   }
+                                   if (radarRange == 0.2)
+                                   {
+
+                                   }
+                                   if (radarRange == 0.3)
+                                   {
+
+                                   }
+                                   if (radarRange == 0.4)
+                                   {
+
+                                   }
+                               }
+
                                lheading = heading;
                                lcommandedCourse = commandedCourse;
                                lfixedCourseIndexer = fixedCourseIndexer;
@@ -180,6 +207,7 @@ namespace Ikarus
                                lrwr27 = rwr27;
                                lrwr33 = rwr33;
                                lwarningFlag = warningFlag;
+                               lradarRange = radarRange;
                            }
                            catch { return; }
                        }));
