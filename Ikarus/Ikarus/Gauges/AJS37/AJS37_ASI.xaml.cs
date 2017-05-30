@@ -47,7 +47,7 @@ namespace Ikarus
         {
             InitializeComponent();
 
-            ASI_OFF_flag.Visibility = System.Windows.Visibility.Hidden;
+            ASI_OFF_flag.Visibility = System.Windows.Visibility.Visible;
             Mach_OFF_flag.Visibility = System.Windows.Visibility.Hidden;
 
             if (MainWindow.editmode) MakeDraggable(this, this);
@@ -141,7 +141,6 @@ namespace Ikarus
                                if (vals.Length > 2) { mach10 = Convert.ToDouble(vals[2], CultureInfo.InvariantCulture); }
                                if (vals.Length > 3) { mach100 = Convert.ToDouble(vals[3], CultureInfo.InvariantCulture); }
                                if (vals.Length > 4) { asiOff = Convert.ToDouble(vals[4], CultureInfo.InvariantCulture); }
-                               if (vals.Length > 5) { machOff = Convert.ToDouble(vals[5], CultureInfo.InvariantCulture); }
 
                                // km/h  { 0,   150,   200,   231,   265,   300,   355,   385,    440,   490,    555,    700,    860,    950,   1040,   1150,   1260,   1370,   1500}
                                // m/s   { 0, 41.66, 55.56, 64.17, 73.61, 83.33, 98.61, 106.9, 122.22, 136.1, 154.16, 194.44, 239.00, 263.89, 288.89, 319.44, 350.00, 380.55, 416.66}
@@ -172,6 +171,8 @@ namespace Ikarus
                                {
                                    ttMach10.Y = mach10 * -315;
                                    MACH10.RenderTransform = ttMach10;
+
+                                   Mach_OFF_flag.Visibility = (mach10 >= 0.4) ? System.Windows.Visibility.Hidden : System.Windows.Visibility.Visible;
                                }
                                if (mach1 != lmach1)
                                {
@@ -181,8 +182,6 @@ namespace Ikarus
 
                                if (lasiOff != asiOff)
                                    ASI_OFF_flag.Visibility = (asiOff > 0.9) ? System.Windows.Visibility.Hidden : System.Windows.Visibility.Visible;
-                               if (lmachOff != machOff)
-                                   Mach_OFF_flag.Visibility = (machOff > 0.9) ? System.Windows.Visibility.Hidden : System.Windows.Visibility.Visible;
 
                                lias = ias;
                                lmach1 = mach1;
