@@ -214,6 +214,9 @@
     <Compile Include="Gauges\DisplaysAndMonitors\MonitorDotMatrix.xaml.cs">
       <DependentUpon>MonitorDotMatrix.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Gauges\Div\Test.xaml.cs">
+      <DependentUpon>Test.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Gauges\F5E\F5E_UHFPresetChannel.xaml.cs">
       <DependentUpon>F5E_UHFPresetChannel.xaml</DependentUpon>
     </Compile>
@@ -1434,6 +1437,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Gauges\DisplaysAndMonitors\MonitorDotMatrix.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\Div\Test.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -3182,7 +3189,6 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Gauges\Div\" />
     <Folder Include="Gauges\M-2000C\" />
   </ItemGroup>
   <ItemGroup>

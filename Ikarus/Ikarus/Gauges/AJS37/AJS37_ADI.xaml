@@ -53,7 +53,7 @@
             </Canvas>
             <Canvas x:Name="banksteering"
                 Canvas.Left="89"
-                Canvas.Top="11"
+                Canvas.Top="-20"
                 Width="39.76"
                 Height="218.313"
                 RenderTransformOrigin="0.5,0.5">
@@ -66,7 +66,7 @@
                 <Path Canvas.Left="36.924"
                     Canvas.Top="92.312"
                     Width="2.834"
-                    Height="106.001"
+                    Height="116.001"
                     Data="M0,126.001L2.834,126.001 2.834,0 0,0z"
                     Fill="#FFE8D43B" />
             </Canvas>
