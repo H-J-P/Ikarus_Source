@@ -121,6 +121,9 @@
     <Compile Include="Gauges\AJS37\AJS37_ACC.xaml.cs">
       <DependentUpon>AJS37_ACC.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Gauges\AJS37\AJS37_ALT.xaml.cs">
+      <DependentUpon>AJS37_ALT.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Gauges\AJS37\AJS37_ALT_stby.xaml.cs">
       <DependentUpon>AJS37_ALT_stby.xaml</DependentUpon>
     </Compile>
@@ -1313,6 +1316,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Gauges\AJS37\AJS37_ACC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Gauges\AJS37\AJS37_ALT.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

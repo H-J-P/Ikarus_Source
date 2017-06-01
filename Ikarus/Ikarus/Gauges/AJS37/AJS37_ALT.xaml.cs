@@ -10,9 +10,9 @@ using System.Globalization;
 namespace Ikarus
 {
     /// <summary>
-    /// Interaktionslogik für AJS37_ALT_stby.xaml
+    /// Interaktionslogik für AJS37_ALT.xaml
     /// </summary>
-    public partial class AJS37_ALT_stby : UserControl, I_Ikarus
+    public partial class AJS37_ALT : UserControl, I_Ikarus
     {
         private string dataImportID = "";
         private int windowID = 0;
@@ -42,18 +42,16 @@ namespace Ikarus
         double lpressure_2 = 0.0;
         double lpressure_3 = 0.0;
 
-        public AJS37_ALT_stby()
+        public AJS37_ALT()
         {
             InitializeComponent();
-
             if (MainWindow.editmode) MakeDraggable(this, this);
 
-            rtalt100FP.Angle =  180;
+            rtalt100FP.Angle = 180;
             Altimeter_100.RenderTransform = rtalt100FP;
-            rtalt1000FP.Angle =  180;
+            rtalt1000FP.Angle = 180;
             Altimeter_1000.RenderTransform = rtalt1000FP;
         }
-
         public void SetID(string _dataImportID)
         {
             dataImportID = _dataImportID;
