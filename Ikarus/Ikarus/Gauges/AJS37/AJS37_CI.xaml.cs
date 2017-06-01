@@ -23,8 +23,6 @@ namespace Ikarus
 
         private double heading = 0.0;
         private double commandedCourse = 0.0;
-        private double fixedCourseIndexer = 0.0;
-
         private double rwr33 = 0.0;
         private double rwr27 = 0.0;
         private double rwr21 = 0.0;
@@ -36,8 +34,6 @@ namespace Ikarus
 
         private double lheading = 0.0;
         private double lcommandedCourse = 0.0;
-        private double lfixedCourseIndexer = 0.0;
-
         private double lrwr33 = 0.0;
         private double lrwr27 = 0.0;
         private double lrwr21 = 0.0;
@@ -49,7 +45,6 @@ namespace Ikarus
 
         RotateTransform rtHeading = new RotateTransform();
         RotateTransform rtCommandedCourse = new RotateTransform();
-        RotateTransform rtFixedCourseIndexer = new RotateTransform();
 
         public AJS37_CI()
         {
@@ -65,6 +60,11 @@ namespace Ikarus
             RWR_33.Visibility = System.Windows.Visibility.Hidden;
             Warning_flag.Visibility =  System.Windows.Visibility.Visible;
             ALTITUDE_WARNING.Visibility = System.Windows.Visibility.Hidden;
+
+            Range15.Visibility = System.Windows.Visibility.Hidden;
+            Range30.Visibility = System.Windows.Visibility.Hidden;
+            Range60.Visibility = System.Windows.Visibility.Hidden;
+            Range120.Visibility = System.Windows.Visibility.Hidden;
         }
 
         public void SetID(string _dataImportID)
@@ -131,15 +131,14 @@ namespace Ikarus
 
                                if (vals.Length > 0) { heading = Convert.ToDouble(vals[0], CultureInfo.InvariantCulture); }
                                if (vals.Length > 1) { commandedCourse = Convert.ToDouble(vals[1], CultureInfo.InvariantCulture); }
-                               if (vals.Length > 2) { fixedCourseIndexer = Convert.ToDouble(vals[2], CultureInfo.InvariantCulture); }
-                               if (vals.Length > 3) { rwr3 = Convert.ToDouble(vals[3], CultureInfo.InvariantCulture); }
-                               if (vals.Length > 4) { rwr9 = Convert.ToDouble(vals[4], CultureInfo.InvariantCulture); }
-                               if (vals.Length > 5) { rwr15 = Convert.ToDouble(vals[5], CultureInfo.InvariantCulture); }
-                               if (vals.Length > 6) { rwr21 = Convert.ToDouble(vals[6], CultureInfo.InvariantCulture); }
-                               if (vals.Length > 7) { rwr27 = Convert.ToDouble(vals[7], CultureInfo.InvariantCulture); }
-                               if (vals.Length > 8) { rwr33 = Convert.ToDouble(vals[8], CultureInfo.InvariantCulture); }
-                               if (vals.Length > 9) { warningFlag = Convert.ToDouble(vals[9], CultureInfo.InvariantCulture); }
-                               if (vals.Length > 10) { radarRange = Convert.ToDouble(vals[10], CultureInfo.InvariantCulture); }
+                               if (vals.Length > 2) { rwr3 = Convert.ToDouble(vals[2], CultureInfo.InvariantCulture); }
+                               if (vals.Length > 3) { rwr9 = Convert.ToDouble(vals[3], CultureInfo.InvariantCulture); }
+                               if (vals.Length > 4) { rwr15 = Convert.ToDouble(vals[4], CultureInfo.InvariantCulture); }
+                               if (vals.Length > 5) { rwr21 = Convert.ToDouble(vals[5], CultureInfo.InvariantCulture); }
+                               if (vals.Length > 6) { rwr27 = Convert.ToDouble(vals[6], CultureInfo.InvariantCulture); }
+                               if (vals.Length > 7) { rwr33 = Convert.ToDouble(vals[7], CultureInfo.InvariantCulture); }
+                               if (vals.Length > 8) { warningFlag = Convert.ToDouble(vals[8], CultureInfo.InvariantCulture); }
+                               if (vals.Length > 9) { radarRange = Convert.ToDouble(vals[9], CultureInfo.InvariantCulture); }
 
                                if (lheading != heading)
                                {
@@ -150,11 +149,6 @@ namespace Ikarus
                                {
                                    rtCommandedCourse.Angle = commandedCourse * 360;
                                    Commanded_Course.RenderTransform = rtCommandedCourse;
-                               }
-                               if (lfixedCourseIndexer != fixedCourseIndexer)
-                               {
-                                   rtFixedCourseIndexer.Angle = fixedCourseIndexer * 360;
-                                   Fixed_course_indexer.RenderTransform = rtFixedCourseIndexer;
                                }
 
                                if (lrwr3 != rwr3)
@@ -174,31 +168,45 @@ namespace Ikarus
 
                                if (lradarRange != radarRange)
                                {
-                                   if (radarRange == 0.0)
+                                   if (radarRange >= 0.0 && radarRange < 0.1)
                                    {
-
+                                       Range15.Visibility = System.Windows.Visibility.Hidden;
+                                       Range30.Visibility = System.Windows.Visibility.Hidden;
+                                       Range60.Visibility = System.Windows.Visibility.Hidden;
+                                       Range120.Visibility = System.Windows.Visibility.Hidden;
                                    }
-                                   if (radarRange == 0.1)
+                                   if (radarRange >= 0.1 && radarRange < 0.2)
                                    {
-
+                                       Range15.Visibility = System.Windows.Visibility.Visible;
+                                       Range30.Visibility = System.Windows.Visibility.Hidden;
+                                       Range60.Visibility = System.Windows.Visibility.Hidden;
+                                       Range120.Visibility = System.Windows.Visibility.Hidden;
                                    }
-                                   if (radarRange == 0.2)
+                                   if (radarRange >= 0.2 && radarRange < 0.3)
                                    {
-
+                                       Range15.Visibility = System.Windows.Visibility.Hidden;
+                                       Range30.Visibility = System.Windows.Visibility.Visible;
+                                       Range60.Visibility = System.Windows.Visibility.Hidden;
+                                       Range120.Visibility = System.Windows.Visibility.Hidden;
                                    }
-                                   if (radarRange == 0.3)
+                                   if (radarRange >= 0.3 && radarRange < 0.4)
                                    {
-
+                                       Range15.Visibility = System.Windows.Visibility.Hidden;
+                                       Range30.Visibility = System.Windows.Visibility.Hidden;
+                                       Range60.Visibility = System.Windows.Visibility.Visible;
+                                       Range120.Visibility = System.Windows.Visibility.Hidden;
                                    }
-                                   if (radarRange == 0.4)
+                                   if (radarRange >= 0.4 && radarRange < 0.5)
                                    {
-
+                                       Range15.Visibility = System.Windows.Visibility.Hidden;
+                                       Range30.Visibility = System.Windows.Visibility.Hidden;
+                                       Range60.Visibility = System.Windows.Visibility.Hidden;
+                                       Range120.Visibility = System.Windows.Visibility.Visible;
                                    }
                                }
 
                                lheading = heading;
                                lcommandedCourse = commandedCourse;
-                               lfixedCourseIndexer = fixedCourseIndexer;
 
                                lrwr3 = rwr3;
                                lrwr9 = rwr9;
