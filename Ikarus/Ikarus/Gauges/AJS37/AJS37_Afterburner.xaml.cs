@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Windows.Controls;
 using System.Data;
 using System.IO;
@@ -10,109 +10,41 @@ using System.Globalization;
 namespace Ikarus
 {
     /// <summary>
-    /// Interaction logic for DisplayTest.xaml
+    /// Interaction logic for AJS37_Afterburner.xaml
     /// </summary>
-    public partial class Display7Segment : UserControl, I_Ikarus
+    public partial class AJS37_Afterburner : UserControl, I_Ikarus
     {
-        private DataRow[] dataRows = new DataRow[] { };
         private string dataImportID = "";
         private int windowID = 0;
         private string[] vals = new string[] { };
-        private const string font = "Digital-7 Mono";
-        private const string defaultFontColor = "FF9430"; // Hexdezimal Color Value (Red)
-        private const string defaultErrorText = "ERROR";
-        private string errorText = "";
-        private string fontColor = defaultFontColor;
-        private string numberChars = "";
-        private int numberOfSegments = 0;
-        private string textForDisplay = "";
-        private double value = 0.0;
 
         public void SetWindowID(int _windowID) { windowID = _windowID; }
         public int GetWindowID() { return windowID; }
 
-        public Display7Segment()
+        private double readValue = 0.0;
+        private double lreadValue = 0.0;
+
+        public AJS37_Afterburner()
         {
             InitializeComponent();
-            if (MainWindow.editmode) MakeDraggable(this, this);
-            Segments.Text = "";
-        }
 
+            if (MainWindow.editmode) MakeDraggable(this, this);
+
+            Burner1.Visibility = System.Windows.Visibility.Hidden;
+            Burner2.Visibility = System.Windows.Visibility.Hidden;
+            Burner3.Visibility = System.Windows.Visibility.Hidden;
+        }
         public void SetID(string _dataImportID)
         {
             dataImportID = _dataImportID;
             LoadBmaps();
-            InitialDisplay();
         }
 
         public string GetID() { return dataImportID; }
 
-        private void InitialDisplay()
-        {
-            dataRows = MainWindow.dtInstrumentFunctions.Select("IDInst=" + dataImportID); // instrument functions
-
-            if (dataRows.Length > 0)
-            {
-                fontColor = dataRows[0]["Input"].ToString().ToUpper();
-                numberChars = dataRows[0]["Output"].ToString();
-
-                if (fontColor.Length != 6)
-                {
-                    fontColor = defaultFontColor;
-                }
-                else
-                {
-                    if (!IsHexString(fontColor))
-                    {
-                        fontColor = defaultFontColor;
-                        errorText = defaultErrorText;
-                    }
-                }
-
-                if (!int.TryParse(numberChars, out numberOfSegments)) { numberOfSegments = 5; }
-                //errorText = "Init1";
-            }
-            else
-            {
-                fontColor = defaultFontColor;
-                numberOfSegments = 5;
-                errorText = defaultErrorText;
-            }
-
-            FontFamily fontFamily = new FontFamily(font);
-            string[] checkFontFamily = new string[1] { "" };
-            fontFamily.FamilyNames.Values.CopyTo(checkFontFamily, 0);
-
-            if (checkFontFamily[0] != font) // verify loaded font
-            {
-                Segments.FontFamily = new FontFamily("Courier New"); // switch to a default font
-                Segments.FontSize = 40;
-                Segments.Width = 24;
-            }
-            Segments.Foreground = (SolidColorBrush)new BrushConverter().ConvertFromString("#FF" + fontColor);
-
-            PathBackground.Width = PathBackground.Width + (Segments.Width * numberOfSegments);// - Segments.Width;
-            PathBorder.Width = PathBorder.Width + (Segments.Width * numberOfSegments);// - Segments.Width;
-            this.Width = PathBackground.Width + 12; // Segments.Width / 2;
-            Segments.Width = PathBorder.Width;
-
-            Segments.Text = errorText;
-        }
-
-        public bool IsHexString(string value)
-        {
-            string hx = "0123456789ABCDEF";
-            foreach (char c in value.ToUpper())
-            {
-                if (!hx.Contains(char.ToString(c)))
-                    return false;
-            }
-            return true;
-        }
-
         private void LoadBmaps()
         {
-            dataRows = MainWindow.dtInstruments.Select("IDInst=" + dataImportID);
+            DataRow[] dataRows = MainWindow.dtInstruments.Select("IDInst=" + dataImportID);
 
             if (dataRows.Length > 0)
             {
@@ -152,7 +84,7 @@ namespace Ikarus
 
         public double GetSize()
         {
-            return PathBackground.Width; // Width
+            return 255; // Width
         }
 
         public void UpdateGauge(string strData)
@@ -164,23 +96,15 @@ namespace Ikarus
                            {
                                vals = strData.Split(';');
 
-                               if (vals.Length > 0) { textForDisplay = vals[0]; }
+                               if (vals.Length > 0) { readValue = Convert.ToDouble(vals[0], CultureInfo.InvariantCulture); }
 
-                               if (numberOfSegments == 1)
+                               if (lreadValue != readValue)
                                {
-                                   value = Convert.ToDouble(vals[0], CultureInfo.InvariantCulture);
-
-                                   if (value < 1)
-                                   {
-                                       value *= 10;
-                                       textForDisplay = value.ToString().Substring(0, numberOfSegments);
-                                   }
+                                   Burner1.Visibility = (readValue >= 0.3 ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden);
+                                   Burner2.Visibility = (readValue >= 0.6 ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden);
+                                   Burner3.Visibility = (readValue >= 0.9 ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden);
                                }
-
-                               if (textForDisplay.Length > numberOfSegments)
-                                   textForDisplay = textForDisplay.Substring(0, numberOfSegments);
-
-                               Segments.Text = textForDisplay;
+                               lreadValue = readValue;
                            }
                            catch { return; }
                        }));
@@ -222,5 +146,3 @@ namespace Ikarus
         }
     }
 }
-
-

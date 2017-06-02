@@ -5,6 +5,7 @@ using System.IO;
 using System.Windows.Media.Imaging;
 using System.Windows.Media;
 using System.Windows.Threading;
+using System.Globalization;
 
 namespace Ikarus
 {
@@ -24,6 +25,7 @@ namespace Ikarus
         private string numberChars = "";
         private int numberOfSegments = 0;
         private string textForDisplay = "";
+        private double value = 0.0;
 
         public void SetWindowID(int _windowID) { windowID = _windowID; }
         public int GetWindowID() { return windowID; }
@@ -151,6 +153,17 @@ namespace Ikarus
                                vals = strData.Split(';');
 
                                if (vals.Length > 0) { textForDisplay = vals[0]; }
+
+                               if (numberOfSegments == 1)
+                               {
+                                   value = Convert.ToDouble(vals[0], CultureInfo.InvariantCulture);
+
+                                   if (value < 1)
+                                   {
+                                       value *= 10;
+                                       textForDisplay = value.ToString().Substring(0, numberOfSegments);
+                                   }
+                               }
 
                                if (textForDisplay.Length > numberOfSegments)
                                    textForDisplay = textForDisplay.Substring(0, numberOfSegments);
