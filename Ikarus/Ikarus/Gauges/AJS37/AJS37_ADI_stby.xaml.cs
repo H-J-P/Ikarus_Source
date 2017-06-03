@@ -122,8 +122,8 @@ namespace Ikarus
                                    grp.Children.Add(rt);
                                    bank_pitch.RenderTransform = grp;
 
-                                   //RotateTransform rtTurn = new RotateTransform();
-                                   //rtTurn.Angle = turn * 45;
+                                   RotateTransform rtTurn = new RotateTransform();
+                                   rtTurn.Angle = bank * -45;
                                    turn.RenderTransform = rt;
                                }
 

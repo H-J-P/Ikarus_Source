@@ -142,7 +142,7 @@ namespace Ikarus
                                {
                                    // Onput = { -2.0,0.0, 9.0}  
                                    // Input = { -0.3,0.0, 0.8}
-                                   // °          -60,  0, 270
+                                   // °          -60, 30, 270
                                    for (int n = 0; n < (valueScaleIndex - 1); n++)
                                    {
                                        if (acceleration >= valueScale[n] && acceleration <= valueScale[n + 1])
@@ -153,19 +153,7 @@ namespace Ikarus
                                    }
                                    ACCELEROMETER.RenderTransform = rtAcceleration;
                                }
-                               //if (laccelerationMax != accelerationMax)
-                               //{
-                               //    rtAccelerationMax.Angle = (accelerationMax * 270);
-                               //    MAX_G_needle.RenderTransform = rtAccelerationMax;
-                               //}
-                               //if (laccelerationMin != accelerationMin)
-                               //{
-                               //    rtAccelerationMin.Angle = (accelerationMin * -60);
-                               //    MIN_G_needle.RenderTransform = rtAccelerationMin;
-                               //}
                                lacceleration = acceleration;
-                               //laccelerationMax = accelerationMax;
-                               //laccelerationMin = accelerationMin;
                            }
                            catch { return; }
                        }));
