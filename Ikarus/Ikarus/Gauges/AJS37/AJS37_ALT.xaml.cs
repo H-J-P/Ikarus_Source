@@ -34,6 +34,7 @@ namespace Ikarus
         double pressure_1 = 0.0;
         double pressure_2 = 0.0;
         double pressure_3 = 0.0;
+        double flagOff = 0.0;
 
         double lalt100FP = 0.0;
         double lalt1000FP = 0.0;
@@ -41,16 +42,20 @@ namespace Ikarus
         double lpressure_1 = 0.0;
         double lpressure_2 = 0.0;
         double lpressure_3 = 0.0;
+        double lflagOff = 0.0;
 
         public AJS37_ALT()
         {
             InitializeComponent();
+
             if (MainWindow.editmode) MakeDraggable(this, this);
 
             rtalt100FP.Angle = 180;
             Altimeter_100.RenderTransform = rtalt100FP;
             rtalt1000FP.Angle = 180;
             Altimeter_1000.RenderTransform = rtalt1000FP;
+
+            Off_Flag.Visibility = System.Windows.Visibility.Visible;
         }
         public void SetID(string _dataImportID)
         {
@@ -120,6 +125,7 @@ namespace Ikarus
                                if (vals.Length > 3) { pressure_1 = Convert.ToDouble(vals[3], CultureInfo.InvariantCulture); }
                                if (vals.Length > 4) { pressure_2 = Convert.ToDouble(vals[4], CultureInfo.InvariantCulture); }
                                if (vals.Length > 5) { pressure_3 = Convert.ToDouble(vals[5], CultureInfo.InvariantCulture); }
+                               if (vals.Length > 6) { flagOff = Convert.ToDouble(vals[6], CultureInfo.InvariantCulture); }
                            }
                            catch { return; }
 
@@ -159,12 +165,17 @@ namespace Ikarus
                                ALT_P_1000.RenderTransform = ttpressure_3;
                            }
 
+                           if (lflagOff != flagOff)
+                           {
+                               Off_Flag.Visibility = (flagOff == 0.0 ? System.Windows.Visibility.Hidden : System.Windows.Visibility.Visible);
+                           }
                            lalt100FP = alt100FP;
                            lalt1000FP = alt1000FP;
                            lpressure_0 = pressure_0;
                            lpressure_1 = pressure_1;
                            lpressure_2 = pressure_2;
                            lpressure_3 = pressure_3;
+                           lflagOff = flagOff;
                        }));
         }
 
