@@ -42,6 +42,7 @@ namespace Ikarus
         private static DataRow[] instanceRows = new DataRow[] { };
         private static DataRow[] instancePosRows = new DataRow[] { };
         private static DataRow[] instanceFctRows = new DataRow[] { };
+        private static DataRow[] dataRows = new DataRow[] { };
         private static double leftPos = 0.0;
         private static double topPos = 0.0;
 
@@ -49,7 +50,6 @@ namespace Ikarus
         private static TranslateTransform transformTrans = new TranslateTransform();
         private static ScaleTransform transformScale = new ScaleTransform();
         private static RotateTransform transformRotate = new RotateTransform();
-        private static DataRow[] dataRows = new DataRow[] { };
         private static Point resultPoint = new Point();
         private static double scrollWeel = 0.0;
         private int windowID = 0;
@@ -349,7 +349,7 @@ namespace Ikarus
             //MainWindow.cockpitWindowActiv = false;
             try
             {
-                for (int n= 0; n < accessories.Count; n++)
+                for (int n = 0; n < accessories.Count; n++)
                 {
                     accessories[n] = null;
                 }
@@ -557,6 +557,23 @@ namespace Ikarus
                        }));
         }
 
+        public static void UpdateInOut(string idInst, string idFct, string inValue, string outValue)
+        {
+            if (!MainWindow.editmode) return;
+
+            try
+            {
+                dataRows = MainWindow.dtInstrumentFunctions.Select("IDInst=" + idInst + " AND IDFct=" + idFct);
+
+                if (dataRows.Length > 0)
+                {
+                    dataRows[0]["In"] = inValue;
+                    dataRows[0]["Out"] = outValue;
+                }
+            }
+            catch (Exception e) { ImportExport.LogMessage("UpdateInstrumentsFunctionInOut .. " + e.ToString()); }
+        }
+
         public void UpdatePosition(Point coordinates, string nameID, DataTable tablename, string ID, int deltaSize = 0)
         {
             try
@@ -663,9 +680,9 @@ namespace Ikarus
             InvalidateVisual();
         }
 
-        [DllImport("user32.dll")]
-        [return: MarshalAs(UnmanagedType.Bool)]
-        public static extern bool SetWindowPos(IntPtr hWnd, IntPtr hWndInsertAfter, int X, int Y, int cx, int cy, uint uFlags);
+        //[DllImport("user32.dll")]
+        //[return: MarshalAs(UnmanagedType.Bool)]
+        //public static extern bool SetWindowPos(IntPtr hWnd, IntPtr hWndInsertAfter, int X, int Y, int cx, int cy, uint uFlags);
 
         #endregion
 

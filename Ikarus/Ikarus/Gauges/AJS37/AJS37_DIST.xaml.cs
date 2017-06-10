@@ -142,6 +142,11 @@ namespace Ikarus
                                        }
                                    }
                                    Distanz.RenderTransform = rtDistance;
+
+                                   if (MainWindow.editmode)
+                                   {
+                                       Cockpit.UpdateInOut(dataImportID, "1", distance.ToString(), Convert.ToInt32(rtDistance.Angle).ToString());
+                                   }
                                }
                                if (lmslFlag != mslFlag)
                                    MLS_flag.Visibility = (mslFlag > 0.9) ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;

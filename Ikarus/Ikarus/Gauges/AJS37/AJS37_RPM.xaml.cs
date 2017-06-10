@@ -137,6 +137,11 @@ namespace Ikarus
                                        }
                                    }
                                    RPM10.RenderTransform = rtRpm10;
+
+                                   if (MainWindow.editmode)
+                                   {
+                                       Cockpit.UpdateInOut(dataImportID, "1", rpm10.ToString(), Convert.ToInt32(rtRpm10.Angle).ToString());
+                                   }
                                }
                                if (lrpm1 != rpm1)
                                {

@@ -180,6 +180,10 @@ namespace Ikarus
                                            break;
                                        }
                                    }
+                                   if (MainWindow.editmode)
+                                   {
+                                       Cockpit.UpdateInOut(dataImportID, "2", heading.ToString(), Convert.ToInt32(headingAngle).ToString());
+                                   }
                                }
 
                                if (lpitch != pitch || lheading != heading || lbank != bank)

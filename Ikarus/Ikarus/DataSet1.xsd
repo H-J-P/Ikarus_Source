@@ -44,6 +44,8 @@
               <xs:element name="Ascii" msprop:Generator_ColumnVarNameInTable="columnAscii" msprop:Generator_ColumnPropNameInRow="Ascii" msprop:Generator_ColumnPropNameInTable="AsciiColumn" msprop:Generator_UserColumnName="Ascii" type="xs:boolean" default="false" minOccurs="0" />
               <xs:element name="AsciiValue" msprop:Generator_ColumnVarNameInTable="columnAsciiValue" msprop:Generator_ColumnPropNameInRow="AsciiValue" msprop:Generator_ColumnPropNameInTable="AsciiValueColumn" msprop:Generator_UserColumnName="AsciiValue" type="xs:string" default=" " minOccurs="0" />
               <xs:element name="OldAsciiValue" msprop:Generator_ColumnVarNameInTable="columnOldAsciiValue" msprop:Generator_ColumnPropNameInRow="OldAsciiValue" msprop:Generator_ColumnPropNameInTable="OldAsciiValueColumn" msprop:Generator_UserColumnName="OldAsciiValue" type="xs:string" default=" " minOccurs="0" />
+              <xs:element name="In" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInRow="In" msprop:Generator_ColumnVarNameInTable="columnIn" msprop:Generator_ColumnPropNameInTable="InColumn" msprop:Generator_UserColumnName="In" type="xs:string" default="-" minOccurs="0" />
+              <xs:element name="Out" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInRow="Out" msprop:Generator_ColumnVarNameInTable="columnOut" msprop:Generator_ColumnPropNameInTable="OutColumn" msprop:Generator_UserColumnName="Out" type="xs:string" default="-" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

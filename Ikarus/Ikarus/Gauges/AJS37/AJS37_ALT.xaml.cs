@@ -167,7 +167,7 @@ namespace Ikarus
 
                            if (lflagOff != flagOff)
                            {
-                               Off_Flag.Visibility = (flagOff == 0.0 ? System.Windows.Visibility.Hidden : System.Windows.Visibility.Visible);
+                               Off_Flag.Visibility = (flagOff == 1.0 ? System.Windows.Visibility.Hidden : System.Windows.Visibility.Visible);
                            }
                            lalt100FP = alt100FP;
                            lalt1000FP = alt1000FP;

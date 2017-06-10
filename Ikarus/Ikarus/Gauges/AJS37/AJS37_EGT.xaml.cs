@@ -146,6 +146,11 @@ namespace Ikarus
                                    }
                                    //rtEgt.Angle = egt * 222;
                                    EGT1.RenderTransform = rtEgt;
+
+                                   if (MainWindow.editmode)
+                                   {
+                                       Cockpit.UpdateInOut(dataImportID, "1", egt.ToString(), Convert.ToInt32(rtEgt.Angle).ToString());
+                                   }
                                }
                                if (legtOff != egtOff)
                                    EGT_OFF_flag.Visibility = (egtOff > 0.9) ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;

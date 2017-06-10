@@ -134,6 +134,11 @@ namespace Ikarus
                                        }
                                    }
                                    EPR1.RenderTransform = rtEPR;
+
+                                   if (MainWindow.editmode)
+                                   {
+                                       Cockpit.UpdateInOut(dataImportID, "1", readValue.ToString(), Convert.ToInt32(rtEPR.Angle).ToString());
+                                   }
                                }
                                lreadValue = readValue;
                            }

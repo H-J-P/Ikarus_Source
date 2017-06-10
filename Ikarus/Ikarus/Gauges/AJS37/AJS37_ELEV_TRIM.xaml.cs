@@ -127,6 +127,11 @@ namespace Ikarus
                                        }
                                    }
                                    ELEV_TRIM.RenderTransform = rtElevTrim;
+
+                                   if (MainWindow.editmode)
+                                   {
+                                       Cockpit.UpdateInOut(dataImportID, "1", readValue.ToString(), Convert.ToInt32(rtElevTrim.Angle).ToString());
+                                   }
                                }
                                lreadValue = readValue;
                            }

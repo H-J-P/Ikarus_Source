@@ -152,6 +152,11 @@ namespace Ikarus
                                        }
                                    }
                                    ACCELEROMETER.RenderTransform = rtAcceleration;
+
+                                   if (MainWindow.editmode)
+                                   {
+                                       Cockpit.UpdateInOut(dataImportID, "1", acceleration.ToString(), Convert.ToInt32(rtAcceleration.Angle).ToString());
+                                   }
                                }
                                lacceleration = acceleration;
                            }

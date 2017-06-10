@@ -198,10 +198,16 @@
                                 </DataGridTextColumn>
                                 <DataGridTextColumn Width="200"
                                                     Binding="{Binding Input}"
-                                                    Header="Input" />
+                                                    Header="Inputs" />
                                 <DataGridTextColumn Width="200"
                                                     Binding="{Binding Output}"
-                                                    Header="Output" />
+                                                    Header="Outputs" />
+                                <DataGridTextColumn Width="50"
+                                                    Binding="{Binding In}"
+                                                    Header="In" />
+                                <DataGridTextColumn Width="40"
+                                                    Binding="{Binding Out}"
+                                                    Header="Out °" />
                                 <DataGridTemplateColumn Header="Test">
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
@@ -540,22 +546,21 @@
                          Header="Configuration">
                     <Grid>
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="151*" />
-                            <ColumnDefinition Width="881*" />
+                            <ColumnDefinition Width="37*" />
+                            <ColumnDefinition Width="235*" />
                         </Grid.ColumnDefinitions>
                         <Rectangle Grid.ColumnSpan="2"
                                    Height="42"
                                    Margin="10,59,207,0"
                                    VerticalAlignment="Top"
                                    Stroke="#FFAFAC68" />
-                        <Label Width="131"
+                        <Label
                                Height="24"
-                               Margin="0,106,10,0"
-                               HorizontalAlignment="Right"
+                               Margin="7,106,0,0"
                                VerticalAlignment="Top"
                                Content="Cockpit Panels"
                                FontSize="18"
-                               Foreground="#FFF9F9F9" />
+                               Foreground="#FFF9F9F9" HorizontalAlignment="Left" Width="131" />
                         <Label Width="110"
                                Height="24"
                                Margin="10,30,0,0"
@@ -838,7 +843,7 @@
                                   Click="checkBoxLogSwitches_Click"
                                   Content="Log Switches only"
                                   Foreground="#FFF9F9F9" />
-                        <Label x:Name="labelLight" Content="Light Color ADI" VerticalAlignment="Bottom" Grid.Column="1" Margin="0,0,79,215" Foreground="#FFECE8E8" HorizontalAlignment="Right" Width="81"/>
+                        <Label x:Name="labelLight" Content="Light Color ADI" VerticalAlignment="Bottom" Grid.Column="1" Margin="0,0,79,215" Foreground="#FFECE8E8" HorizontalAlignment="Right" Width="81" Height="16"/>
                         <TextBox x:Name="textBoxLightColor" Text="#95E295" TextWrapping="Wrap" Margin="0,0,79,187" Grid.Column="1" HorizontalAlignment="Right" Width="81" Height="23" VerticalAlignment="Bottom"/>
                         <CheckBox Name="checkBoxCleanMemory"
                                   Grid.Column="1"
@@ -885,14 +890,12 @@
                 </TabItem>
             </TabControl>
             <Button Name="Save"
-                    Width="90"
                     Height="24"
-                    Margin="0,0,3,5"
-                    HorizontalAlignment="Right"
+                    Margin="1029,0,0,5"
                     VerticalAlignment="Bottom"
                     Click="Button_Save_Click"
                     Content="Save"
-                    Foreground="#FFFDD650">
+                    Foreground="#FFFDD650" HorizontalAlignment="Left" Width="90">
                 <Button.Background>
                     <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
                         <GradientStop Offset="0" Color="#FFEEEEEE" />
@@ -903,24 +906,24 @@
             <Button Name="Load"
                     Width="90"
                     Height="24"
-                    Margin="0,0,93,5"
-                    HorizontalAlignment="Right"
+                    Margin="939,0,0,5"
+                    HorizontalAlignment="Left"
                     VerticalAlignment="Bottom"
                     Click="Button_Load_Click"
                     Content="Load" />
             <Button Name="buttonShow"
                     Width="90"
                     Height="24"
-                    Margin="0,0,188,5"
-                    HorizontalAlignment="Right"
+                    Margin="844,0,0,5"
+                    HorizontalAlignment="Left"
                     VerticalAlignment="Bottom"
                     Click="Button_Show_Click"
                     Content="Show Cockpit" />
             <Button Name="buttonExit"
                     Width="90"
                     Height="24"
-                    Margin="0,0,278,5"
-                    HorizontalAlignment="Right"
+                    Margin="754,0,0,5"
+                    HorizontalAlignment="Left"
                     VerticalAlignment="Bottom"
                     Click="Button_Exit_Click"
                     Content="Exit" />
@@ -961,7 +964,7 @@
                    Height="19"
                    Margin="466,0,488,10"
                    VerticalAlignment="Bottom"
-                   Content="(C) H.J.P. 2017  Version 1.2.0.1"
+                   Content="(C) H.J.P. 2017  Version 1.2.0.3"
                    Foreground="#FFD8BC05" />
             <Label Name="lbEditMode"
                    Width="72"

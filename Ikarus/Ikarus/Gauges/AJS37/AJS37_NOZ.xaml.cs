@@ -127,6 +127,11 @@ namespace Ikarus
                                        }
                                    }
                                    NOZ1.RenderTransform = rtNozzle;
+
+                                   if (MainWindow.editmode)
+                                   {
+                                       Cockpit.UpdateInOut(dataImportID, "1", readValue.ToString(), Convert.ToInt32(rtNozzle.Angle).ToString());
+                                   }
                                }
                                lreadValue = readValue;
                            }
