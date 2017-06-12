@@ -127,6 +127,10 @@ namespace Ikarus
                                            break;
                                        }
                                    }
+                                   if (MainWindow.editmode)
+                                   {
+                                       Cockpit.UpdateInOut(dataImportID, "1", oxygenPressure.ToString(), Convert.ToInt32(rtOxygenPressure.Angle).ToString());
+                                   }
                                    Lw_O2P_Needle.RenderTransform = rtOxygenPressure;
                                }
                                loxygenPressure = oxygenPressure;

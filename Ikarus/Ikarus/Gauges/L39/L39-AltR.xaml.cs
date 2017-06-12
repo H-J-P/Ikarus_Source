@@ -148,6 +148,10 @@ namespace Ikarus
                                            break;
                                        }
                                    }
+                                   if (MainWindow.editmode)
+                                   {
+                                       Cockpit.UpdateInOut(dataImportID, "1", rAltimeter.ToString(), Convert.ToInt32(rtrAltimeter.Angle).ToString());
+                                   }
                                    RV_5_RALT.RenderTransform = rtrAltimeter;
                                }
 

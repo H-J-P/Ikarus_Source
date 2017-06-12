@@ -155,6 +155,10 @@ namespace Ikarus
                                            break;
                                        }
                                    }
+                                   if (MainWindow.editmode)
+                                   {
+                                       Cockpit.UpdateInOut(dataImportID, "1", baroPressure.ToString(), Convert.ToInt32(rtBaroPressure.Angle).ToString());
+                                   }
                                    Pressure.RenderTransform = rtBaroPressure;
                                }
                                laltituteKM = altituteKM;
@@ -192,8 +196,6 @@ namespace Ikarus
                 trUsercontrol.X += currentPoint.X - originalPoint.X;
                 trUsercontrol.Y += currentPoint.Y - originalPoint.Y;
                 moveThisElement.RenderTransform = trUsercontrol;
-
-
             };
         }
 

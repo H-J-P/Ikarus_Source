@@ -132,6 +132,10 @@ namespace Ikarus
                                            break;
                                        }
                                    }
+                                   if (MainWindow.editmode)
+                                   {
+                                       Cockpit.UpdateInOut(dataImportID, "1", value.ToString(), Convert.ToInt32(rtVVI.Angle).ToString());
+                                   }
                                    WP_needle_VSI1.RenderTransform = rtVVI;
                                }
                                lvalue = value;
@@ -167,8 +171,6 @@ namespace Ikarus
                 trUsercontrol.X += currentPoint.X - originalPoint.X;
                 trUsercontrol.Y += currentPoint.Y - originalPoint.Y;
                 moveThisElement.RenderTransform = trUsercontrol;
-
-
             };
         }
 

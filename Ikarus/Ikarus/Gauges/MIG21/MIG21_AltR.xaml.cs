@@ -131,6 +131,10 @@ namespace Ikarus
                                            break;
                                        }
                                    }
+                                   if (MainWindow.editmode)
+                                   {
+                                       Cockpit.UpdateInOut(dataImportID, "1", altituteMeter.ToString(), Convert.ToInt32(rtAltituteMeter.Angle).ToString());
+                                   }
                                    RADIO_ALTIMETER_indicator.RenderTransform = rtAltituteMeter;
                                }
                                laltituteMeter = altituteMeter;
@@ -166,8 +170,6 @@ namespace Ikarus
                 trUsercontrol.X += currentPoint.X - originalPoint.X;
                 trUsercontrol.Y += currentPoint.Y - originalPoint.Y;
                 moveThisElement.RenderTransform = trUsercontrol;
-
-
             };
         }
 

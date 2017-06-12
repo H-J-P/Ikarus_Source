@@ -18,11 +18,12 @@ namespace Ikarus
         private string dataImportID = "";
         private int windowID = 0;
         private string[] vals = new string[] { };
+        private double[] valueScale = new double[] { };
+        private double[] degreeDial = new double[] { };
+        int valueScaleIndex = 0;
 
         public void SetWindowID(int _windowID) { windowID = _windowID; }
         public int GetWindowID() { return windowID; }
-
-        const int valueScaleIndex = 8;
 
         double tank = 0.0;
         double ltank = 0.0;
@@ -77,10 +78,31 @@ namespace Ikarus
 
         public void SetInput(string _input)
         {
+            string[] vals = _input.Split(',');
+
+            if (vals.Length < 3) return;
+
+            valueScale = new double[vals.Length];
+
+            for (int i = 0; i < vals.Length; i++)
+            {
+                valueScale[i] = Convert.ToDouble(vals[i], CultureInfo.InvariantCulture);
+            }
+            valueScaleIndex = vals.Length;
         }
 
         public void SetOutput(string _output)
         {
+            string[] vals = _output.Split(',');
+
+            if (vals.Length < 3) return;
+
+            degreeDial = new double[vals.Length];
+
+            for (int i = 0; i < vals.Length; i++)
+            {
+                degreeDial[i] = Convert.ToDouble(vals[i], CultureInfo.InvariantCulture);
+            }
         }
 
         public double GetSize()
@@ -100,8 +122,8 @@ namespace Ikarus
                                if (ltank != tank)
                                {
                                    // Fuel_Tank_Fuselage.input		                = {0.0, 5.0, 15.0, 30.0, 45.0, 60.0, 75.0, 92.0} -- US GAL
-                                   double[] valueScale = new double[valueScaleIndex] { 0.0, 0.2, 0.36, 0.52, 0.65, 0.77, 0.92, 1.0 };
-                                   double[] degreeDial = new double[valueScaleIndex] { 0.0, 34.0, 66.0, 94.0, 119, 141, 167, 180 };
+                                   //double[] valueScale = new double[valueScaleIndex] { 0.0, 0.2, 0.36, 0.52, 0.65, 0.77, 0.92, 1.0 };
+                                   //double[] degreeDial = new double[valueScaleIndex] { 0.0, 34.0, 66.0, 94.0, 119, 141, 167, 180 };
 
                                    if (vals.Length > 0) { tank = Convert.ToDouble(vals[0], CultureInfo.InvariantCulture); }
 
@@ -112,6 +134,10 @@ namespace Ikarus
                                            rtTank.Angle = (degreeDial[n] - degreeDial[n + 1]) / (valueScale[n] - valueScale[n + 1]) * (tank - valueScale[n]) + degreeDial[n];
                                            break;
                                        }
+                                   }
+                                   if (MainWindow.editmode)
+                                   {
+                                       Cockpit.UpdateInOut(dataImportID, "1", tank.ToString(), Convert.ToInt32(rtTank.Angle).ToString());
                                    }
                                    Fuel_Wing.RenderTransform = rtTank;
                                }
@@ -148,8 +174,6 @@ namespace Ikarus
                 trUsercontrol.X += currentPoint.X - originalPoint.X;
                 trUsercontrol.Y += currentPoint.Y - originalPoint.Y;
                 moveThisElement.RenderTransform = trUsercontrol;
-
-
             };
         }
 

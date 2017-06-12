@@ -122,8 +122,6 @@ namespace Ikarus
 
                                if (vals.Length > 0) { fanRPM = Convert.ToDouble(vals[0], CultureInfo.InvariantCulture); }
 
-                               if (fanRPM < 0.0) { fanRPM = 0.0; }
-
                                if (lfanRPM != fanRPM)
                                {
                                    for (int n = 0; n < valueScaleIndex - 1; n++)
@@ -133,6 +131,10 @@ namespace Ikarus
                                            rtfanRPM.Angle = (degreeDial[n] - degreeDial[n + 1]) / (valueScale[n] - valueScale[n + 1]) * (fanRPM - valueScale[n]) + degreeDial[n];
                                            break;
                                        }
+                                   }
+                                   if (MainWindow.editmode)
+                                   {
+                                       Cockpit.UpdateInOut(dataImportID, "1", fanRPM.ToString(), Convert.ToInt32(rtfanRPM.Angle).ToString());
                                    }
                                    EngineRPM_FAN.RenderTransform = rtfanRPM;
                                }

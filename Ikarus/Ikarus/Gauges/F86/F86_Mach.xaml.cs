@@ -134,6 +134,10 @@ namespace Ikarus
                                            break;
                                        }
                                    }
+                                   if (MainWindow.editmode)
+                                   {
+                                       Cockpit.UpdateInOut(dataImportID, "1", machNumber.ToString(), Convert.ToInt32(rtMachNumber.Angle).ToString());
+                                   }
                                    MachNumber.RenderTransform = rtMachNumber;
                                }
                                lmachNumber = machNumber;
@@ -169,8 +173,6 @@ namespace Ikarus
                 trUsercontrol.X += currentPoint.X - originalPoint.X;
                 trUsercontrol.Y += currentPoint.Y - originalPoint.Y;
                 moveThisElement.RenderTransform = trUsercontrol;
-
-
             };
         }
 

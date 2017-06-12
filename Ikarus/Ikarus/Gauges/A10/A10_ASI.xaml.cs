@@ -153,6 +153,10 @@ namespace Ikarus
                                            break;
                                        }
                                    }
+                                   if (MainWindow.editmode)
+                                   {
+                                       Cockpit.UpdateInOut(dataImportID, "1", airspeedNeedle.ToString(), Convert.ToInt32(rtairspeedNeedle.Angle).ToString());
+                                   }
                                    IAS.RenderTransform = rtairspeedNeedle;
                                }
                            }

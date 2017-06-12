@@ -132,6 +132,10 @@ namespace Ikarus
                                            break;
                                        }
                                    }
+                                   if (MainWindow.editmode)
+                                   {
+                                       Cockpit.UpdateInOut(dataImportID, "1", tempAPU.ToString(), Convert.ToInt32(rtTempAPU.Angle).ToString());
+                                   }
                                    APU_temperature.RenderTransform = rtTempAPU;
                                }
                                ltempAPU = tempAPU;
@@ -167,8 +171,6 @@ namespace Ikarus
                 trUsercontrol.X += currentPoint.X - originalPoint.X;
                 trUsercontrol.Y += currentPoint.Y - originalPoint.Y;
                 moveThisElement.RenderTransform = trUsercontrol;
-
-
             };
         }
 

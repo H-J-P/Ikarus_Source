@@ -16,6 +16,9 @@ namespace Ikarus
     {
         private string dataImportID = "";
         private int windowID = 0;
+        private double[] valueScale = new double[] { };
+        private double[] degreeDial = new double[] { };
+        int valueScaleIndex = 0;
         private string[] vals = new string[] { };
 
         public void SetWindowID(int _windowID) { windowID = _windowID; }
@@ -26,8 +29,6 @@ namespace Ikarus
         double offFlag = 0.0;
         double dangerAltimeterLamp = 0.0;
 
-        const int valueScaleIndex = 10;
-
         double lrAltimeter = 0.0;
         double ldangerAltimeter = 0.0;
         double loffFlag = 0.0;
@@ -35,10 +36,6 @@ namespace Ikarus
 
         RotateTransform rtrAltimeter = new RotateTransform();
         RotateTransform rtDangerAltimeter = new RotateTransform();
-
-        // WPALTr15                      		     =   { 0,   100,   150,   200,   300,   400,   600,   800,  1000, 1500 }
-        double[] valueScale = new double[valueScaleIndex] { 0, 0.067, 0.100, 0.133, 0.200, 0.267, 0.400, 0.533, 0.667, 1.0 };
-        double[] degreeDial = new double[valueScaleIndex] { 0, 104, 154, 180, 217, 241, 270, 286, 298, 317 };
 
         public WPALTr15()
         {
@@ -92,10 +89,31 @@ namespace Ikarus
 
         public void SetInput(string _input)
         {
+            string[] vals = _input.Split(',');
+
+            if (vals.Length < 3) return;
+
+            valueScale = new double[vals.Length];
+
+            for (int i = 0; i < vals.Length; i++)
+            {
+                valueScale[i] = Convert.ToDouble(vals[i], CultureInfo.InvariantCulture);
+            }
+            valueScaleIndex = vals.Length;
         }
 
         public void SetOutput(string _output)
         {
+            string[] vals = _output.Split(',');
+
+            if (vals.Length < 3) return;
+
+            degreeDial = new double[vals.Length];
+
+            for (int i = 0; i < vals.Length; i++)
+            {
+                degreeDial[i] = Convert.ToDouble(vals[i], CultureInfo.InvariantCulture);
+            }
         }
 
         public double GetSize()
@@ -117,6 +135,10 @@ namespace Ikarus
                                if (vals.Length > 2) { offFlag = Convert.ToDouble(vals[2], CultureInfo.InvariantCulture); }
                                if (vals.Length > 3) { dangerAltimeterLamp = Convert.ToDouble(vals[3], CultureInfo.InvariantCulture); }
 
+                               // WPALTr15                      		     =   { 0,   100,   150,   200,   300,   400,   600,   800,  1000, 1500 }
+                               //double[] valueScale = new double[valueScaleIndex] { 0, 0.067, 0.100, 0.133, 0.200, 0.267, 0.400, 0.533, 0.667, 1.0 };
+                               //double[] degreeDial = new double[valueScaleIndex] { 0, 104, 154, 180, 217, 241, 270, 286, 298, 317 };
+
                                if (lrAltimeter != rAltimeter)
                                {
                                    for (int n = 0; n < valueScaleIndex - 1; n++)
@@ -126,6 +148,10 @@ namespace Ikarus
                                            rtrAltimeter.Angle = (degreeDial[n] - degreeDial[n + 1]) / (valueScale[n] - valueScale[n + 1]) * (rAltimeter - valueScale[n]) + degreeDial[n];
                                            break;
                                        }
+                                   }
+                                   if (MainWindow.editmode)
+                                   {
+                                       Cockpit.UpdateInOut(dataImportID, "1", rAltimeter.ToString(), Convert.ToInt32(rtrAltimeter.Angle).ToString());
                                    }
                                    AltRad.RenderTransform = rtrAltimeter;
                                }
@@ -180,8 +206,6 @@ namespace Ikarus
                 trUsercontrol.X += currentPoint.X - originalPoint.X;
                 trUsercontrol.Y += currentPoint.Y - originalPoint.Y;
                 moveThisElement.RenderTransform = trUsercontrol;
-
-
             };
         }
 

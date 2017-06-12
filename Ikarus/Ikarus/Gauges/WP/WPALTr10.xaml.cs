@@ -16,12 +16,13 @@ namespace Ikarus
     {
         private string dataImportID = "";
         private int windowID = 0;
+        private double[] valueScale = new double[] { };
+        private double[] degreeDial = new double[] { };
+        int valueScaleIndex = 0;
         private string[] vals = new string[] { };
 
         public void SetWindowID(int _windowID) { windowID = _windowID; }
         public int GetWindowID() { return windowID; }
-
-        const int valueScaleIndex = 6;
 
         double rAltimeter = 0.0;
         double dangerAltimeter = 0.0;
@@ -92,10 +93,31 @@ namespace Ikarus
 
         public void SetInput(string _input)
         {
+            string[] vals = _input.Split(',');
+
+            if (vals.Length < 3) return;
+
+            valueScale = new double[vals.Length];
+
+            for (int i = 0; i < vals.Length; i++)
+            {
+                valueScale[i] = Convert.ToDouble(vals[i], CultureInfo.InvariantCulture);
+            }
+            valueScaleIndex = vals.Length;
         }
 
         public void SetOutput(string _output)
         {
+            string[] vals = _output.Split(',');
+
+            if (vals.Length < 3) return;
+
+            degreeDial = new double[vals.Length];
+
+            for (int i = 0; i < vals.Length; i++)
+            {
+                degreeDial[i] = Convert.ToDouble(vals[i], CultureInfo.InvariantCulture);
+            }
         }
 
         public double GetSize()
@@ -118,8 +140,8 @@ namespace Ikarus
                                if (vals.Length > 3) { dangerAltimeterLamp = Convert.ToDouble(vals[3], CultureInfo.InvariantCulture); }
 
                                // WPALTr10                      		     =   { 0,    20,    50,   100,   500,  1000}
-                               double[] valueScale = new double[valueScaleIndex] { 0, 0.020, 0.050, 0.100, 0.500, 1.0 };
-                               double[] degreeDial = new double[valueScaleIndex] { 0, 32, 79, 157, 225, 313 };
+                               //double[] valueScale = new double[valueScaleIndex] { 0, 0.020, 0.050, 0.100, 0.500, 1.0 };
+                               //double[] degreeDial = new double[valueScaleIndex] { 0, 32, 79, 157, 225, 313 };
 
                                if (lrAltimeter != rAltimeter)
                                {
@@ -188,8 +210,6 @@ namespace Ikarus
                 trUsercontrol.X += currentPoint.X - originalPoint.X;
                 trUsercontrol.Y += currentPoint.Y - originalPoint.Y;
                 moveThisElement.RenderTransform = trUsercontrol;
-
-
             };
         }
 

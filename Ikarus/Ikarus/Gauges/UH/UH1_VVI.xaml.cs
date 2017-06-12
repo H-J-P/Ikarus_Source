@@ -16,6 +16,9 @@ namespace Ikarus
     {
         private string dataImportID = "";
         private int windowID = 0;
+        private double[] valueScale = new double[] { };
+        private double[] degreeDial = new double[] { };
+        int valueScaleIndex = 0;
         private string[] vals = new string[] { };
 
         public void SetWindowID(int _windowID) { windowID = _windowID; }
@@ -34,10 +37,6 @@ namespace Ikarus
 
             VVI.Visibility = System.Windows.Visibility.Hidden;
         }
-
-        private double[] valueScale = new double[] { };
-        private double[] degreeDial = new double[] { };
-        int valueScaleIndex = 0;
 
         public void SetID(string _dataImportID)
         {
@@ -133,6 +132,10 @@ namespace Ikarus
                                            rtrNeedle.Angle = (degreeDial[n] - degreeDial[n + 1]) / (valueScale[n] - valueScale[n + 1]) * (needle - valueScale[n]) + degreeDial[n];
                                            break;
                                        }
+                                   }
+                                   if (MainWindow.editmode)
+                                   {
+                                       Cockpit.UpdateInOut(dataImportID, "1", needle.ToString(), Convert.ToInt32(rtrNeedle.Angle).ToString());
                                    }
                                    VertVelocPilot.RenderTransform = rtrNeedle;
                                }

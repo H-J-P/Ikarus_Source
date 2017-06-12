@@ -136,6 +136,10 @@ namespace Ikarus
                                            break;
                                        }
                                    }
+                                   if (MainWindow.editmode)
+                                   {
+                                       Cockpit.UpdateInOut(dataImportID, "1", engineRPMleft.ToString(), Convert.ToInt32(rtEngineRPMleft.Angle).ToString());
+                                   }
                                    EngineRPMleft.RenderTransform = rtEngineRPMleft;
                                }
 
@@ -185,8 +189,6 @@ namespace Ikarus
                 trUsercontrol.X += currentPoint.X - originalPoint.X;
                 trUsercontrol.Y += currentPoint.Y - originalPoint.Y;
                 moveThisElement.RenderTransform = trUsercontrol;
-
-
             };
         }
 

@@ -123,12 +123,6 @@ namespace Ikarus
 
                                if (lvalue != value)
                                {
-                                   //const int valueScaleIndex = 8;
-
-                                   // Fuel_Tank_Fuselage.input        	           = { 0.0,  100,   150,  200,  250,  300,  350, 400 } -- Liter
-                                   //Double[] valueScale = new double[valueScaleIndex] { 0.0, 0.07, 0.175, 0.31, 0.52, 0.73, 0.88, 1.0 };
-                                   //Double[] degreeDial = new double[valueScaleIndex] { 0, 23, 35, 45, 57, 68, 79, 90 };
-
                                    for (int n = 0; n < valueScaleIndex - 1; n++)
                                    {
                                        if (value > valueScale[n] && value <= valueScale[n + 1])
@@ -136,6 +130,10 @@ namespace Ikarus
                                            rtFuelTankFuselage.Angle = (degreeDial[n] - degreeDial[n + 1]) / (valueScale[n] - valueScale[n + 1]) * (value - valueScale[n]) + degreeDial[n];
                                            break;
                                        }
+                                   }
+                                   if (MainWindow.editmode)
+                                   {
+                                       Cockpit.UpdateInOut(dataImportID, "1", value.ToString(), Convert.ToInt32(rtFuelTankFuselage.Angle).ToString());
                                    }
                                    ME4K_FuelQ_Needle.RenderTransform = rtFuelTankFuselage;
                                }

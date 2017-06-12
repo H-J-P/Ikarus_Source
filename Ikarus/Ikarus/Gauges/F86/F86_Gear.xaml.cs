@@ -82,13 +82,10 @@ namespace Ikarus
 
         public void SetInput(string _input)
         {
-
         }
 
         public void SetOutput(string _output)
         {
-            string[] vals = _output.Split(',');
-
         }
 
         public double GetSize()
@@ -156,8 +153,6 @@ namespace Ikarus
                 trUsercontrol.X += currentPoint.X - originalPoint.X;
                 trUsercontrol.Y += currentPoint.Y - originalPoint.Y;
                 moveThisElement.RenderTransform = trUsercontrol;
-
-
             };
         }
 

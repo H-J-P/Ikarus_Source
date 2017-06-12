@@ -132,6 +132,10 @@ namespace Ikarus
                                            break;
                                        }
                                    }
+                                   if (MainWindow.editmode)
+                                   {
+                                       Cockpit.UpdateInOut(dataImportID, "1", temp.ToString(), Convert.ToInt32(rtTemp.Angle).ToString());
+                                   }
                                    RAM_Temp.RenderTransform = rtTemp;
                                }
                                ltemp = temp;
@@ -167,8 +171,6 @@ namespace Ikarus
                 trUsercontrol.X += currentPoint.X - originalPoint.X;
                 trUsercontrol.Y += currentPoint.Y - originalPoint.Y;
                 moveThisElement.RenderTransform = trUsercontrol;
-
-
             };
         }
 

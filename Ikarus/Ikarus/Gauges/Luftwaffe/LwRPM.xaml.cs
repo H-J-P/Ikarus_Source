@@ -117,9 +117,6 @@ namespace Ikarus
 
                                if (vals.Length > 0) { value = Convert.ToDouble(vals[0], CultureInfo.InvariantCulture); }
 
-                               if (value > 0.983) { value = 0.983; }
-                               if (value < 0.032) { value = 0.032; }
-
                                if (lvalue != value)
                                {
                                    for (int n = 0; n < valueScaleIndex - 1; n++)
@@ -129,6 +126,10 @@ namespace Ikarus
                                            rtRPM.Angle = (degreeDial[n] - degreeDial[n + 1]) / (valueScale[n] - valueScale[n + 1]) * (value - valueScale[n]) + degreeDial[n];
                                            break;
                                        }
+                                   }
+                                   if (MainWindow.editmode)
+                                   {
+                                       Cockpit.UpdateInOut(dataImportID, "1", value.ToString(), Convert.ToInt32(rtRPM.Angle).ToString());
                                    }
                                    FW190_needle_RPM.RenderTransform = rtRPM;
                                }

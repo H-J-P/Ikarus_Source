@@ -127,6 +127,10 @@ namespace Ikarus
                                            break;
                                        }
                                    }
+                                   if (MainWindow.editmode)
+                                   {
+                                       Cockpit.UpdateInOut(dataImportID, "1", value.ToString(), Convert.ToInt32(rtMW50Pressure.Angle).ToString());
+                                   }
                                    Lw_MW50P_Needle.RenderTransform = rtMW50Pressure;
                                }
                                lvalue = value;

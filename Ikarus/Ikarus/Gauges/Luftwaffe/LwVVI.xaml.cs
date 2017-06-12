@@ -128,6 +128,10 @@ namespace Ikarus
                                            break;
                                        }
                                    }
+                                   if (MainWindow.editmode)
+                                   {
+                                       Cockpit.UpdateInOut(dataImportID, "1", value.ToString(), Convert.ToInt32(rtVVI.Angle).ToString());
+                                   }
                                    FW_VSI_Needle.RenderTransform = rtVVI;
                                }
                                lvalue = value;

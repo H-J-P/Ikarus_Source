@@ -20,6 +20,9 @@ namespace Ikarus
 
         public void SetWindowID(int _windowID) { windowID = _windowID; }
         public int GetWindowID() { return windowID; }
+        private double[] valueScale = new double[] { };
+        private double[] degreeDial = new double[] { };
+        int valueScaleIndex = 0;
 
         double airSpeedNose = 0.0;
         double airSpeedRoof = 0.0;
@@ -27,7 +30,7 @@ namespace Ikarus
         double lairSpeedNose = 0.0;
         double lairSpeedRoof = 0.0;
 
-        RotateTransform rtASI = new RotateTransform();
+        RotateTransform rtIAS = new RotateTransform();
 
         public UH1_ASI()
         {
@@ -78,10 +81,31 @@ namespace Ikarus
 
         public void SetInput(string _input)
         {
+            string[] vals = _input.Split(',');
+
+            if (vals.Length < 3) return;
+
+            valueScale = new double[vals.Length];
+
+            for (int i = 0; i < vals.Length; i++)
+            {
+                valueScale[i] = Convert.ToDouble(vals[i], CultureInfo.InvariantCulture);
+            }
+            valueScaleIndex = vals.Length;
         }
 
         public void SetOutput(string _output)
         {
+            string[] vals = _output.Split(',');
+
+            if (vals.Length < 3) return;
+
+            degreeDial = new double[vals.Length];
+
+            for (int i = 0; i < vals.Length; i++)
+            {
+                degreeDial[i] = Convert.ToDouble(vals[i], CultureInfo.InvariantCulture);
+            }
         }
 
         public double GetSize()
@@ -105,19 +129,19 @@ namespace Ikarus
 
                                if (lairSpeedNose != airSpeedNose)
                                {
-                                   //AIRSPEED_Nose.input			                = {0.0,  20.0, 30.0, 40.0,  50.0, 60.0, 80.0, 120.0, 150.0}
-                                   Double[] valueScale = new double[valueScaleIndex] { 0.0, 0.075, 0.19, 0.32, 0.395, 0.44, 0.55, 0.825, 1.0 };
-                                   Double[] degreeDial = new double[valueScaleIndex] { 0.0, 25, 65, 110, 135, 150, 187, 280, 341 };
-
                                    for (int n = 0; n < (valueScaleIndex - 1); n++)
                                    {
                                        if (airSpeedNose >= valueScale[n] && airSpeedNose <= valueScale[n + 1])
                                        {
-                                           rtASI.Angle = (degreeDial[n] - degreeDial[n + 1]) / (valueScale[n] - valueScale[n + 1]) * (airSpeedNose - valueScale[n]) + degreeDial[n];
+                                           rtIAS.Angle = (degreeDial[n] - degreeDial[n + 1]) / (valueScale[n] - valueScale[n + 1]) * (airSpeedNose - valueScale[n]) + degreeDial[n];
                                            break;
                                        }
                                    }
-                                   AIRSPEED.RenderTransform = rtASI;
+                                   if (MainWindow.editmode)
+                                   {
+                                       Cockpit.UpdateInOut(dataImportID, "1", airSpeedNose.ToString(), Convert.ToInt32(rtIAS.Angle).ToString());
+                                   }
+                                   AIRSPEED.RenderTransform = rtIAS;
                                }
                                lairSpeedNose = airSpeedNose;
                                lairSpeedRoof = airSpeedRoof;
@@ -153,8 +177,6 @@ namespace Ikarus
                 trUsercontrol.X += currentPoint.X - originalPoint.X;
                 trUsercontrol.Y += currentPoint.Y - originalPoint.Y;
                 moveThisElement.RenderTransform = trUsercontrol;
-
-
             };
         }
 

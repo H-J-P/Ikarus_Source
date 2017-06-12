@@ -117,9 +117,6 @@ namespace Ikarus
 
                                if (vals.Length > 0) oilTemp = Convert.ToDouble(vals[0], CultureInfo.InvariantCulture);
 
-                               if (oilTemp > 1.0) { oilTemp = 1.0; }
-                               if (oilTemp < 0.0) { oilTemp = 0.0; }
-
                                if (loilTemp != oilTemp)
                                {
                                    if (oilTemp > 0.0 && oilTemp <= 0.070)
@@ -136,6 +133,10 @@ namespace Ikarus
                                                break;
                                            }
                                        }
+                                   }
+                                   if (MainWindow.editmode)
+                                   {
+                                       Cockpit.UpdateInOut(dataImportID, "1", oilTemp.ToString(), Convert.ToInt32(rtOilTemp.Angle).ToString());
                                    }
                                    FWD9_OilT_Needle.RenderTransform = rtOilTemp;
                                }

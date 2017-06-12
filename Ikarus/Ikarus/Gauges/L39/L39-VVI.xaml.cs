@@ -141,6 +141,10 @@ namespace Ikarus
                                            break;
                                        }
                                    }
+                                   if (MainWindow.editmode)
+                                   {
+                                       Cockpit.UpdateInOut(dataImportID, "1", vvi.ToString(), Convert.ToInt32(rtVVI.Angle).ToString());
+                                   }
                                    Variometer.RenderTransform = rtVVI;
                                }
 

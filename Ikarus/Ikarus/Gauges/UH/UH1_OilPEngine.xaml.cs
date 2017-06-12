@@ -16,6 +16,9 @@ namespace Ikarus
     {
         private string dataImportID = "";
         private int windowID = 0;
+        private double[] valueScale = new double[] { };
+        private double[] degreeDial = new double[] { };
+        int valueScaleIndex = 0;
         private string[] vals = new string[] { };
 
         public void SetWindowID(int _windowID) { windowID = _windowID; }
@@ -75,10 +78,31 @@ namespace Ikarus
 
         public void SetInput(string _input)
         {
+            string[] vals = _input.Split(',');
+
+            if (vals.Length < 3) return;
+
+            valueScale = new double[vals.Length];
+
+            for (int i = 0; i < vals.Length; i++)
+            {
+                valueScale[i] = Convert.ToDouble(vals[i], CultureInfo.InvariantCulture);
+            }
+            valueScaleIndex = vals.Length;
         }
 
         public void SetOutput(string _output)
         {
+            string[] vals = _output.Split(',');
+
+            if (vals.Length < 3) return;
+
+            degreeDial = new double[vals.Length];
+
+            for (int i = 0; i < vals.Length; i++)
+            {
+                degreeDial[i] = Convert.ToDouble(vals[i], CultureInfo.InvariantCulture);
+            }
         }
 
         public double GetSize()
@@ -102,10 +126,8 @@ namespace Ikarus
                                if (lneedle != needle)
                                {
                                    // 113			                               = {-3.0,   0.0, 100}
-                                   double[] valueScale = new double[valueScaleIndex] { 0.0, 0.029, 1.0 };
-                                   double[] degreeDial = new double[valueScaleIndex] { -5, 0, 250 };
-
-                                   if (needle < 0.0) needle = 0.0;
+                                   //double[] valueScale = new double[valueScaleIndex] { 0.0, 0.029, 1.0 };
+                                   //double[] degreeDial = new double[valueScaleIndex] { -5, 0, 250 };
 
                                    for (int n = 0; n < (valueScaleIndex - 1); n++)
                                    {
@@ -114,6 +136,10 @@ namespace Ikarus
                                            rtrNeedle.Angle = (degreeDial[n] - degreeDial[n + 1]) / (valueScale[n] - valueScale[n + 1]) * (needle - valueScale[n]) + degreeDial[n];
                                            break;
                                        }
+                                   }
+                                   if (MainWindow.editmode)
+                                   {
+                                       Cockpit.UpdateInOut(dataImportID, "1", needle.ToString(), Convert.ToInt32(rtrNeedle.Angle).ToString());
                                    }
                                    EngOilPress.RenderTransform = rtrNeedle;
                                }
@@ -150,8 +176,6 @@ namespace Ikarus
                 trUsercontrol.X += currentPoint.X - originalPoint.X;
                 trUsercontrol.Y += currentPoint.Y - originalPoint.Y;
                 moveThisElement.RenderTransform = trUsercontrol;
-
-
             };
         }
 

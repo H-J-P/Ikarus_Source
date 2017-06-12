@@ -32,7 +32,7 @@ namespace Ikarus
         double lmach = 0.0;
         double ltas = 0.0;
 
-        RotateTransform rtias = new RotateTransform();
+        RotateTransform rtIAS = new RotateTransform();
         RotateTransform rtmach = new RotateTransform();
 
         public MIG21_ASI10()
@@ -137,11 +137,15 @@ namespace Ikarus
                                    {
                                        if (ias > valueScale[n] && ias <= valueScale[n + 1])
                                        {
-                                           rtias.Angle = (degreeDial[n] - degreeDial[n + 1]) / (valueScale[n] - valueScale[n + 1]) * (ias - valueScale[n]) + degreeDial[n];
+                                           rtIAS.Angle = (degreeDial[n] - degreeDial[n + 1]) / (valueScale[n] - valueScale[n + 1]) * (ias - valueScale[n]) + degreeDial[n];
                                            break;
                                        }
                                    }
-                                   IAS.RenderTransform = rtias;
+                                   if (MainWindow.editmode)
+                                   {
+                                       Cockpit.UpdateInOut(dataImportID, "1", ias.ToString(), Convert.ToInt32(rtIAS.Angle).ToString());
+                                   }
+                                   IAS.RenderTransform = rtIAS;
                                }
                                // 101   TAS_indicator.input  = { 0.0,  167,   278,  417,  555,  833 };
                                //       TAS_indicator.output = { 0.0, 0.20, 0.309, 0.49, 0.67, 1.00 };
@@ -191,8 +195,6 @@ namespace Ikarus
                 trUsercontrol.X += currentPoint.X - originalPoint.X;
                 trUsercontrol.Y += currentPoint.Y - originalPoint.Y;
                 moveThisElement.RenderTransform = trUsercontrol;
-
-
             };
         }
 

@@ -126,6 +126,10 @@ namespace Ikarus
                                            break;
                                        }
                                    }
+                                   if (MainWindow.editmode)
+                                   {
+                                       Cockpit.UpdateInOut(dataImportID, "1", value.ToString(), Convert.ToInt32(rtFWD9Trim.Angle).ToString());
+                                   }
                                    FWD9_ElvTrim_Needle.RenderTransform = rtFWD9Trim;
                                }
                                lvalue = value;

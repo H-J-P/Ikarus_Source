@@ -118,7 +118,6 @@ namespace Ikarus
                            try
                            {
                                vals = strData.Split(';');
-
                                egt = Convert.ToDouble(vals[0], CultureInfo.InvariantCulture);
 
                                if (legt != egt)
@@ -129,6 +128,10 @@ namespace Ikarus
                                        {
                                            rtEGT.Angle = (degreeDial[n] - degreeDial[n + 1]) / (valueScale[n] - valueScale[n + 1]) * (egt - valueScale[n]) + degreeDial[n];
                                            break;
+                                       }
+                                       if (MainWindow.editmode)
+                                       {
+                                           Cockpit.UpdateInOut(dataImportID, "1", egt.ToString(), Convert.ToInt32(rtEGT.Angle).ToString());
                                        }
                                    }
                                    ENGINE_TEMP.RenderTransform = rtEGT;
@@ -166,8 +169,6 @@ namespace Ikarus
                 trUsercontrol.X += currentPoint.X - originalPoint.X;
                 trUsercontrol.Y += currentPoint.Y - originalPoint.Y;
                 moveThisElement.RenderTransform = trUsercontrol;
-
-
             };
         }
 

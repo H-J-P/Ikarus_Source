@@ -140,6 +140,10 @@ namespace Ikarus
                                            break;
                                        }
                                    }
+                                   if (MainWindow.editmode)
+                                   {
+                                       Cockpit.UpdateInOut(dataImportID, "1", valueKm.ToString(), Convert.ToInt32(rtKm.Angle).ToString());
+                                   }
                                    Lw_ALT_k.RenderTransform = rtKm;
                                }
                                if (lvalueMeter != valueMeter)

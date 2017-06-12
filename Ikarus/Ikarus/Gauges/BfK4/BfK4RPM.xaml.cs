@@ -135,9 +135,7 @@ namespace Ikarus
                 trUsercontrol.X += currentPoint.X - originalPoint.X;
                 trUsercontrol.Y += currentPoint.Y - originalPoint.Y;
                 moveThisElement.RenderTransform = trUsercontrol;
-
-
-            };
+           };
         }
 
         private void Light_MouseWheel(object sender, System.Windows.Input.MouseWheelEventArgs e)

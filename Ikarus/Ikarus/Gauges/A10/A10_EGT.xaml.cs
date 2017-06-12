@@ -128,9 +128,6 @@ namespace Ikarus
                                if (vals.Length > 0) { engineT100 = Convert.ToDouble(vals[0], CultureInfo.InvariantCulture); }
                                if (vals.Length > 1) { engineT10 = Convert.ToDouble(vals[1], CultureInfo.InvariantCulture); }
 
-                               if (engineT100 > 0.995) { engineT100 = 0.995; }
-                               if (engineT100 < 0.005) { engineT100 = 0.005; }
-
                                if (lengineT100 != engineT100)
                                {
                                    for (int n = 0; n < valueScaleIndex - 1; n++)
@@ -140,6 +137,10 @@ namespace Ikarus
                                            rtengineT100.Angle = (degreeDial[n] - degreeDial[n + 1]) / (valueScale[n] - valueScale[n + 1]) * (engineT100 - valueScale[n]) + degreeDial[n];
                                            break;
                                        }
+                                   }
+                                   if (MainWindow.editmode)
+                                   {
+                                       Cockpit.UpdateInOut(dataImportID, "1", engineT100.ToString(), Convert.ToInt32(rtengineT100.Angle).ToString());
                                    }
                                    EngineTemp_100.RenderTransform = rtengineT100;
                                }

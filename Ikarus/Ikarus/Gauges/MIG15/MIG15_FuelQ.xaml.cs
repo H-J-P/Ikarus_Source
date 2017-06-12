@@ -121,7 +121,6 @@ namespace Ikarus
                                vals = strData.Split(';');
 
                                if (vals.Length > 0) { fuelQuantity = Convert.ToDouble(vals[0], CultureInfo.InvariantCulture); }
-                               if (fuelQuantity < 0.0) fuelQuantity = 0.0;
 
                                if (lfuelQuantity != fuelQuantity)
                                {
@@ -132,6 +131,10 @@ namespace Ikarus
                                            rtFuelQuantity.Angle = (degreeDial[n] - degreeDial[n + 1]) / (valueScale[n] - valueScale[n + 1]) * (fuelQuantity - valueScale[n]) + degreeDial[n];
                                            break;
                                        }
+                                   }
+                                   if (MainWindow.editmode)
+                                   {
+                                       Cockpit.UpdateInOut(dataImportID, "1", fuelQuantity.ToString(), Convert.ToInt32(rtFuelQuantity.Angle).ToString());
                                    }
                                    FuelQuantity.RenderTransform = rtFuelQuantity;
                                }
@@ -168,8 +171,6 @@ namespace Ikarus
                 trUsercontrol.X += currentPoint.X - originalPoint.X;
                 trUsercontrol.Y += currentPoint.Y - originalPoint.Y;
                 moveThisElement.RenderTransform = trUsercontrol;
-
-
             };
         }
 

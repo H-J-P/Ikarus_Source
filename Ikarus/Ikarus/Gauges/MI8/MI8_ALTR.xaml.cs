@@ -150,6 +150,10 @@ namespace Ikarus
                                            break;
                                        }
                                    }
+                                   if (MainWindow.editmode)
+                                   {
+                                       Cockpit.UpdateInOut(dataImportID, "1", rAlt.ToString(), Convert.ToInt32(rtRAlt.Angle).ToString());
+                                   }
                                    A_036_RALT.RenderTransform = rtRAlt;
                                }
                                if (ldangerRAlt != dangerRAlt)
@@ -207,8 +211,6 @@ namespace Ikarus
                 trUsercontrol.X += currentPoint.X - originalPoint.X;
                 trUsercontrol.Y += currentPoint.Y - originalPoint.Y;
                 moveThisElement.RenderTransform = trUsercontrol;
-
-
             };
         }
 

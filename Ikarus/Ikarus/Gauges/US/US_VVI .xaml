@@ -138,7 +138,6 @@
                 <Path Data="M82.876,5.669L7.576,5.669 0,2.537 7.576,0 82.876,0z" Fill="#FFCCCCCC" Height="5.669" Canvas.Left="0" Canvas.Top="7.966" Width="82.876"/>
                 <Path Data="M10.611,0.108C4.81,0.108 0.108,4.81 0.108,10.611 0.108,16.411 4.81,21.114 10.611,21.114 16.411,21.114 21.115,16.411 21.115,10.611 21.115,4.81 16.411,0.108 10.611,0.108" Fill="#FF333333" Height="21.222" Canvas.Left="75.264" Stroke="Gray" StrokeThickness="0.216" StrokeMiterLimit="22.926" Canvas.Top="-0.108" Width="21.223"/>
             </Canvas>
-            <TextBlock x:Name="VVI_Input" Canvas.Left="42" TextWrapping="Wrap" Text="-0.0000" Canvas.Top="234" Width="54" Foreground="#FFF5F2F2" FontSize="16" d:IsHidden="True"/>
         </Canvas>
         <Image x:Name="Light" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Height="255" Width="255" MouseWheel="Light_MouseWheel" />
         <Image x:Name="Frame" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Height="255" Width="255" MouseWheel="Light_MouseWheel" />

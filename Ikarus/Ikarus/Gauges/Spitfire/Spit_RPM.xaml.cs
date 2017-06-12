@@ -122,12 +122,6 @@ namespace Ikarus
 
                                if (vals.Length > 0) { pointer = Convert.ToDouble(vals[0], CultureInfo.InvariantCulture); }
 
-                               if (pointer < 0.0) { pointer = 0.0; }
-                               if (pointer > 0.5) { pointer = 0.5; }
-
-                               //pointer *= 2;
-                               // 0.0, 0.1, 0.2, 0.3, 0.4, 0.5
-                               // -23,   0,  68, 157, 247, 315
                                if (lpointer != pointer)
                                {
                                    for (int n = 0; n < valueScaleIndex - 1; n++)
@@ -137,6 +131,10 @@ namespace Ikarus
                                            rtpointer.Angle = (degreeDial[n] - degreeDial[n + 1]) / (valueScale[n] - valueScale[n + 1]) * (pointer - valueScale[n]) + degreeDial[n];
                                            break;
                                        }
+                                   }
+                                   if (MainWindow.editmode)
+                                   {
+                                       Cockpit.UpdateInOut(dataImportID, "1", pointer.ToString(), Convert.ToInt32(rtpointer.Angle).ToString());
                                    }
                                    RPM.RenderTransform = rtpointer;
                                }

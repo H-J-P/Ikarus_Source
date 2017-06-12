@@ -127,6 +127,10 @@ namespace Ikarus
                                            break;
                                        }
                                    }
+                                   if (MainWindow.editmode)
+                                   {
+                                       Cockpit.UpdateInOut(dataImportID, "1", value.ToString(), Convert.ToInt32(rtIAS.Angle).ToString());
+                                   }
                                    Lw_ASI_Needle.RenderTransform = rtIAS;
                                }
                                lvalue = value;

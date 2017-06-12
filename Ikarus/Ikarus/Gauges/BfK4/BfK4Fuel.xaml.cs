@@ -131,6 +131,10 @@ namespace Ikarus
                                            break;
                                        }
                                    }
+                                   if (MainWindow.editmode)
+                                   {
+                                       Cockpit.UpdateInOut(dataImportID, "1", value.ToString(), Convert.ToInt32(rtFuelTankFuselage.Angle).ToString());
+                                   }
                                    ME4K_FuelQ_Needle.RenderTransform = rtFuelTankFuselage;
                                }
                                lvalue = value;

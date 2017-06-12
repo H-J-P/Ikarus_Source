@@ -23,7 +23,7 @@ namespace Ikarus
         double pointer = 0.0;
         double lpointer = 0.0;
 
-        RotateTransform rtpointer = new RotateTransform();
+        RotateTransform rtIAS = new RotateTransform();
 
         public void SetWindowID(int _windowID) { windowID = _windowID; }
         public int GetWindowID() { return windowID; }
@@ -118,27 +118,21 @@ namespace Ikarus
 
                                if (vals.Length > 0) { pointer = Convert.ToDouble(vals[0], CultureInfo.InvariantCulture); }
 
-                               if (pointer < 0.0) { pointer = 0.0; }
-                               if (pointer > 0.5) { pointer = 0.5; }
-
-                               // AirspeedGauge.input  = { 0.0, 500.0}
-                               // AirspeedGauge.output = { 0.0,   0.5}
-
-                               // Input: 0.0,0.06,0.08,0.1,0.12,0.14,0.15,0.16,0.18,0.2,0.22,0.24,0.26,0.28,0.3,0.4,0.5
-                               //          0,  60,  80,100, 120, 140, 150, 160, 180,200, 220, 240, 260, 280,300,400,500
-                               // °    :   0,  15,  30, 48,  72,  98, 112, 129, 161,196, 232, 267, 300, 329,360,490,609  
-
                                if (lpointer != pointer)
                                {
                                    for (int n = 0; n < valueScaleIndex - 1; n++)
                                    {
                                        if (pointer > valueScale[n] && pointer <= valueScale[n + 1])
                                        {
-                                           rtpointer.Angle = (degreeDial[n] - degreeDial[n + 1]) / (valueScale[n] - valueScale[n + 1]) * (pointer - valueScale[n]) + degreeDial[n];
+                                           rtIAS.Angle = (degreeDial[n] - degreeDial[n + 1]) / (valueScale[n] - valueScale[n + 1]) * (pointer - valueScale[n]) + degreeDial[n];
                                            break;
                                        }
                                    }
-                                   ASI.RenderTransform = rtpointer;
+                                   if (MainWindow.editmode)
+                                   {
+                                       Cockpit.UpdateInOut(dataImportID, "1", pointer.ToString(), Convert.ToInt32(rtIAS.Angle).ToString());
+                                   }
+                                   ASI.RenderTransform = rtIAS;
                                }
                                lpointer = pointer;
                            }

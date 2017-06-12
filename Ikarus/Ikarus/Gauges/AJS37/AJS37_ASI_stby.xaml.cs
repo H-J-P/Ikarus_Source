@@ -27,7 +27,7 @@ namespace Ikarus
         private double ias = 0.0;
         private double lias = 0.0;
 
-        RotateTransform rtIas = new RotateTransform();
+        RotateTransform rtIAS = new RotateTransform();
 
         public AJS37_ASI_stby()
         {
@@ -119,13 +119,7 @@ namespace Ikarus
                            {
                                vals = strData.Split(';');
                              
-                       //km/h  { 0.0,   203,   218,   237,   255,   273,   292,   310,   360,   410,    470,   540,   615,   695,    800}
-                       //m/s   { 0.0, 56.39, 60.56, 65.83, 70.83, 75.83, 81.11, 86.11, 100.0, 113.9, 130.55, 150.0, 170.8, 193.0, 222.22}
-                       //input { 0.0,  0.01,  0.05,  0.10,  0.15,  0.20,  0.25,  0.30,  0.40,  0.50,   0.60,  0.70,  0.80,  0.90,   1.00}
-                       // °    {   0,    25,    45,    64,    78,    95,   110,   120,   155,   185,    215,   248,   278,   306,    338}
                                if (vals.Length > 0) { ias = Convert.ToDouble(vals[0], CultureInfo.InvariantCulture); }
-
-                               if (ias < 0.0) { ias = 0.0; }
 
                                if (lias != ias)
                                {
@@ -133,15 +127,15 @@ namespace Ikarus
                                    {
                                        if (ias > valueScale[n] && ias <= valueScale[n + 1])
                                        {
-                                           rtIas.Angle = (degreeDial[n] - degreeDial[n + 1]) / (valueScale[n] - valueScale[n + 1]) * (ias - valueScale[n]) + degreeDial[n];
+                                           rtIAS.Angle = (degreeDial[n] - degreeDial[n + 1]) / (valueScale[n] - valueScale[n + 1]) * (ias - valueScale[n]) + degreeDial[n];
                                            break;
                                        }
                                    }
                                    if (MainWindow.editmode)
                                    {
-                                       Cockpit.UpdateInOut(dataImportID, "1", ias.ToString(), Convert.ToInt32(rtIas.Angle).ToString());
+                                       Cockpit.UpdateInOut(dataImportID, "1", ias.ToString(), Convert.ToInt32(rtIAS.Angle).ToString());
                                    }
-                                   ASI1.RenderTransform = rtIas;
+                                   ASI1.RenderTransform = rtIAS;
                                }
                                lias = ias;
                            }

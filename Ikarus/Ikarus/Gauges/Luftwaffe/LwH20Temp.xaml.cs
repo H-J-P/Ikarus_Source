@@ -134,6 +134,10 @@ namespace Ikarus
                                            }
                                        }
                                    }
+                                   if (MainWindow.editmode)
+                                   {
+                                       Cockpit.UpdateInOut(dataImportID, "1", h2oTemp.ToString(), Convert.ToInt32(rtH20Temp.Angle).ToString());
+                                   }
                                    FWD9_H2oT_Needle.RenderTransform = rtH20Temp;
                                }
                                lh2oTemp = h2oTemp;
@@ -169,8 +173,6 @@ namespace Ikarus
                 trUsercontrol.X += currentPoint.X - originalPoint.X;
                 trUsercontrol.Y += currentPoint.Y - originalPoint.Y;
                 moveThisElement.RenderTransform = trUsercontrol;
-
-
             };
         }
 

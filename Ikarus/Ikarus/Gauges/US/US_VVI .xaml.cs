@@ -34,8 +34,6 @@ namespace Ikarus
         {
             InitializeComponent();
             if (MainWindow.editmode) MakeDraggable(this, this);
-
-            VVI_Input.Visibility = System.Windows.Visibility.Hidden;
         }
 
         public void SetID(string _dataImportID)
@@ -133,8 +131,11 @@ namespace Ikarus
                                            break;
                                        }
                                    }
+                                   if (MainWindow.editmode)
+                                   {
+                                       Cockpit.UpdateInOut(dataImportID, "1", vvi.ToString(), Convert.ToInt32(rtVVI.Angle).ToString());
+                                   }
                                    VVI.RenderTransform = rtVVI;
-                                   VVI_Input.Text = vals[0];
                                }
                                lvvi = vvi;
                            }
@@ -169,8 +170,6 @@ namespace Ikarus
                 trUsercontrol.X += currentPoint.X - originalPoint.X;
                 trUsercontrol.Y += currentPoint.Y - originalPoint.Y;
                 moveThisElement.RenderTransform = trUsercontrol;
-
-
             };
         }
 

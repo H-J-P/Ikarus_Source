@@ -119,17 +119,6 @@ namespace Ikarus
 
                                if (vals.Length > 0) { heading = Convert.ToDouble(vals[0], CultureInfo.InvariantCulture); }
 
-                               //Input.Text = heading.ToString();
-
-                               //heading = 1 - heading;
-                               //heading -= 0.5;
-
-                               // DIGauge.input = { 0.0, 2.0 * 3.1415926}
-                               // DIGauge.output = { 0.0, 1.0}
-                               // Input:   0.0,0.080,0.163,0.249,0.332,0.415,0.500,0.500,0.583,0.670,0.751,0.826,0.923, 1.0
-                               //     °:     0,   30,   60,   90,  120,  150,  180,  180,  210,  240,  270,  300,  330, 360
-                               //   Out:     0,   69,  138,  208,  278,  348,  417, -417, -348, -279, -209, -139,  -70,   0
-
                                if (lheading != heading)
                                {
                                    for (int n = 0; n < valueScaleIndex - 1; n++)
@@ -139,6 +128,10 @@ namespace Ikarus
                                            ttHeading.X = (degreeDial[n] - degreeDial[n + 1]) / (valueScale[n] - valueScale[n + 1]) * (heading - valueScale[n]) + degreeDial[n];
                                            break;
                                        }
+                                   }
+                                   if (MainWindow.editmode)
+                                   {
+                                       Cockpit.UpdateInOut(dataImportID, "1", heading.ToString(), Convert.ToInt32(ttHeading.X).ToString());
                                    }
                                    Heading.RenderTransform = ttHeading;
                                }

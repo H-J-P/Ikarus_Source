@@ -17,6 +17,9 @@ namespace Ikarus
         private string dataImportID = "";
         private int windowID = 0;
         private string[] vals = new string[] { };
+        private double[] valueScale = new double[] { };
+        private double[] degreeDial = new double[] { };
+        int valueScaleIndex = 0;
 
         public void SetWindowID(int _windowID) { windowID = _windowID; }
         public int GetWindowID() { return windowID; }
@@ -32,10 +35,6 @@ namespace Ikarus
 
             if (MainWindow.editmode) MakeDraggable(this, this);
         }
-
-        private double[] valueScale = new double[] { };
-        private double[] degreeDial = new double[] { };
-        int valueScaleIndex = 0;
 
         public void SetID(string _dataImportID)
         {
@@ -123,9 +122,6 @@ namespace Ikarus
 
                                if (vals.Length > 0) { value = Convert.ToDouble(vals[0], CultureInfo.InvariantCulture); }
 
-                               if (value > 0.988) { value = 0.988; }
-                               if (value < 0.0) { value = 0.0; }
-
                                if (lvalue != value)
                                {
                                    for (int n = 0; n < valueScaleIndex - 1; n++)
@@ -135,6 +131,10 @@ namespace Ikarus
                                            rtIAS.Angle = (degreeDial[n] - degreeDial[n + 1]) / (valueScale[n] - valueScale[n + 1]) * (value - valueScale[n]) + degreeDial[n];
                                            break;
                                        }
+                                   }
+                                   if (MainWindow.editmode)
+                                   {
+                                       Cockpit.UpdateInOut(dataImportID, "1", value.ToString(), Convert.ToInt32(rtIAS.Angle).ToString());
                                    }
                                    Lw_ASI_Needle.RenderTransform = rtIAS;
                                }
@@ -171,8 +171,6 @@ namespace Ikarus
                 trUsercontrol.X += currentPoint.X - originalPoint.X;
                 trUsercontrol.Y += currentPoint.Y - originalPoint.Y;
                 moveThisElement.RenderTransform = trUsercontrol;
-
-
             };
         }
 

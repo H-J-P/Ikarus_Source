@@ -127,7 +127,10 @@ namespace Ikarus
                                            break;
                                        }
                                    }
-                                   //rtManifoldPressure.Angle = (manifoldPressure * 325); // -18;
+                                   if (MainWindow.editmode)
+                                   {
+                                       Cockpit.UpdateInOut(dataImportID, "1", manifoldPressure.ToString(), Convert.ToInt32(rtManifoldPressure.Angle).ToString());
+                                   }
                                    Lw_MAP_Needle.RenderTransform = rtManifoldPressure;
                                }
                                lmanifoldPressure = manifoldPressure;
@@ -163,8 +166,6 @@ namespace Ikarus
                 trUsercontrol.X += currentPoint.X - originalPoint.X;
                 trUsercontrol.Y += currentPoint.Y - originalPoint.Y;
                 moveThisElement.RenderTransform = trUsercontrol;
-
-
             };
         }
 

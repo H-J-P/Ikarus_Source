@@ -126,9 +126,6 @@ namespace Ikarus
                            {
                                if (vals.Length > 0) { ias = Convert.ToDouble(vals[0], CultureInfo.InvariantCulture); }
                                if (vals.Length > 1) { mach = Convert.ToDouble(vals[1], CultureInfo.InvariantCulture); }
-                               // 0.0,   80.0, 100.0, 170.0, 200.0,  230.0, 250.0,  300.0,  350.0, 400.0, 500.0, 550.0, 650.0, 700.0, 750.0, 800.0, 850.0
-                               // 0.0, 0.0435,   0.1, 0.318, 0.397, 0.4495, 0.482,  0.553, 0.6145, 0.668, 0.761, 0.801, 0.877, 0.909, 0.942, 0.972,   1.0
-                               // 0.0,     42,    50,    82,    99,    115,   124,    149,    174,   200,   230,   245,   276,   291,   299,   307,   315
 
                                if (lias != ias)
                                {
@@ -139,6 +136,10 @@ namespace Ikarus
                                            rtASI.Angle = (degreeDial[n] - degreeDial[n + 1]) / (valueScale[n] - valueScale[n + 1]) * (ias - valueScale[n]) + degreeDial[n];
                                            break;
                                        }
+                                   }
+                                   if (MainWindow.editmode)
+                                   {
+                                       Cockpit.UpdateInOut(dataImportID, "1", ias.ToString(), Convert.ToInt32(rtASI.Angle).ToString());
                                    }
                                    IAS.RenderTransform = rtASI;
                                }
@@ -182,8 +183,6 @@ namespace Ikarus
                 trUsercontrol.X += currentPoint.X - originalPoint.X;
                 trUsercontrol.Y += currentPoint.Y - originalPoint.Y;
                 moveThisElement.RenderTransform = trUsercontrol;
-
-
             };
         }
 

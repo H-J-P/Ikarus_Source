@@ -127,6 +127,10 @@ namespace Ikarus
                                            break;
                                        }
                                    }
+                                   if (MainWindow.editmode)
+                                   {
+                                       Cockpit.UpdateInOut(dataImportID, "1", pointer.ToString(), Convert.ToInt32(ttpointer.Y).ToString());
+                                   }
                                    Oil_P.RenderTransform = ttpointer;
                                }
                                lpointer = pointer;

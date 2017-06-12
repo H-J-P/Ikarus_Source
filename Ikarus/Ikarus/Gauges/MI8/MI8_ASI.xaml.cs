@@ -28,7 +28,7 @@ namespace Ikarus
         double ias = 0.0;
         double lias = 0.0;
 
-        RotateTransform rtias = new RotateTransform();
+        RotateTransform rtIAS = new RotateTransform();
 
         public MI8_ASI()
         {
@@ -135,11 +135,15 @@ namespace Ikarus
                                    {
                                        if (ias >= valueScale[n] && ias <= valueScale[n + 1])
                                        {
-                                           rtias.Angle = (degreeDial[n] - degreeDial[n + 1]) / (valueScale[n] - valueScale[n + 1]) * (ias - valueScale[n]) + degreeDial[n];
+                                           rtIAS.Angle = (degreeDial[n] - degreeDial[n + 1]) / (valueScale[n] - valueScale[n + 1]) * (ias - valueScale[n]) + degreeDial[n];
                                            break;
                                        }
                                    }
-                                   IAS_L.RenderTransform = rtias;
+                                   if (MainWindow.editmode)
+                                   {
+                                       Cockpit.UpdateInOut(dataImportID, "1", ias.ToString(), Convert.ToInt32(rtIAS.Angle).ToString());
+                                   }
+                                   IAS_L.RenderTransform = rtIAS;
                                }
                                lias = ias;
                            }
@@ -147,17 +151,17 @@ namespace Ikarus
                        }));
         }
 
-private void MakeDraggable(System.Windows.UIElement moveThisElement, System.Windows.UIElement movedByElement)
-{
-    System.Windows.Point originalPoint = new System.Windows.Point(0, 0), currentPoint;
-    TranslateTransform trUsercontrol = new TranslateTransform(0, 0);
-    bool isMousePressed = false;
+        private void MakeDraggable(System.Windows.UIElement moveThisElement, System.Windows.UIElement movedByElement)
+        {
+            System.Windows.Point originalPoint = new System.Windows.Point(0, 0), currentPoint;
+            TranslateTransform trUsercontrol = new TranslateTransform(0, 0);
+            bool isMousePressed = false;
 
-    movedByElement.MouseLeftButtonDown += (a, b) =>
-    {
-        isMousePressed = true;
-        originalPoint = ((System.Windows.Input.MouseEventArgs)b).GetPosition(moveThisElement);
-    };
+            movedByElement.MouseLeftButtonDown += (a, b) =>
+            {
+                isMousePressed = true;
+                originalPoint = ((System.Windows.Input.MouseEventArgs)b).GetPosition(moveThisElement);
+            };
 
             movedByElement.MouseLeftButtonUp += (a, b) =>
             {
@@ -166,22 +170,22 @@ private void MakeDraggable(System.Windows.UIElement moveThisElement, System.Wind
             };
             movedByElement.MouseLeave += (a, b) => isMousePressed = false;
 
-    movedByElement.MouseMove += (a, b) =>
-    {
-        if (!isMousePressed || !MainWindow.editmode) return;
+            movedByElement.MouseMove += (a, b) =>
+            {
+                if (!isMousePressed || !MainWindow.editmode) return;
 
-        currentPoint = ((System.Windows.Input.MouseEventArgs)b).GetPosition(moveThisElement);
-        trUsercontrol.X += currentPoint.X - originalPoint.X;
-        trUsercontrol.Y += currentPoint.Y - originalPoint.Y;
-        moveThisElement.RenderTransform = trUsercontrol;
+                currentPoint = ((System.Windows.Input.MouseEventArgs)b).GetPosition(moveThisElement);
+                trUsercontrol.X += currentPoint.X - originalPoint.X;
+                trUsercontrol.Y += currentPoint.Y - originalPoint.Y;
+                moveThisElement.RenderTransform = trUsercontrol;
 
-        MainWindow.cockpitWindows[windowID].UpdatePosition(PointToScreen(new System.Windows.Point(0, 0)), "IDInst", MainWindow.dtInstruments, dataImportID);
-    };
-}
+                MainWindow.cockpitWindows[windowID].UpdatePosition(PointToScreen(new System.Windows.Point(0, 0)), "IDInst", MainWindow.dtInstruments, dataImportID);
+            };
+        }
 
-private void Light_MouseWheel(object sender, System.Windows.Input.MouseWheelEventArgs e)
-{
-    if (MainWindow.editmode) MainWindow.cockpitWindows[windowID].UpdatePosition(PointToScreen(new System.Windows.Point(0, 0)), "IDInst", MainWindow.dtInstruments, dataImportID, e.Delta);
-}
+        private void Light_MouseWheel(object sender, System.Windows.Input.MouseWheelEventArgs e)
+        {
+            if (MainWindow.editmode) MainWindow.cockpitWindows[windowID].UpdatePosition(PointToScreen(new System.Windows.Point(0, 0)), "IDInst", MainWindow.dtInstruments, dataImportID, e.Delta);
+        }
     }
 }
