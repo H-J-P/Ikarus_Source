@@ -82,8 +82,6 @@ namespace Ikarus
                 Topmost = true;
                 BackImage.Source = null;
 
-                //if (windowID > 0) Visibility = Visibility.Hidden;
-
                 ImportExport.LogMessage("Start loading Cockpit ... " + _backgroundFile);
 
                 backgroundFile = Environment.CurrentDirectory + "\\Images\\Backgounds\\" + _backgroundFile;

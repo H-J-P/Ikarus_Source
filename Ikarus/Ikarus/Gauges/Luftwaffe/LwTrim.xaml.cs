@@ -120,7 +120,7 @@ namespace Ikarus
                                {
                                    for (int n = 0; n < valueScaleIndex - 1; n++)
                                    {
-                                       if (value > valueScale[n] && value <= valueScale[n + 1])
+                                       if (value >= valueScale[n] && value <= valueScale[n + 1])
                                        {
                                            rtFWD9Trim.Angle = (degreeDial[n] - degreeDial[n + 1]) / (valueScale[n] - valueScale[n + 1]) * (value - valueScale[n]) + degreeDial[n];
                                            break;

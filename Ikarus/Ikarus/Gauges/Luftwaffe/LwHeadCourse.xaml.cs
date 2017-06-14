@@ -33,7 +33,6 @@ namespace Ikarus
         public LwHeadCourse()
         {
             InitializeComponent();
-
             if (MainWindow.editmode) MakeDraggable(this, this);
         }
 
@@ -105,12 +104,16 @@ namespace Ikarus
                                if (lcompassHeading != compassHeading)
                                {
                                    rtCompassHeading.Angle = compassHeading * 360;
-                                   Lw_Head_Needle_heading.RenderTransform = rtCommandedCourse;
+                                   Lw_Head_Needle_heading.RenderTransform = rtCompassHeading;
+
+                                   rtCommandedCourse.Angle = commandedCourse * 360 + rtCompassHeading.Angle;
+                                   Lw_Head_Needle_Comp.RenderTransform = rtCommandedCourse;
                                }
+
                                if (lcommandedCourse != commandedCourse)
                                {
-                                   rtCommandedCourse.Angle = commandedCourse * 360;
-                                   Lw_Head_Needle_Comp.RenderTransform = rtCompassHeading;
+                                   rtCommandedCourse.Angle = commandedCourse * 360 + rtCompassHeading.Angle;
+                                   Lw_Head_Needle_Comp.RenderTransform = rtCommandedCourse;
                                }
                                lcompassHeading = compassHeading;
                                lcommandedCourse = commandedCourse;

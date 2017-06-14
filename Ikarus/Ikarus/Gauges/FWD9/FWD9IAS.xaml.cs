@@ -120,7 +120,7 @@ namespace Ikarus
                            {
                                vals = strData.Split(';');
 
-                               if (vals.Length > 0) { value = Convert.ToDouble(vals[0], CultureInfo.InvariantCulture); }
+                               if (vals.Length >= 0) { value = Convert.ToDouble(vals[0], CultureInfo.InvariantCulture); }
 
                                if (lvalue != value)
                                {
