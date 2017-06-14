@@ -101,17 +101,11 @@ namespace Ikarus
                                if (vals.Length > 0) { compassHeading = Convert.ToDouble(vals[0], CultureInfo.InvariantCulture); }
                                if (vals.Length > 1) { commandedCourse = Convert.ToDouble(vals[1], CultureInfo.InvariantCulture); }
 
-                               if (lcompassHeading != compassHeading)
+                               if (lcompassHeading != compassHeading || lcommandedCourse != commandedCourse) 
                                {
                                    rtCompassHeading.Angle = compassHeading * 360;
                                    Lw_Head_Needle_heading.RenderTransform = rtCompassHeading;
 
-                                   rtCommandedCourse.Angle = commandedCourse * 360 + rtCompassHeading.Angle;
-                                   Lw_Head_Needle_Comp.RenderTransform = rtCommandedCourse;
-                               }
-
-                               if (lcommandedCourse != commandedCourse)
-                               {
                                    rtCommandedCourse.Angle = commandedCourse * 360 + rtCompassHeading.Angle;
                                    Lw_Head_Needle_Comp.RenderTransform = rtCommandedCourse;
                                }
