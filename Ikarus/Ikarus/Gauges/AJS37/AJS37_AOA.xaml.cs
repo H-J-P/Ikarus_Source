@@ -21,7 +21,6 @@ namespace Ikarus
         int valueScaleIndex = 0;
         private string[] vals = new string[] { };
 
-        public void SetWindowID(int _windowID) { windowID = _windowID; }
         public int GetWindowID() { return windowID; }
 
         private double readValue = 0.0;
@@ -32,13 +31,19 @@ namespace Ikarus
         public AJS37_AOA()
         {
             InitializeComponent();
-            if (MainWindow.editmode) MakeDraggable(this, this);
         }
 
         public void SetID(string _dataImportID)
         {
             dataImportID = _dataImportID;
             LoadBmaps();
+        }
+
+        public void SetWindowID(int _windowID)
+        {
+            windowID = _windowID;
+            GaugesHelper helper = new GaugesHelper(dataImportID, windowID, "Instruments");
+            if (MainWindow.editmode) { helper.MakeDraggable(this, this); }
         }
 
         public string GetID() { return dataImportID; }

@@ -194,6 +194,7 @@ namespace Ikarus
                     interfaceUserControl.SetID(instanceID.ToString()); // importent
                     interfaceUserControl.SetWindowID(windowID);
 
+
                     userControl.VerticalAlignment = VerticalAlignment.Top;
                     userControl.HorizontalAlignment = HorizontalAlignment.Left;
 
@@ -576,6 +577,7 @@ namespace Ikarus
         {
             try
             {
+                //MainWindow.dtInstruments.Select
                 dataRows = tablename.Select(nameID + "=" + ID);
 
                 if (dataRows.Length > 0)
@@ -614,6 +616,61 @@ namespace Ikarus
                     UpdateTransform(tablename.TableName, Convert.ToInt32(dataRows[0][0]), posX, posY, size, rotate);
                 }
                 ((MainWindow)Application.Current.MainWindow).SelectDataGridItem(tablename.TableName, Convert.ToInt32(ID));
+
+                MainWindow.refreshCockpit = true;
+            }
+            catch (Exception e) { ImportExport.LogMessage("UpdatePosition .. " + e.ToString()); }
+        }
+
+        public void UpdatePosition(Point coordinates, string tableName, string ID, int deltaSize = 0)
+        {
+            try
+            {
+                if (tableName == "Accessories")
+                    dataRows = MainWindow.dtAccessories.Select("ID=" + ID);
+                if (tableName == "Instruments")
+                    dataRows = MainWindow.dtInstruments.Select("IDInst=" + ID);
+                if (tableName == "Switches")
+                    dataRows = MainWindow.dtSwitches.Select("ID=" + ID);
+                if (tableName == "Lamps")
+                    dataRows = MainWindow.dtLamps.Select("ID=" + ID);
+
+                if (dataRows.Length > 0)
+                {
+                    if (Left < 0.0)
+                        resultPoint.X = (Left * -1.0) + coordinates.X;
+                    else
+                        resultPoint.X = (Left > 0.0) ? coordinates.X - Left : coordinates.X;
+
+                    if (Top < 0.0)
+                        resultPoint.Y = (Top * -1.0) + coordinates.Y;
+                    else
+                        resultPoint.Y = (Top > 0.0) ? coordinates.Y - Top : coordinates.Y;
+
+                    scrollWeel += deltaSize;
+
+                    if (scrollWeel > 1.0) scrollWeel = 1.0;
+                    if (scrollWeel < -1.0) scrollWeel = -1.0;
+
+                    dataRows[0]["PosX"] = Convert.ToInt32(resultPoint.X);
+                    dataRows[0]["PosY"] = Convert.ToInt32(resultPoint.Y);
+
+                    if (scrollWeel == 1.0) { dataRows[0]["Size"] = Convert.ToInt32(dataRows[0]["Size"]) + 5; }
+
+                    if (scrollWeel == -1.0) { dataRows[0]["Size"] = Convert.ToInt32(dataRows[0]["Size"]) - 5; }
+
+                    if (tableName == "Lamps") ID = dataRows[0]["ID"].ToString();
+
+                    scrollWeel = 0.0;
+
+                    posX = double.Parse(dataRows[0]["PosX"].ToString().Replace(",", "."), CultureInfo.InvariantCulture);
+                    posY = double.Parse(dataRows[0]["PosY"].ToString().Replace(",", "."), CultureInfo.InvariantCulture);
+                    size = double.Parse(dataRows[0]["Size"].ToString().Replace(",", "."), CultureInfo.InvariantCulture);
+                    rotate = double.Parse(dataRows[0]["Rotate"].ToString().Replace(",", "."), CultureInfo.InvariantCulture);
+
+                    UpdateTransform(tableName, Convert.ToInt32(dataRows[0][0]), posX, posY, size, rotate);
+                }
+                ((MainWindow)Application.Current.MainWindow).SelectDataGridItem(tableName, Convert.ToInt32(ID));
 
                 MainWindow.refreshCockpit = true;
             }

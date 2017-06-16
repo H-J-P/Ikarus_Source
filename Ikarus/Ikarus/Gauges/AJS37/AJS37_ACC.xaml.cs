@@ -21,7 +21,6 @@ namespace Ikarus
         int valueScaleIndex = 0;
         private string[] vals = new string[] { };
 
-        public void SetWindowID(int _windowID) { windowID = _windowID; }
         public int GetWindowID() { return windowID; }
 
         double acceleration = 0.0;
@@ -40,8 +39,6 @@ namespace Ikarus
         {
             InitializeComponent();
 
-            if (MainWindow.editmode) MakeDraggable(this, this);
-
             MAX_G_needle.Visibility = System.Windows.Visibility.Hidden;
             MIN_G_needle.Visibility = System.Windows.Visibility.Hidden;
         }
@@ -49,6 +46,13 @@ namespace Ikarus
         {
             dataImportID = _dataImportID;
             LoadBmaps();
+        }
+
+        public void SetWindowID(int _windowID)
+        {
+            windowID = _windowID;
+            GaugesHelper helper = new GaugesHelper(dataImportID, windowID, "Instruments");
+            if (MainWindow.editmode) { helper.MakeDraggable(this, this); }
         }
 
         public string GetID() { return dataImportID; }
@@ -140,9 +144,6 @@ namespace Ikarus
 
                                if (lacceleration != acceleration)
                                {
-                                   // Onput = { -2.0,0.0, 9.0}  
-                                   // Input = { -0.3,0.0, 0.8}
-                                   // °          -60, 30, 270
                                    for (int n = 0; n < (valueScaleIndex - 1); n++)
                                    {
                                        if (acceleration >= valueScale[n] && acceleration <= valueScale[n + 1])
@@ -162,36 +163,6 @@ namespace Ikarus
                            }
                            catch { return; }
                        }));
-        }
-
-        private void MakeDraggable(System.Windows.UIElement moveThisElement, System.Windows.UIElement movedByElement)
-        {
-            System.Windows.Point originalPoint = new System.Windows.Point(0, 0), currentPoint;
-            TranslateTransform trUsercontrol = new TranslateTransform(0, 0);
-            bool isMousePressed = false;
-
-            movedByElement.MouseLeftButtonDown += (a, b) =>
-            {
-                isMousePressed = true;
-                originalPoint = ((System.Windows.Input.MouseEventArgs)b).GetPosition(moveThisElement);
-            };
-
-            movedByElement.MouseLeftButtonUp += (a, b) =>
-            {
-                isMousePressed = false;
-                MainWindow.cockpitWindows[windowID].UpdatePosition(PointToScreen(new System.Windows.Point(0, 0)), "IDInst", MainWindow.dtInstruments, dataImportID);
-            };
-            movedByElement.MouseLeave += (a, b) => isMousePressed = false;
-
-            movedByElement.MouseMove += (a, b) =>
-            {
-                if (!isMousePressed || !MainWindow.editmode) return;
-
-                currentPoint = ((System.Windows.Input.MouseEventArgs)b).GetPosition(moveThisElement);
-                trUsercontrol.X += currentPoint.X - originalPoint.X;
-                trUsercontrol.Y += currentPoint.Y - originalPoint.Y;
-                moveThisElement.RenderTransform = trUsercontrol;
-            };
         }
 
         private void Light_MouseWheel(object sender, System.Windows.Input.MouseWheelEventArgs e)

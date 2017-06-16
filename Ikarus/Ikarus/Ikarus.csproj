@@ -85,6 +85,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="GaugesHelper.cs" />
     <Compile Include="Gauges\A10\A10_Clock.xaml.cs">
       <DependentUpon>A10_Clock.xaml</DependentUpon>
     </Compile>
