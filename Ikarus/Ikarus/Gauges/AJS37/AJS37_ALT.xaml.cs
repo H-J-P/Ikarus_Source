@@ -17,6 +17,7 @@ namespace Ikarus
         private string dataImportID = "";
         private int windowID = 0;
         private string[] vals = new string[] { };
+        GaugesHelper helper = null;
 
         public int GetWindowID() { return windowID; }
 
@@ -52,7 +53,7 @@ namespace Ikarus
             rtalt1000FP.Angle = 180;
             Altimeter_1000.RenderTransform = rtalt1000FP;
 
-            Off_Flag.Visibility = System.Windows.Visibility.Visible;
+            Off_Flag.Visibility = System.Windows.Visibility.Hidden;
         }
         public void SetID(string _dataImportID)
         {
@@ -63,7 +64,7 @@ namespace Ikarus
         public void SetWindowID(int _windowID)
         {
             windowID = _windowID;
-            GaugesHelper helper = new GaugesHelper(dataImportID, windowID, "Instruments");
+            helper = new GaugesHelper(dataImportID, windowID, "Instruments");
             if (MainWindow.editmode) { helper.MakeDraggable(this, this); }
         }
 
@@ -171,7 +172,7 @@ namespace Ikarus
 
                            if (lflagOff != flagOff)
                            {
-                               Off_Flag.Visibility = (flagOff == 1.0 ? System.Windows.Visibility.Hidden : System.Windows.Visibility.Visible);
+                               Off_Flag.Visibility = (flagOff > 0.8 ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden);
                            }
                            lalt100FP = alt100FP;
                            lalt1000FP = alt1000FP;

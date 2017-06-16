@@ -17,6 +17,7 @@ namespace Ikarus
         private string dataImportID = "";
         private int windowID = 0;
         private string[] vals = new string[] { };
+        GaugesHelper helper = null;
 
         public int GetWindowID() { return windowID; }
 
@@ -56,7 +57,6 @@ namespace Ikarus
             RWR_27.Visibility = System.Windows.Visibility.Hidden;
             RWR_33.Visibility = System.Windows.Visibility.Hidden;
             Warning_flag.Visibility =  System.Windows.Visibility.Visible;
-            ALTITUDE_WARNING.Visibility = System.Windows.Visibility.Hidden;
 
             Range15.Visibility = System.Windows.Visibility.Hidden;
             Range30.Visibility = System.Windows.Visibility.Hidden;
@@ -73,7 +73,7 @@ namespace Ikarus
         public void SetWindowID(int _windowID)
         {
             windowID = _windowID;
-            GaugesHelper helper = new GaugesHelper(dataImportID, windowID, "Instruments");
+            helper = new GaugesHelper(dataImportID, windowID, "Instruments");
             if (MainWindow.editmode) { helper.MakeDraggable(this, this); }
         }
 

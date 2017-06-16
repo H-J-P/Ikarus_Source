@@ -20,6 +20,7 @@ namespace Ikarus
         private double[] degreeDial = new double[] { };
         int valueScaleIndex = 0;
         private string[] vals = new string[] { };
+        GaugesHelper helper = null;
 
         public int GetWindowID() { return windowID; }
 
@@ -59,7 +60,7 @@ namespace Ikarus
         public void SetWindowID(int _windowID)
         {
             windowID = _windowID;
-            GaugesHelper helper = new GaugesHelper(dataImportID, windowID, "Instruments");
+            helper = new GaugesHelper(dataImportID, windowID, "Instruments");
             if (MainWindow.editmode) { helper.MakeDraggable(this, this); }
         }
 
@@ -188,8 +189,10 @@ namespace Ikarus
                                    MACH100.RenderTransform = ttMach100;
                                }
 
+                               asiOff = (asiOff > 0.9) ? 0.0 : 1.0;
+
                                if (lasiOff != asiOff)
-                                   ASI_OFF_flag.Visibility = (asiOff > 0.9) ? System.Windows.Visibility.Hidden : System.Windows.Visibility.Visible;
+                                    ASI_OFF_flag.Visibility = (asiOff > 0.9) ? System.Windows.Visibility.Hidden : System.Windows.Visibility.Visible;
 
                                lias = ias;
                                lmach1 = mach1;

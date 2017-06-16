@@ -30,8 +30,8 @@ namespace Ikarus
         private Switches switches = null;
         private bool touchDown = false;
         BitmapImage bitmapImage = new BitmapImage();
+        GaugesHelper helper = null;
 
-        public void SetWindowID(int _windowID) { windowID = _windowID; }
         public int GetWindowID() { return windowID; }
 
         public Button()
@@ -40,16 +40,6 @@ namespace Ikarus
             Focusable = false;
 
             DesignFrame.Visibility = System.Windows.Visibility.Hidden;
-
-            if (MainWindow.editmode)
-            {
-                MakeDraggable(this, this);
-                DesignFrame.Visibility = System.Windows.Visibility.Visible;
-
-                Color color = Color.FromArgb(90, 255, 0, 0);
-                UpperRec.StrokeThickness = 1.0;
-                UpperRec.Stroke = new SolidColorBrush(color);
-            }
             SwitchUp.Visibility = System.Windows.Visibility.Hidden;
         }
 
@@ -59,6 +49,22 @@ namespace Ikarus
             LoadBmaps();
 
             switches = MainWindow.switches.Find(x => x.ID == Convert.ToInt32(dataImportID));
+        }
+
+        public void SetWindowID(int _windowID)
+        {
+            windowID = _windowID;
+            helper = new GaugesHelper(dataImportID, windowID, "Switches");
+
+            if (MainWindow.editmode)
+            {
+                helper.MakeDraggable(this, this);
+                DesignFrame.Visibility = System.Windows.Visibility.Visible;
+
+                Color color = Color.FromArgb(90, 255, 0, 0);
+                UpperRec.StrokeThickness = 1.0;
+                UpperRec.Stroke = new SolidColorBrush(color);
+            }
         }
 
         public string GetID() { return dataImportID; }

@@ -20,6 +20,7 @@ namespace Ikarus
         private double[] degreeDial = new double[] { };
         int valueScaleIndex = 0;
         private string[] vals = new string[] { };
+        GaugesHelper helper = null;
 
         public int GetWindowID() { return windowID; }
 
@@ -47,7 +48,7 @@ namespace Ikarus
             windowID = _windowID;
 
             windowID = _windowID;
-            GaugesHelper helper = new GaugesHelper(dataImportID, windowID, "Instruments");
+            helper = new GaugesHelper(dataImportID, windowID, "Instruments");
             if (MainWindow.editmode) { helper.MakeDraggable(this, this); }
         }
 

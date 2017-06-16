@@ -20,8 +20,8 @@ namespace Ikarus
         private double[] valueScale = new double[] { };
         private double[] degreeDial = new double[] { };
         int valueScaleIndex = 0;
+        GaugesHelper helper = null;
 
-        public void SetWindowID(int _windowID) { windowID = _windowID; }
         public int GetWindowID() { return windowID; }
 
         double value = 0.0;
@@ -32,14 +32,19 @@ namespace Ikarus
         public BfK4Fuel()
         {
             InitializeComponent();
-
-            if (MainWindow.editmode) MakeDraggable(this, this);
         }
 
         public void SetID(string _dataImportID)
         {
             dataImportID = _dataImportID;
             LoadBmaps();
+        }
+
+        public void SetWindowID(int _windowID)
+        {
+            windowID = _windowID;
+            helper = new GaugesHelper(dataImportID, windowID, "Instruments");
+            if (MainWindow.editmode) { helper.MakeDraggable(this, this); }
         }
 
         public string GetID() { return dataImportID; }

@@ -25,8 +25,8 @@ namespace Ikarus
         private string[] vals = new string[] { };
         private bool touchDown = false;
         BitmapImage bitmapImage = new BitmapImage();
+        GaugesHelper helper = null;
 
-        public void SetWindowID(int _windowID) { windowID = _windowID; }
         public int GetWindowID() { return windowID; }
 
         public SwitchPanelOffOn()
@@ -35,19 +35,6 @@ namespace Ikarus
             Focusable = false;
 
             DesignFrame.Visibility = System.Windows.Visibility.Hidden;
-
-            if (MainWindow.editmode)
-            {
-                MakeDraggable(this, this);
-                DesignFrame.StrokeThickness = 2.0;
-                DesignFrame.Visibility = System.Windows.Visibility.Visible;
-                Color color = Color.FromArgb(90, 255, 0, 0);
-                UpperRec.StrokeThickness = 2.0;
-                UpperRec.Stroke = new SolidColorBrush(color);
-                LowerRec.StrokeThickness = 2.0;
-                LowerRec.Stroke = new SolidColorBrush(color);
-            }
-
             SwitchUp.Visibility = System.Windows.Visibility.Hidden;
         }
 
@@ -57,6 +44,23 @@ namespace Ikarus
             LoadBmaps();
         }
 
+        public void SetWindowID(int _windowID)
+        {
+            windowID = _windowID;
+            helper = new GaugesHelper(dataImportID, windowID, "Switches");
+
+            if (MainWindow.editmode)
+            {
+                helper.MakeDraggable(this, this);
+                DesignFrame.StrokeThickness = 2.0;
+                DesignFrame.Visibility = System.Windows.Visibility.Visible;
+                Color color = Color.FromArgb(90, 255, 0, 0);
+                UpperRec.StrokeThickness = 2.0;
+                UpperRec.Stroke = new SolidColorBrush(color);
+                LowerRec.StrokeThickness = 2.0;
+                LowerRec.Stroke = new SolidColorBrush(color);
+            }
+        }
         public string GetID() { return dataImportID; }
 
         public void SetInput(string _input)
@@ -221,36 +225,6 @@ namespace Ikarus
                 }
             }
             catch { return; }
-        }
-
-        private void MakeDraggable(System.Windows.UIElement moveThisElement, System.Windows.UIElement movedByElement)
-        {
-            System.Windows.Point originalPoint = new System.Windows.Point(0, 0), currentPoint;
-            TranslateTransform trUsercontrol = new TranslateTransform(0, 0);
-            bool isMousePressed = false;
-
-            movedByElement.MouseLeftButtonDown += (a, b) =>
-            {
-                isMousePressed = true;
-                originalPoint = ((System.Windows.Input.MouseEventArgs)b).GetPosition(moveThisElement);
-            };
-
-            movedByElement.MouseLeftButtonUp += (a, b) =>
-            {
-                isMousePressed = false;
-                MainWindow.cockpitWindows[windowID].UpdatePosition(PointToScreen(new System.Windows.Point(0, 0)), "ID", MainWindow.dtSwitches, dataImportID);
-            };
-            movedByElement.MouseLeave += (a, b) => isMousePressed = false;
-
-            movedByElement.MouseMove += (a, b) =>
-            {
-                if (!isMousePressed || !MainWindow.editmode) return;
-
-                currentPoint = ((System.Windows.Input.MouseEventArgs)b).GetPosition(moveThisElement);
-                trUsercontrol.X += currentPoint.X - originalPoint.X;
-                trUsercontrol.Y += currentPoint.Y - originalPoint.Y;
-                moveThisElement.RenderTransform = trUsercontrol;
-            };
         }
 
         private void Light_MouseWheel(object sender, System.Windows.Input.MouseWheelEventArgs e)
