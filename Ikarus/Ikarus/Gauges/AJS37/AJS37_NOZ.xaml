@@ -74,7 +74,7 @@
             <Canvas x:Name="shadow" Height="185.986" Canvas.Left="14.173" Canvas.Top="14.055" Width="212.777">
                 <Path Data="M212.777,58.787C193.487,23.746 156.212,0 113.386,0 50.765,0 0,50.765 0,113.386 0,141.007 9.881,166.317 26.294,185.986 17.378,169.789 12.3,151.181 12.3,131.386 12.3,68.765 63.065,18 125.685,18 160.686,18 191.978,33.862 212.777,58.787" Fill="Black" Height="185.986" Canvas.Left="0" Opacity="0.7" Canvas.Top="0" Width="212.777"/>
             </Canvas>
-            <Canvas x:Name="NOZ1" Height="58.779" Canvas.Left="38.756" Canvas.Top="113.956" Width="102.286" RenderTransformOrigin="0.865,0.23">
+            <Canvas x:Name="Nozzle" Height="58.779" Canvas.Left="38.756" Canvas.Top="113.956" Width="102.286" RenderTransformOrigin="0.865,0.23">
                 <Path Data="M78.852,12.594L85.947,13.036 88.803,0 0,45.294 13.899,43.679C15.173,43.531,16.248,43.205,17.398,42.619L74.452,13.519C75.881,12.789,77.277,12.496,78.852,12.594" Fill="#FFB3B3B3" Height="45.294" Canvas.Left="0" Canvas.Top="13.485" Width="88.803"/>
                 <Path Data="M72.766,6.002L76.574,0 88.803,5.341 0,50.635 9.467,40.332C10.335,39.387,11.23,38.709,12.381,38.122L69.434,9.022C70.863,8.294,71.92,7.336,72.766,6.002" Fill="#FFC4C4C4" Height="50.635" Canvas.Left="0" Canvas.Top="8.144" Width="88.803"/>
                 <Path Data="M0.049,39.115L76.548,0.096" Height="39.211" Canvas.Left="0.245" Stroke="#FF999999" StrokeThickness="0.216" StrokeMiterLimit="2.414" Canvas.Top="19.514" Width="76.597"/>

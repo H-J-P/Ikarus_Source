@@ -140,6 +140,12 @@
     <Compile Include="Gauges\AJS37\AJS37_ASI_stby.xaml.cs">
       <DependentUpon>AJS37_ASI_stby.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Gauges\AJS37\AJS37_BrakeP.xaml.cs">
+      <DependentUpon>AJS37_BrakeP.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\AJS37\AJS37_CabinP.xaml.cs">
+      <DependentUpon>AJS37_CabinP.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Gauges\AJS37\AJS37_DIST.xaml.cs">
       <DependentUpon>AJS37_DIST.xaml</DependentUpon>
     </Compile>
@@ -1344,6 +1350,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Gauges\AJS37\AJS37_ASI_stby.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Gauges\AJS37\AJS37_BrakeP.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Gauges\AJS37\AJS37_CabinP.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

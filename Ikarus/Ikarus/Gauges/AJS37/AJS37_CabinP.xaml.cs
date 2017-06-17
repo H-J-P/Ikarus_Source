@@ -10,9 +10,9 @@ using System.Windows.Threading;
 namespace Ikarus
 {
     /// <summary>
-    /// Interaktionslogik für AJS37_NOZ.xaml
+    /// Interaktionslogik für AJS37_CabinP.xaml
     /// </summary>
-    public partial class AJS37_NOZ : UserControl, I_Ikarus
+    public partial class AJS37_CabinP : UserControl, I_Ikarus
     {
         private string dataImportID = "";
         private int windowID = 0;
@@ -27,9 +27,9 @@ namespace Ikarus
         private double readValue = 0.0;
         private double lreadValue = 0.0;
 
-        RotateTransform rtNozzle = new RotateTransform();
+        RotateTransform rtCabinP = new RotateTransform();
 
-        public AJS37_NOZ()
+        public AJS37_CabinP()
         {
             InitializeComponent();
         }
@@ -127,15 +127,15 @@ namespace Ikarus
                                    {
                                        if (readValue >= valueScale[n] && readValue <= valueScale[n + 1])
                                        {
-                                           rtNozzle.Angle = (degreeDial[n] - degreeDial[n + 1]) / (valueScale[n] - valueScale[n + 1]) * (readValue - valueScale[n]) + degreeDial[n];
+                                           rtCabinP.Angle = (degreeDial[n] - degreeDial[n + 1]) / (valueScale[n] - valueScale[n + 1]) * (readValue - valueScale[n]) + degreeDial[n];
                                            break;
                                        }
                                    }
-                                   Nozzle.RenderTransform = rtNozzle;
+                                   Cabin_pressure.RenderTransform = rtCabinP;
 
                                    if (MainWindow.editmode)
                                    {
-                                       Cockpit.UpdateInOut(dataImportID, "1", readValue.ToString(), Convert.ToInt32(rtNozzle.Angle).ToString());
+                                       Cockpit.UpdateInOut(dataImportID, "1", readValue.ToString(), Convert.ToInt32(rtCabinP.Angle).ToString());
                                    }
                                }
                                lreadValue = readValue;
