@@ -21,8 +21,8 @@ namespace Ikarus
         int valueScaleIndex = 0;
         private int windowID = 0;
         private string[] vals = new string[] { };
+        GaugesHelper helper = null;
 
-        public void SetWindowID(int _windowID) { windowID = _windowID; }
         public int GetWindowID() { return windowID; }
 
         double temp = 0.0;
@@ -33,14 +33,19 @@ namespace Ikarus
         public MI8_CabinT()
         {
             InitializeComponent();
-
-            if (MainWindow.editmode) MakeDraggable(this, this);
         }
 
         public void SetID(string _dataImportID)
         {
             dataImportID = _dataImportID;
             LoadBmaps();
+        }
+
+        public void SetWindowID(int _windowID)
+        {
+            windowID = _windowID;
+            helper = new GaugesHelper(dataImportID, windowID, "Instruments");
+            if (MainWindow.editmode) { helper.MakeDraggable(this, this); }
         }
 
         public string GetID() { return dataImportID; }

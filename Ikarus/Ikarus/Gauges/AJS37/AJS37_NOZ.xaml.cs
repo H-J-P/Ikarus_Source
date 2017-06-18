@@ -46,6 +46,7 @@ namespace Ikarus
             helper = new GaugesHelper(dataImportID, windowID, "Instruments");
             if (MainWindow.editmode) { helper.MakeDraggable(this, this); }
         }
+
         public string GetID() { return dataImportID; }
 
         private void LoadBmaps()

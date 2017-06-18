@@ -20,25 +20,30 @@ namespace Ikarus
         private double[] degreeDial = new double[] { };
         int valueScaleIndex = 0;
         private string[] vals = new string[] { };
+        GaugesHelper helper = null;
         double value = 0.0;
         double lvalue = 0.0;
 
         RotateTransform rtMW50Pressure = new RotateTransform();
 
-        public void SetWindowID(int _windowID) { windowID = _windowID; }
         public int GetWindowID() { return windowID; }
 
         public LwMW50P()
         {
             InitializeComponent();
-
-            if (MainWindow.editmode) MakeDraggable(this, this);
         }
 
         public void SetID(string _dataImportID)
         {
             dataImportID = _dataImportID;
             LoadBmaps();
+        }
+
+        public void SetWindowID(int _windowID)
+        {
+            windowID = _windowID;
+            helper = new GaugesHelper(dataImportID, windowID, "Instruments");
+            if (MainWindow.editmode) { helper.MakeDraggable(this, this); }
         }
 
         public string GetID() { return dataImportID; }
