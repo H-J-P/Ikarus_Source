@@ -1,12 +1,9 @@
 using System;
-using System.Windows.Controls;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Threading;
-using System.Globalization;
 using System.Data;
 using System.IO;
+using System.Windows.Controls;
 using System.Windows.Media.Imaging;
+using System.Windows.Threading;
 
 namespace Ikarus
 {
@@ -104,54 +101,14 @@ namespace Ikarus
 
     public void UpdateGauge(string strData)
         {
-            //string[] vals = strData.Split(';');
+            Dispatcher.BeginInvoke(DispatcherPriority.Normal,
+                       (Action)(() =>
+                       {
+                           //string[] vals = strData.Split(';');
 
-            //Dispatcher.BeginInvoke(DispatcherPriority.Normal,
-            //           (Action)(() =>
-            //           {
 
-            //               double lampState = 0.0;
-
-            //               try
-            //               {
-            //                   if (vals.Length > 0) { lampState = Convert.ToDouble(vals[0], CultureInfo.InvariantCulture); }
-            //               }
-            //               catch { return; };
-
-            //               if (lampState > 0.08) { SetValue(1.0,false); }
-            //               else { SetValue(0.0,false); }
-            //           }));
+                       }));
         }
-
-        //private void MakeDraggable(System.Windows.UIElement moveThisElement, System.Windows.UIElement movedByElement)
-        //{
-        //    System.Windows.Point originalPoint = new System.Windows.Point(0, 0), currentPoint;
-        //    TranslateTransform trUsercontrol = new TranslateTransform(0, 0);
-        //    bool isMousePressed = false;
-
-        //    movedByElement.MouseLeftButtonDown += (a, b) =>
-        //    {
-        //        isMousePressed = true;
-        //        originalPoint = ((System.Windows.Input.MouseEventArgs)b).GetPosition(moveThisElement);
-        //    };
-
-        //    movedByElement.MouseLeftButtonUp += (a, b) =>
-        //    {
-        //        isMousePressed = false;
-        //        MainWindow.cockpitWindows[windowID].UpdatePosition(PointToScreen(new System.Windows.Point(0, 0)), "ID", MainWindow.dtAccessories, dataImportID);
-        //    };
-        //    movedByElement.MouseLeave += (a, b) => isMousePressed = false;
-
-        //    movedByElement.MouseMove += (a, b) =>
-        //    {
-        //        if (!isMousePressed || !MainWindow.editmode) return;
-
-        //        currentPoint = ((System.Windows.Input.MouseEventArgs)b).GetPosition(moveThisElement);
-        //        trUsercontrol.X += currentPoint.X - originalPoint.X;
-        //        trUsercontrol.Y += currentPoint.Y - originalPoint.Y;
-        //        moveThisElement.RenderTransform = trUsercontrol;
-        //    };
-        //}
 
         private void Light_MouseWheel(object sender, System.Windows.Input.MouseWheelEventArgs e)
         {

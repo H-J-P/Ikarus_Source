@@ -51,5 +51,16 @@ namespace Ikarus
                 moveThisElement.RenderTransform = trUsercontrol;
             };
         }
+
+        public void CheckGaugesBmaps(ref string frame, ref string light)
+        {
+            DataRow[] dataRows = MainWindow.dtInstruments.Select("IDInst=" + dataImportID);
+
+            if (dataRows.Length > 0)
+            {
+                frame = dataRows[0]["ImageFrame"].ToString();
+                light = dataRows[0]["ImageLight"].ToString();
+            }
+        }
     }
 }

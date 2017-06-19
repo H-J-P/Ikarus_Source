@@ -227,9 +227,6 @@
     <Compile Include="Gauges\DisplaysAndMonitors\MonitorDotMatrix.xaml.cs">
       <DependentUpon>MonitorDotMatrix.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Gauges\Div\Test.xaml.cs">
-      <DependentUpon>Test.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Gauges\F5E\F5E_UHFPresetChannel.xaml.cs">
       <DependentUpon>F5E_UHFPresetChannel.xaml</DependentUpon>
     </Compile>
@@ -301,6 +298,9 @@
     </Compile>
     <Compile Include="Gauges\L39\L39-ZDV30.xaml.cs">
       <DependentUpon>L39-ZDV30.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\Labels\Experimental.xaml.cs">
+      <DependentUpon>Experimental.xaml</DependentUpon>
     </Compile>
     <Compile Include="Gauges\Labels\Label.xaml.cs">
       <DependentUpon>Label.xaml</DependentUpon>
@@ -475,9 +475,6 @@
     </Compile>
     <Compile Include="Gauges\WP\WPSPO15.xaml.cs">
       <DependentUpon>WPSPO15.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Gauges\Labels\Experimental.xaml.cs">
-      <DependentUpon>Experimental.xaml</DependentUpon>
     </Compile>
     <Compile Include="Gauges\F15\F15Alt.xaml.cs">
       <DependentUpon>F15Alt.xaml</DependentUpon>
@@ -1469,10 +1466,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Gauges\Div\Test.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Page Include="Gauges\F5E\F5E_UHFPresetChannel.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -1568,6 +1561,10 @@
     <Page Include="Gauges\L39\L39-ZDV30.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Gauges\Labels\Experimental.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Gauges\Labels\Label.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -1798,10 +1795,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Gauges\WP\WPSPO15.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Gauges\Labels\Experimental.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -3218,6 +3211,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Gauges\Div\" />
     <Folder Include="Gauges\M-2000C\" />
   </ItemGroup>
   <ItemGroup>
