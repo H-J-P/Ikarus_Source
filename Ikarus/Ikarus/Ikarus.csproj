@@ -299,9 +299,6 @@
     <Compile Include="Gauges\L39\L39-ZDV30.xaml.cs">
       <DependentUpon>L39-ZDV30.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Gauges\Labels\Experimental.xaml.cs">
-      <DependentUpon>Experimental.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Gauges\Labels\Label.xaml.cs">
       <DependentUpon>Label.xaml</DependentUpon>
     </Compile>
@@ -1561,10 +1558,6 @@
     <Page Include="Gauges\L39\L39-ZDV30.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Gauges\Labels\Experimental.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
     </Page>
     <Page Include="Gauges\Labels\Label.xaml">
       <Generator>MSBuild:Compile</Generator>

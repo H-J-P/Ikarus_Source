@@ -1,11 +1,11 @@
 ﻿using System;
-using System.Windows.Controls;
 using System.Data;
-using System.IO;
-using System.Windows.Media.Imaging;
-using System.Windows.Media;
-using System.Windows.Threading;
 using System.Globalization;
+using System.IO;
+using System.Windows.Controls;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Threading;
 
 namespace Ikarus
 {
@@ -45,7 +45,6 @@ namespace Ikarus
         public void SetID(string _dataImportID)
         {
             dataImportID = _dataImportID;
-            LoadBmaps();
         }
 
         public void SetWindowID(int _windowID)
@@ -53,6 +52,7 @@ namespace Ikarus
             windowID = _windowID;
             helper = new GaugesHelper(dataImportID, windowID, "Instruments");
             if (MainWindow.editmode) { helper.MakeDraggable(this, this); }
+            LoadBmaps();
         }
 
         public string GetID() { return dataImportID; }

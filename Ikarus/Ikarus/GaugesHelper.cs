@@ -52,14 +52,37 @@ namespace Ikarus
             };
         }
 
-        public void CheckGaugesBmaps(ref string frame, ref string light)
+        public void LoadBmaps(ref string frameName, ref string lightName)
         {
             DataRow[] dataRows = MainWindow.dtInstruments.Select("IDInst=" + dataImportID);
 
             if (dataRows.Length > 0)
             {
-                frame = dataRows[0]["ImageFrame"].ToString();
-                light = dataRows[0]["ImageLight"].ToString();
+                frameName = dataRows[0]["ImageFrame"].ToString();
+                lightName = dataRows[0]["ImageLight"].ToString();
+
+                try
+                {
+                    if (frameName.Length > 4)
+                    {
+                        if (!File.Exists(Environment.CurrentDirectory + "\\Images\\Frames\\" + frameName))
+                            frameName = "-";
+                    }
+                    else
+                    {
+                        frameName = "-";
+                    }
+                    if (lightName.Length > 4)
+                    {
+                        if (!File.Exists(Environment.CurrentDirectory + "\\Images\\Frames\\" + lightName))
+                            lightName = "-";
+                    }
+                    else
+                    {
+                        lightName = "-";
+                    }
+                }
+                catch { }
             }
         }
     }
