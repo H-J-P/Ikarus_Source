@@ -50,39 +50,16 @@ namespace Ikarus
         public void SetWindowID(int _windowID)
         {
             windowID = _windowID;
+
             helper = new GaugesHelper(dataImportID, windowID, "Instruments");
+            helper.LoadBmaps(Frame, Light);
+
+            SwitchLight(false);
+
             if (MainWindow.editmode) { helper.MakeDraggable(this, this); }
-            LoadBmaps();
         }
 
         public string GetID() { return dataImportID; }
-
-        private void LoadBmaps()
-        {
-            DataRow[] dataRows = MainWindow.dtInstruments.Select("IDInst=" + dataImportID);
-
-            if (dataRows.Length > 0)
-            {
-                string frame = dataRows[0]["ImageFrame"].ToString();
-                string light = dataRows[0]["ImageLight"].ToString();
-
-                try
-                {
-                    if (frame.Length > 4)
-                    {
-                        if (File.Exists(Environment.CurrentDirectory + "\\Images\\Frames\\" + frame))
-                            Frame.Source = new BitmapImage(new Uri(Environment.CurrentDirectory + "\\Images\\Frames\\" + frame));
-                    }
-                    if (light.Length > 4)
-                    {
-                        if (File.Exists(Environment.CurrentDirectory + "\\Images\\Frames\\" + light))
-                            Light.Source = new BitmapImage(new Uri(Environment.CurrentDirectory + "\\Images\\Frames\\" + light));
-                    }
-                    SwitchLight(false);
-                }
-                catch { }
-            }
-        }
 
         public void SwitchLight(bool _on)
         {

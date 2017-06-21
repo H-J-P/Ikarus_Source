@@ -52,14 +52,14 @@ namespace Ikarus
             };
         }
 
-        public void LoadBmaps(ref string frameName, ref string lightName)
+        public void LoadBmaps(Image frame, Image light)
         {
             DataRow[] dataRows = MainWindow.dtInstruments.Select("IDInst=" + dataImportID);
 
             if (dataRows.Length > 0)
             {
-                frameName = dataRows[0]["ImageFrame"].ToString();
-                lightName = dataRows[0]["ImageLight"].ToString();
+                string frameName = dataRows[0]["ImageFrame"].ToString();
+                string lightName = dataRows[0]["ImageLight"].ToString();
 
                 try
                 {
@@ -81,6 +81,11 @@ namespace Ikarus
                     {
                         lightName = "-";
                     }
+                    if (frameName.Length > 4)
+                        frame.Source = new BitmapImage(new Uri(Environment.CurrentDirectory + "\\Images\\Frames\\" + frameName));
+
+                    if (lightName.Length > 4)
+                        light.Source = new BitmapImage(new Uri(Environment.CurrentDirectory + "\\Images\\Frames\\" + lightName));
                 }
                 catch { }
             }
