@@ -1,12 +1,9 @@
 using System;
-using System.Data;
 using System.Globalization;
 using System.IO;
 using System.Windows.Controls;
 using System.Windows.Media;
-using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
-using System.Windows.Media.Media3D;
 using System.Windows.Threading;
 
 namespace Ikarus

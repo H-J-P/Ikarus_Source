@@ -2,7 +2,6 @@
 using System.Globalization;
 using System.Windows.Controls;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
 using System.Windows.Threading;
 
 namespace Ikarus
@@ -28,7 +27,11 @@ namespace Ikarus
         double lbank = 0.0;
         double lflagOff = 0.0;
 
+        TransformGroup grp = new TransformGroup();
+        RotateTransform rt = new RotateTransform();
+        TranslateTransform tt = new TranslateTransform();
         RotateTransform rtFlagOff = new RotateTransform();
+        RotateTransform rtTurn = new RotateTransform();
 
         public AJS37_ADI_stby()
         {
@@ -93,17 +96,12 @@ namespace Ikarus
 
                                if (lpitch != pitch || lbank != bank)
                                {
-                                   TransformGroup grp = new TransformGroup();
-                                   RotateTransform rt = new RotateTransform();
-                                   TranslateTransform tt = new TranslateTransform();
-
                                    tt.Y = pitch * (242 - 50);
                                    rt.Angle = bank * 180;
                                    grp.Children.Add(tt);
                                    grp.Children.Add(rt);
                                    bank_pitch.RenderTransform = grp;
 
-                                   RotateTransform rtTurn = new RotateTransform();
                                    rtTurn.Angle = bank * -45;
                                    turn.RenderTransform = rt;
                                }
