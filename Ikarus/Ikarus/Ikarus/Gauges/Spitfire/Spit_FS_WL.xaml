@@ -1,0 +1,95 @@
+﻿<UserControl x:Class="Ikarus.Spit_FS_WL"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             x:Name="UserControl"
+             d:DesignHeight="85"
+             d:DesignWidth="85"
+             mc:Ignorable="d">
+
+    <Grid x:Name="LayoutRoot">
+        <Canvas x:Name="Spit_FS_WL1"
+                Width="85.0394"
+                Height="85.0394"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                UseLayoutRounding="False">
+            <Canvas x:Name="background"
+                    Canvas.Left="0"
+                    Canvas.Top="-0.039"
+                    Width="85.04"
+                    Height="85.039">
+                <Path Canvas.Left="-0.108"
+                      Canvas.Top="-0.108"
+                      Width="85.256"
+                      Height="85.255"
+                      Data="M42.628,0.108C66.111,0.108 85.148,19.144 85.148,42.627 85.148,66.111 66.111,85.147 42.628,85.147 19.145,85.147 0.108,66.111 0.108,42.627 0.108,19.144 19.145,0.108 42.628,0.108"
+                      Fill="#FF4F4F4F"
+                      Stroke="#FF333333"
+                      StrokeMiterLimit="2.414"
+                      StrokeThickness="0.216" />
+                <Path Canvas.Left="3.454"
+                      Canvas.Top="3.454"
+                      Width="78.131"
+                      Height="78.131"
+                      Data="M39.066,0.709C60.25,0.709 77.423,17.882 77.423,39.065 77.423,60.25 60.25,77.423 39.066,77.423 17.881,77.423 0.709,60.25 0.709,39.065 0.709,17.882 17.881,0.709 39.066,0.709"
+                      Fill="#FF333333"
+                      Stroke="#FF1A1A1A"
+                      StrokeMiterLimit="2.414"
+                      StrokeThickness="1.417" />
+                <Path Canvas.Left="12.485"
+                      Canvas.Top="12.485"
+                      Width="60.069"
+                      Height="60.069"
+                      Data="M30.035,0.108C46.563,0.108 59.961,13.506 59.961,30.034 59.961,46.563 46.563,59.961 30.035,59.961 13.507,59.961 0.108,46.563 0.108,30.034 0.108,13.506 13.507,0.108 30.035,0.108z"
+                      Stroke="Black"
+                      StrokeMiterLimit="2.414"
+                      StrokeThickness="0.216" />
+                <Path Canvas.Left="12.593"
+                      Canvas.Top="12.593"
+                      Width="59.853"
+                      Height="59.853"
+                      Data="M29.927,0C46.455,0 59.853,13.398 59.853,29.926 59.853,46.455 46.455,59.853 29.927,59.853 13.399,59.853 0,46.455 0,29.926 0,13.398 13.399,0 29.927,0">
+                    <Path.Fill>
+                        <RadialGradientBrush Center="0.4,0.35" GradientOrigin="0.4,0.35" RadiusX="0.65" RadiusY="0.65">
+                            <GradientStop Offset="0" Color="#FFBA0202" />
+                            <GradientStop Offset="0.21" Color="#FF800202" />
+                            <GradientStop Offset="0.49" Color="#FF5D0101" />
+                            <GradientStop Offset="1" Color="Black" />
+                        </RadialGradientBrush>
+                    </Path.Fill>
+                </Path>
+            </Canvas>
+            <Canvas x:Name="FS_WL"
+                    Canvas.Left="12.593"
+                    Canvas.Top="12.554"
+                    Width="59.853"
+                    Height="59.853"
+                    d:IsHidden="True">
+                <Path Canvas.Left="-0.108"
+                      Canvas.Top="-0.108"
+                      Width="60.069"
+                      Height="60.069"
+                      Data="M30.035,0.108C46.563,0.108 59.961,13.506 59.961,30.034 59.961,46.563 46.563,59.961 30.035,59.961 13.507,59.961 0.108,46.563 0.108,30.034 0.108,13.506 13.507,0.108 30.035,0.108z"
+                      Stroke="Black"
+                      StrokeMiterLimit="2.414"
+                      StrokeThickness="0.216" />
+                <Path Canvas.Left="0"
+                      Canvas.Top="0"
+                      Width="59.853"
+                      Height="59.853"
+                      Data="M29.927,0C46.455,0 59.853,13.398 59.853,29.926 59.853,46.455 46.455,59.853 29.927,59.853 13.399,59.853 0,46.455 0,29.926 0,13.398 13.399,0 29.927,0">
+                    <Path.Fill>
+                        <RadialGradientBrush Center="0.4,0.35" GradientOrigin="0.4,0.35" RadiusX="0.65" RadiusY="0.65">
+                            <GradientStop Offset="0" Color="White" />
+                            <GradientStop Offset="0.17" Color="Red" />
+                            <GradientStop Offset="0.51" Color="#FFBC0000" />
+                            <GradientStop Offset="1" Color="Black" />
+                        </RadialGradientBrush>
+                    </Path.Fill>
+                </Path>
+            </Canvas>
+        </Canvas>
+    </Grid>
+</UserControl>

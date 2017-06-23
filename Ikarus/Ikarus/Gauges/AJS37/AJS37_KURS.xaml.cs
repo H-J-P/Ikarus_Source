@@ -13,6 +13,9 @@ namespace Ikarus
     {
         private string dataImportID = "";
         private int windowID = 0;
+        private double[] valueScale = new double[] { };
+        private double[] degreeDial = new double[] { };
+        int valueScaleIndex = 0;
         private string[] vals = new string[] { };
         GaugesHelper helper = null;
 
@@ -54,10 +57,12 @@ namespace Ikarus
 
         public void SetInput(string _input)
         {
+            helper.SetInput(ref _input, ref valueScale, ref valueScaleIndex, 3);
         }
 
         public void SetOutput(string _output)
         {
+            helper.SetOutput(ref _output, ref degreeDial, 3);
         }
 
         public double GetSize()
@@ -78,8 +83,20 @@ namespace Ikarus
 
                                if (lreadValue != readValue)
                                {
-                                   rtHeading.Angle = (readValue * -180) - 180;
+                                   for (int n = 0; n < (valueScaleIndex - 1); n++)
+                                   {
+                                       if (readValue >= valueScale[n] && readValue <= valueScale[n + 1])
+                                       {
+                                           rtHeading.Angle = (degreeDial[n] - degreeDial[n + 1]) / (valueScale[n] - valueScale[n + 1]) * (readValue - valueScale[n]) + degreeDial[n];
+                                           break;
+                                       }
+                                   }
                                    Kompass_Heading.RenderTransform = rtHeading;
+
+                                   if (MainWindow.editmode)
+                                   {
+                                       Cockpit.UpdateInOut(dataImportID, "1", readValue.ToString(), Convert.ToInt32(rtHeading.Angle).ToString());
+                                   }
                                }
                                lreadValue = readValue;
                            }

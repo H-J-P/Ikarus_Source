@@ -17,8 +17,6 @@ namespace Ikarus
         private double[] degreeDial = new double[] { };
         int valueScaleIndex = 0;
         private string[] vals = new string[] { };
-        private bool firstInput = false;
-        private bool firstoutput = false;
         GaugesHelper helper = null;
 
         public int GetWindowID() { return windowID; }
@@ -62,35 +60,12 @@ namespace Ikarus
 
         public void SetInput(string _input)
         {
-            if (firstInput == false)
-            {
-                string[] vals = _input.Split(',');
-
-                valueScale = new double[vals.Length];
-
-                for (int i = 0; i < vals.Length; i++)
-                {
-                    valueScale[i] = Convert.ToDouble(vals[i], CultureInfo.InvariantCulture);
-                }
-                valueScaleIndex = vals.Length;
-                firstInput = true;
-            }
+            helper.SetInput(ref _input, ref valueScale, ref valueScaleIndex, 2);
         }
 
         public void SetOutput(string _output)
         {
-            if (firstoutput == false)
-            {
-                string[] vals = _output.Split(',');
-
-                degreeDial = new double[vals.Length];
-
-                for (int i = 0; i < vals.Length; i++)
-                {
-                    degreeDial[i] = Convert.ToDouble(vals[i], CultureInfo.InvariantCulture);
-                }
-                firstoutput = true;
-            }
+            helper.SetOutput(ref _output, ref degreeDial, 2);
         }
 
         public double GetSize()
@@ -122,7 +97,6 @@ namespace Ikarus
                                            break;
                                        }
                                    }
-                                   //rtEgt.Angle = egt * 222;
                                    EGT1.RenderTransform = rtEgt;
 
                                    if (MainWindow.editmode)

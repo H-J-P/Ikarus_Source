@@ -59,6 +59,7 @@ namespace Ikarus
             if (MainWindow.editmode)
             {
                 helper.MakeDraggable(this, this);
+
                 DesignFrame.Visibility = System.Windows.Visibility.Visible;
 
                 Color color = Color.FromArgb(90, 255, 0, 0);

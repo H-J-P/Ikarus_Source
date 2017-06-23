@@ -739,6 +739,8 @@ namespace Ikarus
                     dtInstrumentFunctions.Rows[i]["OldAsciiValue"] = "";
                     dtInstrumentFunctions.Rows[i]["Value"] = 0.0;
                     dtInstrumentFunctions.Rows[i]["OldValue"] = 0.0;
+                    dtInstrumentFunctions.Rows[i]["In"] = "";
+                    dtInstrumentFunctions.Rows[i]["Out"] = "";
                 }
                 catch { }
             }

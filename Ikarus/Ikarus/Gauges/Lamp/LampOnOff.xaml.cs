@@ -49,6 +49,7 @@ namespace Ikarus
             if (MainWindow.editmode)
             {
                 helper.MakeDraggable(this, this);
+
                 DesignFrame.Visibility = System.Windows.Visibility.Visible;
 
                 LampOn.Visibility = System.Windows.Visibility.Visible;
@@ -134,7 +135,7 @@ namespace Ikarus
 
         public double GetSize()
         {
-            return DesignFrame.Width; // Width
+            return DesignFrame.Width;
         }
 
         public void UpdateGauge(string strData)

@@ -101,11 +101,13 @@ namespace Ikarus
             }
             Segments.Foreground = (SolidColorBrush)new BrushConverter().ConvertFromString("#FF" + fontColor);
 
-            PathBackground.Width = PathBackground.Width + (Segments.Width * numberOfSegments);// - Segments.Width;
-            PathBorder.Width = PathBorder.Width + (Segments.Width * numberOfSegments);// - Segments.Width;
-            this.Width = PathBackground.Width + 12; //Segments.Width / 2;
-            Segments.Width = PathBorder.Width;
-
+            if (numberOfSegments > 1)
+            {
+                PathBackground.Width = PathBackground.Width + (Segments.Width * numberOfSegments);// - Segments.Width;
+                PathBorder.Width = PathBorder.Width + (Segments.Width * numberOfSegments);// - Segments.Width;
+                this.Width = PathBackground.Width + 12; //Segments.Width / 2;
+                Segments.Width = PathBorder.Width;
+            }
             Segments.Text = errorText;
         }
 

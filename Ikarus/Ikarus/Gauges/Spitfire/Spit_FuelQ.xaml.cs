@@ -60,31 +60,12 @@ namespace Ikarus
 
         public void SetInput(string _input)
         {
-            string[] vals = _input.Split(',');
-
-            if (vals.Length < 3) return;
-
-            valueScale = new double[vals.Length];
-
-            for (int i = 0; i < vals.Length; i++)
-            {
-                valueScale[i] = Convert.ToDouble(vals[i], CultureInfo.InvariantCulture);
-            }
-            valueScaleIndex = vals.Length;
+            helper.SetInput(ref _input, ref valueScale, ref valueScaleIndex, 2);
         }
 
         public void SetOutput(string _output)
         {
-            string[] vals = _output.Split(',');
-
-            if (vals.Length < 3) return;
-
-            degreeDial = new double[vals.Length];
-
-            for (int i = 0; i < vals.Length; i++)
-            {
-                degreeDial[i] = Convert.ToDouble(vals[i], CultureInfo.InvariantCulture);
-            }
+            helper.SetOutput(ref _output, ref degreeDial, 2);
         }
 
         public double GetSize()
@@ -110,13 +91,18 @@ namespace Ikarus
                                {
                                    for (int n = 0; n < valueScaleIndex - 1; n++)
                                    {
-                                       if (pointer > valueScale[n] && pointer <= valueScale[n + 1])
+                                       if (pointer >= valueScale[n] && pointer <= valueScale[n + 1])
                                        {
                                            rtpointer.Angle = (degreeDial[n] - degreeDial[n + 1]) / (valueScale[n] - valueScale[n + 1]) * (pointer - valueScale[n]) + degreeDial[n];
                                            break;
                                        }
                                    }
                                    fuel_quant.RenderTransform = rtpointer;
+
+                                   if (MainWindow.editmode)
+                                   {
+                                       Cockpit.UpdateInOut(dataImportID, "1", pointer.ToString(), Convert.ToInt32(rtpointer.Angle).ToString());
+                                   }
                                }
                                lpointer = pointer;
                            }

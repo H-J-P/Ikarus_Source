@@ -60,27 +60,12 @@ namespace Ikarus
 
         public void SetInput(string _input)
         {
-            string[] vals = _input.Split(',');
-
-            valueScale = new double[vals.Length];
-
-            for (int i = 0; i < vals.Length; i++)
-            {
-                valueScale[i] = Convert.ToDouble(vals[i], CultureInfo.InvariantCulture);
-            }
-            valueScaleIndex = vals.Length;
+            helper.SetInput(ref _input, ref valueScale, ref valueScaleIndex, 2);
         }
 
         public void SetOutput(string _output)
         {
-            string[] vals = _output.Split(',');
-
-            degreeDial = new double[vals.Length];
-
-            for (int i = 0; i < vals.Length; i++)
-            {
-                degreeDial[i] = Convert.ToDouble(vals[i], CultureInfo.InvariantCulture);
-            }
+            helper.SetOutput(ref _output, ref degreeDial, 2);
         }
 
         public double GetSize()
@@ -98,9 +83,6 @@ namespace Ikarus
                                vals = strData.Split(';');
 
                                if (vals.Length > 0) { readValue = Convert.ToDouble(vals[0], CultureInfo.InvariantCulture); }
-
-                               if (readValue < 0.0) { readValue = 0.0; }
-                               if (readValue > 1.0) { readValue = 1.0; }
 
                                if (lreadValue != readValue)
                                {

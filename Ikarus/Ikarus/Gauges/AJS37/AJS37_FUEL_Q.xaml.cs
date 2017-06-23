@@ -13,6 +13,9 @@ namespace Ikarus
     {
         private string dataImportID = "";
         private int windowID = 0;
+        private double[] valueScale = new double[] { };
+        private double[] degreeDial = new double[] { };
+        int valueScaleIndex = 0;
         private string[] vals = new string[] { };
         GaugesHelper helper = null;
 
@@ -57,10 +60,12 @@ namespace Ikarus
 
         public void SetInput(string _input)
         {
+            helper.SetInput(ref _input, ref valueScale, ref valueScaleIndex, 2);
         }
 
         public void SetOutput(string _output)
         {
+            helper.SetOutput(ref _output, ref degreeDial, 2);
         }
 
         public double GetSize()
@@ -80,20 +85,38 @@ namespace Ikarus
                                if (vals.Length > 0) { fuelQ = Convert.ToDouble(vals[0], CultureInfo.InvariantCulture); }
                                if (vals.Length > 1) { joker = Convert.ToDouble(vals[1], CultureInfo.InvariantCulture); }
 
-                               if (fuelQ < 0.0) { fuelQ = 0.0; }
-                               if (joker < 0.0) { joker = 0.0; }
-
                                if (lfuelQ != fuelQ)
                                {
-                                   rtFuelQ.Angle = fuelQ * 324;
+                                   for (int n = 0; n < valueScaleIndex - 1; n++)
+                                   {
+                                       if (fuelQ >= valueScale[n] && fuelQ <= valueScale[n + 1])
+                                       {
+                                           rtFuelQ.Angle = (degreeDial[n] - degreeDial[n + 1]) / (valueScale[n] - valueScale[n + 1]) * (fuelQ - valueScale[n]) + degreeDial[n];
+                                           break;
+                                       }
+                                   }
                                    FUEL_Q1.RenderTransform = rtFuelQ;
                                }
                                if (ljoker != joker)
                                {
-                                   rtJoker.Angle = joker * 324;
+                                   for (int n = 0; n < valueScaleIndex - 1; n++)
+                                   {
+                                       if (joker >= valueScale[n] && joker <= valueScale[n + 1])
+                                       {
+                                           rtJoker.Angle = (degreeDial[n] - degreeDial[n + 1]) / (valueScale[n] - valueScale[n + 1]) * (joker - valueScale[n]) + degreeDial[n];
+                                           break;
+                                       }
+                                   }
                                    JOKER_TIE.RenderTransform = rtJoker;
+
+                                   if (MainWindow.editmode)
+                                   {
+                                       Cockpit.UpdateInOut(dataImportID, "1", fuelQ.ToString(), Convert.ToInt32(rtFuelQ.Angle).ToString());
+                                       Cockpit.UpdateInOut(dataImportID, "2", joker.ToString(), Convert.ToInt32(rtJoker.Angle).ToString());
+                                   }
                                }
                                lfuelQ = fuelQ;
+                               ljoker = joker;
                            }
                            catch { return; }
                        }));
