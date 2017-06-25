@@ -538,6 +538,5 @@
                HorizontalAlignment="Left"
                VerticalAlignment="Top"
                MouseWheel="Light_MouseWheel" />
-        <TextBlock x:Name="Value" HorizontalAlignment="Left" Margin="108,161,0,0" TextWrapping="Wrap" Text="0.000" VerticalAlignment="Top" Foreground="#FFF3F1F1" FontSize="16"/>
     </Grid>
 </UserControl>

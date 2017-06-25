@@ -73,10 +73,10 @@
                 <Path Data="M0.284,32.658L26.659,32.658 26.659,0.283 0.284,0.283z" Fill="#FF050505" Height="32.942" Canvas.Left="67.96" Stroke="#FF4D4D4D" StrokeThickness="0.567" StrokeMiterLimit="22.926" Canvas.Top="145.703" Width="26.942"/>
                 <Path Data="M0.284,0.283L34.908,0.283 34.908,22.533 0.284,22.533z" Fill="#FF050505" Height="22.817" Canvas.Left="69.458" Stroke="#FF4D4D4D" StrokeThickness="0.567" StrokeMiterLimit="22.926" Canvas.Top="39.055" Width="35.191"/>
                 <Path Data="M0.284,0.283L34.909,0.283 34.909,22.533 0.284,22.533z" Fill="#FF050505" Height="22.817" Canvas.Left="48.957" Stroke="#FF4D4D4D" StrokeThickness="0.567" StrokeMiterLimit="22.926" Canvas.Top="97.18" Width="35.192"/>
-                <TextBlock x:Name="Digit4" Canvas.Left="73" TextWrapping="Wrap" Text="0" Canvas.Top="146" Width="19" FontFamily="Digital-7 Mono" Foreground="#FFA6EC96" FontSize="36" Height="33" RenderTransformOrigin="0.539,0.467"/>
-                <TextBlock x:Name="Digit3" Canvas.Left="109" TextWrapping="Wrap" Text="0" Canvas.Top="146" Width="19" FontFamily="Digital-7 Mono" Foreground="#FFA6EC96" FontSize="36" Height="33" RenderTransformOrigin="0.539,0.467"/>
-                <TextBlock x:Name="Digit2" Canvas.Left="143" TextWrapping="Wrap" Text="0" Canvas.Top="146" Width="19" FontFamily="Digital-7 Mono" Foreground="#FFA6EC96" FontSize="36" Height="33" RenderTransformOrigin="0.539,0.467"/>
-                <TextBlock x:Name="Digit1" Canvas.Left="179" TextWrapping="Wrap" Text="0" Canvas.Top="146" Width="19" FontFamily="Digital-7 Mono" Foreground="#FFA6EC96" FontSize="36" Height="33" RenderTransformOrigin="0.539,0.467"/>
+                <TextBlock x:Name="Digit4" Canvas.Left="73" TextWrapping="Wrap" Text="0" Canvas.Top="146" Width="19" FontFamily="LED Board-7" Foreground="#FFA6EC96" FontSize="30" Height="33" RenderTransformOrigin="0.539,0.467"/>
+                <TextBlock x:Name="Digit3" Canvas.Left="109" TextWrapping="Wrap" Text="0" Canvas.Top="146" Width="19" FontFamily="LED Board-7" Foreground="#FFA6EC96" FontSize="30" Height="33" RenderTransformOrigin="0.539,0.467"/>
+                <TextBlock x:Name="Digit2" Canvas.Left="143" TextWrapping="Wrap" Text="0" Canvas.Top="146" Width="19" FontFamily="LED Board-7" Foreground="#FFA6EC96" FontSize="30" Height="33" RenderTransformOrigin="0.539,0.467"/>
+                <TextBlock x:Name="Digit1" Canvas.Left="179" TextWrapping="Wrap" Text="0" Canvas.Top="146" Width="19" FontFamily="LED Board-7" Foreground="#FFA6EC96" FontSize="30" Height="33" RenderTransformOrigin="0.539,0.467"/>
             </Canvas>
             <Canvas x:Name="RALT_LO_Lamp" Height="19.414" Canvas.Left="62.527" Canvas.Top="110.75" Width="31.791">
                 <Path Data="F1M0,12.693L0,0 1.496,0 1.496,11.195 7.054,11.195 7.054,12.693z" Fill="Cyan" Height="12.693" Canvas.Left="6.887" Canvas.Top="3.365" Width="7.054"/>

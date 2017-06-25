@@ -31,7 +31,6 @@ namespace Ikarus
 
             rtpointer.Angle =  - 70;
             Boost.RenderTransform = rtpointer;
-            Value.Visibility = System.Windows.Visibility.Visible;
         }
 
         public void SetID(string _dataImportID)
@@ -85,8 +84,6 @@ namespace Ikarus
                                if (vals.Length > 0) { pointer = Convert.ToDouble(vals[0], CultureInfo.InvariantCulture); }
 
                                if (pointer < 0.0) { pointer = 0.0; }
-
-                               Value.Text = pointer.ToString();
 
                                // Input: 0.0,0.25,0.5,1.0
                                // °    : -70,  60,120,240
