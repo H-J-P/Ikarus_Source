@@ -13,6 +13,9 @@ namespace Ikarus
     {
         private string dataImportID = "";
         private int windowID = 0;
+        private double[] valueScale = new double[] { };
+        private double[] degreeDial = new double[] { };
+        int valueScaleIndex = 0;
         private string[] vals = new string[] { };
         GaugesHelper helper = null;
 
@@ -54,10 +57,12 @@ namespace Ikarus
 
         public void SetInput(string _input)
         {
+            helper.SetInput(ref _input, ref valueScale, ref valueScaleIndex, 2);
         }
 
         public void SetOutput(string _output)
         {
+            helper.SetOutput(ref _output, ref degreeDial, 2);
         }
 
         public double GetSize()
@@ -80,7 +85,18 @@ namespace Ikarus
 
                                if (lmanifoldPressure != manifoldPressure)
                                {
-                                   rtManifoldPressure.Angle = (manifoldPressure * 325);
+                                   for (int n = 0; n < valueScaleIndex - 1; n++)
+                                   {
+                                       if (manifoldPressure >= valueScale[n] && manifoldPressure <= valueScale[n + 1])
+                                       {
+                                           rtManifoldPressure.Angle = (degreeDial[n] - degreeDial[n + 1]) / (valueScale[n] - valueScale[n + 1]) * (manifoldPressure - valueScale[n]) + degreeDial[n];
+                                           break;
+                                       }
+                                   }
+                                   if (MainWindow.editmode)
+                                   {
+                                       Cockpit.UpdateInOut(dataImportID, "1", manifoldPressure.ToString(), Convert.ToInt32(rtManifoldPressure.Angle).ToString());
+                                   }
                                    Lw_MAP_Needle.RenderTransform = rtManifoldPressure;
                                }
                                lmanifoldPressure = manifoldPressure;
