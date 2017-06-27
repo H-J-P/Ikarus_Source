@@ -38,7 +38,6 @@ namespace Ikarus
 
             Side.Visibility = System.Windows.Visibility.Hidden;
             Glide.Visibility = System.Windows.Visibility.Hidden;
-            Knob.Visibility = System.Windows.Visibility.Hidden;
         }
 
         public void SetID(string _dataImportID)

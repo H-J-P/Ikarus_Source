@@ -1116,7 +1116,7 @@
                     Canvas.Left="205.677"
                     Canvas.Top="203.065"
                     Width="39.612"
-                    Height="39.613" d:IsHidden="True">
+                    Height="39.613">
                 <Path Canvas.Left="-0.108"
                       Canvas.Top="-0.108"
                       Width="39.828"
