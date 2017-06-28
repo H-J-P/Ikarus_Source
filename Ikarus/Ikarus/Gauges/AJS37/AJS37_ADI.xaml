@@ -51,7 +51,7 @@
             <Canvas x:Name="TURN" Height="16.066" Canvas.Left="120.475" Canvas.Top="246.356" Width="14.169">
                 <Path Data="M11.338,6.972L11.338,16.066 2.83,16.066 2.83,6.972 0,4.183 0,0 14.169,0 14.169,4.183z" Fill="#FFFEFEFE" Height="16.066" Canvas.Left="0" Canvas.Top="0" Width="14.169"/>
             </Canvas>
-            <Canvas x:Name="banksteering"
+            <Canvas x:Name="Banksteering"
                 Canvas.Left="89"
                 Canvas.Top="-20"
                 Width="39.76"
@@ -70,7 +70,7 @@
                     Data="M0,126.001L2.834,126.001 2.834,0 0,0z"
                     Fill="#FFE8D43B" />
             </Canvas>
-            <Canvas x:Name="pichsteering"
+            <Canvas x:Name="Pitchsteering"
                 Canvas.Left="10"
                 Canvas.Top="123"
                 Width="211"

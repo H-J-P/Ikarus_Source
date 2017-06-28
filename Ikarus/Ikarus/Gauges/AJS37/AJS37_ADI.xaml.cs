@@ -52,7 +52,7 @@ namespace Ikarus
         private RotateTransform rtSlipball = new RotateTransform();
         private TranslateTransform ttTurnIndicator = new TranslateTransform();
         private TranslateTransform rtpitchSteering = new TranslateTransform();
-        private RotateTransform rtbank = new RotateTransform();
+        private RotateTransform rtbankNeedle = new RotateTransform();
         private TranslateTransform rtvvi = new TranslateTransform();
         private TranslateTransform ttglideSlope = new TranslateTransform();
         private TranslateTransform ttbanksteering = new TranslateTransform();
@@ -65,6 +65,8 @@ namespace Ikarus
             Flagg_course_off.Visibility = System.Windows.Visibility.Hidden;
             Flagg_VVI_off.Visibility = System.Windows.Visibility.Hidden;
             Flagg_off.Visibility = System.Windows.Visibility.Visible;
+            //Pitchsteering.Visibility = System.Windows.Visibility.Hidden;
+            //Banksteering.Visibility = System.Windows.Visibility.Hidden;
 
             InitialSphere();
 
@@ -164,8 +166,8 @@ namespace Ikarus
 
                                if (lbankNeedle != bankNeedle)
                                {
-                                   rtbank.Angle = bankNeedle * -180;
-                                   Bank.RenderTransform = rtbank;
+                                   rtbankNeedle.Angle = bankNeedle * -180;
+                                   Bank.RenderTransform = rtbankNeedle;
                                }
                                if (lvvi != vvi)
                                {
@@ -176,12 +178,12 @@ namespace Ikarus
                                if (lbankSteering != bankSteering)
                                {
                                    ttbanksteering.X = bankSteering * 140;
-                                   banksteering.RenderTransform = ttbanksteering;
+                                   Banksteering.RenderTransform = ttbanksteering;
                                }
                                if (lglideSlope != glideSlope)
                                {
                                    ttglideSlope.Y = glideSlope * -125;
-                                   pichsteering.RenderTransform = ttglideSlope;
+                                   Pitchsteering.RenderTransform = ttglideSlope;
                                }
 
                                if (lcourceWarningFlag != courceWarningFlag)
