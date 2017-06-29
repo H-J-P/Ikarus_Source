@@ -51,6 +51,7 @@ namespace Ikarus
             if (MainWindow.editmode)
             {
                 helper.MakeDraggable(this, this);
+                Segments.Text = "8";
             }
         }
 

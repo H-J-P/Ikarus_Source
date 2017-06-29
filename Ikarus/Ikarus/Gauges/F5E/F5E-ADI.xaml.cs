@@ -94,8 +94,8 @@ namespace Ikarus
                                if (lpitch != pitch || lbank != bank)
                                {
                                    grp = new TransformGroup();
-                                   rt = new RotateTransform();
-                                   tt = new TranslateTransform();
+                                   //rt = new RotateTransform();
+                                   //tt = new TranslateTransform();
 
                                    tt.Y = pitch * 340;
                                    rt.Angle = bank * 180;

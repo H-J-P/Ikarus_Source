@@ -73,8 +73,10 @@ namespace Ikarus
 
             for (int lat = 0; lat < Latitudes - 1; lat++)
             {
-                imageBrush = new ImageBrush(sphere3DTextur);
-                imageBrush.Viewbox = new Rect(0, lat * flatThickness, minus / Longitudes, flatThickness);
+                imageBrush = new ImageBrush(sphere3DTextur)
+                {
+                    Viewbox = new Rect(0, lat * flatThickness, minus / Longitudes, flatThickness)
+                };
                 frontMaterial[lat] = new DiffuseMaterial(imageBrush);
             }
         }
@@ -114,10 +116,12 @@ namespace Ikarus
 
             for (int lat = 0; lat < Latitudes - 1; lat++)
             {
-                GeometryModel3D geometryModel3D = new GeometryModel3D();
-                geometryModel3D.Geometry = GenerateCylinder(lat);
-                geometryModel3D.Material = frontMaterial[lat];
-                geometryModel3D.BackMaterial = backMaterial;
+                GeometryModel3D geometryModel3D = new GeometryModel3D()
+                {
+                    Geometry = GenerateCylinder(lat),
+                    Material = frontMaterial[lat],
+                    BackMaterial = backMaterial
+                };
                 model3DGroup.Children.Add(geometryModel3D);
             }
         }
