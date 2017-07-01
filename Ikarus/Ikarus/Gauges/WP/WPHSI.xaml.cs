@@ -87,8 +87,13 @@ namespace Ikarus
             helper.LoadBmaps(Frame, Light);
 
             SwitchLight(false);
+            Range.Visibility = System.Windows.Visibility.Hidden;
+            Course.Visibility = System.Windows.Visibility.Hidden;
 
-            if (MainWindow.editmode) { helper.MakeDraggable(this, this); }
+            if (MainWindow.editmode)
+            {
+                helper.MakeDraggable(this, this);
+            }
         }
 
         public string GetID() { return dataImportID; }
@@ -140,12 +145,12 @@ namespace Ikarus
                                    rtHeading.Angle = heading * -360;
                                    KA50_needleCOMP_HSI.RenderTransform = rtHeading;
                                }
-                               if (lcommandedCourseNeedle != commandedCourseNeedle)
+                               if (lcommandedCourseNeedle != commandedCourseNeedle || lheading != heading)
                                {
                                    rtCommandedCourseNeedle.Angle = commandedCourseNeedle * 360 + (heading * -360);
                                    KA50_needleDTA_HSI.RenderTransform = rtCommandedCourseNeedle;
                                }
-                               if (lcommandedHeadingNeedle != commandedHeadingNeedle)
+                               if (lcommandedHeadingNeedle != commandedHeadingNeedle || lheading != heading)
                                {
                                    rtCommandedHeadingNeedle.Angle = commandedHeadingNeedle * 360 + (heading * -360);
                                    DesiredHeadingIndex.RenderTransform = rtCommandedHeadingNeedle;
@@ -212,6 +217,14 @@ namespace Ikarus
                                {
                                    ttHeading1.Y = heading1 * -16.5;
                                    KM50_DTAI_HSI.RenderTransform = ttHeading1;
+                               }
+                               if (lrangeUnavailableFlag != rangeUnavailableFlag)
+                               {
+                                   Range.Visibility = rangeUnavailableFlag > 0.8 ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
+                               }
+                               if (lcourseUnavailableFlag != courseUnavailableFlag)
+                               {
+                                   Course.Visibility = courseUnavailableFlag > 0.8 ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
                                }
                                lheading = heading;
                                lcommandedCourseNeedle = commandedCourseNeedle;
