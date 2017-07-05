@@ -65,8 +65,8 @@ namespace Ikarus
             Flagg_course_off.Visibility = System.Windows.Visibility.Hidden;
             Flagg_VVI_off.Visibility = System.Windows.Visibility.Hidden;
             Flagg_off.Visibility = System.Windows.Visibility.Visible;
-            Pitchsteering.Visibility = System.Windows.Visibility.Hidden;
-            Banksteering.Visibility = System.Windows.Visibility.Hidden;
+            //Pitchsteering.Visibility = System.Windows.Visibility.Hidden;
+            //Banksteering.Visibility = System.Windows.Visibility.Hidden;
 
             InitialSphere();
             sphere3D.Rotate(0, 0,-90);
@@ -216,8 +216,8 @@ namespace Ikarus
             BitmapImage bitmapImage = new BitmapImage();
             bitmapImage.BeginInit();
 
-            if (File.Exists(Environment.CurrentDirectory + "\\Images\\Textures3D\\US_ADI_Skin1.png"))
-                bitmapImage.UriSource = new Uri(Environment.CurrentDirectory + "\\Images\\Textures3D\\US_ADI_Skin1.png");
+            if (File.Exists(Environment.CurrentDirectory + "\\Images\\Textures3D\\US_ADI.png"))
+                bitmapImage.UriSource = new Uri(Environment.CurrentDirectory + "\\Images\\Textures3D\\US_ADI.png");
             else
                 bitmapImage.UriSource = new Uri(Environment.CurrentDirectory + "\\Images\\Textures3D\\CheckerTest.jpg");
 

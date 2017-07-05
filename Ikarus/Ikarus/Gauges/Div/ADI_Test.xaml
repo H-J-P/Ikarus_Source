@@ -7,7 +7,7 @@
              d:DesignHeight="275" d:DesignWidth="255" MouseWheel="Light_MouseWheel">
     <Grid>
         <!--Viewport3D is a drawing canvas which resizes its Content automatically-->
-        <Viewport3D x:Name="viewport" Margin="38,30,37,58" RenderTransformOrigin="0.5,0.5">
+        <Viewport3D x:Name="viewport" Margin="37,31,37,58" RenderTransformOrigin="0.5,0.5">
             <Viewport3D.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform ScaleX="0.9" ScaleY="0.9"/>

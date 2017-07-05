@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Globalization;
+using System.IO;
 using System.Windows.Controls;
 using System.Windows.Media;
+using System.Windows.Media.Imaging;
 using System.Windows.Threading;
 
 namespace Ikarus
@@ -17,9 +19,11 @@ namespace Ikarus
         GaugesHelper helper = null;
 
         public int GetWindowID() { return windowID; }
+        private string lightColor = "#FFFFFF"; // white
 
         double pitch = 0.0;
         double bank = 0.0;
+        double bankNeedle = 0.0;
         double slipBall = 0.0;
         double bankSteering = 0.0;
         double pitchSteering = 0.0;
@@ -48,6 +52,7 @@ namespace Ikarus
         TransformGroup grp = new TransformGroup();
         RotateTransform rt = new RotateTransform();
         TranslateTransform tt = new TranslateTransform();
+        Sphere3D sphere3D;
 
         public US_ADI()
         {
@@ -57,6 +62,11 @@ namespace Ikarus
             //Flagg_glide_off.Visibility = System.Windows.Visibility.Hidden;
             //Flagg_course_off.Visibility = System.Windows.Visibility.Hidden;
             Flagg_off.Visibility = System.Windows.Visibility.Visible;
+            Pitch.Visibility = System.Windows.Visibility.Hidden;
+
+            InitialSphere();
+            sphere3D.Rotate(0, 0, -90);
+            directionalLight.Color = (Color)ColorConverter.ConvertFromString(lightColor);
         }
 
         public void SetID(string _dataImportID)
@@ -81,6 +91,7 @@ namespace Ikarus
         public void SwitchLight(bool _on)
         {
             Light.Visibility = _on ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
+            directionalLight.Color = _on ? (Color)ColorConverter.ConvertFromString("#" + MainWindow.lightOnColor) : (Color)ColorConverter.ConvertFromString(lightColor);
         }
 
         public void SetInput(string _input)
@@ -116,22 +127,18 @@ namespace Ikarus
                                if (vals.Length > 8) { attitudeWarningFlag = Convert.ToDouble(vals[8], CultureInfo.InvariantCulture); }
                                if (vals.Length > 9) { courceWarningFlag = Convert.ToDouble(vals[9], CultureInfo.InvariantCulture); }
 
+                               bankNeedle = bank;
+
                                if (lpitch != pitch || lbank != bank)
+                                   sphere3D.Rotate(0, pitch * -126, (bank * 180) - 90);
+
+                               if (lbank != bank)
                                {
-                                   grp = new TransformGroup();
-                                   rt = new RotateTransform();
-                                   tt = new TranslateTransform();
-
-                                   tt.Y = pitch * -270;
-                                   rt.Angle = bank * -180;
-                                   grp.Children.Add(tt);
-                                   grp.Children.Add(rt);
-
-                                   Pitch.RenderTransform = grp;
+                                   rt = new RotateTransform()
+                                   {
+                                       Angle = bankNeedle * -180
+                                   };
                                    Bank.RenderTransform = rt;
-
-                                   lpitch = pitch;
-                                   lbank = bank;
                                }
                                if (lslipBall != slipBall)
                                {
@@ -186,6 +193,22 @@ namespace Ikarus
         private void Light_MouseWheel(object sender, System.Windows.Input.MouseWheelEventArgs e)
         {
             if (MainWindow.editmode) MainWindow.cockpitWindows[windowID].UpdatePosition(PointToScreen(new System.Windows.Point(0, 0)), "IDInst", MainWindow.dtInstruments, dataImportID, e.Delta);
+        }
+        private void InitialSphere()
+        {
+            BitmapImage bitmapImage = new BitmapImage();
+            bitmapImage.BeginInit();
+
+            if (File.Exists(Environment.CurrentDirectory + "\\Images\\Textures3D\\US_ADI.png"))
+                bitmapImage.UriSource = new Uri(Environment.CurrentDirectory + "\\Images\\Textures3D\\US_ADI.png");
+            else
+                bitmapImage.UriSource = new Uri(Environment.CurrentDirectory + "\\Images\\Textures3D\\CheckerTest.jpg");
+
+            bitmapImage.DecodePixelWidth = 1024;
+            bitmapImage.EndInit();
+
+            // declaration Sphere Object with model3Dgroup Name from XAML file and Sphere texture
+            sphere3D = new Sphere3D(model3DGroup, bitmapImage);
         }
     }
 }

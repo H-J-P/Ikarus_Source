@@ -66,6 +66,7 @@
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Printing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -373,6 +374,9 @@
     </Compile>
     <Compile Include="Gauges\Spitfire\Spit_VVI.xaml.cs">
       <DependentUpon>Spit_VVI.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\UH\UH1_ADI.xaml.cs">
+      <DependentUpon>UH1_ADI.xaml</DependentUpon>
     </Compile>
     <Compile Include="Gauges\UH\UH1_AirTemp.xaml.cs">
       <DependentUpon>UH1_AirTemp.xaml</DependentUpon>
@@ -985,9 +989,6 @@
     </Compile>
     <Compile Include="Gauges\UH\UH1_VVI.xaml.cs">
       <DependentUpon>UH1_VVI.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Gauges\UH\UH1_ADI.xaml.cs">
-      <DependentUpon>UH1_ADI.xaml</DependentUpon>
     </Compile>
     <Compile Include="Gauges\ButtonAndSwitches\SwitchOffOn.xaml.cs">
       <DependentUpon>SwitchOffOn.xaml</DependentUpon>
@@ -1661,6 +1662,10 @@
     <Page Include="Gauges\Spitfire\Spit_VVI.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\UH\UH1_ADI.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Gauges\UH\UH1_AirTemp.xaml">
       <SubType>Designer</SubType>
@@ -2475,10 +2480,6 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Gauges\UH\UH1_VVI.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Gauges\UH\UH1_ADI.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

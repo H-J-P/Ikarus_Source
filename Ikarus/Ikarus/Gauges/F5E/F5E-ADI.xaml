@@ -8,6 +8,31 @@
              MouseWheel="Light_MouseWheel"
              mc:Ignorable="d">
     <Grid>
+        <Viewport3D x:Name="viewport" Margin="37,38,37,37" RenderTransformOrigin="0.5,0.5">
+            <Viewport3D.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="1.0" ScaleY="1.0"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Viewport3D.RenderTransform>
+            <Viewport3D.Camera>
+                <PerspectiveCamera x:Name="perspectiveCamera" Position=" 0 0 2.5" LookDirection=" 0 0 -1" UpDirection=" 0 1 0"/>
+            </Viewport3D.Camera>
+            <!--Any 3D-content must be packed in a ModelVisual3D-object-->
+            <ModelVisual3D>
+                <ModelVisual3D.Content>
+                    <!--Only one Content is allowed. Thus we use a Model3DGroup as envelope for our two lights and all further GeometryModel3Ds.-->
+                    <Model3DGroup x:Name="model3DGroup">
+                        <!--A lot of GeometryModel3Ds will be inserted here.-->
+                        <AmbientLight Color="#444444"/>
+                        <DirectionalLight x:Name="directionalLight" Color="#FFFFFF" Direction="-1 -1 -1" />
+                    </Model3DGroup>
+                </ModelVisual3D.Content>
+            </ModelVisual3D>
+        </Viewport3D>
+
         <Canvas x:Name="F_5_ADI1"
                 Width="255.118"
                 Height="255.118"
@@ -19,7 +44,7 @@
                     Canvas.Top="-144.89"
                     Width="180.728"
                     Height="544.662"
-                    RenderTransformOrigin="0.5,0.5">
+                    RenderTransformOrigin="0.5,0.5" d:IsHidden="True">
                 <Path Canvas.Left="0"
                       Canvas.Top="0"
                       Width="180.728"
