@@ -106,7 +106,7 @@ namespace Ikarus
                                bankNeedle = bank;
 
                                if (lpitch != pitch || lbank != bank)
-                                   sphere3D.Rotate(0, pitch * -126, (bank * 180) - 90);
+                                   sphere3D.Rotate(0, pitch * 126, (bank * -180) - 90);
 
                                if (lbank != bank)
                                {
