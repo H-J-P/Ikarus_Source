@@ -78,7 +78,7 @@ namespace Ikarus
                                vals = strData.Split(';');
 
                                if (vals.Length > 0) { pressureL = Convert.ToDouble(vals[0], CultureInfo.InvariantCulture); }
-                               if (vals.Length > 1) { pressureR = Convert.ToDouble(vals[0], CultureInfo.InvariantCulture); }
+                               if (vals.Length > 1) { pressureR = Convert.ToDouble(vals[1], CultureInfo.InvariantCulture); }
 
                                if (pressureL < 0.0) pressureL = 0.0;
                                if (pressureR < 0.0) pressureR = 0.0;

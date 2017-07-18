@@ -43,7 +43,7 @@
                     Canvas.Top="-157.791"
                     Width="436"
                     Height="965.903"
-                    RenderTransformOrigin="0.239,0.323" d:IsHidden="True">
+                    RenderTransformOrigin="0.239,0.323">
                 <Canvas Canvas.Left="0"
                         Canvas.Top="0"
                         Width="436"

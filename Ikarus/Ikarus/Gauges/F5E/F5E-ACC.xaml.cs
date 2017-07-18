@@ -90,12 +90,12 @@ namespace Ikarus
                                    rtGLmain.Angle = (accelerometerMain * 337) - 112;
                                    ACC.RenderTransform = rtGLmain;
                                }
-                               if (laccelerometerMin != accelerometerMin)
+                               if (laccelerometerMax != accelerometerMax)
                                {
                                    rtGLmax.Angle = (accelerometerMax * 337) - 112;
                                    ACC_MAX.RenderTransform = rtGLmax;
                                }
-                               if (laccelerometerMax != accelerometerMax)
+                               if (laccelerometerMin != accelerometerMin)
                                {
                                    rtGLmin.Angle = (accelerometerMin * 337) - 112;
                                    ACC_MIN.RenderTransform = rtGLmin;

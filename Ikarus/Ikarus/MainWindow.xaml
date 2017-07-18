@@ -962,9 +962,9 @@
                     ToolTip="Ikarus Screen Capture" />
             <Label Name="Version"
                    Height="19"
-                   Margin="466,0,488,10"
+                   Margin="466,0,482,10"
                    VerticalAlignment="Bottom"
-                   Content="(C) H.J.P. 2017  Version 1.2.1.1"
+                   Content="(C) H.J.P. 2017  Version 1.2.1.2c"
                    Foreground="#FFD8BC05" />
             <Label Name="lbEditMode"
                    Width="72"

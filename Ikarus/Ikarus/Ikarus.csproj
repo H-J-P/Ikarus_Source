@@ -231,6 +231,9 @@
     <Compile Include="Gauges\Div\ADI_Test.xaml.cs">
       <DependentUpon>ADI_Test.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Gauges\F5E\F5E-ADI-Sphere.xaml.cs">
+      <DependentUpon>F5E-ADI-Sphere.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Gauges\F5E\F5E_UHFPresetChannel.xaml.cs">
       <DependentUpon>F5E_UHFPresetChannel.xaml</DependentUpon>
     </Compile>
@@ -374,6 +377,9 @@
     </Compile>
     <Compile Include="Gauges\Spitfire\Spit_VVI.xaml.cs">
       <DependentUpon>Spit_VVI.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\UH\UH1_ADI_Sphere.xaml.cs">
+      <DependentUpon>UH1_ADI_Sphere.xaml</DependentUpon>
     </Compile>
     <Compile Include="Gauges\UH\UH1_ADI.xaml.cs">
       <DependentUpon>UH1_ADI.xaml</DependentUpon>
@@ -1471,6 +1477,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Gauges\F5E\F5E-ADI-Sphere.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Gauges\F5E\F5E_UHFPresetChannel.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -1660,6 +1670,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Gauges\Spitfire\Spit_VVI.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\UH\UH1_ADI_Sphere.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

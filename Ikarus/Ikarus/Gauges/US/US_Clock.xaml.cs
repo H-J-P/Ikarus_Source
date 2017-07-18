@@ -21,22 +21,28 @@ namespace Ikarus
         double currtimeHours = 0.0;
         double currtimeMinutes = 0.0;
         double currtimeSeconds = 0.0;
+        double cronoMinutes = 0.0;
+        double cronoSeconds = 0.0;
 
         double lcurrtimeHours = 0.0;
         double lcurrtimeMinutes = 0.0;
         double lcurrtimeSeconds = 0.0;
+        double lcronoMinutes = 0.0;
+        double lcronoSeconds = 0.0;
 
         RotateTransform rtCurrtimeHours = new RotateTransform();
         RotateTransform rtCurrtimeMinutes = new RotateTransform();
-        RotateTransform rtcurrtimeSeconds = new RotateTransform();
+        RotateTransform rtCurrtimeSeconds = new RotateTransform();
+        RotateTransform rtCronoMinutes = new RotateTransform();
+        RotateTransform rtCronoSeconds = new RotateTransform();
 
         public US_Clock()
         {
             InitializeComponent();
 
-            Crono_Minutes.Visibility = System.Windows.Visibility.Hidden;
-            Crono_Second.Visibility = System.Windows.Visibility.Hidden;
-            dial_small.Visibility = System.Windows.Visibility.Hidden;
+            //Crono_Minutes.Visibility = System.Windows.Visibility.Hidden;
+            //Crono_Second.Visibility = System.Windows.Visibility.Hidden;
+            //dial_small.Visibility = System.Windows.Visibility.Hidden;
             six.Visibility = System.Windows.Visibility.Visible;
         }
 
@@ -89,6 +95,9 @@ namespace Ikarus
                                if (vals.Length > 0) { currtimeHours = Convert.ToDouble(vals[0], CultureInfo.InvariantCulture); }
                                if (vals.Length > 1) { currtimeMinutes = Convert.ToDouble(vals[1], CultureInfo.InvariantCulture); }
                                if (vals.Length > 2) { currtimeSeconds = Convert.ToDouble(vals[2], CultureInfo.InvariantCulture); }
+                               if (vals.Length > 3) { cronoMinutes = Convert.ToDouble(vals[3], CultureInfo.InvariantCulture); }
+                               if (vals.Length > 4) { cronoSeconds = Convert.ToDouble(vals[4], CultureInfo.InvariantCulture); }
+
                                if (lcurrtimeHours != currtimeHours)
                                {
                                    rtCurrtimeHours.Angle = currtimeHours * 360;
@@ -101,12 +110,24 @@ namespace Ikarus
                                }
                                if (lcurrtimeSeconds != currtimeSeconds)
                                {
-                                   rtcurrtimeSeconds.Angle = currtimeSeconds * 360;
-                                   Time_Second.RenderTransform = rtcurrtimeSeconds;
+                                   rtCurrtimeSeconds.Angle = currtimeSeconds * 360;
+                                   Time_Second.RenderTransform = rtCurrtimeSeconds;
+                               }
+                               if (lcronoMinutes != cronoMinutes)
+                               {
+                                   rtCronoMinutes.Angle = cronoMinutes * 360;
+                                   Crono_Minutes.RenderTransform = rtCronoMinutes;
+                               }
+                               if (lcronoSeconds != cronoSeconds)
+                               {
+                                   rtCronoSeconds.Angle = cronoSeconds * 360;
+                                   Crono_Second.RenderTransform = rtCronoSeconds;
                                }
                                lcurrtimeHours = currtimeHours;
                                lcurrtimeMinutes = currtimeMinutes;
                                lcurrtimeSeconds = currtimeSeconds;
+                               lcronoMinutes = cronoMinutes;
+                               lcronoSeconds = cronoSeconds;
                            }
                            catch { return; }
                        }));
