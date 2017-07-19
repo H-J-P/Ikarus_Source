@@ -30,9 +30,7 @@ namespace Ikarus
         double lbank = 0.0;
         double lattitudeWarningFlag = 1.0;
 
-        TransformGroup grp = new TransformGroup();
         RotateTransform rt = new RotateTransform();
-        TranslateTransform tt = new TranslateTransform();
         Sphere3D sphere3D;
 
         public F5E_ADI_Sphere()
@@ -103,10 +101,13 @@ namespace Ikarus
                                if (vals.Length > 1) { bank = Convert.ToDouble(vals[1], CultureInfo.InvariantCulture); }
                                if (vals.Length > 2) { attitudeWarningFlag = Convert.ToDouble(vals[2], CultureInfo.InvariantCulture); }
 
+                               if (pitch > 0.5) pitch = 0.5;
+                               if (pitch < -0.5) pitch = -0.5;
+
                                bankNeedle = bank;
 
                                if (lpitch != pitch || lbank != bank)
-                                   sphere3D.Rotate(0, pitch * 126, (bank * -180) - 90);
+                                   sphere3D.Rotate(0, pitch * 126 * 2, (bank * -180) - 90);
 
                                if (lbank != bank)
                                {

@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Globalization;
-using System.IO;
 using System.Windows.Controls;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
 using System.Windows.Threading;
 
 namespace Ikarus
@@ -27,6 +25,11 @@ namespace Ikarus
         double lpitch = 0.0;
         double lbank = 0.0;
         double lattitudeWarningFlag = 1.0;
+
+        TransformGroup grp = new TransformGroup();
+        RotateTransform rt = new RotateTransform();
+        TranslateTransform tt = new TranslateTransform();
+        ScaleTransform sc = new ScaleTransform();
 
         public UH1_ADI()
         {
@@ -89,14 +92,20 @@ namespace Ikarus
 
                                if (lpitch != pitch || lbank != bank)
                                {
-                                   TransformGroup grp = new TransformGroup();
-                                   RotateTransform rt = new RotateTransform();
-                                   TranslateTransform tt = new TranslateTransform();
-                                   ScaleTransform sc = new ScaleTransform();
-                                   sc.ScaleX = 1.2;
-                                   sc.ScaleY = 1.2;
-                                   tt.Y = pitch * -207;
-                                   rt.Angle = bank * 180;
+                                   sc = new ScaleTransform()
+                                   {
+                                       ScaleX = 1.2,
+                                       ScaleY = 1.2
+                                   };
+                                   tt = new TranslateTransform()
+                                   {
+                                       Y = pitch * -207
+                                   };
+                                   rt = new RotateTransform()
+                                   {
+                                       Angle = bank * 180
+                                   };
+                                   grp = new TransformGroup();
                                    grp.Children.Add(sc);
                                    grp.Children.Add(tt);
                                    grp.Children.Add(rt);

@@ -24,7 +24,6 @@ namespace Ikarus
         double pitch = 0.0;
         double bank = 0.0;
         double bankNeedle = 0.0;
-        //double yaw = 0.0;
         double slipBall = 0.0;
         double bankSteering = 0.0;
         double pitchSteering = 0.0;
@@ -36,7 +35,6 @@ namespace Ikarus
 
         double lpitch = 0.0;
         double lbank = 0.0;
-        //double lyaw = 0.0;
         double lslipBall = 0.0;
         double lbankSteering = 0.0;
         double lpitchSteering = 0.0;
@@ -51,9 +49,7 @@ namespace Ikarus
         TranslateTransform rtpitchSteering = new TranslateTransform();
         TranslateTransform rtbanksteering = new TranslateTransform();
         TranslateTransform rtglideSlopeIndicator = new TranslateTransform();
-        TransformGroup grp = new TransformGroup();
         RotateTransform rt = new RotateTransform();
-        TranslateTransform tt = new TranslateTransform();
         Sphere3D sphere3D;
 
         public US_ADI_Sphere()
@@ -64,7 +60,6 @@ namespace Ikarus
             //Flagg_glide_off.Visibility = System.Windows.Visibility.Hidden;
             //Flagg_course_off.Visibility = System.Windows.Visibility.Hidden;
             Flagg_off.Visibility = System.Windows.Visibility.Visible;
-            //Pitch.Visibility = System.Windows.Visibility.Hidden;
 
             InitialSphere();
             sphere3D.Rotate(0, 0, -90);
@@ -204,7 +199,9 @@ namespace Ikarus
             bitmapImage.BeginInit();
 
             if (File.Exists(Environment.CurrentDirectory + "\\Images\\Textures3D\\US_ADI.png"))
-                bitmapImage.UriSource = new Uri(Environment.CurrentDirectory + "\\Images\\Textures3D\\US_ADI.png"); // Test map
+                bitmapImage.UriSource = new Uri(Environment.CurrentDirectory + "\\Images\\Textures3D\\US_ADI.png");
+            else
+                bitmapImage.UriSource = new Uri(Environment.CurrentDirectory + "\\Images\\Textures3D\\CheckerTest.jpg");
 
             bitmapImage.DecodePixelWidth = 1024;
             bitmapImage.EndInit();

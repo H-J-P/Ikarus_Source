@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Globalization;
-using System.IO;
 using System.Windows.Controls;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
 using System.Windows.Threading;
 
 namespace Ikarus
@@ -47,9 +45,9 @@ namespace Ikarus
         TranslateTransform rtpitchSteering = new TranslateTransform();
         TranslateTransform rtbanksteering = new TranslateTransform();
         TranslateTransform rtglideSlopeIndicator = new TranslateTransform();
-        //TransformGroup grp = new TransformGroup();
-        //RotateTransform rt = new RotateTransform();
-        //TranslateTransform tt = new TranslateTransform();
+        TransformGroup grp = new TransformGroup();
+        RotateTransform rt = new RotateTransform();
+        TranslateTransform tt = new TranslateTransform();
 
         public US_ADI()
         {
@@ -120,12 +118,15 @@ namespace Ikarus
 
                                if (lpitch != pitch || lbank != bank)
                                {
-                                   TransformGroup grp = new TransformGroup();
-                                   RotateTransform rt = new RotateTransform();
-                                   TranslateTransform tt = new TranslateTransform();
-
-                                   tt.Y = pitch * -200;
-                                   rt.Angle = bank * -180;
+                                   tt = new TranslateTransform()
+                                   {
+                                       Y = pitch * -200
+                                   };
+                                   rt = new RotateTransform()
+                                   {
+                                       Angle = bank * -180
+                                   };
+                                   grp = new TransformGroup();
                                    grp.Children.Add(tt);
                                    grp.Children.Add(rt);
                                    Pitch.RenderTransform = grp;

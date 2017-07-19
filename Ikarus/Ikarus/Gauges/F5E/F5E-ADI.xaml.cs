@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Globalization;
-using System.IO;
 using System.Windows.Controls;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
 using System.Windows.Threading;
 
 namespace Ikarus
@@ -93,14 +91,20 @@ namespace Ikarus
                                if (vals.Length > 1) { bank = Convert.ToDouble(vals[1], CultureInfo.InvariantCulture); }
                                if (vals.Length > 2) { attitudeWarningFlag = Convert.ToDouble(vals[2], CultureInfo.InvariantCulture); }
 
+                               if (pitch > 0.5) pitch = 0.5;
+                               if (pitch < -0.5) pitch = -0.5;
+
                                if (lpitch != pitch || lbank != bank)
                                {
-                                   TransformGroup grp = new TransformGroup();
-                                   RotateTransform rt = new RotateTransform();
-                                   TranslateTransform tt = new TranslateTransform();
-
-                                   tt.Y = pitch * 175 * 2;
-                                   rt.Angle = bank * 180;
+                                   tt = new TranslateTransform()
+                                   {
+                                       Y = 2 * pitch * 174
+                                   };
+                                   rt = new RotateTransform()
+                                   {
+                                       Angle = bank * 180
+                                   };
+                                   grp = new TransformGroup();
                                    grp.Children.Add(tt);
                                    grp.Children.Add(rt);
 
