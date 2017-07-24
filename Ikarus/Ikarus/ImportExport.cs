@@ -7,13 +7,13 @@ namespace Ikarus
     static class ImportExport
     {
         public static List<string> logItems = new List<string>();
-        private static int maxListcount = 5000;
+        private static int maxListcount = 1000;
 
         public static void LogMessage(string item, bool showTime = true)
         {
             try
             {
-                if (logItems.Count > maxListcount) logItems.RemoveAt(1);
+                if (logItems.Count > maxListcount) logItems.RemoveAt(6);
 
                 if (showTime) logItems.Add(DateTime.Now.ToString("HH:mm:ss.fff") + "  " + item);
                 else logItems.Add(item);

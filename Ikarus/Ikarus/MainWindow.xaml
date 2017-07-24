@@ -840,7 +840,7 @@
                                   Margin="0,0,24,64"
                                   HorizontalAlignment="Right"
                                   VerticalAlignment="Bottom"
-                                  Click="checkBoxLogSwitches_Click"
+                                  Click="CheckBoxLogSwitches_Click"
                                   Content="Log Switches only"
                                   Foreground="#FFF9F9F9" />
                         <Label x:Name="labelLight" Content="Light Color ADI" VerticalAlignment="Bottom" Grid.Column="1" Margin="0,0,79,215" Foreground="#FFECE8E8" HorizontalAlignment="Right" Width="81" Height="16"/>

@@ -293,8 +293,10 @@ namespace Ikarus
             Dispatcher.BeginInvoke(DispatcherPriority.Normal,
                        (Action)(() =>
                        {
-                           udpThread = new Thread(new ThreadStart(StartListener));
-                           udpThread.IsBackground = true;
+                           udpThread = new Thread(new ThreadStart(StartListener))
+                           {
+                               IsBackground = true
+                           };
                            udpThread.Start();
                        }));
 
@@ -317,12 +319,12 @@ namespace Ikarus
                     g.CopyFromScreen(new System.Drawing.Point(locationX, locationY), new System.Drawing.Point(0, 0), bitmap.Size);
                 }
 
-                Microsoft.Win32.SaveFileDialog dlg = new Microsoft.Win32.SaveFileDialog();
-
-                dlg.FileName = "Log";
-                dlg.DefaultExt = ".png";
-                dlg.Filter = "PNG files (*.png)|*.png|All files (*.*)|*.*";
-
+                Microsoft.Win32.SaveFileDialog dlg = new Microsoft.Win32.SaveFileDialog()
+                {
+                    FileName = "Log",
+                    DefaultExt = ".png",
+                    Filter = "PNG files (*.png)|*.png|All files (*.*)|*.*"
+                };
                 var result = dlg.ShowDialog();
                 if (result == false) { return; }
 
@@ -333,7 +335,7 @@ namespace Ikarus
         private void StartTimer()
         {
             DispatcherTimer timerMain = new DispatcherTimer(DispatcherPriority.Normal);
-            timerMain.Tick += timerMain_Tick;
+            timerMain.Tick += TimerMain_Tick;
             timerMain.Interval = TimeSpan.FromMilliseconds(100.0);
             timerMain.Start();
         }
@@ -344,7 +346,7 @@ namespace Ikarus
         }
 
         //+++++++++++++++++++++++ Main loop ++++++++++++++++++++++++
-        private void timerMain_Tick(object sender, EventArgs e)
+        private void TimerMain_Tick(object sender, EventArgs e)
         {
             //timerMainLoop++;
 
@@ -1794,11 +1796,11 @@ namespace Ikarus
 
         private void Button_Load_Click(object sender, RoutedEventArgs e)
         {
-            Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog();
-
-            dlg.DefaultExt = ".ikarus";
-            dlg.Filter = "IKARUS files (*.ikarus)|*.ikarus|All files (*.*)|*.*";
-
+            Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog()
+            {
+                DefaultExt = ".ikarus",
+                Filter = "IKARUS files (*.ikarus)|*.ikarus|All files (*.*)|*.*"
+            };
             var result = dlg.ShowDialog();
             if (result == false) { return; }
 
@@ -1813,11 +1815,11 @@ namespace Ikarus
 
         private void Button_LoadBackGround_Click(object sender, RoutedEventArgs e)
         {
-            Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog();
-
-            dlg.DefaultExt = ".png";
-            dlg.Filter = "PNG files (*.png)|*.png|All files (*.*)|*.*";
-
+            Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog()
+            {
+                DefaultExt = ".png",
+                Filter = "PNG files (*.png)|*.png|All files (*.*)|*.*"
+            };
             var result = dlg.ShowDialog();
             if (result == false) { return; }
 
@@ -1864,13 +1866,12 @@ namespace Ikarus
 
         private void Button_Save_Click(object sender, RoutedEventArgs e)
         {
-            Microsoft.Win32.SaveFileDialog dlg = new Microsoft.Win32.SaveFileDialog();
-
-            dlg.FileName = dbFilename;
-
-            dlg.DefaultExt = ".ikarus";
-            dlg.Filter = "IKARUS files (*.ikarus)|*.ikarus|All files (*.*)|*.*";
-
+            Microsoft.Win32.SaveFileDialog dlg = new Microsoft.Win32.SaveFileDialog()
+            {
+                FileName = dbFilename,
+                DefaultExt = ".ikarus",
+                Filter = "IKARUS files (*.ikarus)|*.ikarus|All files (*.*)|*.*"
+            };
             Nullable<bool> result = dlg.ShowDialog();
 
             if (result == false) { return; }
@@ -2168,7 +2169,7 @@ namespace Ikarus
 
         #endregion
 
-        private void checkBoxLogSwitches_Click(object sender, RoutedEventArgs e)
+        private void CheckBoxLogSwitches_Click(object sender, RoutedEventArgs e)
         {
             if (checkBoxLogSwitches.IsChecked == true)
             {
