@@ -480,6 +480,9 @@
     <Compile Include="Gauges\UH\UH1_RadioCompassIndicatorV2.xaml.cs">
       <DependentUpon>UH1_RadioCompassIndicatorV2.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Gauges\US\US_Compass.xaml.cs">
+      <DependentUpon>US_Compass.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Gauges\WP\WPALT20V2.xaml.cs">
       <DependentUpon>WPALT20V2.xaml</DependentUpon>
     </Compile>
@@ -1808,6 +1811,10 @@
     <Page Include="Gauges\UH\UH1_RadioCompassIndicatorV2.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Gauges\US\US_Compass.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Gauges\WP\WPALT20V2.xaml">
       <SubType>Designer</SubType>
