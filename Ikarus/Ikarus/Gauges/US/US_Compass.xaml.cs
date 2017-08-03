@@ -94,7 +94,6 @@ namespace Ikarus
                                {
                                    transformGroup = new TransformGroup();
                                    ttHeading = new TranslateTransform();
-                                   rtHeading = new RotateTransform();
 
                                    for (int n = 0; n < (valueScaleIndex - 1); n++)
                                    {
@@ -105,8 +104,11 @@ namespace Ikarus
                                        }
                                    }
                                    ttHeading.Y = pitch * 60;
-                                   rtHeading.Angle = bank * -90;
 
+                                   rtHeading = new RotateTransform()
+                                   {
+                                       Angle = bank * -90
+                                   };
                                    transformGroup.Children.Add(ttHeading);
                                    transformGroup.Children.Add(rtHeading);
 

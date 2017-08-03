@@ -44,6 +44,7 @@ namespace Ikarus
 
         public Sphere3D(Model3DGroup _model3DGroup, BitmapImage _textur) //constructor
         {
+            RenderOptions.ProcessRenderMode = System.Windows.Interop.RenderMode.SoftwareOnly;
             sphere3DTextur = _textur;
             
             // model3DGroupValue is Model3DGroup from Gauges
@@ -154,7 +155,7 @@ namespace Ikarus
             return meshGeometry3D;
         }
 
-        private Matrix3D CalculateRotationMatrix(double x, double y, double z) // in degrees
+        private Matrix3D CalculateRotationMatrix(ref double x, ref double y, ref double z) // in degrees
         {
             matrix3D = new Matrix3D();
 
@@ -171,7 +172,7 @@ namespace Ikarus
 
         public void Rotate(double x, double y, double z) // in degrees
         {
-            matrixTransform3D = new MatrixTransform3D(CalculateRotationMatrix(x, y, z));
+            matrixTransform3D = new MatrixTransform3D(CalculateRotationMatrix(ref x, ref y, ref z));
 
             for (int i = IndexOfFirstGeometryModel3DInModel3DGroup; i < model3DGroup.Children.Count; i++)
                 ((GeometryModel3D)model3DGroup.Children[i]).Transform = matrixTransform3D;

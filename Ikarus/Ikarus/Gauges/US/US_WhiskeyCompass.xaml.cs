@@ -81,19 +81,23 @@ namespace Ikarus
                                vals = strData.Split(';');
 
                                if (vals.Length > 0) { heading = Convert.ToDouble(vals[0], CultureInfo.InvariantCulture); }
-                               if (vals.Length > 1) { pitch = Convert.ToDouble(vals[1], CultureInfo.InvariantCulture); }
-                               if (vals.Length > 2) { bank = Convert.ToDouble(vals[2], CultureInfo.InvariantCulture); }
+                               //if (vals.Length > 1) { pitch = Convert.ToDouble(vals[1], CultureInfo.InvariantCulture); }
+                               //if (vals.Length > 2) { bank = Convert.ToDouble(vals[2], CultureInfo.InvariantCulture); }
+                               if (vals.Length > 1) { bank = Convert.ToDouble(vals[1], CultureInfo.InvariantCulture); }
+                               if (vals.Length > 2) { pitch = Convert.ToDouble(vals[2], CultureInfo.InvariantCulture); }
 
                                if (lheading != heading || lpitch != pitch || lbank != bank)
                                {
                                    transformGroup = new TransformGroup();
-                                   rtHeading = new RotateTransform();
-                                   ttHeading = new TranslateTransform();
-
-                                   ttHeading.X = 153 * (heading < 0 ? -1 - heading : 1 - heading);
-                                   ttHeading.Y = pitch * 15;
-                                   rtHeading.Angle = bank * 15;
-
+                                   ttHeading = new TranslateTransform()
+                                   {
+                                       X = 153 * (heading < 0 ? -1 - heading : 1 - heading),
+                                       Y = pitch * 60
+                                   };
+                                   rtHeading = new RotateTransform()
+                                   {
+                                       Angle = bank * -60
+                                   };
                                    transformGroup.Children.Add(ttHeading);
                                    transformGroup.Children.Add(rtHeading);
 

@@ -26,8 +26,8 @@ namespace Ikarus
 
         private double pitch = 0.0;
         private double bank = 0.0;
-        private double bankNeedle = 0.0;
         private double heading = 0.0;
+        private double bankNeedle = 0.0;
         private double slipBall = 0.0;
         private double vvi = 0.0;
         private double flag_vvi_off = 0.0;
