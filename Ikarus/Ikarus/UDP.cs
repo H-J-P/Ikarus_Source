@@ -93,7 +93,9 @@ namespace Ikarus
 
                     if (MainWindow.detailLog) { ImportExport.LogMessage("--- Received package: " + receivedData, true); }
 
-                    MainWindow.GrabValues(receivedData);
+                    //ImportExport.LogMessage("--- Received package count: " + receivedDataStack.Count, true);
+
+                    MainWindow.GrabValues(ref receivedData);
                 }
             }
             catch (Exception e)

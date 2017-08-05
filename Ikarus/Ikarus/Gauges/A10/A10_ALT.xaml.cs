@@ -50,7 +50,8 @@ namespace Ikarus
         {
             InitializeComponent();
 
-            Flagg_Elect.Visibility = System.Windows.Visibility.Visible;
+            //Flagg_Elect.Visibility = System.Windows.Visibility.Visible;
+            Flagg_Elect.Visibility = System.Windows.Visibility.Hidden;
             Flagg_Pneu.Visibility = System.Windows.Visibility.Hidden;
         }
 
@@ -156,8 +157,6 @@ namespace Ikarus
                                ttpressure_3.Y = pressure_3 * -180;
                                BasicAtmospherePressure_1000.RenderTransform = ttpressure_3;
                            }
-
-                           Flagg_Elect.Visibility = System.Windows.Visibility.Hidden;
 
                            lalt100FP = alt100FP;
                            lalt10000 = alt10000;

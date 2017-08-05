@@ -9,7 +9,6 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Threading;
-using System.Runtime.InteropServices;
 
 namespace Ikarus
 {
@@ -53,7 +52,7 @@ namespace Ikarus
         private static Point resultPoint = new Point();
         private static double scrollWeel = 0.0;
         private int windowID = 0;
-        private int instanceID = 0;
+        //private int instanceID = 0;
         private Instrument instrument = null;
         private Switches switches = null;
         private Lamps lamp = null;
@@ -69,6 +68,7 @@ namespace Ikarus
         #endregion
 
         #region Functions
+
         public Cockpit(int _windowID, string _backgroundFile)
         {
             try
@@ -403,14 +403,14 @@ namespace Ikarus
             return instancePos;
         }
 
-        public void UpdateInstruments(string instruments, bool editmode)
+        public void UpdateInstruments(int instanceID, bool editmode)
         {
             Dispatcher.BeginInvoke(DispatcherPriority.Send,
             (Action)(() =>
             {
                 try
                 {
-                    instanceID = Convert.ToInt32(instruments);
+                    //instanceID = Convert.ToInt32(instruments);
                     userControl = (UserControl)gaugeObjects[GetObjectID(ref gaugeObjects, ref instanceID)];
                     interfaceUserControl = (I_Ikarus)userControl;
 
@@ -498,14 +498,14 @@ namespace Ikarus
             if (File.Exists(backgroundFile)) BackImage.Source = new BitmapImage(new Uri(backgroundFile));
         }
 
-        public void UpdateSwitches(string switchesID)
+        public void UpdateSwitches(int instanceID)
         {
             Dispatcher.BeginInvoke(DispatcherPriority.Normal,
                        (Action)(() =>
                        {
                            try
                            {
-                               instanceID = Convert.ToInt32(switchesID);
+                               //instanceID = Convert.ToInt32(switchesID);
                                switches = MainWindow.switches.Find(x => x.ID == instanceID);
                                userControl = (UserControl)switchObjects[GetObjectID(ref switchObjects, ref instanceID)];
 
@@ -531,14 +531,14 @@ namespace Ikarus
                        }));
         }
 
-        public void UpdateLamps(string lamps)
+        public void UpdateLamps(int instanceID)
         {
             Dispatcher.BeginInvoke(DispatcherPriority.Normal,
                        (Action)(() =>
                        {
                            try
                            {
-                               instanceID = Convert.ToInt32(lamps);
+                               //instanceID = Convert.ToInt32(lamps);
                                lamp = MainWindow.lamps.Find(x => x.ID == instanceID);
 
                                if (lamp != null)
