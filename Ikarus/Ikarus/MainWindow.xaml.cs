@@ -443,8 +443,8 @@ namespace Ikarus
                            {
                                lStateEnabled = false;
 
-                               int windowID = 0;
-                               string package = "";
+                               //int windowID = 0;
+                               //string package = "";
 
                                for (int n = 0; n < switches.Count; n++)
                                {
@@ -1954,6 +1954,7 @@ namespace Ikarus
                 timerstate = State.run;
                 lbEditMode.Visibility = Visibility.Hidden;
                 Refresh.Visibility = Visibility.Hidden;
+
                 editmode = false;
                 FillClasses();
                 CockpitShow();
@@ -1969,8 +1970,6 @@ namespace Ikarus
                 selectedInstrument = -1;
                 selectedLamp = -1;
                 selectedSwitch = -1;
-
-                //ShowFunctionTab.IsChecked = true;
 
                 editmode = true;
                 FillClasses();
@@ -2016,17 +2015,17 @@ namespace Ikarus
             }
         }
 
-        private void CheckBox_ShowFunctionTab_Checked(object sender, RoutedEventArgs e)
-        {
-            //tabControl1.Items.Insert(1, Function);
-            //functionTabIsVisible = true;
-        }
+        //private void CheckBox_ShowFunctionTab_Checked(object sender, RoutedEventArgs e)
+        //{
+        //    //tabControl1.Items.Insert(1, Function);
+        //    //functionTabIsVisible = true;
+        //}
 
-        private void CheckBox_ShowFunctionTab_Unchecked(object sender, RoutedEventArgs e)
-        {
-            //tabControl1.Items.Remove(Function);
-            //functionTabIsVisible = false;
-        }
+        //private void CheckBox_ShowFunctionTab_Unchecked(object sender, RoutedEventArgs e)
+        //{
+        //    //tabControl1.Items.Remove(Function);
+        //    //functionTabIsVisible = false;
+        //}
 
         private void DataGridAccessories_SelectedCellsChanged(object sender, SelectedCellsChangedEventArgs e)
         {
@@ -2187,20 +2186,20 @@ namespace Ikarus
             }
         }
 
-        private void Grid_GotFocus(object sender, RoutedEventArgs e)
-        {
+        //private void Grid_GotFocus(object sender, RoutedEventArgs e)
+        //{
 
-        }
+        //}
 
         private void Capture_Click(object sender, RoutedEventArgs e)
         {
             ScreenCapture(Convert.ToInt32(Left), Convert.ToInt32(Top), Convert.ToInt32(Width), Convert.ToInt32(Height));
         }
 
-        private void EditMode_Checked(object sender, RoutedEventArgs e)
-        {
+        //private void EditMode_Checked(object sender, RoutedEventArgs e)
+        //{
 
-        }
+        //}
     }
 
     public class Lamps

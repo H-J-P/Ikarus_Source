@@ -378,7 +378,7 @@ namespace Ikarus
 
                 GC.Collect(0, GCCollectionMode.Forced);
 
-                base.Close();
+                Close();
             }
             catch (Exception ex)
             {
@@ -410,7 +410,6 @@ namespace Ikarus
             {
                 try
                 {
-                    //instanceID = Convert.ToInt32(instruments);
                     userControl = (UserControl)gaugeObjects[GetObjectID(ref gaugeObjects, ref instanceID)];
                     interfaceUserControl = (I_Ikarus)userControl;
 
@@ -505,7 +504,6 @@ namespace Ikarus
                        {
                            try
                            {
-                               //instanceID = Convert.ToInt32(switchesID);
                                switches = MainWindow.switches.Find(x => x.ID == instanceID);
                                userControl = (UserControl)switchObjects[GetObjectID(ref switchObjects, ref instanceID)];
 
@@ -538,7 +536,6 @@ namespace Ikarus
                        {
                            try
                            {
-                               //instanceID = Convert.ToInt32(lamps);
                                lamp = MainWindow.lamps.Find(x => x.ID == instanceID);
 
                                if (lamp != null)
@@ -735,10 +732,6 @@ namespace Ikarus
             InvalidateVisual();
         }
 
-        //[DllImport("user32.dll")]
-        //[return: MarshalAs(UnmanagedType.Bool)]
-        //public static extern bool SetWindowPos(IntPtr hWnd, IntPtr hWndInsertAfter, int X, int Y, int cx, int cy, uint uFlags);
-
         #endregion
 
         #region event
@@ -773,31 +766,6 @@ namespace Ikarus
             if (!MainWindow.editmode) ProzessHelper.SetFocusToExternalApp(MainWindow.processNameDCS);
         }
 
-        private void Window_Deactivated(object sender, EventArgs e)
-        {
-            if (MainWindow.cockpitWindows[windowID] != null)
-            {
-                if (windowID > 0 && Visibility == Visibility.Visible)
-                {
-                    //Show();
-                    //Visibility = Visibility.Hidden;
-                    ////this.Topmost = true;
-                    ////this.Activate();
-                    ////this.Focus();
-                    //Visibility = Visibility.Visible;
-                }
-            }
-        }
         #endregion
-
-        private void Window_Loaded(object sender, RoutedEventArgs e)
-        {
-            //if (windowID > 0) // && Visibility == Visibility.Visible)
-            //{
-            //    // do this to get the HWND
-            //    WindowInteropHelper helper = new WindowInteropHelper(this);
-            //    SetWindowPos(helper.Handle, HWND_TOPMOST, 0, 0, 0, 0, TOPMOST_FLAGS);
-            //}
-        }
     }
 }

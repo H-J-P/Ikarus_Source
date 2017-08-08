@@ -14,7 +14,7 @@
         WindowStartupLocation="CenterScreen"
         mc:Ignorable="d">
     <Grid>
-        <Grid GotFocus="Grid_GotFocus">
+        <Grid >
             <Grid.Background>
                 <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
                     <GradientStop Offset="0" Color="#FF666666" />
@@ -795,11 +795,9 @@
                                   Margin="224,0,0,10"
                                   HorizontalAlignment="Left"
                                   VerticalAlignment="Bottom"
-                                  Checked="CheckBox_ShowFunctionTab_Checked"
                                   Content="Show Tab 'Instrumentfunctions'"
                                   Foreground="#FFF9F9F9"
-                                  Unchecked="CheckBox_ShowFunctionTab_Unchecked"
-                                  Visibility="Hidden" />
+                                 Visibility="Hidden" />
                         <CheckBox Name="EditMode"
                                   Grid.Column="1"
                                   Width="136"
@@ -807,7 +805,6 @@
                                   Margin="0,0,24,116"
                                   HorizontalAlignment="Right"
                                   VerticalAlignment="Bottom"
-                                  Checked="EditMode_Checked"
                                   Click="Checkbox_EditMode_Click"
                                   Content="Editor Mode"
                                   Foreground="#FFF9F9F9" />

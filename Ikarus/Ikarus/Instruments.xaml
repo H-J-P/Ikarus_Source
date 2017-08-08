@@ -7,9 +7,7 @@
         Height="1080"
         AllowsTransparency="True"
         Background="Transparent"
-        Deactivated="Window_Deactivated"
         GotFocus="Window_GotFocus"
-        Loaded="Window_Loaded"
         MouseDown="Window_MouseDown"
         Topmost="True"
         WindowStyle="None">
