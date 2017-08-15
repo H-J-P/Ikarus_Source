@@ -26,6 +26,10 @@ namespace Ikarus
         double bankNeedle = 0.0;
         double attitudeWarningFlag = 0.0;
 
+        private double dPitch = 0.0;
+        private double dBank = 0.0;
+        private double dNull = 0.0;
+
         double lpitch = 0.0;
         double lbank = 0.0;
         double lattitudeWarningFlag = 1.0;
@@ -99,9 +103,16 @@ namespace Ikarus
 
                                bankNeedle = bank;
 
-                               if (lpitch != pitch || lbank != bank)
-                                   sphere3D.Rotate(0, pitch * -126, (bank * -180) - 90);
+                               //if (lpitch != pitch || lbank != bank)
+                               //    sphere3D.Rotate(0, pitch * -126, (bank * -180) - 90);
 
+                               if (lpitch != pitch || lbank != bank)
+                               {
+                                   dPitch = pitch * -126;
+                                   dBank = (bank * -180) - 90;
+
+                                   sphere3D.Rotate(ref dNull, ref dPitch, ref dBank);
+                               }
                                if (lbank != bank)
                                {
                                    rt = new RotateTransform()

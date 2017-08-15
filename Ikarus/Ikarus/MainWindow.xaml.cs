@@ -17,6 +17,10 @@ namespace Ikarus
 {
     public partial class MainWindow : Window
     {
+        /// <summary>
+        /// https://msdn.microsoft.com/en-us/library/ee658248.aspx
+        /// https://www.ezigaretten-laden.de/de/blog/post/beste-tabak-geschmack-e-liquids
+        /// </summary>
         #region Member
 
         public enum State
@@ -132,7 +136,6 @@ namespace Ikarus
 
             try
             {
-                //checkBoxLog.IsChecked = true;
                 lbLogging.Visibility = Visibility.Visible;
 
                 File.Text = "";
@@ -214,7 +217,6 @@ namespace Ikarus
                 }
                 catch (Exception e) { ImportExport.LogMessage("XmlToDataSet problem .. " + e.ToString()); }
 
-                //SortTables();
                 DataGridWindows.Visibility = Visibility.Visible;
 
                 dtInstruments = dsInstruments.Tables[0];
@@ -255,19 +257,11 @@ namespace Ikarus
                 {
                     if (dtConfig.Rows.Count > 0)
                         dtWindows.Rows.Add(1, "Front Panel", dtConfig.Rows[0][0].ToString(), dtConfig.Rows[0][1].ToString(), dtConfig.Rows[0][2].ToString(), dtConfig.Rows[0][3].ToString(), background);
-                    //isRep = true;
                 }
-
-                //if (isRep && dbFilename.Length > 0)
-                //{
-                //    ImportExport.DatasetToXml(dbFilename, dsInstruments);
-                //    ImportExport.LogMessage("Save file: " + dbFilename);
-                //}
 
                 tabControl1.SelectedIndex = 5;
                 selectedTab = 0;
 
-                //buttonAdd.Visibility = Visibility.Visible;
                 lbEditMode.Visibility = Visibility.Hidden;
                 Refresh.Visibility = Visibility.Hidden;
 
@@ -286,8 +280,7 @@ namespace Ikarus
                 lbLogging.Visibility = switchLog ? Visibility.Visible : Visibility.Hidden;
 
                 cleanupMemory = true;
-                checkBoxCleanMemory.IsChecked = cleanupMemory;
-
+//
                 DataGridInstruments.CanUserDeleteRows = true;
                 DatagridFunction.CanUserDeleteRows = true;
                 DataGridSwitches.CanUserDeleteRows = true;
@@ -1933,18 +1926,6 @@ namespace Ikarus
             DatagridFunction.ItemsSource = dtInstrumentFunctions.DefaultView;
         }
 
-        private void CheckBox_CleanMemory_Click(object sender, RoutedEventArgs e)
-        {
-            if (checkBoxCleanMemory.IsChecked == true)
-            {
-                cleanupMemory = true;
-            }
-            else
-            {
-                cleanupMemory = false;
-            }
-        }
-
         private void Checkbox_EditMode_Click(object sender, RoutedEventArgs e)
         {
             if (editmode) //(timerstate == State.stop)
@@ -2015,18 +1996,6 @@ namespace Ikarus
             }
         }
 
-        //private void CheckBox_ShowFunctionTab_Checked(object sender, RoutedEventArgs e)
-        //{
-        //    //tabControl1.Items.Insert(1, Function);
-        //    //functionTabIsVisible = true;
-        //}
-
-        //private void CheckBox_ShowFunctionTab_Unchecked(object sender, RoutedEventArgs e)
-        //{
-        //    //tabControl1.Items.Remove(Function);
-        //    //functionTabIsVisible = false;
-        //}
-
         private void DataGridAccessories_SelectedCellsChanged(object sender, SelectedCellsChangedEventArgs e)
         {
             try
@@ -2094,11 +2063,6 @@ namespace Ikarus
         {
             CockpitClose();
         }
-
-        //private void Main_GotFocus(object sender, RoutedEventArgs e)
-        //{
-        //    //if (!MainWindow.editmode) ProzessHelper.SetFocusToExternalApp(MainWindow.processNameDCS);
-        //}
 
         private void TabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -2172,8 +2136,6 @@ namespace Ikarus
             }
         }
 
-        #endregion
-
         private void CheckBoxLogSwitches_Click(object sender, RoutedEventArgs e)
         {
             if (checkBoxLogSwitches.IsChecked == true)
@@ -2186,20 +2148,12 @@ namespace Ikarus
             }
         }
 
-        //private void Grid_GotFocus(object sender, RoutedEventArgs e)
-        //{
-
-        //}
-
         private void Capture_Click(object sender, RoutedEventArgs e)
         {
             ScreenCapture(Convert.ToInt32(Left), Convert.ToInt32(Top), Convert.ToInt32(Width), Convert.ToInt32(Height));
         }
 
-        //private void EditMode_Checked(object sender, RoutedEventArgs e)
-        //{
-
-        //}
+        #endregion
     }
 
     public class Lamps

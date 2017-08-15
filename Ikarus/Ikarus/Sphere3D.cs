@@ -177,6 +177,14 @@ namespace Ikarus
             for (int i = IndexOfFirstGeometryModel3DInModel3DGroup; i < model3DGroup.Children.Count; i++)
                 ((GeometryModel3D)model3DGroup.Children[i]).Transform = matrixTransform3D;
         }
+
+        public void Rotate(ref double x, ref double y, ref double z) // in degrees
+        {
+            matrixTransform3D = new MatrixTransform3D(CalculateRotationMatrix(ref x, ref y, ref z));
+
+            for (int i = IndexOfFirstGeometryModel3DInModel3DGroup; i < model3DGroup.Children.Count; i++)
+                ((GeometryModel3D)model3DGroup.Children[i]).Transform = matrixTransform3D;
+        }
     }
 }
 

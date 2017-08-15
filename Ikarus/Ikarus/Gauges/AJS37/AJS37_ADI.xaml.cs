@@ -27,6 +27,11 @@ namespace Ikarus
         private double pitch = 0.0;
         private double bank = 0.0;
         private double heading = 0.0;
+
+        private double dPitch = 0.0;
+        private double dBank = 0.0;
+        private double dHeading = 0.0;
+
         private double bankNeedle = 0.0;
         private double slipBall = 0.0;
         private double vvi = 0.0;
@@ -153,8 +158,13 @@ namespace Ikarus
                                }
 
                                if (lpitch != pitch || lheading != heading || lbank != bank)
-                                   sphere3D.Rotate(pitch * -180, headingAngle * -1, bank * -180);
+                               {
+                                   dPitch = pitch * -180;
+                                   dHeading = headingAngle * -1;
+                                   dBank = bank * -180;
 
+                                   sphere3D.Rotate(ref dPitch, ref dHeading, ref dBank);
+                               }
                                if (glideSlope > 0.5) glideSlope = 0.5;
                                if (bankSteering > 0.5) bankSteering = 0.5;
 

@@ -842,17 +842,6 @@
                                   Foreground="#FFF9F9F9" />
                         <Label x:Name="labelLight" Content="Light Color ADI" VerticalAlignment="Bottom" Grid.Column="1" Margin="0,0,79,215" Foreground="#FFECE8E8" HorizontalAlignment="Right" Width="81" Height="16"/>
                         <TextBox x:Name="textBoxLightColor" Text="#95E295" TextWrapping="Wrap" Margin="0,0,79,187" Grid.Column="1" HorizontalAlignment="Right" Width="81" Height="23" VerticalAlignment="Bottom"/>
-                        <CheckBox Name="checkBoxCleanMemory"
-                                  Grid.Column="1"
-                                  Width="119"
-                                  Height="21"
-                                  Margin="0,0,10,40"
-                                  HorizontalAlignment="Right"
-                                  VerticalAlignment="Bottom"
-                                  Click="CheckBox_CleanMemory_Click"
-                                  Content="Clean up memory"
-                                  Foreground="#FFF9F9F9"
-                                  Visibility="Hidden" />
                     </Grid>
                 </TabItem>
                 <TabItem Name="Log"
@@ -961,7 +950,7 @@
                    Height="19"
                    Margin="466,0,482,10"
                    VerticalAlignment="Bottom"
-                   Content="(C) H.J.P. 2017  Version 1.2.1.3f"
+                   Content="(C) H.J.P. 2017  Version 1.2.1.3h"
                    Foreground="#FFD8BC05" />
             <Label Name="lbEditMode"
                    Width="72"
