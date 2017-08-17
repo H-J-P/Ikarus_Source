@@ -19,7 +19,6 @@ namespace Ikarus
     {
         /// <summary>
         /// https://msdn.microsoft.com/en-us/library/ee658248.aspx
-        /// https://www.ezigaretten-laden.de/de/blog/post/beste-tabak-geschmack-e-liquids
         /// </summary>
         #region Member
 
@@ -81,7 +80,7 @@ namespace Ikarus
         public static List<Lamps> lamps = new List<Lamps> { };
         public static List<Switches> switches = new List<Switches> { };
         private static List<string> updateLamp = new List<string>();
-        private static List<int> updateWindowID = new List<int>();
+        public static List<MainWindow> mainWindow = new List<MainWindow>();
 
         private static Thread udpThread = null;
 
@@ -102,6 +101,7 @@ namespace Ikarus
         private static int selectedIndexSwitches = 0;
         private static int selectedIndexLamps = 0;
         private static int windowID = 0;
+        private static string identifier = "";
 
         private static string background = "";
         public static string dbFilename = "";
@@ -133,6 +133,8 @@ namespace Ikarus
 
             Thread.CurrentThread.CurrentCulture = cult;
             Thread.CurrentThread.CurrentUICulture = cult;
+
+            mainWindow.Add(this);
 
             try
             {
@@ -279,8 +281,8 @@ namespace Ikarus
 
                 lbLogging.Visibility = switchLog ? Visibility.Visible : Visibility.Hidden;
 
-                cleanupMemory = true;
-//
+                cleanupMemory = false;
+
                 DataGridInstruments.CanUserDeleteRows = true;
                 DatagridFunction.CanUserDeleteRows = true;
                 DataGridSwitches.CanUserDeleteRows = true;
@@ -304,7 +306,7 @@ namespace Ikarus
 
             GetTier();
 
-            GC.Collect(0, GCCollectionMode.Forced);
+            //GC.Collect(0, GCCollectionMode.Forced);
         }
 
         #region member functions
@@ -405,6 +407,7 @@ namespace Ikarus
                                                DatabaseResetValue();
                                                FillClasses();
                                                ResetCockpit();
+                                               MemoryManagement.Reduce();
                                                break;
                                            }
                                            if (receivedData.IndexOf("Map=") != -1)
@@ -617,6 +620,7 @@ namespace Ikarus
 
             cockpitWindows.Clear();
             UpdateLog();
+            MemoryManagement.Reduce();
         }
 
         private void CockpitShow()
@@ -670,7 +674,7 @@ namespace Ikarus
 
                 Mouse.OverrideCursor = null;
 
-                GC.Collect(0, GCCollectionMode.Forced);
+                //GC.Collect(0, GCCollectionMode.Forced);
             }
             catch (Exception ex) { ImportExport.LogMessage("Cockpit opened: " + ex.ToString()); }
         }
@@ -852,15 +856,13 @@ namespace Ikarus
             return false;
         }
 
-        private static string GrabValue(string ID, ref string receivedData)
+        private string GrabValue()
         {
-            ID = ID + "=";
-
-            if (receivedData.IndexOf(ID, 0) > -1) // Dirty quickcheck before loop
+            if (UDP.receivedData.IndexOf(identifier, 0) > -1) // Dirty quickcheck before loop
             {
                 for (int n = 0; n < receivedItems.Length; n++)
                 {
-                    if (receivedItems[n].IndexOf(ID, 0) == 0)
+                    if (receivedItems[n].IndexOf(identifier, 0) == 0)
                     {
                         return receivedItems[n].Substring(receivedItems[n].IndexOf("=", 0) + 1);
                     }
@@ -869,7 +871,7 @@ namespace Ikarus
             return "";
         }
 
-        public static void GrabValues(ref string receivedData)
+        public void GrabValues()
         {
             if (!cockpitWindowActiv) { return; }
 
@@ -878,8 +880,8 @@ namespace Ikarus
                 grabWindowID = 0;
                 newGrabValue = "";
 
-                if (receivedData.Length < 3) { return; }
-                receivedItems = receivedData.Split(':');
+                if (UDP.receivedData.Length < 3) { return; }
+                receivedItems = UDP.receivedData.Split(':');
 
                 #region Gauges
 
@@ -893,7 +895,8 @@ namespace Ikarus
                         {
                             if (instruments[i].instrumentFunction[n].argNumber > 0)
                             {
-                                newGrabValue = GrabValue(instruments[i].instrumentFunction[n].argNumber.ToString(), ref receivedData);
+                                identifier = instruments[i].instrumentFunction[n].argNumber.ToString() + "=";
+                                newGrabValue = GrabValue();
                             }
                             else
                             {
@@ -943,7 +946,6 @@ namespace Ikarus
                         }
                     }
                     catch { }
-                    //catch (Exception e) { ImportExport.LogMessage("Gauges " + (i + 1).ToString() + " problem .. " + e.ToString()); }
                 }
                 initInstruments = false;
 
@@ -955,7 +957,11 @@ namespace Ikarus
                 {
                     try
                     {
-                        if (lamps[n].argNumber > 0) { newGrabValue = GrabValue(lamps[n].argNumber.ToString(), ref receivedData); }
+                        if (lamps[n].argNumber > 0)
+                        {
+                            identifier = lamps[n].argNumber.ToString() + "=";
+                            newGrabValue = GrabValue();
+                        }
 
                         if (newGrabValue != "")
                         {
@@ -983,7 +989,11 @@ namespace Ikarus
                 {
                     try
                     {
-                        if (switches[n].dcsID > 0) newGrabValue = GrabValue(switches[n].dcsID.ToString(), ref receivedData);
+                        if (switches[n].dcsID > 0)
+                        {
+                            identifier = switches[n].dcsID.ToString() + "=";
+                            newGrabValue = GrabValue();
+                        }
 
                         if (newGrabValue != "")
                         {

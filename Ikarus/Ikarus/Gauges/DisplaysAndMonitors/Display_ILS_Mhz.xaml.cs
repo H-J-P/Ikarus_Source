@@ -67,7 +67,7 @@ namespace Ikarus
                             Light.Source = new BitmapImage(new Uri(Environment.CurrentDirectory + "\\Images\\Frames\\" + light));
                     }
                     SwitchLight(false);
-                    dataRows[0]["oldValue"] = -1.0;
+                    //dataRows[0]["oldValue"] = -1.0;
                 }
                 catch { }
             }
