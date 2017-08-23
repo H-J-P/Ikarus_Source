@@ -67,7 +67,12 @@ namespace Ikarus
             Flagg_off.Visibility = System.Windows.Visibility.Visible;
 
             InitialSphere();
-            sphere3D.Rotate(0, 0, -90);
+            sphere3D.xRotation = dNull;
+            sphere3D.yRotation = dNull;
+            sphere3D.zRotation = -90;
+            //sphere3D.Rotate(0, 0, -90);
+            sphere3D.Rotate();
+
             directionalLight.Color = (Color)ColorConverter.ConvertFromString(lightColor);
         }
 
@@ -136,10 +141,14 @@ namespace Ikarus
 
                                if (lpitch != pitch || lbank != bank)
                                {
-                                   dPitch = pitch * -126;
-                                   dBank = ((bank * 180) - 90);
+                                   //dPitch = pitch * -126;
+                                   //dBank = ((bank * 180) - 90);
 
-                                   sphere3D.Rotate(ref dNull, ref dPitch, ref dBank);
+                                   sphere3D.xRotation = dNull;
+                                   sphere3D.yRotation = pitch * -126;
+                                   sphere3D.zRotation = ((bank * 180) - 90);
+
+                                   sphere3D.Rotate();
                                }
                                if (lbank != bank)
                                {

@@ -69,7 +69,12 @@ namespace Ikarus
             //Banksteering.Visibility = System.Windows.Visibility.Hidden;
 
             InitialSphere();
-            sphere3D.Rotate(0, 0,-90);
+
+            //sphere3D.Rotate(0, 0,-90);
+            sphere3D.xRotation = 0.0;
+            sphere3D.yRotation = 0.0;
+            sphere3D.zRotation = -90;
+            sphere3D.Rotate();
 
             directionalLight.Color = (Color)ColorConverter.ConvertFromString(lightColor);
         }
@@ -152,8 +157,14 @@ namespace Ikarus
                                }
 
                                if (lpitch != pitch || lheading != heading || lbank != bank)
-                                   sphere3D.Rotate(0, pitchangle * -1, (bank * 180) -90);
+                               {
+                                   //sphere3D.Rotate(0, pitchangle * -1, (bank * 180) - 90);
 
+                                   sphere3D.xRotation = 0;
+                                   sphere3D.yRotation = pitchangle * -1;
+                                   sphere3D.zRotation = ((bank * 180) - 90);
+                                   sphere3D.Rotate();
+                               }
                                if (glideSlope > 0.5) glideSlope = 0.5;
                                if (bankSteering > 0.5) bankSteering = 0.5;
 

@@ -227,7 +227,7 @@
                         <Button Name="ShowAll"
                                 Width="90"
                                 Height="24"
-                                Margin="113,0,0,0"
+                                Margin="108,0,0,0"
                                 HorizontalAlignment="Left"
                                 VerticalAlignment="Bottom"
                                 Click="Button_ShowAll_Click"
@@ -905,14 +905,6 @@
                     VerticalAlignment="Bottom"
                     Click="Button_Show_Click"
                     Content="Show Cockpit" />
-            <Button Name="buttonExit"
-                    Width="90"
-                    Height="24"
-                    Margin="754,0,0,5"
-                    HorizontalAlignment="Left"
-                    VerticalAlignment="Bottom"
-                    Click="Button_Exit_Click"
-                    Content="Exit" />
             <Button x:Name="buttonAdd"
                     Width="90"
                     Height="24"
@@ -938,9 +930,9 @@
                     Click="Button_Refresh_Click"
                     Content="Refresh" />
             <Button x:Name="Capture"
-                    Width="110"
+                    Width="90"
                     Height="24"
-                    Margin="639,0,0,5"
+                    Margin="750,0,0,5"
                     HorizontalAlignment="Left"
                     VerticalAlignment="Bottom"
                     Click="Capture_Click"
@@ -948,10 +940,10 @@
                     ToolTip="Ikarus Screen Capture" />
             <Label Name="Version"
                    Height="19"
-                   Margin="466,0,482,10"
+                   Margin="486,0,0,10"
                    VerticalAlignment="Bottom"
-                   Content="(C) H.J.P. 2017  Version 1.2.1.3K"
-                   Foreground="#FFD8BC05" />
+                   Content="(C) H.J.P. 2017  Version 1.2.1.4b"
+                   Foreground="#FFD8BC05" HorizontalAlignment="Left" Width="189" />
             <Label Name="lbEditMode"
                    Width="72"
                    Height="19"

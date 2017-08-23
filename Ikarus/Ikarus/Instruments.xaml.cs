@@ -131,10 +131,7 @@ namespace Ikarus
 
                 ImportExport.LogMessage("End loading Cockpit ... " + _backgroundFile);
             }
-            catch (Exception e)
-            {
-                ImportExport.LogMessage("Generate Cockpit .... " + e.ToString());
-            }
+            catch (Exception e) { ImportExport.LogMessage("Generate Cockpit .... " + e.ToString()); }
         }
 
         private void GenerateAccessory(int instanceID, string classname, string name)
@@ -154,10 +151,7 @@ namespace Ikarus
 
                 MainGrid.Children.Add(userControl);
             }
-            catch (Exception e)
-            {
-                ImportExport.LogMessage("Generate accessories: " + e.ToString());
-            }
+            catch (Exception e) { ImportExport.LogMessage("Generate accessories: " + e.ToString()); }
         }
 
         private void GenerateGauge(int instanceID, string classname, string name)
@@ -237,10 +231,7 @@ namespace Ikarus
                 }
                 MainGrid.Children.Add(userControl);
             }
-            catch (Exception e)
-            {
-                ImportExport.LogMessage("Generate gauges: " + userControl.ToString() + " .... " + e.ToString());
-            }
+            catch (Exception e) { ImportExport.LogMessage("Generate gauges: " + userControl.ToString() + " .... " + e.ToString()); }
         }
 
         private void GenerateLamp(int instanceID, string classname, string name)
@@ -262,10 +253,7 @@ namespace Ikarus
 
                 MainGrid.Children.Add(userControl);
             }
-            catch (Exception e)
-            {
-                ImportExport.LogMessage("Generate lamps: " + e.ToString());
-            }
+            catch (Exception e) { ImportExport.LogMessage("Generate lamps: " + e.ToString()); }
         }
 
         private void GenerateSwitch(int instanceID, string classname, string name)
@@ -296,49 +284,49 @@ namespace Ikarus
 
                 MainGrid.Children.Add(userControl);
             }
-            catch (Exception e)
-            {
-                ImportExport.LogMessage("Generate switches: " + classname + " .... " + e.ToString());
-            }
+            catch (Exception e) { ImportExport.LogMessage("Generate switches: " + classname + " .... " + e.ToString()); }
         }
 
         private void SetObjectsPara(ref DataTable table, ref int instanceID)
         {
-            instancePosRows = table.Select("ID=" + instanceID.ToString());
+            try
+            {
+                instancePosRows = table.Select("ID=" + instanceID.ToString());
 
-            userControl.VerticalAlignment = VerticalAlignment.Top;
-            userControl.HorizontalAlignment = HorizontalAlignment.Left;
+                userControl.VerticalAlignment = VerticalAlignment.Top;
+                userControl.HorizontalAlignment = HorizontalAlignment.Left;
 
-            leftPos = double.Parse(instancePosRows[0]["PosX"].ToString().Replace(",", "."), CultureInfo.InvariantCulture);
-            topPos = double.Parse(instancePosRows[0]["PosY"].ToString().Replace(",", "."), CultureInfo.InvariantCulture);
+                leftPos = double.Parse(instancePosRows[0]["PosX"].ToString().Replace(",", "."), CultureInfo.InvariantCulture);
+                topPos = double.Parse(instancePosRows[0]["PosY"].ToString().Replace(",", "."), CultureInfo.InvariantCulture);
 
-            userControl.Margin = new Thickness(leftPos, topPos, 0, 0);
-            userControl.ClipToBounds = true;
+                userControl.Margin = new Thickness(leftPos, topPos, 0, 0);
+                userControl.ClipToBounds = true;
 
-            sizeUsercontrol = interfaceUserControl.GetSize();
-            size = double.Parse(instancePosRows[0]["Size"].ToString().Replace(",", "."), CultureInfo.InvariantCulture);
-            scaling = size / sizeUsercontrol;
-            rotate = double.Parse(instancePosRows[0]["Rotate"].ToString().Replace(",", "."), CultureInfo.InvariantCulture);
+                sizeUsercontrol = interfaceUserControl.GetSize();
+                size = double.Parse(instancePosRows[0]["Size"].ToString().Replace(",", "."), CultureInfo.InvariantCulture);
+                scaling = size / sizeUsercontrol;
+                rotate = double.Parse(instancePosRows[0]["Rotate"].ToString().Replace(",", "."), CultureInfo.InvariantCulture);
 
-            userControl.RenderTransformOrigin = new Point(0.5, 0.5);
+                userControl.RenderTransformOrigin = new Point(0.5, 0.5);
 
-            transformGroup = new TransformGroup();
-            transformScale = new ScaleTransform();
-            transformRotate = new RotateTransform();
+                transformGroup = new TransformGroup();
+                transformScale = new ScaleTransform();
+                transformRotate = new RotateTransform();
 
-            transformScale.ScaleX = scaling;
-            transformScale.ScaleY = scaling;
-            transformRotate.Angle = rotate;
+                transformScale.ScaleX = scaling;
+                transformScale.ScaleY = scaling;
+                transformRotate.Angle = rotate;
 
-            transformGroup.Children.Add(transformScale);
-            transformGroup.Children.Add(transformRotate);
+                transformGroup.Children.Add(transformScale);
+                transformGroup.Children.Add(transformRotate);
 
-            userControl.LayoutTransform = transformGroup;
+                userControl.LayoutTransform = transformGroup;
+            }
+            catch (Exception e) { ImportExport.LogMessage("SetObjectsPara " + e.ToString()); }
         }
 
         public void Close_Cockpit()
         {
-            //MainWindow.cockpitWindowActiv = false;
             try
             {
                 for (int n = 0; n < accessories.Count; n++)
@@ -373,26 +361,28 @@ namespace Ikarus
 
                 Close();
             }
-            catch (Exception ex)
-            {
-                ImportExport.LogMessage("Close_Cockpit: " + ex.ToString());
-            }
+            catch (Exception ex) { ImportExport.LogMessage("Close_Cockpit: " + ex.ToString()); }
         }
 
         public int GetObjectID(ref List<object> objects, ref int instanceID)
         {
-            for (int i = 0; i < objects.Count; i++)
+            try
             {
-                userControl = (UserControl)objects[i];
-                interfaceUserControl = (I_Ikarus)userControl;
-                objectID = interfaceUserControl.GetID();
-
-                if (Convert.ToInt32(objectID) == instanceID)
+                for (int i = 0; i < objects.Count; i++)
                 {
-                    instancePos = i;
-                    break;
+                    userControl = (UserControl)objects[i];
+                    interfaceUserControl = (I_Ikarus)userControl;
+                    objectID = interfaceUserControl.GetID();
+
+                    if (Convert.ToInt32(objectID) == instanceID)
+                    {
+                        instancePos = i;
+                        break;
+                    }
                 }
             }
+            catch (Exception ex) { ImportExport.LogMessage("GetObjectID: " + ex.ToString()); }
+
             return instancePos;
         }
 
@@ -567,7 +557,6 @@ namespace Ikarus
         {
             try
             {
-                //MainWindow.dtInstruments.Select
                 dataRows = tablename.Select(nameID + "=" + ID);
 
                 if (dataRows.Length > 0)
@@ -714,12 +703,8 @@ namespace Ikarus
                 transformGroup.Children.Add(transformRotate);
 
                 userControl.LayoutTransform = transformGroup;
-                //userControl.RenderTransform = transformGroup;
             }
-            catch (Exception e)
-            {
-                ImportExport.LogMessage("Update position, size and rotation: " + e.ToString());
-            }
+            catch (Exception e) { ImportExport.LogMessage("Update position, size and rotation: " + e.ToString()); }
 
             UpdateLayout();
             InvalidateVisual();

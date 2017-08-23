@@ -159,11 +159,15 @@ namespace Ikarus
 
                                if (lpitch != pitch || lheading != heading || lbank != bank)
                                {
-                                   dPitch = pitch * -180;
-                                   dHeading = headingAngle * -1;
-                                   dBank = bank * -180;
+                                   //dPitch = pitch * -180;
+                                   //dHeading = headingAngle * -1;
+                                   //dBank = bank * -180;
+                                   //sphere3D.Rotate(ref dPitch, ref dHeading, ref dBank);
 
-                                   sphere3D.Rotate(ref dPitch, ref dHeading, ref dBank);
+                                   sphere3D.xRotation = pitch * -180;
+                                   sphere3D.yRotation = headingAngle * -1;
+                                   sphere3D.zRotation = bank * -180;
+                                   sphere3D.Rotate();
                                }
                                if (glideSlope > 0.5) glideSlope = 0.5;
                                if (bankSteering > 0.5) bankSteering = 0.5;

@@ -8,7 +8,7 @@ using System.Windows;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("Ikarus")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Is a Glass Cokpit Simulation for DCS")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("C-")]
 [assembly: AssemblyProduct("Ikarus")]

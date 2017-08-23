@@ -19,6 +19,9 @@ namespace Ikarus
     {
         /// <summary>
         /// https://msdn.microsoft.com/en-us/library/ee658248.aspx
+        /// http://www.philosophicalgeek.com/2012/07/16/how-to-debug-gc-issues-using-perfview/
+        /// PerfMon.exe
+        /// Perfview.exe
         /// </summary>
         #region Member
 
@@ -30,25 +33,24 @@ namespace Ikarus
             reset,
             stop
         }
-        public static State timerstate = State.startup;
+        private State timerstate = State.startup;
 
-        private static bool cleanupMemory = true;
+        private bool cleanupMemory = true;
         public static bool cockpitWindowActiv = false;
         public static bool dataLog = false;
         public static bool detailLog = false;
         public static bool editmode = false;
-        public static bool functionTabIsVisible = true;
+        private bool functionTabIsVisible = true;
         public static bool getAllDscData = false;
-        public static bool initInstruments = true;
-        public static bool isRep = false;
-        public static bool lightsChecked = false;
-        private static bool lStateEnabled = true;
+        private bool initInstruments = true;
+        private bool lightsChecked = false;
+        private bool lStateEnabled = true;
         public static bool refreshCockpit = false;
-        public static bool refreshInstruments = false;
+        private bool refreshInstruments = false;
         public static bool refeshPopup = false;
         public static bool switchLog = false;
 
-        public static System.Windows.Point cockpitKoord = new System.Windows.Point();
+        //public static System.Windows.Point cockpitKoord = new System.Windows.Point();
         public static CultureInfo cult = new CultureInfo("en-GB");
         //---------------------- D A T A B A S E ----------------------
         public static DataSet1 dsInstruments = new DataSet1();
@@ -84,46 +86,45 @@ namespace Ikarus
 
         private static Thread udpThread = null;
 
-        private static int cockpitRefreshLoopCounterMax = 1;
-        private static int cockpitRefreshLoopCounter = 0;
-        private static int dataStackSize = 0;
-        private static int dscDataLoopCounterMax = 15;
-        private static int getAllDscDataLoopCounter = 0;
-        private static int logCount = 0;
-        private static int renderTier = 0;
-        private static int selectedInstrument = -1;
-        private static int selectedFunction = -1;
-        private static int selectedSwitch = -1;
-        private static int selectedLamp = -1;
-        private static int selectedTab = -1;
-        private static int selectedAccessories = -1;
-        private static int selectedWindows = -1;
-        private static int selectedIndexSwitches = 0;
-        private static int selectedIndexLamps = 0;
-        private static int windowID = 0;
-        private static string identifier = "";
+        private int cockpitRefreshLoopCounterMax = 1;
+        private int cockpitRefreshLoopCounter = 0;
+        private int dataStackSize = 0;
+        private int dscDataLoopCounterMax = 15;
+        private int getAllDscDataLoopCounter = 0;
+        private int grabWindowID = 0;
+        private int logCount = 0;
+        private int loopCounter = 0;
+        private int loopMax = 150;
+        private int renderTier = 0;
+        private int selectedAccessories = -1;
+        private int selectedIndexLamps = 0;
+        private int selectedIndexSwitches = 0;
+        private int selectedInstrument = -1;
+        private int selectedFunction = -1;
+        private int selectedLamp = -1;
+        private int selectedSwitch = -1;
+        private int selectedTab = -1;
+        private int selectedWindows = -1;
+        private int windowID = 0;
 
-        private static string background = "";
-        public static string dbFilename = "";
+        private string identifier = "";
+        private string background = "";
+        private string dbFilename = "";
         private static string newline = Environment.NewLine;
         public static string currentDirectory = Environment.CurrentDirectory;
-        private static string portListener = "";
-        public static string receivedData = "";
-        private static string[] receivedItems = new string[] { };
+        private string portListener = "";
+        private string receivedData = "";
+        private string[] receivedItems = new string[] { };
         public static string readFile = "";
-        private static string lastFile = "-";
-        private static string searchStringForFile = "File";
-        private static string lastSelectedInstrumentsClass = "";
+        private string lastFile = "-";
+        private string searchStringForFile = "File";
+        private string lastSelectedInstrumentsClass = "";
         public static string map = "";
-        private static string package = "";
+        private string package = "";
         public static string processNameDCS = "DCS";
         public static string lightOnColor = "95E295"; // green
 
-        private static string newGrabValue = "";
-        private static int grabWindowID = 0;
-
-        private int loopCounter = 0;
-        private int loopMax = 150;
+        private string newGrabValue = "";
 
         #endregion
 
@@ -311,46 +312,9 @@ namespace Ikarus
 
         #region member functions
 
-        private void ScreenCapture(int locationX, int locationY, int width, int height)
-        {
-            using (Bitmap bitmap = new Bitmap(width, height))
-            {
-                using (Graphics g = Graphics.FromImage(bitmap))
-                {
-                    g.CopyFromScreen(new System.Drawing.Point(locationX, locationY), new System.Drawing.Point(0, 0), bitmap.Size);
-                }
-
-                Microsoft.Win32.SaveFileDialog dlg = new Microsoft.Win32.SaveFileDialog()
-                {
-                    FileName = "Log",
-                    DefaultExt = ".png",
-                    Filter = "PNG files (*.png)|*.png|All files (*.*)|*.*"
-                };
-                var result = dlg.ShowDialog();
-                if (result == false) { return; }
-
-                bitmap.Save(dlg.FileName, ImageFormat.Png);
-            }
-        }
-
-        private void StartTimer()
-        {
-            DispatcherTimer timerMain = new DispatcherTimer(DispatcherPriority.Normal);
-            timerMain.Tick += TimerMain_Tick;
-            timerMain.Interval = TimeSpan.FromMilliseconds(100.0);
-            timerMain.Start();
-        }
-
-        private void StartListener()
-        {
-            UDP.StartListener(Convert.ToInt16(portListener.Trim()));
-        }
-
         //+++++++++++++++++++++++ Main loop ++++++++++++++++++++++++
         private void TimerMain_Tick(object sender, EventArgs e)
         {
-            //timerMainLoop++;
-
             Dispatcher.BeginInvoke(DispatcherPriority.Normal,
                        (Action)(() =>
                        {
@@ -502,7 +466,6 @@ namespace Ikarus
                            if (lStateEnabled)
                            {
                                lStateEnabled = false;
-                               //GC.Collect(0, GCCollectionMode.Forced);
 
                                if (cleanupMemory)
                                {
@@ -596,10 +559,7 @@ namespace Ikarus
 
                            #endregion
                        }));
-
-            //timerMainLoop--;
         }
-        //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
         private void CockpitClose()
         {
@@ -620,6 +580,7 @@ namespace Ikarus
 
             cockpitWindows.Clear();
             UpdateLog();
+
             MemoryManagement.Reduce();
         }
 
@@ -634,7 +595,6 @@ namespace Ikarus
                 {
                     for (int i = 0; i < cockpitWindows.Count; i++)
                     {
-                        //if (cockpitWindows[i] != null) cockpitWindows[i].Close();
                         if (cockpitWindows[i] != null) cockpitWindows[i].Close_Cockpit();
                     }
                 }
@@ -661,7 +621,6 @@ namespace Ikarus
                     {
                         ImportExport.LogMessage("Construct Panels ... " + ex.ToString());
                     }
-                    //SetWindowPos(this.Handle, HWND_TOPMOST, 0, 0, 0, 0, TOPMOST_FLAGS);
                 }
 
                 HidePanels();
@@ -674,7 +633,7 @@ namespace Ikarus
 
                 Mouse.OverrideCursor = null;
 
-                //GC.Collect(0, GCCollectionMode.Forced);
+                MemoryManagement.Reduce();
             }
             catch (Exception ex) { ImportExport.LogMessage("Cockpit opened: " + ex.ToString()); }
         }
@@ -689,12 +648,10 @@ namespace Ikarus
 
                     if (readFile.Length > 0 && readFile != lastFile)
                     {
-                        //string test = currentDirectory + "\\" + readFile + ".ikarus";
                         if (System.IO.File.Exists(currentDirectory + "\\" + readFile + ".ikarus"))
                         {
                             dbFilename = readFile + ".ikarus";
                             LoadConfiguration(readFile);
-                            //WindowState = WindowState.Minimized;
                         }
                         else
                         {
@@ -704,7 +661,6 @@ namespace Ikarus
                 }
             }
             catch (Exception ex) { ImportExport.LogMessage("Load Cockpit: " + ex.ToString()); }
-
         }
 
         private void CopyListBoxToClipboard()
@@ -718,7 +674,6 @@ namespace Ikarus
                     try
                     {
                         buffer.Append((ImportExport.logItems[i] + newline).ToString());
-                        //buffer.Append(newline);
                     }
                     catch
                     {
@@ -732,8 +687,6 @@ namespace Ikarus
 
         private static void DatabaseResetValue()
         {
-            //WindowState = WindowState.Normal;
-
             ImportExport.LogMessage("Reset Cockpit .. ");
 
             for (int i = 0; i < dtInstrumentFunctions.Rows.Count; i++)
@@ -747,7 +700,7 @@ namespace Ikarus
                     dtInstrumentFunctions.Rows[i]["In"] = "";
                     dtInstrumentFunctions.Rows[i]["Out"] = "";
                 }
-                catch { }
+                catch (Exception e) { ImportExport.LogMessage("Reset Database Values dtInstrumentFunctions .. " + e.ToString()); }
             }
 
             for (int i = 0; i < dtLamps.Rows.Count; i++)
@@ -757,7 +710,7 @@ namespace Ikarus
                     dtLamps.Rows[i]["Value"] = 0.0;
                     dtLamps.Rows[i]["OldValue"] = 0.0;
                 }
-                catch { }
+                catch (Exception e) { ImportExport.LogMessage("Reset Database Values dtLamps .. " + e.ToString()); }
             }
 
             for (int i = 0; i < dtSwitches.Rows.Count; i++)
@@ -767,7 +720,7 @@ namespace Ikarus
                     dtSwitches.Rows[i]["Value"] = 0.0;
                     dtSwitches.Rows[i]["OldValue"] = 0.0;
                 }
-                catch { }
+                catch (Exception e) { ImportExport.LogMessage("Reset Database Values dtSwitches .. " + e.ToString()); }
             }
         }
 
@@ -827,47 +780,62 @@ namespace Ikarus
             if (renderTier == 2) Tier.Text = "Hardware acceleration";
         }
 
-        private static void GrabMap(ref string gotData)
+        private void GrabMap(ref string gotData)
         {
             string[] receivedItems = gotData.Split(':');
 
-            for (int n = 0; n < receivedItems.Length; n++)
+            try
             {
-                if (receivedItems[n].IndexOf("Map=") != -1)
+                for (int n = 0; n < receivedItems.Length; n++)
                 {
-                    map = receivedItems[n].Substring(receivedItems[n].IndexOf("=", 0) + 1);
-                    break;
+                    if (receivedItems[n].IndexOf("Map=") != -1)
+                    {
+                        map = receivedItems[n].Substring(receivedItems[n].IndexOf("=", 0) + 1);
+                        break;
+                    }
                 }
             }
+            catch (Exception e) { ImportExport.LogMessage("GrabMap problem .. " + e.ToString()); }
+
         }
 
-        private static bool GrabFile(string ID, ref string gotData)
+        private bool GrabFile(string ID, ref string gotData)
         {
             string[] receivedItems = gotData.Split(':');
 
-            for (int n = 0; n < receivedItems.Length; n++)
+            try
             {
-                if (receivedItems[n].IndexOf(ID, 0) == 0)
+                for (int n = 0; n < receivedItems.Length; n++)
                 {
-                    readFile = receivedItems[n].Substring(receivedItems[n].IndexOf("=", 0) + 1);
-                    return true;
+                    if (receivedItems[n].IndexOf(ID, 0) == 0)
+                    {
+                        readFile = receivedItems[n].Substring(receivedItems[n].IndexOf("=", 0) + 1);
+                        return true;
+                    }
                 }
             }
+            catch (Exception e) { ImportExport.LogMessage("GrabFile problem .. " + e.ToString()); }
+
             return false;
         }
 
         private string GrabValue()
         {
-            if (UDP.receivedData.IndexOf(identifier, 0) > -1) // Dirty quickcheck before loop
+            try
             {
-                for (int n = 0; n < receivedItems.Length; n++)
+                if (UDP.receivedData.IndexOf(identifier, 0) > -1) // Dirty quickcheck before loop
                 {
-                    if (receivedItems[n].IndexOf(identifier, 0) == 0)
+                    for (int n = 0; n < receivedItems.Length; n++)
                     {
-                        return receivedItems[n].Substring(receivedItems[n].IndexOf("=", 0) + 1);
+                        if (receivedItems[n].IndexOf(identifier, 0) == 0)
+                        {
+                            return receivedItems[n].Substring(receivedItems[n].IndexOf("=", 0) + 1);
+                        }
                     }
                 }
             }
+            catch (Exception e) { ImportExport.LogMessage("GrabValue problem .. " + e.ToString()); }
+
             return "";
         }
 
@@ -877,10 +845,10 @@ namespace Ikarus
 
             try
             {
+                if (UDP.receivedData.Length < 3) { return; }
+
                 grabWindowID = 0;
                 newGrabValue = "";
-
-                if (UDP.receivedData.Length < 3) { return; }
                 receivedItems = UDP.receivedData.Split(':');
 
                 #region Gauges
@@ -1013,7 +981,7 @@ namespace Ikarus
                 }
                 #endregion
             }
-            catch (Exception e) { ImportExport.LogMessage("GrabValue problem .. " + e.ToString()); }
+            catch (Exception e) { ImportExport.LogMessage("GrabValues problem .. " + e.ToString()); }
         }
 
         private void HidePanels()
@@ -1051,7 +1019,6 @@ namespace Ikarus
             {
                 lastFile = filename;
                 readFile = filename;
-                isRep = false;
 
                 try
                 {
@@ -1061,7 +1028,6 @@ namespace Ikarus
                         {
                             for (int i = 0; i < cockpitWindows.Count; i++)
                             {
-                                //if (cockpitWindows[i] != null) cockpitWindows[i].Close();
                                 if (cockpitWindows[i] != null) cockpitWindows[i].Close_Cockpit();
                             }
                             cockpitWindows.Clear();
@@ -1120,19 +1086,10 @@ namespace Ikarus
 
                 Main.Title = "Ikarus - ( Configured for " + filename + " )";
 
-                //SortTables();
-
                 if (dtWindows.Rows.Count == 0)
                 {
                     dtWindows.Rows.Add(1, "Front Panel", dtConfig.Rows[0][0].ToString(), dtConfig.Rows[0][1].ToString(), dtConfig.Rows[0][2].ToString(), dtConfig.Rows[0][3].ToString(), background);
-                    //isRep = true;
                 }
-
-                //if (isRep)
-                //{
-                //    ImportExport.DatasetToXml(filename + ".ikarus", dsInstruments);
-                //    ImportExport.LogMessage("Save file: " + filename + ".ikarus");
-                //}
 
                 RefreshDatagrids();
                 CockpitShow();
@@ -1250,11 +1207,12 @@ namespace Ikarus
                 }
                 package = "R";
                 UDP.UDPSender(IPAddess.Text.Trim(), Convert.ToInt32(PortSender.Text), package);
+
                 if (detailLog || switchLog) { ImportExport.LogMessage("Send package to " + IPAddess.Text.Trim() + ":" + PortSender.Text + " - Package: " + package); }
 
                 getAllDscData = false;
             }
-            catch { }
+            catch (Exception ex) { ImportExport.LogMessage("RefreshAllSwitches: " + ex.ToString()); }
         }
 
         private void ResetTables()
@@ -1293,6 +1251,45 @@ namespace Ikarus
             dtWindows.Columns["WindowID"].AutoIncrementSeed = -1;
             dtWindows.Columns["WindowID"].AutoIncrementStep = 1;
             dtWindows.Columns["WindowID"].AutoIncrementSeed = 1;
+        }
+
+        private void ScreenCapture(int locationX, int locationY, int width, int height)
+        {
+            try
+            {
+                using (Bitmap bitmap = new Bitmap(width, height))
+                {
+                    using (Graphics g = Graphics.FromImage(bitmap))
+                    {
+                        g.CopyFromScreen(new System.Drawing.Point(locationX, locationY), new System.Drawing.Point(0, 0), bitmap.Size);
+                    }
+
+                    Microsoft.Win32.SaveFileDialog dlg = new Microsoft.Win32.SaveFileDialog()
+                    {
+                        FileName = "Log",
+                        DefaultExt = ".png",
+                        Filter = "PNG files (*.png)|*.png|All files (*.*)|*.*"
+                    };
+                    var result = dlg.ShowDialog();
+                    if (result == false) { return; }
+
+                    bitmap.Save(dlg.FileName, ImageFormat.Png);
+                }
+            }
+            catch (Exception ex) { ImportExport.LogMessage("ScreenCapture: " + ex.ToString()); }
+        }
+
+        private void StartTimer()
+        {
+            DispatcherTimer timerMain = new DispatcherTimer(DispatcherPriority.Normal);
+            timerMain.Tick += TimerMain_Tick;
+            timerMain.Interval = TimeSpan.FromMilliseconds(100.0);
+            timerMain.Start();
+        }
+
+        private void StartListener()
+        {
+            UDP.StartListener(Convert.ToInt16(portListener.Trim()));
         }
 
         public void SelectDataGridItem(string _tablename, int impordID)
@@ -1793,15 +1790,15 @@ namespace Ikarus
             System.Diagnostics.Process.Start(url);
         }
 
-        private void Button_Exit_Click(object sender, RoutedEventArgs e)
-        {
-            try
-            {
-                CockpitClose();
-                Close();
-            }
-            catch { }
-        }
+        //private void Button_Exit_Click(object sender, RoutedEventArgs e)
+        //{
+        //    try
+        //    {
+        //        CockpitClose();
+        //        Close();
+        //    }
+        //    catch { }
+        //}
 
         private void Button_Load_Click(object sender, RoutedEventArgs e)
         {
