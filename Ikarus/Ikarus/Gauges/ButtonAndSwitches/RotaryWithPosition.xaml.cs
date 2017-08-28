@@ -127,6 +127,11 @@ namespace Ikarus
             return 100; // Width
         }
 
+        public double GetSizeY()
+        {
+            return SwitchBase.Height; // Width
+        }
+
         // -- Magnetos (Off, M1, M2, M1+M2) {0.0, 0.1, 0.2, 0.3}  knob / base
         public void UpdateGauge(string strData)
         {

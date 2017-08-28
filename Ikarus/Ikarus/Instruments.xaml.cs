@@ -33,6 +33,7 @@ namespace Ikarus
         private static int instancePos = 0;
 
         private I_Ikarus interfaceUserControl;
+        //private I_Switches interfaceSwitchControl;
 
         private UserControl userControl = new UserControl();
         private List<object> accessories = new List<object>();
@@ -689,6 +690,11 @@ namespace Ikarus
                 transformScale = new ScaleTransform();
                 transformRotate = new RotateTransform();
 
+                //if (tableName == "Switches" || tableName == "Lamps")
+                //{
+                //    transformRotate.CenterX = sizeUsercontrol;
+                //    transformRotate.CenterY = interfaceUserControl.;
+                //}
                 sizeUsercontrol = interfaceUserControl.GetSize();
                 scaling = size / sizeUsercontrol;
 
@@ -696,6 +702,7 @@ namespace Ikarus
                 transformTrans.Y = posY;
                 transformScale.ScaleX = scaling;
                 transformScale.ScaleY = scaling;
+
                 transformRotate.Angle = rotate;
 
                 transformGroup.Children.Add(transformTrans);

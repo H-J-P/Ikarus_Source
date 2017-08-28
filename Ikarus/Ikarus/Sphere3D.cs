@@ -41,6 +41,7 @@ namespace Ikarus
         private MatrixTransform3D matrixTransform3D;
         private BitmapImage sphere3DTextur;
         private Matrix3D matrix3D = new Matrix3D();
+
         public  double xRotation = 0.0;
         public double yRotation = 0.0;
         public double zRotation = 0.0;

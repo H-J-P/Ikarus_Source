@@ -269,7 +269,12 @@ namespace Ikarus
 
         public double GetSize()
         {
-            return Light.Width; // Width
+            return Light.Width;
+        }
+
+        public double GetSizeY()
+        {
+            return Light.Height;
         }
 
         public void UpdateGauge(string strData)

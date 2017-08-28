@@ -96,10 +96,15 @@ namespace Ikarus
 
         public double GetSize()
         {
-            return ImageFrame.Width; // Width
+            return ImageFrame.Width;
         }
 
-    public void UpdateGauge(string strData)
+        public double GetSizeY()
+        {
+            return ImageFrame.Height;
+        }
+
+        public void UpdateGauge(string strData)
         {
             Dispatcher.BeginInvoke(DispatcherPriority.Normal,
                        (Action)(() =>

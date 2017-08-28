@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d" MouseWheel="Light_MouseWheel" Height="79" Width="114" >
     <Grid>
-        <Image x:Name="Frame" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Height="79" Width="114" MouseWheel="Light_MouseWheel" Stretch="Fill" />
+        <Image x:Name="Frame" HorizontalAlignment="Left" VerticalAlignment="Top" Height="79" Width="114" MouseWheel="Light_MouseWheel" Stretch="Fill" />
         <Canvas x:Name="VHF1V2" HorizontalAlignment="Left" Height="79" UseLayoutRounding="False" VerticalAlignment="Top" Width="114">
             <Canvas x:Name="Layer_1" Height="74" Canvas.Left="0" Canvas.Top="2" Width="111">
                 <Path Data="M4.082,46.781L143.67,46.781C145.914,46.781,147.751,44.945,147.751,42.701L147.751,4.082C147.751,1.836,145.914,0,143.67,0L4.082,0C1.837,0,0,1.836,0,4.082L0,42.701C0,44.945,1.837,46.781,4.082,46.781" Fill="Black" Height="46.78" Canvas.Left="15" Canvas.Top="13.11" Width="86" Stretch="Fill"/>

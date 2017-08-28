@@ -118,7 +118,7 @@
             </Canvas>
         </Canvas>
         <Image x:Name="Light" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Height="156" Width="156" MouseWheel="Light_MouseWheel" />
-        <Image x:Name="Frame" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Height="156" Width="256" MouseWheel="Light_MouseWheel" />
+        <Image x:Name="Frame" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Height="156" Width="156" MouseWheel="Light_MouseWheel" />
 
     </Grid>
 </UserControl>

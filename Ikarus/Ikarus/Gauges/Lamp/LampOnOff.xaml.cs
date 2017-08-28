@@ -138,6 +138,11 @@ namespace Ikarus
             return DesignFrame.Width;
         }
 
+        public double GetSizeY()
+        {
+            return DesignFrame.Height;
+        }
+
         public void UpdateGauge(string strData)
         {
             Dispatcher.BeginInvoke(DispatcherPriority.Normal,

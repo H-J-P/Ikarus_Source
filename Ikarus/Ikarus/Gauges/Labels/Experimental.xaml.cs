@@ -48,7 +48,12 @@ namespace Ikarus
 
         public double GetSize()
         {
-            return 300.0; // Width
+            return ImageFrame.Width;
+        }
+
+        public double GetSizeY()
+        {
+            return ImageFrame.Height;
         }
 
         public void UpdateGauge(string strData)

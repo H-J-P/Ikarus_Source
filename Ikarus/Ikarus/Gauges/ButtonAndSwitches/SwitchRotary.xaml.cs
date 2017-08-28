@@ -124,7 +124,12 @@ namespace Ikarus
 
         public double GetSize()
         {
-            return 100; // Width
+            return DesignFrame.Width; // Width
+        }
+
+        public double GetSizeY()
+        {
+            return DesignFrame.Height;
         }
 
         public void UpdateGauge(string strData)

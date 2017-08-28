@@ -164,6 +164,11 @@ namespace Ikarus
             return SwitchUp.Width; // Width
         }
 
+        public double GetSizeY()
+        {
+            return SwitchUp.Height; // Width
+        }
+
         public void UpdateGauge(string strData)
         {
                 Dispatcher.BeginInvoke(DispatcherPriority.Normal,

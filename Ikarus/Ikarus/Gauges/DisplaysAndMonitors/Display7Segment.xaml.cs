@@ -165,7 +165,12 @@ namespace Ikarus
 
         public double GetSize()
         {
-            return PathBackground.Width; // Width
+            return PathBackground.Width;
+        }
+
+        public double GetSizeY()
+        {
+            return PathBackground.Height;
         }
 
         public void UpdateGauge(string strData)
