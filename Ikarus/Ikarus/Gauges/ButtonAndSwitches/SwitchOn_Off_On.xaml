@@ -1,38 +1,28 @@
 ﻿<UserControl x:Class="Ikarus.SwitchOn_Off_On"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             d:DesignHeight="150"
-             d:DesignWidth="70"
-             MouseWheel="Light_MouseWheel"
-             mc:Ignorable="d">
-    <Grid RenderTransformOrigin="0.5,0.5">
-        <Image x:Name="SwitchUp"
+             mc:Ignorable="d" 
+             d:DesignHeight="150" d:DesignWidth="70" MouseWheel="Light_MouseWheel">
+    <Grid>
+        <Canvas x:Name="Switch" HorizontalAlignment="Left" VerticalAlignment="Top" Height="150" Width="70" RenderTransformOrigin="0.5,0.5" >
+            <Image x:Name="SwitchUp"
                Width="70"
                Height="150"
                HorizontalAlignment="Left"
                VerticalAlignment="Top" />
-        <Image x:Name="SwitchMiddle"
+            <Image x:Name="SwitchMiddle"
                Width="70"
                Height="150"
                HorizontalAlignment="Left"
                VerticalAlignment="Top" />
-        <Image x:Name="SwitchDown"
+            <Image x:Name="SwitchDown"
                Width="70"
                Height="150"
                HorizontalAlignment="Left"
                VerticalAlignment="Top" />
-        <Rectangle x:Name="DesignFrame"
-                   Width="70"
-                   Height="150"
-                   Margin="0,0,0,0"
-                   HorizontalAlignment="Left"
-                   VerticalAlignment="Top"
-                   Fill="#00EEDB21"
-                   Stroke="#FFF38501"
-                   StrokeThickness="2" />
-        <Rectangle x:Name="UpperRec"
+            <Rectangle x:Name="UpperRec"
                    Width="60"
                    Height="50"
                    Margin="5,20,0,0"
@@ -44,7 +34,7 @@
                    Stroke="#00000000"
                    TouchDown="UpperRec_TouchDown"
                    TouchUp="UpperRec_TouchUp" />
-        <Rectangle x:Name="LowerRec"
+            <Rectangle x:Name="LowerRec"
                    Width="60"
                    Height="50"
                    Margin="5,80,0,0"
@@ -56,6 +46,15 @@
                    Stroke="#00000000"
                    TouchDown="LowerRec_TouchDown"
                    TouchUp="LowerRec_TouchUp" />
-
+            <Rectangle x:Name="DesignFrame"
+                   Width="70"
+                   Height="150"
+                   Margin="0,0,0,0"
+                   HorizontalAlignment="Left"
+                   VerticalAlignment="Top"
+                   Fill="#00EEDB21"
+                   Stroke="#FFF38501"
+                   StrokeThickness="2" />
+        </Canvas>
     </Grid>
 </UserControl>

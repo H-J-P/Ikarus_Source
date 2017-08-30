@@ -29,6 +29,8 @@ namespace Ikarus
         
         double GetSize();
 
+        double GetSizeY();
+
         void UpdateGauge(string strData);
     }
 }

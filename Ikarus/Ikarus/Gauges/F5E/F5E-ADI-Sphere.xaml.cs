@@ -117,8 +117,6 @@ namespace Ikarus
 
                                if (lpitch != pitch || lbank != bank)
                                {
-                                   //sphere3D.Rotate(0, pitch * 126 * 2, (bank * -180) - 90);
-
                                    sphere3D.xRotation = 0;
                                    sphere3D.yRotation = pitch * 126 * 2;
                                    sphere3D.zRotation = ((bank * -180) - 90);

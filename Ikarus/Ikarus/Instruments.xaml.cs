@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Diagnostics;
 using System.Globalization;
 using System.IO;
 using System.Windows;
@@ -33,7 +34,6 @@ namespace Ikarus
         private static int instancePos = 0;
 
         private I_Ikarus interfaceUserControl;
-        //private I_Switches interfaceSwitchControl;
 
         private UserControl userControl = new UserControl();
         private List<object> accessories = new List<object>();
@@ -44,8 +44,11 @@ namespace Ikarus
         private static DataRow[] instancePosRows = new DataRow[] { };
         private static DataRow[] instanceFctRows = new DataRow[] { };
         private static DataRow[] dataRows = new DataRow[] { };
+
         private static double leftPos = 0.0;
         private static double topPos = 0.0;
+        private static double centerX = 0.0;
+        private static double centerY = 0.0;
 
         private static TransformGroup transformGroup = new TransformGroup();
         private static TranslateTransform transformTrans = new TranslateTransform();
@@ -310,13 +313,12 @@ namespace Ikarus
 
                 userControl.RenderTransformOrigin = new Point(0.5, 0.5);
 
-                transformGroup = new TransformGroup();
-                transformScale = new ScaleTransform();
-                transformRotate = new RotateTransform();
+                centerX = sizeUsercontrol / 2;
+                centerY = interfaceUserControl.GetSizeY() / 2;
 
-                transformScale.ScaleX = scaling;
-                transformScale.ScaleY = scaling;
-                transformRotate.Angle = rotate;
+                transformGroup = new TransformGroup();
+                transformScale = new ScaleTransform(scaling, scaling, centerX, centerY);
+                transformRotate = new RotateTransform(rotate, centerX, centerY);
 
                 transformGroup.Children.Add(transformScale);
                 transformGroup.Children.Add(transformRotate);
@@ -576,10 +578,13 @@ namespace Ikarus
 
                     if (scrollWeel > 1.0) scrollWeel = 1.0;
                     if (scrollWeel < -1.0) scrollWeel = -1.0;
+                    rotate = double.Parse(dataRows[0]["Rotate"].ToString().Replace(",", "."), CultureInfo.InvariantCulture);
 
-                    dataRows[0]["PosX"] = Convert.ToInt32(resultPoint.X);
-                    dataRows[0]["PosY"] = Convert.ToInt32(resultPoint.Y);
-
+                    if (rotate == 0.0)
+                    {
+                        dataRows[0]["PosX"] = Convert.ToInt32(resultPoint.X);
+                        dataRows[0]["PosY"] = Convert.ToInt32(resultPoint.Y);
+                    }
                     if (scrollWeel == 1.0) { dataRows[0]["Size"] = Convert.ToInt32(dataRows[0]["Size"]) + 5; }
 
                     if (scrollWeel == -1.0) { dataRows[0]["Size"] = Convert.ToInt32(dataRows[0]["Size"]) - 5; }
@@ -591,7 +596,6 @@ namespace Ikarus
                     posX = double.Parse(dataRows[0]["PosX"].ToString().Replace(",", "."), CultureInfo.InvariantCulture);
                     posY = double.Parse(dataRows[0]["PosY"].ToString().Replace(",", "."), CultureInfo.InvariantCulture);
                     size = double.Parse(dataRows[0]["Size"].ToString().Replace(",", "."), CultureInfo.InvariantCulture);
-                    rotate = double.Parse(dataRows[0]["Rotate"].ToString().Replace(",", "."), CultureInfo.InvariantCulture);
 
                     UpdateTransform(tablename.TableName, Convert.ToInt32(dataRows[0][0]), posX, posY, size, rotate);
                 }
@@ -602,7 +606,7 @@ namespace Ikarus
             catch (Exception e) { ImportExport.LogMessage("UpdatePosition .. " + e.ToString()); }
         }
 
-        public void UpdatePosition(Point coordinates, string tableName, string ID, int deltaSize = 0)
+        public bool UpdatePosition(Point coordinates, string tableName, string ID, int deltaSize = 0)
         {
             try
             {
@@ -632,8 +636,13 @@ namespace Ikarus
                     if (scrollWeel > 1.0) scrollWeel = 1.0;
                     if (scrollWeel < -1.0) scrollWeel = -1.0;
 
-                    dataRows[0]["PosX"] = Convert.ToInt32(resultPoint.X);
-                    dataRows[0]["PosY"] = Convert.ToInt32(resultPoint.Y);
+                    rotate = double.Parse(dataRows[0]["Rotate"].ToString().Replace(",", "."), CultureInfo.InvariantCulture);
+
+                    if (rotate == 0.0)
+                    {
+                        dataRows[0]["PosX"] = Convert.ToInt32(resultPoint.X);
+                        dataRows[0]["PosY"] = Convert.ToInt32(resultPoint.Y);
+                    }
 
                     if (scrollWeel == 1.0) { dataRows[0]["Size"] = Convert.ToInt32(dataRows[0]["Size"]) + 5; }
 
@@ -646,7 +655,6 @@ namespace Ikarus
                     posX = double.Parse(dataRows[0]["PosX"].ToString().Replace(",", "."), CultureInfo.InvariantCulture);
                     posY = double.Parse(dataRows[0]["PosY"].ToString().Replace(",", "."), CultureInfo.InvariantCulture);
                     size = double.Parse(dataRows[0]["Size"].ToString().Replace(",", "."), CultureInfo.InvariantCulture);
-                    rotate = double.Parse(dataRows[0]["Rotate"].ToString().Replace(",", "."), CultureInfo.InvariantCulture);
 
                     UpdateTransform(tableName, Convert.ToInt32(dataRows[0][0]), posX, posY, size, rotate);
                 }
@@ -655,6 +663,8 @@ namespace Ikarus
                 MainWindow.refreshCockpit = true;
             }
             catch (Exception e) { ImportExport.LogMessage("UpdatePosition .. " + e.ToString()); }
+
+            return (rotate != 0.0);
         }
 
         public void UpdateTransform(string tableName, int importID, double posX, double posY, double size, double rotate)
@@ -685,30 +695,19 @@ namespace Ikarus
                     interfaceUserControl = (I_Ikarus)userControl;
                 }
 
-                transformGroup = new TransformGroup();
-                transformTrans = new TranslateTransform();
-                transformScale = new ScaleTransform();
-                transformRotate = new RotateTransform();
-
-                //if (tableName == "Switches" || tableName == "Lamps")
-                //{
-                //    transformRotate.CenterX = sizeUsercontrol;
-                //    transformRotate.CenterY = interfaceUserControl.;
-                //}
                 sizeUsercontrol = interfaceUserControl.GetSize();
                 scaling = size / sizeUsercontrol;
+                centerX = sizeUsercontrol / 2;
+                centerY = interfaceUserControl.GetSizeY() / 2;
 
-                transformTrans.X = posX;
-                transformTrans.Y = posY;
-                transformScale.ScaleX = scaling;
-                transformScale.ScaleY = scaling;
+                transformGroup = new TransformGroup();
+                transformTrans = new TranslateTransform(posX, posY);
+                transformScale = new ScaleTransform(scaling, scaling, centerX, centerY);
+                transformRotate = new RotateTransform(rotate, centerX, centerY);
 
-                transformRotate.Angle = rotate;
-
-                transformGroup.Children.Add(transformTrans);
+                if (rotate == 0.0) { transformGroup.Children.Add(transformTrans); }
                 transformGroup.Children.Add(transformScale);
                 transformGroup.Children.Add(transformRotate);
-
                 userControl.LayoutTransform = transformGroup;
             }
             catch (Exception e) { ImportExport.LogMessage("Update position, size and rotation: " + e.ToString()); }

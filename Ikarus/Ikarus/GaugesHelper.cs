@@ -26,23 +26,25 @@ namespace Ikarus
             System.Windows.Point originalPoint = new System.Windows.Point(0, 0), currentPoint;
             TranslateTransform trUsercontrol = new TranslateTransform(0, 0);
             bool isMousePressed = false;
+            bool isRotated = false;
 
             movedByElement.MouseLeftButtonDown += (a, b) =>
             {
                 isMousePressed = true;
                 originalPoint = ((System.Windows.Input.MouseEventArgs)b).GetPosition(moveThisElement);
+                isRotated = MainWindow.cockpitWindows[windowID].UpdatePosition(moveThisElement.PointToScreen(new System.Windows.Point(0, 0)), tableName, dataImportID);
             };
 
             movedByElement.MouseLeftButtonUp += (a, b) =>
             {
                 isMousePressed = false;
-                MainWindow.cockpitWindows[windowID].UpdatePosition(moveThisElement.PointToScreen(new System.Windows.Point(0, 0)), tableName, dataImportID);
+                isRotated = MainWindow.cockpitWindows[windowID].UpdatePosition(moveThisElement.PointToScreen(new System.Windows.Point(0, 0)), tableName, dataImportID);
             };
             movedByElement.MouseLeave += (a, b) => isMousePressed = false;
 
             movedByElement.MouseMove += (a, b) =>
             {
-                if (!isMousePressed || !MainWindow.editmode) return;
+                if (!isMousePressed || isRotated) return;
 
                 currentPoint = ((System.Windows.Input.MouseEventArgs)b).GetPosition(moveThisElement);
                 trUsercontrol.X += currentPoint.X - originalPoint.X;

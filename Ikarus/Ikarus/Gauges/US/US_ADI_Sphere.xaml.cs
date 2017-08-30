@@ -25,9 +25,9 @@ namespace Ikarus
         double bank = 0.0;
         double bankNeedle = 0.0;
 
-        private double dPitch = 0.0;
-        private double dBank = 0.0;
-        private double dNull = 0.0;
+        //private double dPitch = 0.0;
+        //private double dBank = 0.0;
+        private const double dNull = 0.0;
 
         double slipBall = 0.0;
         double bankSteering = 0.0;
@@ -70,7 +70,7 @@ namespace Ikarus
             sphere3D.xRotation = dNull;
             sphere3D.yRotation = dNull;
             sphere3D.zRotation = -90;
-            //sphere3D.Rotate(0, 0, -90);
+
             sphere3D.Rotate();
 
             directionalLight.Color = (Color)ColorConverter.ConvertFromString(lightColor);
@@ -141,14 +141,8 @@ namespace Ikarus
 
                                bankNeedle = bank;
 
-                               //if (lpitch != pitch || lbank != bank)
-                               //    sphere3D.Rotate(0, pitch * -126, (bank * 180) - 90);
-
                                if (lpitch != pitch || lbank != bank)
                                {
-                                   //dPitch = pitch * -126;
-                                   //dBank = ((bank * 180) - 90);
-
                                    sphere3D.xRotation = dNull;
                                    sphere3D.yRotation = pitch * -126;
                                    sphere3D.zRotation = ((bank * 180) - 90);

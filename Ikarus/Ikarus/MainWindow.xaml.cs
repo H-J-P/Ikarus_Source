@@ -728,7 +728,9 @@ namespace Ikarus
         {
             try
             {
-                instruments.Clear(); // Gauges
+                instruments.Clear();
+                lamps.Clear();
+                switches.Clear();
 
                 for (int i = 0; i < dtInstruments.Rows.Count; i++)
                 {
@@ -742,14 +744,10 @@ namespace Ikarus
                     }
                 }
 
-                lamps.Clear();
-
                 for (int i = 0; i < dtLamps.Rows.Count; i++)
                 {
                     lamps.Add(new Lamps(Convert.ToInt32(dtLamps.Rows[i]["ID"]), Convert.ToInt32(dtLamps.Rows[i]["Arg_number"]), Convert.ToInt32(dtLamps.Rows[i]["WindowID"])));
                 }
-
-                switches.Clear();
 
                 for (int i = 0; i < dtSwitches.Rows.Count; i++)
                 {
@@ -757,16 +755,19 @@ namespace Ikarus
                     {
                         switches.Add(new Switches(Convert.ToInt32(dtSwitches.Rows[i]["ID"]), Convert.ToInt32(dtSwitches.Rows[i]["WindowID"]), Convert.ToInt32(dtSwitches.Rows[i]["ClickabledataID"]), dtSwitches.Rows[i]["Class"].ToString()));
 
-                        dataRowsMasterSwitches = dtMasterSwitches.Select("ID='" + switches[i].clickabledataID.ToString() + "'");
-
-                        if (dataRowsMasterSwitches.Length > 0)
+                        if (dtMasterSwitches != null)
                         {
-                            switches[i].dcsID = Convert.ToInt32(dataRowsMasterSwitches[0]["DcsID"]);
-                            switches[i].deviceID = Convert.ToInt32(dataRowsMasterSwitches[0]["DeviceID"]);
-                            switches[i].buttonID = Convert.ToInt32(dataRowsMasterSwitches[0]["ButtonID"]);
+                            dataRowsMasterSwitches = dtMasterSwitches.Select("ID='" + switches[i].clickabledataID.ToString() + "'");
+
+                            if (dataRowsMasterSwitches.Length > 0)
+                            {
+                                switches[i].dcsID = Convert.ToInt32(dataRowsMasterSwitches[0]["DcsID"]);
+                                switches[i].deviceID = Convert.ToInt32(dataRowsMasterSwitches[0]["DeviceID"]);
+                                switches[i].buttonID = Convert.ToInt32(dataRowsMasterSwitches[0]["ButtonID"]);
+                            }
                         }
                     }
-                    catch (Exception e) { ImportExport.LogMessage("FillClasses problem .. " + i + " ... " + e.ToString()); }
+                    catch (Exception e) { ImportExport.LogMessage("Switches - FillClasses problem .. " + i + " ... " + e.ToString()); }
                 }
             }
             catch (Exception e) { ImportExport.LogMessage("FillClasses problem .. " + e.ToString()); }

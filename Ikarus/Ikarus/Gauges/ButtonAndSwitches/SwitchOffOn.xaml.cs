@@ -63,6 +63,8 @@ namespace Ikarus
                 Color color = Color.FromArgb(90, 255, 0, 0);
                 UpperRec.StrokeThickness = 1.0;
                 UpperRec.Stroke = new SolidColorBrush(color);
+                LowerRec.StrokeThickness = 1.0;
+                LowerRec.Stroke = new SolidColorBrush(color);
             }
         }
 
