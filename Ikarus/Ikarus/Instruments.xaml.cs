@@ -708,7 +708,7 @@ namespace Ikarus
                 if (rotate == 0.0) { transformGroup.Children.Add(transformTrans); }
                 transformGroup.Children.Add(transformScale);
                 transformGroup.Children.Add(transformRotate);
-                userControl.LayoutTransform = transformGroup;
+                userControl.LayoutTransform = transformGroup; // Change the layout
             }
             catch (Exception e) { ImportExport.LogMessage("Update position, size and rotation: " + e.ToString()); }
 
