@@ -51,7 +51,6 @@ namespace Ikarus
 
         public void SwitchLight(bool _on)
         {
-            //Light.Visibility = _on ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
         }
 
         public void SetInput(string _input)
@@ -109,15 +108,13 @@ namespace Ikarus
             Dispatcher.BeginInvoke(DispatcherPriority.Normal,
                        (Action)(() =>
                        {
-                           //string[] vals = strData.Split(';');
-
 
                        }));
         }
 
         private void Light_MouseWheel(object sender, System.Windows.Input.MouseWheelEventArgs e)
         {
-            if (MainWindow.editmode) MainWindow.cockpitWindows[windowID].UpdatePosition(PointToScreen(new System.Windows.Point(0, 0)), "ID", MainWindow.dtAccessories, dataImportID, e.Delta);
+            if (MainWindow.editmode) MainWindow.cockpitWindows[windowID].UpdatePosition(PointToScreen(new System.Windows.Point(0, 0)), "Accessories", dataImportID, e.Delta);
         }
     }
 }

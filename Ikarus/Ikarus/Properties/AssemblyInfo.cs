@@ -8,9 +8,9 @@ using System.Windows;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("Ikarus")]
-[assembly: AssemblyDescription("Is a Glass Cokpit Simulation for DCS")]
+[assembly: AssemblyDescription("Is a Glass Cokpit Simulator for DCS")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("C-")]
+[assembly: AssemblyCompany("H.J.P")]
 [assembly: AssemblyProduct("Ikarus")]
 [assembly: AssemblyCopyright("Copyright © H.J.Puhlmann 2017")]
 [assembly: AssemblyTrademark("")]
@@ -51,5 +51,5 @@ using System.Windows;
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.2.1.0")]
-[assembly: AssemblyFileVersion("1.2.1.0")]
+[assembly: AssemblyVersion("1.2.1.5")]
+[assembly: AssemblyFileVersion("1.2.1.5")]

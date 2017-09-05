@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Diagnostics;
 using System.Globalization;
 using System.IO;
 using System.Windows;
@@ -185,7 +184,6 @@ namespace Ikarus
                     interfaceUserControl.SetID(instanceID.ToString()); // importent
                     interfaceUserControl.SetWindowID(windowID);
 
-
                     userControl.VerticalAlignment = VerticalAlignment.Top;
                     userControl.HorizontalAlignment = HorizontalAlignment.Left;
 
@@ -196,6 +194,12 @@ namespace Ikarus
 
                     userControl.Margin = new Thickness(leftPos, topPos, 0, 0);
                     userControl.ClipToBounds = true;
+
+                    if (MainWindow.editmode)
+                    {
+                        userControl.BorderBrush = new SolidColorBrush(Colors.Orange);
+                        userControl.BorderThickness = new Thickness(1.0);
+                    }
 
                     sizeUsercontrol = interfaceUserControl.GetSize();
                     size = double.Parse(instancePosRows[0]["Size"].ToString().Replace(",", "."), CultureInfo.InvariantCulture);
@@ -214,7 +218,6 @@ namespace Ikarus
 
                     transformGroup.Children.Add(transformScale);
                     transformGroup.Children.Add(transformRotate);
-
                     userControl.LayoutTransform = transformGroup;
                 }
                 catch (Exception e) { ImportExport.LogMessage("Generate gauges - get usercontrol:  .. " + e.ToString()); }
@@ -556,56 +559,6 @@ namespace Ikarus
             catch (Exception e) { ImportExport.LogMessage("UpdateInstrumentsFunctionInOut .. " + e.ToString()); }
         }
 
-        public void UpdatePosition(Point coordinates, string nameID, DataTable tablename, string ID, int deltaSize = 0)
-        {
-            try
-            {
-                dataRows = tablename.Select(nameID + "=" + ID);
-
-                if (dataRows.Length > 0)
-                {
-                    if (Left < 0.0)
-                        resultPoint.X = (Left * -1.0) + coordinates.X;
-                    else
-                        resultPoint.X = (Left > 0.0) ? coordinates.X - Left : coordinates.X;
-
-                    if (Top < 0.0)
-                        resultPoint.Y = (Top * -1.0) + coordinates.Y;
-                    else
-                        resultPoint.Y = (Top > 0.0) ? coordinates.Y - Top : coordinates.Y;
-
-                    scrollWeel += deltaSize;
-
-                    if (scrollWeel > 1.0) scrollWeel = 1.0;
-                    if (scrollWeel < -1.0) scrollWeel = -1.0;
-                    rotate = double.Parse(dataRows[0]["Rotate"].ToString().Replace(",", "."), CultureInfo.InvariantCulture);
-
-                    if (rotate == 0.0)
-                    {
-                        dataRows[0]["PosX"] = Convert.ToInt32(resultPoint.X);
-                        dataRows[0]["PosY"] = Convert.ToInt32(resultPoint.Y);
-                    }
-                    if (scrollWeel == 1.0) { dataRows[0]["Size"] = Convert.ToInt32(dataRows[0]["Size"]) + 5; }
-
-                    if (scrollWeel == -1.0) { dataRows[0]["Size"] = Convert.ToInt32(dataRows[0]["Size"]) - 5; }
-
-                    if (tablename.TableName == "Lamps") ID = dataRows[0]["ID"].ToString();
-
-                    scrollWeel = 0.0;
-
-                    posX = double.Parse(dataRows[0]["PosX"].ToString().Replace(",", "."), CultureInfo.InvariantCulture);
-                    posY = double.Parse(dataRows[0]["PosY"].ToString().Replace(",", "."), CultureInfo.InvariantCulture);
-                    size = double.Parse(dataRows[0]["Size"].ToString().Replace(",", "."), CultureInfo.InvariantCulture);
-
-                    UpdateTransform(tablename.TableName, Convert.ToInt32(dataRows[0][0]), posX, posY, size, rotate);
-                }
-                ((MainWindow)Application.Current.MainWindow).SelectDataGridItem(tablename.TableName, Convert.ToInt32(ID));
-
-                MainWindow.refreshCockpit = true;
-            }
-            catch (Exception e) { ImportExport.LogMessage("UpdatePosition .. " + e.ToString()); }
-        }
-
         public bool UpdatePosition(Point coordinates, string tableName, string ID, int deltaSize = 0)
         {
             try
@@ -708,7 +661,7 @@ namespace Ikarus
                 if (rotate == 0.0) { transformGroup.Children.Add(transformTrans); }
                 transformGroup.Children.Add(transformScale);
                 transformGroup.Children.Add(transformRotate);
-                userControl.LayoutTransform = transformGroup; // Change the layout
+                userControl.LayoutTransform = transformGroup;
             }
             catch (Exception e) { ImportExport.LogMessage("Update position, size and rotation: " + e.ToString()); }
 

@@ -165,7 +165,7 @@ namespace Ikarus
 
         private void Light_MouseWheel(object sender, System.Windows.Input.MouseWheelEventArgs e)
         {
-            if (MainWindow.editmode) MainWindow.cockpitWindows[windowID].UpdatePosition(PointToScreen(new System.Windows.Point(0, 0)), "ID", MainWindow.dtLamps, dataImportID, e.Delta);
+            if (MainWindow.editmode) MainWindow.cockpitWindows[windowID].UpdatePosition(PointToScreen(new System.Windows.Point(0, 0)), "Lamps", dataImportID, e.Delta);
         }
 
         private void SetValue(double _value, bool _event)

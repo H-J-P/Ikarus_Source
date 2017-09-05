@@ -50,7 +50,6 @@ namespace Ikarus
         public static bool refeshPopup = false;
         public static bool switchLog = false;
 
-        //public static System.Windows.Point cockpitKoord = new System.Windows.Point();
         public static CultureInfo cult = new CultureInfo("en-GB");
         //---------------------- D A T A B A S E ----------------------
         public static DataSet1 dsInstruments = new DataSet1();
@@ -1790,16 +1789,6 @@ namespace Ikarus
 
             System.Diagnostics.Process.Start(url);
         }
-
-        //private void Button_Exit_Click(object sender, RoutedEventArgs e)
-        //{
-        //    try
-        //    {
-        //        CockpitClose();
-        //        Close();
-        //    }
-        //    catch { }
-        //}
 
         private void Button_Load_Click(object sender, RoutedEventArgs e)
         {

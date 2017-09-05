@@ -29,6 +29,8 @@ namespace Ikarus
 {
     class Sphere3D
     {
+        #region Members
+
         private const int Longitudes = 30; // 100 maximum
         private const int Latitudes = 30; // 100 maximum
         private Point3D[,] position = new Point3D[Longitudes + 1, Latitudes];
@@ -45,6 +47,8 @@ namespace Ikarus
         public double xRotation = 0.0;
         public double yRotation = 0.0;
         public double zRotation = 0.0;
+
+        #endregion
 
         public Sphere3D(Model3DGroup _model3DGroup, BitmapImage _textur) //constructor
         {
@@ -159,7 +163,11 @@ namespace Ikarus
             return meshGeometry3D;
         }
 
-        private Matrix3D CalculateRotationMatrix() // in degrees
+        /// <summary>
+        /// xRotation, yRotation, zRotation in degrees
+        /// </summary>
+        /// <returns>Matrix3D</returns>
+        private Matrix3D CalculateRotationMatrix()
         {
             matrix3D = new Matrix3D();
 
@@ -167,38 +175,14 @@ namespace Ikarus
             //matrix3D.Rotate(new Quaternion(new Vector3D(0, 1, 0) * matrix3D, y));
             //matrix3D.Rotate(new Quaternion(new Vector3D(0, 0, 1) * matrix3D, z));
 
-            matrix3D.Rotate(new Quaternion(new Vector3D(1, 0, 0), xRotation));                  // and this is for a ADI. The mechanic is difference.
+            matrix3D.Rotate(new Quaternion(new Vector3D(1, 0, 0), xRotation));            // and this is for a ADI. The mechanic is difference.
             matrix3D.Rotate(new Quaternion(new Vector3D(0, 1, 0) * matrix3D, yRotation));
             matrix3D.Rotate(new Quaternion(new Vector3D(0, 0, 1), zRotation));
 
             return matrix3D;
         }
 
-        //public void Rotate(double x, double y, double z) // in degrees
-        //{
-        //    xRotation = x;
-        //    yRotation = y;
-        //    zRotation = z;
-
-        //    matrixTransform3D = new MatrixTransform3D(CalculateRotationMatrix());
-
-        //    for (int i = IndexOfFirstGeometryModel3DInModel3DGroup; i < model3DGroup.Children.Count; i++)
-        //        ((GeometryModel3D)model3DGroup.Children[i]).Transform = matrixTransform3D;
-        //}
-
-        //public void Rotate(ref double x, ref double y, ref double z) // in degrees
-        //{
-        //    xRotation = x;
-        //    yRotation = y;
-        //    zRotation = z;
-
-        //    matrixTransform3D = new MatrixTransform3D(CalculateRotationMatrix());
-
-        //    for (int i = IndexOfFirstGeometryModel3DInModel3DGroup; i < model3DGroup.Children.Count; i++)
-        //        ((GeometryModel3D)model3DGroup.Children[i]).Transform = matrixTransform3D;
-        //}
-
-        public void Rotate() // in degrees
+        public void Rotate()
         {
             matrixTransform3D = new MatrixTransform3D(CalculateRotationMatrix());
 
