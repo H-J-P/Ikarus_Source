@@ -54,6 +54,7 @@
     <Prefer32Bit>false</Prefer32Bit>
     <RunCodeAnalysis>false</RunCodeAnalysis>
     <CodeAnalysisIgnoreGeneratedCode>false</CodeAnalysisIgnoreGeneratedCode>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationIcon>Assets\Ikarus_64.ico</ApplicationIcon>
@@ -322,6 +323,54 @@
     </Compile>
     <Compile Include="Gauges\ButtonAndSwitches\SwitchOn_OffOn.xaml.cs">
       <DependentUpon>SwitchOn_OffOn.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\SA342\SA342_ADI.xaml.cs">
+      <DependentUpon>SA342_ADI.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\SA342\SA342_ADI_Stby.xaml.cs">
+      <DependentUpon>SA342_ADI_Stby.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\SA342\SA342_ALT.xaml.cs">
+      <DependentUpon>SA342_ALT.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\SA342\SA342_ALT_R.xaml.cs">
+      <DependentUpon>SA342_ALT_R.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\SA342\SA342_ASI.xaml.cs">
+      <DependentUpon>SA342_ASI.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\SA342\SA342_Clock.xaml.cs">
+      <DependentUpon>SA342_Clock.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\SA342\SA342_Fuel_Q.xaml.cs">
+      <DependentUpon>SA342_Fuel_Q.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\SA342\SA342_Fuel_Sup.xaml.cs">
+      <DependentUpon>SA342_Fuel_Sup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\SA342\SA342_HSI.xaml.cs">
+      <DependentUpon>SA342_HSI.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\SA342\SA342_RPM.xaml.cs">
+      <DependentUpon>SA342_RPM.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\SA342\SA342_Temp_Air.xaml.cs">
+      <DependentUpon>SA342_Temp_Air.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\SA342\SA342_Temp_M.xaml.cs">
+      <DependentUpon>SA342_Temp_M.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\SA342\SA342_Temp_T4.xaml.cs">
+      <DependentUpon>SA342_Temp_T4.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\SA342\SA342_Torque.xaml.cs">
+      <DependentUpon>SA342_Torque.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\SA342\SA342_Volt.xaml.cs">
+      <DependentUpon>SA342_Volt.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\SA342\SA342_VVI.xaml.cs">
+      <DependentUpon>SA342_VVI.xaml</DependentUpon>
     </Compile>
     <Compile Include="Gauges\Spitfire\Spit_ADI.xaml.cs">
       <DependentUpon>Spit_ADI.xaml</DependentUpon>
@@ -1601,6 +1650,70 @@
     <Page Include="Gauges\ButtonAndSwitches\SwitchOn_OffOn.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\SA342\SA342_ADI.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Gauges\SA342\SA342_ADI_Stby.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Gauges\SA342\SA342_ALT.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Gauges\SA342\SA342_ALT_R.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Gauges\SA342\SA342_ASI.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Gauges\SA342\SA342_Clock.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Gauges\SA342\SA342_Fuel_Q.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Gauges\SA342\SA342_Fuel_Sup.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Gauges\SA342\SA342_HSI.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Gauges\SA342\SA342_RPM.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Gauges\SA342\SA342_Temp_Air.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Gauges\SA342\SA342_Temp_M.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Gauges\SA342\SA342_Temp_T4.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Gauges\SA342\SA342_Torque.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Gauges\SA342\SA342_Volt.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Gauges\SA342\SA342_VVI.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Gauges\Spitfire\Spit_ADI.xaml">
       <Generator>MSBuild:Compile</Generator>

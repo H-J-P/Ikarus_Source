@@ -23,6 +23,7 @@ namespace Ikarus
         /// PerfMon.exe
         /// Perfview.exe
         /// </summary>
+       
         #region Member
 
         public enum State
@@ -309,9 +310,8 @@ namespace Ikarus
             //GC.Collect(0, GCCollectionMode.Forced);
         }
 
-        #region member functions
+        #region Timer / Mainloop
 
-        //+++++++++++++++++++++++ Main loop ++++++++++++++++++++++++
         private void TimerMain_Tick(object sender, EventArgs e)
         {
             Dispatcher.BeginInvoke(DispatcherPriority.Normal,
@@ -559,6 +559,18 @@ namespace Ikarus
                            #endregion
                        }));
         }
+
+        private void StartTimer()
+        {
+            DispatcherTimer timerMain = new DispatcherTimer(DispatcherPriority.Normal);
+            timerMain.Tick += TimerMain_Tick;
+            timerMain.Interval = TimeSpan.FromMilliseconds(100.0);
+            timerMain.Start();
+        }
+
+        #endregion
+
+        #region member functions
 
         private void CockpitClose()
         {
@@ -1277,14 +1289,6 @@ namespace Ikarus
                 }
             }
             catch (Exception ex) { ImportExport.LogMessage("ScreenCapture: " + ex.ToString()); }
-        }
-
-        private void StartTimer()
-        {
-            DispatcherTimer timerMain = new DispatcherTimer(DispatcherPriority.Normal);
-            timerMain.Tick += TimerMain_Tick;
-            timerMain.Interval = TimeSpan.FromMilliseconds(100.0);
-            timerMain.Start();
         }
 
         private void StartListener()
