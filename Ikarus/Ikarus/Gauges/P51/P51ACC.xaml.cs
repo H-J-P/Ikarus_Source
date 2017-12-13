@@ -67,7 +67,6 @@ namespace Ikarus
         public void SetOutput(string _output)
         {
             string[] vals = _output.Split(',');
-
         }
 
         public double GetSize()

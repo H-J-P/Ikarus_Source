@@ -4,7 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="300">
+             d:DesignHeight="326" d:DesignWidth="312" MouseWheel="Light_MouseWheel">
     <Grid>
     	<Canvas x:Name="SA342_ADI1" HorizontalAlignment="Left" Height="325.984" UseLayoutRounding="False" VerticalAlignment="Top" Width="311.811">
     		<Canvas x:Name="background" Height="287.225" Canvas.Left="12.292" Canvas.Top="11.135" Width="287.227">
@@ -222,7 +222,21 @@
     			<Path Data="M81.392,47.624C109.11,47.624 135.425,41.633 159.126,30.884 161.878,29.635 163.191,26.489 162.144,23.654L154.9,4.056C154.323,2.495 153.237,1.369 151.698,0.734 150.158,0.099 148.593,0.133 147.084,0.835 127.116,10.112 104.86,15.293 81.392,15.293 57.925,15.293 35.669,10.112 15.701,0.835 14.191,0.133 12.627,0.099 11.088,0.734 9.548,1.369 8.462,2.495 7.884,4.056L0.641,23.654C-0.407,26.489 0.907,29.635 3.66,30.884 27.359,41.633 53.675,47.624 81.392,47.624z M44.227,21.786L43.094,29.034C42.591,32.248 44.751,35.285 47.953,35.864 58.803,37.827 69.976,38.858 81.392,38.858 92.808,38.858 103.982,37.827 114.832,35.864 118.034,35.285 120.194,32.248 119.691,29.034L118.557,21.786C118.299,20.128 117.473,18.795 116.105,17.824 114.737,16.851 113.208,16.511 111.556,16.812 101.771,18.593 91.692,19.531 81.392,19.531 71.093,19.531 61.013,18.593 51.228,16.812 49.577,16.511 48.048,16.852 46.679,17.824 45.311,18.795 44.487,20.128 44.227,21.786z" Height="47.908" Canvas.Left="74.513" Stroke="Black" StrokeThickness="0.567" StrokeMiterLimit="2.414" Canvas.Top="269.982" Width="162.784"/>
     			<Path Data="M1.624,5.462L0.49,12.71C-0.012,15.925 2.148,18.961 5.35,19.54 16.2,21.503 27.373,22.535 38.789,22.535 50.205,22.535 61.379,21.503 72.229,19.54 75.431,18.961 77.59,15.925 77.088,12.71L75.954,5.462C75.696,3.804 74.87,2.471 73.502,1.5 72.135,0.528 70.605,0.187 68.953,0.488 59.168,2.269 49.089,3.207 38.789,3.207 28.489,3.207 18.41,2.269 8.625,0.488 6.974,0.187 5.445,0.528 4.076,1.5 2.708,2.471 1.884,3.804 1.624,5.462z" Height="23.031" Canvas.Left="117.116" Stroke="#FF1A1A1A" StrokeThickness="0.992" StrokeMiterLimit="2.414" Canvas.Top="286.306" Width="77.578"/>
     		</Canvas>
-    	</Canvas>
+            <Image x:Name="Light"
+    		    Width="312"
+    		    Height="326"
+    		    Margin="0,0,0,0"
+    		    HorizontalAlignment="Left"
+    		    VerticalAlignment="Top"
+    		    MouseWheel="Light_MouseWheel" />
+            <Image x:Name="Frame"
+    		    Width="312"
+    		    Height="326"
+    		    Margin="0,0,0,0"
+    		    HorizontalAlignment="Left"
+    		    VerticalAlignment="Top"
+    		    MouseWheel="Light_MouseWheel" />
+        </Canvas>
             
     </Grid>
 </UserControl>

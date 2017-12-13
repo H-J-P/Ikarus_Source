@@ -4,7 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="300">
+             d:DesignHeight="255" d:DesignWidth="255" MouseWheel="Light_MouseWheel">
     <Grid>
     	<Canvas x:Name="SA342_ADI_Stby1" HorizontalAlignment="Left" Height="255.118" UseLayoutRounding="False" VerticalAlignment="Top" Width="255.118">
     		<Canvas x:Name="bank_pitch" Height="670.432" Canvas.Left="30.375" Canvas.Top="-207.775" Width="194.368">
@@ -179,7 +179,21 @@
     			<Path Data="M2.077,1.107L3.949,0 6.233,3.86C6.918,3.777,7.616,3.956,8.173,4.361L12.037,2.077 13.144,3.947 9.279,6.232C9.367,6.918,9.188,7.615,8.784,8.175L11.066,12.035 9.194,13.142 6.911,9.281C6.222,9.367,5.529,9.187,4.967,8.782L1.107,11.065 0,9.195 3.861,6.912C3.776,6.224,3.956,5.527,4.36,4.968z" Fill="#FF333333" Height="13.142" Canvas.Left="15.267" Canvas.Top="226.708" Width="13.144"/>
     			<Path Data="M117.922,235.559C133.246,235.559,147.885,232.626,161.311,227.295L161.311,222.702C147.946,228.243 133.292,231.307 117.922,231.307 55.301,231.307 4.536,180.542 4.536,117.921 4.536,55.3 55.301,4.535 117.922,4.535 180.543,4.535 231.307,55.3 231.307,117.921 231.307,133.292 228.243,147.944 222.702,161.31L227.296,161.31C232.627,147.884 235.559,133.246 235.559,117.921 235.559,52.951 182.891,0.283 117.922,0.283 52.952,0.283 0.284,52.951 0.284,117.921 0.284,182.891 52.952,235.559 117.922,235.559" Fill="#FF4D4D4D" Height="235.843" Canvas.Left="9.637" Stroke="Black" StrokeThickness="0.567" StrokeMiterLimit="2.414" Canvas.Top="9.638" Width="235.842"/>
     		</Canvas>
-    	</Canvas>
+            <Image x:Name="Light"
+    		    Width="255"
+    		    Height="255"
+    		    Margin="0,0,0,0"
+    		    HorizontalAlignment="Left"
+    		    VerticalAlignment="Top"
+    		    MouseWheel="Light_MouseWheel" />
+            <Image x:Name="Frame"
+    		    Width="255"
+    		    Height="255"
+    		    Margin="0,0,0,0"
+    		    HorizontalAlignment="Left"
+    		    VerticalAlignment="Top"
+    		    MouseWheel="Light_MouseWheel" />
+        </Canvas>
             
     </Grid>
 </UserControl>

@@ -89,7 +89,7 @@ namespace Ikarus
         private int cockpitRefreshLoopCounterMax = 1;
         private int cockpitRefreshLoopCounter = 0;
         private int dataStackSize = 0;
-        private int dscDataLoopCounterMax = 15;
+        private int dscDataLoopCounterMax = 45;
         private int getAllDscDataLoopCounter = 0;
         private int grabWindowID = 0;
         private int logCount = 0;

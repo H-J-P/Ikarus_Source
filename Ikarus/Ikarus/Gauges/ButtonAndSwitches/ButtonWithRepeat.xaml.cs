@@ -246,7 +246,7 @@ namespace Ikarus
         private void UpperRec_MouseDown(object sender, MouseButtonEventArgs e)
         {
             e.Handled = true;
-            if (!touchDown)
+            if (!touchDown && e.LeftButton == MouseButtonState.Pressed)
             {
                 SetValue(1);
             }

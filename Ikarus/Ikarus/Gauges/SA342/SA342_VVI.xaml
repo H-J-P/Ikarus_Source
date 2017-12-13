@@ -4,7 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="300">
+             d:DesignHeight="249" d:DesignWidth="249" MouseWheel="Light_MouseWheel">
     <Grid>
     	<Canvas x:Name="SA342_VVI1" HorizontalAlignment="Left" Height="249.449" UseLayoutRounding="False" VerticalAlignment="Top" Width="249.449">
     		<Canvas x:Name="dial" Height="249.449" Canvas.Left="0" Canvas.Top="-0.449" Width="249.449">
@@ -42,7 +42,7 @@
     		<Canvas x:Name="shadow" Height="197.063" Canvas.Left="9.921" Canvas.Top="9.473" Width="218.254">
     			<Path Data="M114.804,0C160.35,0 199.7,26.523 218.254,64.966 197.469,39.898 166.091,23.929 130.982,23.929 68.4,23.929 17.667,74.662 17.667,137.245 17.667,159.205 23.92,179.701 34.734,197.063 13.311,176.208 0,147.062 0,114.802 0,51.399 51.4,0 114.804,0" Fill="Black" Height="197.063" Canvas.Left="0" Opacity="0.7" Canvas.Top="0" Width="218.254"/>
     		</Canvas>
-    		<Canvas x:Name="VVI" Height="15.589" Canvas.Left="23.471" Canvas.Top="116.48" Width="148.209">
+    		<Canvas x:Name="VVI" Height="15.589" Canvas.Left="23.471" Canvas.Top="116.48" Width="148.209" RenderTransformOrigin="0.681,0.513">
     			<Path Data="M95.955,3.921L0.466,4.538 8.247,0.671 95.928,0.109z" Fill="#FFB3B3B3" Height="4.649" Canvas.Left="-0.466" Stroke="#FFCCCCCC" StrokeThickness="0.216" StrokeMiterLimit="2.414" Canvas.Top="3.519" Width="96.064"/>
     			<Path Data="M95.986,3.921L8.318,4.482 0.47,0.727 95.959,0.109z" Fill="#FFC4C4C4" Height="4.59" Canvas.Left="-0.47" Stroke="#FFCCCCCC" StrokeThickness="0.216" StrokeMiterLimit="2.414" Canvas.Top="7.48" Width="96.094"/>
     			<Path Data="M0.109,0.429L45.116,0.109 45.17,7.732 0.163,8.052z" Fill="#FF282828" Height="8.161" Canvas.Left="97.003" Stroke="Black" StrokeThickness="0.216" StrokeMiterLimit="2.414" Canvas.Top="3.584" Width="45.279"/>
@@ -97,7 +97,21 @@
     			<Path Data="M11.447,0.108C17.709,0.108 22.785,5.184 22.785,11.447 22.785,17.709 17.709,22.785 11.447,22.785 5.185,22.785 0.108,17.709 0.108,11.447 0.108,5.184 5.185,0.108 11.447,0.108z" Height="22.893" Canvas.Left="-0.108" Stroke="Black" StrokeThickness="0.216" StrokeMiterLimit="2.414" Canvas.Top="199.995" Width="22.893"/>
     			<Path Data="M0.943,12.047L0,9.746 4.743,7.802C4.761,7.012,5.079,6.253,5.629,5.689L3.683,0.942 5.981,0 7.927,4.747C8.717,4.761,9.476,5.078,10.042,5.628L14.784,3.683 15.728,5.983 10.985,7.929C10.968,8.722,10.65,9.476,10.1,10.044L12.045,14.787 9.747,15.729 7.802,10.986C7.01,10.969,6.251,10.651,5.686,10.101z" Fill="#FF333333" Height="15.729" Canvas.Left="3.475" Canvas.Top="203.576" Width="15.728"/>
     		</Canvas>
-    	</Canvas>
+            <Image x:Name="Light"
+    		    Width="249"
+    		    Height="249"
+    		    Margin="0,0,0,0"
+    		    HorizontalAlignment="Left"
+    		    VerticalAlignment="Top"
+    		    MouseWheel="Light_MouseWheel" />
+            <Image x:Name="Frame"
+    		    Width="249"
+    		    Height="249"
+    		    Margin="0,0,0,0"
+    		    HorizontalAlignment="Left"
+    		    VerticalAlignment="Top"
+    		    MouseWheel="Light_MouseWheel" />
+        </Canvas>
             
     </Grid>
 </UserControl>

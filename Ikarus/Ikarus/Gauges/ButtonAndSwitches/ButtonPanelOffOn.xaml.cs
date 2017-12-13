@@ -220,7 +220,7 @@ namespace Ikarus
             e.Handled = true;
             MainWindow.refeshPopup = true;
 
-            if (!touchDown)
+            if (!touchDown && e.LeftButton == MouseButtonState.Pressed)
             {
                 if (SwitchUp.Visibility == System.Windows.Visibility.Visible)
                 {

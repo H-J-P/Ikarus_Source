@@ -4,7 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="300">
+             d:DesignHeight="249" d:DesignWidth="249" MouseWheel="Light_MouseWheel">
     <Grid>
     	<Canvas x:Name="SA342_Fuel_Q1" HorizontalAlignment="Left" Height="249.449" UseLayoutRounding="False" VerticalAlignment="Top" Width="249.449">
     		<Canvas x:Name="dial" Height="226.771" Canvas.Left="11.339" Canvas.Top="10.89" Width="226.771">
@@ -33,7 +33,7 @@
     		<Canvas x:Name="shadow" Height="197.063" Canvas.Left="9.921" Canvas.Top="9.473" Width="218.254">
     			<Path Data="M114.804,0C160.35,0 199.7,26.523 218.254,64.966 197.469,39.898 166.091,23.929 130.982,23.929 68.4,23.929 17.667,74.662 17.667,137.245 17.667,159.205 23.92,179.701 34.734,197.063 13.311,176.208 0,147.062 0,114.802 0,51.399 51.4,0 114.804,0" Fill="Black" Height="197.063" Canvas.Left="0" Opacity="0.7" Canvas.Top="0" Width="218.254"/>
     		</Canvas>
-    		<Canvas x:Name="Fuel_Q" Height="107.778" Canvas.Left="108.695" Canvas.Top="108.246" Width="32.06">
+    		<Canvas x:Name="Fuel_Q" Height="107.778" Canvas.Left="108.695" Canvas.Top="108.246" Width="32.06" RenderTransformOrigin="0.483,0.148">
     			<Path Data="M14.429,0L0,0.605 2.171,52.419 10.473,78.078 16.6,51.815z" Fill="#FFCCCCCC" Height="78.078" Canvas.Left="9.4" Canvas.Top="29.7" Width="16.6"/>
     			<Path Data="M15.699,0.354C6.853,0.724 -0.016,8.195 0.354,17.04 0.725,25.885 8.195,32.755 17.041,32.384 25.885,32.014 32.755,24.543 32.385,15.698 32.014,6.853 24.543,-0.017 15.699,0.354" Fill="Black" Height="32.738" Canvas.Left="-0.34" Stroke="#FF333333" StrokeThickness="0.709" StrokeMiterLimit="2.414" Canvas.Top="-0.34" Width="32.739"/>
     		</Canvas>
@@ -41,7 +41,21 @@
     			<Path Data="M125.009,241.547C60.646,241.547 8.47,189.371 8.47,125.008 8.47,60.646 60.646,8.47 125.009,8.47 189.371,8.47 241.547,60.646 241.547,125.008 241.547,189.371 189.371,241.547 125.009,241.547 M125.009,249.733C56.125,249.733 0.284,193.892 0.284,125.008 0.284,56.125 56.125,0.284 125.009,0.284 193.892,0.284 249.733,56.125 249.733,125.008 249.733,193.892 193.892,249.733 125.009,249.733" Fill="#FF4D4D4D" Height="250.016" Canvas.Left="-0.284" Stroke="#FF1A1A1A" StrokeThickness="0.567" StrokeMiterLimit="2.414" Canvas.Top="-0.284" Width="250.016"/>
     			<Path Data="M119.056,238.109C53.303,238.109 0,184.806 0,119.054 0,53.302 53.303,0 119.056,0 184.808,0 238.11,53.302 238.11,119.054 238.11,184.806 184.808,238.109 119.056,238.109 M119.056,232.44C56.435,232.44 5.67,181.675 5.67,119.054 5.67,56.433 56.435,5.669 119.056,5.669 181.677,5.669 232.441,56.433 232.441,119.054 232.441,181.675 181.677,232.44 119.056,232.44" Fill="#FF232323" Height="238.109" Canvas.Left="5.669" Canvas.Top="5.67" Width="238.11"/>
     		</Canvas>
-    	</Canvas>
+            <Image x:Name="Light"
+    		    Width="249"
+    		    Height="249"
+    		    Margin="0,0,0,0"
+    		    HorizontalAlignment="Left"
+    		    VerticalAlignment="Top"
+    		    MouseWheel="Light_MouseWheel" />
+            <Image x:Name="Frame"
+    		    Width="249"
+    		    Height="249"
+    		    Margin="0,0,0,0"
+    		    HorizontalAlignment="Left"
+    		    VerticalAlignment="Top"
+    		    MouseWheel="Light_MouseWheel" />
+        </Canvas>
             
     </Grid>
 </UserControl>

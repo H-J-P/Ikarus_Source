@@ -4,7 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="300">
+             d:DesignHeight="325" d:DesignWidth="297" MouseWheel="Light_MouseWheel">
     <Grid>
     	<Canvas x:Name="SA342_HSI1" HorizontalAlignment="Left" Height="325.984" UseLayoutRounding="False" VerticalAlignment="Top" Width="297.638">
     		<Canvas x:Name="background" Height="55.874" Canvas.Left="196.177" Canvas.Top="17.579" Width="73.071">
@@ -291,7 +291,7 @@
     			<Path Data="M0.141,75.84L4.133,75.84 4.133,0.141 0.141,0.141z" Fill="#FF232323" Height="75.982" Canvas.Left="6.161" Stroke="#FF232323" StrokeThickness="0.283" StrokeMiterLimit="2.414" Canvas.Top="55.778" Width="4.275"/>
     			<Path Data="M1.649,0.354C2.363,0.354 2.942,0.934 2.942,1.65 2.942,2.364 2.363,2.945 1.649,2.945 0.934,2.945 0.355,2.364 0.355,1.65 0.355,0.934 0.934,0.354 1.649,0.354z" Height="3.3" Canvas.Left="6.65" Stroke="#FF1A1A1A" StrokeThickness="0.709" StrokeMiterLimit="2.414" Canvas.Top="92.656" Width="3.296"/>
     		</Canvas>
-    		<Canvas x:Name="Heading" Height="16.625" Canvas.Left="117.696" Canvas.Top="82.868" Width="26.215">
+    		<Canvas x:Name="Heading" Height="16.625" Canvas.Left="117.696" Canvas.Top="82.868" Width="26.215" RenderTransformOrigin="0.408,6.664">
     			<Path Data="M13.107,16.625L0,0 26.215,0.024z" Fill="#FFE6D973" Height="16.625" Canvas.Left="0" Canvas.Top="0" Width="26.215"/>
     		</Canvas>
     		<Canvas x:Name="Flagg_CAP" Height="27.315" Canvas.Left="170.936" Canvas.Top="248.824" Width="36.037">
@@ -336,7 +336,21 @@
     			<Path Data="M2.438,0L0,2.444 4.678,7.13 7.117,4.687z" Fill="White" Height="7.13" Canvas.Left="200.138" Canvas.Top="200.5" Width="7.117"/>
     			<Path Data="M0,4.686L2.438,7.13 7.116,2.443 4.678,0z" Fill="White" Height="7.13" Canvas.Left="200.138" Canvas.Top="40.184" Width="7.116"/>
     		</Canvas>
-    	</Canvas>
+            <Image x:Name="Light"
+    		    Width="297"
+    		    Height="325"
+    		    Margin="0,0,0,0"
+    		    HorizontalAlignment="Left"
+    		    VerticalAlignment="Top"
+    		    MouseWheel="Light_MouseWheel" />
+            <Image x:Name="Frame"
+    		    Width="297"
+    		    Height="325"
+    		    Margin="0,0,0,0"
+    		    HorizontalAlignment="Left"
+    		    VerticalAlignment="Top"
+    		    MouseWheel="Light_MouseWheel" />
+        </Canvas>
             
     </Grid>
 </UserControl>
