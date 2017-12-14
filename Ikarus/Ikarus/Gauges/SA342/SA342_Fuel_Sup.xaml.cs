@@ -14,6 +14,15 @@ namespace Ikarus
         private string dataImportID = "";
         private int windowID = 0;
         private string[] vals = new string[] { };
+        private double[] valueScale = new double[] { };
+        private double[] degreeDial = new double[] { };
+        int valueScaleIndex = 0;
+
+        private double readValue = 0.0;
+        private double lreadValue = 0.0;
+
+        RotateTransform rtPin = new RotateTransform();
+
         GaugesHelper helper = null;
 
         public int GetWindowID() { return windowID; }
@@ -48,10 +57,12 @@ namespace Ikarus
 
         public void SetInput(string _input)
         {
+            helper.SetInput(ref _input, ref valueScale, ref valueScaleIndex, 2);
         }
 
         public void SetOutput(string _output)
         {
+            helper.SetOutput(ref _output, ref degreeDial, 2);
         }
 
         public double GetSize()
@@ -71,7 +82,28 @@ namespace Ikarus
                        {
                            try
                            {
+                               vals = strData.Split(';');
 
+                               if (vals.Length > 0) { readValue = Convert.ToDouble(vals[0], CultureInfo.InvariantCulture); }
+
+                               if (lreadValue != readValue)
+                               {
+                                   for (int n = 0; n < (valueScaleIndex - 1); n++)
+                                   {
+                                       if (readValue >= valueScale[n] && readValue <= valueScale[n + 1])
+                                       {
+                                           rtPin.Angle = (degreeDial[n] - degreeDial[n + 1]) / (valueScale[n] - valueScale[n + 1]) * (readValue - valueScale[n]) + degreeDial[n];
+                                           break;
+                                       }
+                                   }
+                                   Fuel_Sup.RenderTransform = rtPin;
+
+                                   if (MainWindow.editmode)
+                                   {
+                                       Cockpit.UpdateInOut(dataImportID, "1", readValue.ToString(), Convert.ToInt32(rtPin.Angle).ToString());
+                                   }
+                               }
+                               lreadValue = readValue;
                            }
                            catch { return; }
                        }));

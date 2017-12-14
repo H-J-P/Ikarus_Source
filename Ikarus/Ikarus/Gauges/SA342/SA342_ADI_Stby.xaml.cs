@@ -18,6 +18,25 @@ namespace Ikarus
 
         public int GetWindowID() { return windowID; }
 
+        double pitch = 0.0;
+        double bank = 0.0;
+        double flagOff = 0.0;
+        double manualPitch = 0.0;
+
+        double lpitch = 0.0;
+        double lbank = 0.0;
+        double lflagOff = 0.0;
+
+        RotateTransform rt = new RotateTransform();
+        TranslateTransform tt = new TranslateTransform();
+        RotateTransform rtFlagOff = new RotateTransform();
+        RotateTransform rtTurn = new RotateTransform();
+
+        public SA342_ADI_Stby()
+        {
+            InitializeComponent();
+        }
+
         public void SetID(string _dataImportID)
         {
             dataImportID = _dataImportID;
@@ -50,10 +69,6 @@ namespace Ikarus
         {
         }
 
-        public SA342_ADI_Stby()
-        {
-            InitializeComponent();
-        }
         public double GetSize()
         {
             return Frame.Width;
@@ -71,7 +86,33 @@ namespace Ikarus
                        {
                            try
                            {
+                               vals = strData.Split(';');
 
+                               if (vals.Length > 0) { pitch = Convert.ToDouble(vals[0], CultureInfo.InvariantCulture); }
+                               if (vals.Length > 1) { bank = Convert.ToDouble(vals[1], CultureInfo.InvariantCulture); }
+                               if (vals.Length > 2) { flagOff = Convert.ToDouble(vals[2], CultureInfo.InvariantCulture); }
+                               if (vals.Length > 3) { manualPitch = Convert.ToDouble(vals[3], CultureInfo.InvariantCulture); }
+
+                               if (lpitch != pitch || lbank != bank)
+                               {
+                                   TransformGroup grp = new TransformGroup();
+
+                                   tt.Y = pitch * (242);
+                                   rt.Angle = bank * 180;
+                                   grp.Children.Add(tt);
+                                   grp.Children.Add(rt);
+                                   Bank_pitch.RenderTransform = grp;
+
+                                   rtTurn.Angle = bank * -45;
+                                   Bank.RenderTransform = rt;
+                               }
+
+                               if (lflagOff != flagOff)
+                                   Flagg_off.Visibility = (flagOff > 0.8) ? System.Windows.Visibility.Hidden : System.Windows.Visibility.Visible;
+
+                               lpitch = pitch;
+                               lbank = bank;
+                               lflagOff = flagOff;
                            }
                            catch { return; }
                        }));

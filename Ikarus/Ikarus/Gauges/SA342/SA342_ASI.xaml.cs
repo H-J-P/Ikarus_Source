@@ -14,6 +14,14 @@ namespace Ikarus
         private string dataImportID = "";
         private int windowID = 0;
         private string[] vals = new string[] { };
+        private double[] valueScale = new double[] { };
+        private double[] degreeDial = new double[] { };
+        int valueScaleIndex = 0;
+
+        double airSpeed = 0.0;
+        double lairSpeed = 0.0;
+
+        RotateTransform rtIAS = new RotateTransform();
         GaugesHelper helper = null;
 
         public int GetWindowID() { return windowID; }
@@ -22,6 +30,7 @@ namespace Ikarus
         {
             InitializeComponent();
         }
+
         public void SetID(string _dataImportID)
         {
             dataImportID = _dataImportID;
@@ -48,10 +57,12 @@ namespace Ikarus
 
         public void SetInput(string _input)
         {
+            helper.SetInput(ref _input, ref valueScale, ref valueScaleIndex, 2);
         }
 
         public void SetOutput(string _output)
         {
+            helper.SetOutput(ref _output, ref degreeDial, 2);
         }
 
         public double GetSize()
@@ -71,7 +82,28 @@ namespace Ikarus
                        {
                            try
                            {
+                               vals = strData.Split(';');
 
+                               if (vals.Length > 0) { airSpeed = Convert.ToDouble(vals[0], CultureInfo.InvariantCulture); }
+
+                               if (lairSpeed != airSpeed)
+                               {
+                                   for (int n = 0; n < (valueScaleIndex - 1); n++)
+                                   {
+                                       if (airSpeed >= valueScale[n] && airSpeed <= valueScale[n + 1])
+                                       {
+                                           rtIAS.Angle = (degreeDial[n] - degreeDial[n + 1]) / (valueScale[n] - valueScale[n + 1]) * (airSpeed - valueScale[n]) + degreeDial[n];
+                                           break;
+                                       }
+                                   }
+
+                                   if (MainWindow.editmode)
+                                   {
+                                       Cockpit.UpdateInOut(dataImportID, "1", airSpeed.ToString(), Convert.ToInt32(rtIAS.Angle).ToString());
+                                   }
+                                   IAS.RenderTransform = rtIAS;
+                               }
+                               lairSpeed = airSpeed;
                            }
                            catch { return; }
                        }));
