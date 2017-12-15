@@ -238,9 +238,9 @@ namespace Ikarus
 
         private void UpperRec_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            e.Handled = true;
-            if (!touchDown && e.LeftButton == MouseButtonState.Pressed)
+            if (!e.Handled && !touchDown)
             {
+                e.Handled = true;
                 SetValue(1, true);
             }
             if (!MainWindow.editmode) ProzessHelper.SetFocusToExternalApp(MainWindow.processNameDCS);
@@ -248,28 +248,34 @@ namespace Ikarus
 
         private void UpperRec_TouchDown(object sender, TouchEventArgs e)
         {
-            e.Handled = true;
-            SetValue(1, true);
+            if (!e.Handled)
+            {
+                e.Handled = true;
+                SetValue(1, true);
+                touchDown = true;
+            }
             if (!MainWindow.editmode) ProzessHelper.SetFocusToExternalApp(MainWindow.processNameDCS);
         }
 
         private void UpperRec_TouchUp(object sender, TouchEventArgs e)
         {
-            e.Handled = true;
-            SetValue(0, true);
+            if (!e.Handled)
+            {
+                e.Handled = true;
+                SetValue(0, true);
+            }
             if (!MainWindow.editmode) ProzessHelper.SetFocusToExternalApp(MainWindow.processNameDCS);
             touchDown = false;
         }
 
         private void UpperRec_MouseUp(object sender, MouseButtonEventArgs e)
         {
-            e.Handled = true;
-            if (!touchDown)
+            if (!e.Handled && !touchDown)
             {
+                e.Handled = true;
                 SetValue(0, true);
             }
             if (!MainWindow.editmode) ProzessHelper.SetFocusToExternalApp(MainWindow.processNameDCS);
-            touchDown = false;
         }
     }
 }

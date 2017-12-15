@@ -18,6 +18,21 @@ namespace Ikarus
 
         public int GetWindowID() { return windowID; }
 
+        double currtimeHours = 0.0;
+        double currtimeMinutes = 0.0;
+        double cronoMinutes = 0.0;
+        double cronoSeconds = 0.0;
+
+        double lcurrtimeHours = 0.0;
+        double lcurrtimeMinutes = 0.0;
+        double lcronoMinutes = 0.0;
+        double lcronoSeconds = 0.0;
+
+        RotateTransform rtCurrtimeHours = new RotateTransform();
+        RotateTransform rtCurrtimeMinutes = new RotateTransform();
+        RotateTransform rtCronoMinutes = new RotateTransform();
+        RotateTransform rtCronoSeconds = new RotateTransform();
+
         public SA342_Clock()
         {
             InitializeComponent();
@@ -71,7 +86,37 @@ namespace Ikarus
                        {
                            try
                            {
+                               vals = strData.Split(';');
 
+                               if (vals.Length > 0) { currtimeHours = Convert.ToDouble(vals[0], CultureInfo.InvariantCulture); }
+                               if (vals.Length > 1) { currtimeMinutes = Convert.ToDouble(vals[1], CultureInfo.InvariantCulture); }
+                               if (vals.Length > 2) { cronoMinutes = Convert.ToDouble(vals[2], CultureInfo.InvariantCulture); }
+                               if (vals.Length > 3) { cronoSeconds = Convert.ToDouble(vals[3], CultureInfo.InvariantCulture); }
+
+                               if (lcurrtimeHours != currtimeHours)
+                               {
+                                   rtCurrtimeHours.Angle = currtimeHours * 360;
+                                   Time_Hour.RenderTransform = rtCurrtimeHours;
+                               }
+                               if (lcurrtimeMinutes != currtimeMinutes)
+                               {
+                                   rtCurrtimeMinutes.Angle = currtimeMinutes * 360;
+                                   Time_Minute.RenderTransform = rtCurrtimeMinutes;
+                               }
+                               if (lcronoMinutes != cronoMinutes)
+                               {
+                                   rtCronoMinutes.Angle = cronoMinutes * 360;
+                                   Crono_Minutes.RenderTransform = rtCronoMinutes;
+                               }
+                               if (lcronoSeconds != cronoSeconds)
+                               {
+                                   rtCronoSeconds.Angle = cronoSeconds * 360;
+                                   Crono_Second.RenderTransform = rtCronoSeconds;
+                               }
+                               lcurrtimeHours = currtimeHours;
+                               lcurrtimeMinutes = currtimeMinutes;
+                               lcronoMinutes = cronoMinutes;
+                               lcronoSeconds = cronoSeconds;
                            }
                            catch { return; }
                        }));

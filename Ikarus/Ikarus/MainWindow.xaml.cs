@@ -2157,6 +2157,38 @@ namespace Ikarus
         #endregion
     }
 
+    public class Instrument
+    {
+        public int instID = 0;
+        public string classname = "";
+        public int windowID = 0;
+        public List<InstrumentFunction> instrumentFunction = new List<InstrumentFunction> { };
+
+        public Instrument(int _instID, string _classname, int _windowID)
+        {
+            instID = _instID;
+            classname = _classname;
+            windowID = _windowID;
+        }
+    }
+
+    public class InstrumentFunction
+    {
+        public int argNumber = 0;
+        public bool ascii = false;
+
+        public double value = 0.0;
+        public double oldValue = 0.0;
+        public string asciiValue = "";
+        public string oldAsciiValue = "";
+
+        public InstrumentFunction(int _argNumber, bool _ascii)
+        {
+            argNumber = _argNumber;
+            ascii = _ascii;
+        }
+    }
+
     public class Lamps
     {
         public int ID = 0;
@@ -2199,38 +2231,6 @@ namespace Ikarus
             windowID = _windowID;
             clickabledataID = _clickable;
             classname = _class;
-        }
-    }
-
-    public class InstrumentFunction
-    {
-        public int argNumber = 0;
-        public bool ascii = false;
-
-        public double value = 0.0;
-        public double oldValue = 0.0;
-        public string asciiValue = "";
-        public string oldAsciiValue = "";
-
-        public InstrumentFunction(int _argNumber, bool _ascii)
-        {
-            argNumber = _argNumber;
-            ascii = _ascii;
-        }
-    }
-
-    public class Instrument
-    {
-        public int instID = 0;
-        public string classname = "";
-        public int windowID = 0;
-        public List<InstrumentFunction> instrumentFunction = new List<InstrumentFunction> { };
-
-        public Instrument(int _instID, string _classname, int _windowID)
-        {
-            instID = _instID;
-            classname = _classname;
-            windowID = _windowID;
         }
     }
 }
