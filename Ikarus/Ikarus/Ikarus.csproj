@@ -348,8 +348,8 @@
     <Compile Include="Gauges\SA342\SA342_Fuel_Sup.xaml.cs">
       <DependentUpon>SA342_Fuel_Sup.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Gauges\SA342\SA342_HSI.xaml.cs">
-      <DependentUpon>SA342_HSI.xaml</DependentUpon>
+    <Compile Include="Gauges\SA342\SA342_NADIR_ADF.xaml.cs">
+      <DependentUpon>SA342_NADIR_ADF.xaml</DependentUpon>
     </Compile>
     <Compile Include="Gauges\SA342\SA342_RPM.xaml.cs">
       <DependentUpon>SA342_RPM.xaml</DependentUpon>
@@ -1683,7 +1683,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Gauges\SA342\SA342_HSI.xaml">
+    <Page Include="Gauges\SA342\SA342_NADIR_ADF.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
