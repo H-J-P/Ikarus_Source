@@ -31,7 +31,7 @@
                    MouseUp="UpperRec_MouseUp"
                    Stroke="#00000000"
                    TouchDown="UpperRec_TouchDown"
-                   TouchUp="UpperRec_TouchUp" />
+                   TouchUp="UpperRec_TouchUp" TouchLeave="UpperRec_TouchLeave"/>
         <Rectangle x:Name="DesignFrame"
                    Width="45"
                    Height="45"

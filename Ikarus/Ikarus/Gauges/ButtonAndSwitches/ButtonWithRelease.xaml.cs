@@ -284,5 +284,23 @@ namespace Ikarus
             }
             if (!MainWindow.editmode) ProzessHelper.SetFocusToExternalApp(MainWindow.processNameDCS);
         }
+
+        //private void UpperRec_MouseLeave(object sender, System.EventArgs e)
+        //{
+        //    SetValue(0);
+        //    if (!MainWindow.editmode) ProzessHelper.SetFocusToExternalApp(MainWindow.processNameDCS);
+        //}
+
+        private void UpperRec_TouchLeave(object sender, TouchEventArgs e)
+        {
+            if (!e.Handled)
+            {
+                e.Handled = true;
+                SetValue(0);
+            }
+            if (!MainWindow.editmode) ProzessHelper.SetFocusToExternalApp(MainWindow.processNameDCS);
+
+            touchDown = false;
+        }
     }
 }
