@@ -96,28 +96,28 @@ namespace Ikarus
                                vals = strData.Split(';');
 
                                if (vals.Length > 0) { heading = Convert.ToDouble(vals[0], CultureInfo.InvariantCulture); }
-                               if (vals.Length > 1) { steadybug = Convert.ToDouble(vals[1], CultureInfo.InvariantCulture); }
-                               if (vals.Length > 2) { nadir = Convert.ToDouble(vals[2], CultureInfo.InvariantCulture); }
-                               if (vals.Length > 3) { adf = Convert.ToDouble(vals[3], CultureInfo.InvariantCulture); }
-                               if (vals.Length > 4) { pxFlag = Convert.ToDouble(vals[4], CultureInfo.InvariantCulture); }
-                               if (vals.Length > 5) { butFlag = Convert.ToDouble(vals[5], CultureInfo.InvariantCulture); }
-                               if (vals.Length > 6) { capFlag = Convert.ToDouble(vals[6], CultureInfo.InvariantCulture); }
-                               if (vals.Length > 7) { range001 = Convert.ToDouble(vals[7], CultureInfo.InvariantCulture); }
-                               if (vals.Length > 8) { range010 = Convert.ToDouble(vals[8], CultureInfo.InvariantCulture); }
-                               if (vals.Length > 9) { range100 = Convert.ToDouble(vals[9], CultureInfo.InvariantCulture); }
+                               if (vals.Length > 1) { nadir = Convert.ToDouble(vals[1], CultureInfo.InvariantCulture); }
+                               if (vals.Length > 2) { adf = Convert.ToDouble(vals[2], CultureInfo.InvariantCulture); }
+                               if (vals.Length > 3) { capFlag = Convert.ToDouble(vals[3], CultureInfo.InvariantCulture); }
+                               if (vals.Length > 4) { butFlag = Convert.ToDouble(vals[4], CultureInfo.InvariantCulture); }
+                               if (vals.Length > 5) { pxFlag = Convert.ToDouble(vals[5], CultureInfo.InvariantCulture); }
+                               if (vals.Length > 6) { range100 = Convert.ToDouble(vals[6], CultureInfo.InvariantCulture); }
+                               if (vals.Length > 7) { range010 = Convert.ToDouble(vals[7], CultureInfo.InvariantCulture); }
+                               if (vals.Length > 8) { range001 = Convert.ToDouble(vals[8], CultureInfo.InvariantCulture); }
+                               if (vals.Length > 9) { steadybug = Convert.ToDouble(vals[9], CultureInfo.InvariantCulture); }
 
 
 
                                lheading = heading;
-                               lsteadybug = steadybug;
                                lnadir = nadir;
                                ladf = adf;
-                               lpxFlag = pxFlag;
-                               lbutFlag = butFlag;
                                lcapFlag = capFlag;
-                               lrange001 = range001;
-                               lrange010 = range010;
+                               lbutFlag = butFlag;
+                               lpxFlag = pxFlag;
                                lrange100 = range100;
+                               lrange010 = range010;
+                               lrange001 = range001;
+                               lsteadybug = steadybug;
                            }
                            catch { return; }
                        }));

@@ -942,7 +942,7 @@
                    Height="19"
                    Margin="486,0,0,10"
                    VerticalAlignment="Bottom"
-                   Content="(C) H.J.P. 2017  Version 1.2.2.0a"
+                   Content="(C) H.J.P. 2017  Version 1.2.2.0b"
                    Foreground="#FFD8BC05" HorizontalAlignment="Left" Width="189" />
             <Label Name="lbEditMode"
                    Width="72"

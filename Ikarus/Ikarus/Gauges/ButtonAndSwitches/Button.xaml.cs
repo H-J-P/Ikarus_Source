@@ -29,6 +29,7 @@ namespace Ikarus
 
         private Switches switches = null;
         private bool touchDown = false;
+        private bool mouseDown = false;
         BitmapImage bitmapImage = new BitmapImage();
         GaugesHelper helper = null;
 
@@ -240,15 +241,28 @@ namespace Ikarus
         {
             if (!e.Handled && !touchDown)
             {
+                mouseDown = true;
                 e.Handled = true;
                 SetValue(1, true);
             }
             if (!MainWindow.editmode) ProzessHelper.SetFocusToExternalApp(MainWindow.processNameDCS);
         }
 
+        private void UpperRec_MouseUp(object sender, MouseButtonEventArgs e)
+        {
+            if (!e.Handled && !touchDown && mouseDown)
+            {
+                e.Handled = true;
+                SetValue(0, true);
+            }
+            if (!MainWindow.editmode) ProzessHelper.SetFocusToExternalApp(MainWindow.processNameDCS);
+
+            mouseDown = false;
+        }
+
         private void UpperRec_TouchDown(object sender, TouchEventArgs e)
         {
-            if (!e.Handled)
+            if (!e.Handled && !mouseDown)
             {
                 e.Handled = true;
                 SetValue(1, true);
@@ -259,7 +273,7 @@ namespace Ikarus
 
         private void UpperRec_TouchUp(object sender, TouchEventArgs e)
         {
-            if (!e.Handled)
+            if (!e.Handled && touchDown)
             {
                 e.Handled = true;
                 SetValue(0, true);
@@ -269,25 +283,9 @@ namespace Ikarus
             touchDown = false;
         }
 
-        private void UpperRec_MouseUp(object sender, MouseButtonEventArgs e)
-        {
-            if (!e.Handled && !touchDown)
-            {
-                e.Handled = true;
-                SetValue(0, true);
-            }
-            if (!MainWindow.editmode) ProzessHelper.SetFocusToExternalApp(MainWindow.processNameDCS);
-        }
-
-        //private void UpperRec_MouseLeave(object sender, System.EventArgs e)
-        //{
-        //    SetValue(0, true);
-        //    if (!MainWindow.editmode) ProzessHelper.SetFocusToExternalApp(MainWindow.processNameDCS);
-        //}
-
         private void UpperRec_TouchLeave(object sender, TouchEventArgs e)
         {
-            if (!e.Handled)
+            if (!e.Handled && touchDown)
             {
                 e.Handled = true;
                 SetValue(0, true);
