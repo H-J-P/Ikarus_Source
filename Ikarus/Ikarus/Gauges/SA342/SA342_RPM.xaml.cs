@@ -16,6 +16,15 @@ namespace Ikarus
         private string[] vals = new string[] { };
         GaugesHelper helper = null;
 
+        private double turbine_RPM = 0.0;
+        private double rotor_RPM = 0.0;
+
+        private double lturbine_RPM = 0.0;
+        private double lrotor_RPM = 0.0;
+
+        RotateTransform rtTurbine_RPM = new RotateTransform();
+        RotateTransform rtRotor_RPM = new RotateTransform();
+
         public int GetWindowID() { return windowID; }
 
         public SA342_RPM()
@@ -71,7 +80,25 @@ namespace Ikarus
                        {
                            try
                            {
+                               vals = strData.Split(';');
 
+                               if (vals.Length > 0) { turbine_RPM = Convert.ToDouble(vals[0], CultureInfo.InvariantCulture); }
+                               if (vals.Length > 1) { rotor_RPM = Convert.ToDouble(vals[1], CultureInfo.InvariantCulture); }
+
+                               if (lturbine_RPM != turbine_RPM)
+                               {
+                                   rtTurbine_RPM.Angle = turbine_RPM * 300;
+                                   RPM_Turb.RenderTransform = rtTurbine_RPM;
+                               }
+
+                               if (lrotor_RPM != rotor_RPM)
+                               {
+                                   rtRotor_RPM.Angle = rotor_RPM * 300;
+                                   RPM_Rotor.RenderTransform = rtRotor_RPM;
+                               }
+
+                               lturbine_RPM = turbine_RPM;
+                               lrotor_RPM = rotor_RPM;
                            }
                            catch { return; }
                        }));

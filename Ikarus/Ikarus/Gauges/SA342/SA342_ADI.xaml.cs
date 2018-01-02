@@ -139,7 +139,7 @@ namespace Ikarus
                                {
                                    rt = new RotateTransform()
                                    {
-                                       Angle = bankNeedle * 180
+                                       Angle = bankNeedle * -180
                                    };
                                    Bank.RenderTransform = rt;
                                }
@@ -148,7 +148,7 @@ namespace Ikarus
                                {
                                    rtSlipBall = new RotateTransform()
                                    {
-                                       Angle = slipBall * 30
+                                       Angle = slipBall * 13
                                    };
                                    SlipBall.RenderTransform = rtSlipBall;
                                }

@@ -10,7 +10,7 @@
             <Canvas x:Name="background_2" Height="30.331" Canvas.Left="90.284" Canvas.Top="171.307" Width="74.551">
                 <Path Data="M0,0L74.551,0 74.551,30.331 0,30.331z" Fill="Black" Height="30.331" Canvas.Left="0" Canvas.Top="0" Width="74.551"/>
             </Canvas>
-            <Canvas x:Name="BasicAtmospherePressure_1" Height="304.134" Canvas.Left="145.643" Canvas.Top="148.091" Width="13.725">
+            <Canvas x:Name="BasicAtmospherePressure_1" Height="304.134" Canvas.Left="145.643" Canvas.Top="148.091" Width="13.725" RenderTransformOrigin="0.5,0.5">
                 <Path Data="M0,0L13.725,0 13.725,304.134 0,304.134z" Fill="Black" Height="304.134" Canvas.Left="0" Canvas.Top="0" Width="13.725"/>
                 <Path Data="M0.283,0.283L14.007,0.283 14.007,304.417 0.283,304.417z" Height="304.701" Canvas.Left="-0.283" Stroke="Black" StrokeThickness="0.567" StrokeMiterLimit="2.414" Canvas.Top="-0.283" Width="14.291"/>
                 <Path Data="F1M5.392,18.238C6.483,18.238 7.309,17.603 7.869,16.339 8.425,15.075 8.703,13.005 8.703,10.132 8.703,8.13 8.583,6.558 8.336,5.409 8.093,4.262 7.723,3.403 7.228,2.841 6.734,2.278 6.113,1.997 5.368,1.997 4.276,1.997 3.454,2.643 2.902,3.929 2.353,5.216 2.08,7.286 2.08,10.132 2.08,12.106 2.203,13.664 2.45,14.817 2.701,15.97 3.068,16.827 3.559,17.395 4.048,17.957 4.662,18.238 5.392,18.238 M5.392,0C8.996,0 10.795,3.376 10.795,10.132 10.795,13.544 10.332,16.081 9.401,17.745 8.468,19.405 7.132,20.235 5.392,20.235 1.794,20.235 0,16.869 0,10.132 0,6.72 0.463,4.174 1.392,2.504 2.327,0.835 3.658,0 5.392,0" Fill="White" Height="20.235" Canvas.Left="1.986" Canvas.Top="28.072" Width="10.795"/>

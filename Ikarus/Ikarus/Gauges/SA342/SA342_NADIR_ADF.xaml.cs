@@ -40,9 +40,20 @@ namespace Ikarus
         private double lrange010 = 0.0;
         private double lrange100 = 0.0;
 
+        RotateTransform rtHeading = new RotateTransform();
+        RotateTransform rtNadir = new RotateTransform();
+        RotateTransform rtAdf = new RotateTransform();
+        TranslateTransform ttRange001 = new TranslateTransform();
+        TranslateTransform ttRange010 = new TranslateTransform();
+        TranslateTransform ttRange100 = new TranslateTransform();
+
         public SA342_NADIR_ADF()
         {
             InitializeComponent();
+
+            Flag_CAP.Visibility = System.Windows.Visibility.Visible;
+            Flag_BUT.Visibility = System.Windows.Visibility.Visible;
+            Flag_PX.Visibility = System.Windows.Visibility.Visible;
         }
         public void SetID(string _dataImportID)
         {
@@ -106,7 +117,46 @@ namespace Ikarus
                                if (vals.Length > 8) { range001 = Convert.ToDouble(vals[8], CultureInfo.InvariantCulture); }
                                if (vals.Length > 9) { steadybug = Convert.ToDouble(vals[9], CultureInfo.InvariantCulture); }
 
+                               if (lheading != heading)
+                               {
+                                   rtHeading.Angle = heading * 360;
+                                   Heading.RenderTransform = rtHeading;
+                               }
+                               if (lnadir != nadir)
+                               {
+                                   rtNadir.Angle = nadir * 360;
+                                   NARDIR.RenderTransform = rtNadir;
+                               }
+                               if (ladf != adf)
+                               {
+                                   rtAdf.Angle = adf * 360;
+                                   ADF.RenderTransform = rtAdf;
+                               }
 
+                               if (lcapFlag != capFlag)
+                                   Flag_CAP.Visibility = (capFlag > 0.9) ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
+                               if (lbutFlag != butFlag)
+                                   Flag_BUT.Visibility = (butFlag > 0.9) ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
+                               if (lpxFlag != pxFlag)
+                                   Flag_PX.Visibility = (pxFlag > 0.9) ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
+
+                               if (lrange100 != range100)
+                               {
+                                   ttRange100.Y = range100 * -217;
+                                   Range_100.RenderTransform = ttRange100;
+                               }
+
+                               if (lrange010 != range010)
+                               {
+                                   ttRange010.Y = range010 * -217;
+                                   Range_10.RenderTransform = ttRange010;
+                               }
+
+                               if (lrange001 != range001)
+                               {
+                                   ttRange001.Y = range001 * -217;
+                                   Range_1.RenderTransform = ttRange001;
+                               }
 
                                lheading = heading;
                                lnadir = nadir;

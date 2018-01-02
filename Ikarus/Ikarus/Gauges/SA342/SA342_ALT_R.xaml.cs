@@ -16,6 +16,21 @@ namespace Ikarus
         private string[] vals = new string[] { };
         GaugesHelper helper = null;
 
+        private double radarAltimeter = 0.0;
+        private double dangerRALTindex = 0.0;
+        private double rAltlamp = 0.0;
+        private double flagOff = 0.0;
+        private double flagTest = 0.0;
+
+        private double lradarAltimeter = 0.0;
+        private double ldangerRALTindex = 0.0;
+        private double lrAltlamp = 0.0;
+        private double lflagOff = 0.0;
+        private double lflagTest = 0.0;
+
+        RotateTransform rtRadarAltimeter = new RotateTransform();
+        RotateTransform rtDangerRALTindex = new RotateTransform();
+
         public int GetWindowID() { return windowID; }
 
         public void SetID(string _dataImportID)
@@ -71,7 +86,37 @@ namespace Ikarus
                        {
                            try
                            {
+                               vals = strData.Split(';');
 
+                               if (vals.Length > 0) { radarAltimeter = Convert.ToDouble(vals[0], CultureInfo.InvariantCulture); }
+                               if (vals.Length > 1) { dangerRALTindex = Convert.ToDouble(vals[1], CultureInfo.InvariantCulture); }
+                               if (vals.Length > 2) { rAltlamp = Convert.ToDouble(vals[2], CultureInfo.InvariantCulture); }
+                               if (vals.Length > 3) { flagOff = Convert.ToDouble(vals[3], CultureInfo.InvariantCulture); }
+                               if (vals.Length > 4) { flagTest = Convert.ToDouble(vals[4], CultureInfo.InvariantCulture); }
+
+                               if (lradarAltimeter != radarAltimeter)
+                               {
+                                   rtRadarAltimeter.Angle = radarAltimeter * 360;
+                                   Radar_Altimeter.RenderTransform = rtRadarAltimeter;
+                               }
+                               if (ldangerRALTindex != dangerRALTindex)
+                               {
+                                   rtDangerRALTindex.Angle = dangerRALTindex * 360;
+                                   DangerRALT_index.RenderTransform = rtDangerRALTindex;
+                               }
+
+                               if (lrAltlamp != rAltlamp)
+                                   RAltlamp.Visibility = (rAltlamp > 0.9) ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
+                               if (lflagOff != flagOff)
+                                   Flagg_off.Visibility = (flagOff > 0.9) ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
+                               if (lflagTest != flagTest)
+                                   flagg_A.Visibility = (flagTest > 0.9) ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
+
+                               lradarAltimeter = radarAltimeter;
+                               ldangerRALTindex = dangerRALTindex;
+                               lrAltlamp = rAltlamp;
+                               lflagOff = flagOff;
+                               lflagTest = flagTest;
                            }
                            catch { return; }
                        }));

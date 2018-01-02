@@ -9,7 +9,7 @@
         <Viewport3D x:Name="viewport" Margin="45,45,45,61" RenderTransformOrigin="0.5,0.5">
             <Viewport3D.RenderTransform>
                 <TransformGroup>
-                    <ScaleTransform ScaleX="1.0" ScaleY="1.0"/>
+                    <ScaleTransform ScaleX="0.85" ScaleY="0.85"/>
                     <SkewTransform/>
                     <RotateTransform/>
                     <TranslateTransform/>
