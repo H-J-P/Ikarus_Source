@@ -19,9 +19,14 @@ namespace Ikarus
         int valueScaleIndex = 0;
 
         private double readValue = 0.0;
+        private double torque_Bug = 0.0;
+        private double lamp = 0.0;
         private double lreadValue = 0.0;
+        private double ltorque_Bug = 0.0;
+        private double llamp = 0.0;
 
         RotateTransform rtPin = new RotateTransform();
+        RotateTransform rtTorque_Bug = new RotateTransform();
 
         GaugesHelper helper = null;
 
@@ -30,6 +35,8 @@ namespace Ikarus
         public SA342_Torque()
         {
             InitializeComponent();
+
+            Warning_Light.Visibility = System.Windows.Visibility.Hidden;
         }
         public void SetID(string _dataImportID)
         {
@@ -85,6 +92,8 @@ namespace Ikarus
                                vals = strData.Split(';');
 
                                if (vals.Length > 0) { readValue = Convert.ToDouble(vals[0], CultureInfo.InvariantCulture); }
+                               if (vals.Length > 1) { torque_Bug = Convert.ToDouble(vals[1], CultureInfo.InvariantCulture); }
+                               if (vals.Length > 2) { lamp = Convert.ToDouble(vals[2], CultureInfo.InvariantCulture); }
 
                                if (lreadValue != readValue)
                                {
@@ -103,7 +112,30 @@ namespace Ikarus
                                        Cockpit.UpdateInOut(dataImportID, "1", readValue.ToString(), Convert.ToInt32(rtPin.Angle).ToString());
                                    }
                                }
+
+                               if (ltorque_Bug != torque_Bug)
+                               {
+                                   for (int n = 0; n < (valueScaleIndex - 1); n++)
+                                   {
+                                       if (torque_Bug >= valueScale[n] && torque_Bug <= valueScale[n + 1])
+                                       {
+                                           rtTorque_Bug.Angle = (degreeDial[n] - degreeDial[n + 1]) / (valueScale[n] - valueScale[n + 1]) * (torque_Bug - valueScale[n]) + degreeDial[n];
+                                           break;
+                                       }
+                                   }
+                                   Torque_Bug.RenderTransform = rtTorque_Bug;
+
+                                   if (MainWindow.editmode)
+                                   {
+                                       Cockpit.UpdateInOut(dataImportID, "2", torque_Bug.ToString(), Convert.ToInt32(rtTorque_Bug.Angle).ToString());
+                                   }
+                               }
+                               if (llamp != lamp)
+                                   Warning_Light.Visibility = (lamp > 0.8) ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
+
                                lreadValue = readValue;
+                               ltorque_Bug = torque_Bug;
+                               llamp = lamp;
                            }
                            catch { return; }
                        }));

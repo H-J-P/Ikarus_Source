@@ -38,6 +38,13 @@ namespace Ikarus
             dataImportID = _dataImportID;
         }
 
+        public SA342_ALT_R()
+        {
+            InitializeComponent();
+
+            RAltlamp.Visibility = System.Windows.Visibility.Hidden;
+        }
+
         public void SetWindowID(int _windowID)
         {
             windowID = _windowID;
@@ -65,10 +72,6 @@ namespace Ikarus
         {
         }
 
-        public SA342_ALT_R()
-        {
-            InitializeComponent();
-        }
         public double GetSize()
         {
             return Frame.Width;
