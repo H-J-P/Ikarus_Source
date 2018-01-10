@@ -54,7 +54,7 @@
                    VerticalAlignment="Top"
                    Fill="#00EEDB21"
                    Stroke="#FFF38501"
-                   StrokeThickness="2" />
+                   StrokeThickness="4" />
         </Canvas>
     </Grid>
 </UserControl>

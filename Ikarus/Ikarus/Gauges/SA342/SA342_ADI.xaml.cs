@@ -116,8 +116,8 @@ namespace Ikarus
                            {
                                vals = strData.Split(';');
 
-                               if (vals.Length > 0) { bank = Convert.ToDouble(vals[0], CultureInfo.InvariantCulture); }
-                               if (vals.Length > 1) { pitch = Convert.ToDouble(vals[1], CultureInfo.InvariantCulture); }
+                               if (vals.Length > 0) { pitch = Convert.ToDouble(vals[0], CultureInfo.InvariantCulture); }
+                               if (vals.Length > 1) { bank = Convert.ToDouble(vals[1], CultureInfo.InvariantCulture); }
                                if (vals.Length > 2) { slipBall = Convert.ToDouble(vals[2], CultureInfo.InvariantCulture); }
                                if (vals.Length > 3) { glide = Convert.ToDouble(vals[3], CultureInfo.InvariantCulture); }
                                if (vals.Length > 4) { side = Convert.ToDouble(vals[4], CultureInfo.InvariantCulture); }
@@ -130,7 +130,7 @@ namespace Ikarus
                                if (lpitch != pitch || lbank != bank)
                                {
                                    sphere3D.xRotation = dNull;
-                                   sphere3D.yRotation = pitch * -126;
+                                   sphere3D.yRotation = pitch * 180; // 126;
                                    sphere3D.zRotation = ((bank * 180) - 90);
 
                                    sphere3D.Rotate();
@@ -161,7 +161,7 @@ namespace Ikarus
 
                                if (lside != side)
                                {
-                                   ttside.X = side * 120;
+                                   ttside.X = side * 80;
                                    Side.RenderTransform = ttside;
                                }
 

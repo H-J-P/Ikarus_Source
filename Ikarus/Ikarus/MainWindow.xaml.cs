@@ -1697,6 +1697,7 @@ namespace Ikarus
                     }
                 }
             }
+
             if ((tabControl1.SelectedIndex == 5 && functionTabIsVisible) || (tabControl1.SelectedIndex == 4 && !functionTabIsVisible))
             {
                 if (selectedWindows == -1) return;
@@ -1771,7 +1772,6 @@ namespace Ikarus
                 MessageBoxWindow mbs = new MessageBoxWindow(selectedWindows);
             }
             catch (Exception ex) { ImportExport.LogMessage("Detail Panel: " + ex.ToString()); }
-
         }
 
         private void Button_Donate_Click(object sender, EventArgs e)
@@ -1987,12 +1987,12 @@ namespace Ikarus
         {
             if (checkBoxLog.IsChecked == true)
             {
-                lbLogging.Visibility = System.Windows.Visibility.Visible;
+                lbLogging.Visibility = Visibility.Visible;
                 detailLog = true;
             }
             else
             {
-                lbLogging.Visibility = System.Windows.Visibility.Hidden;
+                lbLogging.Visibility = Visibility.Hidden;
                 detailLog = false;
             }
         }
@@ -2015,7 +2015,6 @@ namespace Ikarus
                 selectedFunction = Convert.ToInt32(dataRow.ItemArray[1].ToString()); // IDFct
             }
             catch { }
-
         }
 
         private void DataGridInstruments_SelectedCellsChanged(object sender, SelectedCellsChangedEventArgs e)
@@ -2057,7 +2056,6 @@ namespace Ikarus
                 selectedWindows = Convert.ToInt32(rowView.Row.ItemArray[0].ToString()); // WindowID
             }
             catch { }
-
         }
 
         private void Main_Closed(object sender, EventArgs e)
@@ -2074,8 +2072,8 @@ namespace Ikarus
 
             if (selectedTab == tabControl1.SelectedIndex) return;
 
-            buttonAdd.Visibility = System.Windows.Visibility.Visible;
-            buttonDel.Visibility = System.Windows.Visibility.Visible;
+            buttonAdd.Visibility = Visibility.Visible;
+            buttonDel.Visibility = Visibility.Visible;
 
             if (tabControl1.SelectedIndex == 0)
             {

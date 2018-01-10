@@ -26,7 +26,7 @@
                    VerticalAlignment="Top"
                    Fill="#00EEDB21"
                    Stroke="#FFF38501"
-                   StrokeThickness="2" />
+                   StrokeThickness="4" />
         <Rectangle x:Name="UpperRec"
                    Width="60"
                    Height="50"

@@ -117,16 +117,21 @@ namespace Ikarus
                                if (vals.Length > 8) { range001 = Convert.ToDouble(vals[8], CultureInfo.InvariantCulture); }
                                if (vals.Length > 9) { steadybug = Convert.ToDouble(vals[9], CultureInfo.InvariantCulture); }
 
-                               if (lheading != heading)
+                               if (lheading != heading || lnadir != nadir)
                                {
                                    rtHeading.Angle = heading * 360;
                                    Heading.RenderTransform = rtHeading;
-                               }
-                               if (lnadir != nadir)
-                               {
-                                   rtNadir.Angle = nadir * 360;
+
+                                   rtNadir.Angle = heading * 360 + nadir * -360;
                                    NARDIR.RenderTransform = rtNadir;
                                }
+
+                               //if (lnadir != nadir)
+                               //{
+                               //    rtNadir.Angle = nadir * -360;
+                               //    NARDIR.RenderTransform = rtNadir;
+                               //}
+
                                if (ladf != adf)
                                {
                                    rtAdf.Angle = adf * 360;
@@ -134,11 +139,11 @@ namespace Ikarus
                                }
 
                                if (lcapFlag != capFlag)
-                                   Flag_CAP.Visibility = (capFlag > 0.9) ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
+                                   Flag_CAP.Visibility = (capFlag > 0.5) ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
                                if (lbutFlag != butFlag)
-                                   Flag_BUT.Visibility = (butFlag > 0.9) ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
+                                   Flag_BUT.Visibility = (butFlag > 0.5) ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
                                if (lpxFlag != pxFlag)
-                                   Flag_PX.Visibility = (pxFlag > 0.9) ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
+                                   Flag_PX.Visibility = (pxFlag > 0.5) ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
 
                                if (lrange100 != range100)
                                {

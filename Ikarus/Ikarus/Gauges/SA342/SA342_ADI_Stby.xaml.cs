@@ -35,6 +35,8 @@ namespace Ikarus
         public SA342_ADI_Stby()
         {
             InitializeComponent();
+
+            Flagg_off.Visibility = System.Windows.Visibility.Hidden;
         }
 
         public void SetID(string _dataImportID)
@@ -98,7 +100,7 @@ namespace Ikarus
                                    TransformGroup grp = new TransformGroup();
 
                                    tt.Y = pitch * (242);
-                                   rt.Angle = bank * 180;
+                                   rt.Angle = bank * -180;
                                    grp.Children.Add(tt);
                                    grp.Children.Add(rt);
                                    Bank_pitch.RenderTransform = grp;
@@ -108,7 +110,7 @@ namespace Ikarus
                                }
 
                                if (lflagOff != flagOff)
-                                   Flagg_off.Visibility = (flagOff > 0.8) ? System.Windows.Visibility.Hidden : System.Windows.Visibility.Visible;
+                                   Flagg_off.Visibility = (flagOff > 0.8) ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
 
                                lpitch = pitch;
                                lbank = bank;

@@ -43,6 +43,8 @@ namespace Ikarus
             InitializeComponent();
 
             RAltlamp.Visibility = System.Windows.Visibility.Hidden;
+            flagg_A.Visibility = System.Windows.Visibility.Hidden;
+            Flagg_off.Visibility = System.Windows.Visibility.Hidden;
         }
 
         public void SetWindowID(int _windowID)
@@ -109,11 +111,11 @@ namespace Ikarus
                                }
 
                                if (lrAltlamp != rAltlamp)
-                                   RAltlamp.Visibility = (rAltlamp > 0.9) ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
+                                   RAltlamp.Visibility = (rAltlamp > 0.5) ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
                                if (lflagOff != flagOff)
-                                   Flagg_off.Visibility = (flagOff > 0.9) ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
+                                   Flagg_off.Visibility = (flagOff > 0.5) ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
                                if (lflagTest != flagTest)
-                                   flagg_A.Visibility = (flagTest > 0.9) ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
+                                   flagg_A.Visibility = (flagTest > 0.5) ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
 
                                lradarAltimeter = radarAltimeter;
                                ldangerRALTindex = dangerRALTindex;

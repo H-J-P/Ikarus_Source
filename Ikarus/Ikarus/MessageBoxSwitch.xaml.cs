@@ -215,7 +215,7 @@ namespace Ikarus
                         dataRows[0]["ClickabledataID"] = Convert.ToInt32(rowView.Row.ItemArray[0]);
                         dataRows[0]["Name"] = rowView.Row.ItemArray[3].ToString();
 
-                        if (rowView.Row.ItemArray[5].ToString() == "Switch")
+                        if (rowView.Row.ItemArray[5].ToString() == "Switch" || rowView.Row.ItemArray[5].ToString() == "Rotary")
                             dataRows[0]["DcsID"] = rowView.Row.ItemArray[4].ToString();
                         else
                             dataRows[0]["DcsID"] = rowView.Row.ItemArray[5].ToString();
