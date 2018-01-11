@@ -54,6 +54,9 @@ namespace Ikarus
             Flag_CAP.Visibility = System.Windows.Visibility.Visible;
             Flag_BUT.Visibility = System.Windows.Visibility.Visible;
             Flag_PX.Visibility = System.Windows.Visibility.Visible;
+
+            HeadingValue.Visibility = System.Windows.Visibility.Hidden;
+            ADFValue.Visibility = System.Windows.Visibility.Hidden;
         }
         public void SetID(string _dataImportID)
         {
@@ -165,8 +168,8 @@ namespace Ikarus
                                    Range_1.RenderTransform = ttRange001;
                                }
 
-                               HeadingValue.Text = "Compass rose: " + heading.ToString() + " ; " + (heading * 360).ToString();
-                               ADFValue.Text =     "Needle Large:  " + nadir.ToString() + " ; " + (nadir * 360).ToString();
+                               //HeadingValue.Text = "Compass rose: " + heading.ToString() + " ; " + (heading * 360).ToString();
+                               //ADFValue.Text =     "Needle Large:  " + nadir.ToString() + " ; " + (nadir * 360).ToString();
 
                                lheading = heading;
                                lnadir = nadir;
