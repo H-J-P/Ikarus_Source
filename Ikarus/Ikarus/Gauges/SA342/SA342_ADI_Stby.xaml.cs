@@ -21,11 +21,11 @@ namespace Ikarus
         double pitch = 0.0;
         double bank = 0.0;
         double flagOff = 0.0;
-        double manualPitch = 0.0;
+        //double manualPitch = 0.0;
 
         double lpitch = 0.0;
         double lbank = 0.0;
-        double lflagOff = 0.0;
+        double lflagOff = 1.0;
 
         RotateTransform rt = new RotateTransform();
         TranslateTransform tt = new TranslateTransform();
@@ -35,8 +35,7 @@ namespace Ikarus
         public SA342_ADI_Stby()
         {
             InitializeComponent();
-
-            Flagg_off.Visibility = System.Windows.Visibility.Hidden;
+            Flagg_off.Visibility = System.Windows.Visibility.Visible;
         }
 
         public void SetID(string _dataImportID)

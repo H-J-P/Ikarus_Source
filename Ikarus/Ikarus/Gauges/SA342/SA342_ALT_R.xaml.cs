@@ -25,7 +25,7 @@ namespace Ikarus
         private double lradarAltimeter = 0.0;
         private double ldangerRALTindex = 0.0;
         private double lrAltlamp = 0.0;
-        private double lflagOff = 0.0;
+        private double lflagOff = 1.0;
         private double lflagTest = 0.0;
 
         RotateTransform rtRadarAltimeter = new RotateTransform();
@@ -43,8 +43,8 @@ namespace Ikarus
             InitializeComponent();
 
             RAltlamp.Visibility = System.Windows.Visibility.Hidden;
+            Flagg_off.Visibility = System.Windows.Visibility.Visible;
             flagg_A.Visibility = System.Windows.Visibility.Hidden;
-            Flagg_off.Visibility = System.Windows.Visibility.Hidden;
         }
 
         public void SetWindowID(int _windowID)

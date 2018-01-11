@@ -131,7 +131,7 @@ namespace Ikarus
                                    }
                                }
                                if (llamp != lamp)
-                                   Warning_Light.Visibility = (lamp > 0.8) ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
+                                   Warning_Light.Visibility = (lamp > 0.5) ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
 
                                lreadValue = readValue;
                                ltorque_Bug = torque_Bug;

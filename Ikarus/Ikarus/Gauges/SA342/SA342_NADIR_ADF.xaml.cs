@@ -33,9 +33,9 @@ namespace Ikarus
         private double lsteadybug = 0.0;
         private double lnadir = 0.0;
         private double ladf = 0.0;
-        private double lpxFlag = 0.0;
-        private double lbutFlag = 0.0;
-        private double lcapFlag = 0.0;
+        private double lpxFlag = 1.0;
+        private double lbutFlag = 1.0;
+        private double lcapFlag = 1.0;
         private double lrange001 = 0.0;
         private double lrange010 = 0.0;
         private double lrange100 = 0.0;
@@ -117,24 +117,26 @@ namespace Ikarus
                                if (vals.Length > 8) { range001 = Convert.ToDouble(vals[8], CultureInfo.InvariantCulture); }
                                if (vals.Length > 9) { steadybug = Convert.ToDouble(vals[9], CultureInfo.InvariantCulture); }
 
-                               if (lheading != heading || lnadir != nadir)
+                               if (lheading != heading)
                                {
                                    rtHeading.Angle = heading * 360;
                                    Heading.RenderTransform = rtHeading;
-
-                                   rtNadir.Angle = heading * 360 + nadir * -360;
-                                   NARDIR.RenderTransform = rtNadir;
                                }
-
-                               //if (lnadir != nadir)
+                               //if (lnadir != nadir || lheading != heading)
                                //{
-                               //    rtNadir.Angle = nadir * -360;
+                               //    rtNadir.Angle = (nadir * 360) + (heading * 360); // {-360.0,0.0,360.0}{-1.0,0.0,1.0}
                                //    NARDIR.RenderTransform = rtNadir;
                                //}
 
+                               if (lnadir != nadir)
+                               {
+                                   rtNadir.Angle = nadir * 360; // {-360.0,0.0,360.0}{-1.0,0.0,1.0}
+                                   NARDIR.RenderTransform = rtNadir;
+                               }
+
                                if (ladf != adf)
                                {
-                                   rtAdf.Angle = adf * 360;
+                                   rtAdf.Angle = adf * 360; // {-360.0,0.0,360.0}{-1.0,0.0,1.0}
                                    ADF.RenderTransform = rtAdf;
                                }
 
@@ -162,6 +164,9 @@ namespace Ikarus
                                    ttRange001.Y = range001 * -217;
                                    Range_1.RenderTransform = ttRange001;
                                }
+
+                               HeadingValue.Text = "Compass rose: " + heading.ToString() + " ; " + (heading * 360).ToString();
+                               ADFValue.Text =     "Needle Large:  " + nadir.ToString() + " ; " + (nadir * 360).ToString();
 
                                lheading = heading;
                                lnadir = nadir;
