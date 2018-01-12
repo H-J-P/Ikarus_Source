@@ -23,7 +23,7 @@ namespace Ikarus
         /// PerfMon.exe
         /// Perfview.exe
         /// </summary>
-       
+
         #region Member
 
         public enum State
@@ -772,13 +772,21 @@ namespace Ikarus
 
                             if (dataRowsMasterSwitches.Length > 0)
                             {
-                                switches[i].dcsID = Convert.ToInt32(dataRowsMasterSwitches[0]["DcsID"]);
-                                switches[i].deviceID = Convert.ToInt32(dataRowsMasterSwitches[0]["DeviceID"]);
-                                switches[i].buttonID = Convert.ToInt32(dataRowsMasterSwitches[0]["ButtonID"]);
+                                if (dataRowsMasterSwitches[0]["DcsID"].ToString() != "")
+                                    switches[i].dcsID = Convert.ToInt32(dataRowsMasterSwitches[0]["DcsID"]);
+
+                                if (dataRowsMasterSwitches[0]["DeviceID"].ToString() != "")
+                                    switches[i].deviceID = Convert.ToInt32(dataRowsMasterSwitches[0]["DeviceID"]);
+
+                                if (dataRowsMasterSwitches[0]["ButtonID"].ToString() != "")
+                                    switches[i].buttonID = Convert.ToInt32(dataRowsMasterSwitches[0]["ButtonID"]);
                             }
                         }
                     }
-                    catch (Exception e) { ImportExport.LogMessage("Switches - FillClasses problem .. " + i + " ... " + e.ToString()); }
+                    catch (Exception e)
+                    {
+                        ImportExport.LogMessage("Switch " + i + " .. FillClasses problem .. " + e.ToString());
+                    }
                 }
             }
             catch (Exception e) { ImportExport.LogMessage("FillClasses problem .. " + e.ToString()); }
@@ -1866,43 +1874,48 @@ namespace Ikarus
 
         private void Button_Save_Click(object sender, RoutedEventArgs e)
         {
-            Microsoft.Win32.SaveFileDialog dlg = new Microsoft.Win32.SaveFileDialog()
-            {
-                FileName = dbFilename,
-                DefaultExt = ".ikarus",
-                Filter = "IKARUS files (*.ikarus)|*.ikarus|All files (*.*)|*.*"
-            };
-            Nullable<bool> result = dlg.ShowDialog();
-
-            if (result == false) { return; }
-
-            dtConfig.Rows[0][4] = dlg.FileName.Substring(dlg.FileName.LastIndexOf("\\") + 1);
-            dtConfig.Rows[0][5] = IPAddess.Text;
-            dtConfig.Rows[0][6] = PortListener.Text;
-            dtConfig.Rows[0][7] = PortSender.Text;
-            dtConfig.Rows[0][8] = true;
-
-            if (dtParameter.Rows.Count == 0)
-                dtParameter.Rows.Add(background);
-            else
-                dtParameter.Rows[0][0] = background;
-
             try
             {
-                dtWindows.Rows[0][9] = textBoxLightColor.Text;
+                Microsoft.Win32.SaveFileDialog dlg = new Microsoft.Win32.SaveFileDialog()
+                {
+                    FileName = dbFilename,
+                    DefaultExt = ".ikarus",
+                    Filter = "IKARUS files (*.ikarus)|*.ikarus|All files (*.*)|*.*"
+                };
+                Nullable<bool> result = dlg.ShowDialog();
+
+                if (result == false) { return; }
+
+                dtConfig.Rows[0][4] = dlg.FileName.Substring(dlg.FileName.LastIndexOf("\\") + 1);
+
+                dtConfig.Rows[0][5] = IPAddess.Text;
+                dtConfig.Rows[0][6] = PortListener.Text;
+                dtConfig.Rows[0][7] = PortSender.Text;
+                dtConfig.Rows[0][8] = true;
+
+                if (dtParameter.Rows.Count == 0)
+                    dtParameter.Rows.Add(background);
+                else
+                    dtParameter.Rows[0][0] = background;
+
+                try
+                {
+                    dtWindows.Rows[0][9] = textBoxLightColor.Text;
+                }
+                catch { }
+
+                dsConfig.AcceptChanges();
+
+                //CockpitReset();
+                DatabaseResetValue();
+
+                ImportExport.DatasetToXml(currentDirectory + "\\Config.xml", dsConfig);
+                ImportExport.LogMessage("Saved file: " + "Config.xml");
+
+                ImportExport.DatasetToXml(currentDirectory + "\\" + dlg.FileName.Substring(dlg.FileName.LastIndexOf("\\") + 1), dsInstruments);
+                ImportExport.LogMessage("Saved file: " + dlg.FileName.Substring(dlg.FileName.LastIndexOf("\\") + 1));
             }
-            catch { }
-
-            dsConfig.AcceptChanges();
-
-            //CockpitReset();
-            DatabaseResetValue();
-
-            ImportExport.DatasetToXml(currentDirectory + "\\Config.xml", dsConfig);
-            ImportExport.LogMessage("Saved file: " + "Config.xml");
-
-            ImportExport.DatasetToXml(currentDirectory + "\\" + dlg.FileName.Substring(dlg.FileName.LastIndexOf("\\") + 1), dsInstruments);
-            ImportExport.LogMessage("Saved file: " + dlg.FileName.Substring(dlg.FileName.LastIndexOf("\\") + 1));
+            catch (Exception f) { ImportExport.LogMessage("Save problem ... " + f.ToString()); }
 
             lastFile = "";
             UpdateLog();
