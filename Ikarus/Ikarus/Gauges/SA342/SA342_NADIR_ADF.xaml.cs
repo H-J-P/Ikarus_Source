@@ -122,18 +122,17 @@ namespace Ikarus
 
                                if (lheading != heading)
                                {
-                                   rtHeading.Angle = heading * 360;
+                                   rtHeading.Angle = heading * -360;
                                    Heading.RenderTransform = rtHeading;
                                }
-                               //if (lnadir != nadir || lheading != heading)
-                               //{
-                               //    rtNadir.Angle = (nadir * 360) + (heading * 360); // {-360.0,0.0,360.0}{-1.0,0.0,1.0}
-                               //    NARDIR.RenderTransform = rtNadir;
-                               //}
 
                                if (lnadir != nadir)
                                {
-                                   rtNadir.Angle = nadir * 360; // {-360.0,0.0,360.0}{-1.0,0.0,1.0}
+                                   if (nadir != 0)
+                                       rtNadir.Angle = (nadir * 360) + 180; // {-360.0,0.0,360.0}{-1.0,0.0,1.0}
+                                   else
+                                       rtNadir.Angle = 0; // {-360.0,0.0,360.0}{-1.0,0.0,1.0}
+
                                    NARDIR.RenderTransform = rtNadir;
                                }
 
