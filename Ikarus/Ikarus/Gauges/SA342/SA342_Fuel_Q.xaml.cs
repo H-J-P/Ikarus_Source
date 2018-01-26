@@ -104,7 +104,6 @@ namespace Ikarus
                                    }
                                }
                                lreadValue = readValue;
-
                            }
                            catch { return; }
                        }));

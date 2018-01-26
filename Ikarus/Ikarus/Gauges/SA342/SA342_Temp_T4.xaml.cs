@@ -104,6 +104,7 @@ namespace Ikarus
                                    }
                                }
                                lreadValue = readValue;
+                               OILT.Text = readValue.ToString();
                            }
                            catch { return; }
                        }));

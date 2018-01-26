@@ -336,8 +336,8 @@
                 <Path Data="M2.438,0L0,2.444 4.678,7.13 7.117,4.687z" Fill="White" Height="7.13" Canvas.Left="200.138" Canvas.Top="200.5" Width="7.117"/>
                 <Path Data="M0,4.686L2.438,7.13 7.116,2.443 4.678,0z" Fill="White" Height="7.13" Canvas.Left="200.138" Canvas.Top="40.184" Width="7.116"/>
             </Canvas>
-            <TextBlock x:Name="ADFValue" Canvas.Left="36" TextWrapping="Wrap" Text="" Canvas.Top="50" Width="155" Foreground="#FFF9F6F6" FontSize="10"/>
-            <TextBlock x:Name="HeadingValue" Canvas.Left="36" TextWrapping="Wrap" Text="" Canvas.Top="29" Width="155" Foreground="#FFF9F6F6" FontSize="10"/>
+            <TextBlock x:Name="ADFValue" Canvas.Left="36" TextWrapping="Wrap" Text="" Canvas.Top="50" Width="155" Foreground="#FFF9F6F6" FontSize="10" d:IsHidden="True"/>
+            <TextBlock x:Name="HeadingValue" Canvas.Left="36" TextWrapping="Wrap" Text="" Canvas.Top="29" Width="155" Foreground="#FFF9F6F6" FontSize="10" d:IsHidden="True"/>
         </Canvas>
         <Image x:Name="Light"
     		    Width="297"

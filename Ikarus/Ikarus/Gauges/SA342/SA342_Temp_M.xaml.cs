@@ -30,6 +30,8 @@ namespace Ikarus
         public SA342_Temp_M()
         {
             InitializeComponent();
+
+            TEMP.Visibility = System.Windows.Visibility.Hidden;
         }
         public void SetID(string _dataImportID)
         {
@@ -104,6 +106,7 @@ namespace Ikarus
                                    }
                                }
                                lreadValue = readValue;
+                               ///TEMP.Text = readValue.ToString();
                            }
                            catch { return; }
                        }));

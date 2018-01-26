@@ -14,6 +14,9 @@ namespace Ikarus
         private string dataImportID = "";
         private int windowID = 0;
         private string[] vals = new string[] { };
+        private double[] valueScale = new double[] { };
+        private double[] degreeDial = new double[] { };
+        int valueScaleIndex = 0;
         GaugesHelper helper = null;
 
         private double turbine_RPM = 0.0;
@@ -57,10 +60,12 @@ namespace Ikarus
 
         public void SetInput(string _input)
         {
+            helper.SetInput(ref _input, ref valueScale, ref valueScaleIndex, 2);
         }
 
         public void SetOutput(string _output)
         {
+            helper.SetOutput(ref _output, ref degreeDial, 2);
         }
 
         public double GetSize()
@@ -87,15 +92,31 @@ namespace Ikarus
 
                                if (lturbine_RPM != turbine_RPM)
                                {
-                                   rtTurbine_RPM.Angle = turbine_RPM * 300;
+                                   for (int n = 0; n < (valueScaleIndex - 1); n++)
+                                   {
+                                       if (turbine_RPM >= valueScale[n] && turbine_RPM <= valueScale[n + 1])
+                                       {
+                                           rtTurbine_RPM.Angle = (degreeDial[n] - degreeDial[n + 1]) / (valueScale[n] - valueScale[n + 1]) * (turbine_RPM - valueScale[n]) + degreeDial[n];
+                                           break;
+                                       }
+                                   }
                                    RPM_Turb.RenderTransform = rtTurbine_RPM;
                                }
 
                                if (lrotor_RPM != rotor_RPM)
                                {
-                                   rtRotor_RPM.Angle = rotor_RPM * 300;
+                                   for (int n = 0; n < (valueScaleIndex - 1); n++)
+                                   {
+                                       if (rotor_RPM >= valueScale[n] && rotor_RPM <= valueScale[n + 1])
+                                       {
+                                           rtRotor_RPM.Angle = (degreeDial[n] - degreeDial[n + 1]) / (valueScale[n] - valueScale[n + 1]) * (rotor_RPM - valueScale[n]) + degreeDial[n];
+                                           break;
+                                       }
+                                   }
                                    RPM_Rotor.RenderTransform = rtRotor_RPM;
                                }
+
+                               //RPM.Text = rotor_RPM.ToString();
 
                                lturbine_RPM = turbine_RPM;
                                lrotor_RPM = rotor_RPM;
