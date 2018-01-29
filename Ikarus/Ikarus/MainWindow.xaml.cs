@@ -1306,7 +1306,7 @@ namespace Ikarus
 
         public void SelectDataGridItem(string _tablename, int impordID)
         {
-            if (_tablename == "Accessories") // && selectedAccessories != _itemNo - 1)
+            if (_tablename == "Accessories")
             {
                 tabControl1.SelectedIndex = functionTabIsVisible ? 4 : 3;
                 selectedLamp = -1;
@@ -1324,7 +1324,7 @@ namespace Ikarus
                 }
                 return;
             }
-            if (_tablename == "Instruments") // && selectedInstrument != _itemNo - 1)
+            if (_tablename == "Instruments")
             {
                 tabControl1.SelectedIndex = 0;
                 selectedLamp = -1;
@@ -1342,7 +1342,7 @@ namespace Ikarus
                 }
                 return;
             }
-            if (_tablename == "Lamps") // && selectedLamp != _itemNo - 1)
+            if (_tablename == "Lamps")
             {
                 tabControl1.SelectedIndex = functionTabIsVisible ? 3 : 2;
                 selectedInstrument = -1;
@@ -1361,7 +1361,7 @@ namespace Ikarus
                 return;
             }
 
-            if (_tablename == "Switches") // && selectedSwitch != _itemNo - 1)
+            if (_tablename == "Switches")
             {
                 tabControl1.SelectedIndex = functionTabIsVisible ? 2 : 1;
                 selectedLamp = -1;
@@ -1398,7 +1398,6 @@ namespace Ikarus
                             table.Rows[i]["WindowID"] = 1;
                         }
                         ImportExport.LogMessage(table.TableName + ": Set WindowID = 1");
-                        //isRep = true;
                     }
                 }
             }
@@ -1905,8 +1904,6 @@ namespace Ikarus
                 catch { }
 
                 dsConfig.AcceptChanges();
-
-                //CockpitReset();
                 DatabaseResetValue();
 
                 ImportExport.DatasetToXml(currentDirectory + "\\Config.xml", dsConfig);
@@ -1942,7 +1939,7 @@ namespace Ikarus
 
         private void Checkbox_EditMode_Click(object sender, RoutedEventArgs e)
         {
-            if (editmode) //(timerstate == State.stop)
+            if (editmode)
             {
                 ImportExport.LogMessage("Edit mode: OFF");
 
@@ -2078,11 +2075,6 @@ namespace Ikarus
 
         private void TabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            //DataGridInstruments.CanUserDeleteRows = true;
-            //DatagridFunction.CanUserDeleteRows = true;
-            //DataGridSwitches.CanUserDeleteRows = true;
-            //DataGridLamps.CanUserDeleteRows = true;
-
             if (selectedTab == tabControl1.SelectedIndex) return;
 
             buttonAdd.Visibility = Visibility.Visible;
