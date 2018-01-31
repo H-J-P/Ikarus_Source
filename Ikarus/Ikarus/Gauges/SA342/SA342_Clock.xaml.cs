@@ -22,16 +22,19 @@ namespace Ikarus
         double clockMinutes = 0.0;
         double cronoMinutes = 0.0;
         double clockSeconds = 0.0;
+        double clockRing = 0.0;
 
         double lclockHours = 0.0;
         double lclockMinutes = 0.0;
         double lcronoMinutes = 0.0;
         double lclockSeconds = 0.0;
+        double lclockRing = 0.0;
 
         RotateTransform rtClockHours = new RotateTransform();
         RotateTransform rtClockMinutes = new RotateTransform();
         RotateTransform rtClockSeconds = new RotateTransform();
         RotateTransform rtCronoMinutes = new RotateTransform();
+        RotateTransform rtClockRing = new RotateTransform();
 
         public SA342_Clock()
         {
@@ -92,6 +95,7 @@ namespace Ikarus
                                if (vals.Length > 1) { clockMinutes = Convert.ToDouble(vals[1], CultureInfo.InvariantCulture); }
                                if (vals.Length > 2) { clockSeconds = Convert.ToDouble(vals[2], CultureInfo.InvariantCulture); }
                                if (vals.Length > 3) { cronoMinutes = Convert.ToDouble(vals[3], CultureInfo.InvariantCulture); }
+                               if (vals.Length > 4) { clockRing = Convert.ToDouble(vals[4], CultureInfo.InvariantCulture); }
 
                                if (lclockHours != clockHours)
                                {
@@ -113,10 +117,16 @@ namespace Ikarus
                                    rtCronoMinutes.Angle = cronoMinutes * 360;
                                    Crono_Minutes.RenderTransform = rtCronoMinutes;
                                }
+                               if (lclockRing != clockRing)
+                               {
+                                   rtClockRing.Angle = clockRing * 360;
+                                   External_Ring.RenderTransform = rtClockRing;
+                               }
                                lclockHours = clockHours;
                                lclockMinutes = clockMinutes;
                                lcronoMinutes = cronoMinutes;
                                lclockSeconds = clockSeconds;
+                               lclockRing = clockRing;
                            }
                            catch { return; }
                        }));
