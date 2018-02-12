@@ -23,6 +23,8 @@ namespace Ikarus
         private double minValue = 0.0;
         private double maxValue = 1.0;
         private double step = 0.05;
+        private int relative = 0;
+
         private double switchState = 0.0;
         private double oldState = 0.0;
         private double animation = 0.0;
@@ -82,6 +84,7 @@ namespace Ikarus
             if (vals.Length > 0) minValue = Convert.ToDouble(vals[0], CultureInfo.InvariantCulture);
             if (vals.Length > 1) maxValue = Convert.ToDouble(vals[1], CultureInfo.InvariantCulture);
             if (vals.Length > 2) step = Convert.ToDouble(vals[2], CultureInfo.InvariantCulture);
+            if (vals.Length > 3) relative = Convert.ToInt32(vals[3], CultureInfo.InvariantCulture);
 
             switchState = minValue;
             oldState = minValue;
@@ -185,7 +188,16 @@ namespace Ikarus
                 if (switchState > maxValue) switchState = maxValue;
                 if (switchState < minValue) switchState = minValue;
 
-                switches.value = switchState;
+                if (relative == 0)
+                {
+                    switches.value = switchState;
+                }
+                else
+                {
+                    if (_value == 1.0) switches.value = step;
+                    if (_value == -1.0) switches.value = -step;
+                }
+
                 oldState = switchState;
 
                 rtKnob = new RotateTransform();
