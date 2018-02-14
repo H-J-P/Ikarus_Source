@@ -10,7 +10,7 @@
         GotFocus="Window_GotFocus"
         MouseDown="Window_MouseDown"
         Topmost="True"
-        WindowStyle="None">
+        WindowStyle="None" MouseMove="Window_MouseMove">
     <Border Background="Transparent"
             BorderBrush="#00FFA500"
             BorderThickness="0"
@@ -94,6 +94,7 @@
                     </LinearGradientBrush>
                 </Button.Background>
             </Button>
+            <TextBlock x:Name="MousePosition" HorizontalAlignment="Left" Margin="30,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="#FFFBF8F8"/>
         </Grid>
     </Border>
 </Window>

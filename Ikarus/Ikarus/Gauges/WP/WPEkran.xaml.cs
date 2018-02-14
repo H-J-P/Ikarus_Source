@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text;
 using System.Windows.Controls;
 using System.Windows.Threading;
 
@@ -89,10 +90,26 @@ namespace Ikarus
                            {
                                vals = strData.Split(';');
 
-                               if (vals.Length > 0) { displayWindow = vals[0]; }
-                               if (vals.Length > 1) { failLight = vals[1]; }
-                               if (vals.Length > 2) { memoryLight = vals[2]; }
-                               if (vals.Length > 3) { turnLight = vals[3]; }
+                               if (vals.Length > 0)
+                               {
+                                   byte[] utf8Bytes = Encoding.UTF8.GetBytes(vals[0]);
+                                   displayWindow = Encoding.UTF8.GetString(utf8Bytes);
+                               }
+                               if (vals.Length > 1)
+                               {
+                                   byte[] utf8Bytes = Encoding.UTF8.GetBytes(vals[1]);
+                                   failLight = Encoding.UTF8.GetString(utf8Bytes);
+                               }
+                               if (vals.Length > 2)
+                               {
+                                   byte[] utf8Bytes = Encoding.UTF8.GetBytes(vals[2]);
+                                   memoryLight = Encoding.UTF8.GetString(utf8Bytes);
+                               }
+                               if (vals.Length > 3)
+                               {
+                                   byte[] utf8Bytes = Encoding.UTF8.GetBytes(vals[3]);
+                                   turnLight = Encoding.UTF8.GetString(utf8Bytes);
+                               }
 
                                DisplayWindow.Text = displayWindow.Replace("0", "O");
                                FAILLight.Text = failLight.Replace("0", "O");

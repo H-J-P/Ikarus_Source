@@ -86,14 +86,13 @@ namespace Ikarus
                 while (!closeListener)
                 {
                     receiveByteArray = listener.Receive(ref listenerEndPoint);
-                    receivedData = Encoding.ASCII.GetString(receiveByteArray, 0, receiveByteArray.Length);
+                    //receivedData = Encoding.ASCII.GetString(receiveByteArray, 0, receiveByteArray.Length);
+                    receivedData = Encoding.UTF8.GetString(receiveByteArray, 0, receiveByteArray.Length);
 
                     receivedData = receivedData.Replace("*", ":").Trim();
                     receivedDataStack.Add(receivedData);
 
                     if (MainWindow.detailLog) { ImportExport.LogMessage("--- Received package: " + receivedData, true); }
-
-                    //ImportExport.LogMessage("--- Received package count: " + receivedDataStack.Count, true);
 
                     MainWindow.mainWindow[0].GrabValues();
                 }

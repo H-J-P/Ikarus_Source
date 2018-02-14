@@ -77,6 +77,7 @@ namespace Ikarus
                 Focusable = false;
                 Topmost = true;
                 BackImage.Source = null;
+                MousePosition.Text = "";
 
                 ImportExport.LogMessage("Start loading Cockpit ... " + _backgroundFile);
 
@@ -294,6 +295,17 @@ namespace Ikarus
             catch (Exception e) { ImportExport.LogMessage("Generate switches: " + classname + " .... " + e.ToString()); }
         }
 
+        /// <summary>
+        /// Gets the current mouse position on screen
+        /// </summary>
+        private Point GetMousePosition()
+        {
+            // Position of the mouse relative to the window
+            var position = Mouse.GetPosition(this);
+
+            // Add the window position
+            return new Point(position.X + this.Left, position.Y + this.Top);
+        }
         private void SetObjectsPara(ref DataTable table, ref int instanceID)
         {
             try
@@ -705,5 +717,11 @@ namespace Ikarus
         }
 
         #endregion
+
+        private void Window_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (MainWindow.editmode)
+                MousePosition.Text =  GetMousePosition().ToString();
+        }
     }
 }
