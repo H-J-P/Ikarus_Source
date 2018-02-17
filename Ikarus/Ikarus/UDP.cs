@@ -49,7 +49,7 @@ namespace Ikarus
             sendToAddress = IPAddress.Parse(ipAdress);
             sendingEndPoint = new IPEndPoint(sendToAddress, port);
 
-            byte[] send_buffer = Encoding.ASCII.GetBytes(textToSend);
+            byte[] send_buffer = Encoding.UTF8.GetBytes(textToSend); // ASCII
 
             try
             {
@@ -86,8 +86,7 @@ namespace Ikarus
                 while (!closeListener)
                 {
                     receiveByteArray = listener.Receive(ref listenerEndPoint);
-                    //receivedData = Encoding.ASCII.GetString(receiveByteArray, 0, receiveByteArray.Length);
-                    receivedData = Encoding.UTF8.GetString(receiveByteArray, 0, receiveByteArray.Length);
+                    receivedData = Encoding.UTF8.GetString(receiveByteArray, 0, receiveByteArray.Length); // Change ASCII to UTF8
 
                     receivedData = receivedData.Replace("*", ":").Trim();
                     receivedDataStack.Add(receivedData);

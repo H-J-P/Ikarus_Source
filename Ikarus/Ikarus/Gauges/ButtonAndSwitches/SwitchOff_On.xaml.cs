@@ -25,11 +25,14 @@ namespace Ikarus
         private double[] input = new double[] { };
         private double[] output = new double[] { };
         private double switchValue = 0.0;
+        private double rotateSwitch = 0.0;
+
         private int state = 0;
         private Switches switches = null;
         private bool touchDown = false;
         BitmapImage bitmapImage = new BitmapImage();
         GaugesHelper helper = null;
+        RotateTransform rtSwitch = new RotateTransform();
 
         public int GetWindowID() { return windowID; }
 
@@ -111,6 +114,13 @@ namespace Ikarus
             UpperRec.Height = bitmapHeight / 2 - bitmapHeight / 8;
             UpperRec.Width = bitmapWidth - bitmapWidth / 4;
             UpperRec.Margin = new System.Windows.Thickness(bitmapWidth / 8, bitmapHeight / 12, 0, 0);
+
+            if (rotateSwitch != 0)
+            {
+                DesignFrame.Width = bitmapHeight / 1.2;
+                rtSwitch.Angle = rotateSwitch;
+                Switch.RenderTransform = rtSwitch;
+            }
         }
 
         private void LoadBmaps()
@@ -124,6 +134,7 @@ namespace Ikarus
                 {
                     pictureOn = dataRows[0]["FilePictureOn"].ToString();
                     pictureOff = dataRows[0]["FilePictureOff"].ToString();
+                    rotateSwitch = Convert.ToDouble(dataRows[0]["Rotate"]);
                 }
 
                 try

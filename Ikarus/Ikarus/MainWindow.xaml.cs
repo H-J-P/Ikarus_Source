@@ -1853,13 +1853,6 @@ namespace Ikarus
                     refreshCockpit = false;
                 }
 
-                //if (cockpitWindowActiv)
-                //{
-                //    cockpitWindows[0].UpdateEditor(ref dtAccessories);
-                //    cockpitWindows[0].UpdateEditor(ref dtInstruments);
-                //    cockpitWindows[0].UpdateEditor(ref dtLamps);
-                //    cockpitWindows[0].UpdateEditor(ref dtSwitches);
-                //}
                 CollectionViewSource.GetDefaultView(DataGridInstruments.ItemsSource).Refresh();
 
                 DataGridInstruments.Items.Refresh(); // Update Datagrid

@@ -5,9 +5,8 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              mc:Ignorable="d" 
              d:DesignHeight="150" d:DesignWidth="70" MouseWheel="Light_MouseWheel">
-    <Grid>
-        <Canvas x:Name="Switch" HorizontalAlignment="Left" VerticalAlignment="Top" Height="150" Width="70" RenderTransformOrigin="0.5,0.5" >
-            <Image x:Name="SwitchUp"
+    <Grid Name="Switch"  RenderTransformOrigin="0.5,0.5">
+        <Image x:Name="SwitchUp"
                Width="70"
                Height="150"
                HorizontalAlignment="Left"
@@ -46,6 +45,5 @@
                    MouseDown="LowerRec_MouseDown"
                    Stroke="#00000000"
                    TouchDown="LowerRec_TouchDown" />
-        </Canvas>
     </Grid>
 </UserControl>

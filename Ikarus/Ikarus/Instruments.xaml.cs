@@ -331,6 +331,9 @@ namespace Ikarus
                 centerX = sizeUsercontrol / 2;
                 centerY = interfaceUserControl.GetSizeY() / 2;
 
+                if (table.TableName == "Switches")
+                    rotate = 0.0;
+
                 transformGroup = new TransformGroup();
                 transformScale = new ScaleTransform(scaling, scaling, centerX, centerY);
                 transformRotate = new RotateTransform(rotate, centerX, centerY);
@@ -601,7 +604,10 @@ namespace Ikarus
                     if (scrollWeel > 1.0) scrollWeel = 1.0;
                     if (scrollWeel < -1.0) scrollWeel = -1.0;
 
-                    rotate = double.Parse(dataRows[0]["Rotate"].ToString().Replace(",", "."), CultureInfo.InvariantCulture);
+                    if (tableName == "Switches")
+                        rotate = 0.0;
+                    else
+                        rotate = double.Parse(dataRows[0]["Rotate"].ToString().Replace(",", "."), CultureInfo.InvariantCulture);
 
                     if (rotate == 0.0)
                     {
@@ -652,6 +658,7 @@ namespace Ikarus
                 {
                     userControl = (UserControl)switchObjects[GetObjectID(ref switchObjects, ref importID)];
                     interfaceUserControl = (I_Ikarus)userControl;
+                    rotate = 0.0;
                 }
 
                 if (tableName == "Lamps")
@@ -670,7 +677,8 @@ namespace Ikarus
                 transformScale = new ScaleTransform(scaling, scaling, centerX, centerY);
                 transformRotate = new RotateTransform(rotate, centerX, centerY);
 
-                if (rotate == 0.0) { transformGroup.Children.Add(transformTrans); }
+                //if (rotate == 0.0) { transformGroup.Children.Add(transformTrans); }
+                transformGroup.Children.Add(transformTrans);
                 transformGroup.Children.Add(transformScale);
                 transformGroup.Children.Add(transformRotate);
                 userControl.LayoutTransform = transformGroup;
@@ -721,7 +729,7 @@ namespace Ikarus
         private void Window_MouseMove(object sender, MouseEventArgs e)
         {
             if (MainWindow.editmode)
-                MousePosition.Text =  GetMousePosition().ToString();
+                MousePosition.Text = GetMousePosition().ToString();
         }
     }
 }
