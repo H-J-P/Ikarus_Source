@@ -3351,6 +3351,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Gauges\AV8BNA\" />
     <Folder Include="Gauges\M-2000C\" />
   </ItemGroup>
   <ItemGroup>

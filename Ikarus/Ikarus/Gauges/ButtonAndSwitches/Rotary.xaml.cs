@@ -173,17 +173,16 @@ namespace Ikarus
             {
                 if (switches == null) return;
 
-                //MainWindow.refeshPopup = true;
                 switchState = oldState;
                 switches.events = true;
 
                 if (_value == 1.0) animation += step;
-                if (_value == -1.0) animation -= step;
+                if (_value == -1.0) animation += step * -1;
 
                 if (_value == 1.0) switchState += step;
-                if (_value == -1.0) switchState -= step;
+                if (_value == -1.0) switchState += step * -1;
 
-                switchState = Convert.ToDouble(string.Format("{0:0.00000}", switchState), CultureInfo.InvariantCulture); // w.g. E-format
+                switchState = Convert.ToDouble(string.Format("{0:0.00000}", switchState), CultureInfo.InvariantCulture); // E-format
 
                 if (switchState > maxValue) switchState = maxValue;
                 if (switchState < minValue) switchState = minValue;
@@ -195,7 +194,8 @@ namespace Ikarus
                 else
                 {
                     if (_value == 1.0) switches.value = step;
-                    if (_value == -1.0) switches.value = -step;
+                    if (_value == -1.0) switches.value = step * -1;
+                    switches.oldValue = switches.oldValue * -1;
                 }
 
                 oldState = switchState;

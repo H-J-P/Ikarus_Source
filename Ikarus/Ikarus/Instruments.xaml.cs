@@ -677,7 +677,6 @@ namespace Ikarus
                 transformScale = new ScaleTransform(scaling, scaling, centerX, centerY);
                 transformRotate = new RotateTransform(rotate, centerX, centerY);
 
-                //if (rotate == 0.0) { transformGroup.Children.Add(transformTrans); }
                 transformGroup.Children.Add(transformTrans);
                 transformGroup.Children.Add(transformScale);
                 transformGroup.Children.Add(transformRotate);
