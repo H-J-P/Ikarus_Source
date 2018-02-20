@@ -94,7 +94,7 @@
                     </LinearGradientBrush>
                 </Button.Background>
             </Button>
-            <TextBlock x:Name="MousePosition" HorizontalAlignment="Left" Margin="30,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="#FFFBF8F8"/>
+            <TextBlock x:Name="MousePosition" HorizontalAlignment="Left" Margin="300,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="#FFFBF8F8"/>
         </Grid>
     </Border>
 </Window>

@@ -200,7 +200,6 @@ namespace Ikarus
             {
                 if (switches == null) return;
 
-                //MainWindow.refeshPopup = true;
                 switchState = oldState;
                 switches.events = true;
                 switches.dontReset = false;

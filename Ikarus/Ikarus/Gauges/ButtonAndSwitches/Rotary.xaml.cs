@@ -152,7 +152,7 @@ namespace Ikarus
                                oldState = switchState;
 
                                rtKnob = new RotateTransform();
-                               rtKnob.Angle = animation * 720;
+                               rtKnob.Angle = animation * 360;
                                SwitchKnob.RenderTransform = rtKnob;
 
                                switches.value = switchState;
@@ -201,7 +201,7 @@ namespace Ikarus
                 oldState = switchState;
 
                 rtKnob = new RotateTransform();
-                rtKnob.Angle = animation * 720;
+                rtKnob.Angle = animation * 360;
                 SwitchKnob.RenderTransform = rtKnob;
             }
             catch { return; }

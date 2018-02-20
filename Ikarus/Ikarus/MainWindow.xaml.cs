@@ -429,7 +429,10 @@ namespace Ikarus
 
                                                UDP.UDPSender(IPAddess.Text.Trim(), Convert.ToInt32(PortSender.Text), package); //<--- send a package to DCS
 
-                                               if (detailLog || switchLog) { ImportExport.LogMessage("Event for " + switches[n].classname + " ID: " + switches[n].dcsID.ToString() + " - Send package to " + IPAddess.Text.Trim() + ":" + PortSender.Text + " - Package: " + package); }
+                                               if (detailLog || switchLog)
+                                               {
+                                                   ImportExport.LogMessage("Event for " + switches[n].classname + " ID: " + switches[n].dcsID.ToString() + " - Send package to " + IPAddess.Text.Trim() + ":" + PortSender.Text + " - Package: " + package);
+                                               }
 
                                                if (switches[n].sendRelease) // && switches[n].value > 0.0)
                                                {
