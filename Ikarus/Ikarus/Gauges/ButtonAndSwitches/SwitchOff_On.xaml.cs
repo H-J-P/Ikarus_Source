@@ -120,6 +120,7 @@ namespace Ikarus
                 DesignFrame.Width = bitmapHeight;
                 rtSwitch.Angle = rotateSwitch;
                 Switch.RenderTransform = rtSwitch;
+                DesignFrame.Visibility = System.Windows.Visibility.Hidden;
             }
         }
 

@@ -156,7 +156,7 @@ namespace Ikarus
                 {
                     if (Classname.Text == "Potentiometer" || Classname.Text == "Rotary")
                     {
-                        Input.Text = "0.0,1.0,0.01";
+                        Input.Text = "0.0,1.0,0.1";
                         Output.Text = " 0, 360";
                     }
 

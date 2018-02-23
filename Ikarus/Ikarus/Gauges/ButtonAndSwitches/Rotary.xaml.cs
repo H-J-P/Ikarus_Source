@@ -23,6 +23,10 @@ namespace Ikarus
         private double minValue = 0.0;
         private double maxValue = 1.0;
         private double step = 0.05;
+
+        private double startAngle = 0.0;
+        private double finalAngle = 360;
+
         private int relative = 0;
 
         private double switchState = 0.0;
@@ -92,6 +96,16 @@ namespace Ikarus
 
         public void SetOutput(string _output)
         {
+            string[] vals = _output.Split(',');
+
+            if (vals.Length == 2)
+            {
+                startAngle = Convert.ToDouble(vals[0], CultureInfo.InvariantCulture);
+
+                if (vals[1] != "1.0")
+                    finalAngle = Convert.ToDouble(vals[1], CultureInfo.InvariantCulture);
+            }
+
             dataRows = MainWindow.dtSwitches.Select("ID=" + dataImportID);
 
             if (dataRows.Length > 0)
@@ -152,7 +166,7 @@ namespace Ikarus
                                oldState = switchState;
 
                                rtKnob = new RotateTransform();
-                               rtKnob.Angle = animation * 360;
+                               rtKnob.Angle = (animation * finalAngle) + startAngle;
                                SwitchKnob.RenderTransform = rtKnob;
 
                                switches.value = switchState;
@@ -201,7 +215,7 @@ namespace Ikarus
                 oldState = switchState;
 
                 rtKnob = new RotateTransform();
-                rtKnob.Angle = animation * 360;
+                rtKnob.Angle = (animation * finalAngle) + startAngle;
                 SwitchKnob.RenderTransform = rtKnob;
             }
             catch { return; }

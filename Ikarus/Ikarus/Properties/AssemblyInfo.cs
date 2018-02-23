@@ -12,7 +12,7 @@ using System.Windows;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("H.J.P")]
 [assembly: AssemblyProduct("Ikarus")]
-[assembly: AssemblyCopyright("Copyright © H.J.Puhlmann 2017")]
+[assembly: AssemblyCopyright("Copyright © H.J.P. 2018")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -51,5 +51,5 @@ using System.Windows;
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.2.1.5")]
-[assembly: AssemblyFileVersion("1.2.1.5")]
+[assembly: AssemblyVersion("1.2.2.5")]
+[assembly: AssemblyFileVersion("1.2.2.5")]
