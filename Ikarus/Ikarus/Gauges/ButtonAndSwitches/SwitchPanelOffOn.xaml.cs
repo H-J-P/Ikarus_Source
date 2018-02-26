@@ -27,6 +27,7 @@ namespace Ikarus
         GaugesHelper helper = null;
         RotateTransform rtSwitch = new RotateTransform();
         private double rotateSwitch = 0.0;
+        private string output = "0";
 
         public int GetWindowID() { return windowID; }
 
@@ -116,9 +117,14 @@ namespace Ikarus
 
                 if (dataRows.Length > 0)
                 {
-                    pictureOn = dataRows[0]["FilePictureOn"].ToString();
-                    pictureOff = dataRows[0]["FilePictureOff"].ToString();
-                    rotateSwitch = Convert.ToDouble(dataRows[0]["Rotate"]);
+                    try
+                    {
+                        pictureOn = dataRows[0]["FilePictureOn"].ToString();
+                        pictureOff = dataRows[0]["FilePictureOff"].ToString();
+                        rotateSwitch = Convert.ToDouble(dataRows[0]["Rotate"]);
+                        output = dataRows[0]["Output"].ToString().Trim();
+                    }
+                    catch { }
                 }
 
                 try
@@ -150,24 +156,25 @@ namespace Ikarus
                             SwitchDown.Source = bitmapImage;
                         }
                     }
-                }
-                catch { }
 
-                if (_on == 1)
-                {
-                    if (MainWindow.cockpitWindows.Count > panelID) MainWindow.cockpitWindows[panelID].Visibility = System.Windows.Visibility.Visible;
-                    SwitchUp.Visibility = System.Windows.Visibility.Visible;
-                    SwitchDown.Visibility = System.Windows.Visibility.Hidden;
-                }
-                else
-                {
-                    if (panelID > 0)
+                    if (output == "1")
                     {
-                        if (MainWindow.cockpitWindows.Count > panelID) MainWindow.cockpitWindows[panelID].Visibility = System.Windows.Visibility.Hidden;
+                        if (MainWindow.cockpitWindows.Count > panelID)
+                            MainWindow.cockpitWindows[panelID].Visibility = System.Windows.Visibility.Visible;
+
+                        SwitchUp.Visibility = System.Windows.Visibility.Visible;
+                        SwitchDown.Visibility = System.Windows.Visibility.Hidden;
+                    }
+                    else
+                    {
+                        if (MainWindow.cockpitWindows.Count > panelID && panelID > 0)
+                            MainWindow.cockpitWindows[panelID].Visibility = System.Windows.Visibility.Hidden;
+
                         SwitchUp.Visibility = System.Windows.Visibility.Hidden;
                         SwitchDown.Visibility = System.Windows.Visibility.Visible;
                     }
                 }
+                catch { }
             }
         }
 

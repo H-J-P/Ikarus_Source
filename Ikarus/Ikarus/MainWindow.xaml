@@ -27,7 +27,7 @@
                 <TabItem Header="Instruments">
                     <Grid Margin="0,0,0,0">
                         <DataGrid Name="DataGridInstruments"
-                                  Margin="10,10,1,10"
+                                  Margin="10,0,1,20"
                                   AlternatingRowBackground="#FF424242"
                                   AutoGenerateColumns="False"
                                   ColumnHeaderHeight="25"
@@ -69,7 +69,7 @@
                                 <DataGridTextColumn Width="185"
                                                     Binding="{Binding Name}"
                                                     Header="Name" />
-                                <DataGridTextColumn Width="130"
+                                <DataGridTextColumn Width="135"
                                                     Binding="{Binding Class}"
                                                     Header="Class" />
                                 <DataGridTextColumn Width="50"
@@ -112,10 +112,10 @@
                                         </Style>
                                     </DataGridTextColumn.ElementStyle>
                                 </DataGridTextColumn>
-                                <DataGridTextColumn Width="170"
+                                <DataGridTextColumn Width="185"
                                                     Binding="{Binding ImageFrame}"
                                                     Header="Image for Frame" />
-                                <DataGridTextColumn Width="150"
+                                <DataGridTextColumn Width="185"
                                                     Binding="{Binding ImageLight}"
                                                     Header="Image for Glass" />
                             </DataGrid.Columns>
@@ -138,7 +138,8 @@
                                 <DataGridTextColumn Width="30"
                                                     Binding="{Binding IDInst}"
                                                     Header="ID"
-                                                    IsReadOnly="True">
+                                                    IsReadOnly="True"
+                                                    Visibility="Hidden">
                                     <DataGridTextColumn.ElementStyle>
                                         <Style TargetType="{x:Type TextBlock}">
                                             <Setter Property="TextAlignment" Value="Center" />
@@ -147,14 +148,15 @@
                                 </DataGridTextColumn>
                                 <DataGridTextColumn Width="45"
                                                     Binding="{Binding IDFct}"
-                                                    Header="ID Fct">
+                                                    Header="ID Fct"
+                                                    Visibility="Hidden">
                                     <DataGridTextColumn.ElementStyle>
                                         <Style TargetType="{x:Type TextBlock}">
                                             <Setter Property="TextAlignment" Value="Center" />
                                         </Style>
                                     </DataGridTextColumn.ElementStyle>
                                 </DataGridTextColumn>
-                                <DataGridTextColumn Width="170"
+                                <DataGridTextColumn Width="180"
                                                     Binding="{Binding Name}"
                                                     Header="Name" />
                                 <DataGridTextColumn Width="50"
@@ -196,10 +198,10 @@
                                         </Style>
                                     </DataGridTextColumn.ElementStyle>
                                 </DataGridTextColumn>
-                                <DataGridTextColumn Width="200"
+                                <DataGridTextColumn Width="220"
                                                     Binding="{Binding Input}"
                                                     Header="Inputs" />
-                                <DataGridTextColumn Width="200"
+                                <DataGridTextColumn Width="220"
                                                     Binding="{Binding Output}"
                                                     Header="Outputs" />
                                 <DataGridTextColumn Width="50"
@@ -257,7 +259,8 @@
                             </DataGridTemplateColumn>
                             <DataGridTextColumn Width="30"
                                                 Binding="{Binding ID}"
-                                                Header="ID">
+                                                Header="ID"
+                                                Visibility="Hidden">
                                 <DataGridTextColumn.ElementStyle>
                                     <Style TargetType="{x:Type TextBlock}">
                                         <Setter Property="TextAlignment" Value="Center" />
@@ -371,7 +374,8 @@
                             </DataGridTemplateColumn>
                             <DataGridTextColumn Width="30"
                                                 Binding="{Binding ID}"
-                                                Header="ID">
+                                                Header="ID"
+                                                Visibility="Hidden">
                                 <DataGridTextColumn.ElementStyle>
                                     <Style TargetType="{x:Type TextBlock}">
                                         <Setter Property="TextAlignment" Value="Center" />
@@ -389,8 +393,9 @@
                             </DataGridTextColumn>
                             <DataGridTextColumn Width="110"
                                                 Binding="{Binding Class}"
-                                                Header="Class name" />
-                            <DataGridTextColumn Width="210"
+                                                Header="Class name" 
+                                                Visibility="Hidden"/>
+                            <DataGridTextColumn Width="275"
                                                 Binding="{Binding Name}"
                                                 Header="Function"
                                                 IsReadOnly="True" />
@@ -436,11 +441,11 @@
                                                 Header="Background"
                                                 Visibility="Hidden" />
                             <DataGridTextColumn x:Name="ImageSwitchOn_Copy"
-                                                Width="160"
+                                                Width="220"
                                                 Binding="{Binding FilePictureOn}"
                                                 Header="Image ON" />
                             <DataGridTextColumn x:Name="ImageSwitchOff_Copy"
-                                                Width="155"
+                                                Width="220"
                                                 Binding="{Binding FilePictureOff}"
                                                 Header="Image OFF" />
                         </DataGrid.Columns>
@@ -474,7 +479,8 @@
                                                     Header="Active" />
                             <DataGridTextColumn Width="30"
                                                 Binding="{Binding ID}"
-                                                Header="ID">
+                                                Header="ID"
+                                                Visibility="Hidden">
                                 <DataGridTextColumn.ElementStyle>
                                     <Style TargetType="{x:Type TextBlock}">
                                         <Setter Property="TextAlignment" Value="Center" />
@@ -490,11 +496,12 @@
                                     </Style>
                                 </DataGridTextColumn.ElementStyle>
                             </DataGridTextColumn>
-                            <DataGridTextColumn Width="150"
+                            <DataGridTextColumn Width="130"
                                                 Binding="{Binding Class}"
                                                 Header="Class name"
-                                                IsReadOnly="False" />
-                            <DataGridTextColumn Width="210"
+                                                IsReadOnly="False" 
+                                                Visibility="Hidden"/>
+                            <DataGridTextColumn Width="340"
                                                 Binding="{Binding Name}"
                                                 Header="Name" />
                             <DataGridTextColumn Width="45"
@@ -534,7 +541,7 @@
                                 </DataGridTextColumn.ElementStyle>
                             </DataGridTextColumn>
                             <DataGridTextColumn x:Name="ImageAccessories"
-                                                Width="210"
+                                                Width="330"
                                                 Binding="{Binding FilePictureOn}"
                                                 Header="Image" />
                         </DataGrid.Columns>
@@ -890,21 +897,17 @@
                 </Button.Background>
             </Button>
             <Button Name="Load"
-                    Width="90"
                     Height="24"
                     Margin="939,0,0,5"
-                    HorizontalAlignment="Left"
                     VerticalAlignment="Bottom"
                     Click="Button_Load_Click"
-                    Content="Load" />
+                    Content="Load" HorizontalAlignment="Left" Width="90" />
             <Button Name="buttonShow"
-                    Width="90"
                     Height="24"
                     Margin="844,0,0,5"
-                    HorizontalAlignment="Left"
                     VerticalAlignment="Bottom"
                     Click="Button_Show_Click"
-                    Content="Show Cockpit" />
+                    Content="Show Cockpit" HorizontalAlignment="Left" Width="90" />
             <Button x:Name="buttonAdd"
                     Width="90"
                     Height="24"
@@ -922,27 +925,23 @@
                     Click="Button_Del_Click"
                     Content="Delete Record" />
             <Button Name="Refresh"
-                    Width="90"
                     Height="24"
-                    Margin="0,0,812,5"
-                    HorizontalAlignment="Right"
+                    Margin="220,0,812,5"
                     VerticalAlignment="Bottom"
                     Click="Button_Refresh_Click"
                     Content="Refresh" />
             <Button x:Name="Capture"
-                    Width="90"
                     Height="24"
                     Margin="750,0,0,5"
-                    HorizontalAlignment="Left"
                     VerticalAlignment="Bottom"
                     Click="Capture_Click"
                     Content="Capture"
-                    ToolTip="Ikarus Screen Capture" />
+                    ToolTip="Ikarus Screen Capture" HorizontalAlignment="Left" Width="90" />
             <Label Name="Version"
                    Height="19"
                    Margin="486,0,0,10"
                    VerticalAlignment="Bottom"
-                   Content="(C) H.J.P. 2018  Version 1.2.2.4f"
+                   Content="(C) H.J.P. 2018  Version 1.2.2.5"
                    Foreground="#FFD8BC05" HorizontalAlignment="Left" Width="189" />
             <Label Name="lbEditMode"
                    Width="72"

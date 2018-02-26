@@ -20,8 +20,8 @@ namespace Ikarus
         private string pictureOff = "";
         private int windowID = 0;
         private int panelID = 0;
-        //private int _on = 0;
         private string[] vals = new string[] { };
+        private string output = "0";
         private bool touchDown = false;
         BitmapImage bitmapImage = new BitmapImage();
         GaugesHelper helper = null;
@@ -100,8 +100,13 @@ namespace Ikarus
 
                 if (dataRows.Length > 0)
                 {
-                    pictureOn = dataRows[0]["FilePictureOn"].ToString();
-                    pictureOff = dataRows[0]["FilePictureOff"].ToString();
+                    try
+                    {
+                        pictureOn = dataRows[0]["FilePictureOn"].ToString();
+                        pictureOff = dataRows[0]["FilePictureOff"].ToString();
+                        output = dataRows[0]["Output"].ToString().Trim();
+                    }
+                    catch { }
                 }
 
                 try
@@ -130,6 +135,23 @@ namespace Ikarus
                             SetContour();
                             SwitchDown.Source = bitmapImage;
                         }
+                    }
+
+                    if (output == "1")
+                    {
+                        if (MainWindow.cockpitWindows.Count > panelID)
+                            MainWindow.cockpitWindows[panelID].Visibility = System.Windows.Visibility.Visible;
+
+                        SwitchUp.Visibility = System.Windows.Visibility.Visible;
+                        SwitchDown.Visibility = System.Windows.Visibility.Hidden;
+                    }
+                    else
+                    {
+                        if (MainWindow.cockpitWindows.Count > panelID && panelID > 0)
+                            MainWindow.cockpitWindows[panelID].Visibility = System.Windows.Visibility.Hidden;
+
+                        SwitchUp.Visibility = System.Windows.Visibility.Hidden;
+                        SwitchDown.Visibility = System.Windows.Visibility.Visible;
                     }
                 }
                 catch { }
@@ -165,7 +187,7 @@ namespace Ikarus
                        }));
         }
 
-        private void SetValue(double _value)
+        public void SetValue(double _value)
         {
             try
             {
