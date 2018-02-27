@@ -27,14 +27,15 @@
                 <DataGridTextColumn Width="35"
                                     Binding="{Binding ID}"
                                     Header="ID"
-                                    IsReadOnly="True">
+                                    IsReadOnly="True"
+                                    Visibility="Hidden">
                     <DataGridTextColumn.ElementStyle>
                         <Style TargetType="{x:Type TextBlock}">
                             <Setter Property="TextAlignment" Value="Right" />
                         </Style>
                     </DataGridTextColumn.ElementStyle>
                 </DataGridTextColumn>
-                <DataGridTextColumn Width="350"
+                <DataGridTextColumn Width="380"
                                     Binding="{Binding Discription}"
                                     Header="Function"
                                     IsReadOnly="True" />

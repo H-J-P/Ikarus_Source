@@ -30,6 +30,7 @@ namespace Ikarus
         private static double rotate = 0.0;
         private static string package = "";
         private static string objectID = "";
+        private static string dcsID = "";
         private static int instancePos = 0;
 
         private I_Ikarus interfaceUserControl;
@@ -250,12 +251,14 @@ namespace Ikarus
                 int i = lampObjects.Count - 1;
                 userControl = (UserControl)lampObjects[i];
                 userControl.Focusable = false;
-                userControl.ToolTip = instanceID + " - " + name;
+                userControl.ToolTip = name;
 
                 interfaceUserControl = (I_Ikarus)userControl;
 
                 interfaceUserControl.SetID(instanceID.ToString()); // importent Arg_number
                 interfaceUserControl.SetWindowID(windowID);
+
+                instanceFctRows = MainWindow.dtLamps.Select("ID=" + instanceID.ToString());
 
                 SetObjectsPara(ref MainWindow.dtLamps, ref instanceID);
 
@@ -272,7 +275,6 @@ namespace Ikarus
                 int i = switchObjects.Count - 1;
                 userControl = (UserControl)switchObjects[i];
                 userControl.Focusable = false;
-                userControl.ToolTip = instanceID + " - " + name;
 
                 interfaceUserControl = (I_Ikarus)userControl;
 
@@ -280,14 +282,17 @@ namespace Ikarus
                 interfaceUserControl.SetWindowID(windowID);
 
                 instanceFctRows = MainWindow.dtSwitches.Select("ID=" + instanceID.ToString());
+                dcsID = "";
 
                 try
                 {
                     interfaceUserControl.SetInput(instanceFctRows[0]["Input"].ToString());
                     interfaceUserControl.SetOutput(instanceFctRows[0]["Output"].ToString());
+                    dcsID = instanceFctRows[0]["DcsID"].ToString();
                 }
                 catch { }
 
+                userControl.ToolTip = dcsID + " - " + name;
                 SetObjectsPara(ref MainWindow.dtSwitches, ref instanceID);
 
                 MainGrid.Children.Add(userControl);

@@ -156,9 +156,6 @@
                                         </Style>
                                     </DataGridTextColumn.ElementStyle>
                                 </DataGridTextColumn>
-                                <DataGridTextColumn Width="180"
-                                                    Binding="{Binding Name}"
-                                                    Header="Name" />
                                 <DataGridTextColumn Width="50"
                                                     Binding="{Binding Arg_number}"
                                                     Header="DCS ID">
@@ -168,6 +165,9 @@
                                         </Style>
                                     </DataGridTextColumn.ElementStyle>
                                 </DataGridTextColumn>
+                                <DataGridTextColumn Width="180"
+                                                    Binding="{Binding Name}"
+                                                    Header="Name" />
                                 <DataGridTemplateColumn Header="Ascii">
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
