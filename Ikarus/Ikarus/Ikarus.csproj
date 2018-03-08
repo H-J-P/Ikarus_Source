@@ -183,6 +183,45 @@
     <Compile Include="Gauges\AJS37\AJS37_ADI_stby.xaml.cs">
       <DependentUpon>AJS37_ADI_stby.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Gauges\AV8BNA\AV8BNA_ACCU.xaml.cs">
+      <DependentUpon>AV8BNA_ACCU.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\AV8BNA\AV8BNA_ADI.xaml.cs">
+      <DependentUpon>AV8BNA_ADI.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\AV8BNA\AV8BNA_Aileron.xaml.cs">
+      <DependentUpon>AV8BNA_Aileron.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\AV8BNA\AV8BNA_Alt.xaml.cs">
+      <DependentUpon>AV8BNA_Alt.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\AV8BNA\AV8BNA_AOA.xaml.cs">
+      <DependentUpon>AV8BNA_AOA.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\AV8BNA\AV8BNA_ASI.xaml.cs">
+      <DependentUpon>AV8BNA_ASI.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\AV8BNA\AV8BNA_Cabin.xaml.cs">
+      <DependentUpon>AV8BNA_Cabin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\AV8BNA\AV8BNA_Chrono.xaml.cs">
+      <DependentUpon>AV8BNA_Chrono.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\AV8BNA\AV8BNA_Clock.xaml.cs">
+      <DependentUpon>AV8BNA_Clock.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\AV8BNA\AV8BNA_Rudder.xaml.cs">
+      <DependentUpon>AV8BNA_Rudder.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\AV8BNA\AV8BNA_Turn.xaml.cs">
+      <DependentUpon>AV8BNA_Turn.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\AV8BNA\AV8BNA_Volts.xaml.cs">
+      <DependentUpon>AV8BNA_Volts.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\AV8BNA\AV8BNA_VVI.xaml.cs">
+      <DependentUpon>AV8BNA_VVI.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Gauges\ButtonAndSwitches\Button.xaml.cs">
       <DependentUpon>Button.xaml</DependentUpon>
     </Compile>
@@ -236,6 +275,9 @@
     </Compile>
     <Compile Include="Gauges\F5E\F5E-ADI-Sphere.xaml.cs">
       <DependentUpon>F5E-ADI-Sphere.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\F5E\F5E-ASI-2.xaml.cs">
+      <DependentUpon>F5E-ASI-2.xaml</DependentUpon>
     </Compile>
     <Compile Include="Gauges\F5E\F5E_UHFPresetChannel.xaml.cs">
       <DependentUpon>F5E_UHFPresetChannel.xaml</DependentUpon>
@@ -1463,6 +1505,58 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Gauges\AV8BNA\AV8BNA_ACCU.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Gauges\AV8BNA\AV8BNA_ADI.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Gauges\AV8BNA\AV8BNA_Aileron.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Gauges\AV8BNA\AV8BNA_Alt.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Gauges\AV8BNA\AV8BNA_AOA.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Gauges\AV8BNA\AV8BNA_ASI.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Gauges\AV8BNA\AV8BNA_Cabin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Gauges\AV8BNA\AV8BNA_Chrono.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Gauges\AV8BNA\AV8BNA_Clock.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Gauges\AV8BNA\AV8BNA_Rudder.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Gauges\AV8BNA\AV8BNA_Turn.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Gauges\AV8BNA\AV8BNA_Volts.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Gauges\AV8BNA\AV8BNA_VVI.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Gauges\ButtonAndSwitches\Button.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -1534,6 +1628,10 @@
     <Page Include="Gauges\F5E\F5E-ADI-Sphere.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\F5E\F5E-ASI-2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Gauges\F5E\F5E_UHFPresetChannel.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -3351,7 +3449,6 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Gauges\AV8BNA\" />
     <Folder Include="Gauges\M-2000C\" />
   </ItemGroup>
   <ItemGroup>

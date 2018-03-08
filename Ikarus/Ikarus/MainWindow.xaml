@@ -47,9 +47,9 @@
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
-                                <DataGridTextColumn Width="30"
+                                <DataGridTextColumn Width="60"
                                                     Binding="{Binding IDInst}"
-                                                    Header="ID"
+                                                    Header="Instance"
                                                     IsReadOnly="True">
                                     <DataGridTextColumn.ElementStyle>
                                         <Style TargetType="{x:Type TextBlock}">
@@ -66,7 +66,7 @@
                                         </Style>
                                     </DataGridTextColumn.ElementStyle>
                                 </DataGridTextColumn>
-                                <DataGridTextColumn Width="185"
+                                <DataGridTextColumn Width="155"
                                                     Binding="{Binding Name}"
                                                     Header="Name" />
                                 <DataGridTextColumn Width="135"
@@ -941,7 +941,7 @@
                    Height="19"
                    Margin="486,0,0,10"
                    VerticalAlignment="Bottom"
-                   Content="(C) H.J.P. 2018  Version 1.2.2.5"
+                   Content="(C) H.J.P. 2018  Version 1.2.3.1c"
                    Foreground="#FFD8BC05" HorizontalAlignment="Left" Width="189" />
             <Label Name="lbEditMode"
                    Width="72"

@@ -7,9 +7,9 @@ using System.Windows.Threading;
 namespace Ikarus
 {
     /// <summary>
-    /// Interaction logic for A10_ALT.xaml
+    /// Interaction logic for AV8BNA_Alt.xaml
     /// </summary>
-    public partial class A10_ALT : UserControl, I_Ikarus
+    public partial class AV8BNA_Alt : UserControl, I_Ikarus
     {
         private string dataImportID = "";
         private int windowID = 0;
@@ -18,14 +18,14 @@ namespace Ikarus
 
         public int GetWindowID() { return windowID; }
 
-        RotateTransform rtAlt100FP = new RotateTransform();
-        TranslateTransform ttAlt10000 = new TranslateTransform();
-        TranslateTransform ttAlt1000 = new TranslateTransform();
-        TranslateTransform ttAlt100 = new TranslateTransform();
-        TranslateTransform ttPressure_0 = new TranslateTransform();
-        TranslateTransform ttPressure_1 = new TranslateTransform();
-        TranslateTransform ttPressure_2 = new TranslateTransform();
-        TranslateTransform ttPressure_3 = new TranslateTransform();
+        RotateTransform rtalt100FP = new RotateTransform();
+        TranslateTransform ttalt10000 = new TranslateTransform();
+        TranslateTransform ttalt1000 = new TranslateTransform();
+        TranslateTransform ttalt100 = new TranslateTransform();
+        TranslateTransform ttpressure_0 = new TranslateTransform();
+        TranslateTransform ttpressure_1 = new TranslateTransform();
+        TranslateTransform ttpressure_2 = new TranslateTransform();
+        TranslateTransform ttpressure_3 = new TranslateTransform();
 
         double alt100FP = 0.0;
         double alt10000 = 0.0;
@@ -35,7 +35,7 @@ namespace Ikarus
         double pressure_1 = 0.0;
         double pressure_2 = 0.0;
         double pressure_3 = 0.0;
-        double flag_pneu = 0.0;
+        //double flag_pneu = 0.0;
 
         double lalt100FP = 0.0;
         double lalt10000 = 0.0;
@@ -46,15 +46,10 @@ namespace Ikarus
         double lpressure_2 = 0.0;
         double lpressure_3 = 0.0;
 
-        public A10_ALT()
+        public AV8BNA_Alt()
         {
             InitializeComponent();
-
-            //Flagg_Elect.Visibility = System.Windows.Visibility.Visible;
-            Flagg_Elect.Visibility = System.Windows.Visibility.Hidden;
-            Flagg_Pneu.Visibility = System.Windows.Visibility.Hidden;
         }
-
         public void SetID(string _dataImportID)
         {
             dataImportID = _dataImportID;
@@ -114,50 +109,50 @@ namespace Ikarus
                                if (vals.Length > 5) { pressure_1 = Convert.ToDouble(vals[5], CultureInfo.InvariantCulture); }
                                if (vals.Length > 6) { pressure_2 = Convert.ToDouble(vals[6], CultureInfo.InvariantCulture); }
                                if (vals.Length > 7) { pressure_3 = Convert.ToDouble(vals[7], CultureInfo.InvariantCulture); }
-                               if (vals.Length > 8) { flag_pneu = Convert.ToDouble(vals[8], CultureInfo.InvariantCulture); }
+                               //if (vals.Length > 8) { flag_pneu = Convert.ToDouble(vals[8], CultureInfo.InvariantCulture); }
                            }
                            catch { return; }
 
                            if (alt100FP != lalt100FP)
                            {
-                               rtAlt100FP.Angle = alt100FP * 360;
-                               AltBar.RenderTransform = rtAlt100FP;
+                               rtalt100FP.Angle = alt100FP * 360;
+                               ALT.RenderTransform = rtalt100FP;
                            }
                            if (alt10000 != lalt10000)
                            {
-                               ttAlt10000.Y = alt10000 * -390;
-                               AltBar_10_000.RenderTransform = ttAlt10000;
+                               ttalt10000.Y = alt10000 * -332;
+                               ALT_10000.RenderTransform = ttalt10000;
                            }
                            if (alt1000 != lalt1000)
                            {
-                               ttAlt1000.Y = alt1000 * -390;
-                               AltBar_1_000.RenderTransform = ttAlt1000;
+                               ttalt1000.Y = alt1000 * -332;
+                               ALT_1000.RenderTransform = ttalt1000;
                            }
                            if (alt100 != lalt100)
                            {
-                               ttAlt100.Y = alt100 * -390;
-                               AltBar_100.RenderTransform = ttAlt100;
+                               ttalt100.Y = alt100 * -332;
+                               ALT_100.RenderTransform = ttalt100;
                            }
 
                            if (pressure_0 != lpressure_0)
                            {
-                               ttPressure_0.Y = pressure_0 * -180;
-                               BasicAtmospherePressure_1.RenderTransform = ttPressure_0;
+                               ttpressure_0.Y = pressure_0 * -332;
+                               AltBar_1.RenderTransform = ttpressure_0;
                            }
                            if (pressure_1 != lpressure_1)
                            {
-                               ttPressure_1.Y = pressure_1 * -180;
-                               BasicAtmospherePressure_10.RenderTransform = ttPressure_1;
+                               ttpressure_1.Y = pressure_1 * -332;
+                               AltBar_10.RenderTransform = ttpressure_1;
                            }
                            if (pressure_2 != lpressure_2)
                            {
-                               ttPressure_2.Y = pressure_2 * -180;
-                               BasicAtmospherePressure_100.RenderTransform = ttPressure_2;
+                               ttpressure_2.Y = pressure_2 * -332;
+                               AltBar_100.RenderTransform = ttpressure_2;
                            }
                            if (pressure_3 != lpressure_3)
                            {
-                               ttPressure_3.Y = pressure_3 * -180;
-                               BasicAtmospherePressure_1000.RenderTransform = ttPressure_3;
+                               ttpressure_3.Y = pressure_3 * -332;
+                               AltBar_1000.RenderTransform = ttpressure_3;
                            }
 
                            lalt100FP = alt100FP;

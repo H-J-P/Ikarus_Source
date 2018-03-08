@@ -20,7 +20,7 @@ namespace Ikarus
         private string pictureOff = "";
         private int windowID = 0;
         private int panelID = 0;
-        private int _on = 0;
+        //private int _on = 0;
         private string[] vals = new string[] { };
         private bool touchDown = false;
         BitmapImage bitmapImage = new BitmapImage();
