@@ -896,18 +896,6 @@
                     Width="12.629"
                     Height="215.128"
                     RenderTransformOrigin="0.5,0.5">
-                <Path Canvas.Left="0"
-                      Canvas.Top="7.715"
-                      Width="12.629"
-                      Height="16.331"
-                      Data="M6.315,0L9.473,8.165 12.629,16.331 6.315,16.331 0,16.331 3.157,8.165z"
-                      Fill="White" />
-                <Path Canvas.Left="0"
-                      Canvas.Top="191.083"
-                      Width="12.629"
-                      Height="16.33"
-                      Data="M6.315,16.33L3.157,8.164 0,0 6.315,0 12.629,0 9.473,8.164z"
-                      Fill="White" />
                 <Path Canvas.Left="4.613"
                       Canvas.Top="195.677"
                       Width="3.402"
@@ -920,6 +908,18 @@
                       Height="19.451"
                       Data="M3.402,0L0,0 0,19.451 3.402,19.451z"
                       Fill="Black" />
+                <Path Canvas.Left="0"
+                      Canvas.Top="7.715"
+                      Width="12.629"
+                      Height="16.331"
+                      Data="M6.315,0L9.473,8.165 12.629,16.331 6.315,16.331 0,16.331 3.157,8.165z"
+                      Fill="White" />
+                <Path Canvas.Left="0"
+                      Canvas.Top="191.083"
+                      Width="12.629"
+                      Height="16.33"
+                      Data="M6.315,16.33L3.157,8.164 0,0 6.315,0 12.629,0 9.473,8.164z"
+                      Fill="White" />
             </Canvas>
         </Canvas>
         <Canvas x:Name="dial"
