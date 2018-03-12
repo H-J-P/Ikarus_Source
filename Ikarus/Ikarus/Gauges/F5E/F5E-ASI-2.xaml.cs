@@ -128,11 +128,6 @@ namespace Ikarus
                                            }
                                        }
                                        IAS.RenderTransform = rtASI;
-
-                                       if (MainWindow.editmode)
-                                       {
-                                           Cockpit.UpdateInOut(dataImportID, "1", ias.ToString(), Convert.ToInt32(rtASI.Angle).ToString());
-                                       }
                                    }
 
                                    if (lmach != mach)
@@ -145,14 +140,15 @@ namespace Ikarus
                                                break;
                                            }
                                        }
-
-                                       if (MainWindow.editmode)
-                                       {
-                                           Cockpit.UpdateInOut(dataImportID, "2", mach.ToString(), Convert.ToInt32(rtMach.Angle).ToString());
-                                       }
                                    }
                                    rtASIMach.Angle = rtMach.Angle + rtASI.Angle;
                                    Mach.RenderTransform = rtASIMach;
+
+                                   if (MainWindow.editmode)
+                                   {
+                                       Cockpit.UpdateInOut(dataImportID, "1", ias.ToString(), Convert.ToInt32(rtASI.Angle).ToString());
+                                       Cockpit.UpdateInOut(dataImportID, "2", mach.ToString(), Convert.ToInt32(rtMach.Angle).ToString());
+                                   }
                                }
                                if (liasMax != iasMax)
                                {

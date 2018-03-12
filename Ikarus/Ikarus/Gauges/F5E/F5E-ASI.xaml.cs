@@ -29,6 +29,7 @@ namespace Ikarus
         RotateTransform rtMach = new RotateTransform();
         RotateTransform rtASImax = new RotateTransform();
         RotateTransform rtASIset = new RotateTransform();
+        RotateTransform rtASIMach = new RotateTransform();
 
         double ias = 0.0;
         double mach = 0.0;
@@ -123,15 +124,11 @@ namespace Ikarus
                                            break;
                                        }
                                    }
-                                   if (MainWindow.editmode)
-                                   {
-                                       Cockpit.UpdateInOut(dataImportID, "1", ias.ToString(), Convert.ToInt32(rtASI.Angle).ToString());
-                                   }
                                    IAS.RenderTransform = rtASI;
 
-                                    // MachIndicator.input  =                        { 0.0,   0.5,  1.0,  1.8,    2.5}
+                                    // MachIndicator.input  =                        { 0.0,   0.5,  1.0,  1.8,    2.5 }
                                     valueScaleMach = new double[valueScaleIndexMach] { 1.0, 0.957, 0.92, 0.631, 0.386 };
-                                    degreeDialMach = new double[valueScaleIndexMach] { 0.0,    15,   30,   110,   180 }; 
+                                    degreeDialMach = new double[valueScaleIndexMach] { 0.0,    15,   30,   110,   180 };
 
                                    for (int n = 0; n < (valueScaleIndexMach - 1); n++)
                                    {
@@ -141,8 +138,14 @@ namespace Ikarus
                                            break;
                                        }
                                    }
-                                   rtMach.Angle = (rtMach.Angle * -1) + rtASI.Angle;
-                                   Mach.RenderTransform = rtMach;
+                                   rtASIMach.Angle = (rtMach.Angle * -1) + rtASI.Angle;
+                                   Mach.RenderTransform = rtASIMach;
+
+                                   if (MainWindow.editmode)
+                                   {
+                                       Cockpit.UpdateInOut(dataImportID, "1", ias.ToString(), Convert.ToInt32(rtASI.Angle).ToString());
+                                       Cockpit.UpdateInOut(dataImportID, "2", mach.ToString(), Convert.ToInt32(rtMach.Angle).ToString());
+                                   }
                                }
                                if (liasMax != iasMax)
                                {
