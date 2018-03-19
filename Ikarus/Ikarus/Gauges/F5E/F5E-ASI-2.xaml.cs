@@ -21,7 +21,7 @@ namespace Ikarus
         GaugesHelper helper = null;
 
         int valueScaleIndex = 0;
-        const int valueScaleIndexMach = 5;
+        const int valueScaleIndexMach = 14;
 
         public int GetWindowID() { return windowID; }
 
@@ -79,16 +79,15 @@ namespace Ikarus
         {
             helper.SetInput(ref _input, ref valueScale, ref valueScaleIndex, 4);
 
-            // MachIndicator.input  =                        { 0.0,   0.5,  1.0,  1.8,    2.5}
-            valueScaleMach = new double[valueScaleIndexMach] { 1.0, 0.957, 0.92, 0.631, 0.386 };
-
+            // MachIndicator.input =                         { 0.5,   0.6,   0.7,   0.8,   0.9,   1.0,   1.1,   1.2,   1.3,   1.4,   1.5,   1.6, 1.7, 2.2}
+            valueScaleMach = new double[valueScaleIndexMach] { 1.0, 0.929, 0.871, 0.816, 0.765, 0.727, 0.683, 0.643, 0.611, 0.582, 0.551, 0.525, 0.5, 0.4 };
         }
 
         public void SetOutput(string _output)
         {
             helper.SetOutput(ref _output, ref degreeDial, 4);
 
-            degreeDialMach = new double[valueScaleIndexMach] { 0.0, 15, 30, 110, 180 };
+            degreeDialMach = new double[valueScaleIndexMach] { 0.0, 25.0, 46.0, 66.0, 84.0, 98.0, 114.0, 128.0, 139.0, 150.0, 161.5, 171.0, 180, 216 };
         }
 
         public double GetSize()
@@ -141,7 +140,7 @@ namespace Ikarus
                                            }
                                        }
                                    }
-                                   rtASIMach.Angle = rtMach.Angle + rtASI.Angle;
+                                   rtASIMach.Angle = rtASI.Angle - rtMach.Angle;
                                    Mach.RenderTransform = rtASIMach;
 
                                    if (MainWindow.editmode)
