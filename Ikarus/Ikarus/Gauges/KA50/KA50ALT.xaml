@@ -477,6 +477,9 @@
             <Canvas x:Name="WP_needleAl_ALT" Height="8.756" Canvas.Left="52" Canvas.Top="141.122" Width="8.166" RenderTransformOrigin="3.796,-6.624">
                 <Path Data="M7.216,0.2L7.798,4.578 8.38,8.956 4.297,7.272 0.214,5.586 3.715,2.893z" Fill="#FFDBC929" Height="9.127" Canvas.Left="-0.214" Stroke="Black" StrokeThickness="0.216" StrokeMiterLimit="22.926" Canvas.Top="-0.2" Width="8.512" RenderTransformOrigin="3.583,-6.41"/>
             </Canvas>
+            <Canvas x:Name="shadow" Height="170" Width="170">
+                <Path x:Name="Path_215" Width="148.92" Height="136.527" Stretch="Fill" Fill="#42000000" Data="M 170.079,17.008C 230.805,17.008 283.275,52.3734 308.012,103.631C 280.3,70.2067 238.463,48.9146 191.649,48.9146C 108.207,48.9146 40.5627,116.557 40.5627,200.003C 40.5627,229.283 48.9,256.611 63.3187,279.76C 34.756,251.953 17.008,213.092 17.008,170.079C 17.008,85.5414 85.54,17.008 170.079,17.008 Z " Canvas.Left="5.04" Canvas.Top="4.301"/>
+            </Canvas>
         </Canvas>
         <Image x:Name="Light" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Height="167" Width="167" MouseWheel="Light_MouseWheel" />
         <Image x:Name="Frame" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Height="167" Width="167" MouseWheel="Light_MouseWheel" />

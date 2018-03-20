@@ -258,6 +258,9 @@
             </Canvas>
             <TextBlock x:Name="Bearing" Canvas.Left="85" TextWrapping="Wrap" Text="0.000" Canvas.Top="165" Foreground="#FFF1F0F0"/>
             <TextBlock x:Name="Scale" TextWrapping="Wrap" Text="0.000" Canvas.Left="141" Canvas.Top="165" Foreground="#FFE8E6E6"/>
+            <Canvas x:Name="shadow" Height="255" Width="255">
+                <Path x:Name="Path_215" Width="213.003" Height="193.029" Stretch="Fill" Fill="#42000000" Data="M 170.079,17.008C 230.805,17.008 283.275,52.3734 308.012,103.631C 280.3,70.2067 238.463,48.9146 191.649,48.9146C 108.207,48.9146 40.5627,116.557 40.5627,200.003C 40.5627,229.283 48.9,256.611 63.3187,279.76C 34.756,251.953 17.008,213.092 17.008,170.079C 17.008,85.5414 85.54,17.008 170.079,17.008 Z " Canvas.Left="16" Canvas.Top="16"/>
+            </Canvas>
         </Canvas>
         <Image x:Name="Light" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Height="255" Width="255" MouseWheel="Light_MouseWheel" />
         <Image x:Name="Frame" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Height="255" Width="255" MouseWheel="Light_MouseWheel" />

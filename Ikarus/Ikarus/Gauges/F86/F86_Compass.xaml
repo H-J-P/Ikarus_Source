@@ -156,6 +156,9 @@
                 </Path>
                 <Path Data="M18.182,36.016C8.291,36.016 0.286,27.997 0.286,18.151 0.286,8.276 8.291,0.286 18.182,0.286 28.045,0.286 36.078,8.276 36.078,18.151 36.078,27.997 28.045,36.016 18.182,36.016z" Height="36.301" Canvas.Left="13.013" Stroke="#FF3C3C3C" StrokeThickness="0.571" Canvas.Top="205.8" Width="36.363"/>
             </Canvas>
+            <Canvas x:Name="shadow" Height="255" Width="255">
+                <Path x:Name="Path_215" Width="214.741" Height="193.466" Stretch="Fill" Fill="#42000000" Data="M 170.079,17.008C 230.805,17.008 283.275,52.3734 308.012,103.631C 280.3,70.2067 238.463,48.9146 191.649,48.9146C 108.207,48.9146 40.5627,116.557 40.5627,200.003C 40.5627,229.283 48.9,256.611 63.3187,279.76C 34.756,251.953 17.008,213.092 17.008,170.079C 17.008,85.5414 85.54,17.008 170.079,17.008 Z " Canvas.Left="16.062" Canvas.Top="16"/>
+            </Canvas>
         </Canvas>
         <Image x:Name="Light" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Height="255" Width="255" MouseWheel="Light_MouseWheel" />
         <Image x:Name="Frame" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Height="255" Width="255" MouseWheel="Light_MouseWheel" />

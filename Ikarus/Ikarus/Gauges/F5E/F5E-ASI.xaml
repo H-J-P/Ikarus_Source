@@ -304,6 +304,9 @@
             <Canvas x:Name="IASmax" Height="13.53" Canvas.Left="70.391" Canvas.Top="70.888" Width="13.597" RenderTransformOrigin="4.213,4.2">
                 <Path Data="M6.312,13.53L13.597,6.165 0,0z" Fill="#FFA31D1D" Height="13.53" Canvas.Left="0" Canvas.Top="0" Width="13.597"/>
             </Canvas>
+            <Canvas x:Name="shadow" Height="255" Width="255">
+                <Path x:Name="Path_215" Width="213.704" Height="193.02" Stretch="Fill" Fill="#9F000000" Data="M 170.079,17.008C 230.805,17.008 283.275,52.3734 308.012,103.631C 280.3,70.2067 238.463,48.9146 191.649,48.9146C 108.207,48.9146 40.5627,116.557 40.5627,200.003C 40.5627,229.283 48.9,256.611 63.3187,279.76C 34.756,251.953 17.008,213.092 17.008,170.079C 17.008,85.5414 85.54,17.008 170.079,17.008 Z " Canvas.Left="17.148" Canvas.Top="16.446"/>
+            </Canvas>
         </Canvas>
         <Image x:Name="Light" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Height="255" Width="255" MouseWheel="Light_MouseWheel" />
         <Image x:Name="Frame" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Height="255" Width="255" MouseWheel="Light_MouseWheel" />

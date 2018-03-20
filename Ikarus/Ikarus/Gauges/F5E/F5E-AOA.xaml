@@ -436,6 +436,9 @@
                       StrokeMiterLimit="2.414"
                       StrokeThickness="0.216" />
             </Canvas>
+            <Canvas x:Name="shadow" Width="255" Height="255" Canvas.Left="3" Canvas.Top="3">
+                <Path x:Name="Path_215" Width="224.019" Height="204.486" Canvas.Left="6" Stretch="Fill" Fill="#99000000" Data="M 170.079,17.008C 230.805,17.008 283.275,52.3734 308.012,103.631C 280.3,70.2067 238.463,48.9146 191.649,48.9146C 108.207,48.9146 40.5627,116.557 40.5627,200.003C 40.5627,229.283 48.9,256.611 63.3187,279.76C 34.756,251.953 17.008,213.092 17.008,170.079C 17.008,85.5414 85.54,17.008 170.079,17.008 Z " Canvas.Top="5.061"/>
+            </Canvas>
         </Canvas>
         <Image x:Name="Light"
                Width="255"
@@ -447,7 +450,6 @@
         <Image x:Name="Frame"
                Width="255"
                Height="255"
-               Margin="0,0,0,0"
                HorizontalAlignment="Left"
                VerticalAlignment="Top"
                MouseWheel="Light_MouseWheel" />

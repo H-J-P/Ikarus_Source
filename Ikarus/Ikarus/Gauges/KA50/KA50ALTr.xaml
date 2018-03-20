@@ -436,6 +436,9 @@
                 <Path Data="M1.912,2.448L5.868,4.046 9.823,5.643 6.461,8.269 3.1,10.895 2.507,6.672z M0,0L6.443,2.602 12.885,5.205 7.41,9.483 1.935,13.761 0.968,6.881z" Fill="#FFFFE600" Height="13.761" Canvas.Left="5.617" Canvas.Top="4.217" Width="12.885"/>
                 <Path Data="M1.321,8.617L0.133,0.17 8.044,3.365z" Fill="#FFFFF285" Height="8.817" Canvas.Left="7.396" Stroke="Yellow" StrokeThickness="0.216" StrokeMiterLimit="22.926" Canvas.Top="6.495" Width="8.258"/>
             </Canvas>
+            <Canvas x:Name="shadow" Height="170" Width="170">
+                <Path x:Name="Path_215" Width="148.92" Height="136.527" Stretch="Fill" Fill="#42000000" Data="M 170.079,17.008C 230.805,17.008 283.275,52.3734 308.012,103.631C 280.3,70.2067 238.463,48.9146 191.649,48.9146C 108.207,48.9146 40.5627,116.557 40.5627,200.003C 40.5627,229.283 48.9,256.611 63.3187,279.76C 34.756,251.953 17.008,213.092 17.008,170.079C 17.008,85.5414 85.54,17.008 170.079,17.008 Z " Canvas.Left="5.04" Canvas.Top="4.301"/>
+            </Canvas>
         </Canvas>
         <TextBlock x:Name="Input" HorizontalAlignment="Left" Height="15" Margin="133,4.5,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="34" Foreground="#FFFBF9F9" FontSize="14.667"><Run FontFamily="Digital-7 Mono" Text="0.000"/></TextBlock>
         <Image x:Name="Light" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Height="167" Width="167" MouseWheel="Light_MouseWheel" />

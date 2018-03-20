@@ -263,6 +263,9 @@
                 <Path Data="M0,57.151L5.25,57.151 5.25,36.151 2.624,0 0,36.151z" Fill="#FFCCCCCC" Height="57.151" Canvas.Left="19.692" Canvas.Top="0" Width="5.25"/>
                 <Path Data="M22.317,0C34.642,0 44.634,9.992 44.634,22.317 44.634,34.642 34.642,44.634 22.317,44.634 9.991,44.634 0,34.642 0,22.317 0,9.992 9.991,0 22.317,0" Fill="#FF121212" Height="44.634" Canvas.Left="0" Canvas.Top="43.201" Width="44.634"/>
             </Canvas>
+            <Canvas x:Name="shadow" Height="170" Width="170">
+                <Path x:Name="Path_215" Width="155" Height="137.462" Stretch="Fill" Fill="#42000000" Data="M 170.079,17.008C 230.805,17.008 283.275,52.3734 308.012,103.631C 280.3,70.2067 238.463,48.9146 191.649,48.9146C 108.207,48.9146 40.5627,116.557 40.5627,200.003C 40.5627,229.283 48.9,256.611 63.3187,279.76C 34.756,251.953 17.008,213.092 17.008,170.079C 17.008,85.5414 85.54,17.008 170.079,17.008 Z " Canvas.Left="5" Canvas.Top="6"/>
+            </Canvas>
         </Canvas>
         <Image x:Name="Light" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Height="170" Width="170" MouseWheel="Light_MouseWheel" />
         <Image x:Name="Frame" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Height="170" Width="170" MouseWheel="Light_MouseWheel" />

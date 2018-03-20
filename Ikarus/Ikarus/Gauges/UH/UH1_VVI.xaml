@@ -124,6 +124,9 @@
                 <Path Data="M1.702,3.299C2.584,3.299 3.298,2.584 3.298,1.704 3.298,0.823 2.584,0.108 1.702,0.108 0.822,0.108 0.108,0.823 0.108,1.704 0.108,2.584 0.822,3.299 1.702,3.299" Fill="#FF0D0D0D" Height="3.407" Canvas.Left="99.794" Stroke="#FF292929" StrokeThickness="0.216" StrokeMiterLimit="22.926" Canvas.Top="5.198" Width="3.406"/>
                 <Path Data="M1.429,2.749C0.7,2.749 0.108,2.157 0.108,1.429 0.108,0.7 0.7,0.108 1.429,0.108 2.159,0.108 2.749,0.7 2.749,1.429 2.749,2.157 2.159,2.749 1.429,2.749" Fill="#FF0D0D0D" Height="2.857" Canvas.Left="137.978" Stroke="#FF292929" StrokeThickness="0.216" StrokeMiterLimit="22.926" Canvas.Top="5.473" Width="2.857"/>
             </Canvas>
+            <Canvas x:Name="shadow" Width="255" Height="255">
+                <Path x:Name="Path_215" Width="214.872" Height="192.975" Canvas.Left="16.064" Stretch="Fill" Fill="#99000000" Data="M 170.079,17.008C 230.805,17.008 283.275,52.3734 308.012,103.631C 280.3,70.2067 238.463,48.9146 191.649,48.9146C 108.207,48.9146 40.5627,116.557 40.5627,200.003C 40.5627,229.283 48.9,256.611 63.3187,279.76C 34.756,251.953 17.008,213.092 17.008,170.079C 17.008,85.5414 85.54,17.008 170.079,17.008 Z " Canvas.Top="16.172"/>
+            </Canvas>
         </Canvas>
         <Image x:Name="Light" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Height="255" Width="255" MouseWheel="Light_MouseWheel" />
         <Image x:Name="Frame" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Height="255" Width="255" MouseWheel="Light_MouseWheel" />

@@ -159,6 +159,9 @@
             <Canvas x:Name="KA50_front_APUT" Height="43.366" Canvas.Left="35.01" Canvas.Top="34.616" Width="43.366">
                 <Path Data="M21.683,43.366C33.658,43.366 43.366,33.658 43.366,21.683 43.366,9.708 33.658,0 21.683,0 9.708,0 0,9.708 0,21.683 0,33.658 9.708,43.366 21.683,43.366" Fill="#FF0F0F0F" Height="43.366" Canvas.Left="0" Canvas.Top="0" Width="43.366"/>
             </Canvas>
+            <Canvas x:Name="shadow" Height="113" Width="113">
+                <Path x:Name="Path_215" Width="97.98" Height="90.702" Stretch="Fill" Fill="#42000000" Data="M 170.079,17.008C 230.805,17.008 283.275,52.3734 308.012,103.631C 280.3,70.2067 238.463,48.9146 191.649,48.9146C 108.207,48.9146 40.5627,116.557 40.5627,200.003C 40.5627,229.283 48.9,256.611 63.3187,279.76C 34.756,251.953 17.008,213.092 17.008,170.079C 17.008,85.5414 85.54,17.008 170.079,17.008 Z " Canvas.Left="5.01" Canvas.Top="4.132"/>
+            </Canvas>
         </Canvas>
         <Image x:Name="Light" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Height="113" Width="113" MouseWheel="Light_MouseWheel" />
         <Image x:Name="Frame" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Height="113" Width="113" MouseWheel="Light_MouseWheel" />

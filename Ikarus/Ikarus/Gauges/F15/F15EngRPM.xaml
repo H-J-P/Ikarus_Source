@@ -173,6 +173,9 @@
                 <Path Data="M3.504,0.141C5.361,0.141 6.866,1.646 6.866,3.503 6.866,5.36 5.361,6.865 3.504,6.865 1.648,6.865 0.142,5.36 0.142,3.503 0.142,1.646 1.648,0.141 3.504,0.141z" Height="7.007" Canvas.Left="9.064" Stroke="#FF333333" StrokeThickness="0.283" StrokeMiterLimit="22.926" Canvas.Top="46.196" Width="7.007"/>
             </Canvas>
             <TextBlock x:Name="RPMValue" Canvas.Left="34" TextWrapping="Wrap" Text="0.0000" Canvas.Top="236" Foreground="#FFF9F0F0" FontSize="14"/>
+            <Canvas x:Name="shadow" Height="255" Width="255">
+                <Path x:Name="Path_215" Width="223.731" Height="199.466" Stretch="Fill" Fill="#A0000000" Data="M 170.079,17.008C 230.805,17.008 283.275,52.3734 308.012,103.631C 280.3,70.2067 238.463,48.9146 191.649,48.9146C 108.207,48.9146 40.5627,116.557 40.5627,200.003C 40.5627,229.283 48.9,256.611 63.3187,279.76C 34.756,251.953 17.008,213.092 17.008,170.079C 17.008,85.5414 85.54,17.008 170.079,17.008 Z " Canvas.Left="10.065" Canvas.Top="10"/>
+            </Canvas>
         </Canvas>
         <Image x:Name="Light" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Height="255" Width="255" MouseWheel="Light_MouseWheel" />
         <Image x:Name="Frame" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Height="255" Width="255" MouseWheel="Light_MouseWheel" />
