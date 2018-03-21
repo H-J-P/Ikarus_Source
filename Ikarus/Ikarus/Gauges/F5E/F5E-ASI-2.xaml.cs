@@ -140,7 +140,7 @@ namespace Ikarus
                                            }
                                        }
                                    }
-                                   rtASIMach.Angle = rtASI.Angle - rtMach.Angle;
+                                   rtASIMach.Angle = (-rtMach.Angle) + rtASI.Angle;
                                    Mach.RenderTransform = rtASIMach;
 
                                    if (MainWindow.editmode)
