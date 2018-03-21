@@ -45,6 +45,9 @@ namespace Ikarus
         {
             InitializeComponent();
 
+
+            shadow.Visibility = MainWindow.shadowChecked ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
+
             rtASImax.Angle = -316;
             IASmax.RenderTransform = rtASImax;
 

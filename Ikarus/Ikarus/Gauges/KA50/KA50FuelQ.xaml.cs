@@ -35,6 +35,8 @@ namespace Ikarus
         {
             InitializeComponent();
 
+            shadow.Visibility = MainWindow.shadowChecked ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
+
             KA50_needleFR_FuelQ.Visibility = System.Windows.Visibility.Hidden;
             KA50_needleRR_FuelQ.Visibility = System.Windows.Visibility.Hidden;
         }

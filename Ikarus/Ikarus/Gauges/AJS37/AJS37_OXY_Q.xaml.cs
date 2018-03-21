@@ -30,6 +30,8 @@ namespace Ikarus
         {
             InitializeComponent();
 
+            shadow.Visibility = MainWindow.shadowChecked ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
+
             rtOxyQ.Angle = -30;
             OXY_Q1.RenderTransform = rtOxyQ;
         }

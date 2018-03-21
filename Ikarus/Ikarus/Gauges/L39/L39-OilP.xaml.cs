@@ -34,6 +34,8 @@ namespace Ikarus
         {
             InitializeComponent();
 
+            shadow.Visibility = MainWindow.shadowChecked ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
+
             rtOilTemp.Angle =  - 40;
             OilT.RenderTransform = rtOilTemp;
         }

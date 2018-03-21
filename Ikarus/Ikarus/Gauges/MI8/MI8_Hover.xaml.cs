@@ -36,6 +36,8 @@ namespace Ikarus
         {
             InitializeComponent();
 
+            shadow.Visibility = MainWindow.shadowChecked ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
+
             diss15_hover_lamp_off.Visibility = System.Windows.Visibility.Hidden;
             FirstValue.Visibility = System.Windows.Visibility.Hidden;
             SecondValue.Visibility = System.Windows.Visibility.Hidden;

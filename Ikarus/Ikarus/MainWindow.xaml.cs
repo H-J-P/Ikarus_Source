@@ -41,6 +41,7 @@ namespace Ikarus
         public static bool dataLog = false;
         public static bool detailLog = false;
         public static bool editmode = false;
+        public static bool shadowChecked = true;
         private bool functionTabIsVisible = true;
         public static bool getAllDscData = false;
         private bool initInstruments = true;
@@ -168,6 +169,12 @@ namespace Ikarus
                             PortListener.Text = dtConfig.Rows[0][6].ToString();
                             portListener = dtConfig.Rows[0][6].ToString();
                             PortSender.Text = dtConfig.Rows[0][7].ToString();
+                            try
+                            {
+                                checkBoxShadow.IsChecked = Convert.ToBoolean(dtConfig.Rows[0][10]);
+                            }
+                            catch
+                            { }
 
                             if (dbFilename.Length > 0)
                             {
@@ -1896,6 +1903,7 @@ namespace Ikarus
                 try
                 {
                     dtWindows.Rows[0][9] = textBoxLightColor.Text;
+                    dtConfig.Rows[0][10] = checkBoxShadow.IsChecked;
                 }
                 catch { }
 
@@ -2151,6 +2159,16 @@ namespace Ikarus
         private void Capture_Click(object sender, RoutedEventArgs e)
         {
             ScreenCapture(Convert.ToInt32(Left), Convert.ToInt32(Top), Convert.ToInt32(Width), Convert.ToInt32(Height));
+        }
+
+        private void CheckBox_Shadow_Checked(object sender, RoutedEventArgs e)
+        {
+            shadowChecked = true;
+        }
+
+        private void CheckBox_Shadow_Unchecked(object sender, RoutedEventArgs e)
+        {
+            shadowChecked = false;
         }
 
         #endregion

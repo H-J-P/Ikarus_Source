@@ -36,6 +36,8 @@ namespace Ikarus
         public F15EngRPM()
         {
             InitializeComponent();
+
+            shadow.Visibility = MainWindow.shadowChecked ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
             RPMValue.Visibility = System.Windows.Visibility.Hidden;
         }
 

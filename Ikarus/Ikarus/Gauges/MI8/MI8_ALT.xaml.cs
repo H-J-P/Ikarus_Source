@@ -34,6 +34,8 @@ namespace Ikarus
         {
             InitializeComponent();
 
+            shadow.Visibility = MainWindow.shadowChecked ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
+
             //RotateTransform rtvd10KL10Press = new RotateTransform();
             //rtvd10KL10Press.Angle = 5;
             //Pressure.RenderTransform = rtvd10KL10Press;

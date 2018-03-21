@@ -25,6 +25,8 @@ namespace Ikarus
         public F5E_CAB_P()
         {
             InitializeComponent();
+
+            shadow.Visibility = MainWindow.shadowChecked ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
         }
 
         public string GetID() { return dataImportID; }

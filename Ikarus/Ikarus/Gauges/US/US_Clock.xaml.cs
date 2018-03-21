@@ -40,6 +40,8 @@ namespace Ikarus
         {
             InitializeComponent();
 
+            shadow.Visibility = MainWindow.shadowChecked ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
+
             //Crono_Minutes.Visibility = System.Windows.Visibility.Hidden;
             //Crono_Second.Visibility = System.Windows.Visibility.Hidden;
             //dial_small.Visibility = System.Windows.Visibility.Hidden;

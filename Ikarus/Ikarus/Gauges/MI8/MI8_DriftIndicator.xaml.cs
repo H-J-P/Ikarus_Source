@@ -41,6 +41,8 @@ namespace Ikarus
         {
             InitializeComponent();
 
+            shadow.Visibility = MainWindow.shadowChecked ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
+
             diss15_W_shutter.Visibility = System.Windows.Visibility.Visible;
             diss15_W_memory_lamp.Visibility = System.Windows.Visibility.Hidden;
         }

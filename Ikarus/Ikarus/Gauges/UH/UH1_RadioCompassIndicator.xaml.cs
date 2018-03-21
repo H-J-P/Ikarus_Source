@@ -40,6 +40,8 @@ namespace Ikarus
         {
             InitializeComponent();
 
+            shadow.Visibility = MainWindow.shadowChecked ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
+
             rtPowerFail.Angle = 5;
             RMI_Off_Flagg.RenderTransform = rtPowerFail;
         }

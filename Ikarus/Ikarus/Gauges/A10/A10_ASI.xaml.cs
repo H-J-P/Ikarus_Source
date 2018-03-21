@@ -40,6 +40,8 @@ namespace Ikarus
         public A10_ASI()
         {
             InitializeComponent();
+
+            shadow.Visibility = MainWindow.shadowChecked ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
             IASMAX.Visibility = System.Windows.Visibility.Hidden;
         }
 

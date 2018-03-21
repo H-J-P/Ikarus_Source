@@ -44,6 +44,8 @@ namespace Ikarus
         {
             InitializeComponent();
 
+            shadow.Visibility = MainWindow.shadowChecked ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
+
             ASI_OFF_flag.Visibility = System.Windows.Visibility.Visible;
             Mach_OFF_flag.Visibility = System.Windows.Visibility.Visible;
         }

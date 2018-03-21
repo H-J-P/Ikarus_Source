@@ -33,6 +33,8 @@ namespace Ikarus
         public MI8_FuelQ()
         {
             InitializeComponent();
+
+            shadow.Visibility = MainWindow.shadowChecked ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
         }
 
         public void SetWindowID(int _windowID)

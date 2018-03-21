@@ -186,7 +186,7 @@
                 <Path Data="M0.784,0L3.427,0.278 2.643,7.731 0,7.453z" Fill="White" Height="7.731" Canvas.Left="122.752" Canvas.Top="4.096" Width="3.427"/>
                 <Path Data="M0,0L6.858,10.109 13.715,0z" Fill="White" Height="10.109" Canvas.Left="106.528" Canvas.Top="0.819" Width="13.715"/>
             </Canvas>
-            <Canvas x:Name="shadow1" Height="197.063" Canvas.Left="9.921" Canvas.Top="9.473" Width="218.254">
+            <Canvas x:Name="shadow" Height="197.063" Canvas.Left="9.921" Canvas.Top="9.473" Width="218.254">
                 <Path Data="M114.804,0C160.35,0 199.7,26.523 218.254,64.966 197.469,39.898 166.091,23.929 130.982,23.929 68.4,23.929 17.667,74.662 17.667,137.245 17.667,159.205 23.92,179.701 34.734,197.063 13.311,176.208 0,147.062 0,114.802 0,51.399 51.4,0 114.804,0" Fill="Black" Height="197.063" Canvas.Left="0" Opacity="0.7" Canvas.Top="0" Width="218.254"/>
             </Canvas>
             <Canvas x:Name="Crono_Minutes" Height="21.957" Canvas.Left="153.555" Canvas.Top="90.512" Width="8.81100000000001" RenderTransformOrigin="0.526,0.795">

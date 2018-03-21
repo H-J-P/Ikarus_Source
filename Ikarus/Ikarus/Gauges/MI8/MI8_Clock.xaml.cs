@@ -48,6 +48,8 @@ namespace Ikarus
         {
             InitializeComponent();
 
+            shadow.Visibility = MainWindow.shadowChecked ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
+
             CLOCK_flight_time_meter_status.Visibility = System.Windows.Visibility.Hidden;
         }
 

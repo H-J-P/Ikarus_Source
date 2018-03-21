@@ -29,6 +29,8 @@ namespace Ikarus
         public AJS37_ASI_stby()
         {
             InitializeComponent();
+
+            shadow.Visibility = MainWindow.shadowChecked ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
         }
 
         public void SetID(string _dataImportID)

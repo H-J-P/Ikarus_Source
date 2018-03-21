@@ -74,6 +74,8 @@ namespace Ikarus
         public SA342_ALT()
         {
             InitializeComponent();
+
+            shadow.Visibility = MainWindow.shadowChecked ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
         }
         public double GetSize()
         {

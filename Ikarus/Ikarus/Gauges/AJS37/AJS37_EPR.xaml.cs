@@ -30,6 +30,8 @@ namespace Ikarus
         {
             InitializeComponent();
 
+            shadow.Visibility = MainWindow.shadowChecked ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
+
             rtEPR.Angle = -20;
             EPR1.RenderTransform = rtEPR;
         }

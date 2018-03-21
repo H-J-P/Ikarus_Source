@@ -30,6 +30,8 @@ namespace Ikarus
         public MI8_EGT_APU()
         {
             InitializeComponent();
+
+            shadow.Visibility = MainWindow.shadowChecked ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
         }
 
         public void SetID(string _dataImportID)

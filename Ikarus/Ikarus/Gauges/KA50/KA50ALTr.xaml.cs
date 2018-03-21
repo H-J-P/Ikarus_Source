@@ -40,6 +40,8 @@ namespace Ikarus
         {
             InitializeComponent();
 
+            shadow.Visibility = MainWindow.shadowChecked ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
+
             KA50_knobAl_ALTr_Alarm.Visibility = System.Windows.Visibility.Hidden;
 
             rtDangerAltimeter.Angle = -203;

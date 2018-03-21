@@ -37,6 +37,8 @@ namespace Ikarus
         {
             InitializeComponent();
 
+            shadow.Visibility = MainWindow.shadowChecked ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
+
             rtBaroPressure.Angle = 240;
             WP_needleP_ALT.RenderTransform = rtBaroPressure;
 

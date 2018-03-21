@@ -36,6 +36,9 @@ namespace Ikarus
         public F15EGT()
         {
             InitializeComponent();
+
+            shadow.Visibility = MainWindow.shadowChecked ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
+
             rtEGT.Angle = -10;
             EngineTemp.RenderTransform = rtEGT;
         }

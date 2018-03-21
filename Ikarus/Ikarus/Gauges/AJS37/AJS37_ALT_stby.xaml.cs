@@ -43,6 +43,8 @@ namespace Ikarus
         {
             InitializeComponent();
 
+            shadow.Visibility = MainWindow.shadowChecked ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
+
             rtalt100FP.Angle =  180;
             Altimeter_100.RenderTransform = rtalt100FP;
             rtalt1000FP.Angle =  180;

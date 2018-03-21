@@ -53,6 +53,8 @@ namespace Ikarus
         {
             InitializeComponent();
 
+            shadow.Visibility = MainWindow.shadowChecked ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
+
             KA50_needleSTRG_ADI.Visibility = System.Windows.Visibility.Visible;
             KA50_needleOFF_ADI.Visibility = System.Windows.Visibility.Visible;
         }

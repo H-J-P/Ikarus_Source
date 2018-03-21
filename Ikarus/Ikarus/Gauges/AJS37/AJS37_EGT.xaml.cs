@@ -31,6 +31,8 @@ namespace Ikarus
         public AJS37_EGT()
         {
             InitializeComponent();
+
+            shadow.Visibility = MainWindow.shadowChecked ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
             EGT_OFF_flag.Visibility = System.Windows.Visibility.Hidden;
         }
 

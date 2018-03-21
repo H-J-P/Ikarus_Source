@@ -29,6 +29,8 @@ namespace Ikarus
         public F5E_AOA()
         {
             InitializeComponent();
+
+            shadow.Visibility = MainWindow.shadowChecked ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
             Flagg_OFF.Visibility = System.Windows.Visibility.Visible;
         }
 

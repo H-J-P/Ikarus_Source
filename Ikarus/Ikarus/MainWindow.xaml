@@ -135,11 +135,11 @@
                                   ItemsSource="{Binding}"
                                   SelectedCellsChanged="DatagridFunction_SelectedCellsChanged">
                             <DataGrid.Columns>
-                                <DataGridTextColumn Width="30"
+                                <DataGridTextColumn Width="55"
                                                     Binding="{Binding IDInst}"
-                                                    Header="ID"
-                                                    IsReadOnly="True"
-                                                    Visibility="Hidden">
+                                                    Header="Instance"
+                                                    IsReadOnly="False"
+                                                    Visibility="Visible">
                                     <DataGridTextColumn.ElementStyle>
                                         <Style TargetType="{x:Type TextBlock}">
                                             <Setter Property="TextAlignment" Value="Center" />
@@ -214,7 +214,7 @@
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
                                             <Slider Name="SliderTest"
-                                                    Width="215"
+                                                    Width="160"
                                                     LargeChange="0.01"
                                                     Maximum="1"
                                                     Minimum="-1"
@@ -551,7 +551,7 @@
                          Margin="-1,0,1,0"
                          VerticalAlignment="Bottom"
                          Header="Configuration">
-                    <Grid>
+                    <Grid Margin="-4,0,4,0">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="37*" />
                             <ColumnDefinition Width="235*" />
@@ -819,7 +819,7 @@
                                   Grid.Column="1"
                                   Width="136"
                                   Height="21"
-                                  Margin="0,0,24,142"
+                                  Margin="0,0,24,168"
                                   HorizontalAlignment="Right"
                                   VerticalAlignment="Bottom"
                                   Checked="CheckBox_Lights_Checked"
@@ -827,6 +827,18 @@
                                   Foreground="#FFF9F9F9"
                                   ToolTip="If it is defined in  &quot;Image for Glass&quot; in Tab Instruments"
                                   Unchecked="CheckBox_Lights_Unchecked" />
+                        <CheckBox Name="checkBoxShadow"
+                                  Grid.Column="1"
+                                  Width="136"
+                                  Height="21"
+                                  Margin="0,0,24,142"
+                                  HorizontalAlignment="Right"
+                                  VerticalAlignment="Bottom"
+                                  Checked="CheckBox_Shadow_Checked"
+                                  Content="Gauges Shadow"
+                                  Foreground="#FFF9F9F9"
+                                  ToolTip="If it is defined in  &quot;Image for Glass&quot; in Tab Instruments"
+                                  Unchecked="CheckBox_Shadow_Unchecked" IsChecked="True" />
                         <CheckBox Name="checkBoxLog"
                                   Grid.Column="1"
                                   Width="136"
@@ -847,8 +859,8 @@
                                   Click="CheckBoxLogSwitches_Click"
                                   Content="Log Switches only"
                                   Foreground="#FFF9F9F9" />
-                        <Label x:Name="labelLight" Content="Light Color ADI" VerticalAlignment="Bottom" Grid.Column="1" Margin="0,0,79,215" Foreground="#FFECE8E8" HorizontalAlignment="Right" Width="81" Height="16"/>
-                        <TextBox x:Name="textBoxLightColor" Text="#95E295" TextWrapping="Wrap" Margin="0,0,79,187" Grid.Column="1" HorizontalAlignment="Right" Width="81" Height="23" VerticalAlignment="Bottom"/>
+                        <Label x:Name="labelLight" Content="Light Color ADI" VerticalAlignment="Bottom" Grid.Column="1" Margin="0,0,79,235" Foreground="#FFECE8E8" HorizontalAlignment="Right" Width="81" Height="16"/>
+                        <TextBox x:Name="textBoxLightColor" Text="#95E295" TextWrapping="Wrap" Margin="0,0,79,207" Grid.Column="1" HorizontalAlignment="Right" Width="81" Height="23" VerticalAlignment="Bottom"/>
                     </Grid>
                 </TabItem>
                 <TabItem Name="Log"
@@ -941,7 +953,7 @@
                    Height="19"
                    Margin="486,0,0,10"
                    VerticalAlignment="Bottom"
-                   Content="(C) H.J.P. 2018  Version 1.2.3.1j"
+                   Content="(C) H.J.P. 2018  Version 1.2.3.1k"
                    Foreground="#FFD8BC05" HorizontalAlignment="Left" Width="189" />
             <Label Name="lbEditMode"
                    Width="72"

@@ -36,6 +36,8 @@ namespace Ikarus
         public F5E_ADI_Sphere()
         {
             InitializeComponent();
+
+            shadow.Visibility = MainWindow.shadowChecked ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
             Flagg_off.Visibility = System.Windows.Visibility.Visible;
             Flagg_course_off.Visibility = System.Windows.Visibility.Hidden;
 

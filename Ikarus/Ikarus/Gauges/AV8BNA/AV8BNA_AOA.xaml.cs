@@ -33,6 +33,8 @@ namespace Ikarus
         {
             InitializeComponent();
 
+            shadow.Visibility = MainWindow.shadowChecked ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
+
             Flag_Off.Visibility = System.Windows.Visibility.Visible;
         }
         public void SetID(string _dataImportID)
