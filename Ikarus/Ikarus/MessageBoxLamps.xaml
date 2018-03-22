@@ -67,7 +67,7 @@
                 </LinearGradientBrush>
             </DataGrid.Background>
             <DataGrid.Columns>
-                <DataGridTextColumn Width="50"
+                <DataGridTextColumn Width="65"
                                     Binding="{Binding ExportID}"
                                     Header="DCS ID"
                                     IsReadOnly="True">
@@ -77,7 +77,7 @@
                         </Style>
                     </DataGridTextColumn.ElementStyle>
                 </DataGridTextColumn>
-                <DataGridTextColumn Width="300"
+                <DataGridTextColumn Width="291"
                                     Binding="{Binding Description}"
                                     Header="Function"
                                     IsReadOnly="True" />

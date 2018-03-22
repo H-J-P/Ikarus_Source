@@ -24,6 +24,16 @@
                   MouseWheel="DataGridSwitches_MouseWheel"
                   SelectionMode="Single">
             <DataGrid.Columns>
+                <DataGridTextColumn Width="65"
+                                    Binding="{Binding DcsID}"
+                                    Header="DCS ID"
+                                    IsReadOnly="True">
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Setter Property="TextAlignment" Value="Right" />
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
                 <DataGridTextColumn Width="35"
                                     Binding="{Binding ID}"
                                     Header="ID"
@@ -35,20 +45,10 @@
                         </Style>
                     </DataGridTextColumn.ElementStyle>
                 </DataGridTextColumn>
-                <DataGridTextColumn Width="380"
+                <DataGridTextColumn Width="374"
                                     Binding="{Binding Discription}"
                                     Header="Function"
                                     IsReadOnly="True" />
-                <DataGridTextColumn Width="50"
-                                    Binding="{Binding DcsID}"
-                                    Header="DCS ID"
-                                    IsReadOnly="True">
-                    <DataGridTextColumn.ElementStyle>
-                        <Style TargetType="{x:Type TextBlock}">
-                            <Setter Property="TextAlignment" Value="Right" />
-                        </Style>
-                    </DataGridTextColumn.ElementStyle>
-                </DataGridTextColumn>
             </DataGrid.Columns>
         </DataGrid>
         <Label Width="66"

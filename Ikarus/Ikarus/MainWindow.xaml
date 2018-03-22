@@ -156,7 +156,7 @@
                                         </Style>
                                     </DataGridTextColumn.ElementStyle>
                                 </DataGridTextColumn>
-                                <DataGridTextColumn Width="50"
+                                <DataGridTextColumn Width="65"
                                                     Binding="{Binding Arg_number}"
                                                     Header="DCS ID">
                                     <DataGridTextColumn.ElementStyle>
@@ -214,7 +214,7 @@
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
                                             <Slider Name="SliderTest"
-                                                    Width="160"
+                                                    Width="154"
                                                     LargeChange="0.01"
                                                     Maximum="1"
                                                     Minimum="-1"
@@ -267,7 +267,7 @@
                                     </Style>
                                 </DataGridTextColumn.ElementStyle>
                             </DataGridTextColumn>
-                            <DataGridTextColumn Width="50"
+                            <DataGridTextColumn Width="65"
                                                 Binding="{Binding DcsID}"
                                                 Header="DCS ID"
                                                 IsReadOnly="True">
@@ -896,11 +896,11 @@
             </TabControl>
             <Button Name="Save"
                     Height="24"
-                    Margin="1029,0,0,5"
+                    Margin="0,0,3,5"
                     VerticalAlignment="Bottom"
                     Click="Button_Save_Click"
                     Content="Save"
-                    Foreground="#FFFDD650" HorizontalAlignment="Left" Width="90">
+                    Foreground="#FFFDD650" HorizontalAlignment="Right" Width="90">
                 <Button.Background>
                     <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
                         <GradientStop Offset="0" Color="#FFEEEEEE" />
@@ -910,16 +910,16 @@
             </Button>
             <Button Name="Load"
                     Height="24"
-                    Margin="939,0,0,5"
+                    Margin="0,0,93,5"
                     VerticalAlignment="Bottom"
                     Click="Button_Load_Click"
-                    Content="Load" HorizontalAlignment="Left" Width="90" />
+                    Content="Load" HorizontalAlignment="Right" Width="90" />
             <Button Name="buttonShow"
                     Height="24"
-                    Margin="844,0,0,5"
+                    Margin="0,0,188,5"
                     VerticalAlignment="Bottom"
                     Click="Button_Show_Click"
-                    Content="Show Cockpit" HorizontalAlignment="Left" Width="90" />
+                    Content="Show Cockpit" HorizontalAlignment="Right" Width="90" />
             <Button x:Name="buttonAdd"
                     Width="90"
                     Height="24"
@@ -938,41 +938,37 @@
                     Content="Delete Record" />
             <Button Name="Refresh"
                     Height="24"
-                    Margin="220,0,812,5"
+                    Margin="220,0,0,5"
                     VerticalAlignment="Bottom"
                     Click="Button_Refresh_Click"
-                    Content="Refresh" />
+                    Content="Refresh" HorizontalAlignment="Left" Width="90" />
             <Button x:Name="Capture"
                     Height="24"
-                    Margin="750,0,0,5"
+                    Margin="0,0,282,5"
                     VerticalAlignment="Bottom"
                     Click="Capture_Click"
                     Content="Capture"
-                    ToolTip="Ikarus Screen Capture" HorizontalAlignment="Left" Width="90" />
+                    ToolTip="Ikarus Screen Capture" HorizontalAlignment="Right" Width="90" />
             <Label Name="Version"
                    Height="19"
-                   Margin="486,0,0,10"
+                   Margin="502,0,440,10"
                    VerticalAlignment="Bottom"
-                   Content="(C) H.J.P. 2018  Version 1.2.3.1k"
-                   Foreground="#FFD8BC05" HorizontalAlignment="Left" Width="189" />
+                   Content=" (C) H.J.P. 2018  Version 1.2.3.1L"
+                   Foreground="#FFD8BC05" RenderTransformOrigin="1.004,0.526" HorizontalAlignment="Center" Width="180" />
             <Label Name="lbEditMode"
-                   Width="72"
                    Height="19"
                    Margin="315,0,0,10"
-                   HorizontalAlignment="Left"
                    VerticalAlignment="Bottom"
                    Content="Editor Mode"
                    Foreground="#FFFB063E"
-                   Visibility="Visible" />
+                   Visibility="Visible" HorizontalAlignment="Left" Width="72" />
             <Label Name="lbLogging"
-                   Width="65"
                    Height="19"
                    Margin="396,0,0,10"
-                   HorizontalAlignment="Left"
                    VerticalAlignment="Bottom"
                    Content="Log Details"
                    Foreground="#FFFB063E"
-                   Visibility="Visible" />
+                   Visibility="Visible" HorizontalAlignment="Left" Width="65" />
         </Grid>
     </Grid>
 </Window>
