@@ -141,7 +141,7 @@
                 <Path Data="M2.196,5.839C0.64,5.382 -0.249,3.751 0.208,2.195 0.666,0.64 2.298,-0.249 3.852,0.208 5.407,0.665 6.298,2.296 5.841,3.852 5.383,5.407 3.752,6.297 2.196,5.839" Fill="#FF1A1A1A" Height="6.048" Canvas.Left="30.609" Stroke="#FF1A1A1A" StrokeThickness="0.216" StrokeMiterLimit="22.926" Canvas.Top="9.167" Width="6.049"/>
                 <Canvas Clip="F1M3.124,7.235C1.569,6.777 0.679,5.146 1.137,3.591 1.594,2.036 3.226,1.145 4.781,1.603 6.336,2.06 7.226,3.692 6.769,5.247 6.312,6.802 4.68,7.693 3.124,7.235" Height="18" Canvas.Left="29.511" Canvas.Top="7.66" Width="20">
                     <Canvas Clip="M0.679,1.145L7.226,1.145 7.226,7.692 0.679,7.692z" Height="18" Canvas.Left="0" Canvas.Top="0" Width="20">
-                        <Image Source="/Ikarus;component/Gauges/_Images\MEK4Rev_Images\Image1.png" Stretch="Fill">
+                        <Image Source="/Ikarus;component/Gauges/_Images\MEK4MAP_Images\Image1.png" Stretch="Fill">
                             <Image.RenderTransform>
                                 <MatrixTransform Matrix="0.360000228881836,0,0,0.359999974568685,0,0"/>
                             </Image.RenderTransform>
@@ -152,7 +152,7 @@
                 <Path Data="M5.71,15.483C1.538,14.257 -0.848,9.881 0.379,5.71 1.605,1.539 5.981,-0.848 10.153,0.379 14.323,1.606 16.71,5.982 15.483,10.152 14.257,14.324 9.88,16.711 5.71,15.483" Fill="#FF1A1A1A" Height="15.862" Canvas.Left="18.8" Stroke="#FF1A1A1A" StrokeThickness="0.216" StrokeMiterLimit="22.926" Canvas.Top="27.736" Width="15.861"/>
                 <Canvas Clip="F1M7.07,17.434C2.899,16.208 0.512,11.832 1.739,7.661 2.966,3.49 7.341,1.103 11.513,2.33 15.683,3.556 18.071,7.932 16.843,12.103 15.617,16.274 11.241,18.661 7.07,17.434" Height="40" Canvas.Left="17.296" Canvas.Top="25.577" Width="44">
                     <Canvas Clip="M0.512,1.103L18.07,1.103 18.07,18.661 0.512,18.661z" Height="40" Canvas.Left="0" Canvas.Top="0" Width="44">
-                        <Image Source="/Ikarus;component/Gauges/_Images\MEK4Rev_Images\Image.png" Stretch="Fill">
+                        <Image Source="/Ikarus;component/Gauges/_Images\MEK4MAP_Images\Image.png" Stretch="Fill">
                             <Image.RenderTransform>
                                 <MatrixTransform Matrix="0.359999916770242,0,0,0.359999942779541,0,0"/>
                             </Image.RenderTransform>
@@ -160,6 +160,9 @@
                     </Canvas>
                 </Canvas>
                 <Path Data="M5.71,15.483C1.539,14.257 -0.848,9.881 0.379,5.71 1.606,1.539 5.981,-0.848 10.153,0.379 14.323,1.605 16.711,5.981 15.483,10.152 14.257,14.323 9.881,16.71 5.71,15.483z" Height="15.861" Canvas.Left="18.656" Stroke="#FF1A1A1A" StrokeThickness="0.216" StrokeMiterLimit="22.926" Canvas.Top="27.528" Width="15.861"/>
+            </Canvas>
+            <Canvas x:Name="shadow" Height="238" Width="238">
+                <Path x:Name="Path_215" Width="187.274" Height="169.011" Stretch="Fill" Fill="#42000000" Data="M 170.079,17.008C 230.805,17.008 283.275,52.3734 308.012,103.631C 280.3,70.2067 238.463,48.9146 191.649,48.9146C 108.207,48.9146 40.5627,116.557 40.5627,200.003C 40.5627,229.283 48.9,256.611 63.3187,279.76C 34.756,251.953 17.008,213.092 17.008,170.079C 17.008,85.5414 85.54,17.008 170.079,17.008 Z " Canvas.Left="19" Canvas.Top="18"/>
             </Canvas>
         </Canvas>
         <Image x:Name="Light" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Height="238" Width="238" MouseWheel="Light_MouseWheel" />

@@ -279,6 +279,9 @@
     <Compile Include="Gauges\F5E\F5E-ASI-2.xaml.cs">
       <DependentUpon>F5E-ASI-2.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Gauges\F5E\F5E-PitchTrim.xaml.cs">
+      <DependentUpon>F5E-PitchTrim.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Gauges\F5E\F5E_UHFPresetChannel.xaml.cs">
       <DependentUpon>F5E_UHFPresetChannel.xaml</DependentUpon>
     </Compile>
@@ -1630,6 +1633,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Gauges\F5E\F5E-ASI-2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Gauges\F5E\F5E-PitchTrim.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

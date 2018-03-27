@@ -26,6 +26,8 @@ namespace Ikarus
         public FWD9Fuel()
         {
             InitializeComponent();
+
+            shadow.Visibility = MainWindow.shadowChecked ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
         }
 
         private double[] valueScale = new double[] { };

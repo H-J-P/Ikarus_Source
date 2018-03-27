@@ -7,22 +7,27 @@ using System.Windows.Threading;
 namespace Ikarus
 {
     /// <summary>
-    /// Interaktionslogik für ME4KH2OT.xaml
+    /// Interaction logic for F5E_PitchTrim.xaml
     /// </summary>
-    public partial class BfK4H2OT : UserControl, I_Ikarus
+    public partial class F5E_PitchTrim : UserControl, I_Ikarus
     {
         private string dataImportID = "";
+
+        private double[] valueScale = new double[] { };
+        private double[] degreeDial = new double[] { };
+        int valueScaleIndex = 0;
+        GaugesHelper helper = null;
         private int windowID = 0;
         private string[] vals = new string[] { };
-        GaugesHelper helper = null;
 
         public int GetWindowID() { return windowID; }
 
-        double value = 0.0;
-        double lvalue = 0.0;
-        RotateTransform rtCoolantTemperature = new RotateTransform();
+        double pitch = 0.0;
+        double lpitch = 0.0;
 
-        public BfK4H2OT()
+        RotateTransform rtPitch = new RotateTransform();
+
+        public F5E_PitchTrim()
         {
             InitializeComponent();
 
@@ -55,10 +60,12 @@ namespace Ikarus
 
         public void SetInput(string _input)
         {
+            helper.SetInput(ref _input, ref valueScale, ref valueScaleIndex, 2);
         }
 
         public void SetOutput(string _output)
         {
+            helper.SetOutput(ref _output, ref degreeDial, 2);
         }
 
         public double GetSize()
@@ -73,21 +80,32 @@ namespace Ikarus
 
         public void UpdateGauge(string strData)
         {
-            Dispatcher.BeginInvoke(DispatcherPriority.Normal,
+            Dispatcher.BeginInvoke(DispatcherPriority.Send,
                        (Action)(() =>
                        {
                            try
                            {
                                vals = strData.Split(';');
 
-                               if (vals.Length > 0) { value = Convert.ToDouble(vals[0], CultureInfo.InvariantCulture); }
+                               if (vals.Length > 0) { pitch = Convert.ToDouble(vals[0], CultureInfo.InvariantCulture); }
 
-                               if (lvalue != value)
+                               if (lpitch != pitch)
                                {
-                                   rtCoolantTemperature.Angle = value * 93;
-                                   ME4K_H2oT_Dial1.RenderTransform = rtCoolantTemperature;
+                                   for (int n = 0; n < (valueScaleIndex - 1); n++)
+                                   {
+                                       if (pitch >= valueScale[n] && pitch <= valueScale[n + 1])
+                                       {
+                                           rtPitch.Angle = (degreeDial[n] - degreeDial[n + 1]) / (valueScale[n] - valueScale[n + 1]) * (pitch - valueScale[n]) + degreeDial[n];
+                                           break;
+                                       }
+                                   }
+                                   if (MainWindow.editmode)
+                                   {
+                                       Cockpit.UpdateInOut(dataImportID, "1", pitch.ToString(), Convert.ToInt32(rtPitch.Angle).ToString());
+                                   }
+                                   Pitch_Trim.RenderTransform = rtPitch;
                                }
-                               lvalue = value;
+                               lpitch = pitch;
                            }
                            catch { return; }
                        }));

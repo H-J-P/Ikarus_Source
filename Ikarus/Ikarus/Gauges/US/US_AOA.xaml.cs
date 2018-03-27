@@ -33,7 +33,6 @@ namespace Ikarus
             shadow.Visibility = MainWindow.shadowChecked ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
 
             AOA_poweroff_flag.Visibility = System.Windows.Visibility.Visible;
-            AOAValue.Visibility = System.Windows.Visibility.Hidden;
         }
 
         public void SetID(string _dataImportID)

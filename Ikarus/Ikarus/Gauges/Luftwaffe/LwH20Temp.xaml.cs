@@ -24,6 +24,8 @@ namespace Ikarus
         public LwH20Temp()
         {
             InitializeComponent();
+
+            shadow.Visibility = MainWindow.shadowChecked ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
         }
 
         double h2oTemp = 0.0;

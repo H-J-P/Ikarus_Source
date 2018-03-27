@@ -1345,7 +1345,7 @@ namespace Ikarus
                 {
                     if (Convert.ToInt32(dtInstruments.Rows[i]["IDInst"]) == impordID)
                     {
-                        selectedInstrument = i;
+                        //selectedInstrument = i;
                         DataGridInstruments.SelectedItem = DataGridInstruments.Items[i];
                         DataGridInstruments.ScrollIntoView(DataGridInstruments.Items[i]);
                     }
@@ -1363,7 +1363,7 @@ namespace Ikarus
                 {
                     if (Convert.ToInt32(dtLamps.Rows[i]["ID"]) == impordID)
                     {
-                        selectedLamp = i;
+                        //selectedLamp = i;
                         DataGridLamps.SelectedItem = DataGridLamps.Items[i];
                         DataGridLamps.ScrollIntoView(DataGridLamps.Items[i]);
                     }
@@ -1382,7 +1382,7 @@ namespace Ikarus
                 {
                     if (Convert.ToInt32(dtSwitches.Rows[i]["ID"]) == impordID)
                     {
-                        selectedSwitch = i;
+                        //selectedSwitch = i;
                         DataGridSwitches.SelectedItem = DataGridSwitches.Items[i];
                         DataGridSwitches.ScrollIntoView(DataGridSwitches.Items[i]);
                     }
@@ -1951,6 +1951,10 @@ namespace Ikarus
                 lbEditMode.Visibility = Visibility.Hidden;
                 Refresh.Visibility = Visibility.Hidden;
 
+                //selectedInstrument = -1;
+                //selectedLamp = -1;
+                //selectedSwitch = -1;
+
                 editmode = false;
                 FillClasses();
                 CockpitShow();
@@ -2164,11 +2168,21 @@ namespace Ikarus
         private void CheckBox_Shadow_Checked(object sender, RoutedEventArgs e)
         {
             shadowChecked = true;
+
+            //if (!cockpitWindowActiv) { CockpitClose(); }
+
+            //CockpitShow();
+            //UpdateLog();
         }
 
         private void CheckBox_Shadow_Unchecked(object sender, RoutedEventArgs e)
         {
             shadowChecked = false;
+
+            //if (!cockpitWindowActiv) { CockpitClose(); }
+
+            //CockpitShow();
+            //UpdateLog();
         }
 
         #endregion

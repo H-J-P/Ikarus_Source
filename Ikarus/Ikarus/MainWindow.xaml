@@ -635,7 +635,7 @@
                                         </Style>
                                     </DataGridTextColumn.ElementStyle>
                                 </DataGridTextColumn>
-                                <DataGridTextColumn Width="150"
+                                <DataGridTextColumn Width="145"
                                                     Binding="{Binding Name}"
                                                     Header="Description" />
                                 <DataGridTextColumn Width="45"
@@ -953,7 +953,7 @@
                    Height="19"
                    Margin="502,0,440,10"
                    VerticalAlignment="Bottom"
-                   Content=" (C) H.J.P. 2018  Version 1.2.3.1L"
+                   Content=" (C) H.J.P. 2018  Version 1.2.3.1n"
                    Foreground="#FFD8BC05" RenderTransformOrigin="1.004,0.526" HorizontalAlignment="Center" Width="180" />
             <Label Name="lbEditMode"
                    Height="19"

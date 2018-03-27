@@ -60,7 +60,7 @@
                 <Path Data="M11.339,0C17.601,0 22.678,5.077 22.678,11.34 22.678,17.602 17.601,22.678 11.339,22.678 5.077,22.678 0,17.602 0,11.34 0,5.077 5.077,0 11.339,0" Fill="#FF4D4D4D" Height="22.678" Canvas.Left="8.066" Canvas.Top="8.151" Width="22.678"/>
                 <Canvas Clip="M20.641,6.365C23.797,10.844 22.724,17.033 18.244,20.189 13.766,23.346 7.576,22.273 4.42,17.794 1.264,13.314 2.337,7.125 6.815,3.969 11.295,0.814 17.484,1.887 20.641,6.365" Height="51" Canvas.Left="6.875" Canvas.Top="7.411" Width="52">
                     <Canvas Clip="M1.264,0.814L23.797,0.814 23.797,23.346 1.264,23.346z" Height="51" Canvas.Left="0" Canvas.Top="0" Width="52">
-                        <Image Source="/Ikarus;component/Gauges/_Images\LwMW50P_Images\Image3.png" Stretch="Fill">
+                        <Image Source="/Ikarus;component/Gauges/_Images\LwMW50P_Images\Image1.png" Stretch="Fill">
                             <Image.RenderTransform>
                                 <MatrixTransform Matrix="0.360000096834623,0,0,0.359999937169692,0,0"/>
                             </Image.RenderTransform>
@@ -105,6 +105,9 @@
                 </Canvas>
                 <Path Data="M10.028,0.108C15.508,0.108 19.95,4.551 19.95,10.03 19.95,15.508 15.508,19.952 10.028,19.952 4.549,19.952 0.108,15.508 0.108,10.03 0.108,4.551 4.549,0.108 10.028,0.108z" Height="20.06" Canvas.Left="143.394" Stroke="#FF333333" StrokeThickness="0.216" StrokeMiterLimit="22.926" Canvas.Top="143.393" Width="20.058"/>
                 <Path Data="M0.141,1.937L0.864,0.14 19.188,7.501 18.468,9.296z" Fill="#FF4D4D4D" Height="9.437" Canvas.Left="143.757" Stroke="#FF333333" StrokeThickness="0.216" StrokeMiterLimit="22.926" Canvas.Top="148.705" Width="19.328"/>
+            </Canvas>
+            <Canvas x:Name="shadow" Height="173" Width="173">
+                <Path x:Name="Path_215" Width="133.741" Height="120.408" Stretch="Fill" Fill="#42000000" Data="M 170.079,17.008C 230.805,17.008 283.275,52.3734 308.012,103.631C 280.3,70.2067 238.463,48.9146 191.649,48.9146C 108.207,48.9146 40.5627,116.557 40.5627,200.003C 40.5627,229.283 48.9,256.611 63.3187,279.76C 34.756,251.953 17.008,213.092 17.008,170.079C 17.008,85.5414 85.54,17.008 170.079,17.008 Z " Canvas.Left="16.129" Canvas.Top="15"/>
             </Canvas>
         </Canvas>
         <Image x:Name="Light" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Height="173" Width="173" MouseWheel="Light_MouseWheel" />
