@@ -1023,8 +1023,8 @@
     <Compile Include="Gauges\ButtonAndSwitches\Rotary.xaml.cs">
       <DependentUpon>Rotary.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Gauges\ButtonAndSwitches\SwitchRotary.xaml.cs">
-      <DependentUpon>SwitchRotary.xaml</DependentUpon>
+    <Compile Include="Gauges\ButtonAndSwitches\MultiSwitch.xaml.cs">
+      <DependentUpon>MultiSwitch.xaml</DependentUpon>
     </Compile>
     <Compile Include="Gauges\ButtonAndSwitches\SwitchOnOffOn.xaml.cs">
       <DependentUpon>SwitchOnOffOn.xaml</DependentUpon>
@@ -2628,7 +2628,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Gauges\ButtonAndSwitches\SwitchRotary.xaml">
+    <Page Include="Gauges\ButtonAndSwitches\MultiSwitch.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

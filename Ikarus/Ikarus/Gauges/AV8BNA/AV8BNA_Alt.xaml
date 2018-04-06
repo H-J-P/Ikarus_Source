@@ -213,7 +213,7 @@
         <Canvas x:Name="shadow" Width="340" Height="340" Canvas.Left="0" Canvas.Top="0">
             <Path x:Name="Path_145" Width="291.004" Height="262.752" Canvas.Left="17.008" Canvas.Top="17.008" Stretch="Fill" Fill="#B3000000" Data="M 170.079,17.008C 230.805,17.008 283.275,52.3733 308.012,103.631C 280.3,70.2066 238.463,48.9146 191.649,48.9146C 108.207,48.9146 40.5627,116.557 40.5627,200.003C 40.5627,229.283 48.9,256.611 63.3187,279.76C 34.756,251.953 17.008,213.092 17.008,170.079C 17.008,85.5413 85.54,17.008 170.079,17.008 Z "/>
         </Canvas>
-        <Canvas x:Name="ALT" Width="340" Height="340" Canvas.Left="0" Canvas.Top="0">
+        <Canvas x:Name="ALT" Width="340" Height="340" Canvas.Left="0" Canvas.Top="0" RenderTransformOrigin="0.5,0.5">
             <Rectangle x:Name="Rectangle_146" Width="1.56134" Height="172.549" Canvas.Left="169.299" Canvas.Top="107.781" Stretch="Fill" Fill="#FF000000"/>
             <Rectangle x:Name="Rectangle_147" Width="1.56134" Height="30.7386" Canvas.Left="169.299" Canvas.Top="77.0453" Stretch="Fill" Fill="#FFC1C2C3"/>
             <Path x:Name="Path_148" Width="12.9707" Height="12.972" Canvas.Left="163.593" Canvas.Top="163.919" Stretch="Fill" StrokeThickness="0.288" StrokeLineJoin="Round" Stroke="#FF43464B" Fill="#FF000000" Data="M 170.079,164.063C 173.581,164.063 176.42,166.901 176.42,170.404C 176.42,173.907 173.581,176.747 170.079,176.747C 166.576,176.747 163.737,173.907 163.737,170.404C 163.737,166.901 166.576,164.063 170.079,164.063 Z "/>

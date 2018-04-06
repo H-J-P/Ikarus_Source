@@ -81,9 +81,13 @@ namespace Ikarus
             for (int i = 0; i < vals.Length; i++)
             {
                 input[i] = Convert.ToDouble(vals[i], CultureInfo.InvariantCulture);
+
+                if (input[i] == 0.0)
+                {
+                    switchState = input[i];
+                    oldState = input[i];
+                }
             }
-            switchState = input[0];
-            oldState = input[0];
         }
 
         public void SetOutput(string _output)

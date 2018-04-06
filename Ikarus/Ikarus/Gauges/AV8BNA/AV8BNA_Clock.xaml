@@ -659,12 +659,12 @@
         <Canvas x:Name="shadow" Width="340" Height="340" Canvas.Left="0" Canvas.Top="0">
             <Path x:Name="Path_609" Width="291.004" Height="262.752" Canvas.Left="17.008" Canvas.Top="17.008" Stretch="Fill" Fill="#B3000000" Data="M 170.079,17.008C 230.805,17.008 283.275,52.3733 308.012,103.631C 280.3,70.2066 238.463,48.9146 191.649,48.9146C 108.207,48.9146 40.5627,116.557 40.5627,200.003C 40.5627,229.283 48.9,256.611 63.3187,279.76C 34.756,251.953 17.008,213.092 17.008,170.079C 17.008,85.5413 85.54,17.008 170.079,17.008 Z "/>
         </Canvas>
-        <Canvas x:Name="HOURS" Width="340" Height="340" Canvas.Left="0" Canvas.Top="0">
+        <Canvas x:Name="HOURS" Width="340" Height="340" Canvas.Left="0" Canvas.Top="0" RenderTransformOrigin="0.5,0.5">
             <Path x:Name="Path_610" Width="16.5693" Height="84.7386" Canvas.Left="161.793" Canvas.Top="82.66" Stretch="Fill" Fill="#FFC1C2C3" Data="M 174.164,167.396L 165.993,167.399L 161.793,104.588L 170.079,82.66L 178.363,104.588L 174.164,167.396 Z "/>
             <Path x:Name="Path_611" Width="14.3907" Height="44.6466" Canvas.Left="162.884" Canvas.Top="122.895" Stretch="Fill" StrokeThickness="0.288" StrokeLineJoin="Round" Stroke="#FF000000" Fill="#FF000000" Data="M 174.164,167.396L 165.993,167.397L 163.028,123.039L 177.131,123.039L 174.164,167.396 Z "/>
             <Path x:Name="Path_612" Width="8.73065" Height="6.89865" Canvas.Left="165.713" Canvas.Top="167.547" Stretch="Fill" Fill="#FF43464B" Data="M 170.079,171.401C 170.809,171.401 171.401,170.809 171.401,170.079C 171.401,169.348 170.809,168.756 170.079,168.756C 169.348,168.756 168.756,169.348 168.756,170.079C 168.756,170.809 169.348,171.401 170.079,171.401 Z M 170.079,174.445C 172.489,174.445 174.444,172.491 174.444,170.079C 174.444,169.668 174.388,169.271 174.281,168.893L 174.281,167.547L 173.636,167.547L 166.523,167.547L 165.896,167.547L 165.896,168.825C 165.777,169.221 165.713,169.643 165.713,170.079C 165.713,172.491 167.668,174.445 170.079,174.445 Z "/>
         </Canvas>
-        <Canvas x:Name="MINUTES" Width="340" Height="340" Canvas.Left="0" Canvas.Top="0">
+        <Canvas x:Name="MINUTES" Width="340" Height="340" Canvas.Left="0" Canvas.Top="0" RenderTransformOrigin="0.5,0.5">
             <Path x:Name="Path_613" Width="15.908" Height="10.0133" Canvas.Left="162.124" Canvas.Top="47.1973" Stretch="Fill" Fill="#FFC1C2C3" Data="M 170.079,57.2106L 162.124,57.2106L 170.079,47.1973L 178.032,57.2106L 170.079,57.2106 Z "/>
             <Rectangle x:Name="Rectangle_614" Width="3.02399" Height="13.2" Canvas.Left="168.567" Canvas.Top="53.7106" Stretch="Fill" Fill="#FFC1C2C3"/>
             <Rectangle x:Name="Rectangle_615" Width="3.02399" Height="106.801" Canvas.Left="168.567" Canvas.Top="66.9093" Stretch="Fill" Fill="#FF000000"/>
