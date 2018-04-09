@@ -15,6 +15,10 @@
         mc:Ignorable="d">
     <Grid>
         <Grid >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="23*"/>
+                <ColumnDefinition Width="11*"/>
+            </Grid.ColumnDefinitions>
             <Grid.Background>
                 <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
                     <GradientStop Offset="0" Color="#FF666666" />
@@ -23,7 +27,7 @@
             </Grid.Background>
             <TabControl Name="tabControl1"
                         Margin="10,0,10,34"
-                        SelectionChanged="TabControl_SelectionChanged">
+                        SelectionChanged="TabControl_SelectionChanged" Grid.ColumnSpan="2">
                 <TabItem Header="Instruments">
                     <Grid Margin="0,0,0,0">
                         <DataGrid Name="DataGridInstruments"
@@ -900,7 +904,7 @@
                     VerticalAlignment="Bottom"
                     Click="Button_Save_Click"
                     Content="Save"
-                    Foreground="#FFFDD650" HorizontalAlignment="Right" Width="90">
+                    Foreground="#FFFDD650" HorizontalAlignment="Right" Width="90" Grid.Column="1">
                 <Button.Background>
                     <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
                         <GradientStop Offset="0" Color="#FFEEEEEE" />
@@ -913,13 +917,13 @@
                     Margin="0,0,93,5"
                     VerticalAlignment="Bottom"
                     Click="Button_Load_Click"
-                    Content="Load" HorizontalAlignment="Right" Width="90" />
+                    Content="Load" HorizontalAlignment="Right" Width="90" Grid.Column="1" />
             <Button Name="buttonShow"
                     Height="24"
                     Margin="0,0,188,5"
                     VerticalAlignment="Bottom"
                     Click="Button_Show_Click"
-                    Content="Show Cockpit" HorizontalAlignment="Right" Width="90" />
+                    Content="Show Cockpit" HorizontalAlignment="Right" Width="90" Grid.Column="1" />
             <Button x:Name="buttonAdd"
                     Width="90"
                     Height="24"
@@ -948,12 +952,12 @@
                     VerticalAlignment="Bottom"
                     Click="Capture_Click"
                     Content="Capture"
-                    ToolTip="Ikarus Screen Capture" HorizontalAlignment="Right" Width="90" />
+                    ToolTip="Ikarus Screen Capture" HorizontalAlignment="Right" Width="90" Grid.ColumnSpan="2" />
             <Label Name="Version"
                    Height="19"
-                   Margin="502,0,440,10"
+                   Margin="502,0,77.245,10"
                    VerticalAlignment="Bottom"
-                   Content=" (C) H.J.P. 2018  Version 1.2.3.1r"
+                   Content=" (C) H.J.P. 2018  Version 1.2.3.1s"
                    Foreground="#FFD8BC05" RenderTransformOrigin="1.004,0.526" HorizontalAlignment="Center" Width="180" />
             <Label Name="lbEditMode"
                    Height="19"

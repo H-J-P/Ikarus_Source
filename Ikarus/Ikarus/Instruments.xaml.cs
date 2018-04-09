@@ -624,7 +624,7 @@ namespace Ikarus
 
                     if (scrollWeel == -1.0) { dataRows[0]["Size"] = Convert.ToInt32(dataRows[0]["Size"]) - 5; }
 
-                    if (tableName == "Lamps") ID = dataRows[0]["ID"].ToString();
+                    //if (tableName == "Lamps") ID = dataRows[0]["ID"].ToString();
 
                     scrollWeel = 0.0;
 

@@ -35,6 +35,8 @@ namespace Ikarus
             InitializeComponent();
 
             shadow.Visibility = MainWindow.shadowChecked ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
+            rtASI_100.Angle = -10;
+            IAS_0_100_kts.RenderTransform = rtASI_100;
         }
         public void SetID(string _dataImportID)
         {

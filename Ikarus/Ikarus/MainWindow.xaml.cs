@@ -1314,7 +1314,7 @@ namespace Ikarus
             UDP.StartListener(Convert.ToInt16(portListener.Trim()));
         }
 
-        public void SelectDataGridItem(string _tablename, int impordID)
+        public void SelectDataGridItem(string _tablename, int ID)
         {
             if (_tablename == "Accessories")
             {
@@ -1325,11 +1325,12 @@ namespace Ikarus
 
                 for (int i = 0; i < dtAccessories.Rows.Count; i++)
                 {
-                    if (Convert.ToInt32(dtAccessories.Rows[i]["ID"]) == impordID)
+                    if (Convert.ToInt32(dtAccessories.Rows[i]["ID"]) == ID)
                     {
                         selectedAccessories = i;
                         DataGridAccessories.SelectedItem = DataGridAccessories.Items[i];
                         DataGridAccessories.ScrollIntoView(DataGridAccessories.Items[i]);
+                        break;
                     }
                 }
                 return;
@@ -1343,11 +1344,11 @@ namespace Ikarus
 
                 for (int i = 0; i < dtInstruments.Rows.Count; i++)
                 {
-                    if (Convert.ToInt32(dtInstruments.Rows[i]["IDInst"]) == impordID)
+                    if (Convert.ToInt32(dtInstruments.Rows[i]["IDInst"]) == ID)
                     {
-                        //selectedInstrument = i;
                         DataGridInstruments.SelectedItem = DataGridInstruments.Items[i];
                         DataGridInstruments.ScrollIntoView(DataGridInstruments.Items[i]);
+                        break;
                     }
                 }
                 return;
@@ -1361,11 +1362,11 @@ namespace Ikarus
 
                 for (int i = 0; i < dtLamps.Rows.Count; i++)
                 {
-                    if (Convert.ToInt32(dtLamps.Rows[i]["ID"]) == impordID)
+                    if (Convert.ToInt32(dtLamps.Rows[i]["ID"]) == ID)
                     {
-                        //selectedLamp = i;
                         DataGridLamps.SelectedItem = DataGridLamps.Items[i];
                         DataGridLamps.ScrollIntoView(DataGridLamps.Items[i]);
+                        break;
                     }
                 }
                 return;
@@ -1380,11 +1381,11 @@ namespace Ikarus
 
                 for (int i = 0; i < dtSwitches.Rows.Count; i++)
                 {
-                    if (Convert.ToInt32(dtSwitches.Rows[i]["ID"]) == impordID)
+                    if (Convert.ToInt32(dtSwitches.Rows[i]["ID"]) == ID)
                     {
-                        //selectedSwitch = i;
                         DataGridSwitches.SelectedItem = DataGridSwitches.Items[i];
                         DataGridSwitches.ScrollIntoView(DataGridSwitches.Items[i]);
+                        break;
                     }
                 }
             }
