@@ -492,6 +492,9 @@
     <Compile Include="Gauges\UH\UH1_RMI_Green.xaml.cs">
       <DependentUpon>UH1_RMI_Green.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Gauges\US\US_ADI_Sphere2.xaml.cs">
+      <DependentUpon>US_ADI_Sphere2.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Gauges\US\US_ADI_Sphere.xaml.cs">
       <DependentUpon>US_ADI_Sphere.xaml</DependentUpon>
     </Compile>
@@ -1919,6 +1922,10 @@
     <Page Include="Gauges\UH\UH1_RMI_Green.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Gauges\US\US_ADI_Sphere2.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Gauges\US\US_ADI_Sphere.xaml">
       <Generator>MSBuild:Compile</Generator>
