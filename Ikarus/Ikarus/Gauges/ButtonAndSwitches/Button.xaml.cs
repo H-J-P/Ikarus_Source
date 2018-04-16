@@ -206,8 +206,6 @@ namespace Ikarus
         {
             try
             {
-                //Switches switches = MainWindow.switches.Find(x => x.ID == Convert.ToInt32(dataImportID));
-
                 if (switches == null) return;
 
                 MainWindow.refeshPopup = true;
@@ -241,9 +239,9 @@ namespace Ikarus
         {
             if (!e.Handled && !touchDown)
             {
-                mouseDown = true;
                 e.Handled = true;
                 SetValue(1, true);
+                mouseDown = true;
             }
             if (!MainWindow.editmode) ProzessHelper.SetFocusToExternalApp(MainWindow.processNameDCS);
         }
@@ -254,10 +252,9 @@ namespace Ikarus
             {
                 e.Handled = true;
                 SetValue(0, true);
+                mouseDown = false;
             }
             if (!MainWindow.editmode) ProzessHelper.SetFocusToExternalApp(MainWindow.processNameDCS);
-
-            mouseDown = false;
         }
 
         private void UpperRec_TouchDown(object sender, TouchEventArgs e)
@@ -277,10 +274,9 @@ namespace Ikarus
             {
                 e.Handled = true;
                 SetValue(0, true);
+                touchDown = false;
             }
             if (!MainWindow.editmode) ProzessHelper.SetFocusToExternalApp(MainWindow.processNameDCS);
-
-            touchDown = false;
         }
 
         private void UpperRec_TouchLeave(object sender, TouchEventArgs e)
@@ -289,10 +285,9 @@ namespace Ikarus
             {
                 e.Handled = true;
                 SetValue(0, true);
+                touchDown = false;
             }
             if (!MainWindow.editmode) ProzessHelper.SetFocusToExternalApp(MainWindow.processNameDCS);
-
-            touchDown = false;
         }
     }
 }

@@ -1515,7 +1515,6 @@ namespace Ikarus
                            ListBox1.ItemsSource = null;
                            ListBox1.ItemsSource = ImportExport.logItems;
                            logCount = ImportExport.logItems.Count;
-                           //ListBox1.SelectedIndex = logCount - 1;
                        }));
         }
 

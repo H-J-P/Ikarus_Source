@@ -61,10 +61,8 @@ namespace Ikarus
         {
             InitializeComponent();
 
-            //Flagg_course_off.Visibility = System.Windows.Visibility.Hidden;
-            //Flagg_glide_off.Visibility = System.Windows.Visibility.Hidden;
-            //Flagg_course_off.Visibility = System.Windows.Visibility.Hidden;
             Flagg_off.Visibility = System.Windows.Visibility.Visible;
+            shadow.Visibility = MainWindow.shadowChecked ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
 
             InitialSphere();
             sphere3D.xRotation = dNull;

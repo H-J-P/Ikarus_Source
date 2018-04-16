@@ -108,11 +108,11 @@ namespace Ikarus
                                            break;
                                        }
                                    }
-                                   ttHeading.Y = pitch * 60;
+                                   ttHeading.Y = pitch * 20;
 
                                    rtHeading = new RotateTransform()
                                    {
-                                       Angle = bank * -90
+                                       Angle = bank * 30
                                    };
                                    transformGroup.Children.Add(ttHeading);
                                    transformGroup.Children.Add(rtHeading);
