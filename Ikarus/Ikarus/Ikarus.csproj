@@ -210,6 +210,9 @@
     <Compile Include="Gauges\AV8BNA\AV8BNA_Clock.xaml.cs">
       <DependentUpon>AV8BNA_Clock.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Gauges\AV8BNA\AV8BNA_Nozzle.xaml.cs">
+      <DependentUpon>AV8BNA_Nozzle.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Gauges\AV8BNA\AV8BNA_Rudder.xaml.cs">
       <DependentUpon>AV8BNA_Rudder.xaml</DependentUpon>
     </Compile>
@@ -221,6 +224,9 @@
     </Compile>
     <Compile Include="Gauges\AV8BNA\AV8BNA_VVI.xaml.cs">
       <DependentUpon>AV8BNA_VVI.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\_Templates\GaugeTemplate.xaml.cs">
+      <DependentUpon>GaugeTemplate.xaml</DependentUpon>
     </Compile>
     <Compile Include="Gauges\ButtonAndSwitches\Button.xaml.cs">
       <DependentUpon>Button.xaml</DependentUpon>
@@ -270,8 +276,8 @@
     <Compile Include="Gauges\DisplaysAndMonitors\MonitorDotMatrix.xaml.cs">
       <DependentUpon>MonitorDotMatrix.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Gauges\Div\ADI_Test.xaml.cs">
-      <DependentUpon>ADI_Test.xaml</DependentUpon>
+    <Compile Include="Gauges\_Templates\ADITemplate.xaml.cs">
+      <DependentUpon>ADITemplate.xaml</DependentUpon>
     </Compile>
     <Compile Include="Gauges\F5E\F5E-ADI-Sphere.xaml.cs">
       <DependentUpon>F5E-ADI-Sphere.xaml</DependentUpon>
@@ -491,6 +497,9 @@
     </Compile>
     <Compile Include="Gauges\UH\UH1_RMI_Green.xaml.cs">
       <DependentUpon>UH1_RMI_Green.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\US\US_ADI_Sphere2.xaml.cs">
+      <DependentUpon>US_ADI_Sphere2.xaml</DependentUpon>
     </Compile>
     <Compile Include="Gauges\US\US_ADI_Sphere.xaml.cs">
       <DependentUpon>US_ADI_Sphere.xaml</DependentUpon>
@@ -1544,6 +1553,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Gauges\AV8BNA\AV8BNA_Nozzle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Gauges\AV8BNA\AV8BNA_Rudder.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -1559,6 +1572,10 @@
     <Page Include="Gauges\AV8BNA\AV8BNA_VVI.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Gauges\_Templates\GaugeTemplate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Gauges\ButtonAndSwitches\Button.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -1624,7 +1641,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Gauges\Div\ADI_Test.xaml">
+    <Page Include="Gauges\_Templates\ADITemplate.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -1919,6 +1936,10 @@
     <Page Include="Gauges\UH\UH1_RMI_Green.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Gauges\US\US_ADI_Sphere2.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Gauges\US\US_ADI_Sphere.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -3456,7 +3477,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Gauges\M-2000C\" />
+    <Folder Include="Gauges\M2KC\" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Gauges\_Images\UH1_TurnIndicator_Images\Image.png" />

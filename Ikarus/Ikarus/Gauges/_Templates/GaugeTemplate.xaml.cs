@@ -7,9 +7,9 @@ using System.Windows.Threading;
 namespace Ikarus
 {
     /// <summary>
-    /// Interaction logic for AV8BNA_ASI.xaml
+    /// Interaction logic for AV8BNA_Nozzle.xaml
     /// </summary>
-    public partial class AV8BNA_ASI : UserControl, I_Ikarus
+    public partial class GaugeTemplate : UserControl, I_Ikarus
     {
         private string dataImportID = "";
 
@@ -22,22 +22,18 @@ namespace Ikarus
 
         public int GetWindowID() { return windowID; }
 
-        double ASI_1000 = 0.0;
-        double lASI_1000 = 0.0;
-        double ASI_100 = 0.0;
-        double lASI_100 = 0.0;
+        double value = 0.0;
+        double lvalue = 0.0;
 
-        RotateTransform rtASI_1000 = new RotateTransform();
-        RotateTransform rtASI_100 = new RotateTransform();
+        RotateTransform rtValue = new RotateTransform();
 
-        public AV8BNA_ASI()
+        public GaugeTemplate()
         {
             InitializeComponent();
 
-            shadow.Visibility = MainWindow.shadowChecked ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
-            rtASI_100.Angle = -10;
-            IAS_0_100_kts.RenderTransform = rtASI_100;
+            //shadow.Visibility = MainWindow.shadowChecked ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
         }
+
         public void SetID(string _dataImportID)
         {
             dataImportID = _dataImportID;
@@ -91,44 +87,25 @@ namespace Ikarus
                            {
                                vals = strData.Split(';');
 
-                               if (vals.Length > 0) { ASI_1000 = Convert.ToDouble(vals[0], CultureInfo.InvariantCulture); }
-                               if (vals.Length > 1) { ASI_100 = Convert.ToDouble(vals[1], CultureInfo.InvariantCulture); }
+                               if (vals.Length > 0) { value = Convert.ToDouble(vals[0], CultureInfo.InvariantCulture); }
 
-                               if (lASI_1000 != ASI_1000)
+                               if (lvalue != value)
                                {
                                    for (int n = 0; n < (valueScaleIndex - 1); n++)
                                    {
-                                       if (ASI_1000 >= valueScale[n] && ASI_1000 <= valueScale[n + 1])
+                                       if (value >= valueScale[n] && value <= valueScale[n + 1])
                                        {
-                                           rtASI_1000.Angle = (degreeDial[n] - degreeDial[n + 1]) / (valueScale[n] - valueScale[n + 1]) * (ASI_1000 - valueScale[n]) + degreeDial[n];
+                                           rtValue.Angle = (degreeDial[n] - degreeDial[n + 1]) / (valueScale[n] - valueScale[n + 1]) * (value - valueScale[n]) + degreeDial[n];
                                            break;
                                        }
                                    }
                                    if (MainWindow.editmode)
                                    {
-                                       Cockpit.UpdateInOut(dataImportID, "1", ASI_1000.ToString(), Convert.ToInt32(rtASI_1000.Angle).ToString());
+                                       Cockpit.UpdateInOut(dataImportID, "1", value.ToString(), Convert.ToInt32(rtValue.Angle).ToString());
                                    }
-                                   IAS_100_1000_kts.RenderTransform = rtASI_1000;
+                                   //RUDDER.RenderTransform = rtValue;
                                }
-
-                               if (lASI_100 != ASI_100)
-                               {
-                                   for (int n = 0; n < (valueScaleIndex - 1); n++)
-                                   {
-                                       if (ASI_100 >= valueScale[n] && ASI_100 <= valueScale[n + 1])
-                                       {
-                                           rtASI_100.Angle = (degreeDial[n] - degreeDial[n + 1]) / (valueScale[n] - valueScale[n + 1]) * (ASI_100 - valueScale[n]) + degreeDial[n];
-                                           break;
-                                       }
-                                   }
-                                   if (MainWindow.editmode)
-                                   {
-                                       Cockpit.UpdateInOut(dataImportID, "2", ASI_1000.ToString(), Convert.ToInt32(rtASI_1000.Angle).ToString());
-                                   }
-                                   IAS_0_100_kts.RenderTransform = rtASI_100;
-                               }
-                               lASI_1000 = ASI_1000;
-                               lASI_100 = ASI_100;
+                               lvalue = value;
                            }
                            catch { return; }
                        }));

@@ -11,7 +11,7 @@ namespace Ikarus
     /// <summary>
     /// Interaction logic for AJS37_ADI.xaml
     /// </summary>
-    public partial class ADI_Test : UserControl, I_Ikarus
+    public partial class ADITemplate : UserControl, I_Ikarus
     {
         private string dataImportID = "";
         private int windowID = 0;
@@ -58,7 +58,7 @@ namespace Ikarus
         private TranslateTransform ttbanksteering = new TranslateTransform();
         Sphere3D sphere3D;
 
-        public ADI_Test()
+        public ADITemplate()
         {
             InitializeComponent();
 
