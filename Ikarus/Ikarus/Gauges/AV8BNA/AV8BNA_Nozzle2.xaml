@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="Ikarus.AV8BNA_Nozzle"
+﻿<UserControl x:Class="Ikarus.AV8BNA_Nozzle2"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -7,7 +7,7 @@
              d:DesignHeight="335" d:DesignWidth="335" MouseWheel="Light_MouseWheel">
     <Grid>
         <Canvas x:Name="Ebene_1" Canvas.Left="0" Canvas.Top="0"/>
-        <Canvas x:Name="Dial" Canvas.Left="0" Canvas.Top="0" d:IsHidden="True">
+        <Canvas x:Name="Dial" Canvas.Left="0" Canvas.Top="0">
             <Viewbox x:Name="Group" Width="332.599" Height="332.599" Canvas.Left="0" Canvas.Top="0">
                 <Canvas Width="332.599" Height="332.599">
                     <Canvas Width="333" Height="333" x:Name="Clip1" Clip="F1 M 0,0L 332.599,0L 332.599,332.599L 0,332.599L 0,0 Z ">
@@ -51,7 +51,7 @@
                 </Canvas>
             </Viewbox>
         </Canvas>
-        <Canvas x:Name="Bezel" Canvas.Left="0" Canvas.Top="0" d:IsHidden="True">
+        <Canvas x:Name="Bezel" Canvas.Left="0" Canvas.Top="0">
             <Viewbox x:Name="Group_25" Width="333.355" Height="333.355" Canvas.Left="-0.378" Canvas.Top="-0.377991">
                 <Canvas Width="333.355" Height="333.355">
                     <Canvas Width="333" Height="333" x:Name="Clip_26" Clip="F1 M 0.378,0.377991L 332.977,0.377991L 332.977,332.977L 0.378,332.977L 0.378,0.377991 Z ">

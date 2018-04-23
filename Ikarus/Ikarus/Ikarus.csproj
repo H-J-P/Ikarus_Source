@@ -210,6 +210,9 @@
     <Compile Include="Gauges\AV8BNA\AV8BNA_Clock.xaml.cs">
       <DependentUpon>AV8BNA_Clock.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Gauges\AV8BNA\AV8BNA_Nozzle2.xaml.cs">
+      <DependentUpon>AV8BNA_Nozzle2.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Gauges\AV8BNA\AV8BNA_Nozzle.xaml.cs">
       <DependentUpon>AV8BNA_Nozzle.xaml</DependentUpon>
     </Compile>
@@ -224,6 +227,27 @@
     </Compile>
     <Compile Include="Gauges\AV8BNA\AV8BNA_VVI.xaml.cs">
       <DependentUpon>AV8BNA_VVI.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\M2KC\M2KC_VVI.xaml.cs">
+      <DependentUpon>M2KC_VVI.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\M2KC\M2KC_N2T.xaml.cs">
+      <DependentUpon>M2KC_N2T.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\M2KC\M2KC_LOX.xaml.cs">
+      <DependentUpon>M2KC_LOX.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\M2KC\M2KC_CLOCK.xaml.cs">
+      <DependentUpon>M2KC_CLOCK.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\M2KC\M2KC_ASI.xaml.cs">
+      <DependentUpon>M2KC_ASI.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\M2KC\M2KC_ALT.xaml.cs">
+      <DependentUpon>M2KC_ALT.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\M2KC\M2KC_ACC.xaml.cs">
+      <DependentUpon>M2KC_ACC.xaml</DependentUpon>
     </Compile>
     <Compile Include="Gauges\_Templates\GaugeTemplate.xaml.cs">
       <DependentUpon>GaugeTemplate.xaml</DependentUpon>
@@ -1553,6 +1577,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Gauges\AV8BNA\AV8BNA_Nozzle2.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Gauges\AV8BNA\AV8BNA_Nozzle.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -1572,6 +1600,34 @@
     <Page Include="Gauges\AV8BNA\AV8BNA_VVI.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Gauges\M2KC\M2KC_VVI.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\M2KC\M2KC_N2T.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\M2KC\M2KC_LOX.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\M2KC\M2KC_CLOCK.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\M2KC\M2KC_ASI.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\M2KC\M2KC_ALT.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\M2KC\M2KC_ACC.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Gauges\_Templates\GaugeTemplate.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -3476,9 +3532,7 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Gauges\M2KC\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Resource Include="Gauges\_Images\UH1_TurnIndicator_Images\Image.png" />
     <Resource Include="Gauges\_Images\UH1_TurnIndicator_Images\Image1.png" />

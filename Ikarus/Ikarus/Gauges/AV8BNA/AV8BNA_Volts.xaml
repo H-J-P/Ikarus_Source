@@ -6,7 +6,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="335" d:DesignWidth="335" MouseWheel="Light_MouseWheel">
     <Grid>
-        <Canvas x:Name="Ebene_1" Width="335" Height="335" Canvas.Left="0" Canvas.Top="0"/>
+        <Canvas x:Name="Ebene_1" Width="335" Height="335" Canvas.Left="0" Canvas.Top="0" d:IsHidden="True"/>
         <Canvas x:Name="dial" Width="335" Height="335" Canvas.Left="0" Canvas.Top="0">
             <Path x:Name="Path" Width="306.429" Height="306.429" Canvas.Left="13.084" Canvas.Top="13.084" Stretch="Fill" StrokeThickness="0.288" StrokeLineJoin="Round" Stroke="#FF43464B" Fill="#FF0B0B0C" Data="M 166.3,319.369C 250.839,319.369 319.369,250.837 319.369,166.299C 319.369,81.76 250.839,13.228 166.3,13.228C 81.76,13.228 13.228,81.76 13.228,166.299C 13.228,250.837 81.76,319.369 166.3,319.369 Z "/>
             <Path x:Name="Path_0" Width="5.09067" Height="5.09067" Canvas.Left="163.753" Canvas.Top="163.753" Stretch="Fill" StrokeThickness="0.288" StrokeLineJoin="Round" Stroke="#FFED2629" Data="M 166.3,168.7C 167.625,168.7 168.7,167.625 168.7,166.299C 168.7,164.972 167.625,163.897 166.3,163.897C 164.973,163.897 163.897,164.972 163.897,166.299C 163.897,167.625 164.973,168.7 166.3,168.7 Z "/>

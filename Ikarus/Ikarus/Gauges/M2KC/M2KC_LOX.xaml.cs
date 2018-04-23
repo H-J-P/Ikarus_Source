@@ -7,9 +7,9 @@ using System.Windows.Threading;
 namespace Ikarus
 {
     /// <summary>
-    /// Interaction logic for AV8BNA_Nozzle.xaml
+    /// Interaction logic for M2KC_LOX.xaml
     /// </summary>
-    public partial class AV8BNA_Nozzle : UserControl, I_Ikarus
+    public partial class M2KC_LOX : UserControl, I_Ikarus
     {
         private string dataImportID = "";
 
@@ -22,20 +22,16 @@ namespace Ikarus
 
         public int GetWindowID() { return windowID; }
 
-        double nozzle = 0.0;
-        double lnozzle = 0.0;
+        double value = 0.0;
+        double lvalue = 0.0;
 
-        RotateTransform rtNozzle = new RotateTransform();
+        RotateTransform rtValue = new RotateTransform();
 
-        public AV8BNA_Nozzle()
+        public M2KC_LOX()
         {
             InitializeComponent();
 
-            shadow.Visibility = System.Windows.Visibility.Hidden;
-
-            Dial.Visibility = System.Windows.Visibility.Hidden;
-            Bezel.Visibility = System.Windows.Visibility.Hidden;
-            //shadow.Visibility = MainWindow.shadowChecked ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
+            shadow.Visibility = MainWindow.shadowChecked ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
         }
 
         public void SetID(string _dataImportID)
@@ -91,25 +87,25 @@ namespace Ikarus
                            {
                                vals = strData.Split(';');
 
-                               if (vals.Length > 0) { nozzle = Convert.ToDouble(vals[0], CultureInfo.InvariantCulture); }
+                               if (vals.Length > 0) { value = Convert.ToDouble(vals[0], CultureInfo.InvariantCulture); }
 
-                               if (lnozzle != nozzle)
+                               if (lvalue != value)
                                {
                                    for (int n = 0; n < (valueScaleIndex - 1); n++)
                                    {
-                                       if (nozzle >= valueScale[n] && nozzle <= valueScale[n + 1])
+                                       if (value >= valueScale[n] && value <= valueScale[n + 1])
                                        {
-                                           rtNozzle.Angle = (degreeDial[n] - degreeDial[n + 1]) / (valueScale[n] - valueScale[n + 1]) * (nozzle - valueScale[n]) + degreeDial[n];
+                                           rtValue.Angle = (degreeDial[n] - degreeDial[n + 1]) / (valueScale[n] - valueScale[n + 1]) * (value - valueScale[n]) + degreeDial[n];
                                            break;
                                        }
                                    }
                                    if (MainWindow.editmode)
                                    {
-                                       Cockpit.UpdateInOut(dataImportID, "1", nozzle.ToString(), Convert.ToInt32(rtNozzle.Angle).ToString());
+                                       Cockpit.UpdateInOut(dataImportID, "1", value.ToString(), Convert.ToInt32(rtValue.Angle).ToString());
                                    }
-                                   Nozzle.RenderTransform = rtNozzle;
+                                   LOX.RenderTransform = rtValue;
                                }
-                               lnozzle = nozzle;
+                               lvalue = value;
                            }
                            catch { return; }
                        }));

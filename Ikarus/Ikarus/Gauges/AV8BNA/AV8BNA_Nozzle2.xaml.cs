@@ -9,7 +9,7 @@ namespace Ikarus
     /// <summary>
     /// Interaction logic for AV8BNA_Nozzle.xaml
     /// </summary>
-    public partial class AV8BNA_Nozzle : UserControl, I_Ikarus
+    public partial class AV8BNA_Nozzle2 : UserControl, I_Ikarus
     {
         private string dataImportID = "";
 
@@ -27,14 +27,14 @@ namespace Ikarus
 
         RotateTransform rtNozzle = new RotateTransform();
 
-        public AV8BNA_Nozzle()
+        public AV8BNA_Nozzle2()
         {
             InitializeComponent();
 
             shadow.Visibility = System.Windows.Visibility.Hidden;
 
-            Dial.Visibility = System.Windows.Visibility.Hidden;
-            Bezel.Visibility = System.Windows.Visibility.Hidden;
+            //Dial.Visibility = System.Windows.Visibility.Hidden;
+            //Bezel.Visibility = System.Windows.Visibility.Hidden;
             //shadow.Visibility = MainWindow.shadowChecked ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
         }
 
