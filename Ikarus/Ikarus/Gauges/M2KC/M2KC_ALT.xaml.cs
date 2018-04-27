@@ -10,22 +10,40 @@ namespace Ikarus
     /// Interaction logic for M2KC_ALT.xaml
     /// </summary>
     public partial class M2KC_ALT : UserControl, I_Ikarus
-    { 
+    {
         private string dataImportID = "";
-
-        private double[] valueScale = new double[] { };
-        private double[] degreeDial = new double[] { };
-        int valueScaleIndex = 0;
-        GaugesHelper helper = null;
         private int windowID = 0;
         private string[] vals = new string[] { };
+        GaugesHelper helper = null;
 
         public int GetWindowID() { return windowID; }
 
-        double value = 0.0;
-        double lvalue = 0.0;
+        RotateTransform rtalt100FP = new RotateTransform();
+        TranslateTransform ttalt10000 = new TranslateTransform();
+        TranslateTransform ttalt1000 = new TranslateTransform();
+        TranslateTransform ttalt100 = new TranslateTransform();
+        TranslateTransform ttpressure_0 = new TranslateTransform();
+        TranslateTransform ttpressure_1 = new TranslateTransform();
+        TranslateTransform ttpressure_2 = new TranslateTransform();
+        TranslateTransform ttpressure_3 = new TranslateTransform();
 
-        RotateTransform rtValue = new RotateTransform();
+        double alt100FP = 0.0;
+        double alt10000 = 0.0;
+        double alt1000 = 0.0;
+        double alt100 = 0.0;
+        double pressure_0 = 0.0;
+        double pressure_1 = 0.0;
+        double pressure_2 = 0.0;
+        double pressure_3 = 0.0;
+
+        double lalt100FP = 0.0;
+        double lalt10000 = 0.0;
+        double lalt1000 = 0.0;
+        double lalt100 = 0.0;
+        double lpressure_0 = 0.0;
+        double lpressure_1 = 0.0;
+        double lpressure_2 = 0.0;
+        double lpressure_3 = 0.0;
 
         public M2KC_ALT()
         {
@@ -60,12 +78,10 @@ namespace Ikarus
 
         public void SetInput(string _input)
         {
-            helper.SetInput(ref _input, ref valueScale, ref valueScaleIndex, 2);
         }
 
         public void SetOutput(string _output)
         {
-            helper.SetOutput(ref _output, ref degreeDial, 2);
         }
 
         public double GetSize()
@@ -83,31 +99,80 @@ namespace Ikarus
             Dispatcher.BeginInvoke(DispatcherPriority.Send,
                        (Action)(() =>
                        {
+                           vals = strData.Split(';');
+
                            try
                            {
-                               vals = strData.Split(';');
-
-                               if (vals.Length > 0) { value = Convert.ToDouble(vals[0], CultureInfo.InvariantCulture); }
-
-                               if (lvalue != value)
-                               {
-                                   for (int n = 0; n < (valueScaleIndex - 1); n++)
-                                   {
-                                       if (value >= valueScale[n] && value <= valueScale[n + 1])
-                                       {
-                                           rtValue.Angle = (degreeDial[n] - degreeDial[n + 1]) / (valueScale[n] - valueScale[n + 1]) * (value - valueScale[n]) + degreeDial[n];
-                                           break;
-                                       }
-                                   }
-                                   if (MainWindow.editmode)
-                                   {
-                                       Cockpit.UpdateInOut(dataImportID, "1", value.ToString(), Convert.ToInt32(rtValue.Angle).ToString());
-                                   }
-                                   //RUDDER.RenderTransform = rtValue;
-                               }
-                               lvalue = value;
+                               if (vals.Length > 0) { alt100FP = Convert.ToDouble(vals[0], CultureInfo.InvariantCulture); }
+                               if (vals.Length > 1) { alt10000 = Convert.ToDouble(vals[1], CultureInfo.InvariantCulture); }
+                               if (vals.Length > 2) { alt1000 = Convert.ToDouble(vals[2], CultureInfo.InvariantCulture); }
+                               if (vals.Length > 3) { alt100 = Convert.ToDouble(vals[3], CultureInfo.InvariantCulture); }
+                               if (vals.Length > 4) { pressure_0 = Convert.ToDouble(vals[4], CultureInfo.InvariantCulture); }
+                               if (vals.Length > 5) { pressure_1 = Convert.ToDouble(vals[5], CultureInfo.InvariantCulture); }
+                               if (vals.Length > 6) { pressure_2 = Convert.ToDouble(vals[6], CultureInfo.InvariantCulture); }
+                               if (vals.Length > 7) { pressure_3 = Convert.ToDouble(vals[7], CultureInfo.InvariantCulture); }
                            }
                            catch { return; }
+
+                           if (alt100 < 0.0) alt100 = 0.0;
+                           if (alt1000 < 0.0) alt1000 = 0.0;
+                           if (alt10000 < 0.0) alt10000 = 0.0;
+
+                           if (pressure_0 < 0.0) pressure_0 = 0.0;
+                           if (pressure_1 < 0.0) pressure_1 = 0.0;
+                           if (pressure_2 < 0.0) pressure_2 = 0.0;
+                           if (pressure_3 < 0.0) pressure_3 = 0.0;
+
+                           if (alt100FP != lalt100FP)
+                           {
+                               rtalt100FP.Angle = alt100FP * 360;
+                               ALT.RenderTransform = rtalt100FP;
+                           }
+                           if (alt10000 != lalt10000)
+                           {
+                               ttalt10000.Y = alt10000 * -428;
+                               ALT_10000.RenderTransform = ttalt10000;
+                           }
+                           if (alt1000 != lalt1000)
+                           {
+                               ttalt1000.Y = alt1000 * -428;
+                               ALT_1000.RenderTransform = ttalt1000;
+                           }
+                           if (alt100 != lalt100)
+                           {
+                               ttalt100.Y = alt100 * -382;
+                               ALT_100.RenderTransform = ttalt100;
+                           }
+
+                           if (pressure_0 != lpressure_0)
+                           {
+                               ttpressure_0.Y = pressure_0 * -285;
+                               BAR_1.RenderTransform = ttpressure_0;
+                           }
+                           if (pressure_1 != lpressure_1)
+                           {
+                               ttpressure_1.Y = pressure_1 * -285;
+                               BAR_10.RenderTransform = ttpressure_1;
+                           }
+                           if (pressure_2 != lpressure_2)
+                           {
+                               ttpressure_2.Y = pressure_2 * -285;
+                               BAR_100.RenderTransform = ttpressure_2;
+                           }
+                           if (pressure_3 != lpressure_3)
+                           {
+                               ttpressure_3.Y = pressure_3 * -285;
+                               BAR_1000.RenderTransform = ttpressure_3;
+                           }
+
+                           lalt100FP = alt100FP;
+                           lalt10000 = alt10000;
+                           lalt1000 = alt1000;
+                           lalt100 = alt100;
+                           lpressure_0 = pressure_0;
+                           lpressure_1 = pressure_1;
+                           lpressure_2 = pressure_2;
+                           lpressure_3 = pressure_3;
                        }));
         }
 

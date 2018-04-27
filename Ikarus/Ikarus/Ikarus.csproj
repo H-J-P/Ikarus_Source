@@ -228,6 +228,9 @@
     <Compile Include="Gauges\AV8BNA\AV8BNA_VVI.xaml.cs">
       <DependentUpon>AV8BNA_VVI.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Gauges\M2KC\M2KC_ADI.xaml.cs">
+      <DependentUpon>M2KC_ADI.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Gauges\M2KC\M2KC_VVI.xaml.cs">
       <DependentUpon>M2KC_VVI.xaml</DependentUpon>
     </Compile>
@@ -1600,6 +1603,10 @@
     <Page Include="Gauges\AV8BNA\AV8BNA_VVI.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Gauges\M2KC\M2KC_ADI.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Gauges\M2KC\M2KC_VVI.xaml">
       <Generator>MSBuild:Compile</Generator>

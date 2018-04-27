@@ -12,20 +12,26 @@ namespace Ikarus
     public partial class M2KC_CLOCK : UserControl, I_Ikarus
     {
         private string dataImportID = "";
-
-        private double[] valueScale = new double[] { };
-        private double[] degreeDial = new double[] { };
-        int valueScaleIndex = 0;
-        GaugesHelper helper = null;
         private int windowID = 0;
         private string[] vals = new string[] { };
+        GaugesHelper helper = null;
 
         public int GetWindowID() { return windowID; }
 
-        double value = 0.0;
-        double lvalue = 0.0;
+        double currtimeHours = 0.0;
+        double currtimeMinutes = 0.0;
+        double currtimeSeconds = 0.0;
+        double secondSeconds = 0.0;
 
-        RotateTransform rtValue = new RotateTransform();
+        double lcurrtimeHours = 0.0;
+        double lcurrtimeMinutes = 0.0;
+        double lcurrtimeSeconds = 0.0;
+        double lcronoSeconds = 0.0;
+
+        RotateTransform rtCurrtimeHours = new RotateTransform();
+        RotateTransform rtCurrtimeMinutes = new RotateTransform();
+        RotateTransform rtCurrtimeSeconds = new RotateTransform();
+        RotateTransform rtSecondSeconds = new RotateTransform();
 
         public M2KC_CLOCK()
         {
@@ -60,12 +66,10 @@ namespace Ikarus
 
         public void SetInput(string _input)
         {
-            helper.SetInput(ref _input, ref valueScale, ref valueScaleIndex, 2);
         }
 
         public void SetOutput(string _output)
         {
-            helper.SetOutput(ref _output, ref degreeDial, 2);
         }
 
         public double GetSize()
@@ -87,25 +91,36 @@ namespace Ikarus
                            {
                                vals = strData.Split(';');
 
-                               if (vals.Length > 0) { value = Convert.ToDouble(vals[0], CultureInfo.InvariantCulture); }
+                               if (vals.Length > 0) { currtimeHours = Convert.ToDouble(vals[0], CultureInfo.InvariantCulture); }
+                               if (vals.Length > 1) { currtimeMinutes = Convert.ToDouble(vals[1], CultureInfo.InvariantCulture); }
+                               if (vals.Length > 2) { currtimeSeconds = Convert.ToDouble(vals[2], CultureInfo.InvariantCulture); }
+                               if (vals.Length > 3) { secondSeconds = Convert.ToDouble(vals[3], CultureInfo.InvariantCulture); }
 
-                               if (lvalue != value)
+                               if (lcurrtimeHours != currtimeHours)
                                {
-                                   for (int n = 0; n < (valueScaleIndex - 1); n++)
-                                   {
-                                       if (value >= valueScale[n] && value <= valueScale[n + 1])
-                                       {
-                                           rtValue.Angle = (degreeDial[n] - degreeDial[n + 1]) / (valueScale[n] - valueScale[n + 1]) * (value - valueScale[n]) + degreeDial[n];
-                                           break;
-                                       }
-                                   }
-                                   if (MainWindow.editmode)
-                                   {
-                                       Cockpit.UpdateInOut(dataImportID, "1", value.ToString(), Convert.ToInt32(rtValue.Angle).ToString());
-                                   }
-                                   //RUDDER.RenderTransform = rtValue;
+                                   rtCurrtimeHours.Angle = currtimeHours * 360;
+                                   HOURS.RenderTransform = rtCurrtimeHours;
                                }
-                               lvalue = value;
+                               if (lcurrtimeMinutes != currtimeMinutes)
+                               {
+                                   rtCurrtimeMinutes.Angle = currtimeMinutes * 360;
+                                   MINUTES.RenderTransform = rtCurrtimeMinutes;
+                               }
+                               if (lcurrtimeSeconds != currtimeSeconds)
+                               {
+                                   rtCurrtimeSeconds.Angle = currtimeSeconds * 360;
+                                   SECONDS.RenderTransform = rtCurrtimeSeconds;
+                               }
+                               if (lcronoSeconds != secondSeconds)
+                               {
+                                   rtSecondSeconds.Angle = secondSeconds * 360;
+                                   CHRONO.RenderTransform = rtSecondSeconds;
+                               }
+
+                               lcurrtimeHours = currtimeHours;
+                               lcurrtimeMinutes = currtimeMinutes;
+                               lcurrtimeSeconds = currtimeSeconds;
+                               lcronoSeconds = secondSeconds;
                            }
                            catch { return; }
                        }));

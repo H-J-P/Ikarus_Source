@@ -12,20 +12,24 @@ namespace Ikarus
     public partial class M2KC_ASI : UserControl, I_Ikarus
     {
         private string dataImportID = "";
-
         private double[] valueScale = new double[] { };
         private double[] degreeDial = new double[] { };
         int valueScaleIndex = 0;
         GaugesHelper helper = null;
+
         private int windowID = 0;
         private string[] vals = new string[] { };
 
         public int GetWindowID() { return windowID; }
 
-        double value = 0.0;
-        double lvalue = 0.0;
+        RotateTransform rtASI = new RotateTransform();
+        RotateTransform rtMach = new RotateTransform();
 
-        RotateTransform rtValue = new RotateTransform();
+        double ias = 0.0;
+        double mach = 0.0;
+
+        double lias = 0.0;
+        double lmach = 0.0;
 
         public M2KC_ASI()
         {
@@ -83,29 +87,37 @@ namespace Ikarus
             Dispatcher.BeginInvoke(DispatcherPriority.Send,
                        (Action)(() =>
                        {
+                           vals = strData.Split(';');
+
                            try
                            {
-                               vals = strData.Split(';');
+                               if (vals.Length > 0) { ias = Convert.ToDouble(vals[0], CultureInfo.InvariantCulture); }
+                               if (vals.Length > 1) { mach = Convert.ToDouble(vals[1], CultureInfo.InvariantCulture); }
 
-                               if (vals.Length > 0) { value = Convert.ToDouble(vals[0], CultureInfo.InvariantCulture); }
-
-                               if (lvalue != value)
+                               if (lias != ias)
                                {
                                    for (int n = 0; n < (valueScaleIndex - 1); n++)
                                    {
-                                       if (value >= valueScale[n] && value <= valueScale[n + 1])
+                                       if (ias >= valueScale[n] && ias <= valueScale[n + 1])
                                        {
-                                           rtValue.Angle = (degreeDial[n] - degreeDial[n + 1]) / (valueScale[n] - valueScale[n + 1]) * (value - valueScale[n]) + degreeDial[n];
+                                           rtASI.Angle = (degreeDial[n] - degreeDial[n + 1]) / (valueScale[n] - valueScale[n + 1]) * (ias - valueScale[n]) + degreeDial[n];
                                            break;
                                        }
                                    }
                                    if (MainWindow.editmode)
                                    {
-                                       Cockpit.UpdateInOut(dataImportID, "1", value.ToString(), Convert.ToInt32(rtValue.Angle).ToString());
+                                       Cockpit.UpdateInOut(dataImportID, "1", ias.ToString(), Convert.ToInt32(rtASI.Angle).ToString());
                                    }
-                                   //RUDDER.RenderTransform = rtValue;
+                                   IAS.RenderTransform = rtASI;
                                }
-                               lvalue = value;
+
+                               if (lmach != mach)
+                               {
+                                   rtMach.Angle = (mach * -290) + rtASI.Angle;
+                                   MACH.RenderTransform = rtMach;
+                               }
+                               lias = ias;
+                               lmach = mach;
                            }
                            catch { return; }
                        }));
