@@ -26,14 +26,15 @@ namespace Ikarus
 
         private double pitch = 0.0;
         private double bank = 0.0;
-        private double bankNeedle = 0.0;
         private double heading = 0.0;
+
+        private double bankNeedle = 0.0;
         private double slipBall = 0.0;
         private double vvi = 0.0;
         private double flag_vvi_off = 0.0;
         private double flag_off = 0.0;
         private double courceWarningFlag = 0.0;
-        private double pitchangle = 0.0;
+        private double headingAngle = 0.0;
         private double bankSteering = 0.0;
         private double glideSlope = 0.0;
 
@@ -62,6 +63,8 @@ namespace Ikarus
         {
             InitializeComponent();
 
+            shadow.Visibility = MainWindow.shadowChecked ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
+
             Flagg_course_off.Visibility = System.Windows.Visibility.Hidden;
             Flagg_VVI_off.Visibility = System.Windows.Visibility.Hidden;
             Flagg_off.Visibility = System.Windows.Visibility.Visible;
@@ -69,12 +72,6 @@ namespace Ikarus
             //Banksteering.Visibility = System.Windows.Visibility.Hidden;
 
             InitialSphere();
-
-            //sphere3D.Rotate(0, 0,-90);
-            sphere3D.xRotation = 0.0;
-            sphere3D.yRotation = 0.0;
-            sphere3D.zRotation = -90;
-            sphere3D.Rotate();
 
             directionalLight.Color = (Color)ColorConverter.ConvertFromString(lightColor);
         }
@@ -145,29 +142,29 @@ namespace Ikarus
 
                                bankNeedle = bank;
 
-                               if (lpitch != pitch)
+                               if (lheading != heading)
                                {
+                                   //    -1.0, -0.5, 0.0, 0.5, 1.0,
+                                   //     0.0,   90, 180, 270, 360,
                                    for (int n = 0; n < valueScaleIndex - 1; n++)
                                    {
-                                       if (pitch >= valueScale[n] && heading <= valueScale[n + 1])
+                                       if (heading >= valueScale[n] && heading <= valueScale[n + 1])
                                        {
-                                           pitchangle = (degreeDial[n] - degreeDial[n + 1]) / (valueScale[n] - valueScale[n + 1]) * (pitch - valueScale[n]) + degreeDial[n];
+                                           headingAngle = (degreeDial[n] - degreeDial[n + 1]) / (valueScale[n] - valueScale[n + 1]) * (heading - valueScale[n]) + degreeDial[n];
                                            break;
                                        }
                                    }
                                    if (MainWindow.editmode)
                                    {
-                                       Cockpit.UpdateInOut(dataImportID, "2", heading.ToString(), Convert.ToInt32(pitchangle).ToString());
+                                       Cockpit.UpdateInOut(dataImportID, "2", heading.ToString(), Convert.ToInt32(headingAngle).ToString());
                                    }
                                }
 
                                if (lpitch != pitch || lheading != heading || lbank != bank)
                                {
-                                   //sphere3D.Rotate(0, pitchangle * -1, (bank * 180) - 90);
-
-                                   sphere3D.xRotation = 0;
-                                   sphere3D.yRotation = pitchangle * -1;
-                                   sphere3D.zRotation = ((bank * 180) - 90);
+                                   sphere3D.xRotation = pitch * -180;
+                                   sphere3D.yRotation = headingAngle * -1;
+                                   sphere3D.zRotation = bank * -180;
                                    sphere3D.Rotate();
                                }
                                if (glideSlope > 0.5) glideSlope = 0.5;
@@ -232,8 +229,8 @@ namespace Ikarus
             BitmapImage bitmapImage = new BitmapImage();
             bitmapImage.BeginInit();
 
-            if (File.Exists(Environment.CurrentDirectory + "\\Images\\Textures3D\\US_ADI.png"))
-                bitmapImage.UriSource = new Uri(Environment.CurrentDirectory + "\\Images\\Textures3D\\US_ADI.png");
+            if (File.Exists(Environment.CurrentDirectory + "\\Images\\Textures3D\\AJS37_ADI.jpg"))
+                bitmapImage.UriSource = new Uri(Environment.CurrentDirectory + "\\Images\\Textures3D\\AJS37_ADI.jpg");
             else
                 bitmapImage.UriSource = new Uri(Environment.CurrentDirectory + "\\Images\\Textures3D\\CheckerTest.jpg");
 

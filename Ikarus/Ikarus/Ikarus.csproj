@@ -228,6 +228,21 @@
     <Compile Include="Gauges\AV8BNA\AV8BNA_VVI.xaml.cs">
       <DependentUpon>AV8BNA_VVI.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Gauges\M2KC\M2KC_HSI.xaml.cs">
+      <DependentUpon>M2KC_HSI.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\M2KC\M2KC_Fuel.xaml.cs">
+      <DependentUpon>M2KC_Fuel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\M2KC\M2KC_Cabin.xaml.cs">
+      <DependentUpon>M2KC_Cabin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\M2KC\M2KC_AOA.xaml.cs">
+      <DependentUpon>M2KC_AOA.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\M2KC\M2KC_ADI_stby.xaml.cs">
+      <DependentUpon>M2KC_ADI_stby.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Gauges\M2KC\M2KC_ADI.xaml.cs">
       <DependentUpon>M2KC_ADI.xaml</DependentUpon>
     </Compile>
@@ -251,6 +266,9 @@
     </Compile>
     <Compile Include="Gauges\M2KC\M2KC_ACC.xaml.cs">
       <DependentUpon>M2KC_ACC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\_Templates\ADI_StbyTemplate.xaml.cs">
+      <DependentUpon>ADI_StbyTemplate.xaml</DependentUpon>
     </Compile>
     <Compile Include="Gauges\_Templates\GaugeTemplate.xaml.cs">
       <DependentUpon>GaugeTemplate.xaml</DependentUpon>
@@ -1604,6 +1622,26 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Gauges\M2KC\M2KC_HSI.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\M2KC\M2KC_Fuel.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\M2KC\M2KC_Cabin.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\M2KC\M2KC_AOA.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\M2KC\M2KC_ADI_stby.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Gauges\M2KC\M2KC_ADI.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -1633,6 +1671,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Gauges\M2KC\M2KC_ACC.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\_Templates\ADI_StbyTemplate.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

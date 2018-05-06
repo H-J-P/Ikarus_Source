@@ -28,32 +28,25 @@ namespace Ikarus
         private double bank = 0.0;
         private double bankNeedle = 0.0;
         private double heading = 0.0;
+        private double headingAngle = 0.0;
         private double slipBall = 0.0;
-        private double vvi = 0.0;
-        private double flag_vvi_off = 0.0;
         private double flag_off = 0.0;
-        private double courceWarningFlag = 0.0;
-        private double pitchangle = 0.0;
-        private double bankSteering = 0.0;
-        private double glideSlope = 0.0;
+        //private double pitchangle = 0.0;
+        private double bankDeviation = 0.0;
+        private double glideSlopeDeviation = 0.0;
 
         private double lpitch = 0.0;
         private double lbank = 0.0;
         private double lbankNeedle = 0.0;
         private double lheading = 0.0;
         private double lslipBall = 0.0;
-        private double lvvi = 0.0;
-        private double lFlag_vvi_off = 1.0;
         private double lFlag_off = 1.0;
-        private double lcourceWarningFlag = 1.0;
-        private double lbankSteering = 0.0;
-        private double lglideSlope = 0.0;
+        private double lbankDeviation = 0.0;
+        private double lglideSlopeDeviation = 0.0;
 
         private RotateTransform rtSlipball = new RotateTransform();
-        private TranslateTransform ttTurnIndicator = new TranslateTransform();
         private TranslateTransform rtpitchSteering = new TranslateTransform();
         private RotateTransform rtbankNeedle = new RotateTransform();
-        private TranslateTransform rtvvi = new TranslateTransform();
         private TranslateTransform ttglideSlope = new TranslateTransform();
         private TranslateTransform ttbanksteering = new TranslateTransform();
         Sphere3D sphere3D;
@@ -62,19 +55,9 @@ namespace Ikarus
         {
             InitializeComponent();
 
-            Flagg_course_off.Visibility = System.Windows.Visibility.Hidden;
-            Flagg_VVI_off.Visibility = System.Windows.Visibility.Hidden;
             Flagg_off.Visibility = System.Windows.Visibility.Visible;
-            //Pitchsteering.Visibility = System.Windows.Visibility.Hidden;
-            //Banksteering.Visibility = System.Windows.Visibility.Hidden;
 
             InitialSphere();
-
-            //sphere3D.Rotate(0, 0,-90);
-            sphere3D.xRotation = 0.0;
-            sphere3D.yRotation = 0.0;
-            sphere3D.zRotation = -90;
-            sphere3D.Rotate();
 
             directionalLight.Color = (Color)ColorConverter.ConvertFromString(lightColor);
         }
@@ -136,75 +119,64 @@ namespace Ikarus
                                if (vals.Length > 1) { heading = Convert.ToDouble(vals[1], CultureInfo.InvariantCulture); }
                                if (vals.Length > 2) { bank = Convert.ToDouble(vals[2], CultureInfo.InvariantCulture); }
                                if (vals.Length > 3) { slipBall = Convert.ToDouble(vals[3], CultureInfo.InvariantCulture); }
-                               if (vals.Length > 4) { vvi = Convert.ToDouble(vals[4], CultureInfo.InvariantCulture); }
-                               if (vals.Length > 5) { bankSteering = Convert.ToDouble(vals[5], CultureInfo.InvariantCulture); }
-                               if (vals.Length > 6) { glideSlope = Convert.ToDouble(vals[6], CultureInfo.InvariantCulture); }
-                               if (vals.Length > 7) { flag_vvi_off = Convert.ToDouble(vals[7], CultureInfo.InvariantCulture); }
-                               if (vals.Length > 8) { flag_off = Convert.ToDouble(vals[8], CultureInfo.InvariantCulture); }
-                               if (vals.Length > 9) { courceWarningFlag = Convert.ToDouble(vals[9], CultureInfo.InvariantCulture); }
+                               if (vals.Length > 4) { bankDeviation = Convert.ToDouble(vals[4], CultureInfo.InvariantCulture); }
+                               if (vals.Length > 5) { glideSlopeDeviation = Convert.ToDouble(vals[5], CultureInfo.InvariantCulture); }
+                               if (vals.Length > 6) { flag_off = Convert.ToDouble(vals[6], CultureInfo.InvariantCulture); }
 
                                bankNeedle = bank;
 
-                               if (lpitch != pitch)
+                               if (lheading != heading)
                                {
+                                   //    -1.0, -0.5, 0.0, 0.5, 1.0,
+                                   //     0.0,   90, 180, 270, 360,
                                    for (int n = 0; n < valueScaleIndex - 1; n++)
                                    {
-                                       if (pitch >= valueScale[n] && heading <= valueScale[n + 1])
+                                       if (heading >= valueScale[n] && heading <= valueScale[n + 1])
                                        {
-                                           pitchangle = (degreeDial[n] - degreeDial[n + 1]) / (valueScale[n] - valueScale[n + 1]) * (pitch - valueScale[n]) + degreeDial[n];
+                                           headingAngle = (degreeDial[n] - degreeDial[n + 1]) / (valueScale[n] - valueScale[n + 1]) * (heading - valueScale[n]) + degreeDial[n];
                                            break;
                                        }
                                    }
                                    if (MainWindow.editmode)
                                    {
-                                       Cockpit.UpdateInOut(dataImportID, "2", heading.ToString(), Convert.ToInt32(pitchangle).ToString());
+                                       Cockpit.UpdateInOut(dataImportID, "2", heading.ToString(), Convert.ToInt32(headingAngle).ToString());
                                    }
                                }
 
                                if (lpitch != pitch || lheading != heading || lbank != bank)
                                {
-                                   //sphere3D.Rotate(0, pitchangle * -1, (bank * 180) - 90);
-
-                                   sphere3D.xRotation = 0;
-                                   sphere3D.yRotation = pitchangle * -1;
-                                   sphere3D.zRotation = ((bank * 180) - 90);
+                                   sphere3D.xRotation = pitch * -180;
+                                   sphere3D.yRotation = headingAngle * -1;
+                                   sphere3D.zRotation = bank * -180;
                                    sphere3D.Rotate();
                                }
-                               if (glideSlope > 0.5) glideSlope = 0.5;
-                               if (bankSteering > 0.5) bankSteering = 0.5;
+
+                               if (glideSlopeDeviation > 0.5) glideSlopeDeviation = 0.5;
+                               if (bankDeviation > 0.5) bankDeviation = 0.5;
 
                                if (lslipBall != slipBall)
                                {
-                                   rtSlipball.Angle = slipBall * -12;
-                                   SlipBallPosition.RenderTransform = rtSlipball;
+                                   rtSlipball.Angle = slipBall * -15;
+                                   SLIP_BALL.RenderTransform = rtSlipball;
                                }
 
                                if (lbankNeedle != bankNeedle)
                                {
                                    rtbankNeedle.Angle = bankNeedle * -180;
-                                   Bank.RenderTransform = rtbankNeedle;
-                               }
-                               if (lvvi != vvi)
-                               {
-                                   rtvvi.Y = vvi * -46;
-                                   VVI.RenderTransform = rtvvi;
+                                   BANK.RenderTransform = rtbankNeedle;
                                }
 
-                               if (lbankSteering != bankSteering)
+                               if (lbankDeviation != bankDeviation)
                                {
-                                   ttbanksteering.X = bankSteering * 140;
-                                   Banksteering.RenderTransform = ttbanksteering;
+                                   ttbanksteering.X = bankDeviation * 140;
+                                   COURSE_deviation.RenderTransform = ttbanksteering;
                                }
-                               if (lglideSlope != glideSlope)
+                               if (lglideSlopeDeviation != glideSlopeDeviation)
                                {
-                                   ttglideSlope.Y = glideSlope * -125;
-                                   Pitchsteering.RenderTransform = ttglideSlope;
+                                   ttglideSlope.Y = glideSlopeDeviation * -125;
+                                   GLIDESLOPE_deviation.RenderTransform = ttglideSlope;
                                }
 
-                               if (lcourceWarningFlag != courceWarningFlag)
-                                   Flagg_course_off.Visibility = (courceWarningFlag > 0.8) ? System.Windows.Visibility.Hidden : System.Windows.Visibility.Hidden;
-                               if (lFlag_vvi_off != flag_vvi_off)
-                                   Flagg_VVI_off.Visibility = (flag_vvi_off > 0.8) ? System.Windows.Visibility.Hidden : System.Windows.Visibility.Hidden;
                                if (lFlag_off != flag_off)
                                    Flagg_off.Visibility = (flag_off > 0.8) ? System.Windows.Visibility.Hidden : System.Windows.Visibility.Visible;
 
@@ -212,10 +184,9 @@ namespace Ikarus
                                lheading = heading;
                                lbank = bank;
                                lslipBall = slipBall;
-                               lvvi = vvi;
-                               lFlag_vvi_off = flag_vvi_off;
+                               lbankDeviation = bankDeviation;
+                               lglideSlopeDeviation = glideSlopeDeviation;
                                lFlag_off = flag_off;
-                               lcourceWarningFlag = courceWarningFlag;
                                lbankNeedle = bankNeedle;
                            }
                            catch { return; };
@@ -232,8 +203,8 @@ namespace Ikarus
             BitmapImage bitmapImage = new BitmapImage();
             bitmapImage.BeginInit();
 
-            if (File.Exists(Environment.CurrentDirectory + "\\Images\\Textures3D\\US_ADI.png"))
-                bitmapImage.UriSource = new Uri(Environment.CurrentDirectory + "\\Images\\Textures3D\\US_ADI.png");
+            if (File.Exists(Environment.CurrentDirectory + "\\Images\\Textures3D\\AJS37_ADI.jpg"))
+                bitmapImage.UriSource = new Uri(Environment.CurrentDirectory + "\\Images\\Textures3D\\AJS37_ADI.jpg");
             else
                 bitmapImage.UriSource = new Uri(Environment.CurrentDirectory + "\\Images\\Textures3D\\CheckerTest.jpg");
 
