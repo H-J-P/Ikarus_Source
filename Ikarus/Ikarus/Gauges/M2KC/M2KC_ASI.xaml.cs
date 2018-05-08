@@ -64,12 +64,12 @@ namespace Ikarus
 
         public void SetInput(string _input)
         {
-            helper.SetInput(ref _input, ref valueScale, ref valueScaleIndex, 2);
+            helper.SetInput(ref _input, ref valueScale, ref valueScaleIndex, 3);
         }
 
         public void SetOutput(string _output)
         {
-            helper.SetOutput(ref _output, ref degreeDial, 2);
+            helper.SetOutput(ref _output, ref degreeDial, 3);
         }
 
         public double GetSize()
@@ -93,6 +93,11 @@ namespace Ikarus
                            {
                                if (vals.Length > 0) { ias = Convert.ToDouble(vals[0], CultureInfo.InvariantCulture); }
                                if (vals.Length > 1) { mach = Convert.ToDouble(vals[1], CultureInfo.InvariantCulture); }
+
+                               if (mach > 0.22) { mach = 0.22; }
+                               if (mach < 0.0) { mach = 0.0; }
+
+                               mach = mach * 4.545;
 
                                if (lias != ias)
                                {

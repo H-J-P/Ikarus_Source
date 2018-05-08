@@ -22,16 +22,50 @@ namespace Ikarus
 
         public int GetWindowID() { return windowID; }
 
-        double value = 0.0;
-        double lvalue = 0.0;
+        TranslateTransform ttDME_1000 = new TranslateTransform();
+        TranslateTransform ttDME_100 = new TranslateTransform();
+        TranslateTransform ttDME_10 = new TranslateTransform();
+        TranslateTransform ttDME_1 = new TranslateTransform();
 
-        RotateTransform rtValue = new RotateTransform();
+        RotateTransform rtHeadingInd = new RotateTransform();
+        RotateTransform rtNeedleLarge = new RotateTransform();
+        RotateTransform rtNeedleSmall = new RotateTransform();
+        RotateTransform rtCompassRose = new RotateTransform();
+
+        double headingInd = 0.0;
+        double needleLarge = 0.0;
+        double needleSmall = 0.0;
+        double dmeCounter_1000 = 0.0;
+        double dmeCounter_100 = 0.0;
+        double dmeCounter_10 = 0.0;
+        double dmeCounter_1 = 0.0;
+        double compassRose = 0.0;
+        double hsiFlag1 = 0.0;
+        double hsiFlag2 = 0.0;
+        double hsiFlag_cap = 0.0;
+
+        double lheadingInd = 0.0;
+        double lneedleLarge = 0.0;
+        double lneedleSmall = 0.0;
+        double ldmeCounter_1000 = 0.0;
+        double ldmeCounter_100 = 0.0;
+        double ldmeCounter_10 = 0.0;
+        double ldmeCounter_1 = 0.0;
+        double lcompassRose = 0.0;
+        double lhsiFlag1 = 1.0;
+        double lhsiFlag2 = 1.0;
+        double lhsiFlag_cap = 1.0;
 
         public M2KC_HSI()
         {
             InitializeComponent();
 
-            //shadow.Visibility = MainWindow.shadowChecked ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
+            DME_OFF_Flag.Visibility = System.Windows.Visibility.Hidden;
+            NEEDLE_1_Flag.Visibility = System.Windows.Visibility.Visible;
+            NEEDLE_2_Flag.Visibility = System.Windows.Visibility.Visible;
+            CAP_Flag.Visibility = System.Windows.Visibility.Visible;
+
+            shadow.Visibility = MainWindow.shadowChecked ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
         }
 
         public void SetID(string _dataImportID)
@@ -87,25 +121,86 @@ namespace Ikarus
                            {
                                vals = strData.Split(';');
 
-                               if (vals.Length > 0) { value = Convert.ToDouble(vals[0], CultureInfo.InvariantCulture); }
+                               if (vals.Length > 0) { headingInd = Convert.ToDouble(vals[0], CultureInfo.InvariantCulture); }
+                               if (vals.Length > 1) { needleLarge = Convert.ToDouble(vals[1], CultureInfo.InvariantCulture); }
+                               if (vals.Length > 2) { needleSmall = Convert.ToDouble(vals[2], CultureInfo.InvariantCulture); }
+                               if (vals.Length > 3) { dmeCounter_1000 = Convert.ToDouble(vals[3], CultureInfo.InvariantCulture); }
+                               if (vals.Length > 4) { dmeCounter_100 = Convert.ToDouble(vals[4], CultureInfo.InvariantCulture); }
+                               if (vals.Length > 5) { dmeCounter_10 = Convert.ToDouble(vals[5], CultureInfo.InvariantCulture); }
+                               if (vals.Length > 6) { dmeCounter_1 = Convert.ToDouble(vals[6], CultureInfo.InvariantCulture); }
+                               if (vals.Length > 7) { compassRose = Convert.ToDouble(vals[7], CultureInfo.InvariantCulture); }
+                               if (vals.Length > 8) { hsiFlag1 = Convert.ToDouble(vals[8], CultureInfo.InvariantCulture); }
+                               if (vals.Length > 9) { hsiFlag2 = Convert.ToDouble(vals[9], CultureInfo.InvariantCulture); }
+                               if (vals.Length > 10) { hsiFlag_cap = Convert.ToDouble(vals[10], CultureInfo.InvariantCulture); }
 
-                               if (lvalue != value)
+                               if (dmeCounter_1000 < 0) dmeCounter_1000 = 0;
+                               if (dmeCounter_100 < 0) dmeCounter_100 = 0;
+                               if (dmeCounter_10 < 0) dmeCounter_10 = 0;
+                               if (dmeCounter_1 < 0) dmeCounter_1 = 0;
+
+                               if (lheadingInd != headingInd)
                                {
-                                   for (int n = 0; n < (valueScaleIndex - 1); n++)
-                                   {
-                                       if (value >= valueScale[n] && value <= valueScale[n + 1])
-                                       {
-                                           rtValue.Angle = (degreeDial[n] - degreeDial[n + 1]) / (valueScale[n] - valueScale[n + 1]) * (value - valueScale[n]) + degreeDial[n];
-                                           break;
-                                       }
-                                   }
-                                   if (MainWindow.editmode)
-                                   {
-                                       Cockpit.UpdateInOut(dataImportID, "1", value.ToString(), Convert.ToInt32(rtValue.Angle).ToString());
-                                   }
-                                   //RUDDER.RenderTransform = rtValue;
+                                   rtHeadingInd.Angle = headingInd * 360;
+                                   COURSE.RenderTransform = rtHeadingInd;
                                }
-                               lvalue = value;
+                               if (lneedleLarge != needleLarge)
+                               {
+                                   rtNeedleLarge.Angle = needleLarge * 360;
+                                   BEARING.RenderTransform = rtNeedleLarge;
+                               }
+                               if (lneedleSmall != needleSmall)
+                               {
+                                   rtNeedleSmall.Angle = needleSmall * 360;
+                                   VOR_BEARING.RenderTransform = rtNeedleSmall;
+                               }
+                               if (lcompassRose != compassRose)
+                               {
+                                   rtCompassRose.Angle = compassRose * -360;
+                                   CompassRose.RenderTransform = rtCompassRose;
+                               }
+
+                               if (ldmeCounter_1000 != dmeCounter_1000)
+                               {
+                                   ttDME_1000.Y = dmeCounter_1000 * -333;
+                                   DME_1000.RenderTransform = ttDME_1000;
+                               }
+                               if (ldmeCounter_100 != dmeCounter_100)
+                               {
+                                   ttDME_100.Y = dmeCounter_100 * -333;
+                                   DME_100.RenderTransform = ttDME_100;
+                               }
+                               if (ldmeCounter_10 != dmeCounter_10)
+                               {
+                                   ttDME_10.Y = dmeCounter_10 * -333;
+                                   DME_10.RenderTransform = ttDME_10;
+                               }
+                               if (ldmeCounter_1 != dmeCounter_1)
+                               {
+                                   ttDME_1.Y = dmeCounter_1 * -333;
+                                   DME_1.RenderTransform = ttDME_1;
+                               }
+
+                               if (lhsiFlag1 != hsiFlag1)
+                                   NEEDLE_1_Flag.Visibility = (hsiFlag1 > 0.8) ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
+                               if (lhsiFlag2 != hsiFlag2)
+                                   NEEDLE_2_Flag.Visibility = (hsiFlag2 > 0.8) ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
+                               if (lhsiFlag_cap != hsiFlag_cap)
+                                   CAP_Flag.Visibility = (hsiFlag_cap > 0.8) ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
+
+
+                               lheadingInd = headingInd;
+                               lneedleLarge = needleLarge;
+                               lneedleSmall = needleSmall;
+                               lcompassRose = compassRose;
+
+                               ldmeCounter_1000 = dmeCounter_1000;
+                               ldmeCounter_100 = dmeCounter_100;
+                               ldmeCounter_10 = dmeCounter_10;
+                               ldmeCounter_1 = dmeCounter_1;
+
+                               lhsiFlag1 = hsiFlag1;
+                               lhsiFlag2 = hsiFlag2;
+                               lhsiFlag_cap = hsiFlag_cap;
                            }
                            catch { return; }
                        }));

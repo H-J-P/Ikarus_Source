@@ -35,7 +35,7 @@ namespace Ikarus
 
             shadow.Visibility = MainWindow.shadowChecked ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
 
-            OFF_Flag.Visibility = (flagOff > 0.8) ? System.Windows.Visibility.Hidden : System.Windows.Visibility.Visible;
+            OFF_Flag.Visibility = System.Windows.Visibility.Visible;
         }
 
         public void SetID(string _dataImportID)
@@ -113,7 +113,7 @@ namespace Ikarus
                                }
 
                                if (lflagOff != flagOff)
-                                   OFF_Flag.Visibility = (flagOff > 0.8) ? System.Windows.Visibility.Hidden : System.Windows.Visibility.Visible;
+                                   OFF_Flag.Visibility = (flagOff > 0.8) ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
 
                                lpitch = pitch;
                                lbank = bank;

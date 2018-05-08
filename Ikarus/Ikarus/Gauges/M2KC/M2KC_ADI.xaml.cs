@@ -32,7 +32,7 @@ namespace Ikarus
         private double slipBall = 0.0;
         private double flag_off = 0.0;
         //private double pitchangle = 0.0;
-        private double bankDeviation = 0.0;
+        private double courseDeviation = 0.0;
         private double glideSlopeDeviation = 0.0;
 
         private double lpitch = 0.0;
@@ -41,7 +41,7 @@ namespace Ikarus
         private double lheading = 0.0;
         private double lslipBall = 0.0;
         private double lFlag_off = 1.0;
-        private double lbankDeviation = 0.0;
+        private double lcourseDeviation = 0.0;
         private double lglideSlopeDeviation = 0.0;
 
         private RotateTransform rtSlipball = new RotateTransform();
@@ -116,12 +116,17 @@ namespace Ikarus
                                vals = strData.Split(';');
 
                                if (vals.Length > 0) { pitch = Convert.ToDouble(vals[0], CultureInfo.InvariantCulture); }
-                               if (vals.Length > 1) { heading = Convert.ToDouble(vals[1], CultureInfo.InvariantCulture); }
-                               if (vals.Length > 2) { bank = Convert.ToDouble(vals[2], CultureInfo.InvariantCulture); }
+                               if (vals.Length > 1) { bank = Convert.ToDouble(vals[1], CultureInfo.InvariantCulture); }
+                               if (vals.Length > 2) { heading = Convert.ToDouble(vals[2], CultureInfo.InvariantCulture); }
                                if (vals.Length > 3) { slipBall = Convert.ToDouble(vals[3], CultureInfo.InvariantCulture); }
-                               if (vals.Length > 4) { bankDeviation = Convert.ToDouble(vals[4], CultureInfo.InvariantCulture); }
-                               if (vals.Length > 5) { glideSlopeDeviation = Convert.ToDouble(vals[5], CultureInfo.InvariantCulture); }
-                               if (vals.Length > 6) { flag_off = Convert.ToDouble(vals[6], CultureInfo.InvariantCulture); }
+                               if (vals.Length > 4) { flag_off = Convert.ToDouble(vals[4], CultureInfo.InvariantCulture); }
+                               if (vals.Length > 5) { courseDeviation = Convert.ToDouble(vals[5], CultureInfo.InvariantCulture); }
+                               if (vals.Length > 6) { glideSlopeDeviation = Convert.ToDouble(vals[6], CultureInfo.InvariantCulture); }
+
+                               //if (glideSlopeDeviation > 0.5) glideSlopeDeviation = 0.5;
+                               //if (glideSlopeDeviation < -0.5) glideSlopeDeviation = -0.5;
+                               //if (courseDeviation > 0.5) courseDeviation = 0.5;
+                               //if (courseDeviation < -0.5) courseDeviation = -0.5;
 
                                bankNeedle = bank;
 
@@ -139,20 +144,17 @@ namespace Ikarus
                                    }
                                    if (MainWindow.editmode)
                                    {
-                                       Cockpit.UpdateInOut(dataImportID, "2", heading.ToString(), Convert.ToInt32(headingAngle).ToString());
+                                       Cockpit.UpdateInOut(dataImportID, "3", heading.ToString(), Convert.ToInt32(headingAngle).ToString());
                                    }
                                }
 
                                if (lpitch != pitch || lheading != heading || lbank != bank)
                                {
-                                   sphere3D.xRotation = pitch * -180;
+                                   sphere3D.xRotation = pitch * 90;
                                    sphere3D.yRotation = headingAngle * -1;
                                    sphere3D.zRotation = bank * -180;
                                    sphere3D.Rotate();
                                }
-
-                               if (glideSlopeDeviation > 0.5) glideSlopeDeviation = 0.5;
-                               if (bankDeviation > 0.5) bankDeviation = 0.5;
 
                                if (lslipBall != slipBall)
                                {
@@ -162,29 +164,29 @@ namespace Ikarus
 
                                if (lbankNeedle != bankNeedle)
                                {
-                                   rtbankNeedle.Angle = bankNeedle * -180;
+                                   rtbankNeedle.Angle = bankNeedle * 180;
                                    BANK.RenderTransform = rtbankNeedle;
                                }
 
-                               if (lbankDeviation != bankDeviation)
+                               if (lcourseDeviation != courseDeviation)
                                {
-                                   ttbanksteering.X = bankDeviation * 140;
+                                   ttbanksteering.X = courseDeviation * 90;
                                    COURSE_deviation.RenderTransform = ttbanksteering;
                                }
                                if (lglideSlopeDeviation != glideSlopeDeviation)
                                {
-                                   ttglideSlope.Y = glideSlopeDeviation * -125;
+                                   ttglideSlope.Y = glideSlopeDeviation * -90;
                                    GLIDESLOPE_deviation.RenderTransform = ttglideSlope;
                                }
 
                                if (lFlag_off != flag_off)
-                                   Flagg_off.Visibility = (flag_off > 0.8) ? System.Windows.Visibility.Hidden : System.Windows.Visibility.Visible;
+                                   Flagg_off.Visibility = (flag_off > 0.8) ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
 
                                lpitch = pitch;
                                lheading = heading;
                                lbank = bank;
                                lslipBall = slipBall;
-                               lbankDeviation = bankDeviation;
+                               lcourseDeviation = courseDeviation;
                                lglideSlopeDeviation = glideSlopeDeviation;
                                lFlag_off = flag_off;
                                lbankNeedle = bankNeedle;

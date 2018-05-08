@@ -9,7 +9,7 @@
         <Canvas x:Name="background" Canvas.Left="0" Canvas.Top="0">
             <Rectangle x:Name="Rectangle" Width="30.852" Height="400.317" Canvas.Left="98.492" Canvas.Top="117.345" Stretch="Fill" StrokeThickness="0.288" StrokeLineJoin="Round" Stroke="#FF000000" Fill="#FF0A0A0A"/>
         </Canvas>
-        <Canvas x:Name="AOA" Canvas.Left="0" Canvas.Top="0">
+        <Canvas x:Name="AOA" Canvas.Left="0" Canvas.Top="0" RenderTransformOrigin="0.5,0.5">
             <Rectangle x:Name="Rectangle_0" Width="21.8707" Height="391.681" Canvas.Left="102.981" Canvas.Top="477.533" Stretch="Fill" Fill="#FFFFFFFF"/>
         </Canvas>
         <Canvas x:Name="dial" Canvas.Left="0" Canvas.Top="0">

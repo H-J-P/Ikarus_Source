@@ -13,19 +13,16 @@ namespace Ikarus
     {
         private string dataImportID = "";
 
-        private double[] valueScale = new double[] { };
-        private double[] degreeDial = new double[] { };
-        int valueScaleIndex = 0;
         GaugesHelper helper = null;
         private int windowID = 0;
         private string[] vals = new string[] { };
 
         public int GetWindowID() { return windowID; }
 
-        double value = 0.0;
-        double lvalue = 0.0;
+        double aoa = 0.0;
+        double laoa = 0.0;
 
-        RotateTransform rtValue = new RotateTransform();
+        TranslateTransform ttAOA = new TranslateTransform();
 
         public M2KC_AOA()
         {
@@ -60,12 +57,12 @@ namespace Ikarus
 
         public void SetInput(string _input)
         {
-            helper.SetInput(ref _input, ref valueScale, ref valueScaleIndex, 2);
+            //helper.SetInput(ref _input, ref valueScale, ref valueScaleIndex, 2);
         }
 
         public void SetOutput(string _output)
         {
-            helper.SetOutput(ref _output, ref degreeDial, 2);
+            //helper.SetOutput(ref _output, ref degreeDial, 2);
         }
 
         public double GetSize()
@@ -87,25 +84,18 @@ namespace Ikarus
                            {
                                vals = strData.Split(';');
 
-                               if (vals.Length > 0) { value = Convert.ToDouble(vals[0], CultureInfo.InvariantCulture); }
+                               if (vals.Length > 0) { aoa = Convert.ToDouble(vals[0], CultureInfo.InvariantCulture); }
 
-                               if (lvalue != value)
+                               if (laoa != aoa)
                                {
-                                   for (int n = 0; n < (valueScaleIndex - 1); n++)
-                                   {
-                                       if (value >= valueScale[n] && value <= valueScale[n + 1])
-                                       {
-                                           rtValue.Angle = (degreeDial[n] - degreeDial[n + 1]) / (valueScale[n] - valueScale[n + 1]) * (value - valueScale[n]) + degreeDial[n];
-                                           break;
-                                       }
-                                   }
-                                   if (MainWindow.editmode)
-                                   {
-                                       Cockpit.UpdateInOut(dataImportID, "1", value.ToString(), Convert.ToInt32(rtValue.Angle).ToString());
-                                   }
-                                   //RUDDER.RenderTransform = rtValue;
+                                   ttAOA.Y = aoa * -333;
+                                   AOA.RenderTransform = ttAOA;
                                }
-                               lvalue = value;
+                               if (MainWindow.editmode)
+                               {
+                                   Cockpit.UpdateInOut(dataImportID, "1", aoa.ToString(), Convert.ToInt32(ttAOA.Y).ToString());
+                               }
+                               laoa = aoa;
                            }
                            catch { return; }
                        }));
