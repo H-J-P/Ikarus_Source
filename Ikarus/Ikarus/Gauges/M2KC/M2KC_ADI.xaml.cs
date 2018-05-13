@@ -205,8 +205,8 @@ namespace Ikarus
             BitmapImage bitmapImage = new BitmapImage();
             bitmapImage.BeginInit();
 
-            if (File.Exists(Environment.CurrentDirectory + "\\Images\\Textures3D\\AJS37_ADI.jpg"))
-                bitmapImage.UriSource = new Uri(Environment.CurrentDirectory + "\\Images\\Textures3D\\AJS37_ADI.jpg");
+            if (File.Exists(Environment.CurrentDirectory + "\\Images\\Textures3D\\M2KC_ADI.jpg"))
+                bitmapImage.UriSource = new Uri(Environment.CurrentDirectory + "\\Images\\Textures3D\\M2KC_ADI.jpg");
             else
                 bitmapImage.UriSource = new Uri(Environment.CurrentDirectory + "\\Images\\Textures3D\\CheckerTest.jpg");
 

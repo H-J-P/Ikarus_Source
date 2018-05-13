@@ -24,17 +24,17 @@
             <Path x:Name="Path_6" Width="18.596" Height="26.9694" Canvas.Left="160.78" Canvas.Top="258.003" Stretch="Fill" Fill="#FFFFFFFF" Data="M 170.079,284.972L 165.429,271.488L 160.78,258.003L 170.079,258.003L 179.376,258.003L 174.728,271.488L 170.079,284.972 Z "/>
             <Path x:Name="Path_7" Width="2.91847" Height="2.91858" Canvas.Left="168.619" Canvas.Top="168.619" Stretch="Fill" StrokeThickness="0.288" StrokeLineJoin="Round" Stroke="#FFFF0000" Data="M 170.449,168.817C 171.147,169.021 171.545,169.752 171.34,170.449C 171.136,171.147 170.405,171.545 169.708,171.34C 169.012,171.136 168.612,170.405 168.817,169.709C 169.021,169.011 169.752,168.612 170.449,168.817 Z "/>
         </Canvas>
-        <Canvas x:Name="bank_pitch" RenderTransformOrigin="0.502,0.504"  Margin="73,-167,77,-160">
+        <Canvas x:Name="bank_pitch" RenderTransformOrigin="0.502,0.502"  Margin="73,-166,77,-166">
             <Canvas.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform ScaleX="1.2"/>
                     <SkewTransform/>
                     <RotateTransform/>
-                    <TranslateTransform Y="9"/>
+                    <TranslateTransform/>
                 </TransformGroup>
             </Canvas.RenderTransform>
-            <Path Data="M0,0L146.349,0 146.349,335.217 0,335.217z" Fill="#FF4D4D4D" Height="335.217" Canvas.Left="24.01" Canvas.Top="335.216" Width="146.349" RenderTransformOrigin="0.506,0.001"/>
-            <Path Data="M0,0L146.349,0 146.349,335.216 0,335.216z" Fill="#FF5B5130" Height="335.216" Canvas.Left="24.01" Canvas.Top="0" Width="146.349" RenderTransformOrigin="0.5,0.5"/>
+            <Path Data="M0,0L146.349,0 146.349,335.217 0,335.217z" Fill="#FF1A1A1A" Height="335.217" Canvas.Left="24.01" Canvas.Top="335.216" Width="146.349" RenderTransformOrigin="0.506,0.001"/>
+            <Path Data="M0,0L146.349,0 146.349,335.216 0,335.216z" Fill="#FFBFDFDE" Height="335.216" Canvas.Left="24.01" Canvas.Top="0" Width="146.349" RenderTransformOrigin="0.5,0.5"/>
             <Path Data="M0,0L117.001,0 117.001,1.416 0,1.416z" Fill="White" Height="1.416" Canvas.Left="38.685" Canvas.Top="362.854" Width="117.001"/>
             <Path Data="M0,0L22.592,0 22.592,1.418 0,1.418z" Fill="White" Height="1.418" Canvas.Left="85.888" Canvas.Top="348.681" Width="22.592"/>
             <Path Data="M0,0L117.001,0 117.001,1.418 0,1.418z" Fill="White" Height="1.418" Canvas.Left="38.685" Canvas.Top="391.2" Width="117.001"/>

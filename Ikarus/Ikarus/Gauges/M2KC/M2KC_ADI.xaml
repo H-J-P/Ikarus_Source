@@ -6,10 +6,10 @@
              mc:Ignorable="d" MouseWheel="Light_MouseWheel" Height="343" Width="315.322">
     <Grid>
         <!--Viewport3D is a drawing canvas which resizes its Content automatically-->
-        <Viewport3D x:Name="viewport" Margin="31,34,31,53" RenderTransformOrigin="0.5,0.5">
+        <Viewport3D x:Name="viewport" Margin="31,34,31,53" RenderTransformOrigin="0.5,0.497">
             <Viewport3D.RenderTransform>
                 <TransformGroup>
-                    <ScaleTransform ScaleX="0.9" ScaleY="0.9"/>
+                    <ScaleTransform ScaleX="0.95" ScaleY="0.95"/>
                     <SkewTransform/>
                     <RotateTransform/>
                     <TranslateTransform/>

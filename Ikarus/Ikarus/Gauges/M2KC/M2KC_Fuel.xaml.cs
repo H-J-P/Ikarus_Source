@@ -19,9 +19,6 @@ namespace Ikarus
 
         public int GetWindowID() { return windowID; }
 
-        double value = 0.0;
-        double lvalue = 0.0;
-
         double jaugFuelX00 = 0.0;
         double jaugFuel0X0 = 0.0;
         double jaugFuel00X = 0.0;
