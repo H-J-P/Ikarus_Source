@@ -13,19 +13,22 @@ namespace Ikarus
     {
         private string dataImportID = "";
 
-        private double[] valueScale = new double[] { };
-        private double[] degreeDial = new double[] { };
-        int valueScaleIndex = 0;
         GaugesHelper helper = null;
         private int windowID = 0;
         private string[] vals = new string[] { };
 
         public int GetWindowID() { return windowID; }
 
-        double value = 0.0;
-        double lvalue = 0.0;
+        double alt10000 = 0.0;
+        double alt1000 = 0.0;
+        double alt100 = 0.0;
+        double lalt10000 = 0.0;
+        double lalt1000 = 0.0;
+        double lalt100 = 0.0;
 
-        RotateTransform rtValue = new RotateTransform();
+        TranslateTransform ttAPalt10000 = new TranslateTransform();
+        TranslateTransform ttAPalt1000 = new TranslateTransform();
+        TranslateTransform ttAPalt100 = new TranslateTransform();
 
         public M2KC_AP_Altitude()
         {
@@ -60,12 +63,10 @@ namespace Ikarus
 
         public void SetInput(string _input)
         {
-            helper.SetInput(ref _input, ref valueScale, ref valueScaleIndex, 2);
         }
 
         public void SetOutput(string _output)
         {
-            helper.SetOutput(ref _output, ref degreeDial, 2);
         }
 
         public double GetSize()
@@ -87,25 +88,28 @@ namespace Ikarus
                            {
                                vals = strData.Split(';');
 
-                               if (vals.Length > 0) { value = Convert.ToDouble(vals[0], CultureInfo.InvariantCulture); }
+                               if (vals.Length > 0) { alt10000 = Convert.ToDouble(vals[0], CultureInfo.InvariantCulture); }
+                               if (vals.Length > 0) { alt1000 = Convert.ToDouble(vals[0], CultureInfo.InvariantCulture); }
+                               if (vals.Length > 0) { alt100 = Convert.ToDouble(vals[0], CultureInfo.InvariantCulture); }
 
-                               if (lvalue != value)
+                               if (lalt10000 != alt10000)
                                {
-                                   for (int n = 0; n < (valueScaleIndex - 1); n++)
-                                   {
-                                       if (value >= valueScale[n] && value <= valueScale[n + 1])
-                                       {
-                                           rtValue.Angle = (degreeDial[n] - degreeDial[n + 1]) / (valueScale[n] - valueScale[n + 1]) * (value - valueScale[n]) + degreeDial[n];
-                                           break;
-                                       }
-                                   }
-                                   if (MainWindow.editmode)
-                                   {
-                                       Cockpit.UpdateInOut(dataImportID, "1", value.ToString(), Convert.ToInt32(rtValue.Angle).ToString());
-                                   }
-                                   //RUDDER.RenderTransform = rtValue;
+                                   ttAPalt10000.Y = alt10000 * -429;
+                                   APALT_10_000.RenderTransform = ttAPalt10000;
                                }
-                               lvalue = value;
+                               if (lalt1000 != alt1000)
+                               {
+                                   ttAPalt1000.Y = alt1000 * -429;
+                                   APALT_1_000.RenderTransform = ttAPalt1000;
+                               }
+                               if (lalt100 != alt100)
+                               {
+                                   ttAPalt100.Y = alt100 * -429;
+                                   APALT_100.RenderTransform = ttAPalt100;
+                               }
+                               lalt10000 = alt10000;
+                               lalt1000 = alt1000;
+                               lalt100 = alt100;
                            }
                            catch { return; }
                        }));

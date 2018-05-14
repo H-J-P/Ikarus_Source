@@ -13,19 +13,19 @@ namespace Ikarus
     {
         private string dataImportID = "";
 
-        private double[] valueScale = new double[] { };
-        private double[] degreeDial = new double[] { };
-        int valueScaleIndex = 0;
         GaugesHelper helper = null;
         private int windowID = 0;
         private string[] vals = new string[] { };
 
         public int GetWindowID() { return windowID; }
 
-        double value = 0.0;
-        double lvalue = 0.0;
+        double bingo1000 = 0.0;
+        double bingo100 = 0.0;
+        double lbingo1000 = 0.0;
+        double lbingo100 = 0.0;
 
-        RotateTransform rtValue = new RotateTransform();
+        TranslateTransform ttBingo_1000 = new TranslateTransform();
+        TranslateTransform ttBingo_100 = new TranslateTransform();
 
         public M2KC_BingoFuel()
         {
@@ -60,12 +60,10 @@ namespace Ikarus
 
         public void SetInput(string _input)
         {
-            helper.SetInput(ref _input, ref valueScale, ref valueScaleIndex, 2);
         }
 
         public void SetOutput(string _output)
         {
-            helper.SetOutput(ref _output, ref degreeDial, 2);
         }
 
         public double GetSize()
@@ -87,25 +85,21 @@ namespace Ikarus
                            {
                                vals = strData.Split(';');
 
-                               if (vals.Length > 0) { value = Convert.ToDouble(vals[0], CultureInfo.InvariantCulture); }
+                               if (vals.Length > 0) { bingo1000 = Convert.ToDouble(vals[0], CultureInfo.InvariantCulture); }
+                               if (vals.Length > 1) { bingo100 = Convert.ToDouble(vals[1], CultureInfo.InvariantCulture); }
 
-                               if (lvalue != value)
+                               if (lbingo1000 != bingo1000)
                                {
-                                   for (int n = 0; n < (valueScaleIndex - 1); n++)
-                                   {
-                                       if (value >= valueScale[n] && value <= valueScale[n + 1])
-                                       {
-                                           rtValue.Angle = (degreeDial[n] - degreeDial[n + 1]) / (valueScale[n] - valueScale[n + 1]) * (value - valueScale[n]) + degreeDial[n];
-                                           break;
-                                       }
-                                   }
-                                   if (MainWindow.editmode)
-                                   {
-                                       Cockpit.UpdateInOut(dataImportID, "1", value.ToString(), Convert.ToInt32(rtValue.Angle).ToString());
-                                   }
-                                   //RUDDER.RenderTransform = rtValue;
+                                   ttBingo_1000.Y = bingo1000 * -429;
+                                   BingoFuel_1_000.RenderTransform = ttBingo_1000;
                                }
-                               lvalue = value;
+                               if (lbingo100 != bingo100)
+                               {
+                                   ttBingo_100.Y = bingo100 * -429;
+                                   BingoFuel_100.RenderTransform = ttBingo_100;
+                               }
+                               lbingo1000 = bingo1000;
+                               lbingo100 = bingo100;
                            }
                            catch { return; }
                        }));
