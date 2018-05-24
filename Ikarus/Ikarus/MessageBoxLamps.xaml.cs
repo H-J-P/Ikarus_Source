@@ -62,7 +62,7 @@ namespace Ikarus
 
             if (MainWindow.dtMasterLamps != null)
             {
-                dr = MainWindow.dtMasterLamps.Select("Type='Lamp'", "Description");
+                dr = MainWindow.dtMasterLamps.Select("Type='Lamp'", "ExportID" );
                 lamps = dr.CopyToDataTable<DataRow>();
                 DataGridLamps.ItemsSource = lamps.DefaultView;
                 DataGridLamps.CanUserAddRows = false;

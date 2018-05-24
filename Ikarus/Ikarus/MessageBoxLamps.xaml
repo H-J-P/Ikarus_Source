@@ -70,6 +70,7 @@
                 <DataGridTextColumn Width="65"
                                     Binding="{Binding ExportID}"
                                     Header="DCS ID"
+                                    SortDirection="Ascending"
                                     IsReadOnly="True">
                     <DataGridTextColumn.ElementStyle>
                         <Style TargetType="{x:Type TextBlock}">

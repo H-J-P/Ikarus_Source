@@ -135,17 +135,17 @@ namespace Ikarus
 
                 if (Classname.Text == "MultiSwitch" || Classname.Text == "Rotary")
                 {
-                    dataRows = MainWindow.dtMasterSwitches.Select("Type='Switch' OR Type='Rotary'", "Discription");
+                    dataRows = MainWindow.dtMasterSwitches.Select("Type='Switch' OR Type='Rotary'", "DcsID");
                 }
                 else
                 {
                     if (setSwitch)
                     {
-                        dataRows = MainWindow.dtMasterSwitches.Select("Type='Switch'", "Discription");
+                        dataRows = MainWindow.dtMasterSwitches.Select("Type='Switch'", "DcsID");
                     }
                     else
                     {
-                        dataRows = MainWindow.dtMasterSwitches.Select("Type='Rotary'", "Discription");
+                        dataRows = MainWindow.dtMasterSwitches.Select("Type='Rotary'", "DcsID");
                     }
                 }
                 switches = dataRows.CopyToDataTable<DataRow>();
