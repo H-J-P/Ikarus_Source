@@ -31,7 +31,7 @@ namespace Ikarus
         {
             InitializeComponent();
 
-            //shadow.Visibility = MainWindow.shadowChecked ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
+            shadow.Visibility = MainWindow.shadowChecked ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
         }
 
         public void SetID(string _dataImportID)
@@ -103,7 +103,7 @@ namespace Ikarus
                                    {
                                        Cockpit.UpdateInOut(dataImportID, "1", value.ToString(), Convert.ToInt32(rtValue.Angle).ToString());
                                    }
-                                   //RUDDER.RenderTransform = rtValue;
+                                   CABIN.RenderTransform = rtValue;
                                }
                                lvalue = value;
                            }
