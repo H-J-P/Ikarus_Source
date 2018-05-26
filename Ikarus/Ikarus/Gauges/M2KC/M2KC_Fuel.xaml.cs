@@ -127,6 +127,11 @@ namespace Ikarus
                                if (detotFuel00X < 0) detotFuel00X = 0;
                                if (needleLeft < 0) needleLeft = 0;
                                if (needleRight < 0) needleRight = 0;
+                               if (needleLeft > 0.7) needleLeft = 0.7;
+                               if (needleRight > 0.7) needleRight = 0.7;
+
+                               needleLeft *= 1.429;
+                               needleRight *= 1.429;
 
                                if (ljaugFuelX00 != jaugFuelX00)
                                {
