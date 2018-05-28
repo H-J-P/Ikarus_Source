@@ -35,8 +35,9 @@ namespace Ikarus
             InitializeComponent();
 
             shadow.Visibility = MainWindow.shadowChecked ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
-            rtASI_100.Angle = -10;
-            IAS_0_100_kts.RenderTransform = rtASI_100;
+            rtASI_100.Angle = -20;
+            IAS_100_kts.RenderTransform = rtASI_100;
+            IAS_1000_kts.RenderTransform = rtASI_100;
         }
         public void SetID(string _dataImportID)
         {
@@ -64,12 +65,12 @@ namespace Ikarus
 
         public void SetInput(string _input)
         {
-            helper.SetInput(ref _input, ref valueScale, ref valueScaleIndex, 2);
+            helper.SetInput(ref _input, ref valueScale, ref valueScaleIndex, 3);
         }
 
         public void SetOutput(string _output)
         {
-            helper.SetOutput(ref _output, ref degreeDial, 2);
+            helper.SetOutput(ref _output, ref degreeDial, 3);
         }
 
         public double GetSize()
@@ -108,7 +109,7 @@ namespace Ikarus
                                    {
                                        Cockpit.UpdateInOut(dataImportID, "1", ASI_1000.ToString(), Convert.ToInt32(rtASI_1000.Angle).ToString());
                                    }
-                                   IAS_100_1000_kts.RenderTransform = rtASI_1000;
+                                   IAS_1000_kts.RenderTransform = rtASI_1000;
                                }
 
                                if (lASI_100 != ASI_100)
@@ -125,7 +126,7 @@ namespace Ikarus
                                    {
                                        Cockpit.UpdateInOut(dataImportID, "2", ASI_1000.ToString(), Convert.ToInt32(rtASI_1000.Angle).ToString());
                                    }
-                                   IAS_0_100_kts.RenderTransform = rtASI_100;
+                                   IAS_100_kts.RenderTransform = rtASI_100;
                                }
                                lASI_1000 = ASI_1000;
                                lASI_100 = ASI_100;

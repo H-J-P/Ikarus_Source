@@ -16,6 +16,8 @@ namespace Ikarus
             get { return closeListener; }
         }
         private static UdpClient listener = null;
+        private static UdpClient udpClient = new UdpClient();
+
         private static IPAddress sendToAddress = null;
         private static IPEndPoint sendingEndPoint = null;
         private static IPEndPoint listenerEndPoint = null;
@@ -34,6 +36,26 @@ namespace Ikarus
         // UDP:             the messages are to be formated as user datagram protocal.
         //                  The last two seem to be a bit redundant.
         #endregion
+
+
+        public static void UDPSender2(string ipAdress, int port, string textToSend) // Without broadcast
+        {
+            try
+            {
+                udpClient = new UdpClient();
+                IPAddress ip = IPAddress.Parse(ipAdress.Trim());
+                IPEndPoint ipEndPoint = new IPEndPoint(ip, port);
+
+                byte[] content = Encoding.UTF8.GetBytes(textToSend);
+                int count = udpClient.Send(content, content.Length, ipEndPoint);
+
+                udpClient.Close();
+            }
+            catch (Exception e)
+            {
+                ImportExport.LogMessage("Send Exception: " + e.Message + "...", true);
+            }
+        }
 
         public static void UDPSender(string ipAdress, int port, string textToSend)
         {
