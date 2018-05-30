@@ -336,7 +336,7 @@ namespace Ikarus
                 centerX = sizeUsercontrol / 2;
                 centerY = interfaceUserControl.GetSizeY() / 2;
 
-                if (table.TableName == "Switches")
+                if (table.TableName == "Switches" || table.TableName == "Lamps")
                     rotate = 0.0;
 
                 transformGroup = new TransformGroup();
@@ -609,7 +609,7 @@ namespace Ikarus
                     if (scrollWeel > 1.0) scrollWeel = 1.0;
                     if (scrollWeel < -1.0) scrollWeel = -1.0;
 
-                    if (tableName == "Switches")
+                    if (tableName == "Switches" || tableName == "Lamps")
                         rotate = 0.0;
                     else
                         rotate = double.Parse(dataRows[0]["Rotate"].ToString().Replace(",", "."), CultureInfo.InvariantCulture);

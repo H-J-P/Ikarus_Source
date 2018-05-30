@@ -2,8 +2,10 @@ using System;
 using System.Data;
 using System.Globalization;
 using System.IO;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
+using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Threading;
 
@@ -19,8 +21,10 @@ namespace Ikarus
         private string pictureOn = "";
         private string pictureOff = "";
         private int windowID = 0;
+        private double rotateLamp = 0.0;
         BitmapImage bitmapImage = new BitmapImage();
         GaugesHelper helper = null;
+        RotateTransform rtLamp = new RotateTransform();
 
         public int GetWindowID() { return windowID; }
 
@@ -29,10 +33,10 @@ namespace Ikarus
             InitializeComponent();
             Focusable = false;
 
-            DesignFrame.Visibility = System.Windows.Visibility.Hidden;
+            DesignFrame.Visibility = Visibility.Hidden;
 
-            LampOn.Visibility = System.Windows.Visibility.Hidden;
-            LampOff.Visibility = System.Windows.Visibility.Visible;
+            LampOn.Visibility = Visibility.Hidden;
+            LampOff.Visibility = Visibility.Visible;
         }
 
         public void SetID(string _dataImportID)
@@ -50,10 +54,10 @@ namespace Ikarus
             {
                 helper.MakeDraggable(this, this);
 
-                DesignFrame.Visibility = System.Windows.Visibility.Visible;
+                DesignFrame.Visibility = Visibility.Visible;
 
-                LampOn.Visibility = System.Windows.Visibility.Visible;
-                LampOff.Visibility = System.Windows.Visibility.Hidden;
+                LampOn.Visibility = Visibility.Visible;
+                LampOff.Visibility = Visibility.Hidden;
             }
         }
         public string GetID() { return dataImportID; }
@@ -87,6 +91,23 @@ namespace Ikarus
 
             UpperRec.Height = bitmapHeight; //- 10;
             UpperRec.Width = bitmapWidth; // - 10;
+
+            if (rotateLamp != 0)
+            {
+                if (bitmapHeight > bitmapWidth)
+                    DesignFrame.Width = bitmapHeight;
+                else
+                    DesignFrame.Height = bitmapWidth;
+
+                DesignFrame.Height = Math.Sqrt(DesignFrame.Width * DesignFrame.Width * 2);
+                DesignFrame.Width = DesignFrame.Height;
+                LampOn.Margin = new Thickness(DesignFrame.Width/7, DesignFrame.Width/7, 0, 0);
+                LampOff.Margin = LampOn.Margin;
+
+                rtLamp.Angle = rotateLamp;
+                Lamp.RenderTransform = rtLamp;
+                DesignFrame.Visibility = Visibility.Hidden;
+            }
         }
 
         private void LoadBmaps()
@@ -97,8 +118,8 @@ namespace Ikarus
             if (dataRows.Length > 0)
             {
                 pictureOn = dataRows[0]["FilePictureOn"].ToString();
-
                 pictureOff = dataRows[0]["FilePictureOff"].ToString();
+                rotateLamp = Convert.ToDouble(dataRows[0]["Rotate"]);
             }
 
             try
@@ -172,13 +193,13 @@ namespace Ikarus
         {
             if (_value > 0.0)
             {
-                LampOn.Visibility = System.Windows.Visibility.Visible;
-                LampOff.Visibility = System.Windows.Visibility.Hidden;
+                LampOn.Visibility = Visibility.Visible;
+                LampOff.Visibility = Visibility.Hidden;
             }
             else
             {
-                LampOn.Visibility = System.Windows.Visibility.Hidden;
-                LampOff.Visibility = System.Windows.Visibility.Visible;
+                LampOn.Visibility = Visibility.Hidden;
+                LampOff.Visibility = Visibility.Visible;
             }
         }
 
