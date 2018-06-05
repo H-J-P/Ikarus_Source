@@ -25,7 +25,7 @@ namespace Ikarus
 
         double lpitch = 0.0;
         double lbank = 0.0;
-        double lflagOff = 0.0;
+        double lflagOff = 1.0;
 
         public AV8BNA_ADI()
         {
@@ -33,7 +33,7 @@ namespace Ikarus
 
             shadow.Visibility = MainWindow.shadowChecked ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
 
-            Flag_OFF.Visibility = System.Windows.Visibility.Visible;
+            Flag_OFF.Visibility = System.Windows.Visibility.Hidden;
         }
         public void SetID(string _dataImportID)
         {
@@ -108,9 +108,7 @@ namespace Ikarus
                                }
 
                                if (lflagOff != flagOff)
-                               {
-                                   Flag_OFF.Visibility = flagOff > 0.5 ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
-                               }
+                                   Flag_OFF.Visibility = flagOff > 0.8 ? System.Windows.Visibility.Hidden : System.Windows.Visibility.Visible;
 
                                lpitch = pitch;
                                lbank = bank;

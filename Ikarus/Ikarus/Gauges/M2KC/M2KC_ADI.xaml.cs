@@ -55,7 +55,7 @@ namespace Ikarus
         {
             InitializeComponent();
 
-            Flagg_off.Visibility = System.Windows.Visibility.Visible;
+            Flagg_off.Visibility = System.Windows.Visibility.Hidden;
 
             InitialSphere();
 

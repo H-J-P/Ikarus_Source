@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using System.Net;
 using System.Net.Sockets;
 using System.Text;
-using System.Windows.Threading;
-
 
 namespace Ikarus
 {
@@ -19,6 +17,8 @@ namespace Ikarus
         private static UdpClient udpClient = new UdpClient();
 
         private static IPAddress sendToAddress = null;
+        private static IPAddress ip = null;
+        private static IPEndPoint ipEndPoint = null;
         private static IPEndPoint sendingEndPoint = null;
         private static IPEndPoint listenerEndPoint = null;
         private static Socket sendingSocket = null;
@@ -38,13 +38,13 @@ namespace Ikarus
         #endregion
 
 
-        public static void UDPSender2(string ipAdress, int port, string textToSend) // Without broadcast
+        public static void UDPSender(string ipAdress, int port, string textToSend) // Without broadcast
         {
             try
             {
                 udpClient = new UdpClient();
-                IPAddress ip = IPAddress.Parse(ipAdress.Trim());
-                IPEndPoint ipEndPoint = new IPEndPoint(ip, port);
+                ip = IPAddress.Parse(ipAdress.Trim());
+                ipEndPoint = new IPEndPoint(ip, port);
 
                 byte[] content = Encoding.UTF8.GetBytes(textToSend);
                 int count = udpClient.Send(content, content.Length, ipEndPoint);
@@ -57,7 +57,7 @@ namespace Ikarus
             }
         }
 
-        public static void UDPSender(string ipAdress, int port, string textToSend)
+        public static void UDPSender_Old(string ipAdress, int port, string textToSend)
         {
             #region comments
             // create an address object and populate it with the IP address that we will use
@@ -65,7 +65,7 @@ namespace Ikarus
             // to all devices whose address begins with 192.168.2.
             #endregion
 
-            ipAdress = ipAdress.Substring(0, ipAdress.LastIndexOf(".") + 1) + "255"; // 127.0.0.1 -> 127.0.0.255
+            //ipAdress = ipAdress.Substring(0, ipAdress.LastIndexOf(".") + 1) + "255"; // 127.0.0.1 -> 127.0.0.255
 
             sendingSocket = new Socket(AddressFamily.InterNetwork, SocketType.Dgram, ProtocolType.Udp);
             sendToAddress = IPAddress.Parse(ipAdress);
