@@ -122,7 +122,7 @@ namespace Ikarus
 
                                if (lrpm10 != rpm10)
                                {
-                                   ttRpm10.Y = rpm10 * 370;
+                                   ttRpm10.Y = rpm10 * 336;
                                    N2_10.RenderTransform = ttRpm10;
                                }
 

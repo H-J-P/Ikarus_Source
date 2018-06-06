@@ -31,6 +31,7 @@ namespace Ikarus
         RotateTransform rtNeedleLarge = new RotateTransform();
         RotateTransform rtNeedleSmall = new RotateTransform();
         RotateTransform rtCompassRose = new RotateTransform();
+        RotateTransform rthsiMode = new RotateTransform();
 
         double headingInd = 0.0;
         double needleLarge = 0.0;
@@ -43,6 +44,8 @@ namespace Ikarus
         double hsiFlag1 = 0.0;
         double hsiFlag2 = 0.0;
         double hsiFlag_cap = 0.0;
+        double hsiMode = 0.0;
+        double dmeOffFlag = 0.0;
 
         double lheadingInd = 0.0;
         double lneedleLarge = 0.0;
@@ -55,12 +58,14 @@ namespace Ikarus
         double lhsiFlag1 = 1.0;
         double lhsiFlag2 = 1.0;
         double lhsiFlag_cap = 1.0;
+        double lhsiMode = 0.0;
+        double ldmeOffFlag = 1.0;
 
         public M2KC_HSI()
         {
             InitializeComponent();
 
-            DME_OFF_Flag.Visibility = System.Windows.Visibility.Hidden;
+            DME_OFF_Flag.Visibility = System.Windows.Visibility.Visible;
             NEEDLE_1_Flag.Visibility = System.Windows.Visibility.Visible;
             NEEDLE_2_Flag.Visibility = System.Windows.Visibility.Visible;
             CAP_Flag.Visibility = System.Windows.Visibility.Visible;
@@ -132,6 +137,8 @@ namespace Ikarus
                                if (vals.Length > 8) { hsiFlag1 = Convert.ToDouble(vals[8], CultureInfo.InvariantCulture); }
                                if (vals.Length > 9) { hsiFlag2 = Convert.ToDouble(vals[9], CultureInfo.InvariantCulture); }
                                if (vals.Length > 10) { hsiFlag_cap = Convert.ToDouble(vals[10], CultureInfo.InvariantCulture); }
+                               if (vals.Length > 11) { hsiMode = Convert.ToDouble(vals[11], CultureInfo.InvariantCulture); }
+                               if (vals.Length > 12) { dmeOffFlag = Convert.ToDouble(vals[12], CultureInfo.InvariantCulture); }
 
                                if (dmeCounter_1000 < 0) dmeCounter_1000 = 0;
                                if (dmeCounter_100 < 0) dmeCounter_100 = 0;
@@ -186,7 +193,16 @@ namespace Ikarus
                                    NEEDLE_2_Flag.Visibility = (hsiFlag2 > 0.8) ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
                                if (lhsiFlag_cap != hsiFlag_cap)
                                    CAP_Flag.Visibility = (hsiFlag_cap > 0.8) ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
+                               if (ldmeOffFlag != dmeOffFlag)
+                                   DME_OFF_Flag.Visibility = (dmeOffFlag > 0.8) ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
 
+                               hsiMode *= 1.667;
+
+                               if (lhsiMode != hsiMode)
+                               {
+                                   rthsiMode.Angle = hsiMode * -123;
+                                   MODE.RenderTransform = rthsiMode;
+                               }
 
                                lheadingInd = headingInd;
                                lneedleLarge = needleLarge;
@@ -201,6 +217,8 @@ namespace Ikarus
                                lhsiFlag1 = hsiFlag1;
                                lhsiFlag2 = hsiFlag2;
                                lhsiFlag_cap = hsiFlag_cap;
+                               lhsiMode = hsiMode;
+                               ldmeOffFlag = dmeOffFlag;
                            }
                            catch { return; }
                        }));
