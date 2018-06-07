@@ -16,6 +16,9 @@ namespace Ikarus
         GaugesHelper helper = null;
         private int windowID = 0;
         private string[] vals = new string[] { };
+        private double[] valueScale = new double[] { };
+        private double[] degreeDial = new double[] { };
+        int valueScaleIndex = 0;
 
         public int GetWindowID() { return windowID; }
 
@@ -57,12 +60,12 @@ namespace Ikarus
 
         public void SetInput(string _input)
         {
-            //helper.SetInput(ref _input, ref valueScale, ref valueScaleIndex, 2);
+            helper.SetInput(ref _input, ref valueScale, ref valueScaleIndex, 2);
         }
 
         public void SetOutput(string _output)
         {
-            //helper.SetOutput(ref _output, ref degreeDial, 2);
+            helper.SetOutput(ref _output, ref degreeDial, 2);
         }
 
         public double GetSize()
@@ -88,7 +91,14 @@ namespace Ikarus
 
                                if (laoa != aoa)
                                {
-                                   ttAOA.Y = aoa * -333;
+                                   for (int n = 0; n < (valueScaleIndex - 1); n++)
+                                   {
+                                       if (aoa >= valueScale[n] && aoa <= valueScale[n + 1])
+                                       {
+                                           ttAOA.Y = (degreeDial[n] - degreeDial[n + 1]) / (valueScale[n] - valueScale[n + 1]) * (aoa - valueScale[n]) + degreeDial[n];
+                                           break;
+                                       }
+                                   }
                                    AOA.RenderTransform = ttAOA;
                                }
                                if (MainWindow.editmode)
