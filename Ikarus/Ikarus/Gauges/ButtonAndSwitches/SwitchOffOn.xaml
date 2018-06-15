@@ -7,7 +7,7 @@
              d:DesignHeight="150" d:DesignWidth="70" MouseWheel="Light_MouseWheel">
     <Grid Name="Switch"  RenderTransformOrigin="0.5,0.5">
         <Image x:Name="SwitchUp"
-               Width="70"
+               Width="150"
                Height="150"
                HorizontalAlignment="Left"
                VerticalAlignment="Top" />

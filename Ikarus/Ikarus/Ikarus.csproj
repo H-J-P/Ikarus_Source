@@ -228,6 +228,9 @@
     <Compile Include="Gauges\AV8BNA\AV8BNA_VVI.xaml.cs">
       <DependentUpon>AV8BNA_VVI.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Gauges\ButtonAndSwitches\Drum.xaml.cs">
+      <DependentUpon>Drum.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Gauges\M2KC\M2KC_BingoFuel.xaml.cs">
       <DependentUpon>M2KC_BingoFuel.xaml</DependentUpon>
     </Compile>
@@ -1627,6 +1630,10 @@
     <Page Include="Gauges\AV8BNA\AV8BNA_VVI.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Gauges\ButtonAndSwitches\Drum.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Gauges\M2KC\M2KC_BingoFuel.xaml">
       <Generator>MSBuild:Compile</Generator>

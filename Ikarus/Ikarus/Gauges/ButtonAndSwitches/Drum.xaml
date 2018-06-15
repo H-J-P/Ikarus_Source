@@ -1,0 +1,60 @@
+﻿<UserControl x:Class="Ikarus.Drum"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             d:DesignHeight="100"
+             MouseWheel="Light_MouseWheel"
+             mc:Ignorable="d" Width="38.936">
+    <Grid RenderTransformOrigin="0.5,0.5" Margin="0,0,0,0">
+        <Grid.RenderTransform>
+            <TransformGroup>
+                <ScaleTransform />
+                <SkewTransform />
+                <RotateTransform Angle="0" />
+                <TranslateTransform />
+            </TransformGroup>
+        </Grid.RenderTransform>
+        <Image x:Name="SwitchBase"
+               Width="39"
+               Height="100"
+               Margin="0,0,0,0"
+               HorizontalAlignment="Left"
+               VerticalAlignment="Top" />
+        <Image x:Name="SwitchKnob"
+               Width="39"
+               Height="100"
+               HorizontalAlignment="Left"
+               VerticalAlignment="Top"
+               RenderTransformOrigin="0.5,0.5" />
+        <Rectangle x:Name="DesignFrame"
+                   Width="39"
+                   Height="100"
+                   Margin="0,0,0,0"
+                   HorizontalAlignment="Left"
+                   VerticalAlignment="Top"
+                   Fill="#00EEDB21"
+                   Stroke="#FFF38501"
+                   StrokeThickness="3" />
+        <Rectangle x:Name="UpRec"
+                   Width="30"
+                   Height="37"
+                   Margin="5,5,0,0"
+                   HorizontalAlignment="Left"
+                   VerticalAlignment="Top"
+                   Fill="#00EEDB21"
+                   MouseDown="RightRec_MouseDown"
+                   Stroke="#00EEDB21"
+                   TouchDown="RightRec_TouchDown" />
+        <Rectangle x:Name="DownRec"
+                   Width="30"
+                   Height="38"
+                   Margin="5,57,0,0"
+                   HorizontalAlignment="Left"
+                   VerticalAlignment="Top"
+                   Fill="#00EEDB21"
+                   MouseDown="LeftRec_MouseDown"
+                   Stroke="#00000000"
+                   TouchDown="LeftRec_TouchDown" />
+    </Grid>
+</UserControl>

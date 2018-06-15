@@ -104,14 +104,14 @@ namespace Ikarus
             int bitmapHeight = bitmapImage.PixelHeight / 2; // Jumping Jack
             int bitmapWidth = bitmapImage.PixelWidth / 2;
 
-            DesignFrame.Height = bitmapHeight;
-            DesignFrame.Width = bitmapWidth;
-
             SwitchUp.Height = bitmapHeight;
             SwitchUp.Width = bitmapWidth;
 
             SwitchDown.Height = bitmapHeight;
             SwitchDown.Width = bitmapWidth;
+
+            DesignFrame.Height = bitmapHeight;
+            DesignFrame.Width = bitmapWidth;
 
             UpperRec.Height = bitmapHeight / 2 - bitmapHeight / 8;
             UpperRec.Width = bitmapWidth - bitmapWidth / 4;
@@ -123,18 +123,9 @@ namespace Ikarus
 
             if (rotateSwitch != 0)
             {
-                if (rotateSwitch == 90 || rotateSwitch == -90)
-                {
-                    DesignFrame.Width = bitmapHeight;
-                    //DesignFrame.Height = bitmapWidth;
-                }
-                if (rotateSwitch == 45 || rotateSwitch == -45)
-                {
-                    DesignFrame.Width = bitmapHeight;
-                }
                 rtSwitch.Angle = rotateSwitch;
                 Switch.RenderTransform = rtSwitch;
-                DesignFrame.Visibility = System.Windows.Visibility.Hidden;
+                SwitchUp.Width = bitmapHeight;
             }
         }
 
@@ -164,6 +155,8 @@ namespace Ikarus
                         SetContour();
                         SwitchUp.Source = bitmapImage;
 
+                        //double bitmapWidth = this.Width;
+                        //double bitmapHeight = this.Height;
                         findPictureOn = true;
                     }
 

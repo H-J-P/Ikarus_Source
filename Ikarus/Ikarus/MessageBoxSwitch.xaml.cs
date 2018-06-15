@@ -160,6 +160,12 @@ namespace Ikarus
                         Output.Text = " 0, 360";
                     }
 
+                    if (Classname.Text == "Drum")
+                    {
+                        Input.Text = "0.0,1.0,0.1";
+                        Output.Text = " 0.0,1.0";
+                    }
+
                     if (Classname.Text == "MultiSwitch")
                     {
                         Input.Text = "0.0,0.1,0.2,0.3,0.4";
