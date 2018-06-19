@@ -17,28 +17,28 @@ namespace Ikarus
     {
         private DataRow[] dataRows = new DataRow[] { };
         private string dataImportID = "";
-        private string pictureKnob = "";
-        private string pictureBase = "";
+        private string pictureUp = "";
+        private string pictureMiddle = "";
+        private string pictureDown = "";
+        private int windowID = 0;
+        private string[] vals = new string[] { };
+
+        private double[] input = new double[] { };
+        private double[] output = new double[] { };
+        private double rotateSwitch = 0.0;
+
+        private Switches switches = null;
+        private bool touchDown = false;
+        BitmapImage bitmapImage = new BitmapImage();
+        GaugesHelper helper = null;
+        RotateTransform rtSwitch = new RotateTransform();
 
         private double minValue = 0.0;
         private double maxValue = 1.0;
         private double step = 0.05;
-
-        private double startAngle = 0.0;
-        private double finalAngle = 360;
-
         private int relative = 0;
-
         private double switchState = 0.0;
         private double oldState = 0.0;
-        private double animation = 0.0;
-        private string[] vals = new string[] { };
-        private bool touchDown = false;
-
-        private int windowID = 0;
-        private Switches switches = null;
-        //private RotateTransform rtKnob = new RotateTransform();
-        GaugesHelper helper = null;
 
         public int GetWindowID() { return windowID; }
 
@@ -52,6 +52,7 @@ namespace Ikarus
         public void SetID(string _dataImportID)
         {
             dataImportID = _dataImportID;
+            LoadBmaps();
 
             switches = MainWindow.switches.Find(x => x.ID == Convert.ToInt32(dataImportID));
         }
@@ -64,13 +65,13 @@ namespace Ikarus
             if (MainWindow.editmode)
             {
                 helper.MakeDraggable(this, this);
-
+                DesignFrame.StrokeThickness = 2.0;
                 DesignFrame.Visibility = System.Windows.Visibility.Visible;
                 Color color = Color.FromArgb(90, 255, 0, 0);
-                DownRec.StrokeThickness = 2.0;
-                DownRec.Stroke = new SolidColorBrush(color);
-                UpRec.StrokeThickness = 2.0;
-                UpRec.Stroke = new SolidColorBrush(color);
+                UpperRec.StrokeThickness = 2.0;
+                UpperRec.Stroke = new SolidColorBrush(color);
+                LowerRec.StrokeThickness = 2.0;
+                LowerRec.Stroke = new SolidColorBrush(color);
             }
         }
 
@@ -97,45 +98,112 @@ namespace Ikarus
         public void SetOutput(string _output)
         {
             string[] vals = _output.Split(',');
+            output = new double[vals.Length];
 
-            if (vals.Length == 2)
+            for (int i = 0; i < vals.Length; i++)
             {
-                startAngle = Convert.ToDouble(vals[0], CultureInfo.InvariantCulture);
-
-                if (vals[1] != "1.0")
-                    finalAngle = Convert.ToDouble(vals[1], CultureInfo.InvariantCulture);
+                output[i] = Convert.ToDouble(vals[i], CultureInfo.InvariantCulture);
             }
+        }
 
-            dataRows = MainWindow.dtSwitches.Select("ID=" + dataImportID);
+        private void SetContour()
+        {
+            int bitmapHeight = bitmapImage.PixelHeight / 2; // Jumping Jack
+            int bitmapWidth = bitmapImage.PixelWidth / 2;
 
-            if (dataRows.Length > 0)
+            DesignFrame.Height = bitmapHeight;
+            DesignFrame.Width = bitmapWidth;
+
+            SwitchUp.Height = bitmapHeight;
+            SwitchUp.Width = bitmapWidth;
+
+            SwitchMiddle.Height = bitmapHeight;
+            SwitchMiddle.Width = bitmapWidth;
+
+            SwitchDown.Height = bitmapHeight;
+            SwitchDown.Width = bitmapWidth;
+
+            UpperRec.Height = bitmapHeight / 2 - bitmapHeight / 8;
+            UpperRec.Width = bitmapWidth - bitmapWidth / 4;
+            UpperRec.Margin = new System.Windows.Thickness(bitmapWidth / 8, bitmapHeight / 12, 0, 0);
+
+            LowerRec.Height = bitmapHeight / 2 - bitmapHeight / 8;
+            LowerRec.Width = bitmapWidth - bitmapWidth / 8 * 2;
+            LowerRec.Margin = new System.Windows.Thickness(bitmapWidth / 8, bitmapHeight / 24 + bitmapHeight / 2, 0, 0);
+
+            if (rotateSwitch != 0)
             {
-                pictureKnob = dataRows[0]["FilePictureOn"].ToString();
-                pictureBase = dataRows[0]["FilePictureOff"].ToString();
+                rtSwitch.Angle = rotateSwitch;
+                Switch.RenderTransform = rtSwitch;
+                SwitchUp.Width = bitmapHeight;
             }
+        }
 
-            try
+        private void LoadBmaps()
+        {
+            if (dataImportID != "")
             {
-                SwitchKnob.Source = null;
-                SwitchBase.Source = null;
+                dataRows = MainWindow.dtSwitches.Select("ID=" + dataImportID);
+                bool findPictureOn = false;
 
-                if (File.Exists(Environment.CurrentDirectory + "\\Images\\Switches\\" + pictureKnob))
-                    SwitchKnob.Source = new BitmapImage(new Uri(Environment.CurrentDirectory + "\\Images\\Switches\\" + pictureKnob));
+                if (dataRows.Length > 0)
+                {
+                    pictureUp = dataRows[0]["FilePictureOn"].ToString();
+                    pictureMiddle = dataRows[0]["FilePictureOff"].ToString();
+                    pictureDown = dataRows[0]["FilePicture2On"].ToString();
+                    rotateSwitch = Convert.ToDouble(dataRows[0]["Rotate"]);
+                }
 
-                if (File.Exists(Environment.CurrentDirectory + "\\Images\\Switches\\" + pictureBase))
-                    SwitchBase.Source = new BitmapImage(new Uri(Environment.CurrentDirectory + "\\Images\\Switches\\" + pictureBase));
+                try
+                {
+                    SwitchUp.Source = null;
+                    SwitchMiddle.Source = null;
+                    SwitchDown.Source = null;
+
+                    if (File.Exists(Environment.CurrentDirectory + "\\Images\\Switches\\" + pictureUp))
+                    {
+                        bitmapImage = new BitmapImage(new Uri(Environment.CurrentDirectory + "\\Images\\Switches\\" + pictureUp));
+                        SwitchUp.Source = bitmapImage;
+                        SetContour();
+                        findPictureOn = true;
+                    }
+
+                    if (File.Exists(Environment.CurrentDirectory + "\\Images\\Switches\\" + pictureMiddle))
+                    {
+                        if (findPictureOn)
+                            SwitchMiddle.Source = new BitmapImage(new Uri(Environment.CurrentDirectory + "\\Images\\Switches\\" + pictureMiddle));
+                        else
+                        {
+                            bitmapImage = new BitmapImage(new Uri(Environment.CurrentDirectory + "\\Images\\Switches\\" + pictureMiddle));
+                            SwitchMiddle.Source = bitmapImage;
+                            SetContour();
+                            findPictureOn = true;
+                        }
+                    }
+                    if (File.Exists(Environment.CurrentDirectory + "\\Images\\Switches\\" + pictureDown))
+                    {
+                        if (findPictureOn)
+                            SwitchDown.Source = new BitmapImage(new Uri(Environment.CurrentDirectory + "\\Images\\Switches\\" + pictureDown));
+                        else
+                        {
+                            bitmapImage = new BitmapImage(new Uri(Environment.CurrentDirectory + "\\Images\\Switches\\" + pictureDown));
+                            SetContour();
+                            SwitchDown.Source = bitmapImage;
+                        }
+                    }
+                }
+                catch { }
             }
-            catch { }
         }
 
         public double GetSize()
         {
-            return 100; // Width
+            return DesignFrame.Width;
         }
 
         public double GetSizeY()
         {
-            return SwitchBase.Height;
+            return DesignFrame.Height;
         }
 
         public void UpdateGauge(string strData)
@@ -161,13 +229,7 @@ namespace Ikarus
                                if (switchState > maxValue) switchState = maxValue;
                                if (switchState < minValue) switchState = minValue;
 
-                               if (oldState != switchState) animation += oldState < switchState ? step : -step;
-
                                oldState = switchState;
-
-                               //rtKnob = new RotateTransform();
-                               //rtKnob.Angle = (animation * finalAngle) + startAngle;
-                               //SwitchKnob.RenderTransform = rtKnob;
 
                                switches.value = switchState;
                                switches.events = false;
@@ -187,41 +249,54 @@ namespace Ikarus
             {
                 if (switches == null) return;
 
-                switchState = oldState;
-                switches.events = true;
-
-                if (_value == 1.0) animation += step;
-                if (_value == -1.0) animation += step * -1;
-
-                if (_value == 1.0) switchState += step;
-                if (_value == -1.0) switchState += step * -1;
-
-                switchState = Convert.ToDouble(string.Format("{0:0.00000}", switchState), CultureInfo.InvariantCulture); // E-format
-
-                if (switchState > maxValue) switchState = maxValue;
-                if (switchState < minValue) switchState = minValue;
-
-                if (relative == 0)
+                if (_value != 0)
                 {
-                    switches.value = switchState;
-                }
-                else
-                {
-                    if (_value == 1.0) switches.value = step;
-                    if (_value == -1.0) switches.value = step * -1;
+                    switches.events = true;
                     switches.oldValue = switches.oldValue * -1;
+
+                    if (_value == 1.0) switchState += step;
+                    if (_value == -1.0) switchState += step * -1;
+                    if (switchState > maxValue) switchState = maxValue;
+                    if (switchState < minValue) switchState = minValue;
+
+                    switchState = Convert.ToDouble(string.Format("{0:0.00000}", switchState), CultureInfo.InvariantCulture); // E-format
+
+                    if (relative == 0)
+                    {
+                        switches.value = switchState;
+                    }
+                    else
+                    {
+                        if (_value == 1.0) switches.value = step;
+                        if (_value == -1.0) switches.value = step * -1;
+                    }
                 }
 
-                oldState = switchState;
+                if (_value == 1.0)
+                {
+                    SwitchUp.Visibility = System.Windows.Visibility.Visible;
+                    SwitchMiddle.Visibility = System.Windows.Visibility.Hidden;
+                    SwitchDown.Visibility = System.Windows.Visibility.Hidden;
+                }
 
-                //rtKnob = new RotateTransform();
-                //rtKnob.Angle = (animation * finalAngle) + startAngle;
-                //SwitchKnob.RenderTransform = rtKnob;
+                if (_value == 0)
+                {
+                    SwitchUp.Visibility = System.Windows.Visibility.Hidden;
+                    SwitchMiddle.Visibility = System.Windows.Visibility.Visible;
+                    SwitchDown.Visibility = System.Windows.Visibility.Hidden;
+                }
+
+                if (_value == -1.0)
+                {
+                    SwitchUp.Visibility = System.Windows.Visibility.Hidden;
+                    SwitchMiddle.Visibility = System.Windows.Visibility.Hidden;
+                    SwitchDown.Visibility = System.Windows.Visibility.Visible;
+                }
             }
             catch { return; }
         }
 
-        private void    RightRec_MouseDown(object sender, MouseButtonEventArgs e)
+        private void RightRec_MouseDown(object sender, MouseButtonEventArgs e)
         {
             e.Handled = true;
             if (!touchDown)
@@ -256,6 +331,36 @@ namespace Ikarus
             e.Handled = true;
             touchDown = true;
             SetValue(-1.0);
+            if (!MainWindow.editmode) ProzessHelper.SetFocusToExternalApp(MainWindow.processNameDCS);
+        }
+        private void LeftRec_MouseUp(object sender, MouseButtonEventArgs e)
+        {
+            e.Handled = true;
+            touchDown = false;
+            SetValue(0);
+            if (!MainWindow.editmode) ProzessHelper.SetFocusToExternalApp(MainWindow.processNameDCS);
+        }
+
+        private void LeftRec_TouchUp(object sender, TouchEventArgs e)
+        {
+            e.Handled = true;
+            touchDown = false;
+            SetValue(0);
+            if (!MainWindow.editmode) ProzessHelper.SetFocusToExternalApp(MainWindow.processNameDCS);
+        }
+        private void RightRec_MouseUp(object sender, MouseButtonEventArgs e)
+        {
+            e.Handled = true;
+            touchDown = false;
+            SetValue(0);
+            if (!MainWindow.editmode) ProzessHelper.SetFocusToExternalApp(MainWindow.processNameDCS);
+        }
+
+        private void RightRec_TouchUp(object sender, TouchEventArgs e)
+        {
+            e.Handled = true;
+            touchDown = false;
+            SetValue(0);
             if (!MainWindow.editmode) ProzessHelper.SetFocusToExternalApp(MainWindow.processNameDCS);
         }
     }

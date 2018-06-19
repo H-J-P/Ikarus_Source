@@ -88,6 +88,9 @@ namespace Ikarus
                                if (vals.Length > 0) { bingo1000 = Convert.ToDouble(vals[0], CultureInfo.InvariantCulture); }
                                if (vals.Length > 1) { bingo100 = Convert.ToDouble(vals[1], CultureInfo.InvariantCulture); }
 
+                               bingo1000 = 1 - bingo1000;
+                               bingo100 = 1 - bingo100;
+
                                if (lbingo1000 != bingo1000)
                                {
                                    ttBingo_1000.Y = bingo1000 * -429;

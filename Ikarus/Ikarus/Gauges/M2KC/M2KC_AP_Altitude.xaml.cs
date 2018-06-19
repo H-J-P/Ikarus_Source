@@ -89,8 +89,12 @@ namespace Ikarus
                                vals = strData.Split(';');
 
                                if (vals.Length > 0) { alt10000 = Convert.ToDouble(vals[0], CultureInfo.InvariantCulture); }
-                               if (vals.Length > 0) { alt1000 = Convert.ToDouble(vals[0], CultureInfo.InvariantCulture); }
-                               if (vals.Length > 0) { alt100 = Convert.ToDouble(vals[0], CultureInfo.InvariantCulture); }
+                               if (vals.Length > 1) { alt1000 = Convert.ToDouble(vals[1], CultureInfo.InvariantCulture); }
+                               if (vals.Length > 2) { alt100 = Convert.ToDouble(vals[2], CultureInfo.InvariantCulture); }
+
+                               alt10000 = 1 - alt10000;
+                               alt1000 = 1 - alt1000;
+                               alt100 = 1 - alt100;
 
                                if (lalt10000 != alt10000)
                                {
