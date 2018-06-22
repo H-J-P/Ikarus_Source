@@ -65,12 +65,12 @@ namespace Ikarus
             if (MainWindow.editmode)
             {
                 helper.MakeDraggable(this, this);
-                DesignFrame.StrokeThickness = 2.0;
+                DesignFrame.StrokeThickness = 1.0;
                 DesignFrame.Visibility = System.Windows.Visibility.Visible;
                 Color color = Color.FromArgb(90, 255, 0, 0);
-                UpperRec.StrokeThickness = 2.0;
+                UpperRec.StrokeThickness = 1.0;
                 UpperRec.Stroke = new SolidColorBrush(color);
-                LowerRec.StrokeThickness = 2.0;
+                LowerRec.StrokeThickness = 1.0;
                 LowerRec.Stroke = new SolidColorBrush(color);
             }
         }
