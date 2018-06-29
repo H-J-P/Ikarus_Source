@@ -133,7 +133,7 @@ namespace Ikarus
                 if (Classname.Text == "Rotary") setSwitch = false;
                 if (Classname.Text == "RotaryWithPosition") setSwitch = false;
 
-                if (Classname.Text == "MultiSwitch" || Classname.Text == "Rotary")
+                if (Classname.Text == "MultiSwitch" || Classname.Text == "Rotary" || Classname.Text == "Drum")
                 {
                     dataRows = MainWindow.dtMasterSwitches.Select("Type='Switch' OR Type='Rotary'", "DcsID");
                 }

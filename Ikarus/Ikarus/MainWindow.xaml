@@ -954,10 +954,10 @@
                     ToolTip="Ikarus Screen Capture" HorizontalAlignment="Right" Width="90" />
             <Label Name="Version"
                    Height="19"
-                   Margin="502,0,440,10"
+                   Margin="508,0,442,10"
                    VerticalAlignment="Bottom"
-                   Content=" (C) H.J.P. 2018  Version 1.3.4.2c"
-                   Foreground="#FFD8BC05" RenderTransformOrigin="1.004,0.526" HorizontalAlignment="Center" />
+                   Content=" (C) H.J.P. 2018  Version 1.3.4.2e"
+                   Foreground="#FFD8BC05" RenderTransformOrigin="1.004,0.526" HorizontalAlignment="Center" Width="172" />
             <Label Name="lbEditMode"
                    Height="19"
                    Margin="315,0,0,10"

@@ -123,6 +123,11 @@ namespace Ikarus
                         SwitchBase.Source = new BitmapImage(new Uri(Environment.CurrentDirectory + "\\Images\\Switches\\" + pictureBase));
                 }
                 catch { }
+
+                oldState = input[0];
+                rtKnob = new RotateTransform();
+                rtKnob.Angle = output[0];
+                SwitchKnob.RenderTransform = rtKnob;
             }
         }
 
