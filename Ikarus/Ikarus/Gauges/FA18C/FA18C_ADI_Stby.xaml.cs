@@ -25,7 +25,7 @@ namespace Ikarus
 
         double lpitch = 0.0;
         double lbank = 0.0;
-        double lflagOff = 0.0;
+        double lflagOff = 1.0;
 
         RotateTransform rt = new RotateTransform();
         TranslateTransform tt = new TranslateTransform();
@@ -38,7 +38,6 @@ namespace Ikarus
 
             rtFlagOff.Angle = 18;
             flagg_off.RenderTransform = rtFlagOff;
-            lflagOff = 1.0;
         }
 
         public void SetID(string _dataImportID)
