@@ -231,6 +231,39 @@
     <Compile Include="Gauges\ButtonAndSwitches\Drum.xaml.cs">
       <DependentUpon>Drum.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Gauges\FA18C\FA18C_ADI.xaml.cs">
+      <DependentUpon>FA18C_ADI.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\FA18C\FA18C_ADI_Stby.xaml.cs">
+      <DependentUpon>FA18C_ADI_Stby.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\FA18C\FA18C_Alt.xaml.cs">
+      <DependentUpon>FA18C_Alt.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\FA18C\FA18C_ASI.xaml.cs">
+      <DependentUpon>FA18C_ASI.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\FA18C\FA18C_Batt.xaml.cs">
+      <DependentUpon>FA18C_Batt.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\FA18C\FA18C_Brake_P.xaml.cs">
+      <DependentUpon>FA18C_Brake_P.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\FA18C\FA18C_Cabin_Alt.xaml.cs">
+      <DependentUpon>FA18C_Cabin_Alt.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\FA18C\FA18C_Engine.xaml.cs">
+      <DependentUpon>FA18C_Engine.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\FA18C\FA18C_Hyd_P.xaml.cs">
+      <DependentUpon>FA18C_Hyd_P.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\FA18C\FA18C_R_Alt.xaml.cs">
+      <DependentUpon>FA18C_R_Alt.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\FA18C\FA18C_VVI.xaml.cs">
+      <DependentUpon>FA18C_VVI.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Gauges\M2KC\M2KC_BingoFuel.xaml.cs">
       <DependentUpon>M2KC_BingoFuel.xaml</DependentUpon>
     </Compile>
@@ -1632,6 +1665,50 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Gauges\ButtonAndSwitches\Drum.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\FA18C\FA18C_ADI.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\FA18C\FA18C_ADI_Stby.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\FA18C\FA18C_Alt.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\FA18C\FA18C_ASI.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\FA18C\FA18C_Batt.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\FA18C\FA18C_Brake_P.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\FA18C\FA18C_Cabin_Alt.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\FA18C\FA18C_Engine.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\FA18C\FA18C_Hyd_P.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\FA18C\FA18C_R_Alt.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\FA18C\FA18C_VVI.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

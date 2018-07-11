@@ -126,6 +126,11 @@ namespace Ikarus
                     SwitchBase.Source = new BitmapImage(new Uri(Environment.CurrentDirectory + "\\Images\\Switches\\" + pictureBase));
             }
             catch { }
+
+            oldState = 0;
+            rtKnob = new RotateTransform();
+            rtKnob.Angle = startAngle;
+            SwitchKnob.RenderTransform = rtKnob;
         }
 
         public double GetSize()
@@ -161,16 +166,18 @@ namespace Ikarus
                                if (switchState > maxValue) switchState = maxValue;
                                if (switchState < minValue) switchState = minValue;
 
-                               if (oldState != switchState) animation += oldState < switchState ? step : -step;
+                               if (oldState != switchState)
+                               {
+                                   animation += oldState < switchState ? step : -step;
 
+                                   rtKnob = new RotateTransform();
+                                   rtKnob.Angle = (animation * finalAngle) + startAngle;
+                                   SwitchKnob.RenderTransform = rtKnob;
+
+                                   switches.value = switchState;
+                                   switches.events = false;
+                               }
                                oldState = switchState;
-
-                               rtKnob = new RotateTransform();
-                               rtKnob.Angle = (animation * finalAngle) + startAngle;
-                               SwitchKnob.RenderTransform = rtKnob;
-
-                               switches.value = switchState;
-                               switches.events = false;
                            }
                            catch { return; };
                        }));
@@ -190,9 +197,6 @@ namespace Ikarus
                 switchState = oldState;
                 switches.events = true;
 
-                if (_value == 1.0) animation += step;
-                if (_value == -1.0) animation += step * -1;
-
                 if (_value == 1.0) switchState += step;
                 if (_value == -1.0) switchState += step * -1;
 
@@ -201,22 +205,28 @@ namespace Ikarus
                 if (switchState > maxValue) switchState = maxValue;
                 if (switchState < minValue) switchState = minValue;
 
-                if (relative == 0)
+                if (oldState != switchState)
                 {
-                    switches.value = switchState;
-                }
-                else
-                {
-                    if (_value == 1.0) switches.value = step;
-                    if (_value == -1.0) switches.value = step * -1;
-                    switches.oldValue = switches.oldValue * -1;
+                    if (_value == 1.0) animation += step;
+                    if (_value == -1.0) animation += step * -1;
+
+                    if (relative == 0)
+                    {
+                        switches.value = switchState;
+                    }
+                    else
+                    {
+                        if (_value == 1.0) switches.value = step;
+                        if (_value == -1.0) switches.value = step * -1;
+                        switches.oldValue = switches.oldValue * -1;
+                    }
+
+                    rtKnob = new RotateTransform();
+                    rtKnob.Angle = (animation * finalAngle) + startAngle;
+                    SwitchKnob.RenderTransform = rtKnob;
                 }
 
                 oldState = switchState;
-
-                rtKnob = new RotateTransform();
-                rtKnob.Angle = (animation * finalAngle) + startAngle;
-                SwitchKnob.RenderTransform = rtKnob;
             }
             catch { return; }
         }

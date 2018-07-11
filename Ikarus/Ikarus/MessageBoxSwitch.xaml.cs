@@ -128,43 +128,45 @@ namespace Ikarus
             if (MainWindow.dtMasterSwitches != null)
             {
                 setSwitch = true;
+                dataRows = MainWindow.dtMasterSwitches.Select("Type='Switch' OR Type='Rotary'", "DcsID");
 
-                if (Classname.Text == "Potentiometer") setSwitch = false;
-                if (Classname.Text == "Rotary") setSwitch = false;
-                if (Classname.Text == "RotaryWithPosition") setSwitch = false;
+                //if (Classname.Text == "Potentiometer") setSwitch = false;
+                //if (Classname.Text == "Rotary") setSwitch = false;
+                //if (Classname.Text == "RotaryWithPosition") setSwitch = false;
 
-                if (Classname.Text == "MultiSwitch" || Classname.Text == "Rotary" || Classname.Text == "Drum")
-                {
-                    dataRows = MainWindow.dtMasterSwitches.Select("Type='Switch' OR Type='Rotary'", "DcsID");
-                }
-                else
-                {
-                    if (setSwitch)
-                    {
-                        dataRows = MainWindow.dtMasterSwitches.Select("Type='Switch'", "DcsID");
-                    }
-                    else
-                    {
-                        dataRows = MainWindow.dtMasterSwitches.Select("Type='Rotary'", "DcsID");
-                    }
-                }
+                //if (Classname.Text == "MultiSwitch" || Classname.Text == "Rotary" || Classname.Text == "Drum")
+                //{
+                //    dataRows = MainWindow.dtMasterSwitches.Select("Type='Switch' OR Type='Rotary'", "DcsID");
+                //}
+                //else
+                //{
+                //    if (setSwitch)
+                //    {
+                //        dataRows = MainWindow.dtMasterSwitches.Select("Type='Switch' OR Type='Rotary'", "DcsID");
+                //    }
+                //    else
+                //    {
+                //        dataRows = MainWindow.dtMasterSwitches.Select("Type='Switch' OR Type='Rotary'", "DcsID");
+                //    }
+                //}
+
                 switches = dataRows.CopyToDataTable<DataRow>();
                 DataGridSwitches.ItemsSource = null;
                 DataGridSwitches.ItemsSource = switches.DefaultView;
 
                 if (classNameChanged)
                 {
-                    if (Classname.Text == "Potentiometer" || Classname.Text == "Rotary")
+                    if (Classname.Text == "Potentiometer" || Classname.Text == "Rotary" || Classname.Text == "Drum")
                     {
                         Input.Text = "0.0,1.0,0.1";
                         Output.Text = " 0, 360";
                     }
 
-                    if (Classname.Text == "Drum")
-                    {
-                        Input.Text = "0.0,1.0,0.1";
-                        Output.Text = " 0.0,1.0";
-                    }
+                    //if (Classname.Text == "Drum")
+                    //{
+                    //    Input.Text = "0.0,1.0,0.1";
+                    //    Output.Text = " 0.0,1.0";
+                    //}
 
                     if (Classname.Text == "MultiSwitch")
                     {
@@ -173,14 +175,13 @@ namespace Ikarus
                     }
 
                     if (Classname.Text == "SwitchOffOn" || Classname.Text == "ButtonOffOn" || Classname.Text == "ButtonWithRelease" || 
-                        Classname.Text == "Button45x45" || Classname.Text == "Button70x70" || Classname.Text == "ButtonWithRepeat" || 
-                        Classname.Text == "Switch_OFFOn")
+                        Classname.Text == "ButtonWithRepeat" || Classname.Text == "SwitchOff_On")
                     {
                         Input.Text = "0.0,1.0";
                         Output.Text = "0.0,1.0";
                     }
 
-                    if (Classname.Text == "SwitchOnOffOn" || Classname.Text == "Switch_OnOFFON" || Classname.Text == "Switch_OnOFFOn")
+                    if (Classname.Text == "SwitchOnOffOn" || Classname.Text == "SwitchOn_OffOn" || Classname.Text == "SwitchOn_Off_On")
                     {
                         Input.Text = "-1.0,0.0,1.0";
                         Output.Text = "-1.0,0.0,1.0";

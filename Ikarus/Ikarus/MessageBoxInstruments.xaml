@@ -3,12 +3,12 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Dialog Instruments"
         Width="483"
-        Height="250"
+        Height="268"
         ResizeMode="NoResize"
         Topmost="True"
         WindowStartupLocation="CenterScreen"
         WindowStyle="ToolWindow">
-    <Grid Margin="0,0,4,0" RenderTransformOrigin="0.537,0.5">
+    <Grid Margin="0,0,-6,0" RenderTransformOrigin="0.537,0.5">
         <Grid.Background>
             <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
                 <GradientStop Offset="0" Color="Black" />
@@ -23,7 +23,7 @@
                Content="Image for Frame"
                Foreground="#FFFDFDFD" />
         <TextBox Name="ImageForFrame"
-                 Width="207"
+                 Width="291"
                  Height="23"
                  Margin="137,149,0,0"
                  HorizontalAlignment="Left"
@@ -37,7 +37,7 @@
                Content="Image for Glass"
                Foreground="#FFFDFDFD" />
         <TextBox Name="ImageForGlass"
-                 Width="207"
+                 Width="291"
                  Height="23"
                  Margin="137,177,0,0"
                  HorizontalAlignment="Left"
@@ -46,7 +46,7 @@
         <Button Name="ImageForFrameSelect"
                 Width="39"
                 Height="27"
-                Margin="349,149,0,0"
+                Margin="424,149,0,0"
                 HorizontalAlignment="Left"
                 VerticalAlignment="Top"
                 Click="ImageForFrameSelect_Click"
@@ -61,7 +61,7 @@
         <Button Name="ImageForGlassSelect"
                 Width="39"
                 Height="27"
-                Margin="349,177,0,0"
+                Margin="424,176,0,0"
                 HorizontalAlignment="Left"
                 VerticalAlignment="Top"
                 Click="ImageForGlassSelect_Click"
@@ -80,16 +80,16 @@
                Content="Panel"
                Foreground="#FFFFFEFE" />
         <ComboBox Name="WindowID"
-                  Width="207"
+                  Width="291"
                   Height="26"
                   Margin="137,31,0,0"
                   HorizontalAlignment="Left"
                   VerticalAlignment="Top"
                   DisplayMemberPath="Name"
                   SelectedValuePath="WindowID" />
-        <Button Width="75"
+        <Button Width="159"
                 Height="24"
-                Margin="388,177,0,0"
+                Margin="304,206,0,0"
                 HorizontalAlignment="Left"
                 VerticalAlignment="Top"
                 Click="Button_Click"
@@ -157,7 +157,7 @@
                Content="Rotate"
                Foreground="#FFFFFEFE" />
         <ComboBox Name="Classname"
-                  Width="207"
+                  Width="291"
                   Height="26"
                   Margin="137,62,0,0"
                   HorizontalAlignment="Left"
@@ -166,7 +166,7 @@
                   DropDownClosed="Classname_DropDownClosed"
                   SelectedValuePath="Classname" />
         <TextBox x:Name="Desc"
-                 Width="207"
+                 Width="291"
                  Height="23"
                  Margin="137,93,0,0"
                  HorizontalAlignment="Left"

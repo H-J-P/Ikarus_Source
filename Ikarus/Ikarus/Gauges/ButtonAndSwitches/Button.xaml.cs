@@ -175,34 +175,34 @@ namespace Ikarus
                 Dispatcher.BeginInvoke(DispatcherPriority.Normal,
                        (Action)(() =>
                        {
-                           try
-                           {
-                               if (switches.ignoreNextPackage)
-                               {
-                                   switches.ignoreNextPackage = false;
-                                   MainWindow.getAllDscData = true;
+                           //try
+                           //{
+                           //    if (switches.ignoreNextPackage)
+                           //    {
+                           //        switches.ignoreNextPackage = false;
+                           //        MainWindow.getAllDscData = true;
 
-                                   return;
-                               }
+                           //        return;
+                           //    }
 
-                               vals = strData.Split(';');
+                           //    vals = strData.Split(';');
 
-                               if (vals.Length > 0) { switchValue = Convert.ToDouble(vals[0], CultureInfo.InvariantCulture); }
+                           //    if (vals.Length > 0) { switchValue = Convert.ToDouble(vals[0], CultureInfo.InvariantCulture); }
 
-                               for (int i = 0; i < input.Length; i++)
-                               {
-                                   if (input[i] == switchValue)
-                                   {
-                                       state = i;
-                                       SetValue(state, false);
-                                   }
-                               }
-                           }
-                           catch { return; };
+                           //    for (int i = 0; i < input.Length; i++)
+                           //    {
+                           //        if (input[i] == switchValue)
+                           //        {
+                           //            state = i;
+                           //            SetValue(state, false);
+                           //        }
+                           //    }
+                           //}
+                           //catch { return; };
                        }));
         }
 
-        private void SetValue(int _state, bool _event, bool dontReset = false)
+        private void SetValue(int _state, bool _event)
         {
             try
             {
@@ -211,10 +211,10 @@ namespace Ikarus
                 MainWindow.refeshPopup = true;
                 switches.value = output[_state];
 
-                if (_event) switches.oldValue = _state == 1 ? output[0] : output[1];
+                switches.oldValue = _state == 1 ? output[0] : output[1];
 
-                switches.events = _event;
-                switches.dontReset = dontReset;
+                switches.events = true;
+                switches.dontReset = false;
 
                 if (_state > 0)
                 {
@@ -237,9 +237,9 @@ namespace Ikarus
 
         private void UpperRec_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            if (!e.Handled && !touchDown)
+            e.Handled = true;
+            if (!mouseDown && !touchDown)
             {
-                e.Handled = true;
                 SetValue(1, true);
                 mouseDown = true;
             }
@@ -248,20 +248,18 @@ namespace Ikarus
 
         private void UpperRec_MouseUp(object sender, MouseButtonEventArgs e)
         {
-            if (!e.Handled && !touchDown && mouseDown)
-            {
-                e.Handled = true;
-                SetValue(0, true);
-                mouseDown = false;
-            }
+            e.Handled = true;
+            SetValue(0, true);
+            mouseDown = false;
+            touchDown = false;
             if (!MainWindow.editmode) ProzessHelper.SetFocusToExternalApp(MainWindow.processNameDCS);
         }
 
         private void UpperRec_TouchDown(object sender, TouchEventArgs e)
         {
-            if (!e.Handled && !mouseDown)
+            e.Handled = true;
+            if (!mouseDown && !touchDown)
             {
-                e.Handled = true;
                 SetValue(1, true);
                 touchDown = true;
             }
@@ -270,23 +268,19 @@ namespace Ikarus
 
         private void UpperRec_TouchUp(object sender, TouchEventArgs e)
         {
-            if (!e.Handled && touchDown)
-            {
-                e.Handled = true;
-                SetValue(0, true);
-                touchDown = false;
-            }
+            e.Handled = true;
+            SetValue(0, true);
+            touchDown = false;
+            mouseDown = false;
             if (!MainWindow.editmode) ProzessHelper.SetFocusToExternalApp(MainWindow.processNameDCS);
         }
 
         private void UpperRec_TouchLeave(object sender, TouchEventArgs e)
         {
-            if (!e.Handled && touchDown)
-            {
-                e.Handled = true;
-                SetValue(0, true);
-                touchDown = false;
-            }
+            e.Handled = true;
+            SetValue(0, true);
+            touchDown = false;
+            mouseDown = false;
             if (!MainWindow.editmode) ProzessHelper.SetFocusToExternalApp(MainWindow.processNameDCS);
         }
     }
