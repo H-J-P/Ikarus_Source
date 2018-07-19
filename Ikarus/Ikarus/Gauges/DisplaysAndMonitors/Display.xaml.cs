@@ -26,6 +26,7 @@ namespace Ikarus
         private int numberOfSegments = 0;
         private string textForDisplay = "";
         private double value = 0.0;
+        private bool isAscii = false;
         GaugesHelper helper = null;
 
         public int GetWindowID() { return windowID; }
@@ -51,7 +52,7 @@ namespace Ikarus
             if (MainWindow.editmode)
             {
                 helper.MakeDraggable(this, this);
-                Segments.Text = "8";
+                Segments.Text = new String('8', numberOfSegments);
             }
         }
 
@@ -65,6 +66,7 @@ namespace Ikarus
             {
                 fontColor = dataRows[0]["Input"].ToString().ToUpper();
                 numberChars = dataRows[0]["Output"].ToString();
+                isAscii = Convert.ToBoolean(dataRows[0]["Ascii"]);
 
                 if (fontColor.Length != 6)
                 {
@@ -80,7 +82,7 @@ namespace Ikarus
                 }
 
                 if (!int.TryParse(numberChars, out numberOfSegments)) { numberOfSegments = 5; }
-           }
+            }
             else
             {
                 fontColor = defaultFontColor;
@@ -90,7 +92,7 @@ namespace Ikarus
 
             Segments.Foreground = (SolidColorBrush)new BrushConverter().ConvertFromString("#FF" + fontColor);
 
-            if (numberOfSegments > 1)
+            if (numberOfSegments > 0)
             {
                 PathBackground.Width = PathBackground.Width + (Segments.Width * numberOfSegments);// - Segments.Width;
                 PathBorder.Width = PathBorder.Width + (Segments.Width * numberOfSegments);// - Segments.Width;
@@ -153,12 +155,12 @@ namespace Ikarus
 
         public double GetSize()
         {
-            return PathBackground.Width;
+            return Width;
         }
 
         public double GetSizeY()
         {
-            return PathBackground.Height;
+            return Height;
         }
 
         public void UpdateGauge(string strData)
@@ -172,7 +174,7 @@ namespace Ikarus
 
                                if (vals.Length > 0) { textForDisplay = vals[0]; }
 
-                               if (numberOfSegments == 1)
+                               if (!isAscii)
                                {
                                    value = Convert.ToDouble(vals[0], CultureInfo.InvariantCulture);
 
@@ -188,7 +190,14 @@ namespace Ikarus
 
                                Segments.Text = textForDisplay;
                            }
-                           catch { return; }
+                           catch
+                           {
+                               if (textForDisplay.Length > numberOfSegments)
+                                   textForDisplay = textForDisplay.Substring(0, numberOfSegments);
+
+                               Segments.Text = textForDisplay;
+                               return;
+                           }
                        }));
         }
 

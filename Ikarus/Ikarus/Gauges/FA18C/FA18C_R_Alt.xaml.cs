@@ -130,7 +130,7 @@ namespace Ikarus
                                    AGL_Alarm.RenderTransform = rtrAgl;
                                }
                                if (lflagOff != flagOff)
-                                   Flag_Off.Visibility = (flagOff > 0.8) ? System.Windows.Visibility.Hidden : System.Windows.Visibility.Visible;
+                                   Flag_Off.Visibility = (flagOff > 0.8) ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
 
                                lrAlt = rAlt;
                                lrAgl = rAgl;

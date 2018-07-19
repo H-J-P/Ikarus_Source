@@ -158,7 +158,7 @@ namespace Ikarus
                                {
                                    sphere3D.xRotation = pitch * -180;
                                    sphere3D.yRotation = headingAngle * -1;
-                                   sphere3D.zRotation = bank * -180;
+                                   sphere3D.zRotation = bank * -90;
                                    sphere3D.Rotate();
                                }
                                if (glide > 0.5) glide = 0.5;
@@ -217,8 +217,8 @@ namespace Ikarus
             BitmapImage bitmapImage = new BitmapImage();
             bitmapImage.BeginInit();
 
-            if (File.Exists(Environment.CurrentDirectory + "\\Images\\Textures3D\\AJS37_ADI.jpg"))
-                bitmapImage.UriSource = new Uri(Environment.CurrentDirectory + "\\Images\\Textures3D\\AJS37_ADI.jpg");
+            if (File.Exists(Environment.CurrentDirectory + "\\Images\\Textures3D\\US_ADI.png"))
+                bitmapImage.UriSource = new Uri(Environment.CurrentDirectory + "\\Images\\Textures3D\\US_ADI.png");
             else
                 bitmapImage.UriSource = new Uri(Environment.CurrentDirectory + "\\Images\\Textures3D\\CheckerTest.jpg");
 
@@ -227,6 +227,11 @@ namespace Ikarus
 
             // declaration Sphere Object with model3Dgroup Name from XAML file and Sphere texture
             sphere3D = new Sphere3D(model3DGroup, bitmapImage);
+
+            sphere3D.xRotation = 0 * -180;
+            sphere3D.yRotation = 0 * -1;
+            sphere3D.zRotation = 1 * -90;
+            sphere3D.Rotate();
         }
     }
 }

@@ -22,10 +22,13 @@ namespace Ikarus
 
         public int GetWindowID() { return windowID; }
 
-        double value = 0.0;
-        double lvalue = 0.0;
+        double nozzleL = 0.0;
+        double lnozzleL = 0.0;
+        double nozzleR = 0.0;
+        double lnozzleR = 0.0;
 
-        RotateTransform rtValue = new RotateTransform();
+        RotateTransform rtNozzleL = new RotateTransform();
+        RotateTransform rtNozzleR = new RotateTransform();
 
         public FA18C_Engine()
         {
@@ -60,12 +63,12 @@ namespace Ikarus
 
         public void SetInput(string _input)
         {
-            helper.SetInput(ref _input, ref valueScale, ref valueScaleIndex, 2);
+            helper.SetInput(ref _input, ref valueScale, ref valueScaleIndex, 3);
         }
 
         public void SetOutput(string _output)
         {
-            helper.SetOutput(ref _output, ref degreeDial, 2);
+            helper.SetOutput(ref _output, ref degreeDial, 3);
         }
 
         public double GetSize()
@@ -87,25 +90,43 @@ namespace Ikarus
                            {
                                vals = strData.Split(';');
 
-                               if (vals.Length > 0) { value = Convert.ToDouble(vals[0], CultureInfo.InvariantCulture); }
+                               if (vals.Length > 0) { nozzleL = Convert.ToDouble(vals[0], CultureInfo.InvariantCulture); }
+                               if (vals.Length > 1) { nozzleR = Convert.ToDouble(vals[1], CultureInfo.InvariantCulture); }
 
-                               if (lvalue != value)
+                               if (lnozzleL != nozzleL)
                                {
                                    for (int n = 0; n < (valueScaleIndex - 1); n++)
                                    {
-                                       if (value >= valueScale[n] && value <= valueScale[n + 1])
+                                       if (nozzleL >= valueScale[n] && nozzleL <= valueScale[n + 1])
                                        {
-                                           rtValue.Angle = (degreeDial[n] - degreeDial[n + 1]) / (valueScale[n] - valueScale[n + 1]) * (value - valueScale[n]) + degreeDial[n];
+                                           rtNozzleL.Angle = (degreeDial[n] - degreeDial[n + 1]) / (valueScale[n] - valueScale[n + 1]) * (nozzleL - valueScale[n]) + degreeDial[n];
                                            break;
                                        }
                                    }
                                    if (MainWindow.editmode)
                                    {
-                                       Cockpit.UpdateInOut(dataImportID, "1", value.ToString(), Convert.ToInt32(rtValue.Angle).ToString());
+                                       Cockpit.UpdateInOut(dataImportID, "1", nozzleL.ToString(), Convert.ToInt32(rtNozzleL.Angle).ToString());
                                    }
-                                   //RUDDER.RenderTransform = rtValue;
+                                   NOZ_left.RenderTransform = rtNozzleL;
                                }
-                               lvalue = value;
+                               if (lnozzleR != nozzleR)
+                               {
+                                   for (int n = 0; n < (valueScaleIndex - 1); n++)
+                                   {
+                                       if (nozzleR >= valueScale[n] && nozzleR <= valueScale[n + 1])
+                                       {
+                                           rtNozzleR.Angle = -1 * (degreeDial[n] - degreeDial[n + 1]) / (valueScale[n] - valueScale[n + 1]) * (nozzleR - valueScale[n]) + degreeDial[n];
+                                           break;
+                                       }
+                                   }
+                                   if (MainWindow.editmode)
+                                   {
+                                       Cockpit.UpdateInOut(dataImportID, "2", nozzleR.ToString(), Convert.ToInt32(rtNozzleR.Angle).ToString());
+                                   }
+                                   NOZ_right.RenderTransform = rtNozzleR;
+                               }
+                               lnozzleL = nozzleL;
+                               lnozzleR = nozzleR;
                            }
                            catch { return; }
                        }));

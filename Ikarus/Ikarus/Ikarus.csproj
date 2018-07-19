@@ -333,8 +333,8 @@
     <Compile Include="Gauges\DisplaysAndMonitors\Display7Segment.xaml.cs">
       <DependentUpon>Display7Segment.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Gauges\DisplaysAndMonitors\DisplayDefault.xaml.cs">
-      <DependentUpon>DisplayDefault.xaml</DependentUpon>
+    <Compile Include="Gauges\DisplaysAndMonitors\Display.xaml.cs">
+      <DependentUpon>Display.xaml</DependentUpon>
     </Compile>
     <Compile Include="Gauges\DisplaysAndMonitors\DisplayDotMatrix.xaml.cs">
       <DependentUpon>DisplayDotMatrix.xaml</DependentUpon>
@@ -1804,7 +1804,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Gauges\DisplaysAndMonitors\DisplayDefault.xaml">
+    <Page Include="Gauges\DisplaysAndMonitors\Display.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

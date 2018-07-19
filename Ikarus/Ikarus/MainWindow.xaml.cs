@@ -905,21 +905,21 @@ namespace Ikarus
                                     newGrabValue = "";
                                 }
 
-                                if (newGrabValue != "")
+                                grabWindowID = instruments[i].windowID - 1;
+
+                                if (instruments[i].instrumentFunction[n].ascii)
                                 {
-                                    grabWindowID = instruments[i].windowID - 1;
-
-                                    if (instruments[i].instrumentFunction[n].ascii)
+                                    if (newGrabValue != instruments[i].instrumentFunction[n].oldAsciiValue)
                                     {
-                                        if (newGrabValue != instruments[i].instrumentFunction[n].oldAsciiValue)
-                                        {
-                                            instruments[i].instrumentFunction[n].asciiValue = newGrabValue;
-                                            instruments[i].instrumentFunction[n].oldAsciiValue = newGrabValue;
+                                        instruments[i].instrumentFunction[n].asciiValue = newGrabValue;
+                                        instruments[i].instrumentFunction[n].oldAsciiValue = newGrabValue;
 
-                                            refreshInstruments = true;
-                                        }
+                                        refreshInstruments = true;
                                     }
-                                    else
+                                }
+                                else
+                                {
+                                    if (newGrabValue != "")
                                     {
                                         try
                                         {
