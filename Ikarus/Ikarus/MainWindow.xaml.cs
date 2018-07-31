@@ -47,6 +47,8 @@ namespace Ikarus
         private bool initInstruments = true;
         private bool lightsChecked = false;
         private bool lStateEnabled = true;
+        private bool lUdpEnabled = true;
+        private bool idFound = false;
         public static bool refreshCockpit = false;
         private bool refreshInstruments = false;
         public static bool refeshPopup = false;
@@ -311,6 +313,7 @@ namespace Ikarus
 
             timerstate = State.run;
             StartTimer();
+            StartUDPTimer();
 
             GetTier();
 
@@ -319,6 +322,38 @@ namespace Ikarus
 
         #region Timer / Mainloop
 
+        private void StartUDPTimer()
+        {
+            DispatcherTimer updTimer = new DispatcherTimer(DispatcherPriority.Normal);
+            updTimer.Tick += UdpTimerTick;
+            updTimer.Interval = TimeSpan.FromMilliseconds(1.0);
+            updTimer.Start();
+        }
+
+        private void UdpTimerTick(object sender, EventArgs e)
+        {
+            try
+            {
+                if (UDP.receivedDataStack2.Count > 0)
+                {
+                    if (lUdpEnabled)
+                    {
+                        lUdpEnabled = false;
+
+                        UDP.receivedData = UDP.receivedDataStack2[0];
+                        UDP.receivedDataStack2.RemoveAt(0);
+
+                        GrabValues();
+
+                        lUdpEnabled = true;
+                    }
+                }
+            }
+            catch (Exception f)
+            {
+                ImportExport.LogMessage("UdpTimerTick ... " + f.ToString(), true);
+            }
+        }
         private void TimerMain_Tick(object sender, EventArgs e)
         {
             Dispatcher.BeginInvoke(DispatcherPriority.Normal,
@@ -654,7 +689,7 @@ namespace Ikarus
                 ImportExport.LogMessage("Cockpit opened .. ");
 
                 Mouse.OverrideCursor = null;
-
+                UDP.receivedDataStack2.Clear();
                 MemoryManagement.Reduce();
             }
             catch (Exception ex) { ImportExport.LogMessage("Cockpit opened: " + ex.ToString()); }
@@ -854,8 +889,12 @@ namespace Ikarus
         {
             try
             {
+                idFound = false;
+
                 if (UDP.receivedData.IndexOf(identifier, 0) > -1) // Dirty quickcheck before loop
                 {
+                    idFound = true;
+
                     for (int n = 0; n < receivedItems.Length; n++)
                     {
                         if (receivedItems[n].IndexOf(identifier, 0) == 0)
@@ -874,40 +913,43 @@ namespace Ikarus
         {
             if (!cockpitWindowActiv) { return; }
 
-            Dispatcher.BeginInvoke(DispatcherPriority.Send,
-            (Action)(() =>
+            //Dispatcher.BeginInvoke(DispatcherPriority.Send,
+            //(Action)(() =>
+            //{
+            try
             {
-                try
+                if (UDP.receivedData.Length < 3) { return; }
+
+                grabWindowID = 0;
+                newGrabValue = "";
+                receivedItems = UDP.receivedData.Split(':');
+
+                #region Gauges
+
+                for (int i = 0; i < instruments.Count; i++)
                 {
-                    if (UDP.receivedData.Length < 3) { return; }
-
-                    grabWindowID = 0;
-                    newGrabValue = "";
-                    receivedItems = UDP.receivedData.Split(':');
-
-                    #region Gauges
-
-                    for (int i = 0; i < instruments.Count; i++)
+                    try
                     {
-                        try
+                        refreshInstruments = false;
+
+                        for (int n = 0; n < instruments[i].instrumentFunction.Count; n++)
                         {
-                            refreshInstruments = false;
-
-                            for (int n = 0; n < instruments[i].instrumentFunction.Count; n++)
+                            if (instruments[i].instrumentFunction[n].argNumber > 0)
                             {
-                                if (instruments[i].instrumentFunction[n].argNumber > 0)
-                                {
-                                    identifier = instruments[i].instrumentFunction[n].argNumber.ToString() + "=";
-                                    newGrabValue = GrabValue();
-                                }
-                                else
-                                {
-                                    newGrabValue = "";
-                                }
+                                identifier = instruments[i].instrumentFunction[n].argNumber.ToString() + "=";
+                                newGrabValue = GrabValue();
+                            }
+                            else
+                            {
+                                idFound = false;
+                                newGrabValue = "";
+                            }
 
-                                grabWindowID = instruments[i].windowID - 1;
+                            grabWindowID = instruments[i].windowID - 1;
 
-                                if (instruments[i].instrumentFunction[n].ascii)
+                            if (instruments[i].instrumentFunction[n].ascii)
+                            {
+                                if (idFound)
                                 {
                                     if (newGrabValue != instruments[i].instrumentFunction[n].oldAsciiValue)
                                     {
@@ -917,106 +959,107 @@ namespace Ikarus
                                         refreshInstruments = true;
                                     }
                                 }
-                                else
+                            }
+                            else
+                            {
+                                if (newGrabValue != "")
                                 {
-                                    if (newGrabValue != "")
+                                    try
                                     {
-                                        try
-                                        {
-                                            instruments[i].instrumentFunction[n].value = double.Parse(newGrabValue, CultureInfo.InvariantCulture);
+                                        instruments[i].instrumentFunction[n].value = double.Parse(newGrabValue, CultureInfo.InvariantCulture);
 
-                                            if (instruments[i].instrumentFunction[n].value != instruments[i].instrumentFunction[n].oldValue || initInstruments)   // &&
-                                                                                                                                                                  //Math.Abs(instruments[i].instrumentFunction[n].value - instruments[i].instrumentFunction[n].oldValue) > flattening)
-                                            {
-                                                refreshInstruments = true;
-                                                instruments[i].instrumentFunction[n].oldValue = instruments[i].instrumentFunction[n].value;
-                                            }
-                                        }
-                                        catch
+                                        if (instruments[i].instrumentFunction[n].value != instruments[i].instrumentFunction[n].oldValue || initInstruments)   // &&
+                                                                                                                                                              //Math.Abs(instruments[i].instrumentFunction[n].value - instruments[i].instrumentFunction[n].oldValue) > flattening)
                                         {
                                             refreshInstruments = true;
-                                            instruments[i].instrumentFunction[n].ascii = true;
-                                            instruments[i].instrumentFunction[n].asciiValue = newGrabValue;
-                                            instruments[i].instrumentFunction[n].oldAsciiValue = newGrabValue;
+                                            instruments[i].instrumentFunction[n].oldValue = instruments[i].instrumentFunction[n].value;
                                         }
+                                    }
+                                    catch
+                                    {
+                                        refreshInstruments = true;
+                                        instruments[i].instrumentFunction[n].ascii = true;
+                                        instruments[i].instrumentFunction[n].asciiValue = newGrabValue;
+                                        instruments[i].instrumentFunction[n].oldAsciiValue = newGrabValue;
                                     }
                                 }
                             }
-                            if (refreshInstruments && cockpitWindows[grabWindowID] != null)
-                            {
-                                cockpitWindows[grabWindowID].UpdateInstruments(instruments[i].instID, false);
-                            }
                         }
-                        catch { }
-                    }
-                    initInstruments = false;
-
-                    #endregion
-
-                    #region Lamps
-
-                    for (int n = 0; n < lamps.Count; n++)
-                    {
-                        try
+                        if (refreshInstruments && cockpitWindows[grabWindowID] != null)
                         {
-                            if (lamps[n].argNumber > 0)
-                            {
-                                identifier = lamps[n].argNumber.ToString() + "=";
-                                newGrabValue = GrabValue();
-                            }
-
-                            if (newGrabValue != "")
-                            {
-                                grabWindowID = lamps[n].windowID - 1;
-                                lamps[n].value = double.Parse(newGrabValue, CultureInfo.InvariantCulture);
-
-                                if (lamps[n].value != lamps[n].oldValue)
-                                {
-                                    lamps[n].oldValue = lamps[n].value;
-
-                                    if (detailLog || switchLog) { ImportExport.LogMessage("Got data for DCS export ID: " + lamps[n].argNumber.ToString() + " value " + newGrabValue); }
-
-                                    if (cockpitWindowActiv && cockpitWindows[grabWindowID] != null)
-                                        cockpitWindows[grabWindowID].UpdateLamps(lamps[n].ID);
-                                }
-                            }
+                            cockpitWindows[grabWindowID].UpdateInstruments(instruments[i].instID, false);
                         }
-                        catch (Exception e) { ImportExport.LogMessage("Lamp " + (n + 1).ToString() + " problem .. " + e.ToString()); }
                     }
-                    #endregion
-
-                    #region Switches
-
-                    for (int n = 0; n < switches.Count; n++)
-                    {
-                        try
-                        {
-                            if (switches[n].dcsID > 0)
-                            {
-                                identifier = switches[n].dcsID.ToString() + "=";
-                                newGrabValue = GrabValue();
-                            }
-
-                            if (newGrabValue != "")
-                            {
-                                if (switches[n].ignoreNextPackage)
-                                {
-                                    if (detailLog || switchLog) { ImportExport.LogMessage("Ignore data for switch ID: " + switches[n].dcsID.ToString() + " value: " + newGrabValue); }
-                                    switches[n].ignoreNextPackage = false;
-                                }
-                                else
-                                {
-                                    switches[n].value = double.Parse(newGrabValue, CultureInfo.InvariantCulture);
-                                    if (detailLog || switchLog) { ImportExport.LogMessage("Got data for switch ID: " + switches[n].dcsID.ToString() + " value " + newGrabValue); }
-                                }
-                            }
-                        }
-                        catch { ImportExport.LogMessage("Error with switch ID: " + switches[n].dcsID.ToString() + " value " + newGrabValue); }
-                    }
-                    #endregion
+                    catch { }
                 }
-                catch (Exception e) { ImportExport.LogMessage("GrabValues problem .. " + e.ToString()); }
-            }));
+                initInstruments = false;
+
+                #endregion
+
+                #region Lamps
+
+                for (int n = 0; n < lamps.Count; n++)
+                {
+                    try
+                    {
+                        if (lamps[n].argNumber > 0)
+                        {
+                            identifier = lamps[n].argNumber.ToString() + "=";
+                            newGrabValue = GrabValue();
+                        }
+
+                        if (newGrabValue != "")
+                        {
+                            grabWindowID = lamps[n].windowID - 1;
+                            lamps[n].value = double.Parse(newGrabValue, CultureInfo.InvariantCulture);
+
+                            if (lamps[n].value != lamps[n].oldValue)
+                            {
+                                lamps[n].oldValue = lamps[n].value;
+
+                                if (detailLog || switchLog) { ImportExport.LogMessage("Got data for DCS export ID: " + lamps[n].argNumber.ToString() + " value " + newGrabValue); }
+
+                                if (cockpitWindowActiv && cockpitWindows[grabWindowID] != null)
+                                    cockpitWindows[grabWindowID].UpdateLamps(lamps[n].ID);
+                            }
+                        }
+                    }
+                    catch (Exception e) { ImportExport.LogMessage("Lamp " + (n + 1).ToString() + " problem .. " + e.ToString()); }
+                }
+                #endregion
+
+                #region Switches
+
+                for (int n = 0; n < switches.Count; n++)
+                {
+                    try
+                    {
+                        if (switches[n].dcsID > 0)
+                        {
+                            identifier = switches[n].dcsID.ToString() + "=";
+                            newGrabValue = GrabValue();
+                        }
+
+                        if (newGrabValue != "")
+                        {
+                            if (switches[n].ignoreNextPackage)
+                            {
+                                if (detailLog || switchLog) { ImportExport.LogMessage("Ignore data for switch ID: " + switches[n].dcsID.ToString() + " value: " + newGrabValue); }
+                                switches[n].ignoreNextPackage = false;
+                            }
+                            else
+                            {
+                                switches[n].value = double.Parse(newGrabValue, CultureInfo.InvariantCulture);
+                                if (detailLog || switchLog) { ImportExport.LogMessage("Got data for switch ID: " + switches[n].dcsID.ToString() + " value " + newGrabValue); }
+                            }
+                        }
+                    }
+                    catch { ImportExport.LogMessage("Error with switch ID: " + switches[n].dcsID.ToString() + " value " + newGrabValue); }
+                }
+                #endregion
+            }
+            catch (Exception e) { ImportExport.LogMessage("GrabValues problem .. " + e.ToString()); }
+            //}));
         }
 
         private void HidePanels()

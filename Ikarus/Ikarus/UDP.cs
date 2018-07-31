@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Net;
 using System.Net.Sockets;
 using System.Text;
+using System.Windows.Threading;
 
 namespace Ikarus
 {
@@ -23,8 +24,10 @@ namespace Ikarus
         private static IPEndPoint listenerEndPoint = null;
         private static Socket sendingSocket = null;
         public static string receivedData = "";
+        private static string gotData = "";
         private static string newline = Environment.NewLine;
         public static List<string> receivedDataStack = new List<string> { };
+        public static List<string> receivedDataStack2 = new List<string> { };
 
         #region comments
         // Create a socket object. This is the fundamental device used to network
@@ -49,6 +52,8 @@ namespace Ikarus
                 byte[] content = Encoding.UTF8.GetBytes(textToSend);
                 int count = udpClient.Send(content, content.Length, ipEndPoint);
 
+                if (MainWindow.detailLog) { ImportExport.LogMessage("--- Send to IP: " + ipAdress + ":" + port + " Package: " + textToSend + " Bytes: " + count.ToString(), true); }
+
                 udpClient.Close();
             }
             catch (Exception e)
@@ -57,7 +62,7 @@ namespace Ikarus
             }
         }
 
-        public static void UDPSender_Old(string ipAdress, int port, string textToSend)
+        public static void UDPSender_old(string ipAdress, int port, string textToSend)
         {
             #region comments
             // create an address object and populate it with the IP address that we will use
@@ -65,7 +70,7 @@ namespace Ikarus
             // to all devices whose address begins with 192.168.2.
             #endregion
 
-            //ipAdress = ipAdress.Substring(0, ipAdress.LastIndexOf(".") + 1) + "255"; // 127.0.0.1 -> 127.0.0.255
+            ipAdress = ipAdress.Substring(0, ipAdress.LastIndexOf(".") + 1) + "255"; // 127.0.0.1 -> 127.0.0.255
 
             sendingSocket = new Socket(AddressFamily.InterNetwork, SocketType.Dgram, ProtocolType.Udp);
             sendToAddress = IPAddress.Parse(ipAdress);
@@ -87,6 +92,8 @@ namespace Ikarus
 
         public static void StartListener(int listenPort)
         {
+            if (!closeListener) return;
+
             try
             {
                 listener = new UdpClient(listenPort);
@@ -108,14 +115,15 @@ namespace Ikarus
                 while (!closeListener)
                 {
                     receiveByteArray = listener.Receive(ref listenerEndPoint);
-                    receivedData = Encoding.UTF8.GetString(receiveByteArray, 0, receiveByteArray.Length); // Change ASCII to UTF8
+                    gotData = Encoding.UTF8.GetString(receiveByteArray, 0, receiveByteArray.Length); // Change ASCII to UTF8
 
-                    receivedData = receivedData.Replace("*", ":").Trim();
-                    receivedDataStack.Add(receivedData);
+                    gotData = gotData.Replace("*", ":").Trim();
+                    receivedDataStack.Add(gotData);
+                    receivedDataStack2.Add(gotData);
 
-                    if (MainWindow.detailLog) { ImportExport.LogMessage("--- Received package: " + receivedData, true); }
+                    if (MainWindow.detailLog) { ImportExport.LogMessage("--- Received package: " + gotData + " Stacksize: " + receivedDataStack2.Count, true); }
 
-                    MainWindow.mainWindow[0].GrabValues();
+                    //MainWindow.mainWindow[0].GrabValues();
                 }
             }
             catch (Exception e)
@@ -134,7 +142,7 @@ namespace Ikarus
             {
                 closeListener = true;
                 listener.Close();
-                ImportExport.LogMessage("Listener closed ... " + receivedData, true);
+                ImportExport.LogMessage("Listener closed ... " + gotData, true);
             }
             catch (Exception e)
             {

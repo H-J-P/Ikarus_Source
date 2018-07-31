@@ -72,6 +72,9 @@ namespace Ikarus
         public void SetOutput(string _output)
         {
             helper.SetOutput(ref _output, ref degreeDial, 3);
+
+            rtrAlt.Angle = degreeDial[0];
+            R_ALT.RenderTransform = rtrAlt;
         }
 
         public double GetSize()

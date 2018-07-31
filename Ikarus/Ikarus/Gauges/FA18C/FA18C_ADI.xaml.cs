@@ -15,38 +15,30 @@ namespace Ikarus
     {
         private string dataImportID = "";
         private int windowID = 0;
-        private double[] valueScale = new double[] { };
-        private double[] degreeDial = new double[] { };
-        int valueScaleIndex = 0;
         private string[] vals = new string[] { };
         GaugesHelper helper = null;
 
         public int GetWindowID() { return windowID; }
         private string lightColor = "#FFFFFF"; // white
 
+        private const double dNull = 0.0;
+
         private double pitch = 0.0;
         private double bank = 0.0;
-        private double heading = 0.0;
 
         private double bankNeedle = 0.0;
         private double slipBall = 0.0;
         private double turn = 0.0;
-        //private double flag_vvi_off = 0.0;
         private double flag_off = 0.0;
-        //private double courceWarningFlag = 0.0;
-        private double headingAngle = 0.0;
         private double side = 0.0;
         private double glide = 0.0;
 
         private double lpitch = 0.0;
         private double lbank = 0.0;
         private double lbankNeedle = 0.0;
-        private double lheading = 0.0;
         private double lslipBall = 0.0;
         private double lTurn = 0.0;
-        //private double lFlag_vvi_off = 1.0;
         private double lFlag_off = 1.0;
-        //private double lcourceWarningFlag = 1.0;
         private double lside = 0.0;
         private double lglide = 0.0;
 
@@ -68,6 +60,12 @@ namespace Ikarus
             Flag_Off.Visibility = System.Windows.Visibility.Visible;
 
             InitialSphere();
+
+            sphere3D.xRotation = dNull;
+            sphere3D.yRotation = dNull;
+            sphere3D.zRotation = -90;
+
+            sphere3D.Rotate();
 
             directionalLight.Color = (Color)ColorConverter.ConvertFromString(lightColor);
         }
@@ -98,12 +96,12 @@ namespace Ikarus
 
         public void SetInput(string _input)
         {
-            helper.SetInput(ref _input, ref valueScale, ref valueScaleIndex, 3);
+            //helper.SetInput(ref _input, ref valueScale, ref valueScaleIndex, 3);
         }
 
         public void SetOutput(string _output)
         {
-            helper.SetOutput(ref _output, ref degreeDial, 3);
+            //helper.SetOutput(ref _output, ref degreeDial, 3);
         }
 
         public double GetSize()
@@ -126,39 +124,21 @@ namespace Ikarus
                                vals = strData.Split(';');
 
                                if (vals.Length > 0) { pitch = Convert.ToDouble(vals[0], CultureInfo.InvariantCulture); }
-                               if (vals.Length > 1) { heading = Convert.ToDouble(vals[1], CultureInfo.InvariantCulture); }
-                               if (vals.Length > 2) { bank = Convert.ToDouble(vals[2], CultureInfo.InvariantCulture); }
-                               if (vals.Length > 3) { slipBall = Convert.ToDouble(vals[3], CultureInfo.InvariantCulture); }
-                               if (vals.Length > 4) { turn = Convert.ToDouble(vals[4], CultureInfo.InvariantCulture); }
-                               if (vals.Length > 5) { side = Convert.ToDouble(vals[5], CultureInfo.InvariantCulture); }
-                               if (vals.Length > 6) { glide = Convert.ToDouble(vals[6], CultureInfo.InvariantCulture); }
-                               if (vals.Length > 7) { flag_off = Convert.ToDouble(vals[7], CultureInfo.InvariantCulture); }
+                               if (vals.Length > 1) { bank = Convert.ToDouble(vals[1], CultureInfo.InvariantCulture); }
+                               if (vals.Length > 2) { slipBall = Convert.ToDouble(vals[2], CultureInfo.InvariantCulture); }
+                               if (vals.Length > 3) { turn = Convert.ToDouble(vals[3], CultureInfo.InvariantCulture); }
+                               if (vals.Length > 4) { side = Convert.ToDouble(vals[4], CultureInfo.InvariantCulture); }
+                               if (vals.Length > 5) { glide = Convert.ToDouble(vals[5], CultureInfo.InvariantCulture); }
+                               if (vals.Length > 6) { flag_off = Convert.ToDouble(vals[6], CultureInfo.InvariantCulture); }
 
                                bankNeedle = bank;
 
-                               if (lheading != heading)
+                               if (lpitch != pitch || lbank != bank)
                                {
-                                   //    -1.0, -0.5, 0.0, 0.5, 1.0,
-                                   //     0.0,   90, 180, 270, 360,
-                                   for (int n = 0; n < valueScaleIndex - 1; n++)
-                                   {
-                                       if (heading >= valueScale[n] && heading <= valueScale[n + 1])
-                                       {
-                                           headingAngle = (degreeDial[n] - degreeDial[n + 1]) / (valueScale[n] - valueScale[n + 1]) * (heading - valueScale[n]) + degreeDial[n];
-                                           break;
-                                       }
-                                   }
-                                   if (MainWindow.editmode)
-                                   {
-                                       Cockpit.UpdateInOut(dataImportID, "2", heading.ToString(), Convert.ToInt32(headingAngle).ToString());
-                                   }
-                               }
+                                   sphere3D.xRotation = dNull;
+                                   sphere3D.yRotation = pitch * 126;
+                                   sphere3D.zRotation = ((bank * -180) - 90);
 
-                               if (lpitch != pitch || lheading != heading || lbank != bank)
-                               {
-                                   sphere3D.xRotation = pitch * -180;
-                                   sphere3D.yRotation = headingAngle * -1;
-                                   sphere3D.zRotation = bank * -90;
                                    sphere3D.Rotate();
                                }
                                if (glide > 0.5) glide = 0.5;
@@ -177,7 +157,7 @@ namespace Ikarus
                                }
                                if (lTurn != turn)
                                {
-                                   ttTurn.Y = turn * -60;
+                                   ttTurn.X = turn * -60;
                                    Turnindicator.RenderTransform = ttTurn;
                                }
 
@@ -193,10 +173,9 @@ namespace Ikarus
                                }
 
                                if (lFlag_off != flag_off)
-                                   Flag_Off.Visibility = (flag_off > 0.8) ? System.Windows.Visibility.Hidden : System.Windows.Visibility.Visible;
+                                   Flag_Off.Visibility = (flag_off > 0.8) ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
 
                                lpitch = pitch;
-                               lheading = heading;
                                lbank = bank;
                                lslipBall = slipBall;
                                lTurn = turn;
@@ -227,11 +206,6 @@ namespace Ikarus
 
             // declaration Sphere Object with model3Dgroup Name from XAML file and Sphere texture
             sphere3D = new Sphere3D(model3DGroup, bitmapImage);
-
-            sphere3D.xRotation = 0 * -180;
-            sphere3D.yRotation = 0 * -1;
-            sphere3D.zRotation = 1 * -90;
-            sphere3D.Rotate();
         }
     }
 }
