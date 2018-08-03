@@ -186,12 +186,10 @@
                Content="Size"
                Foreground="#FFFFFEFE" />
         <TextBox x:Name="Rotate"
-                 Width="40"
                  Height="23"
-                 Margin="0,0,10,29"
-                 HorizontalAlignment="Right"
+                 Margin="463,0,0,29"
                  VerticalAlignment="Bottom"
-                 TextWrapping="Wrap" RenderTransformOrigin="1.875,0.391" />
+                 TextWrapping="Wrap" RenderTransformOrigin="1.875,0.391" HorizontalAlignment="Left" Width="40" />
         <Label Height="16"
                Margin="424,0,0,29"
                HorizontalAlignment="Left"

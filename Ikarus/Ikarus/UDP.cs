@@ -28,6 +28,8 @@ namespace Ikarus
         private static string newline = Environment.NewLine;
         public static List<string> receivedDataStack = new List<string> { };
         public static List<string> receivedDataStack2 = new List<string> { };
+        private static int count = 0;
+        private static byte[] content = null;
 
         #region comments
         // Create a socket object. This is the fundamental device used to network
@@ -49,10 +51,10 @@ namespace Ikarus
                 ip = IPAddress.Parse(ipAdress.Trim());
                 ipEndPoint = new IPEndPoint(ip, port);
 
-                byte[] content = Encoding.UTF8.GetBytes(textToSend);
-                int count = udpClient.Send(content, content.Length, ipEndPoint);
+                content = Encoding.UTF8.GetBytes(textToSend);
+                count = udpClient.Send(content, content.Length, ipEndPoint);
 
-                if (MainWindow.detailLog) { ImportExport.LogMessage("--- Send to IP: " + ipAdress + ":" + port + " Package: " + textToSend + " Bytes: " + count.ToString(), true); }
+                if (MainWindow.detailLog || MainWindow.switchLog) { ImportExport.LogMessage("--- Send to IP: " + ipAdress + ":" + port + " Package: " + textToSend + " Bytes: " + count.ToString(), true); }
 
                 udpClient.Close();
             }

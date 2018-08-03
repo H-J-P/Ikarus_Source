@@ -471,16 +471,16 @@ namespace Ikarus
 
                                                UDP.UDPSender(IPAddess.Text.Trim(), Convert.ToInt32(PortSender.Text), package); //<--- send a package to DCS
 
-                                               if (detailLog || switchLog)
-                                               {
-                                                   ImportExport.LogMessage("Event for " + switches[n].classname + " ID: " + switches[n].dcsID.ToString() + " - Send package to " + IPAddess.Text.Trim() + ":" + PortSender.Text + " - Package: " + package);
-                                               }
+                                               //if (detailLog || switchLog)
+                                               //{
+                                               //    ImportExport.LogMessage("Event for " + switches[n].classname + " ID: " + switches[n].dcsID.ToString() + " - Send package to " + IPAddess.Text.Trim() + ":" + PortSender.Text + " - Package: " + package);
+                                               //}
 
                                                if (switches[n].sendRelease) // && switches[n].value > 0.0)
                                                {
                                                    package = "C" + switches[n].deviceID.ToString() + "," + (3000 + switches[n].buttonID).ToString() + "," + (0.0).ToString();
                                                    UDP.UDPSender(IPAddess.Text.Trim(), Convert.ToInt32(PortSender.Text), package);
-                                                   if (detailLog || switchLog) { ImportExport.LogMessage("Event for " + switches[n].classname + " ID: " + switches[n].dcsID.ToString() + " - Send package to " + IPAddess.Text.Trim() + ":" + PortSender.Text + " - Package: " + package); }
+                                                   //if (detailLog || switchLog) { ImportExport.LogMessage("Event for " + switches[n].classname + " ID: " + switches[n].dcsID.ToString() + " - Send package to " + IPAddess.Text.Trim() + ":" + PortSender.Text + " - Package: " + package); }
                                                }
 
                                                if (!switches[n].dontReset) //<---
@@ -703,7 +703,7 @@ namespace Ikarus
                 {
                     ImportExport.LogMessage("DCS start command for modul: " + readFile);
 
-                    if (readFile.Length > 0 && readFile != lastFile)
+                    if (readFile.Length > 0) // && readFile != lastFile)
                     {
                         if (System.IO.File.Exists(currentDirectory + "\\" + readFile + ".ikarus"))
                         {
@@ -1286,7 +1286,7 @@ namespace Ikarus
                 package = "R";
                 UDP.UDPSender(IPAddess.Text.Trim(), Convert.ToInt32(PortSender.Text), package);
 
-                if (detailLog || switchLog) { ImportExport.LogMessage("Send package to " + IPAddess.Text.Trim() + ":" + PortSender.Text + " - Package: " + package); }
+                //if (detailLog || switchLog) { ImportExport.LogMessage("Send package to " + IPAddess.Text.Trim() + ":" + PortSender.Text + " - Package: " + package); }
 
                 getAllDscData = false;
             }
