@@ -103,10 +103,10 @@ namespace Ikarus
                                if (vals.Length > 0) { alt100FP = Convert.ToDouble(vals[0], CultureInfo.InvariantCulture); }
                                if (vals.Length > 1) { alt10000 = Convert.ToDouble(vals[1], CultureInfo.InvariantCulture); }
                                if (vals.Length > 2) { alt1000 = Convert.ToDouble(vals[2], CultureInfo.InvariantCulture); }
-                               if (vals.Length > 3) { pressure_0 = Convert.ToDouble(vals[3], CultureInfo.InvariantCulture); }
-                               if (vals.Length > 4) { pressure_1 = Convert.ToDouble(vals[4], CultureInfo.InvariantCulture); }
-                               if (vals.Length > 5) { pressure_2 = Convert.ToDouble(vals[5], CultureInfo.InvariantCulture); }
-                               if (vals.Length > 6) { pressure_3 = Convert.ToDouble(vals[6], CultureInfo.InvariantCulture); }
+                               if (vals.Length > 3) { pressure_3 = Convert.ToDouble(vals[3], CultureInfo.InvariantCulture); }
+                               if (vals.Length > 4) { pressure_2 = Convert.ToDouble(vals[4], CultureInfo.InvariantCulture); }
+                               if (vals.Length > 5) { pressure_1 = Convert.ToDouble(vals[5], CultureInfo.InvariantCulture); }
+                               if (vals.Length > 6) { pressure_0 = Convert.ToDouble(vals[6], CultureInfo.InvariantCulture); }
                            }
                            catch { return; }
 

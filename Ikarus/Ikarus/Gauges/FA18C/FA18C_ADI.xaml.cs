@@ -152,7 +152,7 @@ namespace Ikarus
 
                                if (lbankNeedle != bankNeedle)
                                {
-                                   rtbankNeedle.Angle = bankNeedle * -180;
+                                   rtbankNeedle.Angle = bankNeedle * 180;
                                    Bank.RenderTransform = rtbankNeedle;
                                }
                                if (lTurn != turn)
