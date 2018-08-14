@@ -19,15 +19,17 @@ namespace Ikarus
         private int windowID = 0;
         private string[] vals = new string[] { };
         private const string font = "LED Board-7";
-        private const string defaultFontColor = "ABF9AB"; // Hexdezimal Color Value (Light Green)
-        private const string defaultErrorText = "ERROR";
-        private string errorText = "";
-        private string fontColor = defaultFontColor;
+
+        private string fontColor = "ABF9AB"; // Hexdezimal Color Value (Light Green)
+        private string backColor = "FF000000";
+        private string borderColor = "FF808080";
+        private string[] colors = new string[] { };
+
         private string numberChars = "";
-        private int numberOfSegments = 0;
+        private int numberOfSegments = 1;
         private string textForDisplay = "";
         private double value = 0.0;
-        private bool isAscii = false;
+        private bool isAscii = true;
 
         GaugesHelper helper = null;
 
@@ -54,7 +56,6 @@ namespace Ikarus
             if (MainWindow.editmode)
             {
                 helper.MakeDraggable(this, this);
-                Segments.Text = new String('8', numberOfSegments);
             }
         }
 
@@ -66,31 +67,26 @@ namespace Ikarus
 
             if (dataRows.Length > 0)
             {
-                fontColor = dataRows[0]["Input"].ToString().ToUpper();
+                colors = dataRows[0]["Input"].ToString().ToUpper().Split(',');
+
+                if (colors.Length > 0) { fontColor = colors[0].Trim(); }
+                if (colors.Length > 1) { backColor = colors[1].Trim(); }
+                if (colors.Length > 2) { borderColor = colors[2].Trim(); }
+
                 numberChars = dataRows[0]["Output"].ToString();
                 isAscii = Convert.ToBoolean(dataRows[0]["Ascii"]);
 
-                if (fontColor.Length != 6)
-                {
-                    fontColor = defaultFontColor;
-                }
+                if (!isAscii)
+                    Segments.HorizontalAlignment = System.Windows.HorizontalAlignment.Right;
                 else
-                {
-                    if (!IsHexString(fontColor))
-                    {
-                        fontColor = defaultFontColor;
-                        errorText = defaultErrorText;
-                    }
-                }
+                    Segments.HorizontalAlignment = System.Windows.HorizontalAlignment.Left;
 
                 if (!int.TryParse(numberChars, out numberOfSegments)) { numberOfSegments = 5; }
-                //errorText = "Init1";
-            }
-            else
-            {
-                fontColor = defaultFontColor;
-                numberOfSegments = 5;
-                errorText = defaultErrorText;
+
+                if (MainWindow.editmode)
+                {
+                    Segments.Text = new String('8', numberOfSegments);
+                }
             }
 
             FontFamily fontFamily = new FontFamily(font);
@@ -103,7 +99,25 @@ namespace Ikarus
                 Segments.FontSize = 40;
                 Segments.Width = 24;
             }
-            Segments.Foreground = (SolidColorBrush)new BrushConverter().ConvertFromString("#FF" + fontColor);
+
+            try
+            {
+                if (fontColor.Length == 6 && IsHexString(fontColor))
+                    Segments.Foreground = (SolidColorBrush)new BrushConverter().ConvertFromString("#FF" + fontColor);
+                if (fontColor.Length == 8 && IsHexString(fontColor))
+                    Segments.Foreground = (SolidColorBrush)new BrushConverter().ConvertFromString("#" + fontColor);
+
+                if (backColor.Length == 6 && IsHexString(backColor))
+                    PathBackground.Fill = (SolidColorBrush)new BrushConverter().ConvertFromString("#FF" + backColor);
+                if (backColor.Length == 8 && IsHexString(backColor))
+                    PathBackground.Fill = (SolidColorBrush)new BrushConverter().ConvertFromString("#" + backColor);
+
+                if (borderColor.Length == 6 && IsHexString(borderColor))
+                    PathBorder.Stroke = (SolidColorBrush)new BrushConverter().ConvertFromString("#FF" + borderColor);
+                if (borderColor.Length == 8 && IsHexString(borderColor))
+                    PathBorder.Stroke = (SolidColorBrush)new BrushConverter().ConvertFromString("#" + borderColor);
+            }
+            catch { }
 
             if (numberOfSegments > 0)
             {
@@ -112,7 +126,6 @@ namespace Ikarus
                 this.Width = PathBackground.Width + 12; //Segments.Width / 2;
                 Segments.Width = PathBorder.Width;
             }
-            Segments.Text = errorText;
         }
 
         public bool IsHexString(string value)
@@ -183,6 +196,12 @@ namespace Ikarus
                        {
                            try
                            {
+                               if (MainWindow.editmode)
+                               {
+                                   Segments.Text = new String('8', numberOfSegments);
+                                   return;
+                               }
+
                                vals = strData.Split(';');
 
                                if (vals.Length > 0) { textForDisplay = vals[0]; }

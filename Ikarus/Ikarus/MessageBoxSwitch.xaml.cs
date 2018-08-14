@@ -10,7 +10,7 @@ namespace Ikarus
     /// </summary>
     public partial class MessageBoxSwitch : Window
     {
-        private bool setSwitch = true;
+        //private bool setSwitch = false;
         private static int index = 0;
         private static int clickable = 0;
         private static string name = "";
@@ -127,28 +127,8 @@ namespace Ikarus
         {
             if (MainWindow.dtMasterSwitches != null)
             {
-                setSwitch = true;
+                //setSwitch = true;
                 dataRows = MainWindow.dtMasterSwitches.Select("Type='Switch' OR Type='Rotary'", "DcsID");
-
-                //if (Classname.Text == "Potentiometer") setSwitch = false;
-                //if (Classname.Text == "Rotary") setSwitch = false;
-                //if (Classname.Text == "RotaryWithPosition") setSwitch = false;
-
-                //if (Classname.Text == "MultiSwitch" || Classname.Text == "Rotary" || Classname.Text == "Drum")
-                //{
-                //    dataRows = MainWindow.dtMasterSwitches.Select("Type='Switch' OR Type='Rotary'", "DcsID");
-                //}
-                //else
-                //{
-                //    if (setSwitch)
-                //    {
-                //        dataRows = MainWindow.dtMasterSwitches.Select("Type='Switch' OR Type='Rotary'", "DcsID");
-                //    }
-                //    else
-                //    {
-                //        dataRows = MainWindow.dtMasterSwitches.Select("Type='Switch' OR Type='Rotary'", "DcsID");
-                //    }
-                //}
 
                 switches = dataRows.CopyToDataTable<DataRow>();
                 DataGridSwitches.ItemsSource = null;
@@ -156,17 +136,11 @@ namespace Ikarus
 
                 if (classNameChanged)
                 {
-                    if (Classname.Text == "Potentiometer" || Classname.Text == "Rotary" || Classname.Text == "Drum")
+                    if (Classname.Text == "Rotary" || Classname.Text == "Drum")
                     {
                         Input.Text = "0.0,1.0,0.1";
-                        Output.Text = " 0, 360";
+                        Output.Text = " 0, 270";
                     }
-
-                    //if (Classname.Text == "Drum")
-                    //{
-                    //    Input.Text = "0.0,1.0,0.1";
-                    //    Output.Text = " 0.0,1.0";
-                    //}
 
                     if (Classname.Text == "MultiSwitch")
                     {

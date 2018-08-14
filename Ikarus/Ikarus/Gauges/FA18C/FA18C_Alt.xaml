@@ -9,7 +9,7 @@
         <Canvas x:Name="background" Canvas.Left="0" Canvas.Top="0">
             <Viewbox x:Name="Group" Width="340.157" Height="340.157" Canvas.Left="0.378" Canvas.Top="0.377998">
                 <Canvas Width="340.157" Height="340.157">
-                    <Canvas Width="340" Height="340" x:Name="Clip" Clip="F1 M 0,0L 340.157,0L 340.157,340.157L 0,340.157L 0,0 Z ">
+                    <Canvas Width="340" Height="340" x:Name="Clip2" Clip="F1 M 0,0L 340.157,0L 340.157,340.157L 0,340.157L 0,0 Z ">
                         <Rectangle x:Name="Rectangle" Width="93.2067" Height="38.1107" Canvas.Left="75.068" Canvas.Top="109.619" Stretch="Fill" Fill="#FF000000"/>
                         <Rectangle x:Name="Rectangle_0" Width="93.2067" Height="38.1107" Canvas.Left="162.403" Canvas.Top="200.152" Stretch="Fill" Fill="#FF000000"/>
                     </Canvas>

@@ -24,8 +24,8 @@ namespace Ikarus
 
         private double[] input = new double[] { };
         private double[] output = new double[] { };
-        private double switchValue = 0.0;
-        private int state = 0;
+        //private double switchValue = 0.0;
+        //private int state = 0;
 
         private Switches switches = null;
         private bool touchDown = false;
