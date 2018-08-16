@@ -91,7 +91,7 @@ namespace Ikarus
 
         private int cockpitRefreshLoopCounterMax = 1;
         private int cockpitRefreshLoopCounter = 0;
-        private int dataStackSize = 0;
+        //private int dataStackSize = 0;
         private int dscDataLoopCounterMax = 45;
         private int getAllDscDataLoopCounter = 0;
         private int grabWindowID = 0;
@@ -116,7 +116,7 @@ namespace Ikarus
         private static string newline = Environment.NewLine;
         public static string currentDirectory = Environment.CurrentDirectory;
         private string portListener = "";
-        private string receivedData = "";
+        //private string receivedData = "";
         private string[] receivedItems = new string[] { };
         public static string readFile = "";
         private string lastFile = "-";
@@ -334,14 +334,14 @@ namespace Ikarus
         {
             try
             {
-                if (UDP.receivedDataStack2.Count > 0)
+                if (UDP.receivedDataStack.Count > 0)
                 {
                     if (lUdpEnabled)
                     {
                         lUdpEnabled = false;
 
-                        UDP.receivedData = UDP.receivedDataStack2[0];
-                        UDP.receivedDataStack2.RemoveAt(0);
+                        UDP.receivedData = UDP.receivedDataStack[0];
+                        UDP.receivedDataStack.RemoveAt(0);
 
                         GrabValues();
 
@@ -354,6 +354,7 @@ namespace Ikarus
                 ImportExport.LogMessage("UdpTimerTick ... " + f.ToString(), true);
             }
         }
+
         private void TimerMain_Tick(object sender, EventArgs e)
         {
             Dispatcher.BeginInvoke(DispatcherPriority.Normal,
@@ -397,42 +398,6 @@ namespace Ikarus
                                if (lStateEnabled)
                                {
                                    lStateEnabled = false;
-
-                                   try
-                                   {
-                                       dataStackSize = UDP.receivedDataStack.Count;
-
-                                       for (int i = 0; i < dataStackSize; i++)
-                                       {
-                                           receivedData = UDP.receivedDataStack[0];
-                                           UDP.receivedDataStack.RemoveAt(0);
-
-                                           if (receivedData.IndexOf("Ikarus=stop") != -1)
-                                           {
-                                               //DatabaseResetValue();
-                                               //FillClasses();
-                                               //ResetCockpit();
-                                               dbFilename = readFile + ".ikarus";
-                                               LoadConfiguration(readFile);
-                                               MemoryManagement.Reduce();
-                                               break;
-                                           }
-                                           if (receivedData.IndexOf("Map=") != -1)
-                                           {
-                                               GrabMap(ref receivedData);
-                                               ImportExport.LogMessage("Airport charts for map '" + map + "' loaded");
-                                           }
-                                           if (receivedData.IndexOf(searchStringForFile) != -1)
-                                           {
-                                               CockpitLoad(ref receivedData);
-                                               break;
-                                           }
-                                           if (receivedData.IndexOf("2222=1.0") != -1) { Lights_IsChecked(true); }
-                                           if (receivedData.IndexOf("2222=0.0") != -1) { Lights_IsChecked(false); }
-                                       }
-                                       UDP.receivedDataStack.Clear();
-                                   }
-                                   catch (Exception ex) { ImportExport.LogMessage("State run: " + ex.ToString()); }
 
                                    lStateEnabled = true;
                                }
@@ -685,7 +650,7 @@ namespace Ikarus
                 ImportExport.LogMessage("Cockpit opened .. ");
 
                 Mouse.OverrideCursor = null;
-                UDP.receivedDataStack2.Clear();
+                UDP.receivedDataStack.Clear();
                 MemoryManagement.Reduce();
             }
             catch (Exception ex) { ImportExport.LogMessage("Cockpit opened: " + ex.ToString()); }
@@ -907,6 +872,38 @@ namespace Ikarus
 
         public void GrabValues()
         {
+            #region Exportscript
+
+            if (UDP.receivedData.IndexOf("Ikarus=stop") != -1)
+            {
+                dbFilename = readFile + ".ikarus";
+                LoadConfiguration(readFile);
+                MemoryManagement.Reduce();
+            }
+
+            if (UDP.receivedData.IndexOf("Map=") != -1)
+            {
+                GrabMap(ref UDP.receivedData);
+                ImportExport.LogMessage("Airport charts for map '" + map + "' loaded");
+            }
+
+            if (UDP.receivedData.IndexOf(searchStringForFile) != -1)
+            {
+                CockpitLoad(ref UDP.receivedData);
+            }
+
+            if (UDP.receivedData.IndexOf("2222=1.0") != -1)
+            {
+                Lights_IsChecked(true);
+            }
+
+            if (UDP.receivedData.IndexOf("2222=0.0") != -1)
+            {
+                Lights_IsChecked(false);
+            }
+
+            #endregion
+
             if (!cockpitWindowActiv) { return; }
 
             //Dispatcher.BeginInvoke(DispatcherPriority.Send,
@@ -2232,6 +2229,8 @@ namespace Ikarus
         #endregion
     }
 
+    #region Databases
+
     public class Instrument
     {
         public int instID = 0;
@@ -2308,4 +2307,5 @@ namespace Ikarus
             classname = _class;
         }
     }
+    #endregion
 }

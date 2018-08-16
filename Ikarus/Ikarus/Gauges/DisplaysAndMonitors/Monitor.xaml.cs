@@ -26,7 +26,11 @@ namespace Ikarus
         private double lineHeight = 23.8;
         private const string defaultFontColor = "ABF9AB"; // Hexdezimal Color Value (Light Green)
         private bool errorText = false;
-        private string fontColor = defaultFontColor;
+
+        private string[] colors = new string[] { };
+        private string fontColor = "ABF9AB";
+        private string backColor = "00000000";
+
         private Thickness thickness = new Thickness(0, 0, 0, 0);
 
         private string numberCharsNumberLines = "";
@@ -122,7 +126,11 @@ namespace Ikarus
 
             if (dataRows.Length > 0)
             {
-                fontColor = dataRows[0]["Input"].ToString().ToUpper();
+                colors = dataRows[0]["Input"].ToString().ToUpper().Split(',');
+
+                if (colors.Length > 0) { fontColor = colors[0].Trim(); }
+                if (colors.Length > 1) { backColor = colors[1].Trim(); }
+
                 numberCharsNumberLines = dataRows[0]["Output"].ToString();
 
                 if (fontColor.Length != 6)
@@ -202,8 +210,24 @@ namespace Ikarus
                 {
                     textBlockLines.Add(new TextBlock());
                     textBlockLines[i].Name = "Line_" + i.ToString();
+
+                    textBlockLines[i].Foreground = (SolidColorBrush)new BrushConverter().ConvertFromString("#FF" + defaultFontColor);
                     textBlockLines[i].Background = (SolidColorBrush)new BrushConverter().ConvertFromString("#00000000");
-                    textBlockLines[i].Foreground = (SolidColorBrush)new BrushConverter().ConvertFromString("#FF" + fontColor);
+
+                    try
+                    {
+                        if (fontColor.Length == 6 && IsHexString(fontColor))
+                            textBlockLines[i].Foreground = (SolidColorBrush)new BrushConverter().ConvertFromString("#FF" + fontColor);
+                        if (fontColor.Length == 8 && IsHexString(fontColor))
+                            textBlockLines[i].Foreground = (SolidColorBrush)new BrushConverter().ConvertFromString("#" + fontColor);
+
+                        if (backColor.Length == 6 && IsHexString(backColor))
+                            textBlockLines[i].Background = (SolidColorBrush)new BrushConverter().ConvertFromString("#FF" + backColor);
+                        if (backColor.Length == 8 && IsHexString(backColor))
+                            textBlockLines[i].Background = (SolidColorBrush)new BrushConverter().ConvertFromString("#" + backColor);
+                    }
+                    catch { }
+
                     textBlockLines[i].FontFamily = fontFamily;
                     textBlockLines[i].FontSize = fontSize;
                     textBlockLines[i].Width = lineWidth;

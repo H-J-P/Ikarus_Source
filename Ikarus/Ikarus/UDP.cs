@@ -27,7 +27,6 @@ namespace Ikarus
         private static string gotData = "";
         private static string newline = Environment.NewLine;
         public static List<string> receivedDataStack = new List<string> { };
-        public static List<string> receivedDataStack2 = new List<string> { };
         private static int count = 0;
         private static byte[] content = null;
 
@@ -120,10 +119,10 @@ namespace Ikarus
                     gotData = Encoding.UTF8.GetString(receiveByteArray, 0, receiveByteArray.Length); // Change ASCII to UTF8
 
                     gotData = gotData.Replace("*", ":").Trim();
+                    //receivedDataStack.Add(gotData);
                     receivedDataStack.Add(gotData);
-                    receivedDataStack2.Add(gotData);
 
-                    if (MainWindow.detailLog) { ImportExport.LogMessage("--- Received package: " + gotData + " Stacksize: " + receivedDataStack2.Count, true); }
+                    if (MainWindow.detailLog) { ImportExport.LogMessage("--- Received package: " + gotData + " Stacksize: " + receivedDataStack.Count, true); }
 
                     //MainWindow.mainWindow[0].GrabValues();
                 }

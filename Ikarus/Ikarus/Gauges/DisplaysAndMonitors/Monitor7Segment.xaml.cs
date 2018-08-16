@@ -26,13 +26,16 @@ namespace Ikarus
         private double lineHeight = 18;
         private const string defaultFontColor = "FF9430"; // Hexdezimal Color Value (Red)
         private bool errorText = false;
-        private string fontColor = defaultFontColor;
-        private Thickness thickness = new Thickness(0, 0, 0, 0);
 
+        private string[] colors = new string[] { };
+        private string fontColor = "FF9430";
+        private string backColor = "00000000";
+
+        private Thickness thickness = new Thickness(0, 0, 0, 0);
         private string numberCharsNumberLines = "";
         private int numberOfSegments = 1;
         private int numberOfLines = 1;
-        private string[] textForDisplay = new string[] {"Init", "ERROR"};
+        private string[] textForDisplay = new string[] { "Init", "ERROR" };
         private System.Collections.Generic.List<TextBlock> textBlockLines = new System.Collections.Generic.List<TextBlock>();
         private int[] codeChar = new int[19];
         private string[] replaceString = new string[19];
@@ -122,7 +125,11 @@ namespace Ikarus
 
             if (dataRows.Length > 0)
             {
-                fontColor = dataRows[0]["Input"].ToString().ToUpper();
+                colors = dataRows[0]["Input"].ToString().ToUpper().Split(',');
+
+                if (colors.Length > 0) { fontColor = colors[0].Trim(); }
+                if (colors.Length > 1) { backColor = colors[1].Trim(); }
+
                 numberCharsNumberLines = dataRows[0]["Output"].ToString();
 
                 if (fontColor.Length != 6)
@@ -150,11 +157,11 @@ namespace Ikarus
                     if (!int.TryParse(TmpSplit[1], out numberOfLines))
 
                     {
-                        numberOfLines = 2;;
+                        numberOfLines = 2; ;
                         errorText = true;
                     }
 
-                    if(numberOfSegments < 1 || numberOfLines < 1)
+                    if (numberOfSegments < 1 || numberOfLines < 1)
                     {
                         numberOfSegments = 5;
                         numberOfLines = 2;
@@ -202,8 +209,24 @@ namespace Ikarus
                 {
                     textBlockLines.Add(new TextBlock());
                     textBlockLines[i].Name = "Line_" + i.ToString();
+
+                    textBlockLines[i].Foreground = (SolidColorBrush)new BrushConverter().ConvertFromString("#FF" + defaultFontColor);
                     textBlockLines[i].Background = (SolidColorBrush)new BrushConverter().ConvertFromString("#00000000");
-                    textBlockLines[i].Foreground = (SolidColorBrush)new BrushConverter().ConvertFromString("#FF" + fontColor);
+
+                    try
+                    {
+                        if (fontColor.Length == 6 && IsHexString(fontColor))
+                            textBlockLines[i].Foreground = (SolidColorBrush)new BrushConverter().ConvertFromString("#FF" + fontColor);
+                        if (fontColor.Length == 8 && IsHexString(fontColor))
+                            textBlockLines[i].Foreground = (SolidColorBrush)new BrushConverter().ConvertFromString("#" + fontColor);
+
+                        if (backColor.Length == 6 && IsHexString(backColor))
+                            textBlockLines[i].Background = (SolidColorBrush)new BrushConverter().ConvertFromString("#FF" + backColor);
+                        if (backColor.Length == 8 && IsHexString(backColor))
+                            textBlockLines[i].Background = (SolidColorBrush)new BrushConverter().ConvertFromString("#" + backColor);
+                    }
+                    catch { }
+
                     textBlockLines[i].FontFamily = fontFamily;
                     textBlockLines[i].FontSize = fontSize;
                     textBlockLines[i].Width = lineWidth;
@@ -286,10 +309,10 @@ namespace Ikarus
                            string[] vals = strData.Split(';');
 
                            string[] Lines = new string[textBlockLines.Count];
-                           
+
                            try
                            {
-                               for(int i=0; i < textBlockLines.Count; i++)
+                               for (int i = 0; i < textBlockLines.Count; i++)
                                {
                                    Lines[i] = "";
                                    if (vals.Length > i)

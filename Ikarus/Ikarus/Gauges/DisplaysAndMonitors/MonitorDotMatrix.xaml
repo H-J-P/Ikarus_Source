@@ -19,8 +19,7 @@
                    FontFamily="LED Board-7"
                    FontSize="17"
                    Foreground="#FF95E295"
-                   Text="000"
-                   Visibility="Collapsed" />
+                   Text="000" Visibility="Collapsed" />
         <TextBlock x:Name="Line2"
                    Width="13.2"
                    Height="23.8"
@@ -47,6 +46,6 @@
             VerticalAlignment="Top"
             Fill="#00EEDB21"
             Stroke="#FFF38501"
-            StrokeThickness="1" />
+            StrokeThickness="1" d:IsHidden="True" />
     </Grid>
 </UserControl>
