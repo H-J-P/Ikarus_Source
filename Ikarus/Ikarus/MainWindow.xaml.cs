@@ -116,7 +116,7 @@ namespace Ikarus
         private static string newline = Environment.NewLine;
         public static string currentDirectory = Environment.CurrentDirectory;
         private string portListener = "";
-        //private string receivedData = "";
+        private string receivedData = "";
         private string[] receivedItems = new string[] { };
         public static string readFile = "";
         private string lastFile = "-";
@@ -340,13 +340,14 @@ namespace Ikarus
                     {
                         lUdpEnabled = false;
 
-                        UDP.receivedData = UDP.receivedDataStack[0];
+                        receivedData = UDP.receivedDataStack[0];
                         UDP.receivedDataStack.RemoveAt(0);
 
                         GrabValues();
 
                         lUdpEnabled = true;
                     }
+                    receivedData = "";
                 }
             }
             catch (Exception f)
@@ -852,7 +853,7 @@ namespace Ikarus
             {
                 idFound = false;
 
-                if (UDP.receivedData.IndexOf(identifier, 0) > -1) // Dirty quickcheck before loop
+                if (receivedData.IndexOf(identifier, 0) > -1) // Dirty quickcheck before loop
                 {
                     idFound = true;
 
@@ -874,30 +875,30 @@ namespace Ikarus
         {
             #region Exportscript
 
-            if (UDP.receivedData.IndexOf("Ikarus=stop") != -1)
+            if (receivedData.IndexOf("Ikarus=stop") != -1)
             {
                 dbFilename = readFile + ".ikarus";
                 LoadConfiguration(readFile);
                 MemoryManagement.Reduce();
             }
 
-            if (UDP.receivedData.IndexOf("Map=") != -1)
+            if (receivedData.IndexOf("Map=") != -1)
             {
-                GrabMap(ref UDP.receivedData);
+                GrabMap(ref receivedData);
                 ImportExport.LogMessage("Airport charts for map '" + map + "' loaded");
             }
 
-            if (UDP.receivedData.IndexOf(searchStringForFile) != -1)
+            if (receivedData.IndexOf(searchStringForFile) != -1)
             {
-                CockpitLoad(ref UDP.receivedData);
+                CockpitLoad(ref receivedData);
             }
 
-            if (UDP.receivedData.IndexOf("2222=1.0") != -1)
+            if (receivedData.IndexOf("2222=1.0") != -1)
             {
                 Lights_IsChecked(true);
             }
 
-            if (UDP.receivedData.IndexOf("2222=0.0") != -1)
+            if (receivedData.IndexOf("2222=0.0") != -1)
             {
                 Lights_IsChecked(false);
             }
@@ -911,11 +912,11 @@ namespace Ikarus
             //{
             try
             {
-                if (UDP.receivedData.Length < 3) { return; }
+                if (receivedData.Length < 3) { return; }
 
                 grabWindowID = 0;
                 newGrabValue = "";
-                receivedItems = UDP.receivedData.Split(':');
+                receivedItems = receivedData.Split(':');
 
                 #region Gauges
 

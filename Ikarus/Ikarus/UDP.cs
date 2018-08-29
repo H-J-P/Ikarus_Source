@@ -23,7 +23,7 @@ namespace Ikarus
         private static IPEndPoint sendingEndPoint = null;
         private static IPEndPoint listenerEndPoint = null;
         private static Socket sendingSocket = null;
-        public static string receivedData = "";
+        //public static string receivedData = "";
         private static string gotData = "";
         private static string newline = Environment.NewLine;
         public static List<string> receivedDataStack = new List<string> { };
