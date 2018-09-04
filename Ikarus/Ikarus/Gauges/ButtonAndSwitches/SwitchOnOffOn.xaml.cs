@@ -43,8 +43,6 @@ namespace Ikarus
             Focusable = false;
 
             DesignFrame.Visibility = System.Windows.Visibility.Hidden;
-            SwitchUp.Visibility = System.Windows.Visibility.Hidden;
-            SwitchDown.Visibility = System.Windows.Visibility.Hidden;
         }
 
         public void SetID(string _dataImportID)
@@ -87,6 +85,25 @@ namespace Ikarus
             for (int i = 0; i < vals.Length; i++)
             {
                 input[i] = Convert.ToDouble(vals[i], CultureInfo.InvariantCulture);
+            }
+
+            if (vals[0] == "0" || vals[0] == "0.0")
+            {
+                SwitchUp.Visibility = System.Windows.Visibility.Hidden;
+                SwitchMiddle.Visibility = System.Windows.Visibility.Hidden;
+                SwitchDown.Visibility = System.Windows.Visibility.Visible;
+            }
+            if (vals[1] == "0" || vals[1] == "0.0")
+            {
+                SwitchUp.Visibility = System.Windows.Visibility.Hidden;
+                SwitchMiddle.Visibility = System.Windows.Visibility.Visible;
+                SwitchDown.Visibility = System.Windows.Visibility.Hidden;
+            }
+            if (vals[2] == "0" || vals[2] == "0.0")
+            {
+                SwitchUp.Visibility = System.Windows.Visibility.Visible;
+                SwitchMiddle.Visibility = System.Windows.Visibility.Hidden;
+                SwitchDown.Visibility = System.Windows.Visibility.Hidden;
             }
         }
 

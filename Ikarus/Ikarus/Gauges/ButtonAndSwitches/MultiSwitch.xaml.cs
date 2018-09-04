@@ -124,10 +124,19 @@ namespace Ikarus
                 }
                 catch { }
 
-                oldState = input[0];
                 rtKnob = new RotateTransform();
-                rtKnob.Angle = output[0];
-                SwitchKnob.RenderTransform = rtKnob;
+
+                for (int i = 0; i < vals.Length; i++)
+                {
+                    if (input[i] == 0.0)
+                    {
+                        switchState = input[i];
+                        oldState = input[i];
+                        rtKnob.Angle = output[i];
+                        SwitchKnob.RenderTransform = rtKnob;
+                        break;
+                    }
+                }
             }
         }
 
