@@ -92,18 +92,21 @@ namespace Ikarus
                 SwitchUp.Visibility = System.Windows.Visibility.Hidden;
                 SwitchMiddle.Visibility = System.Windows.Visibility.Hidden;
                 SwitchDown.Visibility = System.Windows.Visibility.Visible;
+                state = 0;
             }
             if (vals[1] == "0" || vals[1] == "0.0")
             {
                 SwitchUp.Visibility = System.Windows.Visibility.Hidden;
                 SwitchMiddle.Visibility = System.Windows.Visibility.Visible;
                 SwitchDown.Visibility = System.Windows.Visibility.Hidden;
+                state = 1;
             }
             if (vals[2] == "0" || vals[2] == "0.0")
             {
                 SwitchUp.Visibility = System.Windows.Visibility.Visible;
                 SwitchMiddle.Visibility = System.Windows.Visibility.Hidden;
                 SwitchDown.Visibility = System.Windows.Visibility.Hidden;
+                state = 2;
             }
         }
 
