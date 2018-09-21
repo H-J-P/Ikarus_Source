@@ -87,6 +87,28 @@ namespace Ikarus
             {
                 input[i] = Convert.ToDouble(vals[i], CultureInfo.InvariantCulture);
             }
+
+            if (vals[0] == "0" || vals[0] == "0.0")
+            {
+                SwitchUp.Visibility = System.Windows.Visibility.Hidden;
+                SwitchMiddle.Visibility = System.Windows.Visibility.Hidden;
+                SwitchDown.Visibility = System.Windows.Visibility.Visible;
+                state = 0;
+            }
+            if (vals[1] == "0" || vals[1] == "0.0")
+            {
+                SwitchUp.Visibility = System.Windows.Visibility.Hidden;
+                SwitchMiddle.Visibility = System.Windows.Visibility.Visible;
+                SwitchDown.Visibility = System.Windows.Visibility.Hidden;
+                state = 1;
+            }
+            if (vals[2] == "0" || vals[2] == "0.0")
+            {
+                SwitchUp.Visibility = System.Windows.Visibility.Visible;
+                SwitchMiddle.Visibility = System.Windows.Visibility.Hidden;
+                SwitchDown.Visibility = System.Windows.Visibility.Hidden;
+                state = 2;
+            }
         }
 
         public void SetOutput(string _output)
@@ -234,8 +256,6 @@ namespace Ikarus
         {
             try
             {
-                //Switches switches = MainWindow.switches.Find(x => x.ID == Convert.ToInt32(dataImportID));
-
                 if (switches == null) return;
 
                 MainWindow.refeshPopup = true;

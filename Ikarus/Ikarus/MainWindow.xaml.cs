@@ -1544,8 +1544,12 @@ namespace Ikarus
                         refreshInstruments = true;
                     }
                 }
-                if (refreshInstruments && cockpitWindows[windowID] != null)
-                    cockpitWindows[windowID].UpdateInstruments(Convert.ToInt32(dtInstruments.Rows[i]["IDInst"].ToString()), true);
+                try
+                {
+                    if (refreshInstruments && cockpitWindows[windowID] != null)
+                        cockpitWindows[windowID].UpdateInstruments(Convert.ToInt32(dtInstruments.Rows[i]["IDInst"].ToString()), true);
+                }
+                catch { }
             }
         }
 

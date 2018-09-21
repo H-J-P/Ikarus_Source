@@ -28,6 +28,7 @@ namespace Ikarus
         private double finalAngle = 360;
 
         private int relative = 0;
+        private int inversed = 0;
 
         private double switchState = 0.0;
         private double oldState = 0.0;
@@ -89,6 +90,7 @@ namespace Ikarus
             if (vals.Length > 1) maxValue = Convert.ToDouble(vals[1], CultureInfo.InvariantCulture);
             if (vals.Length > 2) step = Convert.ToDouble(vals[2], CultureInfo.InvariantCulture);
             if (vals.Length > 3) relative = Convert.ToInt32(vals[3], CultureInfo.InvariantCulture);
+            if (vals.Length > 4) inversed = Convert.ToInt32(vals[4], CultureInfo.InvariantCulture);
 
             switchState = minValue;
             oldState = minValue;
@@ -207,8 +209,16 @@ namespace Ikarus
 
                 if (oldState != switchState)
                 {
-                    if (_value == 1.0) animation += step;
-                    if (_value == -1.0) animation += step * -1;
+                    if (inversed == 0)
+                    {
+                        if (_value == 1.0) animation += step;
+                        if (_value == -1.0) animation += step * -1;
+                    }
+                    else
+                    {
+                        if (_value == 1.0) animation += step * -1;
+                        if (_value == -1.0) animation += step;
+                    }
 
                     if (relative == 0)
                     {

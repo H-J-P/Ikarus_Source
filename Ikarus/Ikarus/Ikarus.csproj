@@ -231,6 +231,9 @@
     <Compile Include="Gauges\ButtonAndSwitches\Drum.xaml.cs">
       <DependentUpon>Drum.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Gauges\ButtonAndSwitches\MultiSwitchReverse.xaml.cs">
+      <DependentUpon>MultiSwitchReverse.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Gauges\FA18C\FA18C_ADI.xaml.cs">
       <DependentUpon>FA18C_ADI.xaml</DependentUpon>
     </Compile>
@@ -1665,6 +1668,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Gauges\ButtonAndSwitches\Drum.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\ButtonAndSwitches\MultiSwitchReverse.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
