@@ -170,7 +170,8 @@ namespace Ikarus
 
                                if (oldState != switchState)
                                {
-                                   animation += oldState < switchState ? step : -step;
+                                   //animation += oldState < switchState ? step : -step;
+                                   animation = switchState;
 
                                    rtKnob = new RotateTransform();
                                    rtKnob.Angle = (animation * finalAngle) + startAngle;
@@ -230,6 +231,8 @@ namespace Ikarus
                         if (_value == -1.0) switches.value = step * -1;
                         switches.oldValue = switches.oldValue * -1;
                     }
+                    if (animation > maxValue) animation = maxValue;
+                    if (animation < minValue) animation = minValue;
 
                     rtKnob = new RotateTransform();
                     rtKnob.Angle = (animation * finalAngle) + startAngle;
