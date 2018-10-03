@@ -42,6 +42,9 @@ namespace Ikarus
         public static bool detailLog = false;
         public static bool editmode = false;
         public static bool shadowChecked = true;
+
+        public static bool activateR = false; // Data package R 
+
         private bool functionTabIsVisible = true;
         public static bool getAllDscData = false;
         private bool initInstruments = true;
@@ -1167,9 +1170,11 @@ namespace Ikarus
                 CockpitShow();
                 UpdateLog();
 
-                package = "R";
-                UDP.UDPSender(IPAddess.Text.Trim(), Convert.ToInt32(PortSender.Text), package); // send a package to DCS
-
+                if (activateR)
+                {
+                    package = "R";
+                    UDP.UDPSender(IPAddess.Text.Trim(), Convert.ToInt32(PortSender.Text), package); // send a package to DCS
+                }
                 timerstate = State.run;
             }
             catch (Exception e) { ImportExport.LogMessage("Load configuration problem .. " + e.ToString()); }
@@ -1277,11 +1282,14 @@ namespace Ikarus
                     catch { }
 
                 }
-                package = "R";
-                UDP.UDPSender(IPAddess.Text.Trim(), Convert.ToInt32(PortSender.Text), package);
 
-                //if (detailLog || switchLog) { ImportExport.LogMessage("Send package to " + IPAddess.Text.Trim() + ":" + PortSender.Text + " - Package: " + package); }
+                if (activateR)
+                {
+                    package = "R";
+                    UDP.UDPSender(IPAddess.Text.Trim(), Convert.ToInt32(PortSender.Text), package);
 
+                    if (detailLog || switchLog) { ImportExport.LogMessage("Send package to " + IPAddess.Text.Trim() + ":" + PortSender.Text + " - Package: " + package); }
+                }
                 getAllDscData = false;
             }
             catch (Exception ex) { ImportExport.LogMessage("RefreshAllSwitches: " + ex.ToString()); }
