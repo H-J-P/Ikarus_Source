@@ -448,14 +448,14 @@ namespace Ikarus
                                                    UDP.UDPSender(IPAddess.Text.Trim(), Convert.ToInt32(PortSender.Text), package);
                                                }
 
-                                               if (!switches[n].dontReset) //<---
-                                               {
-                                                   if (switches[n].classname.LastIndexOf("Button") > -1)
-                                                   {
-                                                       switches[n].oldValue = 0.0;
-                                                       switches[n].value = 0.0;
-                                                   }
-                                               }
+                                               //if (!switches[n].dontReset) //<---
+                                               //{
+                                               //    if (switches[n].classname.LastIndexOf("Button") > -1)
+                                               //    {
+                                               //        switches[n].oldValue = 0.0;
+                                               //        switches[n].value = 0.0;
+                                               //    }
+                                               //}
                                            }
                                            else // from DCS
                                            {
