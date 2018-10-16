@@ -426,7 +426,8 @@ namespace Ikarus
 
                                        if (switches[n].value != switches[n].oldValue || switches[n].doit)
                                        {
-                                           if (!switches[n].dontReset) switches[n].oldValue = switches[n].value; //<---
+                                           if (!switches[n].dontReset)
+                                               switches[n].oldValue = switches[n].value; //<---
 
                                            if (switches[n].events)
                                            {
@@ -1271,20 +1272,19 @@ namespace Ikarus
         {
             try
             {
-                for (int i = 0; i < switches.Count; i++)
-                {
-                    try
-                    {
-                        switches[i].oldValue = 0.0;
-                        switches[i].ignoreNextPackage = false;
-                        switches[i].doit = false;
-                    }
-                    catch { }
-
-                }
-
                 if (activateR)
                 {
+                    for (int i = 0; i < switches.Count; i++)
+                    {
+                        try
+                        {
+                            //switches[i].oldValue = 0.0;
+                            switches[i].ignoreNextPackage = false;
+                            switches[i].doit = false;
+                        }
+                        catch { }
+
+                    }
                     package = "R";
                     UDP.UDPSender(IPAddess.Text.Trim(), Convert.ToInt32(PortSender.Text), package);
 

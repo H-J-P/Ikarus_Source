@@ -343,5 +343,11 @@ namespace Ikarus
             touchDown = false;
             if (!MainWindow.editmode) ProzessHelper.SetFocusToExternalApp(MainWindow.processNameDCS);
         }
+        private void LowerRec_TouchUp(object sender, TouchEventArgs e)
+        {
+            e.Handled = true;
+            touchDown = false;
+            if (!MainWindow.editmode) ProzessHelper.SetFocusToExternalApp(MainWindow.processNameDCS);
+        }
     }
 }

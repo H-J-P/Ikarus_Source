@@ -256,7 +256,7 @@ namespace Ikarus
                 if (_value != 0)
                 {
                     switches.events = true;
-                    switches.oldValue = switches.oldValue * -1;
+                    //switches.oldValue = switches.oldValue * -1; // ?????
 
                     if (_value == 1.0) switchState += step;
                     if (_value == -1.0) switchState += step * -1;

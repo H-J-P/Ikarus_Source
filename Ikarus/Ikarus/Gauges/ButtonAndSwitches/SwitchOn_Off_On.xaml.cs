@@ -241,9 +241,11 @@ namespace Ikarus
                 if (switches == null) return;
 
                 MainWindow.refeshPopup = true;
+                state = _state;
                 switches.value = output[_state];
                 switches.events = _event;
                 switches.dontReset = dontReset;
+                //switches.ignoreNextPackage = true;
 
                 if (_state == 2)
                 {
@@ -254,7 +256,7 @@ namespace Ikarus
 
                 if (_state == 1)
                 {
-                    switches.oldValue = -1.0;
+                    //switches.oldValue = -1.0;
 
                     SwitchUp.Visibility = System.Windows.Visibility.Hidden;
                     SwitchMiddle.Visibility = System.Windows.Visibility.Visible;
@@ -281,9 +283,7 @@ namespace Ikarus
             e.Handled = true;
             if (!touchDown)
             {
-                state += 1;
-                if (state > 2) state = 2;
-                SetValue(state, true);
+                SetValue(2, true);
             }
             if (!MainWindow.editmode) ProzessHelper.SetFocusToExternalApp(MainWindow.processNameDCS);
         }
@@ -292,26 +292,8 @@ namespace Ikarus
         {
             e.Handled = true;
             touchDown = true;
-            state += 1;
-            if (state > 2) state = 2;
-            SetValue(state, true);
+            SetValue(2, true);
 
-            if (!MainWindow.editmode) ProzessHelper.SetFocusToExternalApp(MainWindow.processNameDCS);
-        }
-
-        private void UpperRec_MouseUp(object sender, MouseButtonEventArgs e)
-        {
-            e.Handled = true;
-            touchDown = false;
-            SetValue(1, true);
-            if (!MainWindow.editmode) ProzessHelper.SetFocusToExternalApp(MainWindow.processNameDCS);
-        }
-
-        private void UpperRec_TouchUp(object sender, TouchEventArgs e)
-        {
-            e.Handled = true;
-            touchDown = false;
-            SetValue(1, true);
             if (!MainWindow.editmode) ProzessHelper.SetFocusToExternalApp(MainWindow.processNameDCS);
         }
 
@@ -320,9 +302,7 @@ namespace Ikarus
             e.Handled = true;
             if (!touchDown)
             {
-                state -= 1;
-                if (state < 0) state = 0;
-                SetValue(state, true);
+                SetValue(0, true);
             }
             if (!MainWindow.editmode) ProzessHelper.SetFocusToExternalApp(MainWindow.processNameDCS);
         }
@@ -331,10 +311,24 @@ namespace Ikarus
         {
             e.Handled = true;
             touchDown = true;
-            state -= 1;
-            if (state < 0) state = 0;
-            SetValue(state, true);
+            SetValue(0, true);
 
+            if (!MainWindow.editmode) ProzessHelper.SetFocusToExternalApp(MainWindow.processNameDCS);
+        }
+
+        private void UpperRec_MouseUp(object sender, MouseButtonEventArgs e)
+        {
+            e.Handled = true;
+            touchDown = false;
+            SetValue(1, true); // Return to center position
+            if (!MainWindow.editmode) ProzessHelper.SetFocusToExternalApp(MainWindow.processNameDCS);
+        }
+
+        private void UpperRec_TouchUp(object sender, TouchEventArgs e)
+        {
+            e.Handled = true;
+            touchDown = false;
+            SetValue(1, true); // Return to center position
             if (!MainWindow.editmode) ProzessHelper.SetFocusToExternalApp(MainWindow.processNameDCS);
         }
 
@@ -342,7 +336,7 @@ namespace Ikarus
         {
             e.Handled = true;
             touchDown = false;
-            SetValue(1, true);
+            SetValue(1, true); // Return to center position
             if (!MainWindow.editmode) ProzessHelper.SetFocusToExternalApp(MainWindow.processNameDCS);
         }
 
@@ -350,7 +344,7 @@ namespace Ikarus
         {
             e.Handled = true;
             touchDown = false;
-            SetValue(1, true);
+            SetValue(1, true); // Return to center position
             if (!MainWindow.editmode) ProzessHelper.SetFocusToExternalApp(MainWindow.processNameDCS);
         }
     }

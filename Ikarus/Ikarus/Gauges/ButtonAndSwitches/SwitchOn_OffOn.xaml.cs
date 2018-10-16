@@ -262,6 +262,7 @@ namespace Ikarus
                 switches.value = output[_state];
                 switches.events = _event;
                 switches.dontReset = dontReset;
+                state = _state;
 
                 if (_state == 2)
                 {
@@ -297,9 +298,9 @@ namespace Ikarus
             e.Handled = true;
             if (!touchDown)
             {
-                state += 1;
-                if (state > 2) state = 2;
-                SetValue(state, true);
+                //state += 1;
+                //if (state > 2) state = 2;
+                SetValue(2, true);
             }
             touchDown = false;
             if (!MainWindow.editmode) ProzessHelper.SetFocusToExternalApp(MainWindow.processNameDCS);
@@ -309,9 +310,9 @@ namespace Ikarus
         {
             e.Handled = true;
             touchDown = true;
-            state += 1;
-            if (state > 2) state = 2;
-            SetValue(state, true);
+            //state += 1;
+            //if (state > 2) state = 2;
+            SetValue(2, true);
             if (!MainWindow.editmode) ProzessHelper.SetFocusToExternalApp(MainWindow.processNameDCS);
         }
 
@@ -343,7 +344,7 @@ namespace Ikarus
         {
             e.Handled = true;
             touchDown = false;
-            SetValue(1, true);
+            SetValue(1, true); // Return to center position
             if (!MainWindow.editmode) ProzessHelper.SetFocusToExternalApp(MainWindow.processNameDCS);
         }
 
@@ -351,7 +352,7 @@ namespace Ikarus
         {
             e.Handled = true;
             touchDown = false;
-            SetValue(1, true);
+            SetValue(1, true); // Return to center position
             if (!MainWindow.editmode) ProzessHelper.SetFocusToExternalApp(MainWindow.processNameDCS);
         }
     }
