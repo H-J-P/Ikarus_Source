@@ -42,7 +42,7 @@ namespace Ikarus
         #endregion
 
 
-        public static void UDPSender(string ipAdress, int port, string textToSend) // Without broadcast
+        public static void UDPSender(string ipAdress, int port, string textToSend, string dcsID = "") // Without broadcast
         {
             try
             {
@@ -53,7 +53,7 @@ namespace Ikarus
                 content = Encoding.UTF8.GetBytes(textToSend);
                 count = udpClient.Send(content, content.Length, ipEndPoint);
 
-                if (MainWindow.detailLog || MainWindow.switchLog) { ImportExport.LogMessage("--- Send to IP: " + ipAdress + ":" + port + " Package: " + textToSend + " Bytes: " + count.ToString(), true); }
+                if (MainWindow.detailLog || MainWindow.switchLog) { ImportExport.LogMessage("ID: " + dcsID + " send to IP: " + ipAdress + ":" + port + " Package: " + textToSend + " Bytes: " + count.ToString(), true); }
 
                 udpClient.Close();
             }

@@ -522,7 +522,7 @@ namespace Ikarus
                                    {
                                        switches.ignoreNextPackage = false;
 
-                                       if (MainWindow.detailLog || MainWindow.switchLog) { ImportExport.LogMessage("Ignore value for ID: " + switches.dcsID.ToString() + " class: " + userControl.ToString() + " value: " + switches.value.ToString()); }
+                                       if (MainWindow.detailLog) { ImportExport.LogMessage("Ignore value for ID: " + switches.dcsID.ToString() + " class: " + userControl.ToString() + " value: " + switches.value.ToString()); }
                                    }
                                    else
                                    {

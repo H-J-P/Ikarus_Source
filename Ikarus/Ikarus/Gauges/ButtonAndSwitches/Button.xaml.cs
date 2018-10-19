@@ -50,6 +50,8 @@ namespace Ikarus
             LoadBmaps();
 
             switches = MainWindow.switches.Find(x => x.ID == Convert.ToInt32(dataImportID));
+            switches.ignoreNextPackage = true;
+            switches.ignoreAllPackage = true;
         }
 
         public void SetWindowID(int _windowID)
@@ -175,30 +177,12 @@ namespace Ikarus
                 Dispatcher.BeginInvoke(DispatcherPriority.Normal,
                        (Action)(() =>
                        {
-                           //try
-                           //{
-                           //    if (switches.ignoreNextPackage)
-                           //    {
-                           //        switches.ignoreNextPackage = false;
-                           //        MainWindow.getAllDscData = true;
-
-                           //        return;
-                           //    }
-
-                           //    vals = strData.Split(';');
-
-                           //    if (vals.Length > 0) { switchValue = Convert.ToDouble(vals[0], CultureInfo.InvariantCulture); }
-
-                           //    for (int i = 0; i < input.Length; i++)
-                           //    {
-                           //        if (input[i] == switchValue)
-                           //        {
-                           //            state = i;
-                           //            SetValue(state, false);
-                           //        }
-                           //    }
-                           //}
-                           //catch { return; };
+                            try
+                            {
+                               ImportExport.LogMessage("***** Error: " + switches.dcsID.ToString());
+                               switches.ignoreNextPackage = true;
+                            }
+                            catch { return; };
                        }));
         }
 
@@ -215,7 +199,7 @@ namespace Ikarus
 
                 switches.events = true;
                 switches.dontReset = false;
-                //switches.ignoreNextPackage = true;
+                switches.ignoreNextPackage = true;
                 switches.sendRelease = false;
                 switches.doit = false;
 

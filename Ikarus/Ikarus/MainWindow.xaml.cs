@@ -441,12 +441,12 @@ namespace Ikarus
 
                                                package = "C" + switches[n].deviceID.ToString() + "," + (3000 + switches[n].buttonID).ToString() + "," + switches[n].value.ToString();
 
-                                               UDP.UDPSender(IPAddess.Text.Trim(), Convert.ToInt32(PortSender.Text), package); //<--- send a package to DCS
+                                               UDP.UDPSender(IPAddess.Text.Trim(), Convert.ToInt32(PortSender.Text), package, switches[n].dcsID.ToString()); //<--- send a package to DCS
 
                                                if (switches[n].sendRelease) // && switches[n].value > 0.0)
                                                {
                                                    package = "C" + switches[n].deviceID.ToString() + "," + (3000 + switches[n].buttonID).ToString() + "," + (0.0).ToString();
-                                                   UDP.UDPSender(IPAddess.Text.Trim(), Convert.ToInt32(PortSender.Text), package);
+                                                   UDP.UDPSender(IPAddess.Text.Trim(), Convert.ToInt32(PortSender.Text), package, switches[n].dcsID.ToString());
                                                }
 
                                                //if (!switches[n].dontReset) //<---
@@ -1040,9 +1040,9 @@ namespace Ikarus
 
                         if (newGrabValue != "")
                         {
-                            if (switches[n].ignoreNextPackage)
+                            if (switches[n].ignoreNextPackage || switches[n].ignoreAllPackage)
                             {
-                                if (detailLog || switchLog) { ImportExport.LogMessage("Ignore data for switch ID: " + switches[n].dcsID.ToString() + " value: " + newGrabValue); }
+                                if (detailLog) { ImportExport.LogMessage("Ignore data for switch ID: " + switches[n].dcsID.ToString() + " value: " + newGrabValue); }
                                 switches[n].ignoreNextPackage = false;
                             }
                             else
@@ -2310,6 +2310,7 @@ namespace Ikarus
         public bool sendDouble = false;
         public bool sendRelease = false;
         public bool ignoreNextPackage = false;
+        public bool ignoreAllPackage = false;
         public bool doit = false;
 
         public Switches(int _ID, int _windowID, int _clickable, string _class)

@@ -245,7 +245,6 @@ namespace Ikarus
                 switches.value = output[_state];
                 switches.events = _event;
                 switches.dontReset = dontReset;
-                //switches.ignoreNextPackage = true;
 
                 if (_state == 2)
                 {
@@ -256,8 +255,6 @@ namespace Ikarus
 
                 if (_state == 1)
                 {
-                    //switches.oldValue = -1.0;
-
                     SwitchUp.Visibility = System.Windows.Visibility.Hidden;
                     SwitchMiddle.Visibility = System.Windows.Visibility.Visible;
                     SwitchDown.Visibility = System.Windows.Visibility.Hidden;
