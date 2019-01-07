@@ -104,7 +104,7 @@ namespace Ikarus
                                lleftEngineRPM = leftEngineRPM;
                                lrightEngineRPM = rightEngineRPM;
                            }
-                           catch { return; }
+                           catch (Exception e) { ImportExport.LogMessage(GetType().Name + " got data and failed with exception: " + e.ToString()); }
                        }));
         }
 

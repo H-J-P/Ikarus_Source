@@ -138,7 +138,8 @@ namespace Ikarus
                                lengineT100 = engineT100;
                                lengineT10 = engineT10;
                            }
-                           catch { return; }
+                           //catch { return; }
+                           catch (Exception e) { ImportExport.LogMessage(GetType().Name + " got data and failed with exception: " + e.ToString()); }
                        }));
         }
 

@@ -95,7 +95,7 @@ namespace Ikarus
                                lvoltAmperMeter = voltAmperMeter;
                                llampsLightness = lampsLightness;
                            }
-                           catch { return; }
+                           catch (Exception e) { ImportExport.LogMessage(GetType().Name + " got data and failed with exception: " + e.ToString()); }
                        }));
         }
 

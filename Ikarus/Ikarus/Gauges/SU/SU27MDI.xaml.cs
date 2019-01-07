@@ -105,7 +105,7 @@ namespace Ikarus
                                Slats.Visibility = (slats > 0.9) ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
                                Airbrake.Visibility = (airbrake > 0.9) ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
                            }
-                           catch { return; };
+                           catch (Exception e) { ImportExport.LogMessage(GetType().Name + " got data and failed with exception: " + e.ToString()); }
                        }));
         }
 

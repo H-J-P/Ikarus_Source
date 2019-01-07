@@ -129,7 +129,7 @@ namespace Ikarus
                                legt100 = egt100;
                                legt10 = egt10;
                            }
-                           catch { return; }
+                           catch (Exception e) { ImportExport.LogMessage(GetType().Name + " got data and failed with exception: " + e.ToString()); }
                        }));
 
         }

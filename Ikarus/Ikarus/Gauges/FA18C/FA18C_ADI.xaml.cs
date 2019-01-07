@@ -182,7 +182,7 @@ namespace Ikarus
                                lFlag_off = flag_off;
                                lbankNeedle = bankNeedle;
                            }
-                           catch { return; };
+                           catch (Exception e) { ImportExport.LogMessage(GetType().Name + " got data and failed with exception: " + e.ToString()); }
                        }));
         }
 

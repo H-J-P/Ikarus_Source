@@ -29,8 +29,6 @@ namespace Ikarus
         public FWD9VVI()
         {
             InitializeComponent();
-
-            //shadow.Visibility = MainWindow.shadowChecked ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
         }
 
         public void SetID(string _dataImportID)
@@ -106,7 +104,7 @@ namespace Ikarus
                                }
                                lvariometer = variometer;
                            }
-                           catch { return; }
+                           catch (Exception e) { ImportExport.LogMessage(GetType().Name + " got data and failed with exception: " + e.ToString()); }
                        }));
         }
 

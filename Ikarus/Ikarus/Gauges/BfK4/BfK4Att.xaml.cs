@@ -136,7 +136,7 @@ namespace Ikarus
                                lslipball = slipball;
                                lhorizonCage = horizonCage;
                            }
-                           catch { return; }
+                           catch (Exception e) { ImportExport.LogMessage(GetType().Name + " got data and failed with exception: " + e.ToString()); }
                        }));
         }
 

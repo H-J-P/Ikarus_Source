@@ -121,7 +121,7 @@ namespace Ikarus
                                lcurrtimeSeconds = currtimeSeconds;
                                lcronoSeconds = secondSeconds;
                            }
-                           catch { return; }
+                           catch (Exception e) { ImportExport.LogMessage(GetType().Name + " got data and failed with exception: " + e.ToString()); }
                        }));
         }
 

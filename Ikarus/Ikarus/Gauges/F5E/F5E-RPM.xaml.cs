@@ -103,7 +103,7 @@ namespace Ikarus
                                lengineRPM100 = engineRPM100;
                                lengineRPM_10 = engineRPM_10;
                            }
-                           catch { return; }
+                           catch (Exception e) { ImportExport.LogMessage(GetType().Name + " got data and failed with exception: " + e.ToString()); }
                        }));
         }
 

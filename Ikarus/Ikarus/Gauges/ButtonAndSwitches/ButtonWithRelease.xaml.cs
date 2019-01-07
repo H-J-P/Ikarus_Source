@@ -206,7 +206,7 @@ namespace Ikarus
                                    }
                                }
                            }
-                           catch { return; };
+                           catch (Exception e) { ImportExport.LogMessage("Switch with DCS-ID " + switches.dcsID.ToString() + " got data and failed with exception: " + e.ToString()); }
                        }));
         }
 

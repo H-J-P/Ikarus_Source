@@ -107,7 +107,7 @@ namespace Ikarus
                                }
                                ltank = tank;
                            }
-                           catch { return; }
+                           catch (Exception e) { ImportExport.LogMessage(GetType().Name + " got data and failed with exception: " + e.ToString()); }
                        }));
         }
 

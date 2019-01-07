@@ -138,7 +138,7 @@ namespace Ikarus
                                lverticalOff = verticalOff;
                                lhorizontalOff = horizontalOff;
                            }
-                           catch { return; }
+                           catch (Exception e) { ImportExport.LogMessage(GetType().Name + " got data and failed with exception: " + e.ToString()); }
                        }));
         }
 

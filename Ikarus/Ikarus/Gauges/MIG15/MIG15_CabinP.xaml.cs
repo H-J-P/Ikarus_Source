@@ -102,7 +102,7 @@ namespace Ikarus
                                lcockpitAltitude = cockpitAltitude;
                                lpressureDifference = pressureDifference;
                            }
-                           catch { return; }
+                           catch (Exception e) { ImportExport.LogMessage(GetType().Name + " got data and failed with exception: " + e.ToString()); }
                        }));
         }
 

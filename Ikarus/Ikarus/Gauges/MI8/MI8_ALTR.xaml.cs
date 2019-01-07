@@ -147,7 +147,7 @@ namespace Ikarus
                                ldangerRAltLamp = dangerRAltLamp;
                                lwarningFlag = warningFlag;
                            }
-                           catch { return; }
+                           catch (Exception e) { ImportExport.LogMessage(GetType().Name + " got data and failed with exception: " + e.ToString()); }
                        }));
         }
 

@@ -159,7 +159,7 @@ namespace Ikarus
                                lpressure001 = pressure001;
                                loffFlag = offFlag;
                            }
-                           catch { return; }
+                           catch (Exception e) { ImportExport.LogMessage(GetType().Name + " got data and failed with exception: " + e.ToString()); }
                        }));
         }
 

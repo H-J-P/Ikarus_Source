@@ -116,7 +116,7 @@ namespace Ikarus
                                llampForwardTank = lampForwardTank;
                                llampRearTank = lampRearTank;
                            }
-                           catch { return; }
+                           catch (Exception e) { ImportExport.LogMessage(GetType().Name + " got data and failed with exception: " + e.ToString()); }
                        }));
         }
 

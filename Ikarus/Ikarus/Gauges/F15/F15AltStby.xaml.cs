@@ -110,7 +110,7 @@ namespace Ikarus
                                lalt1000 = alt1000;
                                lalt100 = alt100;
                            }
-                           catch { return; }
+                           catch (Exception e) { ImportExport.LogMessage(GetType().Name + " got data and failed with exception: " + e.ToString()); }
                        }));
         }
 

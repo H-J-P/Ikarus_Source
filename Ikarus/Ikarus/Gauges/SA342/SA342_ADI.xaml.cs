@@ -183,7 +183,7 @@ namespace Ikarus
                                lflagg_GS = flagg_GS;
                                lflagg_LOC = flagg_LOC;
                            }
-                           catch { return; }
+                           catch (Exception e) { ImportExport.LogMessage(GetType().Name + " got data and failed with exception: " + e.ToString()); }
                        }));
         }
 

@@ -35,7 +35,6 @@ namespace Ikarus
 
             Dial.Visibility = System.Windows.Visibility.Hidden;
             Bezel.Visibility = System.Windows.Visibility.Hidden;
-            //shadow.Visibility = MainWindow.shadowChecked ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
         }
 
         public void SetID(string _dataImportID)
@@ -111,7 +110,7 @@ namespace Ikarus
                                }
                                lnozzle = nozzle;
                            }
-                           catch { return; }
+                           catch (Exception e) { ImportExport.LogMessage(GetType().Name + " got data and failed with exception: " + e.ToString()); }
                        }));
         }
 

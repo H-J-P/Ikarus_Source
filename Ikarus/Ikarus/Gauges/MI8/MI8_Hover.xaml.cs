@@ -140,7 +140,7 @@ namespace Ikarus
                                lhover_z = hover_z;
                                lhover_lamp_off = hover_lamp_off;
                            }
-                           catch { return; }
+                           catch (Exception e) { ImportExport.LogMessage(GetType().Name + " got data and failed with exception: " + e.ToString()); }
                        }));
         }
 

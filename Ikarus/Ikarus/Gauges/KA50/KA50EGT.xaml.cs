@@ -124,7 +124,7 @@ namespace Ikarus
                                lrightEngineTemperatureHund = rightEngineTemperatureHund;
                                lrightEngineTemperatureTenth = rightEngineTemperatureTenth;
                            }
-                           catch { return; }
+                           catch (Exception e) { ImportExport.LogMessage(GetType().Name + " got data and failed with exception: " + e.ToString()); }
                        }));
         }
 

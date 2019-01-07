@@ -37,10 +37,6 @@ namespace Ikarus
         public MIG15_ALT()
         {
             InitializeComponent();
-
-            //RotateTransform rtBaroPressure = new RotateTransform();
-            //rtBaroPressure.Angle = -37;
-            //Pressure.RenderTransform = rtBaroPressure;
         }
 
         public void SetID(string _dataImportID)
@@ -130,7 +126,7 @@ namespace Ikarus
                                laltituteMeter = altituteMeter;
                                lbaroPressure = baroPressure;
                            }
-                           catch { return; }
+                           catch (Exception e) { ImportExport.LogMessage(GetType().Name + " got data and failed with exception: " + e.ToString()); }
                        }));
         }
 

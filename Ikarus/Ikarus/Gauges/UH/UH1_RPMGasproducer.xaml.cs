@@ -104,7 +104,7 @@ namespace Ikarus
                                lgasProducerTach = gasProducerTach;
                                lgasProducerTach_U = gasProducerTach_U;
                            }
-                           catch { return; }
+                           catch (Exception e) { ImportExport.LogMessage(GetType().Name + " got data and failed with exception: " + e.ToString()); }
                        }));
         }
 

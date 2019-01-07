@@ -12,6 +12,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Threading;
 using System.Drawing.Imaging;
+using System.Reflection;
 
 namespace Ikarus
 {
@@ -82,6 +83,7 @@ namespace Ikarus
         private static DataRow[] dataRowsInstrumentsFunction = new DataRow[] { };
         private static DataRow[] dataRowsMasterSwitches = new DataRow[] { };
         private static DataRow[] dataRowsSwitches = new DataRow[] { };
+        private static Assembly assembly = Assembly.GetExecutingAssembly();
 
         public static List<Cockpit> cockpitWindows = new List<Cockpit> { };
         public static List<Instrument> instruments = new List<Instrument> { };
@@ -94,7 +96,6 @@ namespace Ikarus
 
         private int cockpitRefreshLoopCounterMax = 1;
         private int cockpitRefreshLoopCounter = 0;
-        //private int dataStackSize = 0;
         private int dscDataLoopCounterMax = 45;
         private int getAllDscDataLoopCounter = 0;
         private int grabWindowID = 0;
@@ -129,7 +130,6 @@ namespace Ikarus
         private string package = "";
         public static string processNameDCS = "DCS";
         public static string lightOnColor = "95E295"; // green
-
         private string newGrabValue = "";
 
         #endregion
@@ -140,6 +140,9 @@ namespace Ikarus
 
             Thread.CurrentThread.CurrentCulture = cult;
             Thread.CurrentThread.CurrentUICulture = cult;
+
+            Version.Content = ((AssemblyCopyrightAttribute)assembly.GetCustomAttribute(typeof(AssemblyCopyrightAttribute))).Copyright +
+                "  Version " + Assembly.GetEntryAssembly().GetName().Version.ToString();
 
             mainWindow.Add(this);
 
@@ -172,14 +175,10 @@ namespace Ikarus
                             dbFilename = dtConfig.Rows[0][4].ToString();
                             IPAddess.Text = dtConfig.Rows[0][5].ToString();
                             PortListener.Text = dtConfig.Rows[0][6].ToString();
+
                             portListener = dtConfig.Rows[0][6].ToString();
                             PortSender.Text = dtConfig.Rows[0][7].ToString();
-                            try
-                            {
-                                checkBoxShadow.IsChecked = Convert.ToBoolean(dtConfig.Rows[0][10]);
-                            }
-                            catch
-                            { }
+                            checkBoxShadow.IsChecked = Convert.ToBoolean(dtConfig.Rows[0][10]);
 
                             if (dbFilename.Length > 0)
                             {
@@ -191,7 +190,6 @@ namespace Ikarus
                     {
                         ImportExport.LogMessage("++++++ Config.xml problem: None definitions for configuration loaded.");
                     }
-
                 }
                 catch (Exception e) { ImportExport.LogMessage("Config.xml problem .. " + e.ToString()); }
 
@@ -364,22 +362,6 @@ namespace Ikarus
             Dispatcher.BeginInvoke(DispatcherPriority.Normal,
                        (Action)(() =>
                        {
-                           #region switch to new file
-
-                           //if (timerstate == State.readfile)
-                           //{
-                           //    if (lStateEnabled)
-                           //    {
-                           //        lStateEnabled = false;
-
-                           //        //CockpitLoad();
-
-                           //        timerstate = State.run;
-                           //        lStateEnabled = true;
-                           //    }
-                           //}
-                           #endregion
-
                            #region stop - Editor Mode
 
                            if (timerstate == State.stop)
@@ -410,13 +392,9 @@ namespace Ikarus
 
                            #region Switches Update
 
-                           //if (++loopCounterSwitches >= loopSwitches && lStateEnabled)
                            if (lStateEnabled)
                            {
                                lStateEnabled = false;
-
-                               //int windowID = 0;
-                               //string package = "";
 
                                for (int n = 0; n < switches.Count; n++)
                                {
@@ -435,7 +413,7 @@ namespace Ikarus
 
                                                if (!switches[n].dontReset) switches[n].events = false; //<---
 
-                                               switches[n].ignoreNextPackage = true; // ignore next package from DCS
+                                               switches[n].ignoreNextPackage = true; // from DCS
                                                getAllDscData = true;
                                                getAllDscDataLoopCounter = dscDataLoopCounterMax; // next refresh for switches in 3 sec.
 
@@ -448,15 +426,6 @@ namespace Ikarus
                                                    package = "C" + switches[n].deviceID.ToString() + "," + (3000 + switches[n].buttonID).ToString() + "," + (0.0).ToString();
                                                    UDP.UDPSender(IPAddess.Text.Trim(), Convert.ToInt32(PortSender.Text), package, switches[n].dcsID.ToString());
                                                }
-
-                                               //if (!switches[n].dontReset) //<---
-                                               //{
-                                               //    if (switches[n].classname.LastIndexOf("Button") > -1)
-                                               //    {
-                                               //        switches[n].oldValue = 0.0;
-                                               //        switches[n].value = 0.0;
-                                               //    }
-                                               //}
                                            }
                                            else // from DCS
                                            {
@@ -469,6 +438,7 @@ namespace Ikarus
                                }
                                lStateEnabled = true;
                            }
+
                            #endregion
 
                            #region tools
@@ -489,6 +459,7 @@ namespace Ikarus
                                }
                                lStateEnabled = true;
                            }
+                           #endregion
 
                            #region refresh switches
 
@@ -565,7 +536,6 @@ namespace Ikarus
 
                                lStateEnabled = true;
                            }
-                           #endregion
 
                            #endregion
                        }));
@@ -595,15 +565,12 @@ namespace Ikarus
                 {
                     if (cockpitWindows[n] != null) cockpitWindows[n].Close_Cockpit();
                 }
-
                 ImportExport.LogMessage("Cockpit closed .. ");
+                cockpitWindows.Clear();
+                UpdateLog();
+                MemoryManagement.Reduce();
             }
             catch (Exception ex) { ImportExport.LogMessage("Cockpit closed: " + ex.ToString()); }
-
-            cockpitWindows.Clear();
-            UpdateLog();
-
-            MemoryManagement.Reduce();
         }
 
         private void CockpitShow()
@@ -640,10 +607,7 @@ namespace Ikarus
 
                         if (lightsChecked) cockpitWindows[i].UpdateInstrumentLights(lightsChecked, dtWindows.Rows[i]["BackgroundNight"].ToString());
                     }
-                    catch (Exception ex)
-                    {
-                        ImportExport.LogMessage("Construct Panels ... " + ex.ToString());
-                    }
+                    catch (Exception ex) { ImportExport.LogMessage("Construct Panels ... " + ex.ToString()); }
                 }
 
                 HidePanels();
@@ -988,7 +952,7 @@ namespace Ikarus
                             cockpitWindows[grabWindowID].UpdateInstruments(instruments[i].instID, false);
                         }
                     }
-                    catch { }
+                    catch (Exception e) { ImportExport.LogMessage("GrabValues: Update instruments ID " + instruments[i].classname + ": " + e.ToString()); }
                 }
                 initInstruments = false;
 
@@ -1361,7 +1325,11 @@ namespace Ikarus
 
         private void StartListener()
         {
-            UDP.StartListener(Convert.ToInt16(portListener.Trim()));
+            try
+            {
+                UDP.StartListener(Convert.ToInt16(portListener.Trim()));
+            }
+            catch (Exception e) { ImportExport.LogMessage("StartListener problem .. " + e.ToString()); }
         }
 
         public void SelectDataGridItem(string _tablename, int ID)

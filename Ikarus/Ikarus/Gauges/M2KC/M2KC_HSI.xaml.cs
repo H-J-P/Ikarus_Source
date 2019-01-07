@@ -13,9 +13,6 @@ namespace Ikarus
     {
         private string dataImportID = "";
 
-        //private double[] valueScale = new double[] { };
-        //private double[] degreeDial = new double[] { };
-        //int valueScaleIndex = 0;
         GaugesHelper helper = null;
         private int windowID = 0;
         private string[] vals = new string[] { };
@@ -220,7 +217,7 @@ namespace Ikarus
                                lhsiMode = hsiMode;
                                ldmeOffFlag = dmeOffFlag;
                            }
-                           catch { return; }
+                           catch (Exception e) { ImportExport.LogMessage(GetType().Name + " got data and failed with exception: " + e.ToString()); }
                        }));
         }
 

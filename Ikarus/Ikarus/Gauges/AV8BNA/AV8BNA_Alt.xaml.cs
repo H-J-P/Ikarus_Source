@@ -35,7 +35,6 @@ namespace Ikarus
         double pressure_1 = 0.0;
         double pressure_2 = 0.0;
         double pressure_3 = 0.0;
-        //double flag_pneu = 0.0;
 
         double lalt100FP = 0.0;
         double lalt10000 = 0.0;
@@ -112,59 +111,58 @@ namespace Ikarus
                                if (vals.Length > 6) { pressure_2 = Convert.ToDouble(vals[6], CultureInfo.InvariantCulture); }
                                if (vals.Length > 7) { pressure_3 = Convert.ToDouble(vals[7], CultureInfo.InvariantCulture); }
                                //if (vals.Length > 8) { flag_pneu = Convert.ToDouble(vals[8], CultureInfo.InvariantCulture); }
-                           }
-                           catch { return; }
 
-                           if (alt100FP != lalt100FP)
-                           {
-                               rtalt100FP.Angle = alt100FP * 360;
-                               ALT.RenderTransform = rtalt100FP;
-                           }
-                           if (alt10000 != lalt10000)
-                           {
-                               ttalt10000.Y = alt10000 * -332;
-                               ALT_10000.RenderTransform = ttalt10000;
-                           }
-                           if (alt1000 != lalt1000)
-                           {
-                               ttalt1000.Y = alt1000 * -332;
-                               ALT_1000.RenderTransform = ttalt1000;
-                           }
-                           if (alt100 != lalt100)
-                           {
-                               ttalt100.Y = alt100 * -332;
-                               ALT_100.RenderTransform = ttalt100;
-                           }
+                               if (alt100FP != lalt100FP)
+                               {
+                                   rtalt100FP.Angle = alt100FP * 360;
+                                   ALT.RenderTransform = rtalt100FP;
+                               }
+                               if (alt10000 != lalt10000)
+                               {
+                                   ttalt10000.Y = alt10000 * -332;
+                                   ALT_10000.RenderTransform = ttalt10000;
+                               }
+                               if (alt1000 != lalt1000)
+                               {
+                                   ttalt1000.Y = alt1000 * -332;
+                                   ALT_1000.RenderTransform = ttalt1000;
+                               }
+                               if (alt100 != lalt100)
+                               {
+                                   ttalt100.Y = alt100 * -332;
+                                   ALT_100.RenderTransform = ttalt100;
+                               }
 
-                           if (pressure_0 != lpressure_0)
-                           {
-                               ttpressure_0.Y = pressure_0 * -332;
-                               AltBar_1.RenderTransform = ttpressure_0;
+                               if (pressure_0 != lpressure_0)
+                               {
+                                   ttpressure_0.Y = pressure_0 * -332;
+                                   AltBar_1.RenderTransform = ttpressure_0;
+                               }
+                               if (pressure_1 != lpressure_1)
+                               {
+                                   ttpressure_1.Y = pressure_1 * -332;
+                                   AltBar_10.RenderTransform = ttpressure_1;
+                               }
+                               if (pressure_2 != lpressure_2)
+                               {
+                                   ttpressure_2.Y = pressure_2 * -332;
+                                   AltBar_100.RenderTransform = ttpressure_2;
+                               }
+                               if (pressure_3 != lpressure_3)
+                               {
+                                   ttpressure_3.Y = pressure_3 * -332;
+                                   AltBar_1000.RenderTransform = ttpressure_3;
+                               }
+                               lalt100FP = alt100FP;
+                               lalt10000 = alt10000;
+                               lalt1000 = alt1000;
+                               lalt100 = alt100;
+                               lpressure_0 = pressure_0;
+                               lpressure_1 = pressure_1;
+                               lpressure_2 = pressure_2;
+                               lpressure_3 = pressure_3;
                            }
-                           if (pressure_1 != lpressure_1)
-                           {
-                               ttpressure_1.Y = pressure_1 * -332;
-                               AltBar_10.RenderTransform = ttpressure_1;
-                           }
-                           if (pressure_2 != lpressure_2)
-                           {
-                               ttpressure_2.Y = pressure_2 * -332;
-                               AltBar_100.RenderTransform = ttpressure_2;
-                           }
-                           if (pressure_3 != lpressure_3)
-                           {
-                               ttpressure_3.Y = pressure_3 * -332;
-                               AltBar_1000.RenderTransform = ttpressure_3;
-                           }
-
-                           lalt100FP = alt100FP;
-                           lalt10000 = alt10000;
-                           lalt1000 = alt1000;
-                           lalt100 = alt100;
-                           lpressure_0 = pressure_0;
-                           lpressure_1 = pressure_1;
-                           lpressure_2 = pressure_2;
-                           lpressure_3 = pressure_3;
+                           catch (Exception e) { ImportExport.LogMessage(GetType().Name + " got data and failed with exception: " + e.ToString()); }
                        }));
         }
 

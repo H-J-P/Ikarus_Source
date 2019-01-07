@@ -117,7 +117,7 @@ namespace Ikarus
                                lpitchShift = pitchShift;
                                lcaged = caged;
                            }
-                           catch { return; };
+                           catch (Exception e) { ImportExport.LogMessage(GetType().Name + " got data and failed with exception: " + e.ToString()); }
                        }));
         }
 

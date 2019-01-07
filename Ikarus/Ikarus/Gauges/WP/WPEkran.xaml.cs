@@ -116,7 +116,7 @@ namespace Ikarus
                                MEMORYLight.Text = memoryLight.Replace("0", "O");
                                TURNLight.Text = turnLight.Replace("0", "O");
                            }
-                           catch { return; }
+                           catch (Exception e) { ImportExport.LogMessage(GetType().Name + " got data and failed with exception: " + e.ToString()); }
                        }));
         }
 

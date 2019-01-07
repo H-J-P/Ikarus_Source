@@ -128,7 +128,8 @@ namespace Ikarus
                                    IAS.RenderTransform = rtairspeedNeedle;
                                }
                            }
-                           catch { return; }
+                           //catch { return; }
+                           catch (Exception e) { ImportExport.LogMessage(GetType().Name + " got data and failed with exception: " + e.ToString()); }
 
                            // http://www.arndt-bruenner.de/mathe/9/geradedurchzweipunkte.htm
                            // AirspeedNeedle    altitude    airspeedMax
@@ -159,14 +160,15 @@ namespace Ikarus
                                    ttAirspeedDial.X = (airspeedDial * -315) - 15;
                                    IAS_10.RenderTransform = ttAirspeedDial;
                                }
-                           }
-                           catch { return; }
 
-                           lairspeedNeedle = airspeedNeedle;
-                           lairspeedDial = airspeedDial;
-                           lalt10000 = alt10000;
-                           lalt1000 = alt1000;
-                           lalt100 = alt100;
+                               lairspeedNeedle = airspeedNeedle;
+                               lairspeedDial = airspeedDial;
+                               lalt10000 = alt10000;
+                               lalt1000 = alt1000;
+                               lalt100 = alt100;
+                           }
+                           //catch { return; }
+                           catch (Exception e) { ImportExport.LogMessage(GetType().Name + " got data and failed with exception: " + e.ToString()); }
                        }));
         }
 

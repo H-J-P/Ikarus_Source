@@ -13,9 +13,6 @@ namespace Ikarus
     {
         private string dataImportID = "";
 
-        //private double[] valueScale = new double[] { };
-        //private double[] degreeDial = new double[] { };
-        //int valueScaleIndex = 0;
         GaugesHelper helper = null;
         private int windowID = 0;
         private string[] vals = new string[] { };
@@ -67,12 +64,10 @@ namespace Ikarus
 
         public void SetInput(string _input)
         {
-            //helper.SetInput(ref _input, ref valueScale, ref valueScaleIndex, 2);
         }
 
         public void SetOutput(string _output)
         {
-            //helper.SetOutput(ref _output, ref degreeDial, 2);
         }
 
         public double GetSize()
@@ -116,7 +111,7 @@ namespace Ikarus
                                lball = ball;
                                lflag = flag;
                            }
-                           catch { return; }
+                           catch (Exception e) { ImportExport.LogMessage(GetType().Name + " got data and failed with exception: " + e.ToString()); }
                        }));
         }
 

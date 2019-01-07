@@ -86,8 +86,6 @@ namespace Ikarus
                                vals = strData.Split(';');
 
                                if (vals.Length > 0) { heading = Convert.ToDouble(vals[0], CultureInfo.InvariantCulture); }
-                               //if (vals.Length > 1) { pitch = Convert.ToDouble(vals[1], CultureInfo.InvariantCulture); }
-                               //if (vals.Length > 2) { bank = Convert.ToDouble(vals[2], CultureInfo.InvariantCulture); }
                                if (vals.Length > 1) { bank = Convert.ToDouble(vals[1], CultureInfo.InvariantCulture); }
                                if (vals.Length > 2) { pitch = Convert.ToDouble(vals[2], CultureInfo.InvariantCulture); }
 
@@ -112,7 +110,7 @@ namespace Ikarus
                                lpitch = pitch;
                                lbank = bank;
                            }
-                           catch { return; }
+                           catch (Exception e) { ImportExport.LogMessage(GetType().Name + " got data and failed with exception: " + e.ToString()); }
                        }));
         }
 

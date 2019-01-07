@@ -131,7 +131,7 @@ namespace Ikarus
                                lASI_1000 = ASI_1000;
                                lASI_100 = ASI_100;
                            }
-                           catch { return; }
+                           catch (Exception e) { ImportExport.LogMessage(GetType().Name + " got data and failed with exception: " + e.ToString()); }
                        }));
         }
 

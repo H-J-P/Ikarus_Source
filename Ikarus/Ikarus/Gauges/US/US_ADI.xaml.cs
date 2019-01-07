@@ -187,7 +187,7 @@ namespace Ikarus
                                lattitudeWarningFlag = attitudeWarningFlag;
                                lcourceWarningFlag = courceWarningFlag;
                            }
-                           catch { return; };
+                           catch (Exception e) { ImportExport.LogMessage(GetType().Name + " got data and failed with exception: " + e.ToString()); }
                        }));
         }
 

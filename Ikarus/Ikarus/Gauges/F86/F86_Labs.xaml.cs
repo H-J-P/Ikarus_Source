@@ -101,7 +101,7 @@ namespace Ikarus
                                lroll_needle = roll_needle;
                                lpitch_needle = pitch_needle;
                            }
-                           catch { return; }
+                           catch (Exception e) { ImportExport.LogMessage(GetType().Name + " got data and failed with exception: " + e.ToString()); }
                        }));
         }
 

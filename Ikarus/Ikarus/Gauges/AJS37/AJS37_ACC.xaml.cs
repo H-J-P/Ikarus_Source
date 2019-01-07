@@ -22,16 +22,9 @@ namespace Ikarus
         public int GetWindowID() { return windowID; }
 
         double acceleration = 0.0;
-        //double accelerationMax = 0.0;
-        //double accelerationMin = 0.0;
-
         double lacceleration = 0.0;
-        //double laccelerationMax = 0.0;
-        //double laccelerationMin = 0.0;
-
+ 
         RotateTransform rtAcceleration = new RotateTransform();
-        //RotateTransform rtAccelerationMax = new RotateTransform();
-        //RotateTransform rtAccelerationMin = new RotateTransform();
 
         public AJS37_ACC()
         {
@@ -96,8 +89,6 @@ namespace Ikarus
                                vals = strData.Split(';');
 
                                if (vals.Length > 0) { acceleration = Convert.ToDouble(vals[0], CultureInfo.InvariantCulture); }
-                               //if (vals.Length > 1) { accelerationMax = Convert.ToDouble(vals[1], CultureInfo.InvariantCulture); }
-                               //if (vals.Length > 2) { accelerationMin = Convert.ToDouble(vals[2], CultureInfo.InvariantCulture); }
 
                                if (acceleration > valueScale[valueScaleIndex - 1])
                                    acceleration = valueScale[valueScaleIndex - 1];
@@ -124,7 +115,7 @@ namespace Ikarus
                                }
                                lacceleration = acceleration;
                            }
-                           catch { return; }
+                           catch (Exception e) { ImportExport.LogMessage(GetType().Name + " got data and failed with exception: " + e.ToString()); }
                        }));
         }
 

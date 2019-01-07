@@ -123,7 +123,7 @@ namespace Ikarus
                                lturbine_RPM = turbine_RPM;
                                lrotor_RPM = rotor_RPM;
                            }
-                           catch { return; }
+                           catch (Exception e) { ImportExport.LogMessage(GetType().Name + " got data and failed with exception: " + e.ToString()); }
                        }));
         }
 

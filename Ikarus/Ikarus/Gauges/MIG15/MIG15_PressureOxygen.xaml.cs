@@ -32,8 +32,7 @@ namespace Ikarus
             OxygenPressure.Visibility = System.Windows.Visibility.Visible;
 
             IDValue.Visibility = System.Windows.Visibility.Hidden;
-            //IDValue.Text = (DataImportID != null) ? DataImportID : "";
-        }
+         }
 
         public void SetID(string _dataImportID)
         {
@@ -96,7 +95,7 @@ namespace Ikarus
                                }
                                lpressure = pressure;
                            }
-                           catch { return; }
+                           catch (Exception e) { ImportExport.LogMessage(GetType().Name + " got data and failed with exception: " + e.ToString()); }
                        }));
         }
 

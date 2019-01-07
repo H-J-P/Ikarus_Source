@@ -105,7 +105,7 @@ namespace Ikarus
                                BackgroundRight.Visibility = (rightGear < 0.2 || rightGear > 0.8) ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
                                BackgroundNose.Visibility = (noseGear < 0.2 || noseGear > 0.8) ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
                            }
-                           catch { return; }
+                           catch (Exception e) { ImportExport.LogMessage(GetType().Name + " got data and failed with exception: " + e.ToString()); }
                        }));
         }
 

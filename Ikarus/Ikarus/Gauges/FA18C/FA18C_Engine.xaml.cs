@@ -33,8 +33,6 @@ namespace Ikarus
         public FA18C_Engine()
         {
             InitializeComponent();
-
-            //shadow.Visibility = MainWindow.shadowChecked ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
         }
 
         public void SetID(string _dataImportID)
@@ -128,7 +126,7 @@ namespace Ikarus
                                lnozzleL = nozzleL;
                                lnozzleR = nozzleR;
                            }
-                           catch { return; }
+                           catch (Exception e) { ImportExport.LogMessage(GetType().Name + " got data and failed with exception: " + e.ToString()); }
                        }));
         }
 

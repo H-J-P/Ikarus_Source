@@ -110,7 +110,7 @@ namespace Ikarus
                                lrpm = rpm;
                                lrpm_50 = rpm_50;
                            }
-                           catch { return; }
+                           catch (Exception e) { ImportExport.LogMessage(GetType().Name + " got data and failed with exception: " + e.ToString()); }
                        }));
         }
 

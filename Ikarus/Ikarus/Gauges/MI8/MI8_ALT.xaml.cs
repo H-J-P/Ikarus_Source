@@ -35,10 +35,6 @@ namespace Ikarus
             InitializeComponent();
 
             shadow.Visibility = MainWindow.shadowChecked ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
-
-            //RotateTransform rtvd10KL10Press = new RotateTransform();
-            //rtvd10KL10Press.Angle = 5;
-            //Pressure.RenderTransform = rtvd10KL10Press;
         }
 
         public void SetID(string _dataImportID)
@@ -115,7 +111,7 @@ namespace Ikarus
                                lvd10KL10Ind = vd10KL10Ind;
                                lvd10KL10Press = vd10KL10Press;
                            }
-                           catch { return; }
+                           catch (Exception e) { ImportExport.LogMessage(GetType().Name + " got data and failed with exception: " + e.ToString()); }
                        }));
         }
 

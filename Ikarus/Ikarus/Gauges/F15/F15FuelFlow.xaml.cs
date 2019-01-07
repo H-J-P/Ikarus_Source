@@ -126,7 +126,7 @@ namespace Ikarus
                                lfuelflow1000 = fuelflow1000;
                                lfuelflow100 = fuelflow100;
                            }
-                           catch { return; }
+                           catch (Exception e) { ImportExport.LogMessage(GetType().Name + " got data and failed with exception: " + e.ToString()); }
                        }));
         }
 

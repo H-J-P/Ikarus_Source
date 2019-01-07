@@ -131,7 +131,7 @@ namespace Ikarus
                                //ttTotalFuel_M.Y = totalFuel_M * -152;
                                //TotalFuel_M.RenderTransform = ttTotalFuel_M;
                            }
-                           catch { return; }
+                           catch (Exception e) { ImportExport.LogMessage(GetType().Name + " got data and failed with exception: " + e.ToString()); }
                        }));
         }
 

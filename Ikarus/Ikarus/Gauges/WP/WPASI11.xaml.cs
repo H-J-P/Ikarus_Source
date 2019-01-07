@@ -124,7 +124,7 @@ namespace Ikarus
                                lias = ias;
                                ltas = tas;
                            }
-                           catch { return; }
+                           catch (Exception e) { ImportExport.LogMessage(GetType().Name + " got data and failed with exception: " + e.ToString()); }
                        }));
         }
 

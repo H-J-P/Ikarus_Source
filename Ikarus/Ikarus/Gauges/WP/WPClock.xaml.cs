@@ -143,7 +143,7 @@ namespace Ikarus
                                lmissionTime_minutes = missionTime_minutes;
                                lmissionTimeInSeconds = missionTimeInSeconds;
                            }
-                           catch { return; }
+                           catch (Exception e) { ImportExport.LogMessage(GetType().Name + " got data and failed with exception: " + e.ToString()); }
                        }));
         }
 

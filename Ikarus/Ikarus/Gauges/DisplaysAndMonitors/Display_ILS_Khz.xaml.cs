@@ -118,7 +118,7 @@ namespace Ikarus
                                if (frequenz == 0.8) Display.Text = "90";
                                if (frequenz == 0.9) Display.Text = "95";
                            }
-                           catch { return; }
+                           catch (Exception e) { ImportExport.LogMessage(GetType().Name + " got data and failed with exception: " + e.ToString()); }
                        }));
         }
 

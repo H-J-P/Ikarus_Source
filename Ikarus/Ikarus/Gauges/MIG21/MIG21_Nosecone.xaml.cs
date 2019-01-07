@@ -99,7 +99,7 @@ namespace Ikarus
                                lefficiency = efficiency;
                                lupes = upes;
                            }
-                           catch { return; }
+                           catch (Exception e) { ImportExport.LogMessage(GetType().Name + " got data and failed with exception: " + e.ToString()); }
                        }));
         }
 

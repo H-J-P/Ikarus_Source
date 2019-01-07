@@ -111,7 +111,7 @@ namespace Ikarus
                                lcommandedCourse = commandedCourse;
                                lbearingNeedle = bearingNeedle;
                            }
-                           catch { return; }
+                           catch (Exception e) { ImportExport.LogMessage(GetType().Name + " got data and failed with exception: " + e.ToString()); }
                        }));
         }
 

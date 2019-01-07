@@ -114,7 +114,7 @@ namespace Ikarus
                                lcoursePointer2 = coursePointer2;
                                lheading = heading;
                            }
-                           catch { return; }
+                           catch (Exception e) { ImportExport.LogMessage(GetType().Name + " got data and failed with exception: " + e.ToString()); }
                        }));
         }
 

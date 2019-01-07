@@ -134,7 +134,8 @@ namespace Ikarus
                                lfuelQuantityLeft = fuelQuantityLeft;
                                lfuelQuantityRight = fuelQuantityRight;
                            }
-                           catch { return; }
+                           //catch { return; }
+                           catch (Exception e) { ImportExport.LogMessage(GetType().Name + " got data and failed with exception: " + e.ToString()); }
                        }));
         }
 

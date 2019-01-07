@@ -89,7 +89,7 @@ namespace Ikarus
                                    KA50_needle_HydP.RenderTransform = ttHydB;
                                }
                            }
-                           catch { return; }
+                           catch (Exception e) { ImportExport.LogMessage(GetType().Name + " got data and failed with exception: " + e.ToString()); }
                        }));
         }
 

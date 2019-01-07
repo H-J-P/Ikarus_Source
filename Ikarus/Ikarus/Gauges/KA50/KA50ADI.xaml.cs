@@ -177,7 +177,7 @@ namespace Ikarus
                                lheightDeviation = heightDeviation;
                                lsideslip = sideslip;
                            }
-                           catch { return; }
+                           catch (Exception e) { ImportExport.LogMessage(GetType().Name + " got data and failed with exception: " + e.ToString()); }
                        }));
         }
 

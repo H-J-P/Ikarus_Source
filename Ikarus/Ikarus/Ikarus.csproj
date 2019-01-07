@@ -312,6 +312,9 @@
     <Compile Include="Gauges\M2KC\M2KC_ACC.xaml.cs">
       <DependentUpon>M2KC_ACC.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Gauges\US\US_HSI_Mirror.xaml.cs">
+      <DependentUpon>US_HSI_Mirror.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Gauges\_Templates\ADI_StbyTemplate.xaml.cs">
       <DependentUpon>ADI_StbyTemplate.xaml</DependentUpon>
     </Compile>
@@ -1776,6 +1779,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Gauges\M2KC\M2KC_ACC.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\US\US_HSI_Mirror.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

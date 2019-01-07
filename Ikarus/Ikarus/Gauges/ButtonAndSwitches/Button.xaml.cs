@@ -24,8 +24,6 @@ namespace Ikarus
 
         private double[] input = new double[] { };
         private double[] output = new double[] { };
-        //private double switchValue = 0.0;
-        //private int state = 0;
 
         private Switches switches = null;
         private bool touchDown = false;
@@ -97,8 +95,8 @@ namespace Ikarus
 
         public void SwitchLight(bool _on)
         {
-            //Light.Visibility = _on ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
         }
+
         private void SetContour()
         {
             int bitmapHeight = bitmapImage.PixelHeight / 2; // Jumping Jack
@@ -158,7 +156,7 @@ namespace Ikarus
                         }
                     }
                 }
-                catch { }
+                catch (Exception e) { ImportExport.LogMessage(GetType().Name + " load images and failed with exception: " + e.ToString()); }
             }
         }
 
@@ -182,7 +180,7 @@ namespace Ikarus
                                ImportExport.LogMessage("***** Error: " + switches.dcsID.ToString());
                                switches.ignoreNextPackage = true;
                             }
-                            catch { return; };
+                            catch (Exception e) { ImportExport.LogMessage("Switch with DCS-ID " + switches.dcsID.ToString() + " got data and failed with exception: " + e.ToString()); }
                        }));
         }
 

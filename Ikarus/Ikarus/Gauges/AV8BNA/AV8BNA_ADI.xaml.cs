@@ -21,7 +21,6 @@ namespace Ikarus
         double pitch = 0.0;
         double bank = 0.0;
         double flagOff = 0.0;
-        //double manualPitch = 0.0;
 
         double lpitch = 0.0;
         double lbank = 0.0;
@@ -90,7 +89,6 @@ namespace Ikarus
                                if (vals.Length > 0) { pitch = Convert.ToDouble(vals[0], CultureInfo.InvariantCulture); }
                                if (vals.Length > 1) { bank = Convert.ToDouble(vals[1], CultureInfo.InvariantCulture); }
                                if (vals.Length > 2) { flagOff = Convert.ToDouble(vals[2], CultureInfo.InvariantCulture); }
-                               //if (vals.Length > 3) { manualPitch = Convert.ToDouble(vals[3], CultureInfo.InvariantCulture); }
 
                                if (lpitch != pitch || lbank != bank)
                                {
@@ -114,7 +112,7 @@ namespace Ikarus
                                lbank = bank;
                                lflagOff = flagOff;
                            }
-                           catch { return; };
+                           catch (Exception e) { ImportExport.LogMessage(GetType().Name + " got data and failed with exception: " + e.ToString()); }
                        }));
         }
 

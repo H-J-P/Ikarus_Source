@@ -32,11 +32,6 @@ namespace Ikarus
         public Display_Tacan()
         {
             InitializeComponent();
-            Pos1.Text = "X";
-            Pos1000.Text = " ";
-            //Pos100.Text = " ";
-            //Pos10.Text = " ";
-            //Pos1.Text = " ";
         }
 
         public void SetID(string _dataImportID)
@@ -124,7 +119,7 @@ namespace Ikarus
 
                                if(value1000 == 1.0)
                                {
-                                   Pos1000.Text = " ";
+                                   Pos1000.Text = "0";
                                }
                                else
                                {
@@ -138,7 +133,7 @@ namespace Ikarus
                                Pos10.Text = valueInt10.ToString().Substring(0, 1);
                                Pos1.Text = value1 < 0.93 ? "X" : "Y";
                            }
-                           catch { return; }
+                           catch (Exception e) { ImportExport.LogMessage(GetType().Name + " got data and failed with exception: " + e.ToString()); }
                        }));
         }
 

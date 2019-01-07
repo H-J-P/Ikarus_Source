@@ -118,7 +118,7 @@ namespace Ikarus
                                FLAPS_LIGHT.Visibility = (flaps > 0.8) ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
                                CHECK_GEAR_LIGHT.Visibility = (checkGear > 0.8) ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
                            }
-                           catch { return; }
+                           catch (Exception e) { ImportExport.LogMessage(GetType().Name + " got data and failed with exception: " + e.ToString()); }
                        }));
         }
 

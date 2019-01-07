@@ -85,7 +85,7 @@ namespace Ikarus
                                LandingGearGreenLight.Visibility = (greenLight > 0.8) ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
                                LandingGearRedLight.Visibility = (redLight > 0.8) ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
                            }
-                           catch { return; }
+                           catch (Exception e) { ImportExport.LogMessage(GetType().Name + " got data and failed with exception: " + e.ToString()); }
                        }));
         }
 

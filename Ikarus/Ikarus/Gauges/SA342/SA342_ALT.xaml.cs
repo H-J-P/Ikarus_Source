@@ -143,7 +143,7 @@ namespace Ikarus
                                lbaro0100 = baro0100;
                                lbaro1000 = baro1000;
                            }
-                           catch { return; }
+                           catch (Exception e) { ImportExport.LogMessage(GetType().Name + " got data and failed with exception: " + e.ToString()); }
                        }));
         }
 

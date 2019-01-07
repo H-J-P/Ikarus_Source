@@ -336,7 +336,7 @@ namespace Ikarus
                                    Reserve_off.Visibility = System.Windows.Visibility.Visible;
                                }
                            }
-                           catch { return; }
+                           catch (Exception e) { ImportExport.LogMessage(GetType().Name + " got data and failed with exception: " + e.ToString()); }
                        }));
         }
 

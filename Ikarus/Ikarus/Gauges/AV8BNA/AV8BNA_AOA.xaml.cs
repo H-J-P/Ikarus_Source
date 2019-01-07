@@ -93,9 +93,6 @@ namespace Ikarus
                                if (vals.Length > 0) { angleOfAttack = Convert.ToDouble(vals[0], CultureInfo.InvariantCulture); }
                                if (vals.Length > 1) { powerOffFlag = Convert.ToDouble(vals[1], CultureInfo.InvariantCulture); }
 
-                               //if (angleOfAttack > 1.0) { angleOfAttack = 1.0; }
-                               //if (angleOfAttack < 0.0) { angleOfAttack = 0.0; }
-
                                if (langleOfAttack != angleOfAttack)
                                {
                                    for (int n = 0; n < (valueScaleIndex - 1); n++)
@@ -120,7 +117,7 @@ namespace Ikarus
                                langleOfAttack = angleOfAttack;
                                lpowerOffFlag = powerOffFlag;
                            }
-                           catch { return; }
+                           catch (Exception e) { ImportExport.LogMessage(GetType().Name + " got data and failed with exception: " + e.ToString()); }
                        }));
         }
 

@@ -27,7 +27,7 @@ namespace Ikarus
         private double oldState = 0.0;
         private bool touchDown = false;
 
-        private int inversed = 0;
+        //private int inversed = 0;
 
         private int windowID = 0;
         private Switches switches = null;
@@ -179,21 +179,25 @@ namespace Ikarus
                                    {
                                        if (input[i] == switchState)
                                        {
-                                           rtKnob = new RotateTransform();
-                                           rtKnob.Angle = output[i];
+                                           rtKnob = new RotateTransform
+                                           {
+                                               Angle = output[i]
+                                           };
                                            SwitchKnob.RenderTransform = rtKnob;
                                            found = true;
                                            break;
                                        }
                                    }
-                                   catch { return; }
+                                   catch (Exception e) { ImportExport.LogMessage("Switch with DCS-ID " + switches.dcsID.ToString() + " got data and failed with exception: " + e.ToString()); }
                                }
 
                                if (!found)
                                {
                                    oldState = input[0];
-                                   rtKnob = new RotateTransform();
-                                   rtKnob.Angle = output[0];
+                                   rtKnob = new RotateTransform
+                                   {
+                                       Angle = output[0]
+                                   };
                                    SwitchKnob.RenderTransform = rtKnob;
                                }
 
@@ -230,8 +234,10 @@ namespace Ikarus
                     {
                         if (input[i] == switchState)
                         {
-                            rtKnob = new RotateTransform();
-                            rtKnob.Angle = output[i + 1];
+                            rtKnob = new RotateTransform
+                            {
+                                Angle = output[i + 1]
+                            };
                             SwitchKnob.RenderTransform = rtKnob;
 
                             switches.value = input[i + 1];
@@ -246,8 +252,10 @@ namespace Ikarus
                     {
                         if (input[i] == switchState)
                         {
-                            rtKnob = new RotateTransform();
-                            rtKnob.Angle = output[i - 1];
+                            rtKnob = new RotateTransform
+                            {
+                                Angle = output[i - 1]
+                            };
                             SwitchKnob.RenderTransform = rtKnob;
 
                             switches.value = input[i - 1];

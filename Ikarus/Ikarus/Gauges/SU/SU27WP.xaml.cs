@@ -130,7 +130,7 @@ namespace Ikarus
                                Ready9.Visibility = (weaponActive[8] > 0.9) ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
                                Ready10.Visibility = (weaponActive[9] > 0.9) ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
                            }
-                           catch { return; }
+                           catch (Exception e) { ImportExport.LogMessage(GetType().Name + " got data and failed with exception: " + e.ToString()); }
                        }));
         }
 

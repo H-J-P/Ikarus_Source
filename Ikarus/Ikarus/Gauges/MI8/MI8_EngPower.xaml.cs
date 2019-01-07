@@ -109,7 +109,7 @@ namespace Ikarus
                                lleftEngine = leftEngine;
                                lrightEngine = rightEngine;
                            }
-                           catch { return; }
+                           catch (Exception e) { ImportExport.LogMessage(GetType().Name + " got data and failed with exception: " + e.ToString()); }
                        }));
         }
 

@@ -109,8 +109,6 @@ namespace Ikarus
                                    grp.Children.Add(rt);
                                    bank_pitch.RenderTransform = grp;
 
-                                   //RotateTransform rtTurn = new RotateTransform();
-                                   //rtTurn.Angle = turn * 45;
                                    turn.RenderTransform = rt;
                                }
 
@@ -124,7 +122,7 @@ namespace Ikarus
                                lbank = bank;
                                lflagOff = flagOff;
                            }
-                           catch { return; };
+                           catch (Exception e) { ImportExport.LogMessage(GetType().Name + " got data and failed with exception: " + e.ToString()); }
                        }));
         }
 

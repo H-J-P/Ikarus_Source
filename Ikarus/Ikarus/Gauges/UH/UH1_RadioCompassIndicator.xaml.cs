@@ -141,7 +141,7 @@ namespace Ikarus
                                lannunciator = annunciator;
                                lpowerFail = powerFail;
                            }
-                           catch { return; }
+                           catch (Exception e) { ImportExport.LogMessage(GetType().Name + " got data and failed with exception: " + e.ToString()); }
                        }));
         }
 

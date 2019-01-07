@@ -144,7 +144,7 @@ namespace Ikarus
                                lglide = glide;
                                lside = side;
                            }
-                           catch { return; }
+                           catch (Exception e) { ImportExport.LogMessage(GetType().Name + " got data and failed with exception: " + e.ToString()); }
                        }));
         }
 

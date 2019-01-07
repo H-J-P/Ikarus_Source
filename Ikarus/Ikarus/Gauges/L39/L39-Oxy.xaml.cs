@@ -97,7 +97,7 @@ namespace Ikarus
 
                                Blinker.Visibility = blink > 0.5 ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
                            }
-                           catch { return; }
+                           catch (Exception e) { ImportExport.LogMessage(GetType().Name + " got data and failed with exception: " + e.ToString()); }
                        }));
         }
 

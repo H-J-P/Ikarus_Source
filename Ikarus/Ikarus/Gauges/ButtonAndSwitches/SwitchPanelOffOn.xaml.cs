@@ -20,7 +20,6 @@ namespace Ikarus
         private string pictureOff = "";
         private int windowID = 0;
         private int panelID = 0;
-        //private int _on = 0;
         private string[] vals = new string[] { };
         private bool touchDown = false;
         BitmapImage bitmapImage = new BitmapImage();
@@ -193,17 +192,6 @@ namespace Ikarus
             Dispatcher.BeginInvoke(DispatcherPriority.Normal,
                        (Action)(() =>
                        {
-                           //string[] vals = strData.Split(';');
-                           //double switchState = 0.0;
-
-                           //try
-                           //{
-                           //    if (vals.Length > 0) { switchState = Convert.ToDouble(vals[0], CultureInfo.InvariantCulture); }
-                           //}
-                           //catch { return; };
-
-                           //if (switchState > 0.8) { SetValue(1.0, false); }
-                           //else { SetValue(0.0, false); }
                        }));
         }
 

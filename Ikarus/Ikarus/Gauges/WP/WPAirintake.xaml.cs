@@ -99,7 +99,7 @@ namespace Ikarus
                                lwedge_1 = wedge_1;
                                lwedge_2 = wedge_2;
                            }
-                           catch { return; };
+                           catch (Exception e) { ImportExport.LogMessage(GetType().Name + " got data and failed with exception: " + e.ToString()); }
                        }));
         }
 

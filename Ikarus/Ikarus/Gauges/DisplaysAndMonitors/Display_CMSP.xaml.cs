@@ -125,7 +125,7 @@ namespace Ikarus
                                Display7.Text = data[6];
                                Display8.Text = data[7];
                            }
-                           catch { return; }
+                           catch (Exception e) { ImportExport.LogMessage(GetType().Name + " got data and failed with exception: " + e.ToString()); }
                        }));
         }
 

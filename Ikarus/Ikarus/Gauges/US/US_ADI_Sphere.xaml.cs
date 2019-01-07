@@ -25,8 +25,6 @@ namespace Ikarus
         double bank = 0.0;
         double bankNeedle = 0.0;
 
-        //private double dPitch = 0.0;
-        //private double dBank = 0.0;
         private const double dNull = 0.0;
 
         double slipBall = 0.0;
@@ -201,7 +199,7 @@ namespace Ikarus
                                lattitudeWarningFlag = attitudeWarningFlag;
                                lcourceWarningFlag = courceWarningFlag;
                            }
-                           catch { return; };
+                           catch (Exception e) { ImportExport.LogMessage(GetType().Name + " got data and failed with exception: " + e.ToString()); }
                        }));
         }
 

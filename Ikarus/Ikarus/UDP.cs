@@ -71,16 +71,16 @@ namespace Ikarus
             // to all devices whose address begins with 192.168.2.
             #endregion
 
-            ipAdress = ipAdress.Substring(0, ipAdress.LastIndexOf(".") + 1) + "255"; // 127.0.0.1 -> 127.0.0.255
-
-            sendingSocket = new Socket(AddressFamily.InterNetwork, SocketType.Dgram, ProtocolType.Udp);
-            sendToAddress = IPAddress.Parse(ipAdress);
-            sendingEndPoint = new IPEndPoint(sendToAddress, port);
-
-            byte[] send_buffer = Encoding.UTF8.GetBytes(textToSend); // ASCII
-
             try
             {
+                ipAdress = ipAdress.Substring(0, ipAdress.LastIndexOf(".") + 1) + "255"; // 127.0.0.1 -> 127.0.0.255
+
+                sendingSocket = new Socket(AddressFamily.InterNetwork, SocketType.Dgram, ProtocolType.Udp);
+                sendToAddress = IPAddress.Parse(ipAdress);
+                sendingEndPoint = new IPEndPoint(sendToAddress, port);
+
+                byte[] send_buffer = Encoding.UTF8.GetBytes(textToSend); // ASCII
+
                 sendingSocket.SetSocketOption(SocketOptionLevel.Socket, SocketOptionName.Broadcast, 0); // ???
                 sendingSocket.SendTo(send_buffer, sendingEndPoint);
                 sendingSocket.Close();
@@ -98,18 +98,9 @@ namespace Ikarus
             try
             {
                 listener = new UdpClient(listenPort);
-            }
-            catch (Exception e)
-            {
-                ImportExport.LogMessage("Listener Exception: " + e.Message, true);
-            }
+                listenerEndPoint = new IPEndPoint(IPAddress.Any, listenPort);
+                byte[] receiveByteArray;
 
-            listenerEndPoint = new IPEndPoint(IPAddress.Any, listenPort);
-
-            byte[] receiveByteArray;
-
-            try
-            {
                 ImportExport.LogMessage("Listener started on Port " + listenPort + "...", true);
                 closeListener = false;
 
@@ -119,7 +110,6 @@ namespace Ikarus
                     gotData = Encoding.UTF8.GetString(receiveByteArray, 0, receiveByteArray.Length); // Change ASCII to UTF8
 
                     gotData = gotData.Replace("*", ":").Trim();
-                    //receivedDataStack.Add(gotData);
                     receivedDataStack.Add(gotData);
 
                     if (MainWindow.detailLog) { ImportExport.LogMessage("--- Received package: " + gotData + " Stacksize: " + receivedDataStack.Count, true); }

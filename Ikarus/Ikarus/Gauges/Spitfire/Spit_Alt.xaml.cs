@@ -123,7 +123,7 @@ namespace Ikarus
                                lalt10000 = alt10000;
                                lpressure = pressure;
                            }
-                           catch { return; }
+                           catch (Exception e) { ImportExport.LogMessage(GetType().Name + " got data and failed with exception: " + e.ToString()); }
                        }));
         }
 

@@ -99,7 +99,7 @@ namespace Ikarus
                                lHeading = Heading;
                                lCourse = Course;
                            }
-                           catch { return; }
+                           catch (Exception e) { ImportExport.LogMessage(GetType().Name + " got data and failed with exception: " + e.ToString()); }
                        }));
         }
 

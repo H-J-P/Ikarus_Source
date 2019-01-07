@@ -31,7 +31,6 @@ namespace Ikarus
         private double headingAngle = 0.0;
         private double slipBall = 0.0;
         private double flag_off = 0.0;
-        //private double pitchangle = 0.0;
         private double courseDeviation = 0.0;
         private double glideSlopeDeviation = 0.0;
 
@@ -123,11 +122,6 @@ namespace Ikarus
                                if (vals.Length > 5) { courseDeviation = Convert.ToDouble(vals[5], CultureInfo.InvariantCulture); }
                                if (vals.Length > 6) { glideSlopeDeviation = Convert.ToDouble(vals[6], CultureInfo.InvariantCulture); }
 
-                               //if (glideSlopeDeviation > 0.5) glideSlopeDeviation = 0.5;
-                               //if (glideSlopeDeviation < -0.5) glideSlopeDeviation = -0.5;
-                               //if (courseDeviation > 0.5) courseDeviation = 0.5;
-                               //if (courseDeviation < -0.5) courseDeviation = -0.5;
-
                                bankNeedle = bank;
 
                                if (lheading != heading)
@@ -191,7 +185,7 @@ namespace Ikarus
                                lFlag_off = flag_off;
                                lbankNeedle = bankNeedle;
                            }
-                           catch { return; };
+                           catch (Exception e) { ImportExport.LogMessage(GetType().Name + " got data and failed with exception: " + e.ToString()); }
                        }));
         }
 

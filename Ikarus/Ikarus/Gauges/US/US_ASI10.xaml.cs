@@ -119,7 +119,7 @@ namespace Ikarus
                                lias = ias;
                                lmach = mach;
                            }
-                           catch { return; }
+                           catch (Exception e) { ImportExport.LogMessage(GetType().Name + " got data and failed with exception: " + e.ToString()); }
                        }));
         }
 

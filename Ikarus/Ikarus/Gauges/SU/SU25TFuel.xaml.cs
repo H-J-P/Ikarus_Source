@@ -149,7 +149,7 @@ namespace Ikarus
                                ltotalFuel_C = totalFuel_C;
                                ltotalFuel_X = totalFuel_X;
                            }
-                           catch { return; };
+                           catch (Exception e) { ImportExport.LogMessage(GetType().Name + " got data and failed with exception: " + e.ToString()); }
                        }));
         }
 

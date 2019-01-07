@@ -106,7 +106,8 @@ namespace Ikarus
                                Priority.Visibility = (priorityStatusIndicator > 0.8) ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
                                Unknown.Visibility = (unknownStatusIndicator > 0.8) ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
                            }
-                           catch { return; }
+                           //catch { return; }
+                           catch (Exception e) { ImportExport.LogMessage(GetType().Name + " got data and failed with exception: " + e.ToString()); }
                        }));
         }
 

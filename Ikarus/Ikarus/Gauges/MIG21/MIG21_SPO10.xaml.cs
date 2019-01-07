@@ -97,7 +97,7 @@ namespace Ikarus
                                SPO_L_B.Visibility = (sPO_L_B > 0.8) ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
                                SPO_MUTED.Visibility = (sPO_MUTED > 0.8) ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
                            }
-                           catch { return; }
+                           catch (Exception e) { ImportExport.LogMessage(GetType().Name + " got data and failed with exception: " + e.ToString()); }
                        }));
         }
 

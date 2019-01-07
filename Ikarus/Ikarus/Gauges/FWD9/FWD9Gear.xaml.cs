@@ -108,7 +108,7 @@ namespace Ikarus
                                FLAPS_START.Visibility = (flapsStart > 0.8) ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
                                FLAPS_DOWN.Visibility = (flapsDown > 0.8) ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
                            }
-                           catch { return; }
+                           catch (Exception e) { ImportExport.LogMessage(GetType().Name + " got data and failed with exception: " + e.ToString()); }
                        }));
         }
 

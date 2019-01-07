@@ -7,7 +7,7 @@ using System.Windows.Threading;
 namespace Ikarus
 {
     /// <summary>
-    /// Interaction logic for USHSI.xaml
+    /// Interaction logic for US_HSI.xaml
     /// </summary>
     public partial class US_HSI : UserControl, I_Ikarus
     {
@@ -262,7 +262,7 @@ namespace Ikarus
                                lcourseCounter_1 = courseCounter_1;
                                //lcourceCounter = courceCounter;
                            }
-                           catch { return; }
+                           catch (Exception e) { ImportExport.LogMessage(GetType().Name + " got data and failed with exception: " + e.ToString()); }
                        }));
         }
 

@@ -109,7 +109,7 @@ namespace Ikarus
                                ldistance10 = distance10;
                                ldistance1 = distance1;
                            }
-                           catch { return; }
+                           catch (Exception e) { ImportExport.LogMessage(GetType().Name + " got data and failed with exception: " + e.ToString()); }
                        }));
         }
 

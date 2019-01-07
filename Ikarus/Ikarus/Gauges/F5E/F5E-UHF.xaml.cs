@@ -148,7 +148,7 @@ namespace Ikarus
                                luhf01Mhz = uhf01Mhz;
                                luhf001Mhz = uhf001Mhz;
                            }
-                           catch { return; }
+                           catch (Exception e) { ImportExport.LogMessage(GetType().Name + " got data and failed with exception: " + e.ToString()); }
                        }));
         }
 

@@ -112,56 +112,56 @@ namespace Ikarus
                                if (vals.Length > 4) { pressure_2 = Convert.ToDouble(vals[4], CultureInfo.InvariantCulture); }
                                if (vals.Length > 5) { pressure_3 = Convert.ToDouble(vals[5], CultureInfo.InvariantCulture); }
                                if (vals.Length > 6) { flagOff = Convert.ToDouble(vals[6], CultureInfo.InvariantCulture); }
-                           }
-                           catch { return; }
 
-                           if (alt100FP != lalt100FP)
-                           {
-                               rtalt100FP.Angle = (alt100FP * 360) + 180;
-                               Altimeter_100.RenderTransform = rtalt100FP;
-                           }
+                               if (alt100FP != lalt100FP)
+                               {
+                                   rtalt100FP.Angle = (alt100FP * 360) + 180;
+                                   Altimeter_100.RenderTransform = rtalt100FP;
+                               }
 
-                           if (alt1000FP != lalt1000FP)
-                           {
-                               rtalt1000FP.Angle = (alt1000FP * 360) + 180;
-                               Altimeter_1000.RenderTransform = rtalt1000FP;
-                           }
+                               if (alt1000FP != lalt1000FP)
+                               {
+                                   rtalt1000FP.Angle = (alt1000FP * 360) + 180;
+                                   Altimeter_1000.RenderTransform = rtalt1000FP;
+                               }
 
-                           if (pressure_0 != lpressure_0)
-                           {
-                               ttpressure_0.Y = pressure_0 * -203;
-                               ALT_P_1.RenderTransform = ttpressure_0;
-                           }
+                               if (pressure_0 != lpressure_0)
+                               {
+                                   ttpressure_0.Y = pressure_0 * -203;
+                                   ALT_P_1.RenderTransform = ttpressure_0;
+                               }
 
-                           if (pressure_1 != lpressure_1)
-                           {
-                               ttpressure_1.Y = pressure_1 * -203;
-                               ALT_P_10.RenderTransform = ttpressure_1;
-                           }
+                               if (pressure_1 != lpressure_1)
+                               {
+                                   ttpressure_1.Y = pressure_1 * -203;
+                                   ALT_P_10.RenderTransform = ttpressure_1;
+                               }
 
-                           if (pressure_2 != lpressure_2)
-                           {
-                               ttpressure_2.Y = pressure_2 * -203;
-                               ALT_P_100.RenderTransform = ttpressure_2;
-                           }
+                               if (pressure_2 != lpressure_2)
+                               {
+                                   ttpressure_2.Y = pressure_2 * -203;
+                                   ALT_P_100.RenderTransform = ttpressure_2;
+                               }
 
-                           if (pressure_3 != lpressure_3)
-                           {
-                               ttpressure_3.Y = pressure_3 * -203;
-                               ALT_P_1000.RenderTransform = ttpressure_3;
-                           }
+                               if (pressure_3 != lpressure_3)
+                               {
+                                   ttpressure_3.Y = pressure_3 * -203;
+                                   ALT_P_1000.RenderTransform = ttpressure_3;
+                               }
 
-                           if (lflagOff != flagOff)
-                           {
-                               Off_Flag.Visibility = (flagOff > 0.8 ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden);
+                               if (lflagOff != flagOff)
+                               {
+                                   Off_Flag.Visibility = (flagOff > 0.8 ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden);
+                               }
+                               lalt100FP = alt100FP;
+                               lalt1000FP = alt1000FP;
+                               lpressure_0 = pressure_0;
+                               lpressure_1 = pressure_1;
+                               lpressure_2 = pressure_2;
+                               lpressure_3 = pressure_3;
+                               lflagOff = flagOff;
                            }
-                           lalt100FP = alt100FP;
-                           lalt1000FP = alt1000FP;
-                           lpressure_0 = pressure_0;
-                           lpressure_1 = pressure_1;
-                           lpressure_2 = pressure_2;
-                           lpressure_3 = pressure_3;
-                           lflagOff = flagOff;
+                           catch (Exception e) { ImportExport.LogMessage(GetType().Name + " got data and failed with exception: " + e.ToString()); }
                        }));
         }
 

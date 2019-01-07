@@ -113,7 +113,7 @@ namespace Ikarus
                                loilPressure = oilPressure;
                                lfuelPressure = fuelPressure;
                            }
-                           catch { return; }
+                           catch (Exception e) { ImportExport.LogMessage(GetType().Name + " got data and failed with exception: " + e.ToString()); }
                        }));
         }
 

@@ -138,7 +138,7 @@ namespace Ikarus
                                    Mhz001.Text = "";
                                }
                            }
-                           catch { return; }
+                           catch (Exception e) { ImportExport.LogMessage(GetType().Name + " got data and failed with exception: " + e.ToString()); }
                        }));
         }
 
