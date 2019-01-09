@@ -144,6 +144,8 @@ namespace Ikarus
             Version.Content = ((AssemblyCopyrightAttribute)assembly.GetCustomAttribute(typeof(AssemblyCopyrightAttribute))).Copyright +
                 "  Version " + Assembly.GetEntryAssembly().GetName().Version.ToString();
 
+            this.Title = Assembly.GetExecutingAssembly().GetCustomAttribute<AssemblyTitleAttribute>().Title;
+
             mainWindow.Add(this);
 
             try
@@ -182,7 +184,7 @@ namespace Ikarus
 
                             if (dbFilename.Length > 0)
                             {
-                                Main.Title = "Ikarus - ( Configured for " + dbFilename.Substring(0, dbFilename.LastIndexOf(".")) + " )";
+                                Main.Title += " - ( Configured for " + dbFilename.Substring(0, dbFilename.LastIndexOf(".")) + " )";
                             }
                         }
                     }

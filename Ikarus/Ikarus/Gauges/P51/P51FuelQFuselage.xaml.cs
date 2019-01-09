@@ -83,14 +83,10 @@ namespace Ikarus
                            {
                                vals = strData.Split(';');
 
+                               if (vals.Length > 0) { tank = Convert.ToDouble(vals[0], CultureInfo.InvariantCulture); }
+
                                if (ltank != tank)
                                {
-                                   // Fuel_Tank_Fuselage.input		                = {0.0, 10.0, 20.0, 30.0, 40.0, 50.0, 60.0, 70.0, 80.0, 85.0} -- US GAL
-                                   //double[] valueScale = new double[valueScaleIndex] { 0.0, 0.12, 0.28, 0.40, 0.51, 0.62, 0.72, 0.83, 0.96, 1.00 };
-                                   //double[] degreeDial = new double[valueScaleIndex] { 0.0, 23.0, 51.0, 75.0, 96.0, 114, 132, 154, 176, 186 };
-
-                                   if (vals.Length > 0) { tank = Convert.ToDouble(vals[0], CultureInfo.InvariantCulture); }
-
                                    for (int n = 0; n < valueScaleIndex - 1; n++)
                                    {
                                        if (tank >= valueScale[n] && tank <= valueScale[n + 1])
