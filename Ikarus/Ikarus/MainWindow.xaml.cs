@@ -318,8 +318,7 @@ namespace Ikarus
             StartTimer();
             StartUDPTimer();
 
-            GetTier();
-
+            //GetTier();
             //GC.Collect(0, GCCollectionMode.Forced);
         }
 

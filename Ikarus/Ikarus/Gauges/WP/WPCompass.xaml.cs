@@ -93,12 +93,15 @@ namespace Ikarus
                                if (lheading != heading || lpitch != pitch || lbank != bank)
                                {
                                    transformGroup = new TransformGroup();
-                                   rtHeading = new RotateTransform();
-                                   ttHeading = new TranslateTransform();
-
-                                   ttHeading.X = 153 * (heading < 0 ? -1 - heading : 1 - heading);
-                                   ttHeading.Y = pitch * 15;
-                                   rtHeading.Angle = bank * -15;
+                                   rtHeading = new RotateTransform
+                                   {
+                                       Angle = bank * -15
+                                   };
+                                   ttHeading = new TranslateTransform
+                                   {
+                                       X = 153 * (heading < 0 ? -1 - heading : 1 - heading),
+                                       Y = pitch * 15
+                                   };
 
                                    transformGroup.Children.Add(ttHeading);
                                    transformGroup.Children.Add(rtHeading);

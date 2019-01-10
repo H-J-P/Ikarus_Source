@@ -66,12 +66,12 @@ namespace Ikarus
 
         public void SetInput(string _input)
         {
-            helper.SetInput(ref _input, ref valueScale, ref valueScaleIndex, 3);
+            helper.SetInput(ref _input, ref valueScale, ref valueScaleIndex, 2);
         }
 
         public void SetOutput(string _output)
         {
-            helper.SetOutput(ref _output, ref degreeDial, 3);
+            helper.SetOutput(ref _output, ref degreeDial, 2);
 
             rtrAlt.Angle = degreeDial[0];
             R_ALT.RenderTransform = rtrAlt;

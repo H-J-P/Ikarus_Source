@@ -42,8 +42,10 @@ namespace Ikarus
 
             knob_Marker_Alarm.Visibility = System.Windows.Visibility.Hidden;
 
-            RotateTransform rtWarningFlag = new RotateTransform();
-            rtWarningFlag.Angle = 10;
+            RotateTransform rtWarningFlag = new RotateTransform
+            {
+                Angle = 10
+            };
             Off_Flagg.RenderTransform = rtWarningFlag;
         }
 
@@ -73,12 +75,12 @@ namespace Ikarus
 
         public void SetInput(string _input)
         {
-            helper.SetInput(ref _input, ref valueScale, ref valueScaleIndex, 3);
+            helper.SetInput(ref _input, ref valueScale, ref valueScaleIndex, 2);
         }
 
         public void SetOutput(string _output)
         {
-            helper.SetOutput(ref _output, ref degreeDial, 3);
+            helper.SetOutput(ref _output, ref degreeDial, 2);
         }
 
         public double GetSize()
