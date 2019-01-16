@@ -44,7 +44,7 @@ namespace Ikarus
         public static bool editmode = false;
         public static bool shadowChecked = true;
 
-        public static bool activateR = false; // Data package R 
+        public static bool activateR = true; // Data package R 
 
         private bool functionTabIsVisible = true;
         public static bool getAllDscData = false;
@@ -53,10 +53,12 @@ namespace Ikarus
         private bool lStateEnabled = true;
         private bool lUdpEnabled = true;
         private bool idFound = false;
+
         public static bool refreshCockpit = false;
         private bool refreshInstruments = false;
         public static bool refeshPopup = false;
         public static bool switchLog = false;
+        public static bool mainGotFocus = false;
 
         public static CultureInfo cult = new CultureInfo("en-GB");
         //---------------------- D A T A B A S E ----------------------
@@ -96,13 +98,13 @@ namespace Ikarus
 
         private int cockpitRefreshLoopCounterMax = 1;
         private int cockpitRefreshLoopCounter = 0;
-        private int dscDataLoopCounterMax = 45;
+        private int dscDataLoopCounterMax = 50;
         private int getAllDscDataLoopCounter = 0;
         private int grabWindowID = 0;
         private int logCount = 0;
         private int loopCounter = 0;
         private int loopMax = 150;
-        private int renderTier = 0;
+        //private int renderTier = 0;
         private int selectedAccessories = -1;
         private int selectedIndexLamps = 0;
         private int selectedIndexSwitches = 0;
@@ -470,6 +472,8 @@ namespace Ikarus
 
                                try
                                {
+                                   getAllDscData = true;
+
                                    if (getAllDscData)
                                    {
                                        if (--getAllDscDataLoopCounter < 1)
@@ -769,13 +773,13 @@ namespace Ikarus
             catch (Exception e) { ImportExport.LogMessage("FillClasses problem .. " + e.ToString()); }
         }
 
-        public void GetTier()
-        {
-            renderTier = (RenderCapability.Tier >> 16);
-            if (renderTier == 0) Tier.Text = "No graphics hardware acceleration";
-            if (renderTier == 1) Tier.Text = "Partial grafics hardware acceleration";
-            if (renderTier == 2) Tier.Text = "Hardware acceleration";
-        }
+        //public void GetTier()
+        //{
+        //    renderTier = (RenderCapability.Tier >> 16);
+        //    if (renderTier == 0) Tier.Text = "No graphics hardware acceleration";
+        //    if (renderTier == 1) Tier.Text = "Partial grafics hardware acceleration";
+        //    if (renderTier == 2) Tier.Text = "Hardware acceleration";
+        //}
 
         private void GrabMap(ref string gotData)
         {
@@ -793,7 +797,6 @@ namespace Ikarus
                 }
             }
             catch (Exception e) { ImportExport.LogMessage("GrabMap problem .. " + e.ToString()); }
-
         }
 
         private bool GrabFile(string ID, ref string gotData)
@@ -1195,43 +1198,43 @@ namespace Ikarus
             catch { }
         }
 
-        private void ResetCockpit()
-        {
-            for (int i = 0; i < instruments.Count; i++)
-            {
-                try
-                {
-                    windowID = instruments[i].windowID - 1;
+        //private void ResetCockpit()
+        //{
+        //    for (int i = 0; i < instruments.Count; i++)
+        //    {
+        //        try
+        //        {
+        //            windowID = instruments[i].windowID - 1;
 
-                    for (int n = 0; n < instruments[i].instrumentFunction.Count; n++)
-                    {
-                        if (cockpitWindowActiv && cockpitWindows[windowID] != null) cockpitWindows[windowID].UpdateInstruments(instruments[i].instID, false);
-                    }
-                }
-                catch (Exception e) { ImportExport.LogMessage("ResetCockpit problem instruments ID = " + instruments[i].instID + " .. " + e.ToString()); }
-            }
+        //            for (int n = 0; n < instruments[i].instrumentFunction.Count; n++)
+        //            {
+        //                if (cockpitWindowActiv && cockpitWindows[windowID] != null) cockpitWindows[windowID].UpdateInstruments(instruments[i].instID, false);
+        //            }
+        //        }
+        //        catch (Exception e) { ImportExport.LogMessage("ResetCockpit problem instruments ID = " + instruments[i].instID + " .. " + e.ToString()); }
+        //    }
 
-            for (int n = 0; n < lamps.Count; n++)
-            {
+        //    for (int n = 0; n < lamps.Count; n++)
+        //    {
 
-                try
-                {
-                    windowID = lamps[n].windowID - 1;
-                    if (cockpitWindowActiv && cockpitWindows[windowID] != null) cockpitWindows[windowID].UpdateLamps(lamps[n].ID);
-                }
-                catch (Exception e) { ImportExport.LogMessage("ResetCockpit problem lamps ID = " + lamps[n].ID + " .. " + e.ToString()); }
-            }
+        //        try
+        //        {
+        //            windowID = lamps[n].windowID - 1;
+        //            if (cockpitWindowActiv && cockpitWindows[windowID] != null) cockpitWindows[windowID].UpdateLamps(lamps[n].ID);
+        //        }
+        //        catch (Exception e) { ImportExport.LogMessage("ResetCockpit problem lamps ID = " + lamps[n].ID + " .. " + e.ToString()); }
+        //    }
 
-            for (int n = 0; n < switches.Count; n++)
-            {
-                try
-                {
-                    windowID = switches[n].windowID - 1;
-                    if (cockpitWindowActiv && cockpitWindows[windowID] != null) cockpitWindows[windowID].UpdateSwitches(switches[n].ID);
-                }
-                catch (Exception e) { ImportExport.LogMessage("ResetCockpit problem switches ID = " + switches[n].ID + " .. " + e.ToString()); }
-            }
-        }
+        //    for (int n = 0; n < switches.Count; n++)
+        //    {
+        //        try
+        //        {
+        //            windowID = switches[n].windowID - 1;
+        //            if (cockpitWindowActiv && cockpitWindows[windowID] != null) cockpitWindows[windowID].UpdateSwitches(switches[n].ID);
+        //        }
+        //        catch (Exception e) { ImportExport.LogMessage("ResetCockpit problem switches ID = " + switches[n].ID + " .. " + e.ToString()); }
+        //    }
+        //}
 
         private void RefreshAllSwitches()
         {
@@ -1248,7 +1251,6 @@ namespace Ikarus
                             switches[i].doit = false;
                         }
                         catch { }
-
                     }
                     package = "R";
                     UDP.UDPSender(IPAddess.Text.Trim(), Convert.ToInt32(PortSender.Text), package);

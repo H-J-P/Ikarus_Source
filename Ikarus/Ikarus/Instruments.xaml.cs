@@ -300,9 +300,6 @@ namespace Ikarus
             catch (Exception e) { ImportExport.LogMessage("Generate switches: " + classname + " .... " + e.ToString()); }
         }
 
-        /// <summary>
-        /// Gets the current mouse position on screen
-        /// </summary>
         private Point GetMousePosition()
         {
             // Position of the mouse relative to the window
@@ -311,6 +308,7 @@ namespace Ikarus
             // Add the window position
             return new Point(position.X + this.Left, position.Y + this.Top);
         }
+
         private void SetObjectsPara(ref DataTable table, ref int instanceID)
         {
             try
@@ -728,12 +726,13 @@ namespace Ikarus
             SetFocusTo();
         }
 
-        #endregion
-
         private void Window_MouseMove(object sender, MouseEventArgs e)
         {
             if (MainWindow.editmode)
                 MousePosition.Text = GetMousePosition().ToString();
         }
+
+        #endregion
+
     }
 }

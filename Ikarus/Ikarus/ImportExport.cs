@@ -7,7 +7,8 @@ namespace Ikarus
     static class ImportExport
     {
         public static List<string> logItems = new List<string>();
-        private static int maxListcount = 1000;
+
+        private static int maxListcount = 10000;
 
         public static void LogMessage(string item, bool showTime = true)
         {
