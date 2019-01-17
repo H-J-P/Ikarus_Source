@@ -157,7 +157,7 @@ namespace Ikarus
                                }
                                if (lTurn != turn)
                                {
-                                   ttTurn.X = turn * -60;
+                                   ttTurn.X = turn * 60;
                                    Turnindicator.RenderTransform = ttTurn;
                                }
 
