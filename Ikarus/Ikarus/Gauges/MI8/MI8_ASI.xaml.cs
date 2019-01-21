@@ -16,6 +16,7 @@ namespace Ikarus
         private double[] valueScale = new double[] { };
         private double[] degreeDial = new double[] { };
         int valueScaleIndex = 0;
+
         private int windowID = 0;
         private string[] vals = new string[] { };
         GaugesHelper helper = null;
@@ -67,12 +68,12 @@ namespace Ikarus
 
         public void SetInput(string _input)
         {
-            helper.SetInput(ref _input, ref valueScale, ref valueScaleIndex, 2);
+            helper.SetInput(ref _input, ref valueScale, ref valueScaleIndex, 3);
         }
 
         public void SetOutput(string _output)
         {
-            helper.SetOutput(ref _output, ref degreeDial, 2);
+            helper.SetOutput(ref _output, ref degreeDial, 3);
         }
 
         public double GetSize()
@@ -87,6 +88,10 @@ namespace Ikarus
 
         public void UpdateGauge(string strData)
         {
+            // Input:       0, 0.076, 0.189, 0.309, 0.419, 0.539, 0.649, 0.757, 0.863, 0.973,  1.000
+            // Grad°        0,     8,    59,    98,   138,   178,   218,   258,   298,   339,    345
+            // Zifferblatt  0,     5,    10,    15,    20,    25,    30,    35,    40,    45,     48
+
             Dispatcher.BeginInvoke(DispatcherPriority.Normal,
                        (Action)(() =>
                        {
@@ -111,6 +116,7 @@ namespace Ikarus
                                        Cockpit.UpdateInOut(dataImportID, "1", ias.ToString(), Convert.ToInt32(rtIAS.Angle).ToString());
                                    }
                                    IAS_L.RenderTransform = rtIAS;
+                                   IASValue.Text = ias.ToString();
                                }
                                lias = ias;
                            }

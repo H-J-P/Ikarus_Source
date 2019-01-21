@@ -45,7 +45,7 @@ namespace Ikarus
             A_036_DangerRALT_lamp.Visibility = System.Windows.Visibility.Hidden;
 
             RotateTransform rtwarningFlag = new RotateTransform();
-            rtwarningFlag.Angle = 11;
+            rtwarningFlag.Angle = 0; // 11;
             Off_Flagg.RenderTransform = rtwarningFlag;
         }
 
@@ -75,12 +75,12 @@ namespace Ikarus
 
         public void SetInput(string _input)
         {
-            helper.SetInput(ref _input, ref valueScale, ref valueScaleIndex, 2);
+            helper.SetInput(ref _input, ref valueScale, ref valueScaleIndex, 3);
         }
 
         public void SetOutput(string _output)
         {
-            helper.SetOutput(ref _output, ref degreeDial, 2);
+            helper.SetOutput(ref _output, ref degreeDial, 3);
         }
 
         public double GetSize()

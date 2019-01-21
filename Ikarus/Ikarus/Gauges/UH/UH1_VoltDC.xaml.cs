@@ -16,6 +16,10 @@ namespace Ikarus
         private string[] vals = new string[] { };
         GaugesHelper helper = null;
 
+        private double[] valueScale = new double[] { };
+        private double[] degreeDial = new double[] { };
+        int valueScaleIndex = 0;
+
         public int GetWindowID() { return windowID; }
 
         double voltage = 0.0;
@@ -56,10 +60,12 @@ namespace Ikarus
 
         public void SetInput(string _input)
         {
+            helper.SetInput(ref _input, ref valueScale, ref valueScaleIndex, 2);
         }
 
         public void SetOutput(string _output)
         {
+            helper.SetOutput(ref _output, ref degreeDial, 2);
         }
 
         public double GetSize()
@@ -83,11 +89,19 @@ namespace Ikarus
 
                                 if (vals.Length > 0) { voltage = Convert.ToDouble(vals[0], CultureInfo.InvariantCulture); }
 
-                                if (voltage < 0.0) voltage = 0.0;
+                                //if (voltage < 0.0) voltage = 0.0;
 
                                 if (lvoltage != voltage)
                                 {
-                                    rtVoltage.Angle = voltage * 109;
+                                    //rtVoltage.Angle = voltage * 109;
+                                    for (int n = 0; n < (valueScaleIndex - 1); n++)
+                                    {
+                                        if (voltage >= valueScale[n] && voltage <= valueScale[n + 1])
+                                        {
+                                            rtVoltage.Angle = (degreeDial[n] - degreeDial[n + 1]) / (valueScale[n] - valueScale[n + 1]) * (voltage - valueScale[n]) + degreeDial[n];
+                                            break;
+                                        }
+                                    }
                                     VoltageDC.RenderTransform = rtVoltage;
                                 }
                                 lvoltage = voltage;

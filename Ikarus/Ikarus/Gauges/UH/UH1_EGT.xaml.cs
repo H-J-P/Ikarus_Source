@@ -17,6 +17,9 @@ namespace Ikarus
         GaugesHelper helper = null;
 
         public int GetWindowID() { return windowID; }
+        private double[] valueScale = new double[] { };
+        private double[] degreeDial = new double[] { };
+        int valueScaleIndex = 0;
 
         double needle = 0.0;
         double lneedle = 0.0;
@@ -56,10 +59,12 @@ namespace Ikarus
 
         public void SetInput(string _input)
         {
+            helper.SetInput(ref _input, ref valueScale, ref valueScaleIndex, 2);
         }
 
         public void SetOutput(string _output)
         {
+            helper.SetOutput(ref _output, ref degreeDial, 2);
         }
 
         public double GetSize()
@@ -87,7 +92,15 @@ namespace Ikarus
 
                                if (lneedle != needle)
                                {
-                                   rtrNeedle.Angle = needle * 268;
+                                   //rtrNeedle.Angle = needle * 268;
+                                   for (int n = 0; n < (valueScaleIndex - 1); n++)
+                                   {
+                                       if (needle >= valueScale[n] && needle <= valueScale[n + 1])
+                                       {
+                                           rtrNeedle.Angle = (degreeDial[n] - degreeDial[n + 1]) / (valueScale[n] - valueScale[n + 1]) * (needle - valueScale[n]) + degreeDial[n];
+                                           break;
+                                       }
+                                   }
                                    ExhaustTemp.RenderTransform = rtrNeedle;
                                }
                                lneedle = needle;

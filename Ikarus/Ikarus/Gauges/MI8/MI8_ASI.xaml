@@ -102,14 +102,6 @@
                 <TextBlock x:Name="IASValue" Canvas.Left="10" TextWrapping="Wrap" Text="0.0000" Canvas.Top="150" Foreground="#FFE2E2E2"/>
             </Canvas>
             <Canvas x:Name="IAS_L" Height="97.623" Canvas.Left="79.829" Canvas.Top="20.954" Width="10.343" RenderTransformOrigin="0.508,0.656">
-                <Canvas.RenderTransform>
-                    <TransformGroup>
-                        <ScaleTransform/>
-                        <SkewTransform/>
-                        <RotateTransform Angle="-1"/>
-                        <TranslateTransform/>
-                    </TransformGroup>
-                </Canvas.RenderTransform>
                 <Path Data="M4.786,5.423L4.786,84.154 0,84.154 0,5.423 2.393,0z" Fill="#FFCCCCCC" Height="84.154" Canvas.Left="2.778" Canvas.Top="0" Width="4.786"/>
                 <Path Data="M0,38.402C0,41.258 2.316,43.574 5.171,43.574 8.027,43.574 10.343,41.258 10.343,38.402 10.343,36.41 9.215,34.681 7.564,33.817L7.564,14.582C9.215,13.719 10.343,11.99 10.343,9.997 10.343,8.005 9.215,6.275 7.564,5.412L7.564,0 2.779,0 2.779,5.412C1.128,6.275 0,8.005 0,9.997 0,11.99 1.128,13.719 2.779,14.582L2.779,33.817C1.128,34.681,0,36.41,0,38.402" Fill="Black" Height="43.574" Canvas.Left="0" Canvas.Top="54.049" Width="10.343"/>
                 <Path Data="M2.498,1.303C2.498,1.963 1.964,2.498 1.303,2.498 0.643,2.498 0.108,1.963 0.108,1.303 0.108,0.643 0.643,0.108 1.303,0.108 1.964,0.108 2.498,0.643 2.498,1.303" Fill="#FF1A1A1A" Height="2.606" Canvas.Left="3.868" Stroke="#FF333333" StrokeThickness="0.216" StrokeMiterLimit="2.414" Canvas.Top="62.743" Width="2.606"/>

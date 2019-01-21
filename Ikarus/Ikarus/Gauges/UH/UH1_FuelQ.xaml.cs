@@ -16,6 +16,10 @@ namespace Ikarus
         private string[] vals = new string[] { };
         GaugesHelper helper = null;
 
+        private double[] valueScale = new double[] { };
+        private double[] degreeDial = new double[] { };
+        int valueScaleIndex = 0;
+
         public int GetWindowID() { return windowID; }
 
         double needle = 0.0;
@@ -56,10 +60,12 @@ namespace Ikarus
 
         public void SetInput(string _input)
         {
+            helper.SetInput(ref _input, ref valueScale, ref valueScaleIndex, 2);
         }
 
         public void SetOutput(string _output)
         {
+            helper.SetOutput(ref _output, ref degreeDial, 2);
         }
 
         public double GetSize()
@@ -82,11 +88,19 @@ namespace Ikarus
                                vals = strData.Split(';');
 
                                if (vals.Length > 0) { needle = Convert.ToDouble(vals[0], CultureInfo.InvariantCulture); }
-                               if (needle < 0.0) needle = 0.0;
+                               //if (needle < 0.0) needle = 0.0;
 
                                if (lneedle != needle)
                                {
-                                   rtrNeedle.Angle = needle * 300;
+                                   //rtrNeedle.Angle = needle * 300;
+                                   for (int n = 0; n < (valueScaleIndex - 1); n++)
+                                   {
+                                       if (needle >= valueScale[n] && needle <= valueScale[n + 1])
+                                       {
+                                           rtrNeedle.Angle = (degreeDial[n] - degreeDial[n + 1]) / (valueScale[n] - valueScale[n + 1]) * (needle - valueScale[n]) + degreeDial[n];
+                                           break;
+                                       }
+                                   }
                                    FuelQuantity.RenderTransform = rtrNeedle;
                                }
                                lneedle = needle;
