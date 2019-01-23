@@ -89,7 +89,7 @@ namespace Ikarus
                                if (vals.Length > 1) { temperature = Convert.ToDouble(vals[1], CultureInfo.InvariantCulture); }
 
                                if (pressure < 0.0) pressure = 0.0;
-                               if (temperature < 0.0) temperature = 0.0;
+                               if (temperature < -0.25) temperature = -0.25; // -0.25 to 0.75
 
                                if (lpressure != pressure)
                                {
@@ -98,7 +98,14 @@ namespace Ikarus
                                }
                                if (ltemperature != temperature)
                                {
-                                   rttemperature.Angle = temperature * 90;
+                                   if (temperature >= 0)
+                                   {
+                                       rttemperature.Angle = temperature * 90 * (1 / 0.75);
+                                   }
+                                   if (temperature < 0)
+                                   {
+                                       rttemperature.Angle = temperature * 30 * (1 / 0.25);
+                                   }
                                    oils_t_X_engine.RenderTransform = rttemperature;
                                }
                                lpressure = pressure;

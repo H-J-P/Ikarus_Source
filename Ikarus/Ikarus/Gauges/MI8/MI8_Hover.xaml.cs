@@ -30,6 +30,8 @@ namespace Ikarus
 
         TranslateTransform tthover_x = new TranslateTransform();
         TranslateTransform ttHover_y = new TranslateTransform();
+        TranslateTransform tthover_plus_x = new TranslateTransform();
+        TranslateTransform ttHover_plus_y = new TranslateTransform();
         RotateTransform rtHover_z = new RotateTransform();
 
         public MI8_Hover()
@@ -104,27 +106,39 @@ namespace Ikarus
 
                                if (lhover_x != hover_x)
                                {
-                                   if (hover_x > 0.0)
+                                   if (hover_x >= 0.0)
                                    {
-                                       tthover_x.Y = hover_x * (-50 / 3.6) * 2;
-                                       diss15_hover_x_plus.RenderTransform = tthover_x;
+                                       tthover_x.Y = 0;
+                                       diss15_hover_x_minus.RenderTransform = tthover_x;
+
+                                       tthover_plus_x.Y = hover_x * (-42 / 3.6) * 2;
+                                       diss15_hover_x_plus.RenderTransform = tthover_plus_x;
                                    }
-                                   else
+                                   if (hover_x < 0.0)
                                    {
-                                       tthover_x.Y = hover_x * (25 / 3.6) * 2;
+                                       tthover_plus_x.Y = 0;
+                                       diss15_hover_x_plus.RenderTransform = tthover_plus_x;
+
+                                       tthover_x.Y = hover_x * (42 / 3.6) * 2;
                                        diss15_hover_x_minus.RenderTransform = tthover_x;
                                    }
                                }
                                if (lhover_y != hover_y)
                                {
-                                   if (hover_y > 0.0)
+                                   if (hover_y >= 0.0)
                                    {
-                                       ttHover_y.X = hover_y * -30 / 2;
-                                       diss15_hover_y_plus.RenderTransform = ttHover_y;
+                                       ttHover_y.X = 0;
+                                       diss15_hover_y_minus.RenderTransform = ttHover_y;
+
+                                       ttHover_plus_y.X = hover_y * -46;
+                                       diss15_hover_y_plus.RenderTransform = ttHover_plus_y;
                                    }
-                                   else
+                                   if (hover_y < 0.0)
                                    {
-                                       ttHover_y.X = hover_y * 20 / 2;
+                                       ttHover_plus_y.X = 0;
+                                       diss15_hover_y_plus.RenderTransform = ttHover_plus_y;
+
+                                       ttHover_y.X = hover_y * 25;
                                        diss15_hover_y_minus.RenderTransform = ttHover_y;
                                    }
                                }
