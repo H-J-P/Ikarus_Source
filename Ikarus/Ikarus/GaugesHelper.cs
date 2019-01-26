@@ -25,31 +25,43 @@ namespace Ikarus
         {
             System.Windows.Point originalPoint = new System.Windows.Point(0, 0), currentPoint;
             TranslateTransform trUsercontrol = new TranslateTransform(0, 0);
-            bool isMousePressed = false;
+            bool isMouseLeftButtonDown = false;
             bool isRotated = false;
 
             movedByElement.MouseLeftButtonDown += (a, b) =>
             {
-                isMousePressed = true;
-                originalPoint = ((System.Windows.Input.MouseEventArgs)b).GetPosition(moveThisElement);
-                isRotated = MainWindow.cockpitWindows[windowID].UpdatePosition(moveThisElement.PointToScreen(new System.Windows.Point(0, 0)), tableName, dataImportID);
+                b.Handled = true;
+
+                isMouseLeftButtonDown = true;
+                originalPoint = b.GetPosition(moveThisElement);
             };
 
             movedByElement.MouseLeftButtonUp += (a, b) =>
             {
-                isMousePressed = false;
-                isRotated = MainWindow.cockpitWindows[windowID].UpdatePosition(moveThisElement.PointToScreen(new System.Windows.Point(0, 0)), tableName, dataImportID);
+                b.Handled = true;
+
+                isMouseLeftButtonDown = false;
+                isRotated = MainWindow.cockpitWindows[windowID].UpdatePosition(moveThisElement.PointToScreen(new System.Windows.Point(0, 0)), tableName, dataImportID); // Select it in tab
             };
-            movedByElement.MouseLeave += (a, b) => isMousePressed = false;
+
+            movedByElement.MouseLeave += (a, b) =>
+            {
+                b.Handled = true;
+
+                isMouseLeftButtonDown = false;
+            };
 
             movedByElement.MouseMove += (a, b) =>
             {
-                if (!isMousePressed || isRotated) return;
+                b.Handled = true;
 
-                currentPoint = ((System.Windows.Input.MouseEventArgs)b).GetPosition(moveThisElement);
-                trUsercontrol.X += currentPoint.X - originalPoint.X;
-                trUsercontrol.Y += currentPoint.Y - originalPoint.Y;
-                moveThisElement.RenderTransform = trUsercontrol;
+                if (isMouseLeftButtonDown)
+                {
+                    currentPoint = b.GetPosition(moveThisElement);
+                    trUsercontrol.X += currentPoint.X * 0.75 - originalPoint.X;
+                    trUsercontrol.Y += currentPoint.Y * 0.75 - originalPoint.Y;
+                    moveThisElement.RenderTransform = trUsercontrol;
+                }
             };
         }
 

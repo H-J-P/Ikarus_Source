@@ -1782,6 +1782,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Gauges\MIG29\MIG-29_FuelQ-3.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Gauges\US\US_HSI_Mirror.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
