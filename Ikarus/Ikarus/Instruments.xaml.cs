@@ -711,6 +711,9 @@ namespace Ikarus
         {
             Visibility = Visibility.Hidden;
             if (!MainWindow.editmode) ProzessHelper.SetFocusToExternalApp(MainWindow.processNameDCS);
+
+            MainWindow.cockpitWindowActiv = false;
+
             MemoryManagement.Reduce();
         }
 

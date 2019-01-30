@@ -15,6 +15,7 @@ namespace Ikarus
         private int windowID = 0;
         private double[] valueScale = new double[] { };
         private double[] degreeDial = new double[] { };
+
         int valueScaleIndex = 0;
         private string[] vals = new string[] { };
         GaugesHelper helper = null;
@@ -77,6 +78,11 @@ namespace Ikarus
 
         public void UpdateGauge(string strData)
         {
+            // FW-190D9
+            //   0.0,   0.1,   0.2,    0.3,   0.7,   0.8,   0.9,   1.0
+            //   0.0, 0.068, 0.169,  0.273, 0.680, 0.780, 0.880,   1.0
+            //     0,    19,    48,     77,   186,   214,   241,   270
+
             Dispatcher.BeginInvoke(DispatcherPriority.Normal,
                        (Action)(() =>
                        {

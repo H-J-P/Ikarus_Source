@@ -312,8 +312,23 @@
     <Compile Include="Gauges\M2KC\M2KC_ACC.xaml.cs">
       <DependentUpon>M2KC_ACC.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Gauges\MIG29\MIG29-AOA.xaml.cs">
+      <DependentUpon>MIG29-AOA.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\MIG29\MIG29-FuelQV3.xaml.cs">
+      <DependentUpon>MIG29-FuelQV3.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\MIG29\MIG29-HYD.xaml.cs">
+      <DependentUpon>MIG29-HYD.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\MIG29\MIG29-OXY.xaml.cs">
+      <DependentUpon>MIG29-OXY.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Gauges\US\US_HSI_Mirror.xaml.cs">
       <DependentUpon>US_HSI_Mirror.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\WP\All-WhCompass-2.xaml.cs">
+      <DependentUpon>All-WhCompass-2.xaml</DependentUpon>
     </Compile>
     <Compile Include="Gauges\_Templates\ADI_StbyTemplate.xaml.cs">
       <DependentUpon>ADI_StbyTemplate.xaml</DependentUpon>
@@ -660,8 +675,8 @@
     <Compile Include="Gauges\L39\L39-VVI_ft.xaml.cs">
       <DependentUpon>L39-VVI_ft.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Gauges\MIG29\MIG29MDI.xaml.cs">
-      <DependentUpon>MIG29MDI.xaml</DependentUpon>
+    <Compile Include="Gauges\MIG29\MIG29-MDI.xaml.cs">
+      <DependentUpon>MIG29-MDI.xaml</DependentUpon>
     </Compile>
     <Compile Include="Gauges\ButtonAndSwitches\ButtonPanelOffOn.xaml.cs">
       <DependentUpon>ButtonPanelOffOn.xaml</DependentUpon>
@@ -1782,13 +1797,29 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Gauges\MIG29\MIG-29_FuelQ-3.xaml">
-      <Generator>MSBuild:Compile</Generator>
+    <Page Include="Gauges\MIG29\MIG29-AOA.xaml">
       <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Gauges\MIG29\MIG29-FuelQV3.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Gauges\MIG29\MIG29-HYD.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Gauges\MIG29\MIG29-OXY.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Gauges\US\US_HSI_Mirror.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\WP\All-WhCompass-2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Gauges\_Templates\ADI_StbyTemplate.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -2250,7 +2281,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Gauges\MIG29\MIG29MDI.xaml">
+    <Page Include="Gauges\MIG29\MIG29-MDI.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

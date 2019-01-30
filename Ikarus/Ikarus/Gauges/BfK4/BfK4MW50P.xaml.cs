@@ -13,6 +13,11 @@ namespace Ikarus
     {
         private string dataImportID = "";
         private int windowID = 0;
+
+        private double[] valueScale = new double[] { };
+        private double[] degreeDial = new double[] { };
+        int valueScaleIndex = 0;
+
         private string[] vals = new string[] { };
         GaugesHelper helper = null;
 
@@ -55,10 +60,12 @@ namespace Ikarus
 
         public void SetInput(string _input)
         {
+            helper.SetInput(ref _input, ref valueScale, ref valueScaleIndex, 2);
         }
 
         public void SetOutput(string _output)
         {
+            helper.SetOutput(ref _output, ref degreeDial, 2);
         }
 
         public double GetSize()
@@ -82,11 +89,16 @@ namespace Ikarus
 
                                if (vals.Length > 0) { value = Convert.ToDouble(vals[0], CultureInfo.InvariantCulture); }
 
-                               if (value < 0.0) value = 0.0;
-
                                if (lvalue != value)
                                {
-                                   rtMW50Pressure.Angle = value * 270;
+                                   for (int n = 0; n < valueScaleIndex - 1; n++)
+                                   {
+                                       if (value >= valueScale[n] && value <= valueScale[n + 1])
+                                       {
+                                           rtMW50Pressure.Angle = (degreeDial[n] - degreeDial[n + 1]) / (valueScale[n] - valueScale[n + 1]) * (value - valueScale[n]) + degreeDial[n];
+                                           break;
+                                       }
+                                   }
                                    Lw_MW50P_Needle.RenderTransform = rtMW50Pressure;
                                }
                                lvalue = value;

@@ -98,7 +98,7 @@ namespace Ikarus
 
         private int cockpitRefreshLoopCounterMax = 1;
         private int cockpitRefreshLoopCounter = 0;
-        private int dscDataLoopCounterMax = 50;
+        private int dscDataLoopCounterMax = 300; // 30 sec.
         private int getAllDscDataLoopCounter = 0;
         private int grabWindowID = 0;
         private int logCount = 0;
@@ -1198,44 +1198,6 @@ namespace Ikarus
             catch { }
         }
 
-        //private void ResetCockpit()
-        //{
-        //    for (int i = 0; i < instruments.Count; i++)
-        //    {
-        //        try
-        //        {
-        //            windowID = instruments[i].windowID - 1;
-
-        //            for (int n = 0; n < instruments[i].instrumentFunction.Count; n++)
-        //            {
-        //                if (cockpitWindowActiv && cockpitWindows[windowID] != null) cockpitWindows[windowID].UpdateInstruments(instruments[i].instID, false);
-        //            }
-        //        }
-        //        catch (Exception e) { ImportExport.LogMessage("ResetCockpit problem instruments ID = " + instruments[i].instID + " .. " + e.ToString()); }
-        //    }
-
-        //    for (int n = 0; n < lamps.Count; n++)
-        //    {
-
-        //        try
-        //        {
-        //            windowID = lamps[n].windowID - 1;
-        //            if (cockpitWindowActiv && cockpitWindows[windowID] != null) cockpitWindows[windowID].UpdateLamps(lamps[n].ID);
-        //        }
-        //        catch (Exception e) { ImportExport.LogMessage("ResetCockpit problem lamps ID = " + lamps[n].ID + " .. " + e.ToString()); }
-        //    }
-
-        //    for (int n = 0; n < switches.Count; n++)
-        //    {
-        //        try
-        //        {
-        //            windowID = switches[n].windowID - 1;
-        //            if (cockpitWindowActiv && cockpitWindows[windowID] != null) cockpitWindows[windowID].UpdateSwitches(switches[n].ID);
-        //        }
-        //        catch (Exception e) { ImportExport.LogMessage("ResetCockpit problem switches ID = " + switches[n].ID + " .. " + e.ToString()); }
-        //    }
-        //}
-
         private void RefreshAllSwitches()
         {
             try
@@ -1252,9 +1214,11 @@ namespace Ikarus
                         }
                         catch { }
                     }
-                    package = "R";
-                    UDP.UDPSender(IPAddess.Text.Trim(), Convert.ToInt32(PortSender.Text), package);
-
+                    if (cockpitWindowActiv)
+                    {
+                        package = "R";
+                        UDP.UDPSender(IPAddess.Text.Trim(), Convert.ToInt32(PortSender.Text), package);
+                    }
                     if (detailLog || switchLog) { ImportExport.LogMessage("Send package to " + IPAddess.Text.Trim() + ":" + PortSender.Text + " - Package: " + package); }
                 }
                 getAllDscData = false;
