@@ -21,7 +21,7 @@ namespace Ikarus
             tableName = _tableName;
         }
 
-        public void MakeDraggable(System.Windows.UIElement moveThisElement, System.Windows.UIElement movedByElement)
+        public void MakeDraggable_Old(System.Windows.UIElement moveThisElement, System.Windows.UIElement movedByElement)
         {
             System.Windows.Point originalPoint = new System.Windows.Point(0, 0), currentPoint;
             TranslateTransform trUsercontrol = new TranslateTransform(0, 0);
@@ -53,11 +53,17 @@ namespace Ikarus
             };
         }
 
-        public void MakeDraggable_New(System.Windows.UIElement moveThisElement, System.Windows.UIElement movedByElement)
+        // https://www.youtube.com/watch?v=8DwJ_3EPJAI
+        // https://www.youtube.com/watch?v=8YLzpo09Wfw
+
+        public void MakeDraggable(System.Windows.UIElement moveThisElement, System.Windows.UIElement movedByElement)
         {
-            System.Windows.Point originalPoint = new System.Windows.Point(0, 0), currentPoint;
             TranslateTransform trUsercontrol = new TranslateTransform(0, 0);
+
+            System.Windows.Point originalPoint = new System.Windows.Point(0, 0), currentPoint;
             System.Windows.Point pointToScreen = new System.Windows.Point(0, 0);
+            System.Windows.Point locationFromWindow = new System.Windows.Point(0, 0);
+
             bool isMouseLeftButtonDown = false;
             bool isRotated = false;
 
@@ -66,21 +72,17 @@ namespace Ikarus
                 b.Handled = true;
 
                 isMouseLeftButtonDown = true;
-                originalPoint = b.GetPosition(moveThisElement);
+                originalPoint = ((System.Windows.Input.MouseEventArgs)b).GetPosition(moveThisElement);
             };
 
             movedByElement.MouseLeftButtonUp += (a, b) =>
             {
                 b.Handled = true;
 
+                locationFromWindow = moveThisElement.TranslatePoint(new System.Windows.Point(0, 0), moveThisElement);
+                pointToScreen = moveThisElement.PointToScreen(locationFromWindow);
+                originalPoint = ((System.Windows.Input.MouseEventArgs)b).GetPosition(moveThisElement);
 
-                pointToScreen = moveThisElement.PointToScreen(new System.Windows.Point(0, 0));
-                currentPoint = b.GetPosition(moveThisElement);
-
-                //pointToScreen.X += currentPoint.X - originalPoint.X;
-                //pointToScreen.Y += currentPoint.Y - originalPoint.Y;
-
-                //isRotated = MainWindow.cockpitWindows[windowID].UpdatePosition(moveThisElement.PointToScreen(new System.Windows.Point(0, 0)), tableName, dataImportID); // Select it in tab
                 isRotated = MainWindow.cockpitWindows[windowID].UpdatePosition(pointToScreen, tableName, dataImportID); // Select it in tab
 
                 isMouseLeftButtonDown = false;
@@ -99,11 +101,9 @@ namespace Ikarus
 
                 if (isMouseLeftButtonDown)
                 {
-                    currentPoint = b.GetPosition(moveThisElement);
-                    //trUsercontrol.X += currentPoint.X * 0.75 - originalPoint.X;
-                    //trUsercontrol.Y += currentPoint.Y * 0.75 - originalPoint.Y;
-                    trUsercontrol.X += currentPoint.X - originalPoint.X;
-                    trUsercontrol.Y += currentPoint.Y - originalPoint.Y;
+                    currentPoint = ((System.Windows.Input.MouseEventArgs)b).GetPosition(moveThisElement);
+                    trUsercontrol.X += currentPoint.X * 0.75 - originalPoint.X;
+                    trUsercontrol.Y += currentPoint.Y * 0.75 - originalPoint.Y;
                     moveThisElement.RenderTransform = trUsercontrol;
                 }
             };
