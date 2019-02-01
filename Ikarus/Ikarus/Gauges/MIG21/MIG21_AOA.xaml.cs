@@ -88,10 +88,6 @@ namespace Ikarus
 
                                if (luuaIndicator != uuaIndicator)
                                {
-                                   // 105 UUA_indicator.input  =                     { -0.1745, 0, 0.6108 } 
-                                   //double[] valueScale = new double[valueScaleIndex] { -0.2857, 0, 1.0 };
-                                   //double[] degreeDial = new double[valueScaleIndex] { -55, 0, 194 };
-
                                    RotateTransform rtuuaIndicator = new RotateTransform();
 
                                    for (int n = 0; n < (valueScaleIndex - 1); n++)

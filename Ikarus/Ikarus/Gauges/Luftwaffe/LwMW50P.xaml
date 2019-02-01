@@ -38,7 +38,7 @@
                         <TransformGroup>
                             <ScaleTransform/>
                             <SkewTransform/>
-                            <RotateTransform Angle="50"/>
+                            <RotateTransform Angle="52"/>
                             <TranslateTransform/>
                         </TransformGroup>
                     </Path.RenderTransform>

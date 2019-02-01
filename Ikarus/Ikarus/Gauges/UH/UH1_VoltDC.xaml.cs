@@ -89,11 +89,8 @@ namespace Ikarus
 
                                 if (vals.Length > 0) { voltage = Convert.ToDouble(vals[0], CultureInfo.InvariantCulture); }
 
-                                //if (voltage < 0.0) voltage = 0.0;
-
                                 if (lvoltage != voltage)
                                 {
-                                    //rtVoltage.Angle = voltage * 109;
                                     for (int n = 0; n < (valueScaleIndex - 1); n++)
                                     {
                                         if (voltage >= valueScale[n] && voltage <= valueScale[n + 1])

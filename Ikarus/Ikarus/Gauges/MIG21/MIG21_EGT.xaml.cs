@@ -83,6 +83,7 @@ namespace Ikarus
                            try
                            {
                                vals = strData.Split(';');
+
                                egt = Convert.ToDouble(vals[0], CultureInfo.InvariantCulture);
 
                                if (legt != egt)

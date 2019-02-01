@@ -91,8 +91,6 @@ namespace Ikarus
 
                                if (vals.Length > 0) { readValue = Convert.ToDouble(vals[0], CultureInfo.InvariantCulture); }
 
-                               if (readValue < 0.0) { readValue = 0.0; }
-
                                if (lreadValue != readValue)
                                {
                                    for (int n = 0; n < (valueScaleIndex - 1); n++)

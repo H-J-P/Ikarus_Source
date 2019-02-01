@@ -6,7 +6,6 @@
              mc:Ignorable="d" 
              d:DesignHeight="264.855" d:DesignWidth="276.193">
     <Grid>
-        <Canvas x:Name="Ebene_1" Canvas.Left="0" Canvas.Top="0"/>
         <Canvas x:Name="dial" Canvas.Left="0" Canvas.Top="0">
             <Path x:Name="Path" Width="276.193" Height="264.855" Canvas.Left="-0.144" Canvas.Top="-0.144" Stretch="Fill" StrokeThickness="0.288" StrokeLineJoin="Round" Stroke="#FF000000" Fill="#FF333333" Data="M 0,212.097L 0,52.112L 51.96,0L 223.944,0L 275.905,52.112L 275.905,212.455L 223.944,264.567L 51.96,264.567L 0,212.097 Z "/>
             <Path x:Name="Path_0" Width="243.929" Height="185.859" Canvas.Left="15.988" Canvas.Top="39.3533" Stretch="Fill" Data="M 34.8707,39.3533L 241.033,39.3533C 251.435,39.3533 259.917,47.8613 259.917,58.2906L 259.917,206.275C 259.917,216.705 251.435,225.212 241.033,225.212L 34.8707,225.212C 24.4707,225.212 15.988,216.705 15.988,206.275L 15.988,58.2906C 15.988,47.8613 24.4707,39.3533 34.8707,39.3533 Z ">

@@ -89,8 +89,6 @@ namespace Ikarus
 
                                if (vals.Length > 0) { machNumber = Convert.ToDouble(vals[0], CultureInfo.InvariantCulture); }
 
-                               if (machNumber < 0.0) machNumber = 0.0;
-
                                if (lmachNumber != machNumber)
                                {
                                    for (int n = 0; n < (valueScaleIndex - 1); n++)

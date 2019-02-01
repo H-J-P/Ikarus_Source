@@ -13,9 +13,11 @@ namespace Ikarus
     {
         private string dataImportID = "";
         private int windowID = 0;
+
         private double[] valueScale = new double[] { };
         private double[] degreeDial = new double[] { };
         int valueScaleIndex = 0;
+
         GaugesHelper helper = null;
 
         private string[] vals = new string[] { };
@@ -85,8 +87,6 @@ namespace Ikarus
                                vals = strData.Split(';');
 
                                if (vals.Length > 0) { pointer = Convert.ToDouble(vals[0], CultureInfo.InvariantCulture); }
-
-                               if (pointer < 0.0) { pointer = 0.0; }
 
                                if (lpointer != pointer)
                                {

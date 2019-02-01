@@ -14,6 +14,7 @@ namespace Ikarus
         private double[] valueScale = new double[] { };
         private double[] degreeDial = new double[] { };
         int valueScaleIndex = 0;
+
         GaugesHelper helper = null;
 
         private string dataImportID = "";
@@ -88,9 +89,6 @@ namespace Ikarus
                                vals = strData.Split(';');
 
                                if (vals.Length > 0) { pointer = Convert.ToDouble(vals[0], CultureInfo.InvariantCulture); }
-
-                               // Input: 0.0,0.1,  1.0
-                               // °    : 5.0,0.0,-68.0
 
                                if (lpointer != pointer)
                                {

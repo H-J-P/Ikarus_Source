@@ -16,6 +16,7 @@ namespace Ikarus
         private double[] valueScale = new double[] { };
         private double[] degreeDial = new double[] { };
         int valueScaleIndex = 0;
+
         private int windowID = 0;
         private string[] vals = new string[] { };
         GaugesHelper helper = null;

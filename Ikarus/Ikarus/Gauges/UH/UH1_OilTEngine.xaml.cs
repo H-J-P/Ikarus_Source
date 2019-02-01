@@ -13,9 +13,11 @@ namespace Ikarus
     {
         private string dataImportID = "";
         private int windowID = 0;
+
         private double[] valueScale = new double[] { };
         private double[] degreeDial = new double[] { };
         int valueScaleIndex = 0;
+
         private string[] vals = new string[] { };
         GaugesHelper helper = null;
 
@@ -92,10 +94,6 @@ namespace Ikarus
 
                                if (lneedle != needle)
                                {
-                                   // 114			                                 = {-70.0, -50.0, 0.0, 100.0, 150.0}
-                                   //double[] valueScale = new double[valueScaleIndex] { 0.0, 0.13, 0.38, 0.71, 1.0 };
-                                   //double[] degreeDial = new double[valueScaleIndex] { -50, -34, 0, 50, 90 };
-
                                    for (int n = 0; n < (valueScaleIndex - 1); n++)
                                    {
                                        if (needle >= valueScale[n] && needle <= valueScale[n + 1])
