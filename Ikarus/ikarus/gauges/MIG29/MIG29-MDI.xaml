@@ -4,7 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d" 
-             d:DesignHeight="164.41" d:DesignWidth="164.41">
+             d:DesignHeight="164.41" d:DesignWidth="164.41" MouseWheel="Light_MouseWheel">
     <Grid>
         <Canvas x:Name="MIG_29_MDI" HorizontalAlignment="Left" Height="164.41" UseLayoutRounding="False" VerticalAlignment="Top" Width="164.41">
             <Canvas x:Name="dial" Height="164.41" Canvas.Left="0" Canvas.Top="-0.409" Width="164.409">
@@ -54,7 +54,7 @@
                 <Path Data="M0,0L19,0 19,6.499 0,6.499z" Fill="#FF33CC33" Height="6.499" Canvas.Left="0" Canvas.Top="56.4" Width="19"/>
             </Canvas>
         </Canvas>
-        <Image x:Name="Light" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Height="255" Width="255" MouseWheel="Light_MouseWheel" />
-        <Image x:Name="Frame" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Height="255" Width="255" MouseWheel="Light_MouseWheel" />
+        <Image x:Name="Light" HorizontalAlignment="Left" VerticalAlignment="Top" Height="164" Width="164" MouseWheel="Light_MouseWheel" />
+        <Image x:Name="Frame" HorizontalAlignment="Left" VerticalAlignment="Top" Height="164" Width="164" MouseWheel="Light_MouseWheel" />
     </Grid>
 </UserControl>

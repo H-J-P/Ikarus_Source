@@ -327,8 +327,8 @@
     <Compile Include="Gauges\US\US_HSI_Mirror.xaml.cs">
       <DependentUpon>US_HSI_Mirror.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Gauges\WP\All-WhCompass-2.xaml.cs">
-      <DependentUpon>All-WhCompass-2.xaml</DependentUpon>
+    <Compile Include="Gauges\WP\WPCompass2.xaml.cs">
+      <DependentUpon>WPCompass2.xaml</DependentUpon>
     </Compile>
     <Compile Include="Gauges\_Templates\ADI_StbyTemplate.xaml.cs">
       <DependentUpon>ADI_StbyTemplate.xaml</DependentUpon>
@@ -1817,7 +1817,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Gauges\WP\All-WhCompass-2.xaml">
+    <Page Include="Gauges\WP\WPCompass2.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

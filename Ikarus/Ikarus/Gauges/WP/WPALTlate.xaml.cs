@@ -21,12 +21,10 @@ namespace Ikarus
         double altBar_M = 0.0;
         double altBar_C = 0.0;
         double baroPressure = 0.0;
-        double altKm = 0.0;
 
         double laltBar_M = 0.0;
         double laltBar_C = 0.0;
         double lbaroPressure = 0.0;
-        double laltKm = 0.0;
 
         RotateTransform rtAltBar_M = new RotateTransform();
         RotateTransform rtAltBar_C = new RotateTransform();
@@ -98,17 +96,23 @@ namespace Ikarus
                                if (vals.Length > 0) { altBar_M = Convert.ToDouble(vals[0], CultureInfo.InvariantCulture); }
                                if (vals.Length > 1) { altBar_C = Convert.ToDouble(vals[1], CultureInfo.InvariantCulture); }
                                if (vals.Length > 2) { baroPressure = Convert.ToDouble(vals[2], CultureInfo.InvariantCulture); }
-                               if (vals.Length > 3) { altKm = Convert.ToDouble(vals[3], CultureInfo.InvariantCulture); }
 
                                if (laltBar_M != altBar_M)
                                {
                                    rtAltBar_M.Angle = altBar_M * 360;
                                    AltBar_M.RenderTransform = rtAltBar_M;
+
+                                   ttAltKM10.Y = altBar_M * -233;
+                                   AltBar_M_barrel.RenderTransform = ttAltKM10;
+
                                }
                                if (laltBar_C != altBar_C)
                                {
                                    rtAltBar_C.Angle = altBar_C * 360;
                                    AltBar_C.RenderTransform = rtAltBar_C;
+
+                                   ttAltKM01.Y = altBar_C * -233;
+                                   AltBar_C_barrel.RenderTransform = ttAltKM01;
                                }
 
                                if (lbaroPressure != baroPressure)
@@ -137,32 +141,11 @@ namespace Ikarus
                                    ttBaroPressure_M.Y = baroPressure_M * -13;
                                    BasicAtmospherePressure_M.RenderTransform = ttBaroPressure_M;
                                }
-                               if (laltKm != altKm)
-                               {
-                                   String sAltKM = Convert.ToInt16(altKm).ToString();
-
-                                   if (sAltKM.Length == 0) { sAltKM = "00" + sAltKM; }
-                                   else if (sAltKM.Length == 1) { sAltKM = "0" + sAltKM; }
-
-                                   double altKM10 = Convert.ToDouble(sAltKM[0].ToString(), CultureInfo.InvariantCulture);
-                                   double altKM01 = Convert.ToDouble(sAltKM[1].ToString(), CultureInfo.InvariantCulture);
-
-                                   //altKM10 += altKM01 / 10;
-                                   altKM01 = altKm % 10;
-
-                                   ttAltKM01.Y = altKM01 * -23.33;
-                                   AltBar_C_barrel.RenderTransform = ttAltKM01;
-
-                                   ttAltKM10.Y = altKM10 * -23.33;
-                                   AltBar_M_barrel.RenderTransform = ttAltKM10;
-                               }
-
                                laltBar_M = altBar_M;
                                laltBar_C = altBar_C;
                                lbaroPressure = baroPressure;
-                               laltKm = altKm;
                            }
-                           catch (Exception e) { ImportExport.LogMessage(GetType().Name + " got data and failed with exception: " + e.ToString()); }
+                           catch (Exception e) { ImportExport.LogMessage(GetType().Name  + " got data: '" + strData + "' and failed with exception: " + e.ToString()); }
                        }));
         }
 

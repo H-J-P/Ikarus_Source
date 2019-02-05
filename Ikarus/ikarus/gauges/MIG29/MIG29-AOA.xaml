@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             mc:Ignorable="d" Width="227" Height="227">
+             mc:Ignorable="d" Width="227" Height="227" MouseWheel="Light_MouseWheel">
     <Grid>
         <Canvas x:Name="Ebene_1" Canvas.Left="0" Canvas.Top="0"/>
         <Canvas x:Name="dial" Canvas.Left="0" Canvas.Top="0">
@@ -96,14 +96,6 @@
             <Path x:Name="Path_82" Width="4.08155" Height="4.0823" Canvas.Left="111.269" Canvas.Top="111.49" Stretch="Fill" StrokeThickness="0.288" StrokeLineJoin="Round" Stroke="#FF000000" Data="M 112.413,115.203C 113.336,115.697 114.487,115.352 114.98,114.428C 115.476,113.504 115.129,112.355 114.205,111.86C 113.283,111.364 112.133,111.712 111.639,112.635C 111.143,113.557 111.491,114.708 112.413,115.203 Z "/>
         </Canvas>
         <Canvas x:Name="GLmin" Canvas.Left="0" Canvas.Top="0" RenderTransformOrigin="0.5,0.5">
-            <Canvas.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="-1"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </Canvas.RenderTransform>
             <Path x:Name="Path_83" Width="57.6293" Height="64.6173" Canvas.Left="111.256" Canvas.Top="111.336" Stretch="Fill" Fill="#FF808080" Data="M 115.517,111.336L 111.256,115.108L 159.572,169.72L 168.885,175.953L 163.833,165.949L 115.517,111.336 Z "/>
             <Path x:Name="Path_84" Width="21.925" Height="21.9258" Canvas.Left="102.424" Canvas.Top="102.26" Stretch="Fill" Fill="#FF666666" Data="M 120.649,121.433C 116.116,125.445 109.188,125.021 105.176,120.487C 101.164,115.953 101.588,109.024 106.123,105.012C 110.657,101 117.584,101.424 121.596,105.959C 125.608,110.493 125.185,117.421 120.649,121.433 Z "/>
             <Path x:Name="Path_85" Width="51.8307" Height="56.1907" Canvas.Left="117.055" Canvas.Top="119.763" Stretch="Fill" Fill="#FF666666" Data="M 159.508,169.647L 168.885,175.953L 119.172,119.763L 117.055,121.661L 159.508,169.647 Z "/>

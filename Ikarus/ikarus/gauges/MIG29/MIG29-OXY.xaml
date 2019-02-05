@@ -4,7 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d" 
-             d:DesignHeight="264.855" d:DesignWidth="276.193">
+             d:DesignHeight="264.855" d:DesignWidth="276.193" MouseWheel="Light_MouseWheel">
     <Grid>
         <Canvas x:Name="Ebene_1" Canvas.Left="0" Canvas.Top="0"/>
         <Canvas x:Name="dial" Canvas.Left="0" Canvas.Top="0">
@@ -550,17 +550,29 @@
             </Path>
             <Path x:Name="Path_109" Width="2.30667" Height="17.3853" Canvas.Left="258.793" Canvas.Top="240.489" Stretch="Fill" Fill="#FF333333" Data="M 259.195,240.489L 261.1,240.535L 260.699,257.875L 258.793,257.831L 259.195,240.489 Z "/>
         </Canvas>
-        <Canvas x:Name="Diff_Pressure" Canvas.Left="0" Canvas.Top="0">
+        <Canvas x:Name="Diff_Pressure" Canvas.Left="0" Canvas.Top="0" RenderTransformOrigin="0.5,0.5">
             <Path x:Name="Path_110" Width="23.336" Height="12.428" Canvas.Left="206.172" Canvas.Top="196.224" Stretch="Fill" Fill="#FFFFFFFF" Data="M 229.508,202.437L 209.124,196.224L 209.124,200.761L 206.172,200.761L 206.172,204.116L 209.124,204.116L 209.124,208.652L 229.508,202.437 Z "/>
         </Canvas>
-        <Canvas x:Name="Abstraction" Canvas.Left="0" Canvas.Top="0">
+        <Canvas x:Name="Abstraction" Canvas.Left="0" Canvas.Top="0" RenderTransformOrigin="0.5,0.5">
             <Path x:Name="Path_111" Width="20.032" Height="11.424" Canvas.Left="145.571" Canvas.Top="193.404" Stretch="Fill" Fill="#FFFFFFFF" Data="M 147.719,193.404L 165.603,193.404L 165.603,204.828L 147.719,204.828L 147.719,201.171L 145.571,201.171L 145.571,197.061L 147.719,197.061L 147.719,193.404 Z "/>
         </Canvas>
-        <Canvas x:Name="OXY_Quantity" Canvas.Left="0" Canvas.Top="0">
+        <Canvas x:Name="OXY_Quantity" Canvas.Left="0" Canvas.Top="0" RenderTransformOrigin="0.5,0.5">
             <Path x:Name="Path_112" Width="23.3373" Height="12.428" Canvas.Left="116.191" Canvas.Top="192.379" Stretch="Fill" Fill="#FFFFFFFF" Data="M 116.191,198.593L 136.575,192.379L 136.575,196.915L 139.528,196.915L 139.528,200.271L 136.575,200.271L 136.575,204.807L 116.191,198.593 Z "/>
         </Canvas>
-        <Canvas x:Name="H_KAB" Canvas.Left="0" Canvas.Top="0">
+        <Canvas x:Name="H_KAB" Canvas.Left="0" Canvas.Top="0" RenderTransformOrigin="0.5,0.5">
             <Path x:Name="Path_113" Width="23.336" Height="12.428" Canvas.Left="57.704" Canvas.Top="192.968" Stretch="Fill" Fill="#FFFFFFFF" Data="M 57.704,199.181L 78.0893,192.968L 81.04,192.968L 81.04,196.325L 78.0893,196.325L 78.0893,205.396L 57.704,199.181 Z "/>
         </Canvas>
+        <Image x:Name="Light"
+            Width="276"
+            Height="265"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            MouseWheel="Light_MouseWheel" />
+        <Image x:Name="Frame"
+            Width="276"
+            Height="265"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            MouseWheel="Light_MouseWheel" />
     </Grid>
 </UserControl>

@@ -4,7 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d" 
-             d:DesignHeight="340" Width="157.5">
+             d:DesignHeight="340" Width="157.5" MouseWheel="Light_MouseWheel">
     <Grid>
         <Canvas x:Name="Ebene_1" Height="340" Canvas.Left="0" Canvas.Top="0"/>
         <Canvas x:Name="Range_M" Height="340" Canvas.Left="0" Canvas.Top="0">

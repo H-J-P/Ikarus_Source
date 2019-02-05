@@ -308,6 +308,14 @@
                 <Path Data="M4.052,7.998C6.232,7.999 7.999,6.233 7.999,4.054 7.999,1.874 6.232,0.108 4.052,0.108 1.873,0.108 0.107,1.874 0.108,4.054 0.107,6.233 1.873,7.999 4.052,7.998" Fill="#FF333333" Height="8.106" Canvas.Left="-0.108" Stroke="#FF4D4D4D" StrokeThickness="0.216" StrokeMiterLimit="22.926" Canvas.Top="58.932" Width="8.107"/>
             </Canvas>
             <Canvas x:Name="WP_needleS_Clock" Height="96.657" Canvas.Left="87.029" Canvas.Top="17.76" Width="6.745" RenderTransformOrigin="0.445,0.667">
+                <Canvas.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="1"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Canvas.RenderTransform>
                 <Path Data="M1.29,0L2.582,0C3.291,0,3.873,0.58,3.873,1.289L3.873,8.822C3.873,9.531,3.291,10.112,2.582,10.112L1.29,10.112C0.581,10.112,0,9.531,0,8.822L0,1.289C0,0.58,0.581,0,1.29,0" Fill="#FFCCCCCC" Height="10.112" Canvas.Left="1.436" Canvas.Top="15.987" Width="3.873"/>
                 <Path Data="M0,28.389C1.842,29.452,4.902,29.358,6.745,28.389L4.749,0.328 3.372,0 1.996,0.328C1.331,9.681,0.665,19.036,0,28.389" Fill="#FF141414" Height="29.151" Canvas.Left="0" Canvas.Top="67.506" Width="6.745"/>
                 <Path Data="M0,0L1.701,0 1.701,65.115 0,65.115z" Fill="#FFCCCCCC" Height="65.115" Canvas.Left="2.522" Canvas.Top="0" Width="1.701"/>

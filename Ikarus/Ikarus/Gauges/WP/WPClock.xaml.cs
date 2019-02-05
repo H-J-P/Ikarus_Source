@@ -21,25 +21,26 @@ namespace Ikarus
         double time_hours = 0.0;
         double time_minutes = 0.0;
         double time_seconds = 0.0;
-        double chronometer_minutes = 0.0;
+        double flag = 0.0;
         double missionTime_hours = 0.0;
         double missionTime_minutes = 0.0;
-        double missionTimeInSeconds = 0.0;
+        double missionTime_Seconds = 0.0;
 
         double ltime_hours = 0.0;
         double ltime_minutes = 0.0;
         double ltime_seconds = 0.0;
-        double lchronometer_minutes = 0.0;
+        double lflag = 0.0;
         double lmissionTime_hours = 0.0;
         double lmissionTime_minutes = 0.0;
-        double lmissionTimeInSeconds = 0.0;
+        double lmissionTime_Seconds = 0.0;
 
         RotateTransform rtTime_hours = new RotateTransform();
-        RotateTransform rtChronometer_minutes = new RotateTransform();
-        RotateTransform rtMissionTime_minutes = new RotateTransform();
-        RotateTransform rtMissionTime_hours = new RotateTransform();
-        RotateTransform rtTime_seconds = new RotateTransform();
         RotateTransform rtTime_minutes = new RotateTransform();
+        RotateTransform rtTime_seconds = new RotateTransform();
+        RotateTransform rtFlag = new RotateTransform();
+        RotateTransform rtMissionTime_hours = new RotateTransform();
+        RotateTransform rtMissionTime_minutes = new RotateTransform();
+        RotateTransform rtMissionTime_second = new RotateTransform();
 
         public WPClock()
         {
@@ -100,10 +101,10 @@ namespace Ikarus
                                if (vals.Length > 0) { time_hours = Convert.ToDouble(vals[0], CultureInfo.InvariantCulture); }
                                if (vals.Length > 1) { time_minutes = Convert.ToDouble(vals[1], CultureInfo.InvariantCulture); }
                                if (vals.Length > 2) { time_seconds = Convert.ToDouble(vals[2], CultureInfo.InvariantCulture); }
-                               if (vals.Length > 3) { chronometer_minutes = Convert.ToDouble(vals[3], CultureInfo.InvariantCulture); }
+                               if (vals.Length > 3) { flag = Convert.ToDouble(vals[3], CultureInfo.InvariantCulture); }
                                if (vals.Length > 4) { missionTime_hours = Convert.ToDouble(vals[4], CultureInfo.InvariantCulture); }
                                if (vals.Length > 5) { missionTime_minutes = Convert.ToDouble(vals[5], CultureInfo.InvariantCulture); }
-                               if (vals.Length > 6) { missionTimeInSeconds = Convert.ToDouble(vals[6], CultureInfo.InvariantCulture); }
+                               if (vals.Length > 6) { missionTime_Seconds = Convert.ToDouble(vals[6], CultureInfo.InvariantCulture); }
 
                                if (ltime_hours != time_hours)
                                {
@@ -120,6 +121,11 @@ namespace Ikarus
                                    rtTime_seconds.Angle = time_seconds * 360;
                                    WP_needleS_Clock.RenderTransform = rtTime_seconds;
                                }
+                               if (lflag != flag)
+                               {
+                                   rtFlag.Angle = flag * 360;
+                                   WP_needleMTS_Clock.RenderTransform = rtFlag;
+                               }
                                if (lmissionTime_hours != missionTime_hours)
                                {
                                    rtMissionTime_hours.Angle = missionTime_hours * 360;
@@ -130,18 +136,18 @@ namespace Ikarus
                                    rtMissionTime_minutes.Angle = missionTime_minutes * 360;
                                    WP_needleMTM_Clock.RenderTransform = rtMissionTime_minutes;
                                }
-                               if (lchronometer_minutes != chronometer_minutes)
+                               if (lmissionTime_Seconds != missionTime_Seconds)
                                {
-                                   rtChronometer_minutes.Angle = chronometer_minutes * 360;
-                                   WP_needleMTS_Clock.RenderTransform = rtChronometer_minutes;
+                                   rtMissionTime_second.Angle = missionTime_Seconds * 360;
+                                   WP_needleCRS_Clock.RenderTransform = rtMissionTime_second;
                                }
                                ltime_hours = time_hours;
                                ltime_minutes = time_minutes;
                                ltime_seconds = time_seconds;
-                               lchronometer_minutes = chronometer_minutes;
+                               lflag = flag;
                                lmissionTime_hours = missionTime_hours;
                                lmissionTime_minutes = missionTime_minutes;
-                               lmissionTimeInSeconds = missionTimeInSeconds;
+                               lmissionTime_Seconds = missionTime_Seconds;
                            }
                            catch (Exception e) { ImportExport.LogMessage(GetType().Name + " got data and failed with exception: " + e.ToString()); }
                        }));

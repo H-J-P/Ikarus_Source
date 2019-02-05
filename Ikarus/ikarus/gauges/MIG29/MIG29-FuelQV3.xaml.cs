@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Globalization;
 using System.Windows.Controls;
+using System.Windows.Media;
 using System.Windows.Threading;
 
 namespace Ikarus
@@ -8,7 +9,7 @@ namespace Ikarus
     /// <summary>
     /// Interaktionslogik für MIG_29_FuelQ_3.xaml
     /// </summary>
-    public partial class MIG29FuelQV3 : UserControl
+    public partial class MIG29FuelQV3 : UserControl, I_Ikarus
     {
         private string dataImportID = "";
         private int windowID = 0;
@@ -25,6 +26,8 @@ namespace Ikarus
         double light_NK = 0.0;
         double light_NO = 0.0;
 
+        TranslateTransform ttTotalFuel_0_5 = new TranslateTransform();
+        TranslateTransform ttTotalFuel_5_8 = new TranslateTransform();
 
         public MIG29FuelQV3()
         {
@@ -105,9 +108,17 @@ namespace Ikarus
                                if (totalFuel_0_5 < 0) totalFuel_0_5 = 0;
                                if (totalFuel_5_8 < 0) totalFuel_5_8 = 0;
 
-                               TotalFuel_0_5.Height = totalFuel_0_5 * 181;
-                               TotalFuel_5_8.Height = totalFuel_5_8 * 92;
+                               //TotalFuel_0_5.Height = totalFuel_0_5 * 181;
+                               //TotalFuel_5_8.Height = totalFuel_5_8 * 92;
 
+                               ttTotalFuel_0_5.Y = 181 - (totalFuel_0_5 * 181);
+                               TotalFuel_0_5.RenderTransform = ttTotalFuel_0_5;
+
+                               ttTotalFuel_5_8.Y = 92 - (totalFuel_5_8 * 92);
+                               TotalFuel_5_8.RenderTransform = ttTotalFuel_5_8;
+
+                               //ttTotalFuel_C.Y = totalFuel_C * -152;
+                               //TotalFuel_C.RenderTransform = ttTotalFuel_C;
                                //string sTotalFuel = Convert.ToInt16(totalFuel).ToString();
 
                                //if (sTotalFuel.Length == 0) { sTotalFuel = "000"; }

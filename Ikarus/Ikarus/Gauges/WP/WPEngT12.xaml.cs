@@ -89,11 +89,11 @@ namespace Ikarus
                                if (lengineTemp1200 != engineTemp1200)
                                {
                                    rtEngineTemp1200.Angle = engineTemp1200 * 270;
-                                   rtEngineTemp100.Angle = engineTemp100 * 360;
+                                   EngineTemp1200.RenderTransform = rtEngineTemp1200;
                                }
                                if (lengineTemp100 != engineTemp100)
                                {
-                                   EngineTemp1200.RenderTransform = rtEngineTemp1200;
+                                   rtEngineTemp100.Angle = engineTemp100 * 360;
                                    EngineTemp100.RenderTransform = rtEngineTemp100;
                                }
                                lengineTemp1200 = engineTemp1200;
