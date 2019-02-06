@@ -296,6 +296,7 @@
             <Path x:Name="Line_246" Width="17.9098" Height="44.6281" Canvas.Left="51.9207" Canvas.Top="239.03" Stretch="Fill" StrokeThickness="0.288" StrokeLineJoin="Round" Stroke="#FF333333" Data="M 69.6866,283.514L 52.0647,239.174"/>
             <Path x:Name="Path_247" Width="91.229" Height="264.16" Canvas.Left="51.3484" Canvas.Top="52.0225" Stretch="Fill" Fill="#FF000000" Data="M 138.642,293.655L 138.642,55.5002L 55.2841,55.5002L 55.2841,312.705L 117.083,312.705M 51.3484,55.5002L 51.3484,52.0225L 55.2841,52.0225L 138.642,52.0225L 142.577,52.0225L 142.577,55.5002L 142.577,290.177L 142.577,295.095L 138.642,298.573L 118.714,316.182L 118.712,316.182L 113.146,316.182L 55.2841,316.182L 51.3484,316.182L 51.3484,312.705L 51.3484,55.5002 Z "/>
         </Canvas>
+        <Rectangle Fill="#FF121212" Stroke="Black" Margin="64,316,64,0"/>
         <Canvas x:Name="Light_1" Height="340" Canvas.Left="0" Canvas.Top="0">
             <Rectangle x:Name="Rectangle_248" Width="1.2058" Height="8.05161" Canvas.Left="20.2765" Canvas.Top="268.876" Stretch="Fill" Fill="#FFFFCC00"/>
         </Canvas>

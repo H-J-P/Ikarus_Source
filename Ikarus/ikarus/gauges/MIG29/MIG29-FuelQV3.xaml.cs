@@ -38,6 +38,12 @@ namespace Ikarus
             Light_KP.Visibility = System.Windows.Visibility.Hidden;
             Light_NK.Visibility = System.Windows.Visibility.Hidden;
             Light_NO.Visibility = System.Windows.Visibility.Hidden;
+
+            ttTotalFuel_0_5.Y = 181 - (totalFuel_0_5 * 181);
+            TotalFuel_0_5.RenderTransform = ttTotalFuel_0_5;
+
+            ttTotalFuel_5_8.Y = 96 - (totalFuel_5_8 * 96);
+            TotalFuel_5_8.RenderTransform = ttTotalFuel_5_8;
         }
 
         public void SetID(string _dataImportID)
@@ -114,7 +120,7 @@ namespace Ikarus
                                ttTotalFuel_0_5.Y = 181 - (totalFuel_0_5 * 181);
                                TotalFuel_0_5.RenderTransform = ttTotalFuel_0_5;
 
-                               ttTotalFuel_5_8.Y = 92 - (totalFuel_5_8 * 92);
+                               ttTotalFuel_5_8.Y = 96 - (totalFuel_5_8 * 96);
                                TotalFuel_5_8.RenderTransform = ttTotalFuel_5_8;
 
                                //ttTotalFuel_C.Y = totalFuel_C * -152;

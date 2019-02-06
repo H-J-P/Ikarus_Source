@@ -24,7 +24,7 @@ namespace Ikarus
         double flightTimeMeterStatus = 0.0;
         double flightHours = 0.0;
         double flightMinutes = 0.0;
-        double secondsMeterTimeMinutes = 0.0;
+        double fightSeconds = 0.0;
         double secondsMeterTimeSeconds = 0.0;
 
         double lcurrtimeHours = 0.0;
@@ -106,11 +106,9 @@ namespace Ikarus
                                if (vals.Length > 0) { currtimeHours = Convert.ToDouble(vals[0], CultureInfo.InvariantCulture); }
                                if (vals.Length > 1) { currtimeMinutes = Convert.ToDouble(vals[1], CultureInfo.InvariantCulture); }
                                if (vals.Length > 2) { currtimeSeconds = Convert.ToDouble(vals[2], CultureInfo.InvariantCulture); }
-                               if (vals.Length > 3) { flightTimeMeterStatus = Convert.ToDouble(vals[3], CultureInfo.InvariantCulture); }
-                               if (vals.Length > 4) { flightHours = Convert.ToDouble(vals[4], CultureInfo.InvariantCulture); }
-                               if (vals.Length > 5) { flightMinutes = Convert.ToDouble(vals[5], CultureInfo.InvariantCulture); }
-                               if (vals.Length > 6) { secondsMeterTimeMinutes = Convert.ToDouble(vals[6], CultureInfo.InvariantCulture); }
-                               if (vals.Length > 7) { secondsMeterTimeSeconds = Convert.ToDouble(vals[7], CultureInfo.InvariantCulture); }
+                               if (vals.Length > 3) { flightHours = Convert.ToDouble(vals[3], CultureInfo.InvariantCulture); }
+                               if (vals.Length > 4) { flightMinutes = Convert.ToDouble(vals[4], CultureInfo.InvariantCulture); }
+                               if (vals.Length > 5) { fightSeconds = Convert.ToDouble(vals[5], CultureInfo.InvariantCulture); }
 
                                if (lcurrtimeHours != currtimeHours)
                                {
@@ -137,9 +135,9 @@ namespace Ikarus
                                    rtFlightMinutes.Angle = flightMinutes * 360;
                                    MissionTime_minutes.RenderTransform = rtFlightMinutes;
                                }
-                               if (lsecondsMeterTimeMinutes != secondsMeterTimeMinutes)
+                               if (lsecondsMeterTimeMinutes != fightSeconds)
                                {
-                                   rtSecondsMeterTimeMinutes.Angle = secondsMeterTimeMinutes * 360;
+                                   rtSecondsMeterTimeMinutes.Angle = fightSeconds * 360;
                                    Chronometer_minutes.RenderTransform = rtSecondsMeterTimeMinutes;
                                }
                                //rtFlightTimeMeterStatus.Angle = flightTimeMeterStatus * 275;
@@ -152,7 +150,7 @@ namespace Ikarus
                                lflightTimeMeterStatus = flightTimeMeterStatus;
                                lflightHours = flightHours;
                                lflightMinutes = flightMinutes;
-                               lsecondsMeterTimeMinutes = secondsMeterTimeMinutes;
+                               lsecondsMeterTimeMinutes = fightSeconds;
                                lsecondsMeterTimeSeconds = secondsMeterTimeSeconds;
                            }
                            catch (Exception e) { ImportExport.LogMessage(GetType().Name + " got data and failed with exception: " + e.ToString()); }
