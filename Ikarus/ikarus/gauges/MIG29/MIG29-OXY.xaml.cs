@@ -88,18 +88,18 @@ namespace Ikarus
                            {
                                vals = strData.Split(';');
 
-                               if (vals.Length > 0) { diffPressure = Convert.ToDouble(vals[0], CultureInfo.InvariantCulture); }
+                               if (vals.Length > 0) { hkab = Convert.ToDouble(vals[0], CultureInfo.InvariantCulture); }
                                if (vals.Length > 1) { oxyQuantity = Convert.ToDouble(vals[1], CultureInfo.InvariantCulture); }
-                               if (vals.Length > 2) { hkab = Convert.ToDouble(vals[2], CultureInfo.InvariantCulture); }
+                               if (vals.Length > 2) { diffPressure = Convert.ToDouble(vals[2], CultureInfo.InvariantCulture); }
 
-                               if (diffPressure < 0.0) diffPressure = 0.0;
-                               if (oxyQuantity < 0.0) oxyQuantity = 0.0;
                                if (hkab < 0.0) hkab = 0.0;
+                               if (oxyQuantity < 0.0) oxyQuantity = 0.0;
+                               if (diffPressure < 0.0) diffPressure = 0.0;
 
-                               if (ldiffPressure != diffPressure)
+                               if (lhkab != hkab)
                                {
-                                   ttdiffPressure.Y = diffPressure * -131;
-                                   Diff_Pressure.RenderTransform = ttdiffPressure;
+                                   tthkab.Y = hkab * -134;
+                                   H_KAB.RenderTransform = tthkab;
                                }
                                if (loxyQuantity != oxyQuantity)
                                {
@@ -107,14 +107,14 @@ namespace Ikarus
                                    OXY_Quantity.RenderTransform = ttoxyQuantity;
                                    Abstraction.RenderTransform = ttoxyQuantity;
                                }
-                               if (lhkab != hkab)
+                               if (ldiffPressure != diffPressure)
                                {
-                                   tthkab.Y = hkab * -134;
-                                   H_KAB.RenderTransform = tthkab;
+                                   ttdiffPressure.Y = diffPressure * -131;
+                                   Diff_Pressure.RenderTransform = ttdiffPressure;
                                }
-                               ldiffPressure = diffPressure;
-                               loxyQuantity = oxyQuantity;
                                lhkab = hkab;
+                               loxyQuantity = oxyQuantity;
+                               ldiffPressure = diffPressure;
                            }
                            catch (Exception e) { ImportExport.LogMessage(GetType().Name + " got data and failed with exception: " + e.ToString()); }
                        }));

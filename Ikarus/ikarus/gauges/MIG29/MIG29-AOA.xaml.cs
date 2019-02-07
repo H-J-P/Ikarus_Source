@@ -36,6 +36,15 @@ namespace Ikarus
         public MIG29AOA()
         {
             InitializeComponent();
+
+            rtgload.Angle = 12 + (gload * -120);
+            GLoad.RenderTransform = rtgload;
+
+            rtglmin.Angle = 12 + (glmin * -120);
+            GLmin.RenderTransform = rtglmin;
+
+            rtglmax.Angle = 12 + (glmax * -120);
+            GLmax.RenderTransform = rtglmax;
         }
 
         public void SetID(string _dataImportID)
@@ -90,14 +99,14 @@ namespace Ikarus
                                vals = strData.Split(';');
 
                                if (vals.Length > 0) { aoa = Convert.ToDouble(vals[0], CultureInfo.InvariantCulture); }
-                               if (vals.Length > 1) { glmin = Convert.ToDouble(vals[1], CultureInfo.InvariantCulture); }
-                               if (vals.Length > 2) { glmax = Convert.ToDouble(vals[2], CultureInfo.InvariantCulture); }
-                               if (vals.Length > 3) { gload = Convert.ToDouble(vals[3], CultureInfo.InvariantCulture); }
+                               if (vals.Length > 1) { gload = Convert.ToDouble(vals[1], CultureInfo.InvariantCulture); }
+                               if (vals.Length > 2) { glmin = Convert.ToDouble(vals[2], CultureInfo.InvariantCulture); }
+                               if (vals.Length > 3) { glmax = Convert.ToDouble(vals[3], CultureInfo.InvariantCulture); }
 
-                               if (aoa < 0.0) aoa = 0.0;
-                               if (glmin < 0.0) glmin = 0.0;
-                               if (glmax < 0.0) glmax = 0.0;
-                               if (gload < 0.0) gload = 0.0;
+                               //if (aoa < 0.0) aoa = 0.0;
+                               //if (glmin < 0.0) glmin = 0.0;
+                               //if (glmax < 0.0) glmax = 0.0;
+                               //if (gload < 0.0) gload = 0.0;
 
                                if (laoa != aoa)
                                {
@@ -106,17 +115,17 @@ namespace Ikarus
                                }
                                if (lglmin != glmin)
                                {
-                                   rtglmin.Angle = glmin * -107;
+                                   rtglmin.Angle = 12 + (glmin * -120);
                                    GLmin.RenderTransform = rtglmin;
                                }
                                if (lglmax != glmax)
                                {
-                                   rtglmax.Angle = glmax * -107;
+                                   rtglmax.Angle = 12 + (glmax * -120);
                                    GLmax.RenderTransform = rtglmax;
                                }
                                if (lgload != gload)
                                {
-                                   rtgload.Angle = gload * -107;
+                                   rtgload.Angle = 12 + (gload * -120);
                                    GLoad.RenderTransform = rtgload;
                                }
                                laoa = aoa;

@@ -9,7 +9,7 @@ namespace Ikarus
     /// <summary>
     /// Interaktionslogik für MIG_29_FuelQ_3.xaml
     /// </summary>
-    public partial class MIG29FuelQV3 : UserControl, I_Ikarus
+    public partial class MIG29FuelQ : UserControl, I_Ikarus
     {
         private string dataImportID = "";
         private int windowID = 0;
@@ -26,10 +26,23 @@ namespace Ikarus
         double light_NK = 0.0;
         double light_NO = 0.0;
 
+        double range = 0.0;
+        double range_x = 0.0;
+        double range_c = 0.0;
+        double range_m = 0.0;
+        string sRange = "";
+
+        double ltotalFuel_0_5 = 0.0;
+        double ltotalFuel_5_8 = 0.0;
+        double lrange = 0.0;
+
         TranslateTransform ttTotalFuel_0_5 = new TranslateTransform();
         TranslateTransform ttTotalFuel_5_8 = new TranslateTransform();
+        TranslateTransform ttRange_X = new TranslateTransform();
+        TranslateTransform ttRange_C = new TranslateTransform();
+        TranslateTransform ttRange_M = new TranslateTransform();
 
-        public MIG29FuelQV3()
+        public MIG29FuelQ()
         {
             InitializeComponent();
 
@@ -104,6 +117,7 @@ namespace Ikarus
                                if (vals.Length > 4) { light_KP = Convert.ToDouble(vals[4], CultureInfo.InvariantCulture); }
                                if (vals.Length > 5) { light_NK = Convert.ToDouble(vals[5], CultureInfo.InvariantCulture); }
                                if (vals.Length > 6) { light_NO = Convert.ToDouble(vals[6], CultureInfo.InvariantCulture); }
+                               if (vals.Length > 7) { range = Convert.ToDouble(vals[7], CultureInfo.InvariantCulture); }
 
                                Light_1.Visibility = (light1 > 0.8) ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
                                Light_3.Visibility = (light3 > 0.8) ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
@@ -114,39 +128,41 @@ namespace Ikarus
                                if (totalFuel_0_5 < 0) totalFuel_0_5 = 0;
                                if (totalFuel_5_8 < 0) totalFuel_5_8 = 0;
 
-                               //TotalFuel_0_5.Height = totalFuel_0_5 * 181;
-                               //TotalFuel_5_8.Height = totalFuel_5_8 * 92;
+                               if (ltotalFuel_0_5 != totalFuel_0_5)
+                               {
+                                   ttTotalFuel_0_5.Y = 181 - (totalFuel_0_5 * 181);
+                                   TotalFuel_0_5.RenderTransform = ttTotalFuel_0_5;
+                               }
+                               if (ltotalFuel_5_8 != totalFuel_5_8)
+                               {
+                                   ttTotalFuel_5_8.Y = 96 - (totalFuel_5_8 * 96);
+                                   TotalFuel_5_8.RenderTransform = ttTotalFuel_5_8;
+                               }
 
-                               ttTotalFuel_0_5.Y = 181 - (totalFuel_0_5 * 181);
-                               TotalFuel_0_5.RenderTransform = ttTotalFuel_0_5;
+                               if (lrange != range)
+                               {
+                                   sRange = Convert.ToInt16(range).ToString();
 
-                               ttTotalFuel_5_8.Y = 96 - (totalFuel_5_8 * 96);
-                               TotalFuel_5_8.RenderTransform = ttTotalFuel_5_8;
+                                   if (sRange.Length == 0) { sRange = "000"; }
+                                   else if (sRange.Length == 1) { sRange = "00" + sRange; }
+                                   else if (sRange.Length == 2) { sRange = "0" + sRange; }
 
-                               //ttTotalFuel_C.Y = totalFuel_C * -152;
-                               //TotalFuel_C.RenderTransform = ttTotalFuel_C;
-                               //string sTotalFuel = Convert.ToInt16(totalFuel).ToString();
+                                   range_m = Convert.ToDouble(sRange[0].ToString(), CultureInfo.InvariantCulture);
+                                   range_c = Convert.ToDouble(sRange[1].ToString(), CultureInfo.InvariantCulture);
+                                   range_x = Convert.ToDouble(sRange[2].ToString(), CultureInfo.InvariantCulture);
 
-                               //if (sTotalFuel.Length == 0) { sTotalFuel = "000"; }
-                               //else if (sTotalFuel.Length == 1) { sTotalFuel = "00" + sTotalFuel; }
-                               //else if (sTotalFuel.Length == 2) { sTotalFuel = "0" + sTotalFuel; }
+                                   ttRange_X.Y = range_x * -17.3;
+                                   Range_X.RenderTransform = ttRange_X;
 
-                               //double totalFuel_M = Convert.ToDouble(sTotalFuel[0].ToString(), CultureInfo.InvariantCulture);
-                               //double totalFuel_C = Convert.ToDouble(sTotalFuel[1].ToString(), CultureInfo.InvariantCulture);
-                               //double totalFuel_X = Convert.ToDouble(sTotalFuel[2].ToString(), CultureInfo.InvariantCulture);
+                                   ttRange_C.Y = range_c * -17.3;
+                                   Range_C.RenderTransform = ttRange_C;
 
-                               //TranslateTransform ttTotalFuel_X = new TranslateTransform();
-                               //TranslateTransform ttTotalFuel_C = new TranslateTransform();
-                               //TranslateTransform ttTotalFuel_M = new TranslateTransform();
-
-                               //ttTotalFuel_X.Y = totalFuel_X * -152;
-                               //TotalFuel_X.RenderTransform = ttTotalFuel_X;
-
-                               //ttTotalFuel_C.Y = totalFuel_C * -152;
-                               //TotalFuel_C.RenderTransform = ttTotalFuel_C;
-
-                               //ttTotalFuel_M.Y = totalFuel_M * -152;
-                               //TotalFuel_M.RenderTransform = ttTotalFuel_M;
+                                   ttRange_M.Y = range_m * -17.3;
+                                   Range_M.RenderTransform = ttRange_M;
+                               }
+                               ltotalFuel_0_5 = totalFuel_0_5;
+                               ltotalFuel_5_8 = totalFuel_5_8;
+                               lrange = range;
                            }
                            catch (Exception e) { ImportExport.LogMessage(GetType().Name + " got data and failed with exception: " + e.ToString()); }
                        }));

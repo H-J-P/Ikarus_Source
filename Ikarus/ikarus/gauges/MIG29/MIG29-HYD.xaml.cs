@@ -18,20 +18,20 @@ namespace Ikarus
 
         public int GetWindowID() { return windowID; }
 
-        double pRight = 0.0;
-        double pLeft = 0.0;
-        double oRight = 0.0;
         double oLeft = 0.0;
+        double oRight = 0.0;
+        double pLeft = 0.0;
+        double pRight = 0.0;
 
-        double lpRight = 0.0;
-        double lpLeft = 0.0;
-        double loRight = 0.0;
         double loLeft = 0.0;
+        double loRight = 0.0;
+        double lpLeft = 0.0;
+        double lpRight = 0.0;
 
-        TranslateTransform ttpRight = new TranslateTransform();
-        TranslateTransform ttpLeft = new TranslateTransform();
-        TranslateTransform ttoRight = new TranslateTransform();
         TranslateTransform ttoLeft = new TranslateTransform();
+        TranslateTransform ttoRight = new TranslateTransform();
+        TranslateTransform ttpLeft = new TranslateTransform();
+        TranslateTransform ttpRight = new TranslateTransform();
 
         public MIG29HYD()
         {
@@ -88,40 +88,40 @@ namespace Ikarus
                            {
                                vals = strData.Split(';');
 
-                               if (vals.Length > 0) { pRight = Convert.ToDouble(vals[0], CultureInfo.InvariantCulture); }
-                               if (vals.Length > 1) { pLeft = Convert.ToDouble(vals[1], CultureInfo.InvariantCulture); }
-                               if (vals.Length > 2) { oRight = Convert.ToDouble(vals[2], CultureInfo.InvariantCulture); }
-                               if (vals.Length > 3) { oLeft = Convert.ToDouble(vals[3], CultureInfo.InvariantCulture); }
+                               if (vals.Length > 0) { oLeft = Convert.ToDouble(vals[0], CultureInfo.InvariantCulture); }
+                               if (vals.Length > 1) { oRight = Convert.ToDouble(vals[1], CultureInfo.InvariantCulture); }
+                               if (vals.Length > 2) { pLeft = Convert.ToDouble(vals[2], CultureInfo.InvariantCulture); }
+                               if (vals.Length > 3) { pRight = Convert.ToDouble(vals[3], CultureInfo.InvariantCulture); }
 
-                               if (pRight < 0.0) pRight = 0.0;
-                               if (pLeft < 0.0) pLeft = 0.0;
-                               if (oRight < 0.0) oRight = 0.0;
                                if (oLeft < 0.0) oLeft = 0.0;
+                               if (oRight < 0.0) oRight = 0.0;
+                               if (pLeft < 0.0) pLeft = 0.0;
+                               if (pRight < 0.0) pRight = 0.0;
 
-                               if (lpRight != pRight)
+                               if (loLeft != oLeft)
                                {
-                                   ttpRight.Y = pRight * -160;
-                                   P_right.RenderTransform = ttpRight;
-                               }
-                               if (lpLeft != pLeft)
-                               {
-                                   ttpLeft.Y = pLeft * -160;
-                                   P_left.RenderTransform = ttpRight;
+                                   ttoLeft.Y = oLeft * -160;
+                                   O_left.RenderTransform = ttoLeft;
                                }
                                if (loRight != oRight)
                                {
                                    ttoRight.Y = oRight * -160;
                                    O_right.RenderTransform = ttoRight;
                                }
-                               if (loLeft != oLeft)
+                               if (lpLeft != pLeft)
                                {
-                                   ttoLeft.Y = oLeft * -160;
-                                   O_left.RenderTransform = ttoRight;
+                                   ttpLeft.Y = pLeft * -160;
+                                   P_left.RenderTransform = ttpLeft;
                                }
-                               lpRight = pRight;
-                               lpLeft = pLeft;
-                               loRight = oRight;
+                               if (lpRight != pRight)
+                               {
+                                   ttpRight.Y = pRight * -160;
+                                   P_right.RenderTransform = ttpRight;
+                               }
                                loLeft = oLeft;
+                               loRight = oRight;
+                               lpLeft = pLeft;
+                               lpRight = pRight;
                            }
                            catch (Exception e) { ImportExport.LogMessage(GetType().Name + " got data and failed with exception: " + e.ToString()); }
                        }));

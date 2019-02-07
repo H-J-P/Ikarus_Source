@@ -315,8 +315,8 @@
     <Compile Include="Gauges\MIG29\MIG29-AOA.xaml.cs">
       <DependentUpon>MIG29-AOA.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Gauges\MIG29\MIG29-FuelQV3.xaml.cs">
-      <DependentUpon>MIG29-FuelQV3.xaml</DependentUpon>
+    <Compile Include="Gauges\MIG29\MIG29-FuelQ.xaml.cs">
+      <DependentUpon>MIG29-FuelQ.xaml</DependentUpon>
     </Compile>
     <Compile Include="Gauges\MIG29\MIG29-HYD.xaml.cs">
       <DependentUpon>MIG29-HYD.xaml</DependentUpon>
@@ -473,9 +473,6 @@
     </Compile>
     <Compile Include="Gauges\Lamp\LampOnOff.xaml.cs">
       <DependentUpon>LampOnOff.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Gauges\MIG29\MIG29-FuelQV2.xaml.cs">
-      <DependentUpon>MIG29-FuelQV2.xaml</DependentUpon>
     </Compile>
     <Compile Include="Gauges\ButtonAndSwitches\RotaryWithPosition.xaml.cs">
       <DependentUpon>RotaryWithPosition.xaml</DependentUpon>
@@ -1801,7 +1798,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Gauges\MIG29\MIG29-FuelQV3.xaml">
+    <Page Include="Gauges\MIG29\MIG29-FuelQ.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -2012,10 +2009,6 @@
     <Page Include="Gauges\Lamp\LampOnOff.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Gauges\MIG29\MIG29-FuelQV2.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Gauges\ButtonAndSwitches\RotaryWithPosition.xaml">
       <Generator>MSBuild:Compile</Generator>
