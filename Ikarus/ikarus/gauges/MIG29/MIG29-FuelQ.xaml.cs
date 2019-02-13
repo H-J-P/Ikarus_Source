@@ -164,7 +164,7 @@ namespace Ikarus
                                ltotalFuel_5_8 = totalFuel_5_8;
                                lrange = range;
                            }
-                           catch (Exception e) { ImportExport.LogMessage(GetType().Name + " got data and failed with exception: " + e.ToString()); }
+                           catch (Exception e) { ImportExport.LogMessage(GetType().Name + " got data '" + strData + "' and failed with exception: " + e.ToString()); }
                        }));
         }
         private void Light_MouseWheel(object sender, System.Windows.Input.MouseWheelEventArgs e)

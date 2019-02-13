@@ -155,6 +155,8 @@ namespace Ikarus
                                    rtCommandedCourseNeedle.Angle = commandedCourseNeedle * 360 + (heading * -360);
                                    KA50_needleDTA_HSI.RenderTransform = rtCommandedCourseNeedle;
                                }
+                               lcommandedCourseNeedle = commandedCourseNeedle;
+
                                if (lcommandedHeadingNeedle != commandedHeadingNeedle || lheading != heading)
                                {
                                    rtCommandedHeadingNeedle.Angle = commandedHeadingNeedle * 360 + (heading * -360);
@@ -195,6 +197,12 @@ namespace Ikarus
                                    ttLateralDeviation.X = lateralDeviation * 40;
                                    KA50_needleVERT_HSI.RenderTransform = ttLateralDeviation;
                                }
+
+                               Range.Visibility = rangeUnavailableFlag > 0.8 ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
+                               Course.Visibility = courseUnavailableFlag > 0.8 ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
+
+                               if (commandedCourseNeedle < 0) { commandedCourseNeedle += 1.0; }
+
                                sHeading = Convert.ToInt16(360 * Convert.ToDouble(commandedCourseNeedle, CultureInfo.InvariantCulture)).ToString();
 
                                if (sHeading.Length == 0)
@@ -223,33 +231,25 @@ namespace Ikarus
                                    ttHeading1.Y = heading1 * -16.5;
                                    KM50_DTAI_HSI.RenderTransform = ttHeading1;
                                }
-                               if (lrangeUnavailableFlag != rangeUnavailableFlag)
-                               {
-                                   Range.Visibility = rangeUnavailableFlag > 0.8 ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
-                               }
-                               if (lcourseUnavailableFlag != courseUnavailableFlag)
-                               {
-                                   Course.Visibility = courseUnavailableFlag > 0.8 ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
-                               }
-                               lheading = heading;
-                               lcommandedCourseNeedle = commandedCourseNeedle;
-                               lcommandedHeadingNeedle = commandedHeadingNeedle;
-                               lbearingNeedle = bearingNeedle;
-                               lheadingWarningFlag = headingWarningFlag;
-                               lcourseWarningFlag = courseWarningFlag;
-                               lglideslopeWarningFlag = glideslopeWarningFlag;
-                               lrangeCounter100 = rangeCounter100;
-                               lrangeCounter10 = rangeCounter10;
-                               lrangeCounter1 = rangeCounter1;
-                               llongitudinalDeviation = longitudinalDeviation;
-                               llateralDeviation = lateralDeviation;
-                               lrangeUnavailableFlag = rangeUnavailableFlag;
-                               lcourseUnavailableFlag = courseUnavailableFlag;
-                               lheading100 = heading100;
-                               lheading10 = heading10;
-                               lheading1 = heading1;
                            }
                            catch (Exception e) { ImportExport.LogMessage(GetType().Name + " got data and failed with exception: " + e.ToString()); }
+
+                           lheading = heading;
+                           lcommandedHeadingNeedle = commandedHeadingNeedle;
+                           lbearingNeedle = bearingNeedle;
+                           lheadingWarningFlag = headingWarningFlag;
+                           lcourseWarningFlag = courseWarningFlag;
+                           lglideslopeWarningFlag = glideslopeWarningFlag;
+                           lrangeCounter100 = rangeCounter100;
+                           lrangeCounter10 = rangeCounter10;
+                           lrangeCounter1 = rangeCounter1;
+                           llongitudinalDeviation = longitudinalDeviation;
+                           llateralDeviation = lateralDeviation;
+                           lrangeUnavailableFlag = rangeUnavailableFlag;
+                           lcourseUnavailableFlag = courseUnavailableFlag;
+                           lheading100 = heading100;
+                           lheading10 = heading10;
+                           lheading1 = heading1;
                        }));
         }
 

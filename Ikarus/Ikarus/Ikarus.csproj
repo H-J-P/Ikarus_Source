@@ -324,6 +324,9 @@
     <Compile Include="Gauges\MIG29\MIG29-OXY.xaml.cs">
       <DependentUpon>MIG29-OXY.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Gauges\MIG29\MIG29-Wheelbrakes.xaml.cs">
+      <DependentUpon>MIG29-Wheelbrakes.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Gauges\US\US_HSI_Mirror.xaml.cs">
       <DependentUpon>US_HSI_Mirror.xaml</DependentUpon>
     </Compile>
@@ -1807,6 +1810,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Gauges\MIG29\MIG29-OXY.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Gauges\MIG29\MIG29-Wheelbrakes.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
