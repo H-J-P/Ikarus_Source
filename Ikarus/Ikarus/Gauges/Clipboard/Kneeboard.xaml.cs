@@ -61,10 +61,12 @@ namespace Ikarus
             if (MainWindow.map == "")
             {
                 pathToPicture = Environment.CurrentDirectory + "\\Kneeboards\\AirportCharts\\CaucasusBase\\";
+                ImportExport.LogMessage("Load default AirportsCharts for map: CaucasusBase");
             }
             else
             {
                 pathToPicture = Environment.CurrentDirectory + "\\Kneeboards\\AirportCharts\\" + MainWindow.map + "\\";
+                ImportExport.LogMessage("Load AirportsCharts for map: " + MainWindow.map);
             }
             LoadDirectoryInfo(pathToPicture);
 

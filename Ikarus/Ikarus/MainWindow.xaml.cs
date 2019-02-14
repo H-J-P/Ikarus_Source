@@ -773,14 +773,6 @@ namespace Ikarus
             catch (Exception e) { ImportExport.LogMessage("FillClasses problem .. " + e.ToString()); }
         }
 
-        //public void GetTier()
-        //{
-        //    renderTier = (RenderCapability.Tier >> 16);
-        //    if (renderTier == 0) Tier.Text = "No graphics hardware acceleration";
-        //    if (renderTier == 1) Tier.Text = "Partial grafics hardware acceleration";
-        //    if (renderTier == 2) Tier.Text = "Hardware acceleration";
-        //}
-
         private void GrabMap(ref string gotData)
         {
             string[] receivedItems = gotData.Split(':');
@@ -792,6 +784,7 @@ namespace Ikarus
                     if (receivedItems[n].IndexOf("Map=") != -1)
                     {
                         map = receivedItems[n].Substring(receivedItems[n].IndexOf("=", 0) + 1);
+                        ImportExport.LogMessage("Got data for map used: " + map);
                         break;
                     }
                 }
@@ -857,7 +850,6 @@ namespace Ikarus
             if (receivedData.IndexOf("Map=") != -1)
             {
                 GrabMap(ref receivedData);
-                ImportExport.LogMessage("Airport charts for map '" + map + "' loaded");
             }
 
             if (receivedData.IndexOf(searchStringForFile) != -1)
@@ -879,9 +871,6 @@ namespace Ikarus
 
             if (!cockpitWindowActiv) { return; }
 
-            //Dispatcher.BeginInvoke(DispatcherPriority.Send,
-            //(Action)(() =>
-            //{
             try
             {
                 if (receivedData.Length < 3) { return; }
