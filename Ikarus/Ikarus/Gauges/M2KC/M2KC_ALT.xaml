@@ -6,7 +6,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="335" d:DesignWidth="335"  MouseWheel="Light_MouseWheel">
     <Grid>
-        <Canvas x:Name="Ebene_1" Canvas.Left="0" Canvas.Top="0"/>
+        <Canvas x:Name="Ebene_1" Canvas.Left="0" Canvas.Top="0" d:IsHidden="True"/>
         <Canvas x:Name="background" Canvas.Left="0" Canvas.Top="0">
             <Rectangle x:Name="Rectangle" Width="131.448" Height="71.5934" Canvas.Left="82.752" Canvas.Top="108.653" Stretch="Fill" Fill="#FF000000"/>
             <Rectangle x:Name="Rectangle_0" Width="80.6853" Height="33.06" Canvas.Left="208.236" Canvas.Top="225.531" Stretch="Fill" Fill="#FF000000"/>

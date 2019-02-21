@@ -4,9 +4,9 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d" 
-             d:DesignHeight="167.244" d:DesignWidth="167.244" MouseWheel="Light_MouseWheel">
+             d:DesignHeight="167" d:DesignWidth="167" MouseWheel="Light_MouseWheel">
     <Grid>
-        <Canvas x:Name="Wp_ALT_late" HorizontalAlignment="Left" Height="167.244" UseLayoutRounding="False" VerticalAlignment="Top" Width="167.244">
+        <Canvas x:Name="Wp_ALT_late" HorizontalAlignment="Left" Height="167" UseLayoutRounding="False" VerticalAlignment="Top" Width="167">
             <Canvas x:Name="background" Height="141.733" Canvas.Left="12.864" Canvas.Top="12.673" Width="141.732">
                 <Path Data="M70.866,72.483C71.758,72.483 72.482,71.759 72.482,70.866 72.482,69.974 71.758,69.251 70.866,69.251 69.974,69.251 69.251,69.974 69.251,70.866 69.251,71.759 69.974,72.483 70.866,72.483 M70.866,141.733C110.003,141.733 141.732,110.006 141.732,70.866 141.732,31.728 110.003,0 70.866,0 31.728,0 0,31.728 0,70.866 0,110.006 31.728,141.733 70.866,141.733" Fill="Black" Height="141.733" Canvas.Left="0" Canvas.Top="0" Width="141.732"/>
             </Canvas>

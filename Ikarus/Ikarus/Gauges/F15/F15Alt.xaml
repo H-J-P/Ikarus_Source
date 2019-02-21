@@ -4,9 +4,9 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d" 
-             d:DesignHeight="255.118" d:DesignWidth="255.118">
+             d:DesignHeight="255" d:DesignWidth="255">
     <Grid>
-        <Canvas x:Name="F15_ALT" HorizontalAlignment="Left" Height="255.118" UseLayoutRounding="False" VerticalAlignment="Top" Width="255.118">
+        <Canvas x:Name="F15_ALT" HorizontalAlignment="Left" Height="255" UseLayoutRounding="False" VerticalAlignment="Top" Width="255">
             <Canvas x:Name="background" Height="39.685" Canvas.Left="69.449" Canvas.Top="77.086" Width="115.512">
                 <Path Data="M0,0L115.512,0 115.512,39.685 0,39.685z" Fill="Black" Height="39.685" Canvas.Left="0" Canvas.Top="0" Width="115.512"/>
             </Canvas>

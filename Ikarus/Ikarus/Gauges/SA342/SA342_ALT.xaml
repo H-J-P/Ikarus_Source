@@ -6,7 +6,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="255" d:DesignWidth="255" MouseWheel="Light_MouseWheel">
     <Grid>
-        <Canvas x:Name="SA342_ALT1" HorizontalAlignment="Left" Height="255.118" UseLayoutRounding="False" VerticalAlignment="Top" Width="255.118">
+        <Canvas x:Name="SA342_ALT1" HorizontalAlignment="Left" Height="255" UseLayoutRounding="False" VerticalAlignment="Top" Width="255">
             <Canvas x:Name="background_2" Height="30.331" Canvas.Left="90.284" Canvas.Top="171.307" Width="74.551">
                 <Path Data="M0,0L74.551,0 74.551,30.331 0,30.331z" Fill="Black" Height="30.331" Canvas.Left="0" Canvas.Top="0" Width="74.551"/>
             </Canvas>
