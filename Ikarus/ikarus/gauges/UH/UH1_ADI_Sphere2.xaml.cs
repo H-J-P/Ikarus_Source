@@ -113,7 +113,7 @@ namespace Ikarus
                                {
                                    sphere3D.xRotation = dNull;
                                    sphere3D.yRotation = pitch * -130;
-                                   sphere3D.zRotation = ((bank * 180) - 90);
+                                   sphere3D.zRotation = ((bank * -180) - 90);
 
                                    sphere3D.Rotate();
                                }
