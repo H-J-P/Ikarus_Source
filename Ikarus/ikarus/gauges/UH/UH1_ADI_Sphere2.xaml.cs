@@ -9,9 +9,9 @@ using System.Windows.Threading;
 namespace Ikarus
 {
     /// <summary>
-    /// Interaktionslogik für UH1_ADI.xaml
+    /// Interaktionslogik für UH1_ADI_Sphere2.xaml
     /// </summary>
-    public partial class UH1_ADI_Sphere : UserControl, I_Ikarus
+    public partial class UH1_ADI_Sphere2 : UserControl, I_Ikarus
     {
         private string dataImportID = "";
         private int windowID = 0;
@@ -35,9 +35,10 @@ namespace Ikarus
         RotateTransform rt = new RotateTransform();
         Sphere3D sphere3D;
 
-        public UH1_ADI_Sphere()
+        public UH1_ADI_Sphere2()
         {
             InitializeComponent();
+
             Flagg_off.Visibility = System.Windows.Visibility.Visible;
             Side.Visibility = System.Windows.Visibility.Hidden;
             Glide.Visibility = System.Windows.Visibility.Hidden;
@@ -50,7 +51,6 @@ namespace Ikarus
 
             directionalLight.Color = (Color)ColorConverter.ConvertFromString(lightColor);
         }
-
         public void SetID(string _dataImportID)
         {
             dataImportID = _dataImportID;

@@ -327,8 +327,14 @@
     <Compile Include="Gauges\MIG29\MIG29-Wheelbrakes.xaml.cs">
       <DependentUpon>MIG29-Wheelbrakes.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Gauges\UH\UH1_ADI_Sphere2.xaml.cs">
+      <DependentUpon>UH1_ADI_Sphere2.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Gauges\US\US_HSI_Mirror.xaml.cs">
       <DependentUpon>US_HSI_Mirror.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\US\US_WhiskeyCompass2.xaml.cs">
+      <DependentUpon>US_WhiskeyCompass2.xaml</DependentUpon>
     </Compile>
     <Compile Include="Gauges\WP\WPCompass2.xaml.cs">
       <DependentUpon>WPCompass2.xaml</DependentUpon>
@@ -1817,9 +1823,17 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Gauges\UH\UH1_ADI_Sphere2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Gauges\US\US_HSI_Mirror.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\US\US_WhiskeyCompass2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Gauges\WP\WPCompass2.xaml">
       <SubType>Designer</SubType>
