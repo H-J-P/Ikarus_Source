@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             mc:Ignorable="d" Width="181.334" Height="184">
+             mc:Ignorable="d" Width="181.334" Height="184" MouseWheel="Light_MouseWheel">
     <Grid Margin="0,0,0,287">
         <Canvas x:Name="Ebene_1" Canvas.Left="0" Canvas.Top="0" Margin="0,0,0,-185" d:IsHidden="True"/>
         <Canvas x:Name="background" Canvas.Left="0" Canvas.Top="0" Margin="0,0,0,-185">
@@ -145,11 +145,11 @@
             <Path x:Name="Path_129" Width="129.704" Height="80.5027" Canvas.Left="25.8567" Canvas.Top="49.4687" Stretch="Fill" StrokeThickness="0.945334" StrokeLineJoin="Round" Stroke="#FF666666" Data="M 31.7293,49.9413L 149.688,49.9413C 152.659,49.9413 155.088,52.372 155.088,55.3427L 155.088,124.097C 155.088,127.068 152.659,129.499 149.688,129.499L 31.7293,129.499C 28.7587,129.499 26.3293,127.068 26.3293,124.097L 26.3293,55.3427C 26.3293,52.372 28.7587,49.9413 31.7293,49.9413 Z "/>
             <Viewbox x:Name="Group" Width="17.92" Height="17.92" Canvas.Left="7.58789" Canvas.Top="7.38385">
                 <Canvas Width="17.92" Height="17.92">
-                    <Canvas Width="164" Height="167" x:Name="Clip" Clip="F1 M 8.40544,1.08417C 12.5561,1.08417 15.9214,4.44952 15.9214,8.60019C 15.9214,12.7495 12.5561,16.1162 8.40544,16.1162C 4.25478,16.1162 0.889442,12.7495 0.889442,8.60019C 0.889442,4.44952 4.25478,1.08417 8.40544,1.08417 Z ">
+                    <Canvas Width="164" Height="167" x:Name="Clip1" Clip="F1 M 8.40544,1.08417C 12.5561,1.08417 15.9214,4.44952 15.9214,8.60019C 15.9214,12.7495 12.5561,16.1162 8.40544,16.1162C 4.25478,16.1162 0.889442,12.7495 0.889442,8.60019C 0.889442,4.44952 4.25478,1.08417 8.40544,1.08417 Z ">
                         <Viewbox x:Name="Group_130" Width="17.92" Height="17.92" Canvas.Left="0" Canvas.Top="0">
                             <Canvas Width="17.92" Height="17.92">
                                 <Canvas Width="170" Height="176" x:Name="Clip_131" Clip="F1 M 0.889442,1.08417L 15.9214,1.08417L 15.9214,16.1162L 0.889442,16.1162L 0.889442,1.08417 Z ">
-                                    <Image x:Name="Image" Source="US_WhiskeyCompass2_files/image0.png" Width="28" Height="28" Canvas.Left="0" Canvas.Top="0">
+                                    <Image x:Name="Image" Width="28" Height="28" Canvas.Left="0" Canvas.Top="0">
                                         <Image.RenderTransform>
                                             <TransformGroup>
                                                 <MatrixTransform Matrix="0.64,0,0,0.64,0,1.1603e-005"/>
@@ -170,7 +170,7 @@
                         <Viewbox x:Name="Group_136" Width="17.92" Height="17.92" Canvas.Left="0" Canvas.Top="0">
                             <Canvas Width="17.92" Height="17.92">
                                 <Canvas Width="18" Height="18" x:Name="Clip_137" Clip="F1 M 0.889442,1.14026L 15.9214,1.14026L 15.9214,16.1709L 0.889442,16.1709L 0.889442,1.14026 Z ">
-                                    <Image x:Name="Image_138" Source="US_WhiskeyCompass2_files/image1.png" Width="28" Height="28" Canvas.Left="0" Canvas.Top="0">
+                                    <Image x:Name="Image_138"  Width="28" Height="28" Canvas.Left="0" Canvas.Top="0">
                                         <Image.RenderTransform>
                                             <TransformGroup>
                                                 <MatrixTransform Matrix="0.64,0,0,0.64,0,-8.74201e-006"/>
@@ -191,7 +191,7 @@
                         <Viewbox x:Name="Group_143" Width="17.92" Height="17.92" Canvas.Left="0" Canvas.Top="0">
                             <Canvas Width="17.92" Height="17.92">
                                 <Canvas Width="18" Height="467" x:Name="Clip_144" Clip="F1 M 0.937973,1.08417L 15.9686,1.08417L 15.9686,16.1162L 0.937973,16.1162L 0.937973,1.08417 Z ">
-                                    <Image x:Name="Image_145" Source="US_WhiskeyCompass2_files/image2.png" Width="28" Height="28" Canvas.Left="0" Canvas.Top="0">
+                                    <Image x:Name="Image_145"  Width="28" Height="28" Canvas.Left="0" Canvas.Top="0">
                                         <Image.RenderTransform>
                                             <TransformGroup>
                                                 <MatrixTransform Matrix="0.64,0,0,0.64,-5.08626e-006,1.1603e-005"/>
@@ -212,7 +212,7 @@
                         <Viewbox x:Name="Group_150" Width="17.92" Height="17.92" Canvas.Left="0" Canvas.Top="0">
                             <Canvas Width="17.92" Height="17.92">
                                 <Canvas Width="18" Height="18" x:Name="Clip_151" Clip="F1 M 0.937973,1.14026L 15.9686,1.14026L 15.9686,16.1709L 0.937973,16.1709L 0.937973,1.14026 Z ">
-                                    <Image x:Name="Image_152" Source="US_WhiskeyCompass2_files/image3.png" Width="28" Height="28" Canvas.Left="0" Canvas.Top="0">
+                                    <Image x:Name="Image_152" Width="28" Height="28" Canvas.Left="0" Canvas.Top="0">
                                         <Image.RenderTransform>
                                             <TransformGroup>
                                                 <MatrixTransform Matrix="0.64,0,0,0.64,-5.08626e-006,-8.74201e-006"/>

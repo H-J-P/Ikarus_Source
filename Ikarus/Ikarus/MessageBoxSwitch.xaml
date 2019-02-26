@@ -185,12 +185,12 @@
             <ComboBoxItem Content="Button" />
             <ComboBoxItem Content="ButtonOffOn" />
             <ComboBoxItem Content="ButtonPanelOffOn" />
-            <ComboBoxItem Content="ButtonWithRelease" />
-            <ComboBoxItem Content="ButtonWithRepeat" />
+            <ComboBoxItem Content="ButtonWithoutRepeat" />
             <ComboBoxItem Content="Drum" />
             <ComboBoxItem Content="MultiSwitch" />
             <ComboBoxItem Content="MultiSwitchReverse" />
             <ComboBoxItem Content="Rotary" />
+            <ComboBoxItem Content="RotaryRelativ" />
             <ComboBoxItem Content="SwitchOffOn" />
             <ComboBoxItem Content="SwitchOff_On" />
             <ComboBoxItem Content="SwitchOnOffOn" />

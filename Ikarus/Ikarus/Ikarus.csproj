@@ -234,6 +234,9 @@
     <Compile Include="Gauges\ButtonAndSwitches\MultiSwitchReverse.xaml.cs">
       <DependentUpon>MultiSwitchReverse.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Gauges\ButtonAndSwitches\RotaryRelativ.xaml.cs">
+      <DependentUpon>RotaryRelativ.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Gauges\FA18C\FA18C_ADI.xaml.cs">
       <DependentUpon>FA18C_ADI.xaml</DependentUpon>
     </Compile>
@@ -348,11 +351,8 @@
     <Compile Include="Gauges\ButtonAndSwitches\Button.xaml.cs">
       <DependentUpon>Button.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Gauges\ButtonAndSwitches\ButtonWithRelease.xaml.cs">
-      <DependentUpon>ButtonWithRelease.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Gauges\ButtonAndSwitches\ButtonWithRepeat.xaml.cs">
-      <DependentUpon>ButtonWithRepeat.xaml</DependentUpon>
+    <Compile Include="Gauges\ButtonAndSwitches\ButtonWithoutRelease.xaml.cs">
+      <DependentUpon>ButtonWithoutRelease.xaml</DependentUpon>
     </Compile>
     <Compile Include="Gauges\ButtonAndSwitches\ButtonOffOn.xaml.cs">
       <DependentUpon>ButtonOffOn.xaml</DependentUpon>
@@ -1699,6 +1699,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Gauges\ButtonAndSwitches\RotaryRelativ.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Gauges\FA18C\FA18C_ADI.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -1851,11 +1855,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Gauges\ButtonAndSwitches\ButtonWithRelease.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Gauges\ButtonAndSwitches\ButtonWithRepeat.xaml">
+    <Page Include="Gauges\ButtonAndSwitches\ButtonWithoutRelease.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

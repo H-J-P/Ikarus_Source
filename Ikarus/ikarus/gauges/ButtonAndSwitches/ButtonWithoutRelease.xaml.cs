@@ -13,7 +13,7 @@ namespace Ikarus
     /// <summary>
     /// Interaction logic for UserControl1.xaml
     /// </summary>
-    public partial class ButtonWithRepeat : UserControl, I_Ikarus
+    public partial class ButtonWithoutRelease : UserControl, I_Ikarus
     {
         private DataRow[] dataRows = new DataRow[] { };
         private string dataImportID = "";
@@ -33,7 +33,7 @@ namespace Ikarus
 
         public int GetWindowID() { return windowID; }
 
-        public ButtonWithRepeat()
+        public ButtonWithoutRelease()
         {
             InitializeComponent();
             Focusable = false;
@@ -178,6 +178,7 @@ namespace Ikarus
                                {
                                    switches.ignoreNextPackage = false;
                                    MainWindow.getAllDscData = true;
+
                                    return;
                                }
 
@@ -213,16 +214,15 @@ namespace Ikarus
         {
             try
             {
-                //Switches switches = MainWindow.switches.Find(x => x.ID == Convert.ToInt32(dataImportID));
-
                 if (switches == null) return;
 
                 MainWindow.refeshPopup = true;
-
                 switches.value = output[_state];
-                switches.oldValue = _state == 1 ? output[0] : output[1]; // Send 0.0 one time
+                switches.oldValue = output[0];
+
                 switches.events = true;
-                switches.dontReset = _state == 1; // only repeat with value 1.0. Not with value 0.0
+                switches.dontReset = false;
+                switches.sendRelease = false;
 
                 if (_state > 0)
                 {
@@ -275,13 +275,13 @@ namespace Ikarus
 
             if (!MainWindow.editmode) ProzessHelper.SetFocusToExternalApp(MainWindow.processNameDCS);
         }
-
         private void UpperRec_MouseUp(object sender, MouseButtonEventArgs e)
         {
             if (!e.Handled && !touchDown)
             {
                 e.Handled = true;
                 SetValue(0);
+
             }
             if (!MainWindow.editmode) ProzessHelper.SetFocusToExternalApp(MainWindow.processNameDCS);
         }
