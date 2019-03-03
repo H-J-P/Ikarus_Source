@@ -206,9 +206,6 @@ namespace Ikarus
 
                 switchState = Convert.ToDouble(string.Format("{0:0.00000}", switchState), CultureInfo.InvariantCulture); // E-format
 
-                if (switchState > maxValue) switchState = maxValue;
-                if (switchState < minValue) switchState = minValue;
-
                 if (oldState != switchState)
                 {
                     if (inversed == 0)
@@ -224,7 +221,13 @@ namespace Ikarus
 
                     if (relative == 0)
                     {
+                        if (switchState > maxValue) switchState = maxValue;
+                        if (switchState < minValue) switchState = minValue;
+
                         switches.value = switchState;
+
+                        if (animation > maxValue) animation = maxValue;
+                        if (animation < minValue) animation = minValue;
                     }
                     else
                     {
@@ -232,9 +235,6 @@ namespace Ikarus
                         if (_value == -1.0) switches.value = step * -1;
                         switches.oldValue = switches.oldValue * -1;
                     }
-                    if (animation > maxValue) animation = maxValue;
-                    if (animation < minValue) animation = minValue;
-
                     rtKnob = new RotateTransform();
                     rtKnob.Angle = (animation * finalAngle) + startAngle;
                     SwitchKnob.RenderTransform = rtKnob;
