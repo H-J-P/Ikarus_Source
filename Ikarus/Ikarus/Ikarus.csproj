@@ -234,6 +234,9 @@
     <Compile Include="Gauges\ButtonAndSwitches\MultiSwitchReverse.xaml.cs">
       <DependentUpon>MultiSwitchReverse.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Gauges\ButtonAndSwitches\RotaryUpdatable.xaml.cs">
+      <DependentUpon>RotaryUpdatable.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Gauges\ButtonAndSwitches\RotaryRelativ.xaml.cs">
       <DependentUpon>RotaryRelativ.xaml</DependentUpon>
     </Compile>
@@ -1696,6 +1699,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Gauges\ButtonAndSwitches\MultiSwitchReverse.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\ButtonAndSwitches\RotaryUpdatable.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

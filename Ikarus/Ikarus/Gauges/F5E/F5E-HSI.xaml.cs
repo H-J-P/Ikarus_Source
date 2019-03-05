@@ -142,13 +142,33 @@ namespace Ikarus
                                if (vals.Length > 6) { rangeCounter_100 = Convert.ToDouble(vals[6], CultureInfo.InvariantCulture); }
                                if (vals.Length > 7) { rangeCounter_10 = Convert.ToDouble(vals[7], CultureInfo.InvariantCulture); }
                                if (vals.Length > 8) { rangeCounter_1 = Convert.ToDouble(vals[8], CultureInfo.InvariantCulture); }
-                               if (vals.Length > 9) { course_100 = Convert.ToDouble(vals[9], CultureInfo.InvariantCulture); }
-                               if (vals.Length > 10) { course_10 = Convert.ToDouble(vals[10], CultureInfo.InvariantCulture); }
-                               if (vals.Length > 11) { course_1 = Convert.ToDouble(vals[11], CultureInfo.InvariantCulture); }
-                               if (vals.Length > 12) { poweroffFlag = Convert.ToDouble(vals[12], CultureInfo.InvariantCulture); }
-                               if (vals.Length > 13) { rangeFlag = Convert.ToDouble(vals[13], CultureInfo.InvariantCulture); }
-                               if (vals.Length > 14) { to_from_1 = Convert.ToDouble(vals[14], CultureInfo.InvariantCulture); }
-                               if (vals.Length > 15) { bearingFlag = Convert.ToDouble(vals[15], CultureInfo.InvariantCulture); }
+                               if (vals.Length > 9) { course_10 = Convert.ToDouble(vals[9], CultureInfo.InvariantCulture); }
+                               if (vals.Length > 10) { course_1 = Convert.ToDouble(vals[10], CultureInfo.InvariantCulture); }
+                               if (vals.Length > 11) { poweroffFlag = Convert.ToDouble(vals[11], CultureInfo.InvariantCulture); }
+                               if (vals.Length > 12) { rangeFlag = Convert.ToDouble(vals[12], CultureInfo.InvariantCulture); }
+                               if (vals.Length > 13) { to_from_1 = Convert.ToDouble(vals[13], CultureInfo.InvariantCulture); }
+                               if (vals.Length > 14) { bearingFlag = Convert.ToDouble(vals[14], CultureInfo.InvariantCulture); }
+
+                               if (rangeCounter_100 > 1.0) { rangeCounter_100 = 1.0; }
+                               if (rangeCounter_100 < 0.0) { rangeCounter_100 = 0.0; }
+                               if (rangeCounter_10 > 1.0) { rangeCounter_10 = 1.0; }
+                               if (rangeCounter_10 < 0.0) { rangeCounter_10 = 0.0; }
+                               if (rangeCounter_1 > 1.0) { rangeCounter_1 = 1.0; }
+                               if (rangeCounter_1 < 0.0) { rangeCounter_1 = 0.0; }
+                               if (course_100 > 1.0) { course_100 = 1.0; }
+                               if (course_100 < 0.0) { course_100 = 0.0; }
+                               if (course_10 > 1.0) { course_10 = 1.0; }
+                               if (course_10 < 0.0) { course_10 = 0.0; }
+                               if (course_1 > 1.0) { course_1 = 1.0; }
+                               if (course_1 < 0.0) { course_1 = 0.0; }
+
+                               string course_100_10 = Convert.ToInt16(course_10 * 36).ToString();
+
+                               if (course_100_10.Length == 0) { course_100_10 = "00"; }
+                               else if (course_100_10.Length == 1) { course_100_10 = "0" + course_100_10; }
+
+                               course_100 = Convert.ToDouble(course_100_10[0].ToString(), CultureInfo.InvariantCulture);
+                               course_10 = Convert.ToDouble(course_100_10[1].ToString(), CultureInfo.InvariantCulture);
 
                                if (heading != lheading)
                                {
@@ -176,36 +196,36 @@ namespace Ikarus
 
                                if (course_100 != lcourse_100)
                                {
-                                   ttcourseCounter_100.Y = course_100 * -220;
+                                   ttcourseCounter_100.Y = course_100 * -19.8;
                                    Course_100.RenderTransform = ttcourseCounter_100;
                                }
 
                                if (course_10 != lcourse_10)
                                {
-                                   ttcourseCounter_10.Y = course_10 * -220;
+                                   ttcourseCounter_10.Y = course_10 * -19.8;
                                    Course_10.RenderTransform = ttcourseCounter_10;
                                }
                                if (course_1 != lcourse_1)
                                {
-                                   ttcourseCounter_1.Y = course_1 * -220;
+                                   ttcourseCounter_1.Y = course_1 * -198;
                                    Course_1.RenderTransform = ttcourseCounter_1;
                                }
 
                                if (rangeCounter_100 != lrangeCounter_100)
                                {
-                                   ttrangeCounter_100.Y = rangeCounter_100 * -220;
+                                   ttrangeCounter_100.Y = rangeCounter_100 * -198;
                                    Range_100.RenderTransform = ttrangeCounter_100;
                                }
 
                                if (rangeCounter_10 != lrangeCounter_10)
                                {
-                                   ttrangeCounter_10.Y = rangeCounter_10 * -220;
+                                   ttrangeCounter_10.Y = rangeCounter_10 * -198;
                                    Range_10.RenderTransform = ttrangeCounter_10;
                                }
 
                                if (rangeCounter_1 != lrangeCounter_1)
                                {
-                                   ttrangeCounter_1.Y = rangeCounter_1 * -220;
+                                   ttrangeCounter_1.Y = rangeCounter_1 * -198;
                                    Range_1.RenderTransform = ttrangeCounter_1;
                                }
 

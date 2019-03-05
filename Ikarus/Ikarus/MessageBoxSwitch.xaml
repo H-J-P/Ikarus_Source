@@ -191,6 +191,7 @@
             <ComboBoxItem Content="MultiSwitchReverse" />
             <ComboBoxItem Content="Rotary" />
             <ComboBoxItem Content="RotaryRelativ" />
+            <ComboBoxItem Content="RotaryUpdatable" />
             <ComboBoxItem Content="SwitchOffOn" />
             <ComboBoxItem Content="SwitchOff_On" />
             <ComboBoxItem Content="SwitchOnOffOn" />
