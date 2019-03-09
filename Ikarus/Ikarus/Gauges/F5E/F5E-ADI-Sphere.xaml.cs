@@ -25,12 +25,15 @@ namespace Ikarus
         double bank = 0.0;
         double bankNeedle = 0.0;
         double attitudeWarningFlag = 0.0;
+        double silhouette = 0.0;
 
         double lpitch = 0.0;
         double lbank = 0.0;
         double lattitudeWarningFlag = 1.0;
+        double lsilhouette = 0.0;
 
         RotateTransform rt = new RotateTransform();
+        TranslateTransform ttSilhouette = new TranslateTransform();
         Sphere3D sphere3D;
 
         public F5E_ADI_Sphere()
@@ -111,6 +114,7 @@ namespace Ikarus
                                if (vals.Length > 0) { pitch = Convert.ToDouble(vals[0], CultureInfo.InvariantCulture); }
                                if (vals.Length > 1) { bank = Convert.ToDouble(vals[1], CultureInfo.InvariantCulture); }
                                if (vals.Length > 2) { attitudeWarningFlag = Convert.ToDouble(vals[2], CultureInfo.InvariantCulture); }
+                               if (vals.Length > 3) { silhouette = Convert.ToDouble(vals[3], CultureInfo.InvariantCulture); }
 
                                if (pitch > 0.5) pitch = 0.5;
                                if (pitch < -0.5) pitch = -0.5;
@@ -133,12 +137,19 @@ namespace Ikarus
                                    Bank.RenderTransform = rt;
                                }
 
+                               if (lsilhouette != silhouette)
+                               {
+                                   ttSilhouette.Y = silhouette * 30;
+                                   Silhouette.RenderTransform = ttSilhouette;
+                               }
+
                                if (lattitudeWarningFlag != attitudeWarningFlag)
                                    Flagg_off.Visibility = (attitudeWarningFlag > 0.8) ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
 
                                lpitch = pitch;
                                lbank = bank;
                                lattitudeWarningFlag = attitudeWarningFlag;
+                               lsilhouette = silhouette;
                            }
                            catch (Exception e) { ImportExport.LogMessage(GetType().Name + " got data and failed with exception: " + e.ToString()); }
                        }));

@@ -23,17 +23,20 @@ namespace Ikarus
         double attitudeIndicatorPitchSphere = 0.0;
         double attitudeIndicatorBankNeedle = 0.0;
         double attitudeIndicatorOffFlag = 0.0;
+        double silhouette = 0.0;
 
         double lattitudeIndicatorPitch = 0.0;
         double lattitudeIndicatorBank = 0.0;
         double lattitudeIndicatorPitchSphere = 0.0;
         double lattitudeIndicatorBankNeedle = 0.0;
         double lattitudeIndicatorOffFlag = 0.0;
+        double lsilhouette = 0.0;
 
         TransformGroup grp = new TransformGroup();
         RotateTransform rt = new RotateTransform();
         TranslateTransform tt = new TranslateTransform();
         RotateTransform rtattitudeIndicatorBankNeedle = new RotateTransform();
+        TranslateTransform ttSilhouette = new TranslateTransform();
 
         public F86_ADI()
         {
@@ -99,6 +102,7 @@ namespace Ikarus
                                if (vals.Length > 2) { attitudeIndicatorPitchSphere = Convert.ToDouble(vals[2], CultureInfo.InvariantCulture); }
                                if (vals.Length > 3) { attitudeIndicatorBankNeedle = Convert.ToDouble(vals[3], CultureInfo.InvariantCulture); }
                                if (vals.Length > 4) { attitudeIndicatorOffFlag = Convert.ToDouble(vals[4], CultureInfo.InvariantCulture); }
+                               if (vals.Length > 5) { silhouette = Convert.ToDouble(vals[5], CultureInfo.InvariantCulture); }
 
                                if (lattitudeIndicatorBank != attitudeIndicatorBank || lattitudeIndicatorPitchSphere != attitudeIndicatorPitchSphere)
                                {
@@ -132,6 +136,12 @@ namespace Ikarus
                                    AttitudeIndicatorBank.RenderTransform = rtattitudeIndicatorBankNeedle;
                                }
 
+                               if (lsilhouette != silhouette)
+                               {
+                                   ttSilhouette.Y = silhouette * 30;
+                                   Silhouette.RenderTransform = ttSilhouette;
+                               }
+
                                AttitudeIndicatorOffFlag.Visibility = attitudeIndicatorOffFlag > 0.8 ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
                                //ValueText.Text = attitudeIndicatorBank.ToString();
 
@@ -140,6 +150,7 @@ namespace Ikarus
                                lattitudeIndicatorPitchSphere = attitudeIndicatorPitchSphere;
                                lattitudeIndicatorBankNeedle = attitudeIndicatorBankNeedle;
                                lattitudeIndicatorOffFlag = attitudeIndicatorOffFlag;
+                               lsilhouette = silhouette;
                            }
                            catch (Exception e) { ImportExport.LogMessage(GetType().Name + " got data and failed with exception: " + e.ToString()); }
                        }));

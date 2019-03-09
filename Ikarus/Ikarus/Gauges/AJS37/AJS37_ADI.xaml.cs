@@ -37,6 +37,7 @@ namespace Ikarus
         private double headingAngle = 0.0;
         private double bankSteering = 0.0;
         private double glideSlope = 0.0;
+        private double silhouette = 0.0;
 
         private double lpitch = 0.0;
         private double lbank = 0.0;
@@ -49,6 +50,8 @@ namespace Ikarus
         private double lcourceWarningFlag = 1.0;
         private double lbankSteering = 0.0;
         private double lglideSlope = 0.0;
+        private double lsilhouette = 0.0;
+
 
         private RotateTransform rtSlipball = new RotateTransform();
         private TranslateTransform ttTurnIndicator = new TranslateTransform();
@@ -57,6 +60,7 @@ namespace Ikarus
         private TranslateTransform rtvvi = new TranslateTransform();
         private TranslateTransform ttglideSlope = new TranslateTransform();
         private TranslateTransform ttbanksteering = new TranslateTransform();
+        private TranslateTransform ttSilhouette = new TranslateTransform();
         Sphere3D sphere3D;
 
         public AJS37_ADI()
@@ -139,6 +143,7 @@ namespace Ikarus
                                if (vals.Length > 7) { flag_vvi_off = Convert.ToDouble(vals[7], CultureInfo.InvariantCulture); }
                                if (vals.Length > 8) { flag_off = Convert.ToDouble(vals[8], CultureInfo.InvariantCulture); }
                                if (vals.Length > 9) { courceWarningFlag = Convert.ToDouble(vals[9], CultureInfo.InvariantCulture); }
+                               if (vals.Length > 10) { silhouette = Convert.ToDouble(vals[10], CultureInfo.InvariantCulture); }
 
                                bankNeedle = bank;
 
@@ -196,6 +201,12 @@ namespace Ikarus
                                {
                                    ttglideSlope.Y = glideSlope * -125;
                                    Pitchsteering.RenderTransform = ttglideSlope;
+                               }
+
+                               if (lsilhouette != silhouette)
+                               {
+                                   ttSilhouette.Y = silhouette * 30;
+                                   Silhouette.RenderTransform = ttSilhouette;
                                }
 
                                if (lcourceWarningFlag != courceWarningFlag)

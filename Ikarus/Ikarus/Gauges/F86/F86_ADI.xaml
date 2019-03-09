@@ -135,11 +135,13 @@
                 <Path Data="M1.661,6.637L0,0.44 1.643,0 3.304,6.197z" Fill="#FF1A1A1A" Height="6.637" Canvas.Left="84.142" Canvas.Top="18.708" Width="3.304"/>
                 <Path Data="M0,6.197L1.66,0 3.303,0.441 1.643,6.637z" Fill="#FF1A1A1A" Height="6.637" Canvas.Left="130.823" Canvas.Top="18.708" Width="3.303"/>
                 <Path Data="M0,6.39L0.56,0 2.254,0.147 1.694,6.539z" Fill="#FF1A1A1A" Height="6.539" Canvas.Left="115.867" Canvas.Top="16.028" Width="2.254"/>
-                <Path Data="M1.134,13.137L59.545,13.137 59.545,0 60.678,0 60.678,14.271 0,14.271 0,0 1.134,0z" Fill="Black" Height="14.271" Canvas.Left="78.795" Canvas.Top="108.8" Width="60.678"/>
-                <Path Data="M0,0L1.134,0 1.134,12.26 0,12.26z" Fill="Black" Height="12.26" Canvas.Left="108.568" Canvas.Top="110.126" Width="1.134"/>
-                <Path Data="M2.453,0C3.808,0 4.906,1.099 4.906,2.453 4.906,3.808 3.808,4.906 2.453,4.906 1.098,4.906 0,3.808 0,2.453 0,1.099 1.098,0 2.453,0" Fill="White" Height="4.906" Canvas.Left="106.681" Canvas.Top="106.681" Width="4.906"/>
-                <Path Data="M30.242,4.252L0,4.252 0,0 30.242,0z" Fill="White" Height="4.252" Canvas.Left="138.339" Canvas.Top="107.008" Width="30.242"/>
-                <Path Data="M0,4.252L30.242,4.252 30.242,0 0,0z" Fill="White" Height="4.252" Canvas.Left="49.687" Canvas.Top="107.008" Width="30.242"/>
+                <Canvas x:Name="Silhouette" Height="16" Canvas.Left="50" Canvas.Top="107" Width="118" RenderTransformOrigin="0.5,0.5">
+                    <Path Data="M1.134,13.137L59.545,13.137 59.545,0 60.678,0 60.678,14.271 0,14.271 0,0 1.134,0z" Fill="Black" Height="14.271" Canvas.Left="29.161" Canvas.Top="2" Width="60.678"/>
+                    <Path Data="M0,0L1.134,0 1.134,12.26 0,12.26z" Fill="Black" Height="12.26" Canvas.Left="59" Canvas.Top="3" Width="1.134"/>
+                    <Path Data="M2.453,0C3.808,0 4.906,1.099 4.906,2.453 4.906,3.808 3.808,4.906 2.453,4.906 1.098,4.906 0,3.808 0,2.453 0,1.099 1.098,0 2.453,0" Fill="White" Height="4.906" Canvas.Left="57.047" Canvas.Top="0.047" Width="4.906"/>
+                    <Path Data="M30.242,4.252L0,4.252 0,0 30.242,0z" Fill="White" Height="4.252" Canvas.Left="88" Width="30.242"/>
+                    <Path Data="M0,4.252L30.242,4.252 30.242,0 0,0z" Fill="White" Height="4.252" Width="30.242"/>
+                </Canvas>
                 <TextBlock x:Name="ValueText" Canvas.Left="92" TextWrapping="Wrap" Text="0.0000" Canvas.Top="199" Foreground="#FFFBFBFB" FontSize="14"/>
             </Canvas>
             <Canvas x:Name="AttitudeIndicatorOffFlag" Height="27.026" Canvas.Left="130.361" Canvas.Top="22.95" Width="51.409" RenderTransformOrigin="1.036,-0.028">

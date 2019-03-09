@@ -109,22 +109,22 @@
             <Path x:Name="Path_12" Width="44.2907" Height="15.3347" Canvas.Left="99.6027" Canvas.Top="94.776" Stretch="Fill" Fill="#FF240E00" Data="M 143.893,103.235L 104.351,94.776L 99.6027,102.795L 133.807,110.111C 136.261,108.669 138.751,107.3 141.275,106C 142.487,105.377 143.389,104.399 143.893,103.235 Z "/>
         </Canvas>
         <Canvas x:Name="front" Canvas.Left="0" Canvas.Top="0">
-            <Path x:Name="Path_13" Width="95.9373" Height="18.4867" Canvas.Left="237.58" Canvas.Top="170.079" Stretch="Fill" Fill="#FF000000" Data="M 333.517,188.565L 247.019,188.565C 241.827,188.565 237.58,184.319 237.58,179.128L 237.58,170.079L 241.359,170.079L 241.359,178.877C 241.359,182.128 244.017,184.787 247.267,184.787L 333.517,184.787L 333.517,188.565 Z "/>
-            <Path x:Name="Path_14" Width="89.0733" Height="22.782" Canvas.Left="125.542" Canvas.Top="168.835" Stretch="Fill" StrokeThickness="0.756" StrokeLineJoin="Round" Stroke="#FF000000" Fill="#FFFFFFFF" Data="M 214.237,172.481L 197.441,189.277C 194.827,191.893 190.545,191.893 187.929,189.277L 170.079,171.427L 152.227,189.277C 149.611,191.893 145.331,191.893 142.716,189.277L 125.92,172.481L 129.123,172.481L 144.221,187.58C 146.009,189.368 148.935,189.368 150.721,187.58L 169.088,169.213L 171.069,169.213L 189.436,187.58C 191.223,189.368 194.148,189.368 195.936,187.58L 211.033,172.481L 214.237,172.481 Z "/>
-            <Path x:Name="Path_15" Width="8.31467" Height="8.31467" Canvas.Left="165.922" Canvas.Top="165.921" Stretch="Fill" StrokeThickness="0.756" StrokeLineJoin="Round" Stroke="#FF000000" Fill="#FFFFFFFF" Data="M 170.079,166.299C 172.165,166.299 173.859,167.991 173.859,170.079C 173.859,172.167 172.165,173.857 170.079,173.857C 167.992,173.857 166.3,172.167 166.3,170.079C 166.3,167.991 167.992,166.299 170.079,166.299 Z "/>
-            <Rectangle x:Name="Rectangle_16" Width="53.5387" Height="6.04665" Canvas.Left="83.2633" Canvas.Top="167.055" Stretch="Fill" StrokeThickness="0.756" StrokeLineJoin="Round" Stroke="#FF000000" Fill="#FFFFFFFF"/>
-            <Rectangle x:Name="Rectangle_17" Width="53.5387" Height="6.04665" Canvas.Left="203.355" Canvas.Top="167.055" Stretch="Fill" StrokeThickness="0.756" StrokeLineJoin="Round" Stroke="#FF000000" Fill="#FFFFFFFF"/>
+            <Canvas x:Name="Silhouette"  Height="26" Canvas.Left="83" Canvas.Top="166" Width="251">
+                <Path x:Name="Path_13" Width="95.937" Height="18.487" Canvas.Left="154.801" Canvas.Top="4" Stretch="Fill" Fill="#FF000000" Data="M 333.517,188.565L 247.019,188.565C 241.827,188.565 237.58,184.319 237.58,179.128L 237.58,170.079L 241.359,170.079L 241.359,178.877C 241.359,182.128 244.017,184.787 247.267,184.787L 333.517,184.787L 333.517,188.565 Z "/>
+                <Path x:Name="Path_14" Width="89.074" Height="22.782" Canvas.Left="42.769" Canvas.Top="3.109" Stretch="Fill" StrokeThickness="0.756" StrokeLineJoin="Round" Stroke="#FF000000" Fill="#FFFFFFFF" Data="M 214.237,172.481L 197.441,189.277C 194.827,191.893 190.545,191.893 187.929,189.277L 170.079,171.427L 152.227,189.277C 149.611,191.893 145.331,191.893 142.716,189.277L 125.92,172.481L 129.123,172.481L 144.221,187.58C 146.009,189.368 148.935,189.368 150.721,187.58L 169.088,169.213L 171.069,169.213L 189.436,187.58C 191.223,189.368 194.148,189.368 195.936,187.58L 211.033,172.481L 214.237,172.481 Z "/>
+                <Path x:Name="Path_15" Width="8.315" Height="8.315" Canvas.Left="82.769" Stretch="Fill" StrokeThickness="0.756" StrokeLineJoin="Round" Stroke="#FF000000" Fill="#FFFFFFFF" Data="M 170.079,166.299C 172.165,166.299 173.859,167.991 173.859,170.079C 173.859,172.167 172.165,173.857 170.079,173.857C 167.992,173.857 166.3,172.167 166.3,170.079C 166.3,167.991 167.992,166.299 170.079,166.299 Z "/>
+                <Rectangle x:Name="Rectangle_16" Width="54" Height="6" Canvas.Top="1" Stretch="Fill" StrokeThickness="0.756" StrokeLineJoin="Round" Stroke="#FF000000" Fill="#FFFFFFFF"/>
+                <Rectangle x:Name="Rectangle_17" Width="54" Height="6" Canvas.Left="120" Canvas.Top="1" Stretch="Fill" StrokeThickness="0.756" StrokeLineJoin="Round" Stroke="#FF000000" Fill="#FFFFFFFF"/>
+            </Canvas>
             <Path x:Name="Path_18" Width="340.913" Height="340.915" Canvas.Left="-0.378" Canvas.Top="-0.378" Stretch="Fill" StrokeThickness="0.756" StrokeLineJoin="Round" Stroke="#FF000000" Fill="#FF1A1A1A" Data="M 31.9547,0L 45.3667,0L 291.867,0L 308.201,0L 340.157,0L 340.157,31.9547L 340.157,47.8839L 340.157,227.932L 311.827,227.932C 319.12,210.084 323.149,190.553 323.149,170.079C 323.149,85.5413 254.617,17.008 170.079,17.008C 85.54,17.008 17.008,85.5413 17.008,170.079C 17.008,254.619 85.54,323.151 170.079,323.151C 190.552,323.151 210.081,319.121 227.931,311.828L 227.931,340.159L 49.868,340.159L 31.9547,340.159L 0,340.159L 0,308.204L 0,288.885L 0,37.3839L 0,31.9547L 0,0L 31.9547,0 Z "/>
             <Path x:Name="Path_19" Width="26.7453" Height="26.7453" Canvas.Left="15.7453" Canvas.Top="15.7453" Stretch="Fill" StrokeThickness="0.288" StrokeLineJoin="Round" Stroke="#FF000000" Data="M 29.1173,15.8893C 36.4227,15.8893 42.3467,21.812 42.3467,29.1173C 42.3467,36.424 36.4227,42.3466 29.1173,42.3466C 21.812,42.3466 15.8893,36.424 15.8893,29.1173C 15.8893,21.812 21.812,15.8893 29.1173,15.8893 Z ">
                 <Path.Fill>
                     <RadialGradientBrush RadiusX="0.599986" RadiusY="0.599986" Center="0.39999,0.40003" GradientOrigin="0.39999,0.40003">
-                        <RadialGradientBrush.GradientStops>
-                            <GradientStop Color="#FF999999" Offset="0"/>
-                            <GradientStop Color="#FF000000" Offset="1"/>
-                        </RadialGradientBrush.GradientStops>
                         <RadialGradientBrush.RelativeTransform>
                             <TransformGroup/>
                         </RadialGradientBrush.RelativeTransform>
+                        <GradientStop Color="#FF999999" Offset="0"/>
+                        <GradientStop Color="#FF000000" Offset="1"/>
                     </RadialGradientBrush>
                 </Path.Fill>
             </Path>
@@ -132,13 +132,11 @@
             <Path x:Name="Path_21" Width="26.7454" Height="26.7453" Canvas.Left="297.667" Canvas.Top="15.744" Stretch="Fill" StrokeThickness="0.288" StrokeLineJoin="Round" Stroke="#FF000000" Data="M 311.039,15.888C 318.345,15.888 324.268,21.812 324.268,29.116C 324.268,36.4226 318.345,42.3453 311.039,42.3453C 303.735,42.3453 297.811,36.4226 297.811,29.116C 297.811,21.812 303.735,15.888 311.039,15.888 Z ">
                 <Path.Fill>
                     <RadialGradientBrush RadiusX="0.599986" RadiusY="0.599986" Center="0.399985,0.400033" GradientOrigin="0.399985,0.400033">
-                        <RadialGradientBrush.GradientStops>
-                            <GradientStop Color="#FF999999" Offset="0"/>
-                            <GradientStop Color="#FF000000" Offset="1"/>
-                        </RadialGradientBrush.GradientStops>
                         <RadialGradientBrush.RelativeTransform>
                             <TransformGroup/>
                         </RadialGradientBrush.RelativeTransform>
+                        <GradientStop Color="#FF999999" Offset="0"/>
+                        <GradientStop Color="#FF000000" Offset="1"/>
                     </RadialGradientBrush>
                 </Path.Fill>
             </Path>
@@ -146,13 +144,11 @@
             <Path x:Name="Path_23" Width="26.744" Height="26.7454" Canvas.Left="15.7453" Canvas.Top="297.668" Stretch="Fill" StrokeThickness="0.288" StrokeLineJoin="Round" Stroke="#FF000000" Data="M 29.1173,297.812C 36.4227,297.812 42.3453,303.736 42.3453,311.04C 42.3453,318.347 36.4227,324.269 29.1173,324.269C 21.812,324.269 15.8893,318.347 15.8893,311.04C 15.8893,303.736 21.812,297.812 29.1173,297.812 Z ">
                 <Path.Fill>
                     <RadialGradientBrush RadiusX="0.600004" RadiusY="0.599972" Center="0.40001,0.400026" GradientOrigin="0.40001,0.400026">
-                        <RadialGradientBrush.GradientStops>
-                            <GradientStop Color="#FF999999" Offset="0"/>
-                            <GradientStop Color="#FF000000" Offset="1"/>
-                        </RadialGradientBrush.GradientStops>
                         <RadialGradientBrush.RelativeTransform>
                             <TransformGroup/>
                         </RadialGradientBrush.RelativeTransform>
+                        <GradientStop Color="#FF999999" Offset="0"/>
+                        <GradientStop Color="#FF000000" Offset="1"/>
                     </RadialGradientBrush>
                 </Path.Fill>
             </Path>
@@ -160,16 +156,14 @@
             <Path x:Name="Path_25" Width="306.344" Height="306.344" Canvas.Left="16.9067" Canvas.Top="16.9066" Stretch="Fill" Data="M 170.079,53.5919C 105.744,53.5919 53.5907,105.744 53.5907,170.079C 53.5907,234.413 105.744,286.568 170.079,286.568C 234.413,286.568 286.567,234.413 286.567,170.079C 286.567,105.744 234.413,53.5919 170.079,53.5919 Z M 170.079,16.9066C 85.484,16.9066 16.9067,85.4853 16.9067,170.079C 16.9067,254.675 85.484,323.251 170.079,323.251C 254.673,323.251 323.251,254.675 323.251,170.079C 323.251,85.4853 254.673,16.9066 170.079,16.9066 Z ">
                 <Path.Fill>
                     <RadialGradientBrush RadiusX="0.63" RadiusY="0.63" Center="0.560001,0.63" GradientOrigin="0.560001,0.63">
-                        <RadialGradientBrush.GradientStops>
-                            <GradientStop Color="#FF666666" Offset="0"/>
-                            <GradientStop Color="#FF666666" Offset="0.02"/>
-                            <GradientStop Color="#FF151515" Offset="0.7976"/>
-                            <GradientStop Color="#FF000000" Offset="0.98"/>
-                            <GradientStop Color="#FF000000" Offset="1"/>
-                        </RadialGradientBrush.GradientStops>
                         <RadialGradientBrush.RelativeTransform>
                             <TransformGroup/>
                         </RadialGradientBrush.RelativeTransform>
+                        <GradientStop Color="#FF666666" Offset="0"/>
+                        <GradientStop Color="#FF666666" Offset="0.02"/>
+                        <GradientStop Color="#FF151515" Offset="0.7976"/>
+                        <GradientStop Color="#FF000000" Offset="0.98"/>
+                        <GradientStop Color="#FF000000" Offset="1"/>
                     </RadialGradientBrush>
                 </Path.Fill>
             </Path>

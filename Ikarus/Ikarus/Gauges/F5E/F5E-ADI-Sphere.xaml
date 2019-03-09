@@ -647,7 +647,7 @@
                     Canvas.Top="126.1"
                     Width="173.532"
                     Height="2.476"
-                    RenderTransformOrigin="0.5,0.5">
+                    RenderTransformOrigin="0.5,0.5" d:IsHidden="True">
                 <Path Canvas.Left="0"
                       Canvas.Top="0"
                       Width="64.055"
@@ -684,7 +684,7 @@
                     Canvas.Top="12.093"
                     Width="34.724"
                     Height="180.021"
-                    RenderTransformOrigin="0.5,0.5">
+                    RenderTransformOrigin="0.5,0.5" d:IsHidden="True">
                 <Path Canvas.Left="0"
                       Canvas.Top="0"
                       Width="34.724"
@@ -829,15 +829,42 @@
                       Stroke="#FF1A1A1A"
                       StrokeMiterLimit="2.414"
                       StrokeThickness="0.283" />
-                <Path Canvas.Left="39.175"
-                      Canvas.Top="101.251"
-                      Width="39.607"
-                      Height="4.281"
-                      Data="M0.284,0.283L39.324,0.283 39.324,3.997 0.284,3.997z"
-                      Fill="White"
-                      Stroke="Black"
-                      StrokeMiterLimit="2.414"
-                      StrokeThickness="0.567" />
+                <Canvas x:Name="Silhouette" Height="19" Canvas.Left="39" Canvas.Top="101" Width="129" RenderTransformOrigin="0.5,0.5">
+                    <Path
+                        Width="39.607"
+                        Height="4.281"
+                        Data="M0.284,0.283L39.324,0.283 39.324,3.997 0.284,3.997z"
+                        Fill="White"
+                        Stroke="Black"
+                        StrokeMiterLimit="2.414"
+                        StrokeThickness="0.567" />
+                    <Path Canvas.Left="30.004"
+                        Canvas.Top="1.209"
+                        Width="69.599"
+                        Height="17.583"
+                        Data="M68.914,2.809L55.938,15.785C53.918,17.805,50.611,17.805,48.59,15.785L34.799,1.993 21.008,15.785C18.987,17.805,15.68,17.805,13.659,15.785L0.684,2.809 3.158,2.809 14.823,14.474C16.204,15.855,18.464,15.855,19.844,14.474L34.034,0.284 35.564,0.284 49.754,14.474C51.135,15.855,53.394,15.855,54.775,14.474L66.439,2.809z"
+                        Fill="White"
+                        Stroke="Black"
+                        StrokeMiterLimit="2.414"
+                        StrokeThickness="0.567" />
+                    <Path Canvas.Left="62.044"
+                        Canvas.Top="0.241"
+                        Width="5.518"
+                        Height="5.518"
+                        Data="M2.76,0.284C4.128,0.284 5.235,1.392 5.235,2.759 5.235,4.127 4.128,5.235 2.76,5.235 1.392,5.235 0.284,4.127 0.284,2.759 0.284,1.392 1.392,0.284 2.76,0.284"
+                        Fill="White"
+                        Stroke="Black"
+                        StrokeMiterLimit="2.414"
+                        StrokeThickness="0.567" />
+                    <Path Canvas.Left="89"
+                        Width="39.607"
+                        Height="4.281"
+                        Data="M0.283,0.283L39.323,0.283 39.323,3.997 0.283,3.997z"
+                        Fill="White"
+                        Stroke="Black"
+                        StrokeMiterLimit="2.414"
+                        StrokeThickness="0.567" />
+                </Canvas>
                 <Path Canvas.Left="41.196"
                       Canvas.Top="105.231"
                       Width="4.142"
@@ -852,15 +879,6 @@
                       Height="12.855"
                       Data="M0.857,12.855L0,12.36 7.136,0 7.993,0.495z"
                       Fill="White" />
-                <Path Canvas.Left="68.592"
-                      Canvas.Top="102.438"
-                      Width="69.599"
-                      Height="17.583"
-                      Data="M68.914,2.809L55.938,15.785C53.918,17.805,50.611,17.805,48.59,15.785L34.799,1.993 21.008,15.785C18.987,17.805,15.68,17.805,13.659,15.785L0.684,2.809 3.158,2.809 14.823,14.474C16.204,15.855,18.464,15.855,19.844,14.474L34.034,0.284 35.564,0.284 49.754,14.474C51.135,15.855,53.394,15.855,54.775,14.474L66.439,2.809z"
-                      Fill="White"
-                      Stroke="Black"
-                      StrokeMiterLimit="2.414"
-                      StrokeThickness="0.567" />
                 <Path Canvas.Left="69.736"
                       Canvas.Top="186.966"
                       Width="3.641"
@@ -879,15 +897,6 @@
                       Height="15.325"
                       Data="M5.515,0L8.272,7.662 11.029,15.325 5.515,15.325 0,15.325 2.758,7.662z"
                       Fill="White" />
-                <Path Canvas.Left="100.631"
-                      Canvas.Top="100.631"
-                      Width="5.518"
-                      Height="5.518"
-                      Data="M2.76,0.284C4.128,0.284 5.235,1.392 5.235,2.759 5.235,4.127 4.128,5.235 2.76,5.235 1.392,5.235 0.284,4.127 0.284,2.759 0.284,1.392 1.392,0.284 2.76,0.284"
-                      Fill="White"
-                      Stroke="Black"
-                      StrokeMiterLimit="2.414"
-                      StrokeThickness="0.567" />
                 <Path Canvas.Left="102.896"
                       Canvas.Top="0.001"
                       Width="0.99"
@@ -900,15 +909,6 @@
                       Height="7.976"
                       Data="M2.351,7.804L1.376,7.976 0,0.172 0.975,0z"
                       Fill="White" />
-                <Path Canvas.Left="127.999"
-                      Canvas.Top="101.251"
-                      Width="39.607"
-                      Height="4.281"
-                      Data="M0.283,0.283L39.323,0.283 39.323,3.997 0.283,3.997z"
-                      Fill="White"
-                      Stroke="Black"
-                      StrokeMiterLimit="2.414"
-                      StrokeThickness="0.567" />
                 <Path Canvas.Left="133.406"
                       Canvas.Top="186.966"
                       Width="3.642"

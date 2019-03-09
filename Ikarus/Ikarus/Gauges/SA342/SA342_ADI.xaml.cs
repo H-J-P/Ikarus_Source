@@ -27,6 +27,8 @@ namespace Ikarus
         double flagg_OFF = 0.0;
         double flagg_GS = 0.0;
         double flagg_LOC = 0.0;
+        double manualPitch = 0.0;
+        double silhouette = 0.0;
 
         private const double dNull = 0.0;
 
@@ -38,12 +40,15 @@ namespace Ikarus
         double lflagg_OFF = 1.0;
         double lflagg_GS = 1.0;
         double lflagg_LOC = 1.0;
+        double lmanualPitch = 0.0;
+        double lsilhouette = 0.0;
 
         private string lightColor = "#FFFFFF"; // white
         RotateTransform rt = new RotateTransform();
         RotateTransform rtSlipBall = new RotateTransform();
         TranslateTransform ttglide = new TranslateTransform();
         TranslateTransform ttside = new TranslateTransform();
+        TranslateTransform ttSilhouette = new TranslateTransform();
 
         Sphere3D sphere3D;
 
@@ -124,6 +129,7 @@ namespace Ikarus
                                if (vals.Length > 5) { flagg_OFF = Convert.ToDouble(vals[5], CultureInfo.InvariantCulture); }
                                if (vals.Length > 6) { flagg_GS = Convert.ToDouble(vals[6], CultureInfo.InvariantCulture); }
                                if (vals.Length > 7) { flagg_LOC = Convert.ToDouble(vals[7], CultureInfo.InvariantCulture); }
+                               if (vals.Length > 8) { silhouette = Convert.ToDouble(vals[8], CultureInfo.InvariantCulture); }
 
                                bankNeedle = bank;
 
@@ -165,6 +171,12 @@ namespace Ikarus
                                    Side.RenderTransform = ttside;
                                }
 
+                               if (lsilhouette != silhouette)
+                               {
+                                   ttSilhouette.Y = silhouette * 30;
+                                   Silhouette.RenderTransform = ttSilhouette;
+                               }
+
                                if (lflagg_OFF != flagg_OFF)
                                    Flagg_OFF.Visibility = (flagg_OFF > 0.5) ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
 
@@ -182,6 +194,7 @@ namespace Ikarus
                                lflagg_OFF = flagg_OFF;
                                lflagg_GS = flagg_GS;
                                lflagg_LOC = flagg_LOC;
+                               lsilhouette = silhouette;
                            }
                            catch (Exception e) { ImportExport.LogMessage(GetType().Name + " got data and failed with exception: " + e.ToString()); }
                        }));

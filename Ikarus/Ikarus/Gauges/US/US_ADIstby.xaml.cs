@@ -119,7 +119,7 @@ namespace Ikarus
 
                                if (lsilhouette != silhouette)
                                {
-                                   ttSilhouette.Y = silhouette * -30;
+                                   ttSilhouette.Y = silhouette * 30;
                                    Silhouette.RenderTransform = ttSilhouette;
                                }
 

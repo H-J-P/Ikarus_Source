@@ -33,6 +33,7 @@ namespace Ikarus
         private double flag_off = 0.0;
         private double courseDeviation = 0.0;
         private double glideSlopeDeviation = 0.0;
+        private double silhouette = 0.0;
 
         private double lpitch = 0.0;
         private double lbank = 0.0;
@@ -42,12 +43,14 @@ namespace Ikarus
         private double lFlag_off = 1.0;
         private double lcourseDeviation = 0.0;
         private double lglideSlopeDeviation = 0.0;
+        private double lsilhouette = 0.0;
 
         private RotateTransform rtSlipball = new RotateTransform();
         private TranslateTransform rtpitchSteering = new TranslateTransform();
         private RotateTransform rtbankNeedle = new RotateTransform();
         private TranslateTransform ttglideSlope = new TranslateTransform();
         private TranslateTransform ttbanksteering = new TranslateTransform();
+        private TranslateTransform ttSilhouette = new TranslateTransform();
         Sphere3D sphere3D;
 
         public M2KC_ADI()
@@ -121,6 +124,7 @@ namespace Ikarus
                                if (vals.Length > 4) { flag_off = Convert.ToDouble(vals[4], CultureInfo.InvariantCulture); }
                                if (vals.Length > 5) { courseDeviation = Convert.ToDouble(vals[5], CultureInfo.InvariantCulture); }
                                if (vals.Length > 6) { glideSlopeDeviation = Convert.ToDouble(vals[6], CultureInfo.InvariantCulture); }
+                               if (vals.Length > 7) { silhouette = Convert.ToDouble(vals[7], CultureInfo.InvariantCulture); }
 
                                bankNeedle = bank;
 
@@ -171,6 +175,12 @@ namespace Ikarus
                                {
                                    ttglideSlope.Y = glideSlopeDeviation * -90;
                                    GLIDESLOPE_deviation.RenderTransform = ttglideSlope;
+                               }
+
+                               if (lsilhouette != silhouette)
+                               {
+                                   ttSilhouette.Y = silhouette * 30;
+                                   Silhouette.RenderTransform = ttSilhouette;
                                }
 
                                if (lFlag_off != flag_off)

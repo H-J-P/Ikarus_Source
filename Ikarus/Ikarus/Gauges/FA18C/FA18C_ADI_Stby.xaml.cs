@@ -21,16 +21,18 @@ namespace Ikarus
         double pitch = 0.0;
         double bank = 0.0;
         double flagOff = 0.0;
-        double manualPitch = 0.0;
+        double silhouette = 0.0;
 
         double lpitch = 0.0;
         double lbank = 0.0;
         double lflagOff = 1.0;
+        double lsilhouette = 0.0;
 
         RotateTransform rt = new RotateTransform();
         TranslateTransform tt = new TranslateTransform();
         RotateTransform rtFlagOff = new RotateTransform();
         RotateTransform rtTurn = new RotateTransform();
+        TranslateTransform ttSilhouette = new TranslateTransform();
 
         public FA18C_ADI_Stby()
         {
@@ -94,7 +96,7 @@ namespace Ikarus
                                if (vals.Length > 0) { pitch = Convert.ToDouble(vals[0], CultureInfo.InvariantCulture); }
                                if (vals.Length > 1) { bank = Convert.ToDouble(vals[1], CultureInfo.InvariantCulture); }
                                if (vals.Length > 2) { flagOff = Convert.ToDouble(vals[2], CultureInfo.InvariantCulture); }
-                               if (vals.Length > 3) { manualPitch = Convert.ToDouble(vals[3], CultureInfo.InvariantCulture); }
+                               if (vals.Length > 3) { silhouette = Convert.ToDouble(vals[3], CultureInfo.InvariantCulture); }
 
                                if (lpitch != pitch || lbank != bank)
                                {
@@ -110,6 +112,12 @@ namespace Ikarus
                                    turn.RenderTransform = rt;
                                }
 
+                               if (lsilhouette != silhouette)
+                               {
+                                   ttSilhouette.Y = silhouette * -30;
+                                   Silhouette.RenderTransform = ttSilhouette;
+                               }
+
                                if (lflagOff != flagOff)
                                {
                                    rtFlagOff.Angle = flagOff * 18;
@@ -118,6 +126,7 @@ namespace Ikarus
 
                                lpitch = pitch;
                                lbank = bank;
+                               lsilhouette = silhouette;
                                lflagOff = flagOff;
                            }
                            catch (Exception e) { ImportExport.LogMessage(GetType().Name + " got data and failed with exception: " + e.ToString()); }

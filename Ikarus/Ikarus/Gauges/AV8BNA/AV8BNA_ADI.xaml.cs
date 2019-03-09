@@ -21,10 +21,14 @@ namespace Ikarus
         double pitch = 0.0;
         double bank = 0.0;
         double flagOff = 0.0;
+        double silhouette = 0.0;
 
         double lpitch = 0.0;
         double lbank = 0.0;
         double lflagOff = 1.0;
+        double lsilhouette = 0.0;
+
+        TranslateTransform ttSilhouette = new TranslateTransform();
 
         public AV8BNA_ADI()
         {
@@ -89,6 +93,7 @@ namespace Ikarus
                                if (vals.Length > 0) { pitch = Convert.ToDouble(vals[0], CultureInfo.InvariantCulture); }
                                if (vals.Length > 1) { bank = Convert.ToDouble(vals[1], CultureInfo.InvariantCulture); }
                                if (vals.Length > 2) { flagOff = Convert.ToDouble(vals[2], CultureInfo.InvariantCulture); }
+                               if (vals.Length > 3) { silhouette = Convert.ToDouble(vals[3], CultureInfo.InvariantCulture); } // 351
 
                                if (lpitch != pitch || lbank != bank)
                                {
@@ -103,6 +108,12 @@ namespace Ikarus
                                    PITCH.RenderTransform = grp;
 
                                    BANK.RenderTransform = rt;
+                               }
+
+                               if (lsilhouette != silhouette)
+                               {
+                                   ttSilhouette.Y = silhouette * 38;
+                                   Silhouette.RenderTransform = ttSilhouette;
                                }
 
                                if (lflagOff != flagOff)

@@ -32,6 +32,7 @@ namespace Ikarus
         private double flag_off = 0.0;
         private double side = 0.0;
         private double glide = 0.0;
+        private double silhouette = 0.0;
 
         private double lpitch = 0.0;
         private double lbank = 0.0;
@@ -41,6 +42,7 @@ namespace Ikarus
         private double lFlag_off = 1.0;
         private double lside = 0.0;
         private double lglide = 0.0;
+        private double lsilhouette = 0.0;
 
         private RotateTransform rtSlipball = new RotateTransform();
         private TranslateTransform ttTurnIndicator = new TranslateTransform();
@@ -49,6 +51,7 @@ namespace Ikarus
         private TranslateTransform ttTurn = new TranslateTransform();
         private TranslateTransform ttglide = new TranslateTransform();
         private TranslateTransform ttSide = new TranslateTransform();
+        private TranslateTransform ttSilhouette = new TranslateTransform();
         Sphere3D sphere3D;
 
         public FA18C_ADI()
@@ -130,6 +133,7 @@ namespace Ikarus
                                if (vals.Length > 4) { side = Convert.ToDouble(vals[4], CultureInfo.InvariantCulture); }
                                if (vals.Length > 5) { glide = Convert.ToDouble(vals[5], CultureInfo.InvariantCulture); }
                                if (vals.Length > 6) { flag_off = Convert.ToDouble(vals[6], CultureInfo.InvariantCulture); }
+                               if (vals.Length > 7) { silhouette = Convert.ToDouble(vals[7], CultureInfo.InvariantCulture); }
 
                                bankNeedle = bank;
 
@@ -172,6 +176,12 @@ namespace Ikarus
                                    Glide.RenderTransform = ttglide;
                                }
 
+                               if (lsilhouette != silhouette)
+                               {
+                                   ttSilhouette.Y = silhouette * -30;
+                                   Silhouette.RenderTransform = ttSilhouette;
+                               }
+
                                if (lFlag_off != flag_off)
                                    Flag_Off.Visibility = (flag_off > 0.8) ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
 
@@ -181,6 +191,7 @@ namespace Ikarus
                                lTurn = turn;
                                lFlag_off = flag_off;
                                lbankNeedle = bankNeedle;
+                               lsilhouette = silhouette;
                            }
                            catch (Exception e) { ImportExport.LogMessage(GetType().Name + " got data and failed with exception: " + e.ToString()); }
                        }));
