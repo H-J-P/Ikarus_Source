@@ -112,16 +112,17 @@ namespace Ikarus
 
                                if (lsilhouette != silhouette)
                                {
-                                   ttSilhouette.Y = silhouette * 38;
+                                   ttSilhouette.Y = silhouette * -38;
                                    Silhouette.RenderTransform = ttSilhouette;
                                }
 
                                if (lflagOff != flagOff)
-                                   Flag_OFF.Visibility = flagOff > 0.8 ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
+                                   Flag_OFF.Visibility = flagOff > 0.8 ? System.Windows.Visibility.Hidden : System.Windows.Visibility.Visible;
 
                                lpitch = pitch;
                                lbank = bank;
                                lflagOff = flagOff;
+                               lsilhouette = silhouette;
                            }
                            catch (Exception e) { ImportExport.LogMessage(GetType().Name + " got data and failed with exception: " + e.ToString()); }
                        }));

@@ -21,15 +21,18 @@ namespace Ikarus
         double pitch = 0.0;
         double bank = 0.0;
         double attitudeWarningFlag = 0.0;
+        double silhouette = 0.0;
 
         double lpitch = 0.0;
         double lbank = 0.0;
         double lattitudeWarningFlag = 1.0;
+        double lsilhouette = 0.0;
 
         TransformGroup grp = new TransformGroup();
         RotateTransform rt = new RotateTransform();
         TranslateTransform tt = new TranslateTransform();
         ScaleTransform sc = new ScaleTransform();
+        TranslateTransform ttSilhouette = new TranslateTransform();
 
         public UH1_ADI()
         {
@@ -94,6 +97,7 @@ namespace Ikarus
                                if (vals.Length > 0) { bank = Convert.ToDouble(vals[0], CultureInfo.InvariantCulture); }
                                if (vals.Length > 1) { pitch = Convert.ToDouble(vals[1], CultureInfo.InvariantCulture); }
                                if (vals.Length > 2) { attitudeWarningFlag = Convert.ToDouble(vals[2], CultureInfo.InvariantCulture); }
+                               if (vals.Length > 3) { silhouette = Convert.ToDouble(vals[3], CultureInfo.InvariantCulture); }
 
                                if (lpitch != pitch || lbank != bank)
                                {
@@ -118,12 +122,19 @@ namespace Ikarus
 
                                    Bank.RenderTransform = rt;
                                }
+                               if (lsilhouette != silhouette)
+                               {
+                                   ttSilhouette.Y = silhouette * -28;
+                                   Silhouette.RenderTransform = ttSilhouette;
+                               }
+
                                if (lattitudeWarningFlag != attitudeWarningFlag)
                                    Flagg_off.Visibility = (attitudeWarningFlag > 0.8) ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
 
                                lpitch = pitch;
                                lbank = bank;
                                lattitudeWarningFlag = attitudeWarningFlag;
+                               lsilhouette = silhouette;
                            }
                            catch (Exception e) { ImportExport.LogMessage(GetType().Name + " got data and failed with exception: " + e.ToString()); }
                        }));

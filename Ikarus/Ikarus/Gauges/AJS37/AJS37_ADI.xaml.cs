@@ -205,7 +205,7 @@ namespace Ikarus
 
                                if (lsilhouette != silhouette)
                                {
-                                   ttSilhouette.Y = silhouette * 30;
+                                   ttSilhouette.Y = silhouette * -30;
                                    Silhouette.RenderTransform = ttSilhouette;
                                }
 
@@ -225,6 +225,7 @@ namespace Ikarus
                                lFlag_off = flag_off;
                                lcourceWarningFlag = courceWarningFlag;
                                lbankNeedle = bankNeedle;
+                               lsilhouette = silhouette;
                            }
                            catch (Exception e) { ImportExport.LogMessage(GetType().Name + " got data and failed with exception: " + e.ToString()); }
                        }));

@@ -28,6 +28,7 @@ namespace Ikarus
         double glideSlopeWarningFlag = 0.0;
         double attitudeWarningFlag = 0.0;
         double courceWarningFlag = 0.0;
+        double silhouette = 0.0;
 
         double lpitch = 0.0;
         double lbank = 0.0;
@@ -39,6 +40,7 @@ namespace Ikarus
         double lglideSlopeWarningFlag = 1.0;
         double lattitudeWarningFlag = 1.0;
         double lcourceWarningFlag = 1.0;
+        double lsilhouette = 0.0;
 
         RotateTransform rtSlipball = new RotateTransform();
         TranslateTransform ttTurnIndicator = new TranslateTransform();
@@ -48,6 +50,7 @@ namespace Ikarus
         TransformGroup grp = new TransformGroup();
         RotateTransform rt = new RotateTransform();
         TranslateTransform tt = new TranslateTransform();
+        TranslateTransform ttSilhouette = new TranslateTransform();
 
         public US_ADI()
         {
@@ -122,6 +125,7 @@ namespace Ikarus
                                if (vals.Length > 7) { glideSlopeWarningFlag = Convert.ToDouble(vals[7], CultureInfo.InvariantCulture); }
                                if (vals.Length > 8) { attitudeWarningFlag = Convert.ToDouble(vals[8], CultureInfo.InvariantCulture); }
                                if (vals.Length > 9) { courceWarningFlag = Convert.ToDouble(vals[9], CultureInfo.InvariantCulture); }
+                               if (vals.Length > 10) { silhouette = Convert.ToDouble(vals[10], CultureInfo.InvariantCulture); }
 
                                if (lpitch != pitch || lbank != bank)
                                {
@@ -167,6 +171,12 @@ namespace Ikarus
                                    GlideSlopeIndicator.RenderTransform = rtglideSlopeIndicator;
                                }
 
+                               if (lsilhouette != silhouette)
+                               {
+                                   ttSilhouette.Y = silhouette * 30;
+                                   Silhouette.RenderTransform = ttSilhouette;
+                               }
+
                                if (lcourceWarningFlag != courceWarningFlag)
                                     Flagg_course_off.Visibility = (courceWarningFlag > 0.8) ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
                                if (lglideSlopeWarningFlag != glideSlopeWarningFlag)
@@ -186,6 +196,7 @@ namespace Ikarus
                                lglideSlopeWarningFlag = glideSlopeWarningFlag;
                                lattitudeWarningFlag = attitudeWarningFlag;
                                lcourceWarningFlag = courceWarningFlag;
+                               lsilhouette = silhouette;
                            }
                            catch (Exception e) { ImportExport.LogMessage(GetType().Name + " got data and failed with exception: " + e.ToString()); }
                        }));

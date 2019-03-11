@@ -27,7 +27,6 @@ namespace Ikarus
         double flagg_OFF = 0.0;
         double flagg_GS = 0.0;
         double flagg_LOC = 0.0;
-        double manualPitch = 0.0;
         double silhouette = 0.0;
 
         private const double dNull = 0.0;
@@ -40,7 +39,6 @@ namespace Ikarus
         double lflagg_OFF = 1.0;
         double lflagg_GS = 1.0;
         double lflagg_LOC = 1.0;
-        double lmanualPitch = 0.0;
         double lsilhouette = 0.0;
 
         private string lightColor = "#FFFFFF"; // white

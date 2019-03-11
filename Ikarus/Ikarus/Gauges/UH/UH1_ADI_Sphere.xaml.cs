@@ -142,6 +142,7 @@ namespace Ikarus
                                lpitch = pitch;
                                lbank = bank;
                                lattitudeWarningFlag = attitudeWarningFlag;
+                               lsilhouette = silhouette;
                            }
                            catch (Exception e) { ImportExport.LogMessage(GetType().Name + " got data and failed with exception: " + e.ToString()); }
                        }));

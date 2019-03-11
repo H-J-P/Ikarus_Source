@@ -208,6 +208,7 @@ namespace Ikarus
                                lglideSlopeWarningFlag = glideSlopeWarningFlag;
                                lattitudeWarningFlag = attitudeWarningFlag;
                                lcourceWarningFlag = courceWarningFlag;
+                               lsilhouette = silhouette;
                            }
                            catch (Exception e) { ImportExport.LogMessage(GetType().Name + " got data and failed with exception: " + e.ToString()); }
                        }));
