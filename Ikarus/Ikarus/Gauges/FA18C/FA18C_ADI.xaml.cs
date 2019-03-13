@@ -146,7 +146,9 @@ namespace Ikarus
                                    sphere3D.Rotate();
                                }
                                if (glide > 0.5) glide = 0.5;
+                               if (glide < -0.5) glide = -0.5;
                                if (side > 0.5) side = 0.5;
+                               if (side < -0.5) side = -0.5;
 
                                if (lslipBall != slipBall)
                                {
@@ -167,7 +169,7 @@ namespace Ikarus
 
                                if (lside != side)
                                {
-                                   ttSide.X = side * 140;
+                                   ttSide.X = side * 130;
                                    Side.RenderTransform = ttSide;
                                }
                                if (lglide != glide)

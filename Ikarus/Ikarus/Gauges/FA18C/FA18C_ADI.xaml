@@ -191,14 +191,6 @@
             </Path>
         </Canvas>
         <Canvas x:Name="Glide" Canvas.Left="0" Canvas.Top="0" RenderTransformOrigin="0.5,0.5">
-            <Canvas.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform/>
-                    <TranslateTransform Y="1"/>
-                </TransformGroup>
-            </Canvas.RenderTransform>
             <Rectangle x:Name="Rectangle_41" Width="179.968" Height="3.14798" Canvas.Left="96.8267" Canvas.Top="179.923" Stretch="Fill" Fill="#FFE8D43A"/>
             <Path x:Name="Path_42" Width="68.6587" Height="34.1627" Canvas.Left="28.1693" Canvas.Top="148.909" Stretch="Fill" Fill="#FF000000" Data="M 86.116,183.072C 77.472,183.072 70.464,176.065 70.464,167.42L 70.464,164.563C 70.464,157.657 64.8667,152.059 57.96,152.059L 28.1693,152.059L 28.1693,148.909L 57.96,148.909C 66.604,148.909 73.612,155.917 73.612,164.563L 73.612,167.42C 73.612,174.327 79.2107,179.923 86.116,179.923L 96.828,179.923L 96.828,183.071L 94.612,183.071L 86.116,183.072 Z "/>
         </Canvas>
@@ -206,14 +198,6 @@
             <Path x:Name="Path_40" Stretch="Fill" Fill="#FFFFFFFF" Data="M 198.749,83.7813L 179.489,83.7813L 187.368,60.5853L 190.872,60.5853L 198.749,83.7813 Z " Margin="179,61,56.74,190.804"/>
         </Canvas>
         <Canvas x:Name="Side" Canvas.Left="0" Canvas.Top="0" RenderTransformOrigin="0.5,0.5">
-            <Canvas.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform/>
-                    <TranslateTransform X="1"/>
-                </TransformGroup>
-            </Canvas.RenderTransform>
             <Rectangle x:Name="Rectangle_43" Width="3.14801" Height="165.955" Canvas.Left="187.545" Canvas.Top="110.529" Stretch="Fill" Fill="#FFE8D43A"/>
             <Path x:Name="Path_44" Width="44.1587" Height="91.98" Canvas.Left="146.536" Canvas.Top="18.5493" Stretch="Fill" Fill="#FF000000" Data="M 190.695,108.315C 190.695,99.6706 183.687,92.6627 175.043,92.6627L 162.188,92.6627C 155.283,92.6627 149.684,87.064 149.684,80.16L 149.684,18.5493L 146.536,18.5493L 146.536,80.16C 146.536,88.804 153.543,95.812 162.188,95.812L 175.043,95.812C 181.948,95.812 187.545,101.409 187.545,108.315L 187.545,110.529L 190.693,110.529L 190.693,108.315L 190.695,108.315 Z "/>
         </Canvas>
