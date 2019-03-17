@@ -22,27 +22,32 @@ namespace Ikarus
         double alt10000 = 0.0;
         double alt1000 = 0.0;
         double alt100 = 0.0;
-        double pressure1 = 0.0;
-        double pressure01 = 0.0;
-        double pressure001 = 0.0;
+        double pressure1000 = 0.0;
+        double pressure_1000 = 0.0;
+        double pressure0100 = 0.0;
+        double pressure0010 = 0.0;
+        double pressure0001 = 0.0;
         double offFlag = 0.0;
 
         double laltPointer = 0.0;
         double lalt10000 = 0.0;
         double lalt1000 = 0.0;
         double lalt100 = 0.0;
-        double lpressure1 = 0.0;
-        double lpressure01 = 0.0;
-        double lpressure001 = 0.0;
+        double lpressure1000 = 0.0;
+        double lpressure0010 = 0.0;
+        double lpressure0001 = 0.0;
         double loffFlag = 0.0;
 
         RotateTransform rtAltPointer = new RotateTransform();
         TranslateTransform ttalt10000 = new TranslateTransform();
         TranslateTransform ttalt1000 = new TranslateTransform();
         TranslateTransform ttalt100 = new TranslateTransform();
-        TranslateTransform ttPressure1 = new TranslateTransform();
-        TranslateTransform ttPressure01 = new TranslateTransform();
-        TranslateTransform ttPressure001 = new TranslateTransform();
+        TranslateTransform ttPressure1000 = new TranslateTransform();
+        TranslateTransform ttPressure0100 = new TranslateTransform();
+        TranslateTransform ttPressure0010 = new TranslateTransform();
+        TranslateTransform ttPressure0001 = new TranslateTransform();
+
+        string pressure_1000_100 = "";
 
         public UH1_AltAAU32()
         {
@@ -108,10 +113,19 @@ namespace Ikarus
                                if (vals.Length > 1) { alt10000 = Convert.ToDouble(vals[1], CultureInfo.InvariantCulture); }
                                if (vals.Length > 2) { alt1000 = Convert.ToDouble(vals[2], CultureInfo.InvariantCulture); }
                                if (vals.Length > 3) { alt100 = Convert.ToDouble(vals[3], CultureInfo.InvariantCulture); }
-                               if (vals.Length > 4) { pressure1 = Convert.ToDouble(vals[4], CultureInfo.InvariantCulture); }
-                               if (vals.Length > 5) { pressure01 = Convert.ToDouble(vals[5], CultureInfo.InvariantCulture); }
-                               if (vals.Length > 6) { pressure001 = Convert.ToDouble(vals[6], CultureInfo.InvariantCulture); }
+                               if (vals.Length > 4) { pressure1000 = Convert.ToDouble(vals[4], CultureInfo.InvariantCulture); }
+                               if (vals.Length > 5) { pressure0010 = Convert.ToDouble(vals[5], CultureInfo.InvariantCulture); }
+                               if (vals.Length > 6) { pressure0001 = Convert.ToDouble(vals[6], CultureInfo.InvariantCulture); }
                                if (vals.Length > 7) { offFlag = Convert.ToDouble(vals[7], CultureInfo.InvariantCulture); }
+
+                               if (alt10000 < 0.0) { alt10000 = 0.0; }
+                               if (alt1000 < 0.0) { alt1000 = 0.0; }
+                               if (alt100 < 0.0) { alt100 = 0.0; }
+
+                               if (pressure1000 < 0.0) { pressure1000 = 0.0; }
+                               if (pressure1000 > 0.3) { pressure1000 = 0.3; }
+                               if (pressure0010 < 0.0) { pressure0010 = 0.0; }
+                               if (pressure0001 < 0.0) { pressure0001 = 0.0; }
 
                                if (laltPointer != altPointer)
                                {
@@ -133,20 +147,33 @@ namespace Ikarus
                                    ttalt100.Y = alt100 * -388;
                                    Alt1AAU_100_footCount.RenderTransform = ttalt100;
                                }
-                               if (lpressure1 != pressure1)
+                               if (lpressure1000 != pressure1000)
                                {
-                                   ttPressure1.Y = pressure1 * -180;
-                                   AAU_32_Drum_Counter_1.RenderTransform = ttPressure1;
+                                   // 0.0 = 28, 0.1 = 29, 0.2 = 30, 0.3 = 31
+                                   if (pressure1000 == 0.0) { pressure_1000_100 = "28"; }
+                                   else if (pressure1000 == 0.1) { pressure_1000_100 = "29"; }
+                                   else if (pressure1000 == 0.2) { pressure_1000_100 = "30"; }
+                                   else if (pressure1000 == 0.3) { pressure_1000_100 = "31"; }
+                                   else pressure_1000_100 = "29";
+
+                                   pressure_1000 = Convert.ToDouble(pressure_1000_100[0].ToString(), CultureInfo.InvariantCulture);
+                                   pressure0100 = Convert.ToDouble(pressure_1000_100[1].ToString(), CultureInfo.InvariantCulture);
+
+                                   ttPressure1000.Y = pressure_1000 * -18.0;
+                                   AAU_32_Drum_Counter_1000.RenderTransform = ttPressure1000;
+
+                                   ttPressure0100.Y = pressure0100 * -18.0;
+                                   AAU_32_Drum_Counter_0100.RenderTransform = ttPressure0100;
                                }
-                               if (lpressure01 != pressure01)
+                               if (lpressure0010 != pressure0010)
                                {
-                                   ttPressure01.Y = pressure01 * -180;
-                                   AAU_32_Drum_Counter__1.RenderTransform = ttPressure01;
+                                   ttPressure0010.Y = pressure0010 * -180;
+                                   AAU_32_Drum_Counter_0010.RenderTransform = ttPressure0010;
                                }
-                               if (lpressure001 != pressure001)
+                               if (lpressure0001 != pressure0001)
                                {
-                                   ttPressure001.Y = pressure001 * -180;
-                                   AAU_32_Drum_Counter__01.RenderTransform = ttPressure001;
+                                   ttPressure0001.Y = pressure0001 * -180;
+                                   AAU_32_Drum_Counter_0001.RenderTransform = ttPressure0001;
                                }
                                CodeOff_flag.Visibility = offFlag > 0.8 ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
 
@@ -154,9 +181,9 @@ namespace Ikarus
                                lalt10000 = alt10000;
                                lalt1000 = alt1000;
                                lalt100 = alt100;
-                               lpressure1 = pressure1;
-                               lpressure01 = pressure01;
-                               lpressure001 = pressure001;
+                               lpressure1000 = pressure1000;
+                               lpressure0010 = pressure0010;
+                               lpressure0001 = pressure0001;
                                loffFlag = offFlag;
                            }
                            catch (Exception e) { ImportExport.LogMessage(GetType().Name + " got data and failed with exception: " + e.ToString()); }
