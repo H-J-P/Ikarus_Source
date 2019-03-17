@@ -86,6 +86,9 @@ namespace Ikarus
                                if (vals.Length > 0) { rotorPitch = Convert.ToDouble(vals[0], CultureInfo.InvariantCulture); }
 
                                RotateTransform rtrotorPitch = new RotateTransform();
+                               //RotorPitch.input =  { 1.0,  2.0,  3.0,  4.0,  5.0,  6.0,  7.0, 8.0,  9.0, 10.0, 11.0, 12.0, 13.0, 14.0, 15.0}
+                               //RotorPitch.output = { 0.0, 0.07, 0.14, 0.21, 0.29, 0.35, 0.43, 0.5, 0.57, 0.64, 0.71, 0.79, 0.86, 0.93,  1.0}
+                               //                        0,   15,   29,   44,   59,   74,   89, 104,  120,  134,  150,  165,  180,  195,  210 
 
                                for (int n = 0; n < (valueScaleIndex - 1); n++)
                                {

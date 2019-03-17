@@ -23,18 +23,21 @@ namespace Ikarus
         double heading = 0.0;
         double annunciator = 0.0;
         double powerFail = 0.0;
+        double headingMarker = 0.0;
 
         double lcoursePointer1 = 0.0;
         double lcoursePointer2 = 0.0;
         double lheading = 0.0;
         double lannunciator = 0.0;
         double lpowerFail = 0.0;
+        double lheadingMarker = 0.0;
 
         RotateTransform rtHeading = new RotateTransform();
         RotateTransform rtCoursePointer1 = new RotateTransform();
         RotateTransform rtCoursePointer2 = new RotateTransform();
         RotateTransform rtPowerFail = new RotateTransform();
         RotateTransform rtAnnunciator = new RotateTransform();
+        RotateTransform rtHeadingMarker = new RotateTransform();
 
         public UH1_RadioCompassIndicator()
         {
@@ -42,7 +45,7 @@ namespace Ikarus
 
             shadow.Visibility = MainWindow.shadowChecked ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
 
-            rtPowerFail.Angle = 5;
+            rtPowerFail.Angle = -30;
             RMI_Off_Flagg.RenderTransform = rtPowerFail;
         }
 
@@ -102,6 +105,7 @@ namespace Ikarus
                                if (vals.Length > 2) { heading = Convert.ToDouble(vals[2], CultureInfo.InvariantCulture); }
                                if (vals.Length > 3) { annunciator = Convert.ToDouble(vals[3], CultureInfo.InvariantCulture); }
                                if (vals.Length > 4) { powerFail = Convert.ToDouble(vals[4], CultureInfo.InvariantCulture); }
+                               if (vals.Length > 5) { headingMarker = Convert.ToDouble(vals[5], CultureInfo.InvariantCulture); }
 
                                if (lheading != heading)
                                {
@@ -111,21 +115,25 @@ namespace Ikarus
 
                                if (lcoursePointer1 != coursePointer1)
                                {
-                                   //rtCoursePointer1.Angle = coursePointer1 == 0.0 ? 0 : (coursePointer1 * 360) + rtHeading.Angle - 59.94; // Offset 0.1665
                                    rtCoursePointer1.Angle = coursePointer1 * 360;
                                    RMI_CoursePointer1.RenderTransform = rtCoursePointer1;
                                }
 
                                if (lcoursePointer2 != coursePointer2)
                                {
-                                   //rtCoursePointer2.Angle = coursePointer2 == 0.0 ? 0 : (coursePointer2 * 360) + rtHeading.Angle - 59.94; // Offset 0.1665
                                    rtCoursePointer2.Angle = coursePointer2 * 360;
                                    RMI_CoursePointer2.RenderTransform = rtCoursePointer2;
                                }
 
+                               if (lheadingMarker != headingMarker)
+                               {
+                                   rtHeadingMarker.Angle = headingMarker * 360;
+                                   HeadingMarker.RenderTransform = rtHeadingMarker;
+                               }
+
                                if (lpowerFail != powerFail)
                                {
-                                   rtPowerFail.Angle = (powerFail * -20) + 5;
+                                   rtPowerFail.Angle = (powerFail * -35) + 5;
                                    RMI_Off_Flagg.RenderTransform = rtPowerFail;
                                }
 
@@ -140,6 +148,7 @@ namespace Ikarus
                                lheading = heading;
                                lannunciator = annunciator;
                                lpowerFail = powerFail;
+                               lheadingMarker = headingMarker;
                            }
                            catch (Exception e) { ImportExport.LogMessage(GetType().Name + " got data and failed with exception: " + e.ToString()); }
                        }));

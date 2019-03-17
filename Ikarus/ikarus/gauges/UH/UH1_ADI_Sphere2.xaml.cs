@@ -125,7 +125,7 @@ namespace Ikarus
                                {
                                    rt = new RotateTransform()
                                    {
-                                       Angle = bankNeedle * -180
+                                       Angle = bankNeedle * 180
                                    };
                                    Bank.RenderTransform = rt;
                                }

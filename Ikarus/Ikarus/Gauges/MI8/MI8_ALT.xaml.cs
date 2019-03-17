@@ -24,7 +24,7 @@ namespace Ikarus
 
         double lvd10KL100Ind = 0.0;
         double lvd10KL10Ind = 0.0;
-        double lvd10KL10Press = 0.0;
+        double lvd10KL10Press = 1.0;
 
         RotateTransform rtvd10KL100Ind = new RotateTransform();
         RotateTransform rtvd10KL10Ind = new RotateTransform();
@@ -35,6 +35,9 @@ namespace Ikarus
             InitializeComponent();
 
             shadow.Visibility = MainWindow.shadowChecked ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
+
+            rtvd10KL10Press.Angle = 111;
+            Pressure.RenderTransform = rtvd10KL10Press;
         }
 
         public void SetID(string _dataImportID)
@@ -104,7 +107,14 @@ namespace Ikarus
                                }
                                if (lvd10KL10Press != vd10KL10Press)
                                {
-                                   rtvd10KL10Press.Angle = (vd10KL10Press * -360); // + 5;
+                                   //VD_10K_L_PRESS.input = {   661.0, 790.0}
+                                   //VD_10K_L_PRESS.output = { -0.051, 0.668}
+                                   //                             0.0,   1.0  Transformation
+
+                                   if (vd10KL10Press <  -0.051) { vd10KL10Press = -0.051; }
+                                   if (vd10KL10Press > 0.668) { vd10KL10Press = 0.668; }
+
+                                   rtvd10KL10Press.Angle = (((vd10KL10Press + 0.051) * 1 / 0.668) * 221.5) + 111;
                                    Pressure.RenderTransform = rtvd10KL10Press;
                                }
                                lvd10KL100Ind = vd10KL100Ind;

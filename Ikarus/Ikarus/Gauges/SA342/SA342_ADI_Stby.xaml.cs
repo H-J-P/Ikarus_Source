@@ -114,7 +114,11 @@ namespace Ikarus
 
                                if (lsilhouette != silhouette)
                                {
-                                   ttSilhouette.Y = silhouette * -28;
+                                   if (silhouette < 0.0) { silhouette = 0.0; }
+                                   //  0.0 0.5 1.0  <= SA342
+                                   // -0.5 0.0 0.5  <= -0.5
+                                   // -1.0 0.0 1.0  <= * 2
+                                   ttSilhouette.Y = (silhouette - 0.5) * 2 * -28;
                                    Silhouette.RenderTransform = ttSilhouette;
                                }
 

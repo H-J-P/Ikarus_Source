@@ -84,7 +84,7 @@
                 <Path Data="M0.105,0.024L1.263,4.995" Height="5.02" Canvas.Left="26.325" Stroke="Black" StrokeThickness="0.216" StrokeMiterLimit="2.414" Canvas.Top="113.078" Width="1.368"/>
                 <Path Data="M1.263,0.024L0.105,4.995" Height="5.02" Canvas.Left="185.498" Stroke="Black" StrokeThickness="0.216" StrokeMiterLimit="2.414" Canvas.Top="113.078" Width="1.368"/>
             </Canvas>
-            <Canvas x:Name="Glide" Height="30.198" Canvas.Left="43.61" Canvas.Top="152.701" Width="185.026" RenderTransformOrigin="0.5,0.5" d:IsHidden="True">
+            <Canvas x:Name="Glide" Height="30.198" Canvas.Left="43.61" Canvas.Top="152.701" Width="185.026" RenderTransformOrigin="0.5,0.5">
                 <Path Data="M0,2.758L135.902,2.758 135.902,0 0,0z" Fill="#FFCCCCCC" Height="2.758" Canvas.Left="49.124" Canvas.Top="0.668" Width="135.902"/>
                 <Path Data="M5.765,2.758L0,2.758 0,0 5.765,0z" Fill="#FF333333" Height="2.758" Canvas.Left="102.447" Canvas.Top="0.668" Width="5.765"/>
                 <Path Data="M5.766,2.758L0,2.758 0,0 5.766,0z" Fill="#FF333333" Height="2.758" Canvas.Left="116.378" Canvas.Top="0.668" Width="5.766"/>
@@ -92,7 +92,7 @@
                 <Path Data="M4.351,2.758L0,2.758 0,0 4.351,0z" Fill="#FF333333" Height="2.758" Canvas.Left="58.847" Canvas.Top="0.668" Width="4.351"/>
                 <Path Data="M30.339,0L0,28.733 1.409,30.198 30.355,2.76 49.325,3.42 49.427,0.664 30.34,0z" Fill="#FF333333" Height="30.198" Canvas.Left="0" Canvas.Top="0" Width="49.427"/>
             </Canvas>
-            <Canvas x:Name="Side" Height="199.331" Canvas.Left="154.526" Canvas.Top="28.148" Width="2.75800000000001" RenderTransformOrigin="0.5,0.5" d:IsHidden="True">
+            <Canvas x:Name="Side" Height="199.331" Canvas.Left="154.526" Canvas.Top="28.148" Width="2.75800000000001" RenderTransformOrigin="0.5,0.5">
                 <Path Data="M2.758,0L0,0 0,163.013 2.758,163.013z" Fill="#FFCCCCCC" Height="163.013" Canvas.Left="0" Canvas.Top="36.318" Width="2.758"/>
                 <Path Data="M2.758,0L0,0 0,38.6 2.758,38.6z" Fill="#FF333333" Height="38.6" Canvas.Left="0" Canvas.Top="0" Width="2.758"/>
                 <Path Data="M2.758,0L0,0 0,5.42 2.758,5.42z" Fill="#FF333333" Height="5.42" Canvas.Left="0" Canvas.Top="117.566" Width="2.758"/>

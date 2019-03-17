@@ -57,8 +57,8 @@ namespace Ikarus
             InitializeComponent();
 
             Flagg_OFF.Visibility = System.Windows.Visibility.Visible;
-            Flagg_GS.Visibility = System.Windows.Visibility.Hidden;
-            Flagg_LOC.Visibility = System.Windows.Visibility.Hidden;
+            Flagg_GS.Visibility = System.Windows.Visibility.Visible;
+            Flagg_LOC.Visibility = System.Windows.Visibility.Visible;
 
             InitialSphere();
             sphere3D.xRotation = dNull;
@@ -131,6 +131,11 @@ namespace Ikarus
 
                                bankNeedle = bank;
 
+                               if (glide > 1.0) { glide = 1.0; }
+                               if (glide < -1.0) { glide = -1.0; }
+                               if (side > 1.0) { side = 1.0; }
+                               if (side < -1.0) { side = -1.0; }
+
                                if (lpitch != pitch || lbank != bank)
                                {
                                    sphere3D.xRotation = dNull;
@@ -152,26 +157,26 @@ namespace Ikarus
                                {
                                    rtSlipBall = new RotateTransform()
                                    {
-                                       Angle = slipBall * 13
+                                       Angle = slipBall * -13
                                    };
                                    SlipBall.RenderTransform = rtSlipBall;
                                }
 
                                if (lglide != glide)
                                {
-                                   ttglide.Y = glide * -55;
+                                   ttglide.Y = glide * -50;
                                    Glide.RenderTransform = ttglide;
                                }
 
                                if (lside != side)
                                {
-                                   ttside.X = side * 80;
+                                   ttside.X = side * 45;
                                    Side.RenderTransform = ttside;
                                }
 
                                if (lsilhouette != silhouette)
                                {
-                                   ttSilhouette.Y = silhouette * 30;
+                                   ttSilhouette.Y = silhouette * -30;
                                    Silhouette.RenderTransform = ttSilhouette;
                                }
 
@@ -179,10 +184,10 @@ namespace Ikarus
                                    Flagg_OFF.Visibility = (flagg_OFF > 0.5) ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
 
                                if (lflagg_GS != flagg_GS)
-                                   Flagg_OFF.Visibility = (flagg_GS > 0.5) ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
+                                   Flagg_GS.Visibility = (flagg_GS > 0.5) ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
 
                                if (lflagg_LOC != flagg_LOC)
-                                   Flagg_OFF.Visibility = (flagg_LOC > 0.5) ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
+                                   Flagg_LOC.Visibility = (flagg_LOC > 0.5) ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
 
                                lpitch = pitch;
                                lbank = bank;

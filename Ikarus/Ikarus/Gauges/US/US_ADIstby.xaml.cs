@@ -101,12 +101,16 @@ namespace Ikarus
 
                                if (lpitch != pitch || lbank != bank)
                                {
-                                   TransformGroup grp = new TransformGroup();
-                                   RotateTransform rt = new RotateTransform();
-                                   TranslateTransform tt = new TranslateTransform();
+                                   RotateTransform rt = new RotateTransform
+                                   {
+                                       Angle = bank * 180
+                                   };
+                                   TranslateTransform tt = new TranslateTransform
+                                   {
+                                       Y = pitch * 242
+                                   };
 
-                                   tt.Y = pitch * 242;
-                                   rt.Angle = bank * 180;
+                                   TransformGroup grp = new TransformGroup();
                                    grp.Children.Add(tt);
                                    grp.Children.Add(rt);
                                    bank_pitch.RenderTransform = grp;
