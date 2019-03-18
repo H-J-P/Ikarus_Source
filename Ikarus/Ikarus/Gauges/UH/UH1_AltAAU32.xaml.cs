@@ -33,7 +33,7 @@ namespace Ikarus
         double lalt10000 = 0.0;
         double lalt1000 = 0.0;
         double lalt100 = 0.0;
-        double lpressure1000 = 0.0;
+        double lpressure1000 = 0.3;
         double lpressure0010 = 0.0;
         double lpressure0001 = 0.0;
         double loffFlag = 0.0;

@@ -131,11 +131,7 @@ namespace Ikarus
                                    HeadingMarker.RenderTransform = rtHeadingMarker;
                                }
 
-                               if (lpowerFail != powerFail)
-                               {
-                                   rtPowerFail.Angle = (powerFail * -35) + 5;
-                                   RMI_Off_Flagg.RenderTransform = rtPowerFail;
-                               }
+                               RMI_Off_Flagg.Visibility = powerFail > 0.8 ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
 
                                if (lannunciator != annunciator)
                                {

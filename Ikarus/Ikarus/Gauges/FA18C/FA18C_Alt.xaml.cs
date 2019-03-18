@@ -108,7 +108,6 @@ namespace Ikarus
                                if (vals.Length > 3) { pressure_0 = Convert.ToDouble(vals[3], CultureInfo.InvariantCulture); }
                                if (vals.Length > 4) { pressure_1 = Convert.ToDouble(vals[4], CultureInfo.InvariantCulture); }
                                if (vals.Length > 5) { pressure_2 = Convert.ToDouble(vals[5], CultureInfo.InvariantCulture); }
-                               //if (vals.Length > 6) { pressure_3 = Convert.ToDouble(vals[6], CultureInfo.InvariantCulture); }
 
 
                                if (alt10000 < 0) { alt10000 = 0.0; }
@@ -116,7 +115,6 @@ namespace Ikarus
                                if (pressure_0 < 0) { pressure_0 = 0.0; }
                                if (pressure_1 < 0) { pressure_1 = 0.0; }
                                if (pressure_2 < 0) { pressure_2 = 0.0; }
-                               //if (pressure_3 < 0) { pressure_3 = 0.0; }
 
                                if (alt100FP != lalt100FP)
                                {
@@ -134,7 +132,7 @@ namespace Ikarus
                                    ALT_1000.RenderTransform = ttalt1000;
                                }
 
-                               // Die ID(223) steuert die ersten beiden Ziffern, wobei 0.0 = 26, 0.2 = 27, 0.4 = 28, 0.6 = 29, 0.8 = 30 und 1.0 = 31
+                               // pressure_2:  0.0 = 26, 0.2 = 27, 0.4 = 28, 0.6 = 29, 0.8 = 30 und 1.0 = 31
                                if (pressure_2 == 0.0) { pressure_1000_100 = "26"; }
                                else if (pressure_2 == 0.2) { pressure_1000_100 = "27"; }
                                else if (pressure_2 == 0.4) { pressure_1000_100 = "28"; }
