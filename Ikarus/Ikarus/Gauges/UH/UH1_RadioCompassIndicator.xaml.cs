@@ -127,7 +127,7 @@ namespace Ikarus
 
                                if (lheadingMarker != headingMarker)
                                {
-                                   rtHeadingMarker.Angle = headingMarker * 360;
+                                   rtHeadingMarker.Angle = headingMarker * -360;
                                    HeadingMarker.RenderTransform = rtHeadingMarker;
                                }
 

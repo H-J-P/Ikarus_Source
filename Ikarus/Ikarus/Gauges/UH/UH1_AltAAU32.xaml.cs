@@ -22,8 +22,8 @@ namespace Ikarus
         double alt10000 = 0.0;
         double alt1000 = 0.0;
         double alt100 = 0.0;
+        double pressure1100 = 0.0;
         double pressure1000 = 0.0;
-        double pressure_1000 = 0.0;
         double pressure0100 = 0.0;
         double pressure0010 = 0.0;
         double pressure0001 = 0.0;
@@ -33,7 +33,7 @@ namespace Ikarus
         double lalt10000 = 0.0;
         double lalt1000 = 0.0;
         double lalt100 = 0.0;
-        double lpressure1000 = 0.3;
+        double lpressure1100 = 0.5;
         double lpressure0010 = 0.0;
         double lpressure0001 = 0.0;
         double loffFlag = 0.0;
@@ -113,7 +113,7 @@ namespace Ikarus
                                if (vals.Length > 1) { alt10000 = Convert.ToDouble(vals[1], CultureInfo.InvariantCulture); }
                                if (vals.Length > 2) { alt1000 = Convert.ToDouble(vals[2], CultureInfo.InvariantCulture); }
                                if (vals.Length > 3) { alt100 = Convert.ToDouble(vals[3], CultureInfo.InvariantCulture); }
-                               if (vals.Length > 4) { pressure1000 = Convert.ToDouble(vals[4], CultureInfo.InvariantCulture); }
+                               if (vals.Length > 4) { pressure1100 = Convert.ToDouble(vals[4], CultureInfo.InvariantCulture); }
                                if (vals.Length > 5) { pressure0010 = Convert.ToDouble(vals[5], CultureInfo.InvariantCulture); }
                                if (vals.Length > 6) { pressure0001 = Convert.ToDouble(vals[6], CultureInfo.InvariantCulture); }
                                if (vals.Length > 7) { offFlag = Convert.ToDouble(vals[7], CultureInfo.InvariantCulture); }
@@ -122,8 +122,8 @@ namespace Ikarus
                                if (alt1000 < 0.0) { alt1000 = 0.0; }
                                if (alt100 < 0.0) { alt100 = 0.0; }
 
-                               if (pressure1000 < 0.0) { pressure1000 = 0.0; }
-                               if (pressure1000 > 0.3) { pressure1000 = 0.3; }
+                               if (pressure1100 < 0.0) { pressure1100 = 0.0; }
+                               if (pressure1100 > 0.3) { pressure1100 = 0.3; }
                                if (pressure0010 < 0.0) { pressure0010 = 0.0; }
                                if (pressure0001 < 0.0) { pressure0001 = 0.0; }
 
@@ -147,19 +147,19 @@ namespace Ikarus
                                    ttalt100.Y = alt100 * -388;
                                    Alt1AAU_100_footCount.RenderTransform = ttalt100;
                                }
-                               if (lpressure1000 != pressure1000)
+                               if (lpressure1100 != pressure1100)
                                {
                                    // 0.0 = 28, 0.1 = 29, 0.2 = 30, 0.3 = 31
-                                   if (pressure1000 == 0.0) { pressure_1000_100 = "28"; }
-                                   else if (pressure1000 == 0.1) { pressure_1000_100 = "29"; }
-                                   else if (pressure1000 == 0.2) { pressure_1000_100 = "30"; }
-                                   else if (pressure1000 == 0.3) { pressure_1000_100 = "31"; }
+                                   if (pressure1100 == 0.0) { pressure_1000_100 = "28"; }
+                                   else if (pressure1100 == 0.1) { pressure_1000_100 = "29"; }
+                                   else if (pressure1100 == 0.2) { pressure_1000_100 = "30"; }
+                                   else if (pressure1100 == 0.3) { pressure_1000_100 = "31"; }
                                    else pressure_1000_100 = "29";
 
-                                   pressure_1000 = Convert.ToDouble(pressure_1000_100[0].ToString(), CultureInfo.InvariantCulture);
+                                   pressure1000 = Convert.ToDouble(pressure_1000_100[0].ToString(), CultureInfo.InvariantCulture);
                                    pressure0100 = Convert.ToDouble(pressure_1000_100[1].ToString(), CultureInfo.InvariantCulture);
 
-                                   ttPressure1000.Y = pressure_1000 * -18.0;
+                                   ttPressure1000.Y = pressure1000 * -18.0;
                                    AAU_32_Drum_Counter_1000.RenderTransform = ttPressure1000;
 
                                    ttPressure0100.Y = pressure0100 * -18.0;
@@ -181,7 +181,7 @@ namespace Ikarus
                                lalt10000 = alt10000;
                                lalt1000 = alt1000;
                                lalt100 = alt100;
-                               lpressure1000 = pressure1000;
+                               lpressure1100 = pressure1100;
                                lpressure0010 = pressure0010;
                                lpressure0001 = pressure0001;
                                loffFlag = offFlag;

@@ -136,20 +136,20 @@ namespace Ikarus
 
                 if (classNameChanged)
                 {
-                    if (Classname.Text == "Rotary" || Classname.Text == "Drum")
+                    if (Classname.Text == "Rotary" || Classname.Text == "Drum" || Classname.Text == "RotaryRelativ" || Classname.Text == "RotaryUpdatable")
                     {
                         Input.Text = "0.0,1.0,0.1";
                         Output.Text = " 0, 270";
                     }
 
-                    if (Classname.Text == "MultiSwitch")
+                    if (Classname.Text == "MultiSwitch" || Classname.Text == "MultiSwitchReverse")
                     {
                         Input.Text = "0.0,0.1,0.2,0.3,0.4";
                         Output.Text = " 0, 45, 90, 135, 180";
                     }
 
-                    if (Classname.Text == "SwitchOffOn" || Classname.Text == "ButtonOffOn" || Classname.Text == "ButtonWithRelease" || 
-                        Classname.Text == "ButtonWithRepeat" || Classname.Text == "SwitchOff_On")
+                    if (Classname.Text == "Button" || Classname.Text == "SwitchOffOn" || Classname.Text == "ButtonOffOn" || Classname.Text == "ButtonWithRelease" || 
+                        Classname.Text == "ButtonWithRepeat" || Classname.Text == "SwitchOff_On" || Classname.Text == "ButtonWithoutRepeat")
                     {
                         Input.Text = "0.0,1.0";
                         Output.Text = "0.0,1.0";

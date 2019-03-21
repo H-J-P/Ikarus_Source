@@ -174,7 +174,7 @@ namespace Ikarus
                                }
                                if (lglide != glide)
                                {
-                                   ttglide.Y = glide * -160;
+                                   ttglide.Y = glide * -130;
                                    Glide.RenderTransform = ttglide;
                                }
 

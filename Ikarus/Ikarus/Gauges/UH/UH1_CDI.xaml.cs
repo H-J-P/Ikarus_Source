@@ -124,7 +124,7 @@ namespace Ikarus
 
                                if (lrotCourseCard != rotCourseCard)
                                {
-                                   rtRotCourseCard.Angle = rotCourseCard * 360;
+                                   rtRotCourseCard.Angle = rotCourseCard * -360;
                                    RotCourseCard.RenderTransform = rtRotCourseCard;
                                }
                                VerticalOFF.Visibility = verticalOff > 0.8 ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
