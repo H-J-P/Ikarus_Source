@@ -61,9 +61,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Accessibility" />
-    <Reference Include="fastJSON, Version=2.2.2.0, Culture=neutral, PublicKeyToken=6b75a806b86095cd, processorArchitecture=MSIL">
-      <HintPath>..\packages\fastJSON.2.2.2\lib\net40\fastJSON.dll</HintPath>
-    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL" />
     <Reference Include="PresentationFramework.Aero" />
     <Reference Include="PresentationUI, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="ReachFramework" />
@@ -320,6 +318,9 @@
     </Compile>
     <Compile Include="Gauges\M2KC\M2KC_ACC.xaml.cs">
       <DependentUpon>M2KC_ACC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauges\MI8\MI8_Clock.xaml.cs">
+      <DependentUpon>MI8_Clock.xaml</DependentUpon>
     </Compile>
     <Compile Include="Gauges\MIG29\MIG29-AOA.xaml.cs">
       <DependentUpon>MIG29-AOA.xaml</DependentUpon>
@@ -1338,9 +1339,6 @@
     <Compile Include="Gauges\MI8\MI8_CabinT.xaml.cs">
       <DependentUpon>MI8_CabinT.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Gauges\MI8\MI8_Clock.xaml.cs">
-      <DependentUpon>MI8_Clock.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Gauges\MI8\MI8_DirectionalGyro.xaml.cs">
       <DependentUpon>MI8_DirectionalGyro.xaml</DependentUpon>
     </Compile>
@@ -1814,6 +1812,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Gauges\M2KC\M2KC_ACC.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\MI8\MI8_Clock.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -3170,10 +3172,6 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Gauges\MI8\MI8_CabinT.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Gauges\MI8\MI8_Clock.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

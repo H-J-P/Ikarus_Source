@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Threading;
 using System.Drawing.Imaging;
 using System.Reflection;
+using Newtonsoft.Json;
 
 namespace Ikarus
 {
@@ -64,7 +65,8 @@ namespace Ikarus
         //---------------------- D A T A B A S E ----------------------
         public static DataSet1 dsInstruments = new DataSet1();
         public static DataSet2 dsConfig = new DataSet2();
-
+        public static DataSet dsJSON = new DataSet();
+        
         public static DataTable dtConfig;
         public static DataTable dtInstruments;
         public static DataTable dtInstrumentFunctions;
@@ -133,6 +135,7 @@ namespace Ikarus
         public static string processNameDCS = "DCS";
         public static string lightOnColor = "95E295"; // green
         private string newGrabValue = "";
+        public static string json = "";
 
         #endregion
 
@@ -303,6 +306,8 @@ namespace Ikarus
                 DataGridSwitches.CanUserDeleteRows = true;
                 DataGridLamps.CanUserDeleteRows = true;
                 DataGridWindows.CanUserDeleteRows = true;
+
+                //dsJSON.Tables.Add(DataTable "Swichtes")
             }
             catch (Exception e) { ImportExport.LogMessage("Startup problem .. " + e.ToString()); }
 
@@ -558,6 +563,13 @@ namespace Ikarus
 
         #region member functions
 
+        private string GenerateJSONfromDatatable(DataSet dsJSON)
+        {
+            json = JsonConvert.SerializeObject(dsJSON, Formatting.Indented);
+
+            return json;
+        }
+
         private void CockpitClose()
         {
             try
@@ -768,6 +780,7 @@ namespace Ikarus
                     {
                         ImportExport.LogMessage("Switch " + i + " .. FillClasses problem .. " + e.ToString());
                     }
+                    //GenerateJSONfromDatatable(dtSwitches);
                 }
             }
             catch (Exception e) { ImportExport.LogMessage("FillClasses problem .. " + e.ToString()); }
