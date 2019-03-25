@@ -213,6 +213,18 @@
                                 <DataGridTextColumn Width="40"
                                                     Binding="{Binding Out}"
                                                     Header="Out °" />
+                                <DataGridTextColumn Width="120"
+                                                    Binding="{Binding Type}"
+                                                    Header="Type " />
+                                <DataGridTextColumn Width="80"
+                                                    Binding="{Binding DeviceID}"
+                                                    Header="DeviceID " />
+                                <DataGridTextColumn Width="80"
+                                                    Binding="{Binding Format}"
+                                                    Header="Format " />
+                                <DataGridTextColumn Width="80"
+                                                    Binding="{Binding negateValue}"
+                                                    Header="negateValue " />
                                 <DataGridTemplateColumn Header="Test">
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
@@ -864,6 +876,12 @@
                                   Foreground="#FFF9F9F9" />
                         <Label x:Name="labelLight" Content="Light Color ADI" VerticalAlignment="Bottom" Grid.Column="1" Margin="0,0,79,235" Foreground="#FFECE8E8" HorizontalAlignment="Right" Width="81" Height="16"/>
                         <TextBox x:Name="textBoxLightColor" Text="#95E295" TextWrapping="Wrap" Margin="0,0,79,207" Grid.Column="1" HorizontalAlignment="Right" Width="81" Height="23" VerticalAlignment="Bottom"/>
+                        <CheckBox x:Name="checkJSON"
+                            Grid.Column="1"
+                            Margin="361,72,450,522"
+                            Content="Use JSON"
+                            Foreground="#FFF9F9F9"
+                            Unchecked="JSON_Unchecked" Checked="JSON_Checked" />
                     </Grid>
                 </TabItem>
                 <TabItem Name="Log"

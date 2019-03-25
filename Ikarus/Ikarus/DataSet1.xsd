@@ -46,6 +46,10 @@
               <xs:element name="OldAsciiValue" msprop:Generator_ColumnVarNameInTable="columnOldAsciiValue" msprop:Generator_ColumnPropNameInRow="OldAsciiValue" msprop:Generator_ColumnPropNameInTable="OldAsciiValueColumn" msprop:Generator_UserColumnName="OldAsciiValue" type="xs:string" default=" " minOccurs="0" />
               <xs:element name="In" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInRow="In" msprop:Generator_ColumnVarNameInTable="columnIn" msprop:Generator_ColumnPropNameInTable="InColumn" msprop:Generator_UserColumnName="In" type="xs:string" default="-" minOccurs="0" />
               <xs:element name="Out" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInRow="Out" msprop:Generator_ColumnVarNameInTable="columnOut" msprop:Generator_ColumnPropNameInTable="OutColumn" msprop:Generator_UserColumnName="Out" type="xs:string" default="-" minOccurs="0" />
+              <xs:element name="Type" msprop:Generator_ColumnVarNameInTable="columnType" msprop:Generator_ColumnPropNameInRow="Type" msprop:Generator_ColumnPropNameInTable="TypeColumn" msprop:Generator_UserColumnName="Type" type="xs:string" default="&quot;-&quot;" minOccurs="0" />
+              <xs:element name="DeviceID" msprop:Generator_ColumnVarNameInTable="columnDeviceID" msprop:Generator_ColumnPropNameInRow="DeviceID" msprop:Generator_ColumnPropNameInTable="DeviceIDColumn" msprop:Generator_UserColumnName="DeviceID" type="xs:string" default="&quot;-&quot;" minOccurs="0" />
+              <xs:element name="Format" msprop:Generator_ColumnVarNameInTable="columnFormat" msprop:Generator_ColumnPropNameInRow="Format" msprop:Generator_ColumnPropNameInTable="FormatColumn" msprop:Generator_UserColumnName="Format" type="xs:string" default="&quot;-&quot;" minOccurs="0" />
+              <xs:element name="negateValue" msprop:Generator_ColumnVarNameInTable="columnnegateValue" msprop:Generator_ColumnPropNameInRow="negateValue" msprop:Generator_ColumnPropNameInTable="negateValueColumn" msprop:Generator_UserColumnName="negateValue" type="xs:string" default="0" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

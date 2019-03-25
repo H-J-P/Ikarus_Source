@@ -76,6 +76,11 @@ namespace Ikarus
         public static DataTable dtAccessories;
         public static DataTable dtClassnames;
         public static DataTable dtWindows;
+        //---------------------- Tables for JSON -----------------------------
+        public static DataSet dsJson;
+        public static DataTable dtjsonLamps;
+        public static DataTable dtjsonSwitches;
+        public static DataTable dtjsonInstFunctions;
         //---------------------- D A C datas --------------------------------- 
         public static Masterdata dsMaster = new Masterdata();
         public static DataTable dtMasterLamps;
@@ -136,6 +141,7 @@ namespace Ikarus
         public static string lightOnColor = "95E295"; // green
         private string newGrabValue = "";
         public static string json = "";
+        public static bool jsonChecked = false;
 
         #endregion
 
@@ -185,7 +191,14 @@ namespace Ikarus
 
                             portListener = dtConfig.Rows[0][6].ToString();
                             PortSender.Text = dtConfig.Rows[0][7].ToString();
-                            checkBoxShadow.IsChecked = Convert.ToBoolean(dtConfig.Rows[0][10]);
+                            checkBoxShadow.IsChecked = Convert.ToBoolean(dtConfig.Rows[0][10]); //
+
+                            if (DBNull.Value.Equals(dtConfig.Rows[0]["JSON"]))
+                            {
+                                dtConfig.Rows[0]["JSON"] = false;
+                            }
+                            jsonChecked = Convert.ToBoolean(dtConfig.Rows[0]["JSON"]);
+                            checkJSON.IsChecked = jsonChecked;
 
                             if (dbFilename.Length > 0)
                             {
@@ -563,7 +576,81 @@ namespace Ikarus
 
         #region member functions
 
-        private string GenerateJSONfromDatatable(DataSet dsJSON)
+        private void GenerateJSONDataset()
+        {
+            try
+            {
+                dtjsonLamps = new DataTable("Lamp");
+                dtjsonLamps.Columns.Add("Name");
+                dtjsonLamps.Columns.Add("Type");
+                dtjsonLamps.Columns.Add("ExportID");
+
+                for (int i = 0; i < dtLamps.Rows.Count; i++)
+                {
+                    dataRow = dtjsonLamps.NewRow();
+                    dataRow["Name"] = dtLamps.Rows[i]["Name"].ToString();
+                    dataRow["Type"] = "ID";
+                    dataRow["ExportID"] = dtLamps.Rows[i]["Arg_number"].ToString();
+                    dtjsonLamps.Rows.Add(dataRow);
+                }
+                dtjsonLamps.AcceptChanges();
+
+                dtjsonSwitches = new DataTable("Switch");
+                dtjsonSwitches.Columns.Add("Name");
+                dtjsonSwitches.Columns.Add("Type");
+                dtjsonSwitches.Columns.Add("ExportID");
+
+                for (int i = 0; i < dtSwitches.Rows.Count; i++)
+                {
+                    dataRow = dtjsonSwitches.NewRow();
+                    dataRow["Name"] = dtSwitches.Rows[i]["Name"].ToString();
+                    dataRow["Type"] = "ID";
+                    dataRow["ExportID"] = dtSwitches.Rows[i]["DcsID"].ToString();
+                    dtjsonSwitches.Rows.Add(dataRow);
+                }
+                dtjsonSwitches.AcceptChanges();
+
+                dtjsonInstFunctions = new DataTable("Gauge");
+                dtjsonInstFunctions.Columns.Add("Name");
+                dtjsonInstFunctions.Columns.Add("Type");
+                dtjsonInstFunctions.Columns.Add("DeviceID");
+                dtjsonInstFunctions.Columns.Add("Format");
+                dtjsonInstFunctions.Columns.Add("ExportID");
+                dtjsonInstFunctions.Columns.Add("negateValue");
+
+                dataRows = dtInstrumentFunctions.Select("Name Like '*'", "IDInst ASC");
+
+                for (int i = 0; i < dataRows.Length; i++)
+                {
+                    DataRow[] gauges = dtInstruments.Select("IDInst ='" + dataRows[i]["IDInst"].ToString() + "'");
+                    string name = gauges[0]["Name"].ToString();
+
+                    dataRow = dtjsonInstFunctions.NewRow();
+                    dataRow["Name"] = name + " - " + dataRows[i]["Name"].ToString();
+                    dataRow["Type"] = dataRows[i]["Type"].ToString();
+                    dataRow["DeviceID"] = dataRows[i]["DeviceID"].ToString();
+                    dataRow["Format"] = dataRows[i]["Format"].ToString();
+                    dataRow["ExportID"] = dataRows[i]["Arg_number"].ToString();
+                    dataRow["negateValue"] = dataRows[i]["negateValue"].ToString();
+                    dtjsonInstFunctions.Rows.Add(dataRow);
+                }
+                dtjsonInstFunctions.AcceptChanges();
+
+                dsJSON = new DataSet();
+                dsJSON.Tables.Add(dtjsonLamps);
+                dsJSON.Tables.Add(dtjsonSwitches);
+                dsJSON.Tables.Add(dtjsonInstFunctions);
+
+                GenerateJSONfromDatatable(ref dsJSON);
+
+            }
+            catch (Exception ex)
+            {
+                ImportExport.LogMessage("GenerateJSONDataset: " + ex.ToString());
+            }
+        }
+
+        private string GenerateJSONfromDatatable(ref DataSet dsJSON)
         {
             json = JsonConvert.SerializeObject(dsJSON, Formatting.Indented);
 
@@ -703,6 +790,14 @@ namespace Ikarus
                     dtInstrumentFunctions.Rows[i]["OldValue"] = 1.0;
                     dtInstrumentFunctions.Rows[i]["In"] = "";
                     dtInstrumentFunctions.Rows[i]["Out"] = "";
+
+                    if (DBNull.Value.Equals(dtInstrumentFunctions.Rows[i]["Type"]))
+                    {
+                        dtInstrumentFunctions.Rows[i]["Type"] = "ID";
+                        dtInstrumentFunctions.Rows[i]["DeviceID"] = "-";
+                        dtInstrumentFunctions.Rows[i]["Format"] = "-";
+                        dtInstrumentFunctions.Rows[i]["negateValue"] = "0";
+                    }
                 }
                 catch (Exception e) { ImportExport.LogMessage("Reset Database Values dtInstrumentFunctions .. " + e.ToString()); }
             }
@@ -780,10 +875,11 @@ namespace Ikarus
                     {
                         ImportExport.LogMessage("Switch " + i + " .. FillClasses problem .. " + e.ToString());
                     }
-                    //GenerateJSONfromDatatable(dtSwitches);
                 }
             }
             catch (Exception e) { ImportExport.LogMessage("FillClasses problem .. " + e.ToString()); }
+            //GenerateJSONfromDatatable(dtSwitches);
+            GenerateJSONDataset();
         }
 
         private void GrabMap(ref string gotData)
@@ -1895,6 +1991,7 @@ namespace Ikarus
                 {
                     dtWindows.Rows[0][9] = textBoxLightColor.Text;
                     dtConfig.Rows[0][10] = checkBoxShadow.IsChecked;
+                    dtConfig.Rows[0][11] = jsonChecked;
                 }
                 catch { }
 
@@ -1989,7 +2086,7 @@ namespace Ikarus
 
         private void CheckBox_Lights_Unchecked(object sender, RoutedEventArgs e)
         {
-            Lights_IsChecked(false);
+           Lights_IsChecked(false);
         }
 
         private void CheckBox_Log_Click(object sender, RoutedEventArgs e)
@@ -2177,6 +2274,16 @@ namespace Ikarus
         }
 
         #endregion
+
+        private void JSON_Checked(object sender, RoutedEventArgs e)
+        {
+            jsonChecked = true;
+        }
+
+        private void JSON_Unchecked(object sender, RoutedEventArgs e)
+        {
+            jsonChecked = false;
+        }
     }
 
     #region Databases
