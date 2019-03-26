@@ -878,10 +878,11 @@
                         <TextBox x:Name="textBoxLightColor" Text="#95E295" TextWrapping="Wrap" Margin="0,0,79,207" Grid.Column="1" HorizontalAlignment="Right" Width="81" Height="23" VerticalAlignment="Bottom"/>
                         <CheckBox x:Name="checkJSON"
                             Grid.Column="1"
-                            Margin="361,72,450,522"
+                            Margin="361,72,506,522"
                             Content="Use JSON"
                             Foreground="#FFF9F9F9"
                             Unchecked="JSON_Unchecked" Checked="JSON_Checked" />
+                        <Button x:Name="SendJSON" Content="Send JSON" Grid.Column="1" HorizontalAlignment="Left" Margin="446,72,0,0" VerticalAlignment="Top" Width="88" Click="SendJSON_Click"/>
                     </Grid>
                 </TabItem>
                 <TabItem Name="Log"

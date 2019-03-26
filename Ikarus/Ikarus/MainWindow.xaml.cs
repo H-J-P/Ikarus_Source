@@ -200,6 +200,10 @@ namespace Ikarus
                             jsonChecked = Convert.ToBoolean(dtConfig.Rows[0]["JSON"]);
                             checkJSON.IsChecked = jsonChecked;
 
+                            if (jsonChecked) { SendJSON.Visibility = Visibility.Visible; }
+                            else { SendJSON.Visibility = Visibility.Hidden; }
+                            
+
                             if (dbFilename.Length > 0)
                             {
                                 Main.Title += " - ( Configured for " + dbFilename.Substring(0, dbFilename.LastIndexOf(".")) + " )";
@@ -2278,11 +2282,18 @@ namespace Ikarus
         private void JSON_Checked(object sender, RoutedEventArgs e)
         {
             jsonChecked = true;
+            SendJSON.Visibility = Visibility.Visible;
         }
 
         private void JSON_Unchecked(object sender, RoutedEventArgs e)
         {
             jsonChecked = false;
+            SendJSON.Visibility = Visibility.Hidden;
+        }
+
+        private void SendJSON_Click(object sender, RoutedEventArgs e)
+        {
+            UDP.UDPSender(IPAddess.Text.Trim(), Convert.ToInt32(PortSender.Text), json); // send a package to DCS
         }
     }
 
