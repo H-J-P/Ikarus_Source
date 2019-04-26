@@ -241,6 +241,9 @@
     <Compile Include="Gauges\ButtonAndSwitches\RotaryRelativ.xaml.cs">
       <DependentUpon>RotaryRelativ.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Gauges\DisplaysAndMonitors\DisplayDotMatrixAJS.xaml.cs">
+      <DependentUpon>DisplayDotMatrixAJS.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Gauges\FA18C\FA18C_ADI.xaml.cs">
       <DependentUpon>FA18C_ADI.xaml</DependentUpon>
     </Compile>
@@ -1708,6 +1711,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Gauges\ButtonAndSwitches\RotaryRelativ.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gauges\DisplaysAndMonitors\DisplayDotMatrixAJS.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

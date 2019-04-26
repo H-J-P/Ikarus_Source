@@ -149,6 +149,8 @@ namespace Ikarus
         {
             InitializeComponent();
 
+            RenderOptions.ProcessRenderMode = System.Windows.Interop.RenderMode.SoftwareOnly;
+
             Thread.CurrentThread.CurrentCulture = cult;
             Thread.CurrentThread.CurrentUICulture = cult;
 

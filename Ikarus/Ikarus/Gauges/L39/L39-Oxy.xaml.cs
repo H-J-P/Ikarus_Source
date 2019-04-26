@@ -22,6 +22,7 @@ namespace Ikarus
         double blink = 0.0;
 
         double loxy = 0.0;
+        double lblink = 1.0;
 
         RotateTransform rtOxy = new RotateTransform();
 
@@ -93,9 +94,12 @@ namespace Ikarus
                                    rtOxy.Angle = oxy * 164;
                                    OxygenP.RenderTransform = rtOxy;
                                }
+                               if (lblink != blink)
+                               {
+                                   Blinker.Visibility = blink > 0.5 ? System.Windows.Visibility.Hidden : System.Windows.Visibility.Visible;
+                               }
+                               lblink = blink;
                                loxy = oxy;
-
-                               Blinker.Visibility = blink > 0.5 ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
                            }
                            catch (Exception e) { ImportExport.LogMessage(GetType().Name + " got data and failed with exception: " + e.ToString()); }
                        }));

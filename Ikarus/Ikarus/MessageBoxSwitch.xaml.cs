@@ -167,11 +167,13 @@ namespace Ikarus
 
         private string FileSelectDialog(string defaultExt, string filter)
         {
-            Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog();
-            dlg.InitialDirectory = MainWindow.currentDirectory + "\\Images\\Switches";
+            Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog
+            {
+                InitialDirectory = MainWindow.currentDirectory + "\\Images\\Switches",
 
-            dlg.DefaultExt = defaultExt;
-            dlg.Filter = filter;
+                DefaultExt = defaultExt,
+                Filter = filter
+            };
 
             var result = dlg.ShowDialog();
             if (result == false) { return ""; }
