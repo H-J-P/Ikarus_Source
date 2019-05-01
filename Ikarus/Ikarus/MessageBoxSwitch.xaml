@@ -185,7 +185,7 @@
             <ComboBoxItem Content="Button" />
             <ComboBoxItem Content="ButtonOffOn" />
             <ComboBoxItem Content="ButtonPanelOffOn" />
-            <ComboBoxItem Content="ButtonWithoutRepeat" />
+            <ComboBoxItem Content="ButtonWithoutRelease" />
             <ComboBoxItem Content="Drum" />
             <ComboBoxItem Content="MultiSwitch" />
             <ComboBoxItem Content="MultiSwitchReverse" />
