@@ -66,7 +66,7 @@ namespace Ikarus
         public static DataSet1 dsInstruments = new DataSet1();
         public static DataSet2 dsConfig = new DataSet2();
         public static DataSet dsJSON = new DataSet();
-        
+
         public static DataTable dtConfig;
         public static DataTable dtInstruments;
         public static DataTable dtInstrumentFunctions;
@@ -105,7 +105,7 @@ namespace Ikarus
 
         private int cockpitRefreshLoopCounterMax = 1;
         private int cockpitRefreshLoopCounter = 0;
-        private int dscDataLoopCounterMax = 300; // 30 sec.
+        private int dscDataLoopCounterMax = 4000; // 60 sec.
         private int getAllDscDataLoopCounter = 0;
         private int grabWindowID = 0;
         private int logCount = 0;
@@ -204,7 +204,7 @@ namespace Ikarus
 
                             if (jsonChecked) { SendJSON.Visibility = Visibility.Visible; }
                             else { SendJSON.Visibility = Visibility.Hidden; }
-                            
+
 
                             if (dbFilename.Length > 0)
                             {
@@ -574,7 +574,7 @@ namespace Ikarus
         {
             DispatcherTimer timerMain = new DispatcherTimer(DispatcherPriority.Normal);
             timerMain.Tick += TimerMain_Tick;
-            timerMain.Interval = TimeSpan.FromMilliseconds(100.0);
+            timerMain.Interval = TimeSpan.FromMilliseconds(10.0); // 100
             timerMain.Start();
         }
 
@@ -953,41 +953,44 @@ namespace Ikarus
 
         public void GrabValues()
         {
-            #region Exportscript
-
-            if (receivedData.IndexOf("Ikarus=stop") != -1)
-            {
-                dbFilename = readFile + ".ikarus";
-                LoadConfiguration(readFile);
-                MemoryManagement.Reduce();
-            }
-
-            if (receivedData.IndexOf("Map=") != -1)
-            {
-                GrabMap(ref receivedData);
-            }
-
-            if (receivedData.IndexOf(searchStringForFile) != -1)
-            {
-                CockpitLoad(ref receivedData);
-            }
-
-            if (receivedData.IndexOf("2222=1.0") != -1)
-            {
-                Lights_IsChecked(true);
-            }
-
-            if (receivedData.IndexOf("2222=0.0") != -1)
-            {
-                Lights_IsChecked(false);
-            }
-
-            #endregion
-
-            if (!cockpitWindowActiv) { return; }
-
             try
             {
+                #region Exportscript
+
+                if (receivedData == null) return;
+                if (receivedData == "") return;
+
+                if (receivedData.IndexOf("Ikarus=stop") != -1)
+                {
+                    dbFilename = readFile + ".ikarus";
+                    LoadConfiguration(readFile);
+                    MemoryManagement.Reduce();
+                }
+
+                if (receivedData.IndexOf("Map=") != -1)
+                {
+                    GrabMap(ref receivedData);
+                }
+
+                if (receivedData.IndexOf(searchStringForFile) != -1)
+                {
+                    CockpitLoad(ref receivedData);
+                }
+
+                if (receivedData.IndexOf("2222=1.0") != -1)
+                {
+                    Lights_IsChecked(true);
+                }
+
+                if (receivedData.IndexOf("2222=0.0") != -1)
+                {
+                    Lights_IsChecked(false);
+                }
+
+                #endregion
+
+                if (!cockpitWindowActiv) { return; }
+
                 if (receivedData.Length < 3) { return; }
 
                 grabWindowID = 0;
@@ -1114,7 +1117,7 @@ namespace Ikarus
                         {
                             if (switches[n].ignoreNextPackage || switches[n].ignoreAllPackage)
                             {
-                                if (detailLog) { ImportExport.LogMessage("Ignore data for switch ID: " + switches[n].dcsID.ToString() + " value: " + newGrabValue); }
+                                if (detailLog || switchLog) { ImportExport.LogMessage("Ignore data for switch ID: " + switches[n].dcsID.ToString() + " value: " + newGrabValue); }
                                 switches[n].ignoreNextPackage = false;
                             }
                             else
@@ -1128,8 +1131,7 @@ namespace Ikarus
                 }
                 #endregion
             }
-            catch (Exception e) { ImportExport.LogMessage("GrabValues problem .. " + e.ToString()); }
-            //}));
+            catch (Exception e) { ImportExport.LogMessage("receivedData: " + receivedData + " GrabValues problem .. " + e.ToString()); }
         }
 
         private void HidePanels()
@@ -2092,7 +2094,7 @@ namespace Ikarus
 
         private void CheckBox_Lights_Unchecked(object sender, RoutedEventArgs e)
         {
-           Lights_IsChecked(false);
+            Lights_IsChecked(false);
         }
 
         private void CheckBox_Log_Click(object sender, RoutedEventArgs e)

@@ -48,6 +48,9 @@ namespace Ikarus
             LoadBmaps();
 
             switches = MainWindow.switches.Find(x => x.ID == Convert.ToInt32(dataImportID));
+
+            switches.ignoreNextPackage = true;
+            switches.ignoreAllPackage = true;
         }
 
         public void SetWindowID(int _windowID)
