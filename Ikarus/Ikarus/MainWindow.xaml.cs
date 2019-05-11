@@ -884,6 +884,7 @@ namespace Ikarus
                 }
             }
             catch (Exception e) { ImportExport.LogMessage("FillClasses problem .. " + e.ToString()); }
+
             //GenerateJSONfromDatatable(dtSwitches);
             GenerateJSONDataset();
         }
@@ -1071,7 +1072,8 @@ namespace Ikarus
                             cockpitWindows[grabWindowID].UpdateInstruments(instruments[i].instID, false);
                         }
                     }
-                    catch (Exception e) { ImportExport.LogMessage("GrabValues: Update instruments ID " + instruments[i].classname + ": " + e.ToString()); }
+                    catch { }
+                    //catch (Exception e) { ImportExport.LogMessage("GrabValues: Update instruments ID " + instruments[i].classname + ": " + e.ToString()); }
                 }
                 initInstruments = false;
 
@@ -2289,8 +2291,6 @@ namespace Ikarus
             //UpdateLog();
         }
 
-        #endregion
-
         private void JSON_Checked(object sender, RoutedEventArgs e)
         {
             jsonChecked = true;
@@ -2307,6 +2307,8 @@ namespace Ikarus
         {
             UDP.UDPSender(IPAddess.Text.Trim(), Convert.ToInt32(PortSender.Text), json); // send a package to DCS
         }
+
+        #endregion
     }
 
     #region Databases
