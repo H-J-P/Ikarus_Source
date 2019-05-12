@@ -105,7 +105,7 @@ namespace Ikarus
 
         private int cockpitRefreshLoopCounterMax = 1;
         private int cockpitRefreshLoopCounter = 0;
-        private int dscDataLoopCounterMax = 1000; // 60 sec.
+        private int dscDataLoopCounterMax = 3000; // 60 sec.
         private int getAllDscDataLoopCounter = 0;
         private int grabWindowID = 0;
         private int logCount = 0;
@@ -574,7 +574,7 @@ namespace Ikarus
         {
             DispatcherTimer timerMain = new DispatcherTimer(DispatcherPriority.Normal);
             timerMain.Tick += TimerMain_Tick;
-            timerMain.Interval = TimeSpan.FromMilliseconds(30.0); // 100
+            timerMain.Interval = TimeSpan.FromMilliseconds(10.0); // 100
             timerMain.Start();
         }
 
