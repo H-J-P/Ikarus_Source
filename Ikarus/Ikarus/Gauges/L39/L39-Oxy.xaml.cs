@@ -91,7 +91,7 @@ namespace Ikarus
 
                                if (loxy != oxy)
                                {
-                                   rtOxy.Angle = oxy * 164;
+                                   rtOxy.Angle = oxy * 163;
                                    OxygenP.RenderTransform = rtOxy;
                                }
                                if (lblink != blink)
