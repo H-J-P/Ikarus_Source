@@ -122,6 +122,7 @@ namespace Ikarus
         private int selectedTab = -1;
         private int selectedWindows = -1;
         private int windowID = 0;
+        private int maxWindowsID = 0;
 
         private string identifier = "";
         private string background = "";
@@ -344,6 +345,7 @@ namespace Ikarus
             StartTimer();
             StartUDPTimer();
 
+
             //GetTier();
             //GC.Collect(0, GCCollectionMode.Forced);
         }
@@ -377,6 +379,7 @@ namespace Ikarus
                     }
                     receivedData = "";
                 }
+                SendDataFromButtonEvent();
             }
             catch (Exception f)
             {
@@ -423,46 +426,47 @@ namespace Ikarus
                            {
                                lStateEnabled = false;
 
-                               for (int n = 0; n < switches.Count; n++)
-                               {
-                                   try
-                                   {
-                                       windowID = switches[n].windowID - 1;
+                               //for (int n = 0; n < switches.Count; n++)
+                               //{
+                               //    try
+                               //    {
+                               //        windowID = switches[n].windowID - 1;
 
-                                       if (switches[n].value != switches[n].oldValue || switches[n].doit)
-                                       {
-                                           if (!switches[n].dontReset)
-                                               switches[n].oldValue = switches[n].value; //<---
+                               //        if (switches[n].value != switches[n].oldValue || switches[n].doit)
+                               //        {
+                               //            if (!switches[n].dontReset)
+                               //                switches[n].oldValue = switches[n].value; //<---
 
-                                           if (switches[n].events)
-                                           {
-                                               if (windowID == 0) refeshPopup = true;
+                               //            if (switches[n].events)
+                               //            {
+                               //                if (windowID == 0) refeshPopup = true;
 
-                                               if (!switches[n].dontReset) switches[n].events = false; //<---
+                               //                if (!switches[n].dontReset) switches[n].events = false; //<---
 
-                                               switches[n].ignoreNextPackage = true; // from DCS
-                                               getAllDscData = true;
-                                               getAllDscDataLoopCounter = dscDataLoopCounterMax; // next refresh for switches in 3 sec.
+                               //                switches[n].ignoreNextPackage = true; // from DCS
+                               //                getAllDscData = true;
+                               //                getAllDscDataLoopCounter = dscDataLoopCounterMax; // next refresh for switches in 3 sec.
 
-                                               package = "C" + switches[n].deviceID.ToString() + "," + (3000 + switches[n].buttonID).ToString() + "," + switches[n].value.ToString();
+                               //                package = "C" + switches[n].deviceID.ToString() + "," + (3000 + switches[n].buttonID).ToString() + "," + switches[n].value.ToString();
 
-                                               UDP.UDPSender(IPAddess.Text.Trim(), Convert.ToInt32(PortSender.Text), package, switches[n].dcsID.ToString()); //<--- send a package to DCS
+                               //                UDP.UDPSender(IPAddess.Text.Trim(), Convert.ToInt32(PortSender.Text), package, switches[n].dcsID.ToString()); //<--- send a package to DCS
 
-                                               if (switches[n].sendRelease) // && switches[n].value > 0.0)
-                                               {
-                                                   package = "C" + switches[n].deviceID.ToString() + "," + (3000 + switches[n].buttonID).ToString() + "," + (0.0).ToString();
-                                                   UDP.UDPSender(IPAddess.Text.Trim(), Convert.ToInt32(PortSender.Text), package, switches[n].dcsID.ToString());
-                                               }
-                                           }
-                                           else // from DCS
-                                           {
-                                               if (cockpitWindowActiv && cockpitWindows[windowID] != null)
-                                                   cockpitWindows[windowID].UpdateSwitches(switches[n].ID);
-                                           }
-                                       }
-                                   }
-                                   catch (Exception ex) { ImportExport.LogMessage("Switches " + switches[n].classname + " ID " + switches[n].dcsID.ToString() + " Update:" + ex.ToString()); }
-                               }
+                               //                if (switches[n].sendRelease) // && switches[n].value > 0.0)
+                               //                {
+                               //                    package = "C" + switches[n].deviceID.ToString() + "," + (3000 + switches[n].buttonID).ToString() + "," + (0.0).ToString();
+                               //                    UDP.UDPSender(IPAddess.Text.Trim(), Convert.ToInt32(PortSender.Text), package, switches[n].dcsID.ToString());
+                               //                }
+                               //            }
+                               //            //else // from DCS
+                               //            //{
+                               //            //    if (cockpitWindowActiv && cockpitWindows[windowID] != null)
+                               //            //        cockpitWindows[windowID].UpdateSwitches(switches[n].ID);
+                               //            //}
+                               //        }
+                               //    }
+                               //    catch (Exception ex) { ImportExport.LogMessage("Switches " + switches[n].classname + " ID " + switches[n].dcsID.ToString() + " Update:" + ex.ToString()); }
+                               //}
+
                                lStateEnabled = true;
                            }
 
@@ -836,6 +840,7 @@ namespace Ikarus
                 instruments.Clear();
                 lamps.Clear();
                 switches.Clear();
+                maxWindowsID = dtWindows.Rows.Count;
 
                 for (int i = 0; i < dtInstruments.Rows.Count; i++)
                 {
@@ -887,6 +892,46 @@ namespace Ikarus
 
             //GenerateJSONfromDatatable(dtSwitches);
             GenerateJSONDataset();
+        }
+
+        private void SendDataFromButtonEvent()
+        {
+            for (int n = 0; n < switches.Count; n++)
+            {
+                try
+                {
+                    if (switches[n].value != switches[n].oldValue || switches[n].doit)
+                    {
+                        if (!switches[n].dontReset)
+                            switches[n].oldValue = switches[n].value; //<---
+
+                        if (switches[n].events)
+                        {
+                            if (windowID == 0) refeshPopup = true;
+
+                            if (!switches[n].dontReset) switches[n].events = false; //<---
+
+                            switches[n].ignoreNextPackage = true; // from DCS
+                            getAllDscData = true;
+                            getAllDscDataLoopCounter = dscDataLoopCounterMax; // next refresh for switches in 3 sec.
+
+                            package = "C" + switches[n].deviceID.ToString() + "," + (3000 + switches[n].buttonID).ToString() + "," + switches[n].value.ToString();
+
+                            UDP.UDPSender(IPAddess.Text.Trim(), Convert.ToInt32(PortSender.Text), package, switches[n].dcsID.ToString()); //<--- send a package to DCS
+
+                            if (switches[n].sendRelease) // && switches[n].value > 0.0)
+                            {
+                                package = "C" + switches[n].deviceID.ToString() + "," + (3000 + switches[n].buttonID).ToString() + "," + (0.0).ToString();
+                                UDP.UDPSender(IPAddess.Text.Trim(), Convert.ToInt32(PortSender.Text), package, switches[n].dcsID.ToString());
+                            }
+                        }
+                    }
+                }
+                catch (Exception f)
+                {
+                    ImportExport.LogMessage("Error with switch ID: " + switches[n].dcsID.ToString() + " value " + newGrabValue + "..." + f.ToString());
+                }
+            }
         }
 
         private void GrabMap(ref string gotData)
@@ -1020,8 +1065,14 @@ namespace Ikarus
                                     idFound = false;
                                     newGrabValue = "";
                                 }
-
-                                grabWindowID = instruments[i].windowID - 1;
+                                if (instruments[i].windowID > maxWindowsID)
+                                {
+                                    grabWindowID = 0;
+                                }
+                                else
+                                {
+                                    grabWindowID = instruments[i].windowID - 1;
+                                }
 
                                 if (instruments[i].instrumentFunction[n].ascii)
                                 {
@@ -1067,13 +1118,16 @@ namespace Ikarus
                             }
                             catch { }
                         }
+
                         if (refreshInstruments && cockpitWindows[grabWindowID] != null)
                         {
                             cockpitWindows[grabWindowID].UpdateInstruments(instruments[i].instID, false);
                         }
                     }
-                    catch { }
-                    //catch (Exception e) { ImportExport.LogMessage("GrabValues: Update instruments ID " + instruments[i].classname + ": " + e.ToString()); }
+                    catch (Exception e)
+                    {
+                        ImportExport.LogMessage("GrabValues: Update instruments ID " + instruments[i].classname + ": " + e.ToString());
+                    }
                 }
                 initInstruments = false;
 
@@ -1093,7 +1147,15 @@ namespace Ikarus
 
                         if (newGrabValue != "")
                         {
-                            grabWindowID = lamps[n].windowID - 1;
+                            if (lamps[n].windowID > maxWindowsID)
+                            {
+                                grabWindowID = 0;
+                            }
+                            else
+                            {
+                                grabWindowID = lamps[n].windowID - 1;
+                            }
+
                             lamps[n].value = double.Parse(newGrabValue, CultureInfo.InvariantCulture);
 
                             if (lamps[n].value != lamps[n].oldValue)
@@ -1125,19 +1187,39 @@ namespace Ikarus
 
                         if (newGrabValue != "")
                         {
+                            if (switches[n].windowID > maxWindowsID)
+                            {
+                                grabWindowID = 0;
+                            }
+                            else
+                            {
+                                grabWindowID = switches[n].windowID - 1;
+                            }
+
                             if (switches[n].ignoreNextPackage || switches[n].ignoreAllPackage)
                             {
                                 if (detailLog) { ImportExport.LogMessage("Ignore data for switch ID: " + switches[n].dcsID.ToString() + " value: " + newGrabValue); }
+
                                 switches[n].ignoreNextPackage = false;
                             }
                             else
                             {
                                 switches[n].value = double.Parse(newGrabValue, CultureInfo.InvariantCulture);
+
                                 if (detailLog) { ImportExport.LogMessage("Got data for switch ID: " + switches[n].dcsID.ToString() + " value " + newGrabValue); }
+
+                                if (switches[n].value != switches[n].oldValue)
+                                {
+                                    if (cockpitWindowActiv && cockpitWindows[grabWindowID] != null)
+                                        cockpitWindows[grabWindowID].UpdateSwitches(switches[n].ID);
+                                }
                             }
                         }
                     }
-                    catch { ImportExport.LogMessage("Error with switch ID: " + switches[n].dcsID.ToString() + " value " + newGrabValue); }
+                    catch (Exception f)
+                    {
+                        ImportExport.LogMessage("Error with switch ID: " + switches[n].dcsID.ToString() + " value " + newGrabValue + "..." + f.ToString());
+                    }
                 }
                 #endregion
             }
@@ -2390,5 +2472,6 @@ namespace Ikarus
             classname = _class;
         }
     }
+
     #endregion
 }
